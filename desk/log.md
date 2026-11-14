@@ -6005,3 +6005,19 @@ analysis script rc=1
 - Margined Running Positions: 0 (`get_margined_positions`). Active running crypto slots: 0/2 filled.
 - Limit Orders: 4 active on Delta CLOB. Limit orders do NOT consume slots until filled. First 2 to fill lock 2/2 slots, remaining limits auto-cancelled.
 - Capital Telemetry: Available cash $0.5995 USD | Deployed order margin $0.7025 USD | Net equity $1.4604 USD.
+## R281 · 2026-11-14 18:29 UTC · zai-desk
+
+**Market**: BTC 65,801.6 (-3.6%)  ETH 1,841.16 (-4.6%)  SOL 72.67 (-7.0%)  XAU 3,849.78 (-1.0%)  XAG 48.250 (-1.4%)
+**Bias (|score|≥2)**: LINK-4(TREND)  AVAX-3(TREND)  XAU-3(TREND)  DOGE-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,841.16 → HOLD
+
+
+## ROUND FAILED · 2026-11-14 18:30 UTC · zai-desk
+
+analysis script rc=1
+
