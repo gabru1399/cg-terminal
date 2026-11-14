@@ -5970,3 +5970,19 @@ analysis script rc=1
 - Limit Orders: 4 active on Delta CLOB (`#1680974187`, `#1680977628`, `#1681187234`, `#1681189148`). Limit orders do NOT consume slots until filled. First 2 to fill lock 2/2 slots, remaining limits auto-cancelled.
 - Capital Telemetry: Available cash $0.5995 USD | Deployed order margin $0.7025 USD | Net equity $1.4604 USD.
 - Synthesis Document: `desk/deepscan/UNIVERSE-360-1794679191174.md` generated (759 lines).
+## R279 · 2026-11-14 17:59 UTC · zai-desk
+
+**Market**: BTC 65,791.9 (-3.6%)  ETH 1,840.11 (-4.6%)  SOL 72.75 (-6.9%)  XAU 3,850.47 (-1.0%)  XAG 48.300 (-1.3%)
+**Bias (|score|≥2)**: AVAX-3(TREND)  ADA-4(TREND)  BNB-2(TREND)  LINK-2(TREND)  DOGE-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,840.11 → HOLD
+
+
+## ROUND FAILED · 2026-11-14 18:00 UTC · zai-desk
+
+analysis script rc=1
+
