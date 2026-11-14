@@ -5880,3 +5880,30 @@ analysis script rc=1
 - Running Positions: 0 (`get_margined_positions`). Active running crypto slots: 0/2 filled.
 - Total Deployed Order Margin: $0.7042 USD | Available Balance: $0.5975 USD | Net Equity: $1.4604 USD.
 - First-to-Fill Invariant: First 2 limit orders to trigger will lock the 2 slots (2/2); remaining orders will be immediately managed or cancelled.
+### [SIMULATED EXEC] NTH25 · BUY 0.94 lots @ 1141.94 | SL: 1139.88443 | TP: 1148.10671 (Exit: fixed_3.0)
+- Ribbon: Fib_34_89_233 on H1
+- Rejection Wick: 35.7%
+
+
+
+## R272 · 2026-11-14 17:05 UTC · atg-exec (Autonomous Telemetry Refresh & 360 Screening)
+
+**Venue**: Delta Exchange India (india_prod, Account 26902927)
+**Protocol**: `desk/TRADE_FORMULATION_MANUAL.md` v1.1.0 & Canonical Playbook (10 Nov 2026 Specification)
+
+### Telemetry & Microstructure Audit
+- Full 30-asset crypto universe telemetry refreshed using exact `sym=` parameters across `/api/cg/market`, `/api/cg/signals`, `/api/cg/cvd`, `/api/cg/bookwalls`, `/api/cg/liqlevels`.
+- Macro Regime: Macro downtrend (`TREND_DOWN`) dominates 28 of 30 assets with H4/D1 EMA 13x89 cascades.
+- VWAP Displacement: Universe trades in extreme discount (-1.49σ to -2.25σ below VWAP). Market continuation shorts are strictly prohibited to prevent chasing into the hole.
+- Limit Order Validation: All 4 resting limit sell orders are positioned in the institutional **Premium Zone** relative to VWAP, defending Day VAH/POC:
+  1. `ETHUSD` (#1680974187): SELL Limit @ $1,891.60 | SL $1,919.00 | TP $1,817.40 | State: open | R: 2.71R
+  2. `LINKUSD` (#1680977628): SELL Limit @ $9.691 | SL $9.820 | TP $9.050 | State: open | R: 4.97R
+  3. `SUIUSD` (#1681187234): SELL Limit @ $0.7650 | SL $0.7770 | TP $0.7120 | State: open | R: 4.42R
+  4. `LTCUSD` (#1681189148): SELL Limit @ $47.28 | SL $48.00 | TP $44.05 | State: open | R: 4.49R
+  5. `BTCUSD` (DELTA-PENDING-BTC-1): SELL Limit @ $67,344.00 | SL $68,600.00 | TP $64,703.00 | State: pending_margin (requires +$6.22 balance at 10x leverage)
+
+### Concurrency & Slot Invariants
+- Margined Running Positions: 0 (`get_margined_positions`).
+- Slot Allocation: 0/2 slots occupied (limit orders do not consume slots until filled).
+- Capital: Available cash $0.5995 USD | Blocked order margin $0.7025 USD | Net equity $1.4604 USD.
+- Synthesis Document: `desk/deepscan/UNIVERSE-360-1794675935566.md` generated.

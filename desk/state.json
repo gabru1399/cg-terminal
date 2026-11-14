@@ -604,12 +604,6 @@
       "created_at": 1794668497996,
       "r_multiple": 4.49
     }
-      "account": 26902927,
-      "margin_mode": "isolated",
-      "post_only": true,
-      "created_at": 1794668497996,
-      "r_multiple": 2.57
-    }
   ],
   "positions": [
     {
@@ -5793,5 +5787,29 @@
     "margin": 389.66,
     "margin_free": 4257.92,
     "profit": 4.04
+  },
+  "quant_engine": {
+    "last_scan_ts": 1794675825067,
+    "mode": "DRY-RUN",
+    "slots_used": 1,
+    "max_slots": 6,
+    "active_candidates_count": 1,
+    "candidates": [
+      {
+        "symbol": "NTH25",
+        "side": "BUY",
+        "entry": 1141.94,
+        "sl": 1139.88443,
+        "tp": 1148.10671,
+        "r_dist": 2.055571428571511,
+        "tf": "H1",
+        "exit_mode": "fixed_3.0",
+        "ribbon": "Fib_34_89_233",
+        "wick_pct": 35.7,
+        "signal_time": "2026-11-13 20:00:00",
+        "mid": 1143.4650000000001,
+        "spread_pct": 0.0761
+      }
+    ]
   }
 }
