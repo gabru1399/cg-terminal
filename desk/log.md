@@ -5755,3 +5755,22 @@ analysis script rc=1
 - Primary Reserve: `BTCUSD` (1 contract @ $67,344.00, PENDING MARGIN)
 - Margin Deployed: $0.7042 USD | Available Balance: $0.5975 USD | Net Equity: $1.4604 USD
 - Invariant Rule: Max 2 concurrent running positions enforced. If any 2 resting orders fill and begin running, all remaining resting limit orders will be cancelled or managed immediately.
+## R270 · 2026-11-14 14:59 UTC · zai-desk
+
+**Market**: BTC 65,834.4 (-3.6%)  ETH 1,851.10 (-4.0%)  SOL 73.98 (-5.4%)  XAU 3,877.89 (-0.3%)  XAG 48.510 (-0.8%)
+**Bias (|score|≥2)**: XRP-6(TREND)  AVAX-3(TREND)  LINK-3(TREND)  XAU-3(TREND)  XAG-4(TREND)  ADA-3(TREND)  LTC-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R264-AVAX-1 re-debated: FOR 6/AGAINST 0 — stands
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,851.10 → HOLD
+
+
+## ROUND FAILED · 2026-11-14 15:00 UTC · zai-desk
+
+analysis script rc=1
+
