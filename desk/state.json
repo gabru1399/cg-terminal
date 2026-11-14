@@ -423,17 +423,19 @@
       "contract_value": "0.01 ETH",
       "status": "placed",
       "ticket": 1680974187,
-      "entry": 1891.6,
-      "stop": 1919.0,
+      "entry": 1844.0,
+      "stop": 1875.0,
       "targets": [
-        1817.4
+        1780.0
       ],
       "venue": "Delta Exchange India",
       "account": 26902927,
       "margin_mode": "isolated",
       "post_only": true,
       "created_at": 1794664160433,
-      "r_multiple": 2.71
+      "r_multiple": 2.06,
+      "notes": "Tuned to Day VAL shelf retest (shallow pullback optimization)",
+      "updated_at": 1794680939862
     },
     {
       "id": "DELTA-1680977628",
@@ -445,17 +447,19 @@
       "contract_value": "1.0 LINK",
       "status": "placed",
       "ticket": 1680977628,
-      "entry": 9.691,
-      "stop": 9.82,
+      "entry": 9.28,
+      "stop": 9.45,
       "targets": [
-        9.05
+        8.9
       ],
       "venue": "Delta Exchange India",
       "account": 26902927,
       "margin_mode": "isolated",
       "post_only": true,
       "created_at": 1794664160433,
-      "r_multiple": 4.97
+      "r_multiple": 2.23,
+      "notes": "Tuned to Day VAL shelf retest (shallow pullback optimization)",
+      "updated_at": 1794680939862
     },
     {
       "id": "DELTA-PENDING-BTC-1",
@@ -489,17 +493,19 @@
       "contract_value": "1.0 SUI",
       "status": "placed",
       "ticket": 1681187234,
-      "entry": 0.765,
-      "stop": 0.777,
+      "entry": 0.742,
+      "stop": 0.762,
       "targets": [
-        0.712
+        0.698
       ],
       "venue": "Delta Exchange India",
       "account": 26902927,
       "margin_mode": "isolated",
       "post_only": true,
       "created_at": 1794668464043,
-      "r_multiple": 4.42
+      "r_multiple": 2.2,
+      "notes": "Tuned to Day VAL shelf retest (shallow pullback optimization)",
+      "updated_at": 1794680939862
     },
     {
       "id": "DELTA-1681189148",
@@ -511,17 +517,19 @@
       "contract_value": "0.1 LTC",
       "status": "placed",
       "ticket": 1681189148,
-      "entry": 47.28,
-      "stop": 48.0,
+      "entry": 46.25,
+      "stop": 47.1,
       "targets": [
-        44.05
+        44.1
       ],
       "venue": "Delta Exchange India",
       "account": 26902927,
       "margin_mode": "isolated",
       "post_only": true,
       "created_at": 1794668497996,
-      "r_multiple": 4.49
+      "r_multiple": 2.53,
+      "notes": "Tuned to Day VAL shelf retest (shallow pullback optimization)",
+      "updated_at": 1794680939862
     }
   ],
   "positions": [
