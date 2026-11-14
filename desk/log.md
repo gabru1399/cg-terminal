@@ -5948,3 +5948,25 @@ analysis script rc=1
 - Limit Orders: 4 active on Delta CLOB (`#1680974187`, `#1680977628`, `#1681187234`, `#1681189148`). Limit orders do NOT consume slots until filled. First 2 to fill lock 2/2 slots, remaining limits auto-cancelled.
 - Capital Telemetry: Available cash $0.5995 USD | Deployed order margin $0.7025 USD | Net equity $1.4604 USD.
 - Synthesis Document: `desk/deepscan/UNIVERSE-360-1794677586844.md` generated (777 lines).
+
+
+## R274 · 2026-11-14 17:59 UTC · atg-exec (Autonomous Telemetry Refresh & Level Validation)
+
+**Venue**: Delta Exchange India (india_prod, Account 26902927)
+**Protocol**: `desk/TRADE_FORMULATION_MANUAL.md` v1.1.0 & Canonical Playbook (10 Nov 2026 Specification)
+
+### Telemetry & Microstructure Audit
+- Full 30-asset crypto universe telemetry refreshed using exact `sym=` parameters across `/api/cg/market`, `/api/cg/signals`, `/api/cg/cvd`, `/api/cg/bookwalls`, `/api/cg/liqlevels`.
+- Macro Regime: Macro downtrend (`TREND_DOWN`) dominates 28 of 30 assets with H4/D1 EMA 13x89 cascades.
+- Market Dynamics: Consolidation with mild mean-reversion wicks persists:
+  * ETH: $1,839.17 | Mark: $1,840.43 (Day VAH $1,915.47 / Day POC $1,904.74). Resting SELL limit $1,891.60 perfectly positioned.
+  * LINK: $9.168 | Mark: $9.163 (Day VAH $9.727 / Day POC $9.594). Resting SELL limit $9.691 perfectly positioned.
+  * SUI: $0.7284 | Mark: $0.7308 (Day VAH $0.7851 / Day POC $0.7718). Resting SELL limit $0.7650 perfectly positioned.
+  * LTC: $45.68 | Mark: $45.81 (Day VAH $49.06 / Day POC $48.32). Resting SELL limit $47.28 perfectly positioned.
+  * BTC: $65,763.10 | Mark: $65,831.08 (Day VAH $67,700.80 / Day POC $67,183.20). Planned SELL limit $67,344.00 staged pending margin.
+
+### Concurrency & Slot Invariants
+- Margined Running Positions: 0 (`get_margined_positions`). Active running crypto slots: 0/2 filled.
+- Limit Orders: 4 active on Delta CLOB (`#1680974187`, `#1680977628`, `#1681187234`, `#1681189148`). Limit orders do NOT consume slots until filled. First 2 to fill lock 2/2 slots, remaining limits auto-cancelled.
+- Capital Telemetry: Available cash $0.5995 USD | Deployed order margin $0.7025 USD | Net equity $1.4604 USD.
+- Synthesis Document: `desk/deepscan/UNIVERSE-360-1794679191174.md` generated (759 lines).
