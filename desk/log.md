@@ -5716,3 +5716,8 @@ analysis script rc=1
 - get_margined_positions: 0 active positions. Excursion: N/A. 0.00 active open risk.
 - get_open_orders: 2 active limit orders (Slot 1: ETHUSD #1680974187, Slot 2: LINKUSD #1680977628). Test order #1680974294 on XRP cancelled cleanly due to Table 7 Hard Veto (4.5 < 5.0 pts).
 - Portfolio Heat: 0.00% active open risk, .329 contingent risk to stop (0.007% on ,645 desk capital base). Concurrency: 2/2 Crypto slots occupied.
+
+## ROUND FAILED · 2026-11-14 14:30 UTC · zai-desk
+
+analysis script rc=1
+
