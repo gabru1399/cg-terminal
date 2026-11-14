@@ -5721,3 +5721,20 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+
+## R268 · 2026-11-14 14:32 UTC · delta-lead-2 (Autonomous Delta Exchange Execution Round)
+
+**Venue**: Delta Exchange India (india_prod, Account 26902927)
+**Market**: BTC 66,023.80 (-2.4%)  ETH 1,854.51 (-2.7%)  SOL 74.05 (-2.1%)  BNB 600.87 (-2.2%)  LINK 9.3000 (-2.5%)
+**Synthesis**: Ingested 30-asset crypto dossier from @delta-crypto-2 (desk/deepscan/CRYPTO-360-REPORT.md). Synthesized full 61-asset universe matrix in desk/deepscan/UNIVERSE-360-1794666681841.md (TradFi 28 + Classic 3 marked WEEKEND MARKET HALT / CLOSED).
+
+### Autonomous Order Placements (Delta Exchange India CLOB)
+- **ETHUSD** (#1680974187) · SHORT · Limit ,925.00 · SL ,945.00 · TP ,850.00 · Size: 1 contract (0.01 ETH) · Post-Only: true · State: OPEN · R 3.83 (Fading Day VAH)
+- **LINKUSD** (#1680977628) · SHORT · Limit .691 · SL .820 · TP .311 · Size: 1 contract (1.0 LINK) · Post-Only: true · State: OPEN · R 2.95 (Fading Day VAH)
+- **BTCUSD** (DELTA-PENDING-BTC-1) · SHORT · Limit ,344.00 · SL ,600.00 · TP ,703.00 · Size: 1 contract (0.001 BTC) · Status: PENDING MARGIN (requires +.52 additional isolated margin at 10x leverage)
+
+### Order & Position Hygiene
+- get_margined_positions: 0 active positions. Excursion: N/A. .00 active open risk.
+- get_open_orders: 2 active limit orders (Slot 1: ETHUSD #1680974187, Slot 2: LINKUSD #1680977628). Both orders verified active fading Day VAH boundaries.
+- Portfolio Heat: 0.00% active open risk, .329 contingent risk to stop (0.007% on ,645 desk capital base). Concurrency: 2/2 Crypto slots occupied.
