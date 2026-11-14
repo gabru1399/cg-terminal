@@ -504,7 +504,16 @@ export function armFromVerdict(v: NarrativeVerdict, source: "route" | "sweep"): 
   const armedCount = [...PB.tickets.values()].filter((x) => x.status === "ARMED").length;
   const openCount = [...PB.tickets.values()].filter((x) => x.status === "OPEN").length;
   if (armedCount >= MAX_ARMED) return skip(`armed cap ${MAX_ARMED} reached`);
-  if (openCount >= MAX_OPEN && model === "M2_MEAN_REVERSION") return skip(`open cap ${MAX_OPEN} reached (M2 needs a slot)`);
+  if (openCount >= MAX_OPEN) return skip(`open cap ${MAX_OPEN} reached`);
+
+  // Weekend halt for TradFi / classic assets
+  const kind = CURATED.find((c) => c.sym === v.sym)?.kind;
+  if (kind === "tradfi-perp" || kind === "classic") {
+    const day = new Date().getUTCDay();
+    if (day === 0 || day === 6) {
+      return skip("TradFi market halted on weekend (Saturday/Sunday UTC)");
+    }
+  }
 
   // per-symbol housekeeping: one ARMED + one OPEN
   for (const a of [...PB.tickets.values()]) {
@@ -518,14 +527,19 @@ export function armFromVerdict(v: NarrativeVerdict, source: "route" | "sweep"): 
       pushEvent(a, "CANCELLED", reason, null);
       persist("CANCELLED", a, reason);
       notify(a, "paper_cancel", `${a.sym} virtual ${modelShort(a)} ${a.direction} setup cancelled`, `${reason} — the zone never filled (armed ${new Date(a.armedAt).toISOString()})`, null);
-    } else if (a.status === "OPEN" && a.direction !== v.direction) {
-      // opposite-direction armable setup → close the open ticket at last mark
-      const mark = a.lastMark;
-      const fresh = a.lastMarkAt != null && now - a.lastMarkAt < FRESH_MARK_MS;
-      if (mark != null && fresh) {
-        closeTicket(a, "FLIP_CLOSE", mark, now, "opposite-direction setup armed — thesis flipped", a.markSource ?? "mark");
+    } else if (a.status === "OPEN") {
+      if (a.direction !== v.direction) {
+        // opposite-direction armable setup → close the open ticket at last mark
+        const mark = a.lastMark;
+        const fresh = a.lastMarkAt != null && now - a.lastMarkAt < FRESH_MARK_MS;
+        if (mark != null && fresh) {
+          closeTicket(a, "FLIP_CLOSE", mark, now, "opposite-direction setup armed — thesis flipped", a.markSource ?? "mark");
+        } else {
+          pushEvent(a, "FLIP_PENDING", "opposite setup armed but mark not fresh — flip deferred to next pass", null);
+        }
       } else {
-        pushEvent(a, "FLIP_PENDING", "opposite setup armed but mark not fresh — flip deferred to next pass", null);
+        // Same direction OPEN ticket already active: strictly one OPEN position per symbol
+        return skip(`symbol already has an active OPEN ${a.direction} ticket (${a.id})`);
       }
     }
   }
