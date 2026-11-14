@@ -6100,3 +6100,14 @@ analysis script rc=1
 
 analysis script rc=1
 
+## R288 · 2026-11-14 20:59 UTC · zai-desk
+
+**Market**: 
+**Bias (|score|≥2)**: none significant
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH — data missing, HOLD (manual check)
+
