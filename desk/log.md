@@ -5774,3 +5774,22 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+
+## R269 · 2026-11-14 15:18 UTC · atg-exec (360 Autonomous Delta Exchange Execution Round)
+
+**Venue**: Delta Exchange India (india_prod, Account 26902927)
+**Market**: BTC 65,734.90 (-3.6%)  ETH 1,850.77 (-4.0%)  SOL 74.15 (-5.3%)  BNB 599.21 (-3.1%)  LINK 9.2990 (-3.2%)
+**Synthesis**: Ingested full 30-asset crypto dossier from `desk/deepscan/CRYPTO-360-REPORT.md`. Synthesized full 61-asset matrix in `desk/deepscan/UNIVERSE-360-1794669440072.md` (28 TradFi + 3 Classic benchmarks closed under Weekend Market Halt).
+
+### Delta Exchange India CLOB Status
+- **Running Positions**: 0 open positions. Excursion: N/A. Active open risk: $0.00 USD.
+- **Slot Concurrency**: 0/2 running crypto slots filled (limit orders do not consume slots per user directive).
+- **Active Resting Limits on CLOB**: 4 orders verified open with post-only execution and attached bracket SL/TP:
+  * `ETHUSD` (#1680974187): SELL Limit $1,925.00 · SL $1,945.00 · TP $1,850.00 · Size 1 (0.01 ETH) · R 3.83
+  * `LINKUSD` (#1680977628): SELL Limit $9.691 · SL $9.820 · TP $9.311 · Size 1 (1.0 LINK) · R 2.95
+  * `SUIUSD` (#1681187234): SELL Limit $0.7650 · SL $0.7770 · TP $0.7350 · Size 1 (1.0 SUI) · R 2.50
+  * `LTCUSD` (#1681189148): SELL Limit $47.28 · SL $48.00 · TP $45.43 · Size 1 (0.1 LTC) · R 2.57
+- **Primary Reserve**: `BTCUSD` (DELTA-PENDING-BTC-1): SELL Limit $67,344.00 · SL $68,600.00 · TP $64,703.00 · Size 1 (0.001 BTC) · R 2.09 (PENDING MARGIN +$5.52)
+- **Account Balances**: Deployed Order Margin: $0.7042 USD | Available Balance: $0.5975 USD | Net Equity: $1.4604 USD
+- **Invariant Enforcement**: Breakeven (+1.0R) and 8-bar time stop satisfied. First 2 limit orders to fill will occupy the 2 running slots, after which remaining resting limits will be managed.
