@@ -5793,3 +5793,22 @@ analysis script rc=1
 - **Primary Reserve**: `BTCUSD` (DELTA-PENDING-BTC-1): SELL Limit $67,344.00 · SL $68,600.00 · TP $64,703.00 · Size 1 (0.001 BTC) · R 2.09 (PENDING MARGIN +$5.52)
 - **Account Balances**: Deployed Order Margin: $0.7042 USD | Available Balance: $0.5975 USD | Net Equity: $1.4604 USD
 - **Invariant Enforcement**: Breakeven (+1.0R) and 8-bar time stop satisfied. First 2 limit orders to fill will occupy the 2 running slots, after which remaining resting limits will be managed.
+## R272 · 2026-11-14 15:29 UTC · zai-desk
+
+**Market**: BTC 65,259.5 (-4.4%)  ETH 1,833.25 (-5.0%)  SOL 73.56 (-5.9%)  XAU 3,868.92 (-0.5%)  XAG 48.470 (-0.9%)
+**Bias (|score|≥2)**: AVAX-3(TREND)  DOGE-4(TREND)  LINK-3(TREND)  SOL-4(TREND)  BNB-2(TREND)  BTC-4(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R264-AVAX-1 re-debated: FOR 6/AGAINST 0 — stands
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,833.25 → HOLD
+
+
+## ROUND FAILED · 2026-11-14 15:30 UTC · zai-desk
+
+analysis script rc=1
+
