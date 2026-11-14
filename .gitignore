@@ -105,3 +105,8 @@ scripts/probe-new-syms.mjs
 
 # large sweep raw data dumps
 scripts/*_data.json
+
+desk/crypto_sweep_*.json
+Delta_Exchange/
+Delta_Fibonacci_Institutional_Business/
+*.csv
