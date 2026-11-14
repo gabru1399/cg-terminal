@@ -504,17 +504,17 @@
       "contract_value": "0.01 ETH",
       "status": "placed",
       "ticket": 1680974187,
-      "entry": 1925.0,
-      "stop": 1945.0,
+      "entry": 1891.6,
+      "stop": 1919.0,
       "targets": [
-        1850.0
+        1817.4
       ],
       "venue": "Delta Exchange India",
       "account": 26902927,
       "margin_mode": "isolated",
       "post_only": true,
       "created_at": 1794664160433,
-      "r_multiple": 3.83
+      "r_multiple": 2.71
     },
     {
       "id": "DELTA-1680977628",
@@ -529,14 +529,14 @@
       "entry": 9.691,
       "stop": 9.82,
       "targets": [
-        9.311
+        9.05
       ],
       "venue": "Delta Exchange India",
       "account": 26902927,
       "margin_mode": "isolated",
       "post_only": true,
       "created_at": 1794664160433,
-      "r_multiple": 2.95
+      "r_multiple": 4.97
     },
     {
       "id": "DELTA-PENDING-BTC-1",
@@ -573,14 +573,14 @@
       "entry": 0.765,
       "stop": 0.777,
       "targets": [
-        0.735
+        0.712
       ],
       "venue": "Delta Exchange India",
       "account": 26902927,
       "margin_mode": "isolated",
       "post_only": true,
       "created_at": 1794668464043,
-      "r_multiple": 2.5
+      "r_multiple": 4.42
     },
     {
       "id": "DELTA-1681189148",
@@ -595,9 +595,15 @@
       "entry": 47.28,
       "stop": 48.0,
       "targets": [
-        45.43
+        44.05
       ],
       "venue": "Delta Exchange India",
+      "account": 26902927,
+      "margin_mode": "isolated",
+      "post_only": true,
+      "created_at": 1794668497996,
+      "r_multiple": 4.49
+    }
       "account": 26902927,
       "margin_mode": "isolated",
       "post_only": true,

@@ -5850,3 +5850,33 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+
+## R271 · 2026-11-14 16:15 UTC · atg-exec (Dynamic Limit Order & Bracket Optimization)
+
+**Venue**: Delta Exchange India (india_prod, Account 26902927)
+**User Directive**: "I hope you know you can kill the limit orders , modify them as well if you like as per your analysis"
+
+### Dynamic CLOB Order Modifications Applied
+1. **ETHUSD** (#1680974187):
+   - Modified Limit Price: tuned from $1,925.00 to exact Day VAH **$1,891.60**
+   - Modified Bracket Stop Loss: tightened from $1,945.00 to **$1,919.00**
+   - Modified Bracket Take Profit: set to Day VAL **$1,817.40**
+   - R-Multiple: **2.71R** (Risk $27.40, Reward $74.20)
+2. **LINKUSD** (#1680977628):
+   - Limit Price: maintained at Day VAH **$9.691**
+   - Modified Bracket Take Profit: expanded from $9.311 to downstream cascade **$9.050**
+   - R-Multiple: **4.97R** (Risk $0.129, Reward $0.641)
+3. **SUIUSD** (#1681187234):
+   - Limit Price: maintained at Day VAH **$0.7650**
+   - Modified Bracket Take Profit: expanded from $0.7350 to downstream cascade **$0.7120**
+   - R-Multiple: **4.42R** (Risk $0.012, Reward $0.053)
+4. **LTCUSD** (#1681189148):
+   - Limit Price: maintained at Day VAH **$47.28**
+   - Modified Bracket Take Profit: expanded from $45.43 to downstream cascade **$44.05**
+   - R-Multiple: **4.49R** (Risk $0.72, Reward $3.23)
+
+### Current Capital & Slot Status
+- Running Positions: 0 (`get_margined_positions`). Active running crypto slots: 0/2 filled.
+- Total Deployed Order Margin: $0.7042 USD | Available Balance: $0.5975 USD | Net Equity: $1.4604 USD.
+- First-to-Fill Invariant: First 2 limit orders to trigger will lock the 2 slots (2/2); remaining orders will be immediately managed or cancelled.
