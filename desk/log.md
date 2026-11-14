@@ -5907,3 +5907,22 @@ analysis script rc=1
 - Slot Allocation: 0/2 slots occupied (limit orders do not consume slots until filled).
 - Capital: Available cash $0.5995 USD | Blocked order margin $0.7025 USD | Net equity $1.4604 USD.
 - Synthesis Document: `desk/deepscan/UNIVERSE-360-1794675935566.md` generated.
+## R277 · 2026-11-14 17:29 UTC · zai-desk
+
+**Market**: BTC 65,574.4 (-4.0%)  ETH 1,841.64 (-4.5%)  SOL 72.93 (-6.7%)  XAU 3,850.32 (-1.0%)  XAG 48.330 (-1.2%)
+**Bias (|score|≥2)**: DOGE-3(TREND)  XAU-3(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R264-AVAX-1 EXPIRED (unfilled past expiry)
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,841.64 → HOLD
+
+
+## ROUND FAILED · 2026-11-14 17:30 UTC · zai-desk
+
+analysis script rc=1
+
