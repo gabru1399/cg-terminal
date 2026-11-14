@@ -5926,3 +5926,25 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+
+## R273 · 2026-11-14 17:33 UTC · atg-exec (Autonomous Telemetry Refresh & Mean-Reversion Monitor)
+
+**Venue**: Delta Exchange India (india_prod, Account 26902927)
+**Protocol**: `desk/TRADE_FORMULATION_MANUAL.md` v1.1.0 & Canonical Playbook (10 Nov 2026 Specification)
+
+### Telemetry & Microstructure Audit
+- Full 30-asset crypto universe telemetry refreshed using exact `sym=` parameters across `/api/cg/market`, `/api/cg/signals`, `/api/cg/cvd`, `/api/cg/bookwalls`, `/api/cg/liqlevels`.
+- Macro Regime: Macro downtrend (`TREND_DOWN`) dominates 28 of 30 assets with H4/D1 EMA 13x89 cascades.
+- Market Dynamics: Mean-reversion bounces are progressing from the extreme discount zone (-1.8σ) upward toward Day VAH/POC resistance:
+  * ETH: rising from $1,826 -> $1,841 (Day VAH $1,915.47 / Day POC $1,904.74). Resting SELL limit $1,891.60 perfectly positioned.
+  * LINK: rising from $9.09 -> $9.196 (Day VAH $9.727 / Day POC $9.594). Resting SELL limit $9.691 perfectly positioned.
+  * SUI: rising from $0.726 -> $0.7328 (Day VAH $0.7851 / Day POC $0.7718). Resting SELL limit $0.7650 perfectly positioned.
+  * LTC: rising from $45.70 -> $46.00 (Day VAH $49.06 / Day POC $48.32). Resting SELL limit $47.28 perfectly positioned.
+  * BTC: trading at $65,641.90 (Day VAH $67,700.80 / Day POC $67,183.20). Planned SELL limit $67,344.00 staged pending margin.
+
+### Concurrency & Slot Invariants
+- Margined Running Positions: 0 (`get_margined_positions`). Active running crypto slots: 0/2 filled.
+- Limit Orders: 4 active on Delta CLOB (`#1680974187`, `#1680977628`, `#1681187234`, `#1681189148`). Limit orders do NOT consume slots until filled. First 2 to fill lock 2/2 slots, remaining limits auto-cancelled.
+- Capital Telemetry: Available cash $0.5995 USD | Deployed order margin $0.7025 USD | Net equity $1.4604 USD.
+- Synthesis Document: `desk/deepscan/UNIVERSE-360-1794677586844.md` generated (777 lines).
