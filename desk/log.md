@@ -5700,3 +5700,19 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+## R267 · 2026-11-14 13:50 UTC · delta-lead-1 (Autonomous Delta Exchange Execution Round)
+
+**Venue**: Delta Exchange India (india_prod, Account 26902927)
+**Market**: BTC 66,520.00 (-2.5%)  ETH 1,887.52 (-2.2%)  SOL 75.15 (-3.9%)  BNB 608.39 (-2.8%)  LINK 9.5010 (-3.1%)
+**Synthesis**: Ingested 30-asset crypto dossier from @delta-crypto-1 (desk/deepscan/CRYPTO-360-REPORT.md). Synthesized full 61-asset universe matrix in desk/deepscan/UNIVERSE-360-1794664160433.md (TradFi 28 + Classic 3 marked WEEKEND MARKET HALT / CLOSED).
+
+### Autonomous Order Placements (Delta Exchange India CLOB)
+- **ETHUSD** (#1680974187) · SHORT · Limit ,925.00 · SL ,945.00 · TP ,850.00 · Size: 1 contract (0.01 ETH) · Post-Only: true · State: OPEN · R 3.83
+- **LINKUSD** (#1680977628) · SHORT · Limit .691 · SL .820 · TP .311 · Size: 1 contract (1.0 LINK) · Post-Only: true · State: OPEN · R 2.95
+- **BTCUSD** (DELTA-PENDING-BTC-1) · SHORT · Limit ,850.00 · SL ,600.00 · TP ,190.00 · Size: 1 contract (0.001 BTC) · Status: PENDING MARGIN (requires +.52 additional isolated margin at 10x leverage)
+
+### Order & Position Hygiene
+- get_margined_positions: 0 active positions. Excursion: N/A. 0.00 active open risk.
+- get_open_orders: 2 active limit orders (Slot 1: ETHUSD #1680974187, Slot 2: LINKUSD #1680977628). Test order #1680974294 on XRP cancelled cleanly due to Table 7 Hard Veto (4.5 < 5.0 pts).
+- Portfolio Heat: 0.00% active open risk, .329 contingent risk to stop (0.007% on ,645 desk capital base). Concurrency: 2/2 Crypto slots occupied.

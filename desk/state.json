@@ -27,8 +27,8 @@
     }
   },
   "analysis": {
-    "last_round": "R266",
-    "last_round_ts": 1794662948882,
+    "last_round": "R267",
+    "last_round_ts": 1794664160433,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
@@ -219,7 +219,9 @@
         "sym": "BNB",
         "score": -1.67
       }
-    ]
+    ],
+    "active_venue": "Delta Exchange India",
+    "delta_account_id": 26902927
   },
   "orders": [
     {
@@ -493,6 +495,72 @@
       "actualEntry": null,
       "filledTs": null,
       "notes": null
+    },
+    {
+      "id": "DELTA-1680974187",
+      "symbol": "ETH",
+      "product_symbol": "ETHUSD",
+      "product_id": 3136,
+      "side": "sell",
+      "size": 1,
+      "contract_value": "0.01 ETH",
+      "status": "placed",
+      "ticket": 1680974187,
+      "entry": 1925.0,
+      "stop": 1945.0,
+      "targets": [
+        1850.0
+      ],
+      "venue": "Delta Exchange India",
+      "account": 26902927,
+      "margin_mode": "isolated",
+      "post_only": true,
+      "created_at": 1794664160433,
+      "r_multiple": 3.83
+    },
+    {
+      "id": "DELTA-1680977628",
+      "symbol": "LINK",
+      "product_symbol": "LINKUSD",
+      "product_id": 15041,
+      "side": "sell",
+      "size": 1,
+      "contract_value": "1.0 LINK",
+      "status": "placed",
+      "ticket": 1680977628,
+      "entry": 9.691,
+      "stop": 9.82,
+      "targets": [
+        9.311
+      ],
+      "venue": "Delta Exchange India",
+      "account": 26902927,
+      "margin_mode": "isolated",
+      "post_only": true,
+      "created_at": 1794664160433,
+      "r_multiple": 2.95
+    },
+    {
+      "id": "DELTA-PENDING-BTC-1",
+      "symbol": "BTC",
+      "product_symbol": "BTCUSD",
+      "product_id": 27,
+      "side": "sell",
+      "size": 1,
+      "contract_value": "0.001 BTC",
+      "status": "pending_margin",
+      "ticket": null,
+      "entry": 67850.0,
+      "stop": 68600.0,
+      "targets": [
+        65190.0
+      ],
+      "venue": "Delta Exchange India",
+      "account": 26902927,
+      "margin_mode": "isolated",
+      "post_only": true,
+      "created_at": 1794664160433,
+      "r_multiple": 3.55
     }
   ],
   "positions": [
