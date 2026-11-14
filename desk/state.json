@@ -550,17 +550,61 @@
       "contract_value": "0.001 BTC",
       "status": "pending_margin",
       "ticket": null,
-      "entry": 67850.0,
+      "entry": 67344.0,
       "stop": 68600.0,
       "targets": [
-        65190.0
+        64703.0
       ],
       "venue": "Delta Exchange India",
       "account": 26902927,
       "margin_mode": "isolated",
       "post_only": true,
       "created_at": 1794664160433,
-      "r_multiple": 3.55
+      "r_multiple": 2.09
+    },
+    {
+      "id": "DELTA-1681187234",
+      "symbol": "SUI",
+      "product_symbol": "SUIUSD",
+      "product_id": 17328,
+      "side": "sell",
+      "size": 1,
+      "contract_value": "1.0 SUI",
+      "status": "placed",
+      "ticket": 1681187234,
+      "entry": 0.765,
+      "stop": 0.777,
+      "targets": [
+        0.735
+      ],
+      "venue": "Delta Exchange India",
+      "account": 26902927,
+      "margin_mode": "isolated",
+      "post_only": true,
+      "created_at": 1794668464043,
+      "r_multiple": 2.5
+    },
+    {
+      "id": "DELTA-1681189148",
+      "symbol": "LTC",
+      "product_symbol": "LTCUSD",
+      "product_id": 15040,
+      "side": "sell",
+      "size": 1,
+      "contract_value": "0.1 LTC",
+      "status": "placed",
+      "ticket": 1681189148,
+      "entry": 47.28,
+      "stop": 48.0,
+      "targets": [
+        45.43
+      ],
+      "venue": "Delta Exchange India",
+      "account": 26902927,
+      "margin_mode": "isolated",
+      "post_only": true,
+      "created_at": 1794668497996,
+      "r_multiple": 2.57
     }
   ],
   "positions": [

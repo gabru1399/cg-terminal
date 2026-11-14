@@ -5738,3 +5738,20 @@ analysis script rc=1
 - get_margined_positions: 0 active positions. Excursion: N/A. .00 active open risk.
 - get_open_orders: 2 active limit orders (Slot 1: ETHUSD #1680974187, Slot 2: LINKUSD #1680977628). Both orders verified active fading Day VAH boundaries.
 - Portfolio Heat: 0.00% active open risk, .329 contingent risk to stop (0.007% on ,645 desk capital base). Concurrency: 2/2 Crypto slots occupied.
+
+
+## R268-UPDATE · 2026-11-14 14:52 UTC · atg-exec (Slot Invariant & Delta Limit Order Expansion)
+
+**Venue**: Delta Exchange India (india_prod, Account 26902927)
+**User Directive Clarification**: "Slot will be considered filled only when it is running...limit order is not considered as slot fill."
+**Slot Status**: 0 running positions (`get_margined_positions`). Active running crypto slots: 0/2 filled.
+
+### Additional Autonomous Limit Placements (Delta Exchange India CLOB)
+- **SUIUSD** (#1681187234) · SHORT · Limit $0.7650 · SL $0.7770 · TP $0.7350 · Size: 1 contract (1.0 SUI) · Post-Only: true · State: OPEN · R 2.50 (Fading Day VAH $0.7653)
+- **LTCUSD** (#1681189148) · SHORT · Limit $47.28 · SL $48.00 · TP $45.43 · Size: 1 contract (0.1 LTC) · Post-Only: true · State: OPEN · R 2.57 (Fading Day VAH $47.287)
+
+### Updated Order & Margin State
+- Active Resting Limits on CLOB: 4 orders (`ETHUSD` #1680974187, `LINKUSD` #1680977628, `SUIUSD` #1681187234, `LTCUSD` #1681189148)
+- Primary Reserve: `BTCUSD` (1 contract @ $67,344.00, PENDING MARGIN)
+- Margin Deployed: $0.7042 USD | Available Balance: $0.5975 USD | Net Equity: $1.4604 USD
+- Invariant Rule: Max 2 concurrent running positions enforced. If any 2 resting orders fill and begin running, all remaining resting limit orders will be cancelled or managed immediately.
