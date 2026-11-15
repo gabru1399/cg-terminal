@@ -6738,3 +6738,31 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+
+## R277 · 2026-11-15 13:20 UTC · atg-exec — AUTONOMOUS DELTA EXCHANGE LIVE AUDIT & STANDING ORDER CONFIRMATION
+- **CLOB POSITIONS & ORDERS AUDIT (Delta Exchange India `26902927`, `india_prod`)**:
+  - `ETHUSD` Limit Sell (#1684019303 @ 1885.0, SL: 1908.0, TP: 1809.0): **UNANIMOUS PASS**
+    * Live Price: $1,833.94 (VWAP z: +1.18σ)
+    * Setup Archetype: S1 Liquidation Sweep Reversal (Universal Boundary Archetype in RANGE_BALANCE)
+    * Table 7 Confluence Score: **6.00 / 11.5 pts** (Grade B, Standard Setup)
+    * Gate 1 (Active Session Clearance): PASS (SL 1908.0 is 4.41% clear of Day POC 1827.4, 4.24% of Sess POC 1830.3, 6.60% of VWAP 1789.9; 0 active session bar POCs < 0.5%)
+    * Gate 2 (Geometrical Liquidation Risk): PASS (Vector A Traversal Fuel: 5 short liquidation clusters totaling $565k USD; Vector B Risk Zone [1885, 1908]: EXACTLY ZERO hazard clusters)
+    * Risk: 23.0 pts | Reward: 76.0 pts | R-Multiple: **3.30R**
+    * Delta CLOB Status: Resting Maker Limit (`state: open`, `post_only: true`, 25x leverage)
+  - `LINKUSD` Limit Sell (#1683969432 @ 9.450, SL: 9.680, TP: 8.980): **UNANIMOUS PASS**
+    * Live Price: $9.322 (VWAP z: +1.62σ)
+    * Setup Archetype: S1 Liquidation Sweep Reversal (Universal Boundary Archetype in RANGE_BALANCE)
+    * Table 7 Confluence Score: **5.00 / 11.5 pts** (Grade B, Standard Setup)
+    * Gate 1 (Active Session Clearance): PASS (SL 9.680 is 6.26% clear of Day POC 9.109, 4.61% of Sess POC 9.253, 7.03% of VWAP 9.044; 0 active session bar POCs < 0.5%)
+    * Gate 2 (Geometrical Liquidation Risk): PASS (Vector A Traversal Fuel: 3 clusters totaling $593k USD accelerating fill; Vector B Risk Zone [9.45, 9.68]: 2 small clusters $160k, adverse LSR < 2.5:1, zero clusters >= $5M)
+    * Risk: 0.230 pts | Reward: 0.470 pts | R-Multiple: **2.04R**
+    * Delta CLOB Status: Resting Maker Limit (`state: open`, `post_only: true`, 25x leverage)
+  - `SUIUSD`: GATED / CANCELLED (adverse short liquidation cluster at $0.7614, $4.55M USD, strength 100 directly inside Risk Zone [0.756, 0.778] -> Gate 2 FAIL, Table 7 = 3.50 pts). Order #1683676488 remains safely cancelled.
+  - `BTCUSD`: GATED (3 adverse short liquidation clusters inside Risk Zone [66500, 67650] -> Gate 2 FAIL, Table 7 = 4.50 pts).
+- **ACCOUNT & CONCURRENCY HYGIENE**:
+  - Net Equity: $1.4604 USD (₹114.13 INR)
+  - Available Balance: $0.1767 USD (₹15.02 INR liquid cash buffer)
+  - Blocked Margin: $1.1661 USD (ETH $0.754 USD + LINK $0.378 USD)
+  - Margined Positions: 0 (No active positions, Breakeven and 8-bar time stop invariants checked and standing by)
+  - Concurrency Cap: Exactly 2 / 2 crypto limit slots utilized (P5-02 PASS).
