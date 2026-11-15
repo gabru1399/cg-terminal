@@ -1,0 +1,10 @@
+import fs from 'fs';
+let code = fs.readFileSync('desk/scratch_adversarial_audit.py', 'utf8');
+code = code.replaceAll("get('ema13')", "(get('e13') or get('ema13') or 0)");
+code = code.replaceAll("get('ema89')", "(get('e89') or get('ema89') or 0)");
+code = code.replaceAll("get('ema233')", "(get('e233') or get('ema233') or 0)");
+code = code.replaceAll('get("ema13")', '(get("e13") or get("ema13") or 0)');
+code = code.replaceAll('get("ema89")', '(get("e89") or get("ema89") or 0)');
+code = code.replaceAll('get("ema233")', '(get("e233") or get("ema233") or 0)');
+fs.writeFileSync('desk/scratch_adversarial_audit.py', code);
+console.log('Script patched successfully');

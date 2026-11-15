@@ -6645,3 +6645,32 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+## EXEC · 2026-11-15 12:02 UTC · atg-exec — LINKUSD ORDER #1683969432 PLACED & VERIFIED ON DELTA INDIA CLOB
+- **EVENT**: Placement of verified Setup S1 (Liquidation Sweep Reversal Short) on `LINKUSD` (`product_id: 15041`).
+- **SOP GROUNDING (SOP v1.2.0 §4, §5 & USER DIRECTIVE)**:
+  - User Directives: "if you have verified setups then push them" & "you can adjust leverage if required".
+  - Leverage adjusted: Product leverage set to 25x via `set_product_leverage(product_id=15041, leverage="25")`.
+  - Table 7 Confluence Score: **5.00 / 11.5 pts** (Grade B Standard Setup).
+  - Gate 1 (Active Session Auction Clearance): PASS. SL at 9.680 is 6.29% clear of Day POC (9.107), 6.26% clear of Sess POC (9.110), 7.21% clear of VWAP (9.029). Zero active session HVNs near SL.
+  - Gate 2 (Geometrical Liquidation Risk): PASS.
+    * Vector A (Traversal Fuel [9.247 -> 9.450]): 4 short liquidation clusters totaling $959.8k USD pulling price into entry limit.
+    * Vector B (Risk Zone Hazard [9.450 -> 9.680]): 1 minor cluster at 9.589 ($173.6k USD, strength 59.8 < 60 threshold). Vector B Hazard = False.
+- **CLOB EXECUTION PARAMETERS (DELTA INDIA `26902927`, `india_prod`)**:
+  - Order ID: `#1683969432`
+  - Side: SELL Limit
+  - Size: 1 contract (1 LINK)
+  - Limit Price: `$9.450`
+  - Bracket Stop Loss: `$9.680` (Trigger: `mark_price`)
+  - Bracket Take Profit: `$8.980`
+  - R-Multiple: **2.04R**
+  - Order Margin: `$0.378 USD` (at 25x isolated)
+  - Post-Only: `true` (Maker only)
+  - State: `open`
+- **PORTFOLIO STATE (DELTA INDIA `26902927`, `india_prod`)**:
+  - Net Liquidating Equity: $1.4604 USD (₹114.13 INR)
+  - Available Cash Balance: $0.9147 USD (₹77.75 INR, 62.6% liquid)
+  - Total Blocked Margin: $0.4281 USD (across 2 limit orders)
+  - Active Margined Positions: 0
+  - Active Standing Orders: Exactly 2 / 2 max (`LINKUSD` #1683969432 @ 9.450 & `SUIUSD` #1683676488 @ 0.7560)
+  - Concurrency Cap: 2 / 2 crypto limit slots filled (P5-02 PASS).
