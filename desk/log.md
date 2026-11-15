@@ -6950,3 +6950,19 @@ analysis script rc=1
   - Active Margined Running Positions: Exactly **1 / 2** (`LTCUSD` Short, entry $45.480, SL $45.480 BE, TP $44.650, +1.30R, zero equity risk)
   - Active Standing Orders: **0** (Slot 2/2 open for verified clean candidate)
 
+## R326 · 2026-11-15 14:59 UTC · zai-desk
+
+**Market**: BTC 64,911.4 (+1.2%)  ETH 1,809.21 (+2.3%)  SOL 71.42 (+1.7%)  XAU 3,838.11 (+0.5%)  XAG 47.660 (+0.6%)
+**Bias (|score|≥2)**: none significant
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,809.21 → HOLD
+
+
+## ROUND FAILED · 2026-11-15 15:00 UTC · zai-desk
+
+analysis script rc=1
+
