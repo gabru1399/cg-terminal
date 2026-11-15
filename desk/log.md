@@ -6431,3 +6431,19 @@ analysis script rc=1
 
 analysis script rc=1
 
+## R309 · 2026-11-15 07:29 UTC · zai-desk
+
+**Market**: BTC 64,343.1 (+0.3%)  ETH 1,790.68 (+1.3%)  SOL 70.35 (+0.2%)  XAU 3,842.26 (+0.6%)  XAG 47.690 (+0.7%)
+**Bias (|score|≥2)**: AVAX-5(TREND)  DOGE+2(TRANS)  LTC+3(TREND)  XAU-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,790.68 → CLOSE_RECOMMENDED (VWAP regime + confluence +1.1 flipped against)
+
+
+## ROUND FAILED · 2026-11-15 07:30 UTC · zai-desk
+
+analysis script rc=1
+
