@@ -7112,3 +7112,24 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+
+### AUDIT & ROUND MONITOR · 2026-11-15 17:15 UTC · atg-exec — 4 STANDING LIMITS MONITORED · ZERO DRIFT · DYNAMIC TIMER RE-ARM
+
+- **Delta Exchange India CLOB Live Verification (`india_prod` | Account 26902927)**:
+  - All 4 resting maker limit orders verified active on CLOB:
+    1. `DOTUSD` (#1684506647): Sell Limit @ $0.7480 (Live: $0.7299, +2.48% dist | SL $0.7550 | TP $0.7180 | 4.29R)
+    2. `LTCUSD` (#1684443284): Sell Limit @ $45.480 (Live: $44.76, +1.61% dist | SL $45.880 | TP $44.500 | 2.45R)
+    3. `ETHUSD` (#1684442347): Sell Limit @ $1,838.50 (Live: $1,813.15, +1.40% dist | SL $1,858.50 | TP $1,792.50 | 2.30R)
+    4. `SOLUSD` (#1684424777): Sell Limit @ $72.450 (Live: $71.09, +1.91% dist | SL $73.150 | TP $70.750 | 2.43R)
+- **PORTFOLIO STATE**:
+  - Running Margined Positions: **0 / 2** (Both concurrency slots completely open).
+  - Available Liquid Balance: **$0.2017 USD** (₹17.15 INR).
+  - Total Blocked Order Margin: **$1.1052 USD**.
+  - Net Liquidating Equity: **$1.5387 USD** (₹120.79 INR).
+- **AGI DEBRIEF & RISK VERIFICATION**:
+  - Zero fill drift, zero liquidation hazard breaches in Risk Zones.
+  - Invariants Armed: +1.0R Breakeven (P5-04), 8-bar Time Stop (P5-05), First-Two-Fills Cancellation Circuit (P5-06).
+- **DYNAMIC TIMER RE-ARM (PHASE 7)**:
+  - Dynamic duration $\Delta t = 900\text{s}$ (aligned to 15-minute candle boundary).
+  - Zero static cron jobs active. One-shot timer armed.
