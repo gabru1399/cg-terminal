@@ -7194,3 +7194,19 @@ analysis script rc=1
   - State confirmed: cancelled, cancellation reason cancelled_by_user.
   - Blocked margin released; free liquid balance increased to **.2176 USD**.
 - **Active Standing CLOB Limits Remaining**: Exactly 3 (SOLUSD #1684424777, LTCUSD #1684443284, ETHUSD #1684442347).
+## R332 · 2026-11-15 17:59 UTC · zai-desk
+
+**Market**: BTC 64,482.8 (+0.5%)  ETH 1,810.94 (+2.4%)  SOL 71.33 (+1.6%)  XAU 3,845.64 (+0.7%)  XAG 47.850 (+1.0%)
+**Bias (|score|≥2)**: XRP-5(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,810.94 → CLOSE_RECOMMENDED (VWAP regime + confluence +1.0 flipped against)
+
+
+## ROUND FAILED · 2026-11-15 18:00 UTC · zai-desk
+
+analysis script rc=1
+
