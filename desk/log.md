@@ -7080,3 +7080,19 @@ analysis script rc=1
 - **CONCURRENCY & EXECUTION LOCK**:
   - If any order fills into an active position: immediately arm +1.0R Breakeven Invariant (P5-04) and 8-bar Time Stop (P5-05).
   - First-Two-Fills Rule: Once 2 positions are filled, cancel remaining standing limits immediately to enforce maximum 2-position concurrency cap.
+## R329 · 2026-11-15 16:29 UTC · zai-desk
+
+**Market**: BTC 64,424.5 (+0.5%)  ETH 1,810.39 (+2.4%)  SOL 71.21 (+1.4%)  XAU 3,844.89 (+0.7%)  XAG 47.830 (+1.0%)
+**Bias (|score|≥2)**: ADA-4(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,810.39 → HOLD
+
+
+## ROUND FAILED · 2026-11-15 16:30 UTC · zai-desk
+
+analysis script rc=1
+
