@@ -6399,3 +6399,19 @@ analysis script rc=1
 
 analysis script rc=1
 
+## R307 · 2026-11-15 06:29 UTC · zai-desk
+
+**Market**: BTC 64,532.1 (+0.6%)  ETH 1,796.43 (+1.6%)  SOL 70.81 (+0.8%)  XAU 3,833.25 (+0.4%)  XAG 47.440 (+0.1%)
+**Bias (|score|≥2)**: SOL+2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,796.43 → CLOSE_RECOMMENDED (VWAP regime + confluence +1.5 flipped against)
+
+
+## ROUND FAILED · 2026-11-15 06:30 UTC · zai-desk
+
+analysis script rc=1
+
