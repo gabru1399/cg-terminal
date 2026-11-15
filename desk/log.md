@@ -7022,3 +7022,19 @@ analysis script rc=1
   - P5-04 Breakeven Invariant: Upon fill of any setup, move SL to breakeven immediately at +1.0R excursion.
   - P5-05 Time Stop: 8 bars (2 hours) to reach +0.5R or tighten.
   - Slot Concurrency Lock: Once 2 trades fill into live positions, auto-cancel remaining standing limits to protect capital heat.
+## R327 · 2026-11-15 15:29 UTC · zai-desk
+
+**Market**: BTC 64,679.0 (+0.9%)  ETH 1,808.07 (+2.2%)  SOL 71.17 (+1.3%)  XAU 3,836.64 (+0.5%)  XAG 47.720 (+0.7%)
+**Bias (|score|≥2)**: none significant
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,808.07 → HOLD
+
+
+## ROUND FAILED · 2026-11-15 15:30 UTC · zai-desk
+
+analysis script rc=1
+
