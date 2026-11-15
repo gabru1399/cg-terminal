@@ -6629,3 +6629,19 @@ analysis script rc=1
   - Blocked Margin: $0.0387 USD (2.65% margin utilization)
   - Active Margined Positions: 0
   - Active Standing Orders: 1 (`SUIUSD` #1683676488 @ 0.7560, SL: 0.7780, TP: 0.7120)
+## R318 · 2026-11-15 11:59 UTC · zai-desk
+
+**Market**: BTC 65,422.1 (+2.0%)  ETH 1,829.34 (+3.4%)  SOL 72.41 (+3.1%)  XAU 3,841.52 (+0.6%)  XAG 47.820 (+0.9%)
+**Bias (|score|≥2)**: SOL-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,829.34 → CLOSE_RECOMMENDED (VWAP regime + confluence +0.3 flipped against)
+
+
+## ROUND FAILED · 2026-11-15 12:00 UTC · zai-desk
+
+analysis script rc=1
+
