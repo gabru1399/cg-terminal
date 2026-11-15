@@ -7471,3 +7471,49 @@ analysis script rc=1
 ### Positions
 - None — data missing, HOLD (manual check)
 
+
+
+### AUTONOMOUS RECURSIVE ENGINE ROUND · 2026-11-15 20:38 UTC · atg-exec (CANONICAL SOP v1.4.0 · 1200s DYNAMIC TIMER)
+
+- **PHASE -1 & PHASE 0 COMPLIANCE CHECK**:
+  - SOP Ingestion: Bound strictly to desk/TRADE_FORMULATION_MANUAL.md, desk/SWARM_MASTER_PROMPT.md, and .gemini/rules/SWARM_EXECUTION.md.
+  - Venue: Delta Exchange India (india_prod | Master Account 26902927).
+  - Capital Telemetry: Total Balance .3415 USD, Available Free Cash .3070 USD (INR 26.10), Position Margin Locked .0224 USD (Chat 1 SOLVUSD Long +47), Net Liquid Equity ~.4015 USD.
+  - Concurrency Status: THIS desk (cg-terminal) has exactly 0 / 2 running positions (Both concurrency slots vacant), 0 open orders on CLOB.
+  - Max Tradable Initial Margin Budget (SOP 80% Buffer Rule): .3070 * 0.80 = .2456 USD.
+  - Shared Account Isolation (P5-01b): Chat 1 SOLVUSD Long (+47 @ 0.004355) and its 2 stop-bracket orders (#1684736467, #1684736466) left strictly untouched.
+
+- **PHASE 1: LIVE 30-ASSET SCREENER PASS & TAB 7 REGIME ROUTING**:
+  - Closed-candle screener ingested across all 30 crypto USDT-M perps from continuity terminal (http://127.0.0.1:3000/api/cg/screener).
+  - 28/30 assets remain in RANGE_BALANCE oscillating around Day VWAP (|z| < 1.4σ).
+  - Table 7 Factor 1 (Directional Trend) strictly enforced as 0.0 pts in RANGE_BALANCE (max achievable score = 9.5 pts).
+  - 10 assets unlocked into margin feasibility at max isolated leverage by capital expansion (.2456 USD budget).
+  - Top candidate scoring breakdown:
+    * FIL: Raw score 7.0 / 5.0 -> Narrative regime transitioned to RANGE_BALANCE, reducing legitimate Table 7 score to 2.0 pts.
+    * 1000PEPE: Raw score 6.0 -> Legitimate Table 7 = 3.0 pts (RANGE_BALANCE Factor 1 = 0.0).
+    * BTC: Raw score 5.5 -> Legitimate Table 7 = 3.0 pts; min margin .3254 exceeds budget .2456 USD (MARGIN GATED).
+    * All other 27 assets scored <= 4.5 pts (< 5.0 = HARD VETO / CAPITAL PRESERVED).
+
+- **PHASE 2 & PHASE 3: ADVERSARIAL AUDITOR VERDICT (Subagent 86012ef3-c9ed-4a7c-912f-876e47419fbf)**:
+  - FIL (FILUSD): HARD VETO.
+    * Table 7: Legitimate score 2.0 / 11.5 pts (< 5.0 required).
+    * Gate 1 (Active Session Auction Clearance): Fails (price 0.6136 is 0.52% from 8h POC 0.6104 and hovering mid-value).
+    * DECIDE-D: Fatal fail. Narrative model specifies no setup (bestR = null).
+  - 1000PEPE (1000PEPEUSD): HARD VETO.
+    * Table 7: Legitimate score 3.0 / 11.5 pts (< 5.0 required).
+    * Gate 1: Fails (price 0.0038866 is 0.39% from 8h POC 0.003902, violating >= 0.5% clearance buffer).
+    * Gate 2 (Geometrical Liquidation Risk): Fatal fail. Adverse long liquidations below in 1-3% risk zone total .788 Billion USD (.495B 0-1% + .875B 1-2% + .914B 2-3%) vs only .62B opposing shorts above. Adverse LSR ranges from 7.1:1 to 513.7:1 (violates 2.5:1 ceiling).
+  - BTC (BTCUSD): HARD VETO.
+    * Pitfall Q4 (Margin Solvency): Minimum order 0.0005 BTC requires .3254 USD margin at 100x, which exceeds available budget (.2456 USD) by 132.5% and exceeds total unbuffered cash (.3070 USD), guaranteeing instant HTTP 400 rejection.
+
+- **PHASE 4 & PHASE 5: EXECUTION HYGIENE & CONCURRENCY MANAGEMENT**:
+  - Concurrency Cap: Max 2 positions. Current active positions = 0.
+  - Zero orders placed. 100% Cash Defense maintained.
+  - All standing exchange orders audited; zero orphans, zero duplicate orders from this desk.
+
+- **PHASE 6: AGI SELF-IMPROVEMENT INSIGHT**:
+  - Epistemic reflection: High raw screener scores must always be cross-examined against live narrative regime transitions and spatial liquidation geometry. While FIL and 1000PEPE appeared interesting on raw screeners, live forensics revealed that FIL had transitioned to RANGE_BALANCE with no tradeable R-multiple, and 1000PEPE is suspended over a massive .79B liquidation trap.
+  - Capital preservation invariant reaffirmed: In balance regimes with no statistical edge (< 5.0 pts) and adverse liquidity magnets (> 2.5:1), preserving cash is the optimal mathematical choice.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+  - Re-armed single-turn dynamic 1200s timer (schedule(DurationSeconds=1200)). Zero cron jobs. Zero background daemons.
