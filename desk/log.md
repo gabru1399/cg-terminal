@@ -6708,3 +6708,17 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+## R276 · 2026-11-15 12:49 UTC · atg-exec — STANDING CLOB ORDERS RE-VERIFIED & AUDITED
+- **AUDIT VERDICT (SOP v1.2.0)**:
+  - `ETHUSD` Limit Sell (#1684019303 @ 1885.0, SL: 1908.0, TP: 1809.0): **UNANIMOUS PASS** (T7 = 6.00 pts, Gate 1 PASS, Gate 2 Vector B Hazard = False, 3.30R). Order stands live.
+  - `LINKUSD` Limit Sell (#1683969432 @ 9.450, SL: 9.680, TP: 8.980): **UNANIMOUS PASS** (T7 = 5.00 pts, Gate 1 PASS, Gate 2 Vector B Hazard = False, 2.04R). Price pushed to 9.307 (+1.60σ VWAP) into Traversal Fuel Vector A. Order stands live.
+  - `SUIUSD`: Gated / Cancelled (adverse cluster at 0.7614 inside Risk Zone). Zero active order.
+  - `BTCUSD`: Gated (4 clusters in Risk Zone). Zero active order.
+- **PORTFOLIO STATE (DELTA INDIA `26902927`, `india_prod`)**:
+  - Net Equity: $1.4604 USD (₹114.13 INR)
+  - Available Cash: $0.1767 USD (₹15.02 INR)
+  - Blocked Margin: $1.1661 USD (across 2 active standing limit orders)
+  - Active Margined Positions: 0
+  - Active Standing Orders: Exactly 2 / 2 max (`ETHUSD` #1684019303 & `LINKUSD` #1683969432)
+  - Concurrency Cap: 2 / 2 crypto limit slots filled (P5-02 PASS).
