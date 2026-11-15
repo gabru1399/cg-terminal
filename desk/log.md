@@ -6692,3 +6692,19 @@ analysis script rc=1
   - Active Margined Positions: 0
   - Active Standing Orders: Exactly 2 / 2 max (`ETHUSD` #1684019303 @ 1885.0 & `LINKUSD` #1683969432 @ 9.450)
   - Concurrency Cap: 2 / 2 crypto limit slots filled (P5-02 PASS).
+## R319 · 2026-11-15 12:29 UTC · zai-desk
+
+**Market**: BTC 65,429.7 (+2.0%)  ETH 1,828.57 (+3.4%)  SOL 72.62 (+3.4%)  XAU 3,847.04 (+0.7%)  XAG 47.920 (+1.2%)
+**Bias (|score|≥2)**: none significant
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,828.57 → HOLD
+
+
+## ROUND FAILED · 2026-11-15 12:30 UTC · zai-desk
+
+analysis script rc=1
+
