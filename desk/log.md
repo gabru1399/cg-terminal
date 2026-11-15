@@ -7240,3 +7240,14 @@ analysis script rc=1
      - Running positions: 1 / 2 (TACUSD short; 1 slot open).
      - Available liquid cash: $1.1433 USD (INR 97.18).
      - Blocked order margin: $0.00 USD.
+## R333 · 2026-11-15 18:29 UTC · zai-desk
+
+**Market**: BTC 64,506.6 (+0.6%)  ETH 1,810.75 (+2.4%)  SOL 70.75 (+0.7%)  XAU 3,848.41 (+0.8%)  XAG 47.880 (+1.1%)
+**Bias (|score|≥2)**: XRP-5(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+
