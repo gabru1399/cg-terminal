@@ -23,8 +23,8 @@ for sym in candidates:
         with urllib.request.urlopen(req_liq, timeout=5) as resp:
             liq = json.loads(resp.read().decode('utf-8'))
 
-        # Footprint
-        req_fp = urllib.request.Request(f"{base_url}/api/cg/footprint?sym={sym}&limit=10")
+        # Footprint (/api/cg/fp)
+        req_fp = urllib.request.Request(f"{base_url}/api/cg/fp?sym={sym}&limit=10")
         with urllib.request.urlopen(req_fp, timeout=5) as resp:
             fp = json.loads(resp.read().decode('utf-8'))
             
@@ -37,7 +37,7 @@ for sym in candidates:
     except Exception as e:
         results[sym] = {"error": str(e)}
 
-with open("desk/candidates_telemetry.json", "w", encoding="utf-8") as f:
+with open(r"c:\Users\SIGMA\Documents\cg-terminal\desk\candidates_telemetry.json", "w", encoding="utf-8") as f:
     json.dump(results, f, indent=2)
 
-print("Telemetry fetched for:", list(results.keys()))
+print("Telemetry successfully fetched for:", list(results.keys()))
