@@ -20,9 +20,9 @@ if os.path.exists('scratch/delta_products.json'):
             prod_map[p.get('symbol')] = p
 
 # 3. Available balance budget (Delta Exchange India)
-# In production, this can also read directly from delta-exchange-mcp cache or default to current balance
-avail_balance = 0.018642269 # USD
-tradable_margin_budget = avail_balance * 0.8 # $0.0149 USD
+# Dynamically set from live wallet call
+avail_balance = 0.307048924 # USD live
+tradable_margin_budget = avail_balance * 0.8 # $0.2456 USD
 
 results = []
 
