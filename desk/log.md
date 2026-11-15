@@ -7460,3 +7460,14 @@ analysis script rc=1
 
 - **PHASE 7: DYNAMIC TIMER RE-ARM**:
   - Re-armed dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero cron jobs. Zero background daemons.
+## R336 · 2026-11-15 20:29 UTC · zai-desk
+
+**Market**: BTC 64,872.9 (+1.2%)  ETH 1,824.61 (+3.2%)  SOL 71.64 (+2.0%)  XAU 3,859.71 (+1.1%)  XAG 48.060 (+1.5%)
+**Bias (|score|≥2)**: XRP-4(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+
