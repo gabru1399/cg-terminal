@@ -6793,3 +6793,28 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+### EXEC · 2026-11-15 13:40 UTC · atg-exec — UNIVERSE SCAN & DISPATCH: DOTUSD LIMIT ORDER PLACED (SLOT 2/2)
+- **UNIVERSE SCREENING & ADVERSARIAL DISCOVERY**:
+  - Full-universe audit performed across all tradable altcoins on Delta Exchange India (LTC, AVAX, DOGE, ADA, XRP, DOT, NEAR, UNI, SOL, TRX).
+  - `ADA`: Despite fresh absorption, Gate 2 revealed a fatal **$42.4M adverse short liquidation cluster** inside Risk Zone [0.1582, 0.1622] -> **HARD VETO (CRITICAL SQUEEZE HAZARD)**.
+  - `DOT` (`DOTUSD` Product ID 15304): **UNANIMOUS PASS ACROSS ALL GATES**:
+    * Fresh Microstructure: Bearish Absorption (`ABS sell @ 0.7396` at 13:24 UTC) + Strong Divergence (`SDIV sell @ 0.7411`).
+    * Gate 1 (Active Clearance): SL $0.762 is 6.09% from Day POC ($0.7182), 4.05% from Sess POC ($0.7324), 6.52% from VWAP ($0.7153). Exactly 0 active session HVNs within 0.8%.
+    * Gate 2 (Geometrical Risk): Vector A Traversal Fuel = **$3,751,003 USD** pulling price to entry $0.748; Vector B Hazard = $1,596,072 USD (< $2.0M threshold, traversal > hazard).
+    * Confluence: Table 7 Score = **6.00 / 11.5 pts** (Grade B, Standard Setup).
+    * Risk / Reward: Risk $0.0140 | Reward $0.0300 | R-Multiple: **2.14R** (>= 2.0R invariant met).
+- **DELTA CLOB PLACEMENT (Delta Exchange India `26902927`, `india_prod`)**:
+  - `DOTUSD` Limit Sell Order `#1684152529` dispatched:
+    * Size: 1 contract (1 DOT = $0.748 USD notional)
+    * Limit Price: **$0.748** (maker post-only)
+    * Bracket SL: **$0.762** (`mark_price`)
+    * Bracket TP: **$0.718** (Day POC retest)
+    * Leverage: 25x isolated (Order margin: $0.030 USD)
+    * Status: **`open`** resting on CLOB.
+- **PORTFOLIO STATE (DELTA INDIA `26902927`)**:
+  - Available Cash: **$0.9226 USD** (₹78.42 INR)
+  - Blocked Margin: **$0.4202 USD** (LINK $0.378 + DOT $0.030 + fees)
+  - Active Margined Positions: 0
+  - Active Standing Orders: Exactly **2 / 2 max** (`LINKUSD` #1683969432 @ $9.450 & `DOTUSD` #1684152529 @ $0.7480)
+  - Concurrency Cap: 2 / 2 crypto limit slots 100% utilized.
