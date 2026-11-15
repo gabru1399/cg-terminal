@@ -6915,3 +6915,19 @@ analysis script rc=1
   - Active Margined Running Positions: **0 / 2** (capacity fully open)
   - Active Standing Orders: Exactly **1 pristine maker limit order** (`LTCUSD` #1684220876).
 
+## R325 · 2026-11-15 14:29 UTC · zai-desk
+
+**Market**: BTC 64,942.9 (+1.3%)  ETH 1,815.73 (+2.7%)  SOL 71.72 (+2.1%)  XAU 3,840.37 (+0.6%)  XAG 47.650 (+0.6%)
+**Bias (|score|≥2)**: LINK-3(TREND)  AVAX-4(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,815.73 → HOLD
+
+
+## ROUND FAILED · 2026-11-15 14:30 UTC · zai-desk
+
+analysis script rc=1
+
