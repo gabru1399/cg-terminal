@@ -6966,3 +6966,21 @@ analysis script rc=1
 
 analysis script rc=1
 
+### EXEC · 2026-11-15 15:05 UTC · atg-exec — ROUND R280: LTCUSD TAKE PROFIT HIT (+2.22R REALIZED, +5.36% EQUITY GROWTH) · SOL CANDIDATE AUDIT
+- **`LTCUSD` TAKE PROFIT EXECUTION (Order #1684220881)**:
+  - Take profit market trigger executed cleanly at **$44.660** (Day POC retest target $44.650).
+  - Short trade closed: Entry $45.480 -> Exit $44.660 (Gain: **+0.820 pts / +2.22R**).
+  - Realized Net Profit: **+$0.0820 USD** (after all maker/taker commissions).
+  - Account Growth: Net equity grew from $1.4604 USD to **$1.5387 USD (₹120.79 INR — +5.36% net growth)**.
+  - Cash Liquidity: Available balance is now **$1.4211 USD (100% liquid free cash)**.
+- **PORTFOLIO STATE (DELTA INDIA `26902927`, `india_prod`)**:
+  - Net Liquidating Equity: **$1.5387 USD** (₹120.79 INR)
+  - Available Liquid Free Cash: **$1.4211 USD** (₹120.79 INR)
+  - Active Margined Running Positions: **0 / 2** (both concurrency slots 100% vacant)
+  - Active Standing Orders: **0**
+- **VACANT CONCURRENCY SOURCING (P5-07 VACANT SLOT HUNTER)**:
+  - Candidate: `SOLUSD` (Product ID 14823, 100x isolated, margin $0.720 USD).
+  - Setup: Sell Limit @ **$72.050** (Sess POC $72.061 / $5.48M bearish absorption zone), SL: **$72.680** (Day VAH $72.584 invalidation), TP: **$70.750** (Day VWAP $70.752 retest, **2.06R**).
+  - Liquidation Geometry: Downside Fuel $1.32M USD, Risk Zone Hazard [$72.050, $72.680] = **$0.00 USD**.
+  - Status: Dispatched to Adversarial Trading Auditor for independent verification.
+

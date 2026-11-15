@@ -5795,12 +5795,12 @@
     ]
   },
   "atg": {
-    "equityUsd": 1.509,
-    "balanceUsd": 1.3417,
-    "availableUsd": 1.157,
-    "blockedMarginUsd": 0.1847,
-    "runningPositions": 1,
-    "openOrdersCount": 2,
-    "lastAudit": "2026-11-15T14:40:00.000Z"
+    "equityUsd": 1.5387,
+    "balanceUsd": 1.4211,
+    "availableUsd": 1.4211,
+    "blockedMarginUsd": 0.0,
+    "runningPositions": 0,
+    "openOrdersCount": 0,
+    "lastAudit": "2026-11-15T15:05:00.000Z"
   }
 }
