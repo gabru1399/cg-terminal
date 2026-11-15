@@ -9,7 +9,10 @@ This rule fires on EVERY activation. It cannot be skipped, summarized, or overri
 
 ## ACTIVATION DETECTION
 
-If the current prompt contains ANY of: "AUTONOMOUS DELTA EXCHANGE", "SWARM_MASTER_PROMPT", "RECURSIVE ENGINE ROUND", "SOP v1.4.0", or this activation was triggered by a 1200s dynamic timer — then the **Full Execution Protocol** below is MANDATORY.
+- **EXECUTION TRIGGER**: The **Full Execution Protocol** below is MANDATORY ONLY when the current turn represents an active execution round:
+  1. This turn is triggered by the high-priority 1200s dynamic timer notification (`schedule(DurationSeconds=1200)`), OR
+  2. The user's prompt explicitly requests an execution cycle (e.g. contains `/swarm launch`, `AUTONOMOUS DELTA EXCHANGE`, `RECURSIVE ENGINE ROUND`, or `execute round`).
+- **EXEMPT TURNS (NO HIJACK)**: If the prompt is a structural health audit (e.g. `/harness-check`), an edit/code request, or a general question/discussion, do NOT execute the trading loop. Answer or execute the user's specific request directly.
 
 ## FULL EXECUTION PROTOCOL
 

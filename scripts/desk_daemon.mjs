@@ -113,7 +113,11 @@ async function pushDesk(msg) {
   const did = await commitDesk(msg);
   let r = await sh("git", ["push", "--quiet", "origin", "main"]);
   if (r.code !== 0) {
-    await sh("git", ["pull", "--rebase", "--quiet", "origin", "main"]);
+    const p = await sh("git", ["pull", "--rebase", "--quiet", "origin", "main"]);
+    if (p.code !== 0) {
+      await sh("git", ["rebase", "--abort"]);
+      return `REBASE CONFLICT ABORTED: ${p.err}`;
+    }
     r = await sh("git", ["push", "--quiet", "origin", "main"]);
   }
   if (r.code !== 0) return `PUSH FAILED: ${r.err}`;
@@ -126,7 +130,11 @@ async function gitSync() {
   const o = await sh("git", ["rev-parse", "origin/main"]);
   if (h.out.trim() === o.out.trim()) return "up-to-date";
   const p = await sh("git", ["pull", "--rebase", "--quiet", "origin", "main"]);
-  return p.code === 0 ? "pulled" : `pull failed: ${p.err}`;
+  if (p.code !== 0) {
+    await sh("git", ["rebase", "--abort"]);
+    return `pull failed (rebase aborted): ${p.err}`;
+  }
+  return "pulled";
 }
 
 // ---------------- bash resolver (prefers Git Bash over WSL on Windows) ----------------

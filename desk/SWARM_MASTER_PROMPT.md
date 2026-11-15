@@ -240,7 +240,7 @@ Before executing ANY phase, perform this mandatory self-check:
 | 0.5 | Load wallet | `call_mcp_tool(ServerName="delta-exchange-mcp", ToolName="get_wallet_balances")` |
 | 0.6 | Load positions | `call_mcp_tool(ServerName="delta-exchange-mcp", ToolName="get_margined_positions")` |
 | 0.7 | Load open orders | `call_mcp_tool(ServerName="delta-exchange-mcp", ToolName="get_open_orders")` |
-| 0.8 | Adversarial subagent | For EVERY qualifying setup (Table 7 >= 5.0), spawn or invoke the Adversarial Trading Auditor subagent to independently (a) verify Table 7 scoring, (b) calculate Gate 1 active session clearance, (c) check Gate 2 geometrical risk zone, (d) audit CLOB tickets. |
+| 0.8 | Adversarial subagent | For EVERY qualifying setup (Table 7 >= 5.0), invoke subagent `adversarial-auditor` to independently (a) verify Table 7 scoring, (b) calculate Gate 1 active session clearance, (c) check Gate 2 geometrical risk zone, (d) audit CLOB tickets. |
 
 **EXIT CRITERION:** SOP bound, memory recalled, live equity/positions/orders loaded.
 

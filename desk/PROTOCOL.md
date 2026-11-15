@@ -1,7 +1,14 @@
 # TRADE DESK PROTOCOL — the operating contract between two agents
 
+> [!IMPORTANT]
+> **ARCHITECTURAL PIVOT (USER DIRECTIVE 2026-11-16 · OPTION A FORMALIZED)**:
+> - **Active Primary Venue**: **Delta Exchange India** (`india_prod` | Master Account `26902927`).
+> - **Legacy MT5 Deprecation**: The MetaTrader 5 (MT5 / FundedNext) Cash CFD pipeline is **formally deprecated**. All live executions, brackets, and risk management run directly via `delta-exchange-mcp`.
+> - **Execution Authority**: Local Antigravity Trading AGI governed by `desk/TRADE_FORMULATION_MANUAL.md`, `desk/SWARM_MASTER_PROMPT.md`, and `.gemini/rules/SWARM_EXECUTION.md`.
+> - **Shared Account Isolation (Rule P5-01b)**: Two separate Antigravity chat sessions share this Delta account. This desk strictly tracks and manages only its own orders via exchange Order IDs recorded in `desk/state.json`.
+
 This desk coordinates the **analysis brain** (Z.ai sandbox agent, "zai-desk")
-and the **execution brain** (local Antigravity agent + MT5, "atg-exec").
+and the **execution brain** (local Antigravity agent on Delta Exchange India, "atg-exec").
 GitHub `main` is the only transport. Read this file before your first action,
 then read `desk/state.json` and the tail of `desk/log.md`.
 

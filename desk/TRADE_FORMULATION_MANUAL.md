@@ -129,14 +129,18 @@ Every trade audit must explicitly examine and log all 16 dimensions from the ter
 * **The hard VETO**:
   1. Broker Spread Pct must be **< 0.15%**.
   2. Broker spread must consume **< 20% of planned stop-loss distance**: `Spread / StopDistance < 0.20`.
-* Terminal enforcement parity: drag ratio > 0.12 → Grade C (SPREAD_DRAG_EXCESSIVE — reduced size), > 0.25 → SKIP. The 20% line sits inside the C band: 12–20% = pass with haircut confidence.
-* **Disqualified assets on FundedNext** (measured 2026-11-12): ADA (2.2%), DOGE (1.38%), LTC (2.31%), LINK (0.55%). **Qualified**: BTC, ETH, XAU, XLM, XRP, USO, XAG. Re-measure after any broker change — this list is a fact, not a law.
-* Side padding: SHORT fills at bid, SL triggers on ask — pad tight levels by the spread.
+* Terminal enforcement parity: drag ratio > 0.12 → Grade C (SPREAD_DRAG_EXCESSIVE — reduced size), > 0.25 → SKIP.
+* **Delta Exchange India CLOB Spread**: Spreads are typically < 0.05% on liquid USDT-M perpetuals (BTC, ETH, SOL, XRP, LTC). Check live spread via `get_orderbook` / `get_ticker` before order submission.
+* Side padding: SHORT fills at bid, SL triggers on mark price — ensure mark_price triggers to avoid wicked stop hunts.
 
-### Dimension 16: Risk & Execution Invariants
-* **Max Portfolio Heat**: ≤ 1.0% total equity risk across all open trades ($46.30 on $4,630 equity — recompute from live equity every sizing).
+### Dimension 16: Risk & Execution Invariants (Delta Exchange India Calibration)
+* **Max Portfolio Heat**: ≤ 1.0% total equity risk across all open trades (dynamically calculated from live `net_equity` via `get_wallet_balances`).
 * **Per-trade heat**: Grade A → 1.0%; Grade B → 0.5%.
-* **Correlation limit**: max 2 concurrent crypto positions in the same direction. Slot 3 is reserved exclusively for non-crypto macro commodities (XAU, XAG, USO).
+* **Contract Sizing & Margin Solvency**: Compute exact contract sizing from Delta's `contract_value`:
+  `contracts = floor((net_equity * risk_pct) / (risk_distance_pts * contract_value))`
+  Ensure `initial_margin = (contracts * contract_value * price) / leverage <= available_balance * 0.8`.
+  Calibrate isolated leverage (up to 50x) dynamically to prevent HTTP 400 margin insolvency while maintaining exact bracket stop loss risk.
+* **Correlation limit**: max 2 concurrent crypto positions in the same direction.
 * **The +1.0R Breakeven Invariant**: move SL to entry immediately upon reaching ≥ +1.0R excursion. Tail risk must be eliminated to 0.00%. Non-discretionary.
 * **8-Bar (2-hour) Time Stop**: if price fails to reach +0.5R within 8 15-minute bars, close or tighten the stop.
 * **40/40/20 Liquidity Scale-Out**: 40% @ T1 (Day VAH/VAL), 40% @ T2 (Month/Session POC), 20% Runner @ T3 (liquidation sweep). Never hold the runner through an unswept magnet.
