@@ -8026,3 +8026,54 @@ analysis script rc=1
 
 - **PHASE 7: DYNAMIC TIMER RE-ARM**:
   - Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero cron jobs. Zero background daemons.
+
+## EXEC · 2026-11-15 23:59 UTC · atg-exec (Round 297)
+
+- **PHASE -1 & PHASE 0 COMPLIANCE CHECK**:
+  - SOP Ingestion: Bound strictly to `desk/TRADE_FORMULATION_MANUAL.md`, `desk/SWARM_MASTER_PROMPT.md`, and `.gemini/rules/SWARM_EXECUTION.md`.
+  - Venue: Delta Exchange India (`india_prod` | Master Account `26902927`).
+  - Capital Telemetry: Total USD Balance $1.3415 USD, Available Free Cash $0.3070 USD (INR 26.10), Position Margin Locked $1.0345 USD (Chat 1 SOLVUSD Long +47 @ 0.004355, mark 0.00438145, unrealized PnL +$0.1175 USD), Net Liquid Equity $1.5835 USD.
+  - Concurrency Status: THIS desk (`cg-terminal`) has exactly 0 / 2 running positions (Both concurrency slots vacant), 0 open orders on CLOB.
+  - Max Tradable Initial Margin Budget (SOP 80% Buffer Rule): $0.3070 * 0.80 = $0.2456 USD.
+  - Shared Account Isolation (P5-01b): Chat 1 SOLVUSD Long (+47 @ 0.004355) and its 2 stop-bracket orders (#1684736467, #1684736466) tracked strictly by order number and left untouched.
+
+- **PHASE 1: LIVE 30-ASSET SCREENER PASS & TAB 7 REGIME ROUTING**:
+  - Closed-candle screener ingested across all 30 crypto USDT-M perps from continuity terminal (`http://127.0.0.1:3000/api/cg/screener`).
+  - 29/30 assets in `RANGE_BALANCE` oscillating around Day VWAP (|z| < 1.6σ).
+  - FIL transitioned from `TREND_DOWN` to `RANGE_BALANCE` (price $0.6120, VWAP z = +0.11σ, Model: WATCH_EXHAUSTION LONG, raw score 4.5 pts).
+  - Only 1 asset in `TREND_DOWN` (TRX).
+  - Table 7 Factor 1 (Directional Trend) strictly set to 0.0 pts in `RANGE_BALANCE`.
+  - Screener candidates:
+    * 1000PEPE: Raw score 6.0 -> Validated Table 7 = 3.0 pts (< 5.0 required). Model WATCH_EXHAUSTION LONG. Plan: "no setup".
+    * FIL: Raw score 4.5 -> Validated Table 7 = 3.0 pts (< 5.0 required). Model WATCH_EXHAUSTION LONG. Plan: "no setup".
+    * TRX: Raw score 4.5 -> Validated Table 7 = 4.0 pts (< 5.0 required). Model M1_TREND_PULLBACK SHORT.
+    * BTC: Raw score 4.5 -> Validated Table 7 = 3.5 pts; min margin $0.3261 exceeds budget $0.2456 USD (MARGIN GATED).
+    * All remaining 26 assets scored <= 4.5 pts (< 5.0 = HARD VETO / CAPITAL PRESERVED).
+
+- **PHASE 2 & PHASE 3: ADVERSARIAL AUDITOR VERDICT (Subagent 86012ef3-c9ed-4a7c-912f-876e47419fbf)**:
+  - 1000PEPE (1000PEPEUSD): HARD VETO.
+    * Table 7: Validated score 3.0 / 11.5 pts (< 5.0 required).
+    * Model & Plan: Rebounded to 0.003868 (z = -0.78σ); anti-knife-catching gate NOT satisfied; plan is "no setup".
+    * Gate 2 (Geometrical Liquidation Risk): Fatal fail. Adverse long liquidations below dominate with Adverse LSR = 2.71:1 ($7.79B below vs $2.88B above, violating 2.5:1 ceiling).
+    * Socratic Pitfalls Triggered: Q2 (Adverse Squeeze Magnet Trap), Q6 (Stale/Phantom Signal), Q10 (Liquidity Front-Running Sweep).
+  - FIL (FILUSD): HARD VETO.
+    * Table 7: Validated score 3.0 / 11.5 pts (< 5.0 required).
+    * Regime Transition: Completed rotation into `RANGE_BALANCE` (dead center on VWAP, z = +0.17σ). Factor 1 resets to 0.0 pts.
+    * Socratic Pitfalls Triggered: Q3 (Active Session HVN Collision), Q6 (Stale/Phantom Signal).
+  - TRX (TRXUSD): HARD VETO.
+    * Table 7: Validated score 4.0 / 11.5 pts (< 5.0 required).
+    * DECIDE-D: Fatal fail. Entry 0.3085, Stop 0.31807, T1 0.30409 pays only 0.47R (mandate >= 2.0R continuation floor). Best composite R = 1.06R (< 1.5R floor).
+    * Microstructure Flow: 24h CVD is +$1.7M USD flowing against short. Native terminal veto active (`M1 R 1.06 < 1.5`).
+    * Socratic Pitfalls Triggered: Q3 (Active Session HVN Collision), Q8 (Inverted R-Multiple Trap).
+
+- **PHASE 4 & PHASE 5: EXECUTION HYGIENE & CONCURRENCY MANAGEMENT**:
+  - Concurrency Cap: Max 2 positions. Current active positions = 0.
+  - Zero orders placed. 100% Cash Defense maintained.
+  - All standing exchange orders audited; zero orphans, zero duplicate orders from this desk.
+
+- **PHASE 6: AGI SELF-IMPROVEMENT INSIGHT**:
+  - Regime Rotation Validation: FIL's transition from TREND_DOWN to RANGE_BALANCE confirms that fading the earlier trend without structural clearance would have resulted in adverse chop. The AGI's refusal to force trades during transitional drift protected capital.
+  - Uncompromised Discipline: Preserved $0.3070 USD liquid cash reserve with zero fee leakage and zero slippage drag.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+  - Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero cron jobs. Zero background daemons.
