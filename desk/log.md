@@ -6566,3 +6566,19 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+
+## EXEC · 2026-11-15 10:52 UTC · atg-exec — DELTA EXCHANGE INDIA LIVE CLOB ORDERS PUSHED (SOP v1.2.0)
+- **AUTHORIZATION**: User directive 10:49 UTC ("if you have verified setups then push them", "you can adjust leverage if required").
+- **ORDER 1 (RESTING)**: `SUIUSD` (Product ID 17328, Delta Ticket `#1683676488`)
+  - Side: SELL Limit | Size: 1 contract (1 SUI) | Entry: 0.7560 | Bracket SL: 0.7780 | Bracket TP: 0.7120
+  - Confluence: 5.00 / 11.5 (Grade B) | Archetype: S1 Liquidation Sweep Reversal | R-Multiple: 2.00R | Margin Mode: isolated | Post-Only: true | Leverage: 20x
+- **ORDER 2 (NEW PLACEMENT)**: `ETHUSD` (Product ID 3136, Delta Ticket `#1683808601`)
+  - Side: SELL Limit | Size: 1 contract (0.01 ETH) | Entry: 1885.00 | Bracket SL: 1908.00 | Bracket TP: 1809.00
+  - Confluence: 6.00 / 11.5 (Grade B) | Archetype: S1 Liquidation Sweep Reversal | R-Multiple: 3.30R | Margin Mode: isolated | Post-Only: true | Leverage adjusted: 25x (order margin $0.754 USD)
+- **PORTFOLIO STATE (DELTA INDIA `26902927`, `india_prod`)**:
+  - Net Equity: $1.4604 USD (₹114.13 INR)
+  - Blocked Order Margin: $0.8154 USD (55.8% utilization)
+  - Available Cash: $0.5274 USD (₹44.83 INR)
+  - Active Margined Positions: 0 (maker orders resting waiting for liquidity sweeps)
+  - Active Standing Orders: 2 / 2 slots fully utilized
