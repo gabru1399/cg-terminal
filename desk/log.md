@@ -7630,3 +7630,52 @@ analysis script rc=1
 ### Positions
 - None — data missing, HOLD (manual check)
 
+
+## EXEC · 2026-11-15 21:35 UTC · atg-exec (Round 290)
+
+- **PHASE -1 & PHASE 0 COMPLIANCE CHECK**:
+  - SOP Ingestion: Bound strictly to `desk/TRADE_FORMULATION_MANUAL.md`, `desk/SWARM_MASTER_PROMPT.md`, and `.gemini/rules/SWARM_EXECUTION.md`.
+  - Venue: Delta Exchange India (`india_prod` | Master Account `26902927`).
+  - Capital Telemetry: Total USD Balance $1.3415 USD, Available Free Cash $0.3070 USD (INR 26.10), Position Margin Locked $1.0224 USD (Chat 1 SOLVUSD Long +47), Net Liquid Equity ~$1.3018 USD.
+  - Concurrency Status: THIS desk (`cg-terminal`) has exactly 0 / 2 running positions (Both concurrency slots vacant), 0 open orders on CLOB.
+  - Max Tradable Initial Margin Budget (SOP 80% Buffer Rule): $0.3070 * 0.80 = $0.2456 USD.
+  - Shared Account Isolation (P5-01b): Chat 1 SOLVUSD Long (+47 @ 0.004355) and its 2 stop-bracket orders (#1684736467, #1684736466) left strictly untouched.
+
+- **PHASE 1: LIVE 30-ASSET SCREENER PASS & TAB 7 REGIME ROUTING**:
+  - Closed-candle screener ingested across all 30 crypto USDT-M perps from continuity terminal (`http://127.0.0.1:3000/api/cg/screener`).
+  - 28/30 assets remain in `RANGE_BALANCE` oscillating around Day VWAP (|z| < 1.3σ).
+  - Table 7 Factor 1 (Directional Trend) strictly set to 0.0 pts in `RANGE_BALANCE`.
+  - Candidate scoring breakdown:
+    * 1000PEPE: Raw score 6.0 -> Narrative model M2_MEAN_REVERSION, but legitimate Table 7 = 3.0 pts.
+    * FIL: Raw score 4.5 -> Legitimate Table 7 = 4.0 pts (< 5.0 required).
+    * TRX: Raw score 4.5 -> Legitimate Table 7 = 4.0 pts (< 5.0 required).
+    * BTC: Raw score 4.5 -> Legitimate Table 7 = 3.0 pts; min margin $0.3247 exceeds budget $0.2456 USD (MARGIN GATED).
+    * All other 26 assets scored <= 4.5 pts (< 5.0 = HARD VETO / CAPITAL PRESERVED).
+
+- **PHASE 2 & PHASE 3: ADVERSARIAL AUDITOR VERDICT (Subagent 86012ef3-c9ed-4a7c-912f-876e47419fbf)**:
+  - 1000PEPE (1000PEPEUSD): HARD VETO.
+    * Table 7: Legitimate score 3.0 / 11.5 pts (< 5.0 required).
+    * Gate 1 (Active Session Auction Clearance): Fails (price 0.0038385 is 0.18% from Day VAL 0.0038314, violating >= 0.5% clearance buffer).
+    * Gate 2 (Geometrical Liquidation Risk): Fatal fail. Adverse long liquidations below in 0-4% risk zone total $9.45 Billion USD vs $2.49B opposing shorts above. Adverse LSR is 3.79:1 (exceeds 2.5:1 ceiling). Immediate risk zone [0.0038448 -> 0.003726] contaminated with >$7.5B in long liquidations.
+    * DECIDE-D: Fatal fail. Target T1 at 0.0039338 pays only 0.75R (reversion floor >= 1.2R), triggering native terminal engine vetoes.
+  - FIL (FILUSD): HARD VETO.
+    * Table 7: Legitimate score 4.0 / 11.5 pts (< 5.0 required).
+    * Gate 1: Fails (price 0.6059 is 0.21% from Day VAL 0.6049).
+    * DECIDE-D: Fatal fail. Stop defined beyond 0.8731 (+44.3% risk) with T1 at 0.5980 (+1.16% reward) yielding an unacceptable 0.026R-0.07R to T1 (mandate >= 2.0R). An opposing $1.2M bid wall at 0.6069 blocks path.
+  - TRX (TRXUSD): HARD VETO.
+    * Table 7: Legitimate score 4.0 / 11.5 pts (< 5.0 required).
+    * DECIDE-D: Fatal fail. T1 at 0.30425 pays 0.25R (mandate >= 2.0R). 24h CVD is +$2.1M USD flowing against short.
+  - BTC (BTCUSD): HARD VETO.
+    * Pitfall Q4 (Margin Solvency): Minimum order requires $0.3247 USD margin at 100x, which exceeds available budget ($0.2456 USD) and total unbuffered cash ($0.3070 USD), guaranteeing instant HTTP 400 rejection.
+
+- **PHASE 4 & PHASE 5: EXECUTION HYGIENE & CONCURRENCY MANAGEMENT**:
+  - Concurrency Cap: Max 2 positions. Current active positions = 0.
+  - Zero orders placed. 100% Cash Defense maintained.
+  - All standing exchange orders audited; zero orphans, zero duplicate orders from this desk.
+
+- **PHASE 6: AGI SELF-IMPROVEMENT INSIGHT**:
+  - Liquidation Density Vector Discrimination (Gate 2 Precision): Distinguishing between Vector A (Traversal Fuel leading to entry limit) and Vector B (Risk Zone Hazard behind entry) is essential. On 1000PEPE, Vector B holds over $7.5B in long liquidations between 0.0038448 and 0.003726, creating an adverse liquidity avalanche that would liquidate any long position before mean reversion can occur.
+  - Capital Defense Invariant: Maintaining 100% Cash Defense during low-confluence weekend chop protects account equity ($1.3415 total, $0.3070 free cash) from fee churn and premature stops.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+  - Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero cron jobs. Zero background daemons.
