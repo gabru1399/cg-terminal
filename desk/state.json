@@ -5909,14 +5909,14 @@
     ]
   },
   "atg": {
-    "equityUsd": 1.3084,
+    "equityUsd": 1.3739,
     "balanceUsd": 1.3415,
     "availableUsd": 0.307,
     "blockedMarginUsd": 1.0224,
     "runningPositions": 0,
     "openOrdersCount": 0,
-    "lastAudit": "2026-11-15T21:58:30.000Z",
+    "lastAudit": "2026-11-15T22:21:30.000Z",
     "posture": "100%_CASH_DEFENSE",
-    "round": "R291"
+    "round": "R292"
   }
 }
