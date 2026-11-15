@@ -6447,3 +6447,18 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+
+## 2026-11-15T07:31:31.779Z — atg-exec AGI v3.4 Round
+- Net Equity: .4604 USD | Available: .6059 USD | Margin Blocked: .7368 USD
+- Running Positions: 0 / 2 slots
+- Standing Limit Orders on Delta CLOB: 4 (ETH @ , LINK @ .45, SUI @ .756, LTC @ .10)
+- Telemetry: 30 crypto USDT-M perps screened. All 4 standing orders verified against fresh UTC-day auction profiles and Footprint HVN clearance.
+
+
+## 2026-11-15T07:53:06.134Z — atg-exec AGI v3.4 Scheduled Autonomous Round
+- Net Equity: .4604 USD | Available: .6059 USD | Margin Blocked: .7368 USD
+- Running Positions: 0 / 2 slots
+- Standing Limit Orders on Delta CLOB: 4 (ETH @ , LINK @ .45, SUI @ .756, LTC @ .10)
+- Market Drift: BTC ,830, ETH ,775.51, LINK .005, SUI .7119, LTC .52. All standing sell limits safe at premium resistance.
+- Subagent Auditor: 9081ad1c-b9d4-4b8b-a768-b42adae1784c running independent verification.
