@@ -150,12 +150,12 @@ Before promoting ANY candidate setup to DECIDE or placing ANY order on Delta Exc
 | ID | Invariant |
 |---|---|
 | P5-01 | Account and credential authority: Delta Exchange India, `india_prod`, Account `26902927`. |
-| P5-02 | Concurrency cap: maximum 2 concurrent running crypto positions. Slot 3 is reserved for non-crypto macro assets. |
+| P5-02 | Concurrency cap: maximum 2 concurrent running crypto POSITIONS (Slot is considered filled strictly when a trade FILLS, per user mandate). Resting maker limit orders do NOT consume running position slots as long as total blocked order margin remains within liquid cash reserves. Keep punching verified high-potential limit orders across the universe! |
 | P5-03 | Passive maker only: all orders are limit orders with `post_only=true`. NEVER place a market order. |
 | P5-04 | Breakeven invariant: move SL to the exact entry price (0.00% risk) immediately upon reaching >= +1.0R excursion. |
 | P5-05 | 8-bar (2-hour) time stop: if price fails to reach +0.5R within 8 fifteen-minute bars, close the position or tighten the stop. |
 | P5-06 | Non-negotiable recursive scheduling: at the conclusion of EVERY analysis round, re-arm the autonomous loop by calling `schedule(DurationSeconds=1200)` carrying this master specification. |
-| P5-07 | **Proactive Concurrency Sourcing (Vacant Slot Hunter):** Whenever active crypto limit orders/positions < 2, the agent is strictly MANDATED to perform a multi-asset tradability and margin-feasibility scan across all Delta Exchange perpetual products. The agent must NEVER remain idle or accept an empty slot if viable high-confluence candidates (Table 7 >= 5.0, G1/G2 PASS, R >= 1.5) exist within available liquid margin. |
+| P5-07 | **Proactive Concurrency Sourcing (Vacant Slot Hunter):** Whenever active crypto running positions < 2, the agent is strictly MANDATED to perform a multi-asset tradability and margin-feasibility scan across all Delta Exchange perpetual products and keep punching verified high-potential limit orders. The agent must NEVER remain idle if viable high-confluence candidates (Table 7 >= 5.0, G1/G2 PASS, R >= 1.5) exist within available liquid margin. |
 
 ---
 

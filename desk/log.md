@@ -6818,3 +6818,28 @@ analysis script rc=1
   - Active Margined Positions: 0
   - Active Standing Orders: Exactly **2 / 2 max** (`LINKUSD` #1683969432 @ $9.450 & `DOTUSD` #1684152529 @ $0.7480)
   - Concurrency Cap: 2 / 2 crypto limit slots 100% utilized.
+
+### EXEC · 2026-11-15 13:55 UTC · atg-exec — HUMAN CAPITAL MANDATE & DUAL DISPATCH: AVAXUSD & UNIUSD LIMIT ORDERS PLACED
+- **HUMAN CAPITAL MANDATE CODIFIED (SOP v1.3.0 Ratified)**:
+  - User Directive: Concurrency slots are occupied STRICTLY WHEN A TRADE FILLS into an active running position (max 2 crypto positions). Resting maker limit orders placed at structural boundary extremes do NOT consume running position slots as long as liquid cash margin permits.
+  - Socratic Pitfall Inquest Section 4.2 added to `SWARM_MASTER_PROMPT.md` (7 adversarial inquest questions including Mega-Cap Tunnel Vision and Vacant Concurrency Apathy).
+- **DISPATCH 1: AVAXUSD (Product ID 14830, Order #1684181155)**:
+  - Type: Sell Limit (maker post-only) @ **$7.420**
+  - Bracket SL: **$7.580** (`mark_price`) | Bracket TP: **$7.020** (Day POC retest)
+  - Risk: $0.160 | Reward: $0.400 | R-Multiple: **2.50R** (confluence score 6.50 pts, Grade B)
+  - Microstructure: Bearish Absorption at $7.283 (13:30 UTC), Traversal Fuel $612k vs Hazard $345k (Vector A > B).
+  - Margin: 25x isolated ($0.292 USD blocked margin)
+  - Status: **`open`** resting on CLOB.
+- **DISPATCH 2: UNIUSD (Product ID 15303, Order #1684181417)**:
+  - Type: Sell Limit (maker post-only) @ **$5.240**
+  - Bracket SL: **$5.350** (`mark_price`) | Bracket TP: **$5.010** (Day POC retest)
+  - Risk: $0.110 | Reward: $0.230 | R-Multiple: **2.09R** (confluence score 6.25 pts, Grade B)
+  - Microstructure: Strong Divergence sell at $5.197 (13:15 UTC), Traversal Fuel $616k vs Hazard $184k (Vector A > B).
+  - Margin: 25x isolated ($0.207 USD blocked margin)
+  - Status: **`open`** resting on CLOB.
+- **PORTFOLIO STATE (DELTA INDIA `26902927`, `india_prod`)**:
+  - Net Liquidating Equity: **$1.4604 USD** (₹114.13 INR)
+  - Liquid Free Cash: **$0.4009 USD** (₹34.08 INR)
+  - Total Blocked Margin: **$0.9418 USD** across 4 resting limit orders
+  - Active Margined Running Positions: **0 / 2** (capacity fully open)
+  - Active Standing Orders: **4 verified maker limit orders** (`LINKUSD` #1683969432, `DOTUSD` #1684152529, `AVAXUSD` #1684181155, `UNIUSD` #1684181417).
