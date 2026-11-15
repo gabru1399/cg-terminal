@@ -2,13 +2,13 @@ import urllib.request
 import json
 import math
 
-symbols = ['ETH', 'LINK', 'SUI', 'LTC']
+symbols = ['ETH', 'LINK', 'SUI', 'BTC']
 
 setups = {
-    'ETH': {'entry': 1869.0, 'sl': 1885.0, 'tp': 1809.0, 'side': 'sell'},
+    'ETH': {'entry': 1885.0, 'sl': 1908.0, 'tp': 1809.0, 'side': 'sell'},
     'LINK': {'entry': 9.450, 'sl': 9.680, 'tp': 8.980, 'side': 'sell'},
     'SUI': {'entry': 0.7560, 'sl': 0.7780, 'tp': 0.7120, 'side': 'sell'},
-    'LTC': {'entry': 47.10, 'sl': 48.55, 'tp': 44.20, 'side': 'sell'}
+    'BTC': {'entry': 66500.0, 'sl': 67650.0, 'tp': 64200.0, 'side': 'sell'}
 }
 
 def fetch_json(endpoint):
@@ -31,7 +31,7 @@ for sym in symbols:
     sig = fetch_json(f'/api/cg/signals?sym={sym}')
     cvd = fetch_json(f'/api/cg/cvd?sym={sym}')
     bw = fetch_json(f'/api/cg/bookwalls?sym={sym}')
-    opt = fetch_json(f'/api/cg/options?sym={sym}') if sym == 'ETH' else None
+    opt = fetch_json(f'/api/cg/options?sym={sym}') if sym in ['ETH', 'BTC'] else None
     
     setup = setups[sym]
     sl = setup['sl']
