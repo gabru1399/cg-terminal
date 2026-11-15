@@ -51,3 +51,9 @@ If the current prompt contains ANY of: "AUTONOMOUS DELTA EXCHANGE", "SWARM_MASTE
 - Every number quoted must come from a tool response in THIS session.
 - If a tool call fails, score that factor 0.0 and label it `n/a` — never guess.
 - Liquidation and whale figures are Coinglass estimates — always label them as such.
+
+### 8. SHARED ACCOUNT ISOLATION (EXTERNAL ALGO PROTECTION)
+- Another algorithm operates on the same Delta Exchange account (e.g., placing orders with client_order_id like `FIB4H_*`, or positions on symbols like `TACUSD`, `SOLVUSD`).
+- **You are ONLY responsible for orders and positions punched by your own desk.**
+- **STRICTLY FORBIDDEN**: Never cancel, modify, close, or interfere with orders or positions belonging to the external algorithm.
+- Always check available liquid margin to ensure your own orders do not exceed free cash reserves.
