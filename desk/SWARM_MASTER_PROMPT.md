@@ -165,7 +165,7 @@ Before promoting ANY candidate setup to DECIDE or placing ANY order on Delta Exc
 | ID | Invariant |
 |---|---|
 | P5-01 | Account and credential authority: Delta Exchange India, `india_prod`, Account `26902927`. |
-| P5-01b | **Shared Account Isolation:** Another algorithm operates on this same account (e.g. client_order_id `FIB4H_*`, `TACUSD`, `SOLVUSD`). You are ONLY responsible for orders punched by your own desk. NEVER cancel, modify, or interfere with external algo positions/orders. Size strictly within remaining liquid cash. |
+| P5-01b | **Shared Account Isolation (Track via Order Numbers ONLY):** Two separate chats operate on this exact Delta account (Chat 1: Fibonacci 4H / SOLVUSD / TACUSD; Chat 2: cg-terminal Order-Flow Desk). You are strictly responsible ONLY for orders punched by your own desk. Track all orders and positions strictly via their exchange **Order IDs / Ticket Numbers** recorded in `desk/state.json`. Filter out all external order numbers when auditing open orders or positions. NEVER cancel, modify, or report on external order numbers. |
 | P5-02 | Concurrency cap: maximum 2 concurrent running crypto POSITIONS (Slot is considered filled strictly when a trade FILLS, per user mandate). Resting maker limit orders do NOT consume running position slots as long as total blocked order margin remains within liquid cash reserves. Keep punching verified high-potential limit orders across the universe! |
 | P5-03 | Passive maker only: all orders are limit orders with `post_only=true`. NEVER place a market order. |
 | P5-04 | Breakeven invariant: move SL to the exact entry price (0.00% risk) immediately upon reaching >= +1.0R excursion. |

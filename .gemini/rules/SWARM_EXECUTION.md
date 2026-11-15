@@ -52,8 +52,11 @@ If the current prompt contains ANY of: "AUTONOMOUS DELTA EXCHANGE", "SWARM_MASTE
 - If a tool call fails, score that factor 0.0 and label it `n/a` — never guess.
 - Liquidation and whale figures are Coinglass estimates — always label them as such.
 
-### 8. SHARED ACCOUNT ISOLATION (EXTERNAL ALGO PROTECTION)
-- Another algorithm operates on the same Delta Exchange account (e.g., placing orders with client_order_id like `FIB4H_*`, or positions on symbols like `TACUSD`, `SOLVUSD`).
-- **You are ONLY responsible for orders and positions punched by your own desk.**
-- **STRICTLY FORBIDDEN**: Never cancel, modify, close, or interfere with orders or positions belonging to the external algorithm.
-- Always check available liquid margin to ensure your own orders do not exceed free cash reserves.
+### 8. SHARED ACCOUNT ISOLATION (2 CHATS ON SAME DELTA ACCOUNT)
+- User Directive (2026-11-16): Two separate chat sessions operate on this exact same Delta Exchange account (e.g. Chat 1: Fibonacci 4H / SOLVUSD / TACUSD; Chat 2: cg-terminal Order-Flow Desk).
+- **Track via Order Numbers ONLY:**
+  - This chat is STRICTLY responsible ONLY for orders that WE punch.
+  - Track every trade strictly by its specific Delta **Order ID / Ticket Number** recorded in `desk/state.json`.
+  - NEVER manage, cancel, edit, report, or take credit for orders or positions belonging to the other chat.
+  - When querying `get_open_orders` or `get_margined_positions`, FILTER OUT any order or position whose Order ID / Ticket is not in our `desk/state.json` order registry.
+  - Only calculate risk, concurrency, Breakeven (+1.0R), and 8-bar time stops on OUR OWN order numbers.
