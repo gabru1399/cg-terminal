@@ -27,13 +27,13 @@
     }
   },
   "analysis": {
-    "last_round": "R294",
-    "last_round_ts": 1794700746715,
+    "last_round": "R295",
+    "last_round_ts": 1794702547707,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
-        "price": 64142,
-        "chgDayPct": -6.060064616475155,
+        "price": 63839.9,
+        "chgDayPct": -0.453138522232009,
         "score": 0.5,
         "parts": {
           "notif": 2,
@@ -45,25 +45,26 @@
         "error": null
       },
       "ETH": {
-        "price": 1769.2,
-        "chgDayPct": -8.29406855655942,
-        "score": 0.5,
+        "price": 1756.71,
+        "chgDayPct": -0.6588025062769948,
+        "score": -2.93,
         "parts": {
-          "notif": 2,
+          "notif": -0.98,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
-          "rsi": 0.5
+          "rsi": 0.5,
+          "cvd": -0.45
         },
         "error": null
       },
       "SOL": {
-        "price": 70.24,
-        "chgDayPct": -10.144556735320464,
-        "score": -0.19,
+        "price": 69.88,
+        "chgDayPct": -0.4983625231382721,
+        "score": 0.45,
         "parts": {
-          "notif": 1.65,
-          "signals": 0.66,
+          "notif": 1.95,
+          "signals": 1,
           "trend": -2.0,
           "vwap": -1,
           "rsi": 0.5
@@ -71,24 +72,25 @@
         "error": null
       },
       "BNB": {
-        "price": 582.27,
-        "chgDayPct": -7.674378042399351,
-        "score": -1.5,
+        "price": 578.96,
+        "chgDayPct": -0.5428433999862516,
+        "score": -1.98,
         "parts": {
-          "notif": 0.0,
+          "notif": -0.98,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
-          "rsi": 0.5
+          "rsi": 0.5,
+          "cvd": 0.5
         },
         "error": null
       },
       "XRP": {
-        "price": 0.9138,
-        "chgDayPct": -9.578468236691075,
-        "score": -0.86,
+        "price": 0.9246,
+        "chgDayPct": 1.204028021015763,
+        "score": -0.85,
         "parts": {
-          "notif": 0.64,
+          "notif": 0.65,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
@@ -97,11 +99,11 @@
         "error": null
       },
       "ADA": {
-        "price": 0.1476,
-        "chgDayPct": -12.403560830860535,
-        "score": -3.61,
+        "price": 0.1474,
+        "chgDayPct": -0.135501355013554,
+        "score": -3.31,
         "parts": {
-          "notif": -1.61,
+          "notif": -1.31,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
@@ -111,12 +113,12 @@
         "error": null
       },
       "AVAX": {
-        "price": 7.093,
-        "chgDayPct": -13.815309842041318,
-        "score": -2.64,
+        "price": 7.036,
+        "chgDayPct": -0.8595181062420857,
+        "score": -3.63,
         "parts": {
-          "notif": -0.64,
-          "signals": 0.0,
+          "notif": -1.96,
+          "signals": 0.33,
           "trend": -2.0,
           "vwap": -1,
           "rsi": 0.5,
@@ -125,11 +127,11 @@
         "error": null
       },
       "DOGE": {
-        "price": 0.05735,
-        "chgDayPct": -11.085271317829463,
-        "score": -0.54,
+        "price": 0.05726,
+        "chgDayPct": -0.1569311246730598,
+        "score": -2.47,
         "parts": {
-          "notif": 0.96,
+          "notif": -0.97,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
@@ -138,11 +140,11 @@
         "error": null
       },
       "LINK": {
-        "price": 8.877,
-        "chgDayPct": -9.896467722289886,
-        "score": -3.64,
+        "price": 8.837,
+        "chgDayPct": -0.47302624169388235,
+        "score": -3.65,
         "parts": {
-          "notif": -0.64,
+          "notif": -0.65,
           "signals": -1,
           "trend": -2.0,
           "vwap": -1,
@@ -152,11 +154,11 @@
         "error": null
       },
       "LTC": {
-        "price": 44.44,
-        "chgDayPct": -9.949341438703147,
-        "score": 0.42,
+        "price": 44.24,
+        "chgDayPct": -0.5172026085001055,
+        "score": -1.19,
         "parts": {
-          "notif": 1.92,
+          "notif": 0.31,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
@@ -165,29 +167,29 @@
         "error": null
       },
       "XAU": {
-        "price": 3818.99,
-        "chgDayPct": -1.785558144439137,
-        "score": -3.88,
+        "price": 3826.8,
+        "chgDayPct": 0.20424194815397176,
+        "score": -0.85,
         "parts": {
-          "notif": 0.01,
-          "signals": -0.99,
+          "notif": 0.65,
+          "signals": -1,
           "trend": -2.0,
-          "vwap": -1,
-          "rsi": 0.5,
-          "cvd": -0.4
+          "vwap": 1,
+          "rsi": 0.5
         },
         "error": null
       },
       "XAG": {
-        "price": 47.37,
-        "chgDayPct": -3.1684382665576534,
-        "score": -1.83,
+        "price": 47.06,
+        "chgDayPct": -0.6544226303567557,
+        "score": -3.9,
         "parts": {
-          "notif": -0.33,
+          "notif": -1.0,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
-          "rsi": 0.5
+          "rsi": 0.5,
+          "cvd": -1.4
         },
         "error": null
       }
@@ -195,27 +197,27 @@
     "watchlist": [
       {
         "sym": "LINK",
-        "score": -3.64
-      },
-      {
-        "sym": "XAU",
-        "score": -3.88
+        "score": -3.65
       },
       {
         "sym": "AVAX",
-        "score": -2.64
+        "score": -3.63
       },
       {
         "sym": "ADA",
-        "score": -3.61
+        "score": -3.31
       },
       {
         "sym": "XAG",
-        "score": -1.83
+        "score": -3.9
+      },
+      {
+        "sym": "ETH",
+        "score": -2.93
       },
       {
         "sym": "BNB",
-        "score": -1.5
+        "score": -1.98
       }
     ]
   },
