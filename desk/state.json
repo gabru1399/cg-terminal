@@ -5832,7 +5832,7 @@
       "notes": null
     }
   ],
-  "updatedAt": "2026-11-15T21:02:00.000Z",
+  "updatedAt": "2026-11-15T21:26:00.000Z",
   "closedPositions": [
     {
       "ticket": 210050569,
@@ -5898,14 +5898,14 @@
     ]
   },
   "atg": {
-    "equityUsd": 1.387,
+    "equityUsd": 1.3018,
     "balanceUsd": 1.3415,
     "availableUsd": 0.307,
     "blockedMarginUsd": 1.0224,
     "runningPositions": 0,
     "openOrdersCount": 0,
-    "lastAudit": "2026-11-15T21:02:00.000Z",
+    "lastAudit": "2026-11-15T21:26:00.000Z",
     "posture": "100%_CASH_DEFENSE",
-    "round": "R288"
+    "round": "R289"
   }
 }
