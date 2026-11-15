@@ -6777,3 +6777,19 @@ analysis script rc=1
   - `LINKUSD` Order `#1683969432` remains active and standing maker limit on CLOB (all gates, >4.6% clearance, zero Vector B hazard, 7.37:1 Longs Below fuel verified).
   - Released margin: Available balance jumped from $0.1767 to **$0.9534 USD** (₹81.04 INR). Blocked margin reduced to $0.3894 USD.
   - Active standing orders: 1 / 2 slots utilized. Capital preserved.
+## R323 · 2026-11-15 13:29 UTC · zai-desk
+
+**Market**: BTC 65,535.5 (+2.2%)  ETH 1,833.58 (+3.7%)  SOL 73.06 (+4.0%)  XAU 3,844.35 (+0.7%)  XAG 47.830 (+1.0%)
+**Bias (|score|≥2)**: XAU-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,833.58 → HOLD
+
+
+## ROUND FAILED · 2026-11-15 13:30 UTC · zai-desk
+
+analysis script rc=1
+
