@@ -7909,3 +7909,58 @@ analysis script rc=1
 ### Positions
 - None — data missing, HOLD (manual check)
 
+
+
+## EXEC · 2026-11-15 23:42 UTC · atg-exec (Round 295)
+
+- **PHASE -1 & PHASE 0 COMPLIANCE CHECK**:
+  - SOP Ingestion: Bound strictly to `desk/TRADE_FORMULATION_MANUAL.md`, `desk/SWARM_MASTER_PROMPT.md`, and `.gemini/rules/SWARM_EXECUTION.md`.
+  - Venue: Delta Exchange India (`india_prod` | Master Account `26902927`).
+  - Capital Telemetry: Total USD Balance $1.3415 USD, Available Free Cash $0.3070 USD (INR 26.10), Position Margin Locked $1.0224 USD (Chat 1 SOLVUSD Long +47 @ 0.004355), Net Liquid Equity ~$1.5192 USD (SOLVUSD unrealized PnL is +$0.0564 USD in profit).
+  - Concurrency Status: THIS desk (`cg-terminal`) has exactly 0 / 2 running positions (Both concurrency slots vacant), 0 open orders on CLOB.
+  - Max Tradable Initial Margin Budget (SOP 80% Buffer Rule): $0.3070 * 0.80 = $0.2456 USD.
+  - Shared Account Isolation (P5-01b): Chat 1 SOLVUSD Long (+47 @ 0.004355) and its 2 stop-bracket orders (#1684736467, #1684736466) left strictly untouched.
+
+- **PHASE 1: LIVE 30-ASSET SCREENER PASS & TAB 7 REGIME ROUTING**:
+  - Closed-candle screener ingested across all 30 crypto USDT-M perps from continuity terminal (`http://127.0.0.1:3000/api/cg/screener`).
+  - 28/30 assets remain in `RANGE_BALANCE` oscillating around Day VWAP (|z| < 1.6σ).
+  - 2 assets in `TREND_DOWN` (TRX, FIL).
+  - Table 7 Factor 1 (Directional Trend) strictly set to 0.0 pts in `RANGE_BALANCE`.
+  - Candidate scoring breakdown:
+    * FIL: Raw score 6.0 in screener -> Legitimate Table 7 = 4.0 pts (< 5.0 required). Model M1_TREND_PULLBACK SHORT.
+    * 1000PEPE: Model WATCH_EXHAUSTION LONG (confidence 35%). Plan: "no setup". Validated Table 7 = 3.0 pts.
+    * TRX: Model M1_TREND_PULLBACK SHORT. Validated Table 7 = 4.0 pts (< 5.0 required).
+    * NEAR: Transitioned to WATCH_EXHAUSTION LONG (z = +1.27σ). Table 7 = 3.5 pts (< 5.0 required).
+    * BTC: Raw score 3.5 -> Legitimate Table 7 = 3.0 pts; min margin $0.3259 exceeds budget $0.2456 USD (MARGIN GATED).
+    * All other 25 assets scored <= 4.5 pts (< 5.0 = HARD VETO / CAPITAL PRESERVED).
+
+- **PHASE 2 & PHASE 3: ADVERSARIAL AUDITOR VERDICT (Subagent 86012ef3-c9ed-4a7c-912f-876e47419fbf)**:
+  - FIL (FILUSD): HARD VETO.
+    * Table 7: Legitimate score 4.0 / 11.5 pts (< 5.0 required).
+    * DECIDE-D: Fatal fail. Entry 0.6160, Stop 0.8730 (+41.7% risk!), T1 0.5982 (+2.9% reward) yielding an unacceptable 0.07R to T1 (mandate >= 2.0R continuation floor).
+    * Order Book Barrier: An opposing $1.2M whale bid wall at 0.6051 sits directly in the path to T1, blocking downward price discovery. Native engine vetoes active.
+    * Socratic Pitfalls Triggered: Q2 (Adverse Wall Block), Q8 (Inverted R-Multiple Trap).
+  - 1000PEPE (1000PEPEUSD): HARD VETO.
+    * Table 7: Legitimate score 3.0 / 11.5 pts (< 5.0 required).
+    * Model & Plan: Rebounded to 0.0038779 (z = -0.65σ); anti-knife-catching gate NOT satisfied; no valid entry plan.
+    * Gate 2 (Geometrical Liquidation Risk): Fatal fail. Adverse long liquidations below dominate with Adverse LSR = 2.65:1 ($7.49B below vs $2.83B above, violating 2.5:1 ceiling).
+    * Socratic Pitfalls Triggered: Q2 (Adverse Squeeze Magnet Trap), Q6 (Stale/Phantom Signal), Q10 (Liquidity Front-Running Sweep).
+  - TRX (TRXUSD): HARD VETO.
+    * Table 7: Legitimate score 4.0 / 11.5 pts (< 5.0 required).
+    * DECIDE-D: Fatal fail. Entry 0.3094, Stop 0.31807, T1 0.30421 pays only 0.60R (mandate >= 2.0R). Best composite R = 1.06R (< 1.5R floor).
+    * Microstructure Flow: 24h CVD is +$2.2M USD flowing aggressively against short. Native terminal veto active (`M1 R 1.06 < 1.5`).
+    * Socratic Pitfalls Triggered: Q8 (Inverted R-Multiple Trap).
+  - BTC (BTCUSD): HARD VETO.
+    * Pitfall Q4 (Margin Solvency): Minimum order requires $0.3259 USD margin at 100x, which exceeds available budget ($0.2456 USD), guaranteeing instant HTTP 400 rejection.
+
+- **PHASE 4 & PHASE 5: EXECUTION HYGIENE & CONCURRENCY MANAGEMENT**:
+  - Concurrency Cap: Max 2 positions. Current active positions = 0.
+  - Zero orders placed. 100% Cash Defense maintained.
+  - All standing exchange orders audited; zero orphans, zero duplicate orders from this desk.
+
+- **PHASE 6: AGI SELF-IMPROVEMENT INSIGHT**:
+  - Unmasking Screener Pseudo-Signals: FIL appeared as a 6.0 in the raw screener due to mechanical flags, but deep forensics unmasked a catastrophic 0.07R risk-reward inversion (risking 41.7% to make 2.89%) with an opposing $1.2M whale wall blocking the target. Multi-layered Socratic gating prevents naive algorithmic execution.
+  - Capital Preservation Superiority: By maintaining 100% Cash Defense, the desk preserved the entire liquid balance ($0.3070 USD free cash), allowing zero drag from uncompensated risk.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+  - Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero cron jobs. Zero background daemons.
