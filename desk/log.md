@@ -6462,3 +6462,27 @@ analysis script rc=1
 - Standing Limit Orders on Delta CLOB: 4 (ETH @ , LINK @ .45, SUI @ .756, LTC @ .10)
 - Market Drift: BTC ,830, ETH ,775.51, LINK .005, SUI .7119, LTC .52. All standing sell limits safe at premium resistance.
 - Subagent Auditor: 9081ad1c-b9d4-4b8b-a768-b42adae1784c running independent verification.
+
+
+## 2026-11-15T07:59:20.771Z — atg-exec SOP Compliance & Adversarial Audit Execution
+- Bound SOP: desk/TRADE_FORMULATION_MANUAL.md v1.1.0
+- Auditor Verdict: ETH failed Gate 1 (15 HVNs within 0.8% of SL ). Tuned Entry to , SL to  (+1.11% clearance, R=3.30R). PASSED.
+- Auditor Verdict: LTC failed Gate 2 (LSR 2.96:1 Shorts Above squeeze magnet). Hard Veto executed: order #1681189148 CANCELLED on Delta CLOB.
+- Auditor Verdict: LINK (.45, R=2.04R) and SUI (.756, R=2.00R) verified PASSED with Grade A/B Table 7 scores.
+- Live State: Available equity .0818 USD, Blocked margin .2610 USD. Concurrency 0/2 running.
+## R310 · 2026-11-15 07:59 UTC · zai-desk
+
+**Market**: BTC 63,916.1 (-0.3%)  ETH 1,782.90 (+0.8%)  SOL 69.94 (-0.4%)  XAU 3,835.59 (+0.4%)  XAG 47.510 (+0.3%)
+**Bias (|score|≥2)**: XAU-2(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,782.90 → HOLD
+
+
+## ROUND FAILED · 2026-11-15 08:00 UTC · zai-desk
+
+analysis script rc=1
+
