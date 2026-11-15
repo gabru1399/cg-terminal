@@ -6614,3 +6614,18 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+
+## EXEC · 2026-11-15 11:36 UTC · atg-exec — ETHUSD ORDER #1683808601 CANCELLED VIA GATE 2 VETO RULE
+- **EVENT**: Socratic Gate 2 evaluation triggered a Geometrical Liquidation Risk Veto in R273.
+- **TELEMETRY FINDING**: A new short liquidation cluster formed at `$1,890.70` ($96.1k USD, strength 76.1) inside Vector B Risk Zone `[1885.00, 1908.00]`.
+- **INVARIANT ENFORCED (SOP v1.2.0 §4 Gate 2)**: Adverse liquidation cluster inside Risk Zone pulls price through entry into stop loss. Posture switches strictly to S1 wait-for-sweep. Standing limit order must be CANCELLED immediately.
+- **ACTION TAKEN**:
+  - `ETHUSD` Limit Order `#1683808601` cancelled via `cancel_order(id=1683808601, product_id=3136)`. State: `cancelled_by_user`.
+  - Blocked margin of $0.7540 USD released back to free cash balance.
+- **PORTFOLIO STATE (DELTA INDIA `26902927`, `india_prod`)**:
+  - Net Equity: $1.4604 USD (₹114.13 INR)
+  - Available Balance: $1.3040 USD (₹110.84 INR, 89.30% liquid)
+  - Blocked Margin: $0.0387 USD (2.65% margin utilization)
+  - Active Margined Positions: 0
+  - Active Standing Orders: 1 (`SUIUSD` #1683676488 @ 0.7560, SL: 0.7780, TP: 0.7120)
