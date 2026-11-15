@@ -172,6 +172,7 @@ Before promoting ANY candidate setup to DECIDE or placing ANY order on Delta Exc
 | P5-06 | First-Two-Fills Circuit: The moment 2 standing limit orders execute into active running positions, immediately cancel all remaining standing limit orders to prevent portfolio over-heat. |
 | P5-07 | **Proactive Concurrency Sourcing (Vacant Slot Hunter):** Whenever active crypto running positions < 2, the AGI is strictly MANDATED to perform a multi-asset tradability and margin-feasibility scan across all Delta Exchange perpetual products and keep punching verified high-potential limit orders. The AGI must NEVER remain idle if viable high-confluence candidates (Table 7 >= 5.0, G1/G2 PASS, R >= 1.5) exist within available liquid margin. |
 | P5-08 | Dynamic Leverage Calibration: When capital balance is constrained, the AGI is explicitly authorized and mandated to calibrate isolated leverage (e.g. 50x or 100x via `set_product_leverage`) on fractional-notional contracts to ensure margin solvability while maintaining strictly defined bracket risk. |
+| P5-09 | **Dynamic Inter-Cycle Timer Invariant (ZERO Cron Jobs):** NEVER use static, standing background cron jobs. Autonomous recursion is achieved strictly via dynamic, one-shot inter-cycle timers (`schedule(DurationSeconds=...)`). At the end of EVERY cycle, compute dynamic duration $\Delta t$ to the next candle boundary (or 900s standard) and re-arm the next cycle. The loop self-propagates dynamically turn-by-turn. |
 
 ---
 
@@ -303,6 +304,20 @@ For EACH qualifying trade candidate, output a full multi-paragraph institutional
 - **6.3** Append a structured `### DEBRIEF · <TS>` section to `desk/log.md` and update `desk/state.json`.
 - **6.4** Commit and push all updates to git repository (`origin/main`).
 
+### PHASE 7: DYNAMIC INTER-CYCLE TIMER RE-ARM (ONE-SHOT ONLY · ZERO CRON JOBS)
+
+- **7.1 DYNAMIC DURATION CALCULATION:** Calculate seconds to the next 15-minute clock quarter or standard inter-cycle cadence:
+  $$\Delta t = \max(300, (15 - (\text{minute} \pmod{15})) \times 60 - \text{second})$$
+  (If the current round completes within $< 3$ minutes of the candle close, set $\Delta t = 900$ to capture the full subsequent candle cycle).
+- **7.2 ZERO STATIC CRON JOBS:** NEVER set `CronExpression` or `IsDaemon=true`. The scheduler must execute as a single-turn, one-shot background wake timer (`DurationSeconds=\Delta t`).
+- **7.3 CALL THE NATIVE SCHEDULER:** Conclude the turn by calling:
+  `schedule(DurationSeconds=\Delta t, Prompt=<LAUNCHER BELOW>)`
+- **7.4 THE LAUNCHER PROMPT:** The Prompt MUST carry the canonical SOP specification:
+
+```text
+@[plugin:persistent-memory] @[plugin:coderabbit] @[plugin:superpowers] @[plugin:trading-skills] /swarm launch 360 AUTONOMOUS DELTA EXCHANGE TRADE EXECUTION & RECURSIVE ENGINE ROUND (CANONICAL SOP v1.4.0 · DYNAMIC INTER-CYCLE TIMER EDITION). FIRST read_file C:\Users\SIGMA\Documents\cg-terminal\desk\SWARM_MASTER_PROMPT.md IN FULL and execute every section, phase, gate, and checklist item exactly as written, with zero omissions. Check open orders (#1684506647 DOT, #1684443284 LTC, #1684442347 ETH, #1684424777 SOL), apply Breakeven Invariant (P5-04) if +1.0R excursion reached, enforce 8-bar time stop (P5-05), cancel remaining limits if 2 orders fill (P5-06), and keep hunting qualified setups if slots < 2. Phase 7 must re-arm schedule(DurationSeconds=...) dynamically.
+```
+
 ---
 
 ## SECTION 9. FAILURE-HANDLING RULES
@@ -354,3 +369,4 @@ Mark each item PASS or FAIL with a one-line evidence note:
 - [ ] Dynamic leverage calibration executed where appropriate (P5-08)
 - [ ] Epistemic post-mortem debrief documented in log.md and state.json (Phase 6)
 - [ ] Git commit and sync completed cleanly (Phase 6.4)
+- [ ] One-shot dynamic timer schedule(DurationSeconds=...) called with zero cron jobs (Phase 7)
