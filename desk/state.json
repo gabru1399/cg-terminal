@@ -5821,10 +5821,10 @@
   "atg": {
     "equityUsd": 1.4604,
     "balanceUsd": 1.3428,
-    "availableUsd": 0.3891,
-    "blockedMarginUsd": 0.9536,
+    "availableUsd": 1.1554,
+    "blockedMarginUsd": 0.1874,
     "runningPositions": 0,
-    "openOrdersCount": 5,
-    "lastAudit": "2026-11-15T14:12:00.000Z"
+    "openOrdersCount": 1,
+    "lastAudit": "2026-11-15T14:15:00.000Z"
   }
 }
