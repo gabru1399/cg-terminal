@@ -7283,3 +7283,14 @@ analysis script rc=1
 - **RECURSIVE SELF-IMPROVEMENT INVARIANT (AGI-02 / AGI-03)**:
   - Error-to-invariant transmutation verified: Fabricated Table 7 scores are structurally blocked by Layer 1 workspace rule ceiling checks.
   - Zero-cron invariant respected: Turn concluding with dynamic one-shot 1200s timer (`schedule(DurationSeconds=1200)`).
+## R334 · 2026-11-15 18:59 UTC · zai-desk
+
+**Market**: BTC 64,688.0 (+0.9%)  ETH 1,814.74 (+2.6%)  SOL 71.02 (+1.1%)  XAU 3,848.37 (+0.8%)  XAG 47.870 (+1.1%)
+**Bias (|score|≥2)**: BTC+2(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+
