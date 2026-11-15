@@ -7054,3 +7054,29 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+
+### EXEC · 2026-11-15 16:07 UTC · atg-exec — DOT MAKER LIMIT DISPATCH & MULTI-ORDER CONCURRENCY UPDATE
+
+- **Delta Exchange India CLOB Live Execution (`india_prod` | Account 26902927)**:
+  - **`DOTUSD` (Product ID 15304 | Order #1684506647)**:
+    - Side: `sell` | Type: `limit_order` (`post_only=true`) | Size: 1 contract (1 DOT = $0.748 USD notional, calibrated 50x isolated leverage)
+    - Limit Entry: **$0.7480** (Tags the $2.05M Short Liquidation Cluster Sweep @ $0.7479 and Day VWAP +2.1σ band — Setup S1 Liquidation Sweep & Reclaim)
+    - Bracket SL: **$0.7550** (`mark_price` trigger — shielded >1.93% clear of all active session POCs into structural vacuum)
+    - Bracket TP: **$0.7180** (Day POC / Day VWAP traversal)
+    - Metrics: Risk: $0.0070 | Reward: $0.0300 | **4.29R**
+    - Socratic Gate Audits: Gate 1 PASS (1.931% clearance, 0 collisions) | Gate 2 PASS ($0.00 hazard in [0.7480, 0.7550]) | Table 7 Confluence: **10.50 / 11.5 pts (Grade A)**
+    - Blocked Order Margin: **$0.0150 USD**
+- **ACTIVE STANDING CLOB MAKER LIMITS (4 TOTAL)**:
+  1. `SOLUSD` #1684424777: Sell Limit @ $72.450 (SL $73.150, TP $70.750, 2.43R, 100x, margin $0.725)
+  2. `ETHUSD` #1684442347: Sell Limit @ $1,838.50 (SL $1,858.50, TP $1,792.50, 2.30R, 100x, margin $0.184)
+  3. `LTCUSD` #1684443284: Sell Limit @ $45.480 (SL $45.880, TP $44.500, 2.45R, 25x, margin $0.182)
+  4. `DOTUSD` #1684506647: Sell Limit @ $0.7480 (SL $0.7550, TP $0.7180, 4.29R, 50x, margin $0.015)
+- **PORTFOLIO RISK & CONCURRENCY STATE**:
+  - Running Margined Positions: **0 / 2** (Both concurrency slots completely open until an order fills into an active position).
+  - Free Available Liquid Margin: **$0.2017 USD** (₹17.15 INR).
+  - Total Blocked Order Margin: **$1.1052 USD**.
+  - Net Liquidating Equity: **$1.5387 USD** (₹120.79 INR).
+- **CONCURRENCY & EXECUTION LOCK**:
+  - If any order fills into an active position: immediately arm +1.0R Breakeven Invariant (P5-04) and 8-bar Time Stop (P5-05).
+  - First-Two-Fills Rule: Once 2 positions are filled, cancel remaining standing limits immediately to enforce maximum 2-position concurrency cap.

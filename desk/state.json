@@ -590,6 +590,30 @@
       "created_at": 1794756495294,
       "r_multiple": 2.45,
       "notes": "Calibrated Setup S2: Session POC / Day VAH retest. SL cleared 0.24% above Session VAH into structural vacuum. 9.10:1 Longs-Below skew."
+    },
+    {
+      "id": "DELTA-1684506647",
+      "symbol": "DOT",
+      "product_symbol": "DOTUSD",
+      "product_id": 15304,
+      "side": "sell",
+      "size": 1,
+      "contract_value": "1 DOT",
+      "status": "placed",
+      "ticket": 1684506647,
+      "entry": 0.748,
+      "stop": 0.755,
+      "targets": [
+        0.718
+      ],
+      "venue": "Delta Exchange India",
+      "account": 26902927,
+      "margin_mode": "isolated",
+      "leverage": 50,
+      "post_only": true,
+      "created_at": 1794758865455,
+      "r_multiple": 4.29,
+      "notes": "Canonical Setup S1: Short Liquidity Sweep & Reclaim. Entry @ 0.7480 tags the $2.05M short liq cluster sweep @ 0.7479 + VWAP +2.1\u03c3. SL @ 0.7550 shielded in structural vacuum (Gate 1 distance 1.931%, Gate 2 $0.00 hazard). TP @ 0.7180 (Day POC/VWAP). 4.29R, Confluence 10.5/11.5 Grade A."
     }
   ],
   "positions": [
