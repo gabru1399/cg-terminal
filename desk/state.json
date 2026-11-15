@@ -587,7 +587,7 @@
       "side": "sell",
       "size": 1,
       "contract_value": "1 DOT",
-      "status": "placed",
+      "status": "cancelled",
       "ticket": 1684506647,
       "entry": 0.748,
       "stop": 0.755,
@@ -601,7 +601,8 @@
       "post_only": true,
       "created_at": 1794758865455,
       "r_multiple": 4.29,
-      "notes": "Canonical Setup S1: Short Liquidity Sweep & Reclaim. Entry @ 0.7480 tags the $2.05M short liq cluster sweep @ 0.7479 + VWAP +2.1\u03c3. SL @ 0.7550 shielded in structural vacuum (Gate 1 distance 1.931%, Gate 2 $0.00 hazard). TP @ 0.7180 (Day POC/VWAP). 4.29R, Confluence 10.5/11.5 Grade A."
+      "notes": "Canonical Setup S1: Short Liquidity Sweep & Reclaim. Entry @ 0.7480 tags the $2.05M short liq cluster sweep @ 0.7479 + VWAP +2.1\u03c3. SL @ 0.7550 shielded in structural vacuum (Gate 1 distance 1.931%, Gate 2 $0.00 hazard). TP @ 0.7180 (Day POC/VWAP). 4.29R, Confluence 10.5/11.5 Grade A.",
+      "cancellationReason": "adversarial_veto_q2_hazard_at_0.7499"
     }
   ],
   "positions": [
