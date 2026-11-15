@@ -215,6 +215,19 @@ Before promoting ANY candidate setup to DECIDE or placing ANY order on Delta Exc
 
 ## SECTION 8. AUTONOMOUS EXECUTION PHASES (EXECUTE IN SEQUENCE UPON ACTIVATION)
 
+### PHASE -1: STRUCTURAL SELF-AUDIT (BEFORE ANY OTHER PHASE)
+
+Before executing ANY phase, perform this mandatory self-check:
+
+| Check | Action |
+|---|---|
+| **File Loaded** | Confirm you have read this ENTIRE file (371+ lines, Sections 1–10). If not, `read_file` it NOW before proceeding. |
+| **Phase Count** | There are 9 phases: -1, 0, 1, 2, 3, 4, 5, 6, 7. You must execute ALL of them in order. |
+| **Anti-Summary Bias** | You are about to EXECUTE, not SUMMARIZE. Every Phase 0 step requires an actual tool call. Do NOT write "PASS" in a table without the tool call having been made FIRST. |
+| **Table 7 Sanity** | In `RANGE_BALANCE`, Factor 1 (Directional Trend) = 0.0 pts. Max achievable = 9.5 (or 8.5 for non-BTC/ETH). If you compute higher, you have a fabrication bug — HALT. |
+| **Timer Commitment** | Your LAST tool call this round WILL be `schedule(DurationSeconds=1200)`. No CronExpression. No IsDaemon. Commit to this NOW. |
+| **Tool-First Rule** | For every phase: call the tool → read the response → THEN write the output row. Never write the output first and backfill later. |
+
 ### PHASE 0: PRE-FLIGHT SOP INGESTION & NATIVE TOOL INITIALIZATION
 
 | Step | Action | Exact Call |
@@ -314,7 +327,12 @@ For EACH qualifying trade candidate, output a full multi-paragraph institutional
 - **7.4 THE LAUNCHER PROMPT:** The Prompt MUST carry the canonical SOP specification:
 
 ```text
-@[plugin:persistent-memory] @[plugin:coderabbit] @[plugin:superpowers] @[plugin:trading-skills] /swarm launch 360 AUTONOMOUS DELTA EXCHANGE TRADE EXECUTION & RECURSIVE ENGINE ROUND (CANONICAL SOP v1.4.0 · 1200s DYNAMIC TIMER EDITION). FIRST read_file C:\Users\SIGMA\Documents\cg-terminal\desk\SWARM_MASTER_PROMPT.md IN FULL and execute every section, phase, gate, and checklist item exactly as written, with zero omissions. Check open orders (#1684506647 DOT, #1684443284 LTC, #1684442347 ETH, #1684424777 SOL), apply Breakeven Invariant (P5-04) if +1.0R excursion reached, enforce 8-bar time stop (P5-05), cancel remaining limits if 2 orders fill (P5-06), and keep hunting qualified setups if slots < 2. Phase 7 must re-arm schedule(DurationSeconds=1200) with this same launcher text.
+@[plugin:persistent-memory] @[plugin:coderabbit] @[plugin:superpowers] @[plugin:trading-skills] /swarm launch 360 AUTONOMOUS DELTA EXCHANGE TRADE EXECUTION & RECURSIVE ENGINE ROUND (CANONICAL SOP v1.4.0 · 1200s DYNAMIC TIMER EDITION). EXECUTE NOW:
+1. read_file("desk/SWARM_MASTER_PROMPT.md") IN FULL — every line, every section
+2. Execute Phase -1 (self-audit) then Phases 0-7 IN STRICT ORDER — tool calls FIRST, output SECOND
+3. Table 7: Factor 1 = 0.0 in RANGE_BALANCE. Itemize all 8 factors. Max 9.5 in balance.
+4. LAST CALL: schedule(DurationSeconds=1200) — ZERO cron, ZERO daemon
+5. If running positions < 2: hunt qualified setups (P5-07). Apply Breakeven (P5-04) and 8-bar time stop (P5-05).
 ```
 
 ---
