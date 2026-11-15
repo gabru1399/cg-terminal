@@ -6843,3 +6843,19 @@ analysis script rc=1
   - Total Blocked Margin: **$0.9418 USD** across 4 resting limit orders
   - Active Margined Running Positions: **0 / 2** (capacity fully open)
   - Active Standing Orders: **4 verified maker limit orders** (`LINKUSD` #1683969432, `DOTUSD` #1684152529, `AVAXUSD` #1684181155, `UNIUSD` #1684181417).
+## R324 · 2026-11-15 13:59 UTC · zai-desk
+
+**Market**: BTC 65,440.2 (+2.0%)  ETH 1,831.64 (+3.6%)  SOL 72.62 (+3.4%)  XAU 3,842.95 (+0.6%)  XAG 47.830 (+1.0%)
+**Bias (|score|≥2)**: XRP-4(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,831.64 → CLOSE_RECOMMENDED (VWAP regime + confluence +0.3 flipped against)
+
+
+## ROUND FAILED · 2026-11-15 14:00 UTC · zai-desk
+
+analysis script rc=1
+
