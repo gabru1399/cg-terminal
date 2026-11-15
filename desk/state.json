@@ -605,23 +605,23 @@
       "created_at": 1794758865455,
       "r_multiple": 4.29,
       "notes": "Canonical Setup S1: Short Liquidity Sweep & Reclaim. Entry @ 0.7480 tags the $2.05M short liq cluster sweep @ 0.7479 + VWAP +2.1\u03c3. SL @ 0.7550 shielded in structural vacuum (Gate 1 distance 1.931%, Gate 2 $0.00 hazard). TP @ 0.7180 (Day POC/VWAP). 4.29R, Confluence 10.5/11.5 Grade A.",
-      "cancellationReason": "adversarial_veto_q2_hazard_at_0.7499"
+      "cancellationReason": "liquidation_magnet_gate_lsr_exceeded_2.5:1"
     }
   ],
   "positions": [
     {
-      "ticket": 210199486,
-      "sym": "ETH",
-      "symbol": "ETHUSD",
-      "side": "sell",
-      "volume": 0.2,
-      "entry": 1948.29,
-      "current": 1908.5,
-      "stop": 1948.29,
-      "target": 1894,
-      "openedTs": 1794610024000,
-      "profit": 7.96,
-      "notes": "Breakeven invariant applied: peak excursion reached +2.31R (live perp 1908.50), SL locked at Breakeven 1948.29. Downside risk .00."
+      "symbol": "TAC",
+      "productId": 141648,
+      "size": -20,
+      "entryPrice": 0.001247,
+      "markPrice": 0.001253,
+      "stopLoss": 0.00127,
+      "takeProfit": 0.0009,
+      "margin": 0.2747,
+      "liquidationPrice": 0.00135317,
+      "status": "open",
+      "slOrderId": 1684721076,
+      "tpOrderId": 1684721077
     }
   ],
   "closed": [
