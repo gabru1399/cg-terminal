@@ -6582,3 +6582,19 @@ analysis script rc=1
   - Available Cash: $0.5274 USD (₹44.83 INR)
   - Active Margined Positions: 0 (maker orders resting waiting for liquidity sweeps)
   - Active Standing Orders: 2 / 2 slots fully utilized
+## R316 · 2026-11-15 10:59 UTC · zai-desk
+
+**Market**: BTC 65,525.5 (+2.2%)  ETH 1,829.37 (+3.5%)  SOL 72.10 (+2.7%)  XAU 3,845.11 (+0.7%)  XAG 47.820 (+0.9%)
+**Bias (|score|≥2)**: XAU-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- ETH ETH SELL: +0.0R open @ 1,829.37 → HOLD
+
+
+## ROUND FAILED · 2026-11-15 11:00 UTC · zai-desk
+
+analysis script rc=1
+
