@@ -10607,3 +10607,29 @@ analysis script rc=1
 - Status: OPEN on Delta India CLOB.
 
 **Crypto Slot 1**: VACANT (100% Cash Defense). Waiting for TIA ($0.3421) and VET ($0.0048) sweep wicks.
+## R393 · 2026-11-16 20:29 UTC · zai-desk
+
+**Market**: BTC 65,154.1 (-0.2%)  ETH 1,821.59 (-0.7%)  SOL 71.55 (-1.6%)  XAU 3,864.56 (-1.0%)  XAG 47.100 (-4.0%)
+**Bias (|score|≥2)**: XAU-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R393-XAU-1 XAU SHORT limit 3,876.72 · stop 3,892.18 · T1 3,800.58 · R 4.9
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (3,864.56 vs 3,870.57), h4 RSI 43.5, day -1.0%
+      [FOR    ] footprint: bull 17 / bear 20; recent: Bull div/buy[time], Divergence/sell[vol]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: div:buy×1, div:sell×1, exh:sell×1, sdiv:buy×4 — net 5 buy-side vs 2 sell-side
+      [FOR    ] liquidation: long-liq magnet 3,800.58 (str 57, ~$41M est, -1.66%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance +0.111 (5m ago +0.111, falling bids); bid $0.05B vs ask $0.04B
+      [FOR    ] cvd: taker buy 49.1%, perpCvd -107, spotCvd +0, quadrant both-selling, latestDiv bull (recent)
+
+### Order lifecycle
+- R388-DOGE-1 WITHDRAWN (confluence flipped to +0.0)
+- R392-ADA-1 WITHDRAWN (confluence flipped to +0.6)
+
+### Positions
+- no open positions
+
+
+## ROUND FAILED · 2026-11-16 20:29 UTC · zai-desk
+
+analysis script rc=1
+
