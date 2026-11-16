@@ -27,8 +27,8 @@
     }
   },
   "analysis": {
-    "last_round": "R329",
-    "last_round_ts": 1794832134932,
+    "last_round": "R330",
+    "last_round_ts": 1794833807046,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
@@ -764,6 +764,21 @@
       "r_multiple": 2.31,
       "max_risk_usd": 0.0325,
       "timestamp": "2026-11-16T12:38:24.008537+00:00"
+    },
+    {
+      "id": 1686585178,
+      "symbol": "APTUSD",
+      "product_id": 20196,
+      "side": "sell",
+      "order_type": "limit_order",
+      "size": 5,
+      "price": 0.457,
+      "sl": 0.4635,
+      "tp": 0.442,
+      "status": "open",
+      "ticket": 1686585178,
+      "ts": 1794833807046,
+      "reason": "Terminal Screener Grade A SELL Divergence (vol) EV +0.72R (2.31R reward)"
     }
   ],
   "positions": [],
@@ -6054,14 +6069,13 @@
     "balance_usd": 2.838745449,
     "net_equity_usd": 2.956392508,
     "position_margin_usd": 0.0,
-    "order_margin_usd": 0.31438,
-    "available_balance_usd": 2.50922,
+    "order_margin_usd": 0.42863,
+    "available_balance_usd": 2.392210937,
     "inr_balance": 10.0,
     "active_positions": 0,
-    "standing_orders": 4,
+    "standing_orders": 5,
     "total_portfolio_risk_usd": 0.0,
-    "growth_pct_from_baseline": 39.07,
-    "realized_pnl_round_usd": 0.8985
+    "growth_pct_from_baseline": 39.07
   },
   "quant_engine": {
     "last_scan_ts": 1794675825067,

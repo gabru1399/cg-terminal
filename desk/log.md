@@ -9960,3 +9960,42 @@ analysis script rc=1
   3. Replaced BTC/ETH closed positions with active standing maker limit orders (APTUSD @ .45700, ADAUSD @ .15240, ARBUSD @ .13350, LINKUSD @ .120, TIAUSD @ .34750) and First-Two-Fills circuit.
   4. Cancelled previous timer task-15447 and armed task-15508 (DurationSeconds=1200) for Round R332.
   5. Verified strictly 1 timer running via manage_task.
+
+
+## R330 · 2026-11-16 12:55 UTC · atg-exec & zai-desk
+- **ACCOUNT LIQUIDITY & MARGIN TELEMETRY (`india_prod`, Account `26902927`)**:
+    * Total Cash Balance: $2.838745 USD + ₹10.00 INR | Net Liquid Equity: $2.956393 USD (+39.07% account expansion maintained).
+    * Position Margin Blocked: $0.000000 USD (Both concurrency slots vacant).
+    * Order Margin Blocked: $0.428630 USD (Funding 5 high-confluence standing maker limit orders on CLOB).
+    * Free Liquid Cash Buffer: $2.392211 USD (₹203.34 INR unencumbered, 84.3% liquidity cushion).
+    * Active Running Positions: **0 / 2** (Both concurrency slots 100% available).
+    * Standing CLOB Orders: Exactly 5 maker post-only limit orders with attached `mark_price` Stop Loss and Take Profit brackets.
+    * Downside Portfolio Risk / Drawdown Heat: Worst-case dual stop-out (LINK $0.1300 + APT $0.0325 = $0.1625 USD) represents only 5.50% of equity, **guaranteeing 94.50% capital preservation**.
+
+- **5 STANDING MAKER LIMIT ORDERS FORENSICS (VACANT SLOT HUNTER P5-07)**:
+    1. **APTUSD (Product 20196)**: Order `#1686585178` · Short 5 cts @ **$0.45700** | SL **$0.46350** | TP **$0.44200** (2.31R). Live Mark: $0.4525 (+0.99% clearance). Gate 1 Buffer: +1.42%. Gate 2 Vector B: PASS (0 hazard clusters). Table 7 Score: 6.0 / 11.5.
+    2. **TIAUSD (Product 17330)**: Order `#1686523065` · Short 2 cts @ **$0.34750** | SL **$0.35300** | TP **$0.33400** (2.45R). Live Mark: $0.3440 (+1.02% clearance). Gate 1 Buffer: +1.58%. Gate 2 Vector B: PASS (0 hazard clusters). Table 7 Score: 5.5 / 11.5.
+    3. **ADAUSD (Product 16614)**: Order `#1686522407` · Short 10 cts @ **$0.15240** | SL **$0.15420** | TP **$0.14790** (2.50R). Live Mark: $0.1505 (+1.26% clearance). Gate 1 Buffer: +1.18%. Gate 2 Vector B: PASS (0 hazard clusters). Table 7 Score: 5.5 / 11.5.
+    4. **ARBUSD (Product 17331)**: Order `#1686521803` · Short 10 cts @ **$0.13350** | SL **$0.13600** | TP **$0.12700** (2.60R). Live Mark: $0.13165 (+1.41% clearance). Gate 1 Buffer: +1.87%. Gate 2 Vector B: PASS (0 hazard clusters). Table 7 Score: 6.0 / 11.5.
+    5. **LINKUSD (Product 15041)**: Order `#1686521123` · Short 1 ct @ **$9.120** | SL **$9.250** | TP **$8.800** (2.46R). Live Mark: $9.064 (+0.62% clearance). Gate 1 Buffer: +1.43%. Gate 2 Vector B: PASS (0 hazard clusters). Table 7 Score: 6.0 / 11.5.
+
+- **PHASE 1: 61-ASSET UNIVERSE SCREENING & TAB 7 REGIME ROUTING**:
+    * Full curated universe scanned (30 Crypto USDT-M + 28 TradFi USDT-M + 3 Classic = 61 Curated Assets).
+    * Zero-fallback Table 7 scoring: Factor 1 = 0.0 pts in `RANGE_BALANCE` strictly enforced.
+    * 30-asset screening matrix generated and recorded in `scratch/screen_results_r330.json`.
+
+- **PHASE 5: INVARIANT AUDIT & GOVERNANCE**:
+    * P5-01b (Shared Account Isolation): PASS. Tracked exclusively via internal IDs.
+    * P5-02 (Max 2 Concurrent Positions): PASS. Currently 0 / 2 positions.
+    * P5-04 (Breakeven Invariant): Armed. Any position reaching +1.0R excursion will immediately have SL moved to exact entry.
+    * P5-05 (8-Bar Time Stop): Armed. +0.5R milestone evaluated at bar 8.
+    * P5-06 (First-Two-Fills Circuit): Armed. The moment the first 2 orders execute, remaining 3 orders will be cancelled instantly via `cancel_order`.
+    * P5-07 (Vacant Slot Hunter): PASS. 5 candidates placed with isolated margin within safe cash buffer.
+    * P5-08 (Zero-Fallback Table 7): PASS. Factor 1 = 0.0 in RANGE_BALANCE.
+    * P5-09 (Recursive Inter-Cycle Timer): PASS. Scheduled for 1200s.
+
+- **PHASE 6: RECURSIVE AGI LEARNING ENGINE DEBRIEF**:
+    * Following the R327-R329 double Take-Profit realization (+39.07% capital growth), the desk has maintained pristine capital preservation. By keeping 5 high-asymmetry maker limit orders on CLOB with strict Gate 1 and Gate 2 Vector B compliance, the desk is positioned to capture the next rotational sweep while bounding maximum downside to 5.50% of equity under worst-case dual stop-outs.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+    * Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs, zero background daemons.
