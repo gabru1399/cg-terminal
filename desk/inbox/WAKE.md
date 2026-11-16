@@ -1502,3 +1502,33 @@ The cascade→exhaustion→reversal transition scored as a **state machine, not 
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-16 22:59 UTC — new suggested order — place in MT5 (debate FOR 6/AGAINST 1)
+- R398-LTC-1 LTC SHORT limit entry 44.81 · stop 45.11 · targets 43.84 / 43.7 / 43.6 · R 3.2 · expires 2026-11-17 02:59 UTC
+- BASIS: levels are PERP prices (perpRef 44.62). Before placing in MT5 read spreads.LTCUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (44.62 vs 44.62), h4 RSI 35.6, day -2.0%
+- [AGAINST] footprint: bull 51 / bear 32; recent: Divergence/sell[time], Bear div/sell[vol], Absorption/sell[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×1, div:sell×5, exh:sell×2, sdiv:sell×3, trap:buy×1 — net 3 buy-side vs 11 sell-side
+- [FOR] liquidation: long-liq magnet 43.84 (str 49, ~$2M est, -1.73%) as target
+- [FOR] bookWalls: ±5% depth imbalance +0.061 (5m ago -0.098, rising bids); bid $0.01B vs ask $0.01B
+- [FOR] cvd: taker buy 48.9%, perpCvd -21, spotCvd +2, quadrant spot-bid, latestDiv bear (recent)
+- [FOR] notifications: 6h weighted bias -2.9 (2 events)
+- → place on LTCUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-16 22:59 UTC — agent task from zai-desk
+- SCHEDULED ANALYSIS ROUND (manual-bound — desk/TRADE_FORMULATION_MANUAL.md):
+1. git pull --rebase origin main
+2. Read desk/inbox/WAKE.md + desk/TRADE_FORMULATION_MANUAL.md (the SOP)
+3. Pull live telemetry for target symbols: /api/cg/screener, /api/cg/narrative,
+   /api/cg/quant, /api/cg/options (BTC/ETH), /api/cg/bookwalls, /api/cg/lto,
+   /api/cg/liqlevels (3d/7d/30d), /api/cg/cvd, /api/cg/signals, desk/mt5.json
+4. Run the 6-step DECIDE (manual §1) per symbol across ALL 16 dimensions (§2)
+5. Compute the LSR and apply the Liquidation Magnet Gate (§4): LSR >= 2.5:1
+   bans S3 passive front-runs — wait for the S1 sweep
+6. Score Table 7 confluence (§5); apply hard vetoes; assign grade + risk %
+7. Grade >= B candidates: Formulation Card (§9.2) to
+   desk/deepscan/FORMULATION-<SYMBOL>-<ts>.md; order-worthy ones become
+   suggested orders in desk/state.json per desk/PROTOCOL.md
+8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
+   stop, 40/40/20 scale-outs)
+9. Commit + push; append the round entry to desk/log.md
