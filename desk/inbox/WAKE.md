@@ -473,3 +473,86 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-16 09:29 UTC — new suggested order — place in MT5 (debate FOR 7/AGAINST 0)
+- R358-DOGE-1 DOGE SHORT limit entry 0.05869 · stop 0.05901 · targets 0.05797 / 0.05758 / 0.05744 · R 2.3 · expires 2026-11-16 13:29 UTC
+- BASIS: levels are PERP prices (perpRef 0.0584). Before placing in MT5 read spreads.DOGUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.05840 vs 0.05888), h4 RSI 34.4, day -2.4%
+- [FOR] footprint: bull 26 / bear 32; recent: Bear div/sell[time], Absorption/sell[vol], Absorption/sell[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×5, div:sell×3, exh:buy×3, sdiv:sell×2, trap:buy×1 — net 6 buy-side vs 10 sell-side
+- [FOR] liquidation: long-liq magnet 0.05807 (str 82, ~$8M est, -0.54%) as target
+- [FOR] bookWalls: ±5% depth imbalance -0.057 (5m ago -0.082, rising bids); bid $0.03B vs ask $0.04B
+- [FOR] cvd: taker buy 48.9%, perpCvd -72, spotCvd -12, quadrant both-selling, latestDiv bear (recent)
+- [FOR] notifications: 6h weighted bias -1.0 (1 events)
+- → place on DOGUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-16 09:29 UTC — new suggested order — place in MT5 (debate FOR 5/AGAINST 2)
+- R358-XAU-2 XAU SHORT limit entry 3876.72 · stop 3892.17 · targets 3805.37 / 3797.27 · R 4.6 · expires 2026-11-16 13:29 UTC
+- BASIS: levels are PERP prices (perpRef 3862.35). Before placing in MT5 read spreads.XAUUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (3,862.35 vs 3,869.63), h4 RSI 42.0, day -1.1%
+- [FOR] footprint: bull 12 / bear 17; recent: Exhaustion/buy[range]
+- [AGAINST] microFlow(abs/trap/exh): 6h micro-events: div:buy×1, exh:buy×1 — net 2 buy-side vs 0 sell-side
+- [FOR] liquidation: long-liq magnet 3,805.37 (str 44, ~$30M est, -1.48%) as target
+- [FOR] bookWalls: ±5% depth imbalance +0.113 (5m ago +0.113, falling bids); bid $0.05B vs ask $0.04B
+- [FOR] cvd: taker buy 48.8%, perpCvd -151, spotCvd -1, quadrant both-selling, latestDiv bear (recent)
+- [AGAINST] notifications: 6h weighted bias +2.0 (1 events)
+- → place on XAUUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-16 09:29 UTC — new suggested order — place in MT5 (debate FOR 5/AGAINST 2)
+- R358-ETH-3 ETH SHORT limit entry 1811 · stop 1819.45 · targets 1789.79 / 1787.15 / 1771.31 · R 2.5 · expires 2026-11-16 13:29 UTC
+- BASIS: levels are PERP prices (perpRef 1799.15). Before placing in MT5 read spreads.ETHUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (1,799.15 vs 1,813.87), h4 RSI 34.1, day -1.9%
+- [AGAINST] footprint: bull 22 / bear 13; recent: Exhaustion/buy[vol], Exhaustion/buy[range]
+- [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, div:sell×1, exh:buy×3, exh:sell×2, sdiv:sell×1, trap:buy×1 — net 6 buy-side vs 4 sell-side
+- [FOR] liquidation: long-liq magnet 1,789.79 (str 67, ~$214M est, -0.48%) as target
+- [FOR] bookWalls: ±5% depth imbalance -0.011 (5m ago +0.003, falling bids); bid $0.58B vs ask $0.59B
+- [FOR] cvd: taker buy 49.0%, perpCvd -1773, spotCvd -384, quadrant both-selling, latestDiv bear (recent)
+- [FOR] notifications: 6h weighted bias -1.0 (3 events)
+- → place on ETHUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-16 09:29 UTC — new suggested order — place in MT5 (debate FOR 5/AGAINST 1)
+- R358-XRP-4 XRP SHORT limit entry 0.9571 · stop 0.9637 · targets 0.9402 / 0.9366 / 0.9258 · R 2.6 · expires 2026-11-16 13:29 UTC
+- BASIS: levels are PERP prices (perpRef 0.9442). Before placing in MT5 read spreads.XRPUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.9442 vs 0.9577), h4 RSI 37.0, day -3.0%
+- [AGAINST] footprint: bull 48 / bear 38; recent: Divergence/sell[time], Absorption/sell[vol], Absorption/sell[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×3, abs:sell×3, div:buy×2, div:sell×6, exh:buy×4, exh:sell×2, sdiv:buy×1, sdiv:sell×1, trap:buy×1, trap:sell×1 — net 11 buy-side vs 13 sell-side
+- [FOR] liquidation: long-liq magnet 0.9402 (str 55, ~$17M est, -0.36%) as target
+- [FOR] bookWalls: ±5% depth imbalance -0.211 (5m ago -0.102, falling bids); bid $0.04B vs ask $0.07B
+- [FOR] cvd: taker buy 48.2%, perpCvd -274, spotCvd -67, quadrant both-selling, latestDiv bear (recent)
+- → place on XRPUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-16 09:29 UTC — agent task from zai-desk
+- SCHEDULED ANALYSIS ROUND (manual-bound — desk/TRADE_FORMULATION_MANUAL.md):
+1. git pull --rebase origin main
+2. Read desk/inbox/WAKE.md + desk/TRADE_FORMULATION_MANUAL.md (the SOP)
+3. Pull live telemetry for target symbols: /api/cg/screener, /api/cg/narrative,
+   /api/cg/quant, /api/cg/options (BTC/ETH), /api/cg/bookwalls, /api/cg/lto,
+   /api/cg/liqlevels (3d/7d/30d), /api/cg/cvd, /api/cg/signals, desk/mt5.json
+4. Run the 6-step DECIDE (manual §1) per symbol across ALL 16 dimensions (§2)
+5. Compute the LSR and apply the Liquidation Magnet Gate (§4): LSR >= 2.5:1
+   bans S3 passive front-runs — wait for the S1 sweep
+6. Score Table 7 confluence (§5); apply hard vetoes; assign grade + risk %
+7. Grade >= B candidates: Formulation Card (§9.2) to
+   desk/deepscan/FORMULATION-<SYMBOL>-<ts>.md; order-worthy ones become
+   suggested orders in desk/state.json per desk/PROTOCOL.md
+8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
+   stop, 40/40/20 scale-outs)
+9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-16 09:29 UTC — agent task from zai-desk
+- SCHEDULED ANALYSIS ROUND (manual-bound — desk/TRADE_FORMULATION_MANUAL.md):
+1. git pull --rebase origin main
+2. Read desk/inbox/WAKE.md + desk/TRADE_FORMULATION_MANUAL.md (the SOP)
+3. Pull live telemetry for target symbols: /api/cg/screener, /api/cg/narrative,
+   /api/cg/quant, /api/cg/options (BTC/ETH), /api/cg/bookwalls, /api/cg/lto,
+   /api/cg/liqlevels (3d/7d/30d), /api/cg/cvd, /api/cg/signals, desk/mt5.json
+4. Run the 6-step DECIDE (manual §1) per symbol across ALL 16 dimensions (§2)
+5. Compute the LSR and apply the Liquidation Magnet Gate (§4): LSR >= 2.5:1
+   bans S3 passive front-runs — wait for the S1 sweep
+6. Score Table 7 confluence (§5); apply hard vetoes; assign grade + risk %
+7. Grade >= B candidates: Formulation Card (§9.2) to
+   desk/deepscan/FORMULATION-<SYMBOL>-<ts>.md; order-worthy ones become
+   suggested orders in desk/state.json per desk/PROTOCOL.md
+8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
+   stop, 40/40/20 scale-outs)
+9. Commit + push; append the round entry to desk/log.md
