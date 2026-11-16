@@ -634,6 +634,36 @@
       "created_at_ms": 1794825957908,
       "actualEntry": 1812.5,
       "filledTs": 1794827306730
+    },
+    {
+      "id": "1686483354",
+      "symbol": "TIAUSD",
+      "product_id": 17330,
+      "side": "sell",
+      "order_type": "limit_order",
+      "size": 2,
+      "price": 0.3465,
+      "sl": 0.352,
+      "tp": 0.334,
+      "status": "pending",
+      "ticket": 1686483354,
+      "ts": 1794830954078,
+      "reason": "Terminal Screener Grade A SELL Divergence pullback fade (EV +0.67R, 2.27R reward)"
+    },
+    {
+      "id": "1686484401",
+      "symbol": "ADAUSD",
+      "product_id": 16614,
+      "side": "sell",
+      "order_type": "limit_order",
+      "size": 10,
+      "price": 0.1524,
+      "sl": 0.1542,
+      "tp": 0.1479,
+      "status": "pending",
+      "ticket": 1686484401,
+      "ts": 1794830954078,
+      "reason": "Terminal Screener Grade B SELL Exhaustion pullback fade (EV +0.30R, 2.50R reward)"
     }
   ],
   "positions": [
