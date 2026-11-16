@@ -2,6 +2,7 @@
 
 import { useMemo } from "react";
 import { usePolling, useTicker } from "./use-cg-data";
+import { useBrowserMarket } from "@/lib/cg/browser-market";
 import { symDecs } from "@/lib/cg/assets";
 import { classicOf } from "@/lib/cg/classic";
 import MicrostructurePanel from "./microstructure-panel";
@@ -92,13 +93,30 @@ const TF_LABEL: Record<string, string> = { m15: "15m", h1: "1H", h4: "4H", d1: "
 
 export default function OverviewTool({ sym = "BTC" }: { sym?: string }) {
   const q = usePolling<MarketResp>(`/api/cg/market?sym=${sym}`, 12_000);
+  // BROWSER TIER FALLBACK (2026-11-16). /api/cg/market needs an upstream KLINE
+  // source; on a host whose egress reaches the exchange WebSocket but not the
+  // REST klines it fails, and every structural panel (auction / VWAP / EMA /
+  // RSI) rendered "–" while the REAL-TIME price badge beside it was live —
+  // the browser clearly HAD a tape. Recompute the same snapshot client-side
+  // from Binance USDT-M klines via the SAME pure indicator module, and label
+  // which tier is live rather than silently degrading.
+  const browserMkt = useBrowserMarket(sym, Boolean(q.error) && !q.loading);
   const sigQ = usePolling<SignalsResp>(`/api/cg/signals?sym=${sym}`, 20_000);
   const fundQ = usePolling<FundingResp>(`/api/cg/funding?sym=${sym}`, 30_000);
   const oiQ = usePolling<OiResp>(`/api/cg/oi?sym=${sym}`, 30_000);
   const tk = useTicker(sym);
   const classic = classicOf(sym);
 
-  const d = q.data && q.data.sym === sym ? q.data : null;
+  const serverSnap = q.data && q.data.sym === sym ? q.data : null;
+  const bSnap = browserMkt.data && browserMkt.data.sym === sym ? browserMkt.data : null;
+  // Structural fields are identical in shape (same indicator module), so the
+  // browser snapshot can stand in wherever the server one is missing.
+  const d = serverSnap ?? (bSnap as unknown as MarketResp | null);
+  const structuralTier: "server" | "browser" | "none" = serverSnap
+    ? "server"
+    : bSnap
+      ? "browser"
+      : "none";
   const sigData = sigQ.data && (sigQ.data.sym ?? sym) === sym ? sigQ.data : null;
   const fund = fundQ.data && fundQ.data.sym === sym ? fundQ.data : null;
   const oi = oiQ.data && oiQ.data.sym === sym ? oiQ.data : null;
@@ -200,7 +218,24 @@ export default function OverviewTool({ sym = "BTC" }: { sym?: string }) {
           <Stat label="Day open (VWAP anchor)" value={fmt(vwap?.open, decs)} />
         </div>
         {(q.error || sigQ.error) && (
-          <div className="text-xs text-amber-500">{q.error ? `market: ${q.error}` : `signals: ${sigQ.error}`}</div>
+          <div className="text-xs leading-relaxed">
+            {q.error && (
+              <span className="text-amber-500">
+                market: {q.error}
+                {structuralTier === "browser" && (
+                  <span className="text-emerald-400">
+                    {" "}
+                    · structural panels recomputed in-browser from Binance klines (server kline source
+                    unreachable) — values are live, tier: browser
+                  </span>
+                )}
+                {structuralTier === "none" && browserMkt.error && (
+                  <span className="text-rose-400"> · browser klines also unavailable: {browserMkt.error}</span>
+                )}
+              </span>
+            )}
+            {!q.error && sigQ.error && <span className="text-amber-500">signals: {sigQ.error}</span>}
+          </div>
         )}
       </div>
 

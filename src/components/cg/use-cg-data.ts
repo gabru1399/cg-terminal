@@ -37,10 +37,28 @@ export function usePolling<T>(url: string | null, intervalMs: number) {
     const myGen = ++gen.current;
     try {
       const res = await fetch(url);
-      const json = (await res.json()) as { ok: boolean; error?: string };
+      // TOLERANT DECODE (2026-11-16): a 5xx from our own routes is JSON, but a
+      // 5xx from an intermediary (the preview proxy, a CDN, a 502 HTML error
+      // page) is NOT. Blind `res.json()` then surfaced
+      //   Unexpected token '<', "<!DOCTYPE " ... is not valid JSON
+      // to the operator: a parser complaint that hides the real cause. Read
+      // the text once, parse defensively, and report the HTTP status instead.
+      const text = await res.text();
+      let json: { ok: boolean; error?: string; _httpStatus?: number };
+      try {
+        json = JSON.parse(text) as { ok: boolean; error?: string };
+      } catch {
+        const snip = text.slice(0, 60).replace(/\s+/g, " ").trim();
+        throw new Error(
+          res.ok
+            ? `unreadable response from ${url} (${snip}…)`
+            : `HTTP ${res.status}${res.statusText ? " " + res.statusText : ""} from ${url}` +
+              (snip ? ` — body starts "${snip}…"` : " — empty body")
+        );
+      }
       if (!alive.current || myGen !== gen.current) return; // superseded → discard
       if (json.ok === false) {
-        setError(json.error ?? "request failed");
+        setError(json.error ?? (res.ok ? "request failed" : `HTTP ${res.status}`));
         setData(null); // never keep the previous symbol's data on failure
       } else {
         setError(null);
