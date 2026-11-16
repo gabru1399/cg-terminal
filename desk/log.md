@@ -10370,3 +10370,36 @@ analysis script rc=1
 
 - **PHASE 7: DYNAMIC TIMER RE-ARM**:
     * Dynamic 1200s timer scheduled via schedule(DurationSeconds=1200) for Round R338 with canonical prompt. Zero cron, zero duplicate tasks.
+## R386 · 2026-11-16 16:50 UTC · zai-desk
+
+**Market**: BTC 64,666.5 (-1.0%)  ETH 1,824.61 (-0.5%)  SOL 71.12 (-2.2%)  XAU 3,865.26 (-1.0%)  XAG 47.110 (-4.0%)
+**Bias (|score|≥2)**: XAU-5(TREND)  BNB-4(TRANS)  XRP-3(TRANS)  ADA-3(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R386-BNB-1 BNB SHORT limit 590.34 · stop 593.21 · T1 582.68 · T2 577.81 · T3 574.57 · R 2.7
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (590.31 vs 590.85), h4 RSI 33.3, day -1.1%
+      [AGAINST] footprint: bull 35 / bear 19; recent: Exhaustion/buy[time], Divergence/sell[vol], Exhaustion/buy[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:sell×2, div:buy×3, div:sell×1, exh:buy×6, sdiv:buy×1 — net 10 buy-side vs 3 sell-side
+      [FOR    ] liquidation: long-liq magnet 582.68 (str 60, ~$6M est, -1.25%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.004 (5m ago +0.001, falling bids); bid $0.02B vs ask $0.02B
+      [FOR    ] cvd: taker buy 48.0%, perpCvd -83, spotCvd -18, quadrant both-selling, latestDiv bear (recent)
+- NEW R386-ADA-2 ADA SHORT limit 0.1524 · stop 0.1535 · T1 0.1499 · T2 0.1483 · T3 0.1478 · R 2.4
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.1523 vs 0.1526), h4 RSI 34.5, day -1.9%
+      [AGAINST] footprint: bull 60 / bear 53; recent: Exhaustion/buy[time], Absorption/sell[vol], Absorption/buy[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×8, abs:sell×9, div:buy×1, div:sell×3, exh:buy×7, exh:sell×6, sdiv:buy×2, sdiv:sell×1, trap:buy×1, trap:sell×3 — net 19 buy-side vs 22 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.1499 (str 86, ~$4M est, -1.49%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.094 (5m ago -0.134, rising bids); bid $0.01B vs ask $0.02B
+      [FOR    ] cvd: taker buy 48.5%, perpCvd -36, spotCvd -7, quadrant both-selling, latestDiv bear (recent)
+
+### Order lifecycle
+- R382-XAU-1 re-debated: FOR 6/AGAINST 0 — stands
+- R382-XRP-2 re-debated: FOR 6/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
+
+## ROUND FAILED · 2026-11-16 16:51 UTC · zai-desk
+
+analysis script rc=1
+

@@ -1164,3 +1164,43 @@ The cascade→exhaustion→reversal transition scored as a **state machine, not 
 5. Reply with contract specs + any Gate 9β exceptions you see; after that I'll cut SOP v2.1.0-RC1 diff (sleeve tables + Gate 9β + Gate 8-as-decay + Bayesian overlay as Section 5B/6 amendments) for your review before it becomes canonical.
 
 — *zai-desk (Quantitative Analysis Brain) · R383 · all figures from live session pulls 2026-11-16 15:55-16:00 UTC*
+
+## 2026-11-16 16:51 UTC — new suggested order — place in MT5 (debate FOR 4/AGAINST 2)
+- R386-BNB-1 BNB SHORT limit entry 590.34 · stop 593.21 · targets 582.68 / 577.81 / 574.57 · R 2.7 · expires 2026-11-16 20:50 UTC
+- BASIS: levels are PERP prices (perpRef 590.31). Before placing in MT5 read spreads.BNBUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (590.31 vs 590.85), h4 RSI 33.3, day -1.1%
+- [AGAINST] footprint: bull 35 / bear 19; recent: Exhaustion/buy[time], Divergence/sell[vol], Exhaustion/buy[range]
+- [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:sell×2, div:buy×3, div:sell×1, exh:buy×6, sdiv:buy×1 — net 10 buy-side vs 3 sell-side
+- [FOR] liquidation: long-liq magnet 582.68 (str 60, ~$6M est, -1.25%) as target
+- [FOR] bookWalls: ±5% depth imbalance -0.004 (5m ago +0.001, falling bids); bid $0.02B vs ask $0.02B
+- [FOR] cvd: taker buy 48.0%, perpCvd -83, spotCvd -18, quadrant both-selling, latestDiv bear (recent)
+- → place on BNBUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-16 16:51 UTC — new suggested order — place in MT5 (debate FOR 5/AGAINST 1)
+- R386-ADA-2 ADA SHORT limit entry 0.1524 · stop 0.1535 · targets 0.1499 / 0.1483 / 0.1478 · R 2.4 · expires 2026-11-16 20:50 UTC
+- BASIS: levels are PERP prices (perpRef 0.1523). Before placing in MT5 read spreads.ADAUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.1523 vs 0.1526), h4 RSI 34.5, day -1.9%
+- [AGAINST] footprint: bull 60 / bear 53; recent: Exhaustion/buy[time], Absorption/sell[vol], Absorption/buy[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×8, abs:sell×9, div:buy×1, div:sell×3, exh:buy×7, exh:sell×6, sdiv:buy×2, sdiv:sell×1, trap:buy×1, trap:sell×3 — net 19 buy-side vs 22 sell-side
+- [FOR] liquidation: long-liq magnet 0.1499 (str 86, ~$4M est, -1.49%) as target
+- [FOR] bookWalls: ±5% depth imbalance -0.094 (5m ago -0.134, rising bids); bid $0.01B vs ask $0.02B
+- [FOR] cvd: taker buy 48.5%, perpCvd -36, spotCvd -7, quadrant both-selling, latestDiv bear (recent)
+- → place on ADAUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-16 16:51 UTC — agent task from zai-desk
+- SCHEDULED ANALYSIS ROUND (manual-bound — desk/TRADE_FORMULATION_MANUAL.md):
+1. git pull --rebase origin main
+2. Read desk/inbox/WAKE.md + desk/TRADE_FORMULATION_MANUAL.md (the SOP)
+3. Pull live telemetry for target symbols: /api/cg/screener, /api/cg/narrative,
+   /api/cg/quant, /api/cg/options (BTC/ETH), /api/cg/bookwalls, /api/cg/lto,
+   /api/cg/liqlevels (3d/7d/30d), /api/cg/cvd, /api/cg/signals, desk/mt5.json
+4. Run the 6-step DECIDE (manual §1) per symbol across ALL 16 dimensions (§2)
+5. Compute the LSR and apply the Liquidation Magnet Gate (§4): LSR >= 2.5:1
+   bans S3 passive front-runs — wait for the S1 sweep
+6. Score Table 7 confluence (§5); apply hard vetoes; assign grade + risk %
+7. Grade >= B candidates: Formulation Card (§9.2) to
+   desk/deepscan/FORMULATION-<SYMBOL>-<ts>.md; order-worthy ones become
+   suggested orders in desk/state.json per desk/PROTOCOL.md
+8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
+   stop, 40/40/20 scale-outs)
+9. Commit + push; append the round entry to desk/log.md
