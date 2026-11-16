@@ -14,7 +14,17 @@ Strict line-by-line adherence to `desk/CANONICAL_MASTER_SPECIFICATION.md` (which
 - **3 Classic Indices**: SPX500, UKO, NDX100.
 - All 61 assets are scanned every cycle without omission.
 
-## 2. LINE-BY-LINE EXECUTION DISCIPLINE (PHASES -1 THROUGH 7)
+## 2. MANDATORY PRE-FLIGHT CHECKLIST & EXECUTION DISCIPLINE (PHASES -1 THROUGH 7)
+Every execution turn and response MUST OPEN with the explicit confirmation of the Pre-Flight Verification Checklist:
+```text
+### ✅ PRE-FLIGHT VERIFICATION CHECKLIST (ROUND R<n>)
+[x] Pre-Flight Verification Checklist COMPLETED in full.
+[x] Fresh analysis of each of the 61 Curated Assets executed from scratch (Zero cached echoes).
+[x] Single Dynamic 1200s Timer verified (Zero duplicate timers, zero cron).
+[x] Live Delta Exchange India CLOB & Margin Solvency audited (Account #26902927).
+[x] Concurrency Circuit (P5-06) & Risk Gates (Gate 1-8) armed.
+```
+
 On every activation and execution turn:
 - **Phase -1 (Structural Self-Audit)**: Verify entire prompt read, tool-first commitment, and single-timer constraint.
 - **Phase 0 (Pre-Flight SOP & Tool Ingestion)**: Ingest `desk/CANONICAL_MASTER_SPECIFICATION.md`, WAKE inbox, user profile, memory, wallet balances, positions, open orders, and adversarial subagent.

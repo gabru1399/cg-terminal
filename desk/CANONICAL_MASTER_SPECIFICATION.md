@@ -53,6 +53,29 @@ In perpetual futures markets, prices are not moved by chart patterns, subjective
 | **AGI-04** | **Autonomous Knowledge Assimilation** | On every wakeup, verify Persistent Memory (`get_user_profile`, `search_past_memory`) and trade log forensics (`desk/log.md`, `desk/state.json`) to incorporate past lessons into current execution chains. |
 | **AGI-05** | **Immutable Core Safety** | Max 1.0% portfolio heat, Post-Only maker limit execution, +1.0R Breakeven invariant, and `mark_price` stop-loss triggers remain strictly immutable. |
 
+### 1.3 The Mandatory Pre-Flight Verification Checklist & Fresh 61-Asset Invariant
+
+**MANDATORY HEADER PROTOCOL**:
+On EVERY wake-up and execution round, the response MUST open with the explicit confirmation that the Pre-Flight Checklist is completed and that a FRESH analysis of each of the 61 Curated Assets was executed from scratch:
+
+```text
+### ✅ PRE-FLIGHT VERIFICATION CHECKLIST (ROUND R<n>)
+[x] Pre-Flight Verification Checklist COMPLETED in full.
+[x] Fresh analysis of each of the 61 Curated Assets executed from scratch (Zero cached echoes).
+[x] Single Dynamic 1200s Timer verified (Zero duplicate timers, zero cron).
+[x] Live Delta Exchange India CLOB & Margin Solvency audited (Account #26902927).
+[x] Concurrency Circuit (P5-06) & Risk Gates (Gate 1-8) armed.
+```
+
+#### Pre-Flight Checklist Verification Gates:
+1. **Gate C-01 (Single Spec Bound)**: `CANONICAL_MASTER_SPECIFICATION.md` is bound as the sole operational manual.
+2. **Gate C-02 (Fresh 61-Asset Screening)**: Execute direct Python compilation of `/api/cg/screener` covering all 30 Crypto + 28 TradFi + 3 Classic indices without truncating or echoing past subagent digests.
+3. **Gate C-03 (CLOB Reconciliation)**: Query `get_wallet_balances`, `get_margined_positions`, and `get_open_orders` live on Delta Exchange India.
+4. **Gate C-04 (First-Two-Fills Circuit Armed)**: Verify that if any 2 standing maker orders execute, all remaining candidate orders will be immediately terminated.
+5. **Gate C-05 (16-Dimension Telemetry Extraction)**: Extract all 16 live dimensions for any proposed candidate setup before submitting orders.
+6. **Gate C-06 (Dollar Risk Cap ≤ 1.0%)**: Stop loss dollar risk must be $\le 1.0\%$ of equity ($0.03 USD on ~$3 equity). Verify contract minimums (The BNB Invariant).
+7. **Gate C-07 (Single Timer Continuity)**: Verify via `manage_task(Action="list")` that strictly ONE timer is active.
+
 ---
 
 ## SECTION 2. THE 9-TAB LIVE TELEMETRY PERCEPTION TIER
