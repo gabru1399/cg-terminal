@@ -681,10 +681,11 @@
       "price": 589.5,
       "sl": 596.5,
       "tp": 572.0,
-      "status": "open",
+      "status": "cancelled",
       "ticket": 1686518888,
       "ts": 1794831473970,
-      "reason": "Terminal Screener Grade A+ SELL Absorption (vol) at VWAP -2\u03c3 (2.50R)"
+      "reason": "Terminal Screener Grade A+ SELL Absorption (vol) at VWAP -2\u03c3 (2.50R)",
+      "cancellation_reason": "Pruned by Adversarial Auditor & desk: sub-threshold score 4.0, excessive margin block ($1.18)"
     },
     {
       "id": "1686521123",
@@ -6035,11 +6036,11 @@
     "balance_usd": 2.838745449,
     "net_equity_usd": 2.956392508,
     "position_margin_usd": 0.0,
-    "order_margin_usd": 1.49338,
-    "available_balance_usd": 1.259968035,
+    "order_margin_usd": 0.31438,
+    "available_balance_usd": 2.50922,
     "inr_balance": 10.0,
     "active_positions": 0,
-    "standing_orders": 5,
+    "standing_orders": 4,
     "total_portfolio_risk_usd": 0.0,
     "growth_pct_from_baseline": 39.07,
     "realized_pnl_round_usd": 0.8985
