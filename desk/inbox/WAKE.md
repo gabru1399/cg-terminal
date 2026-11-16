@@ -1306,3 +1306,33 @@ The cascade→exhaustion→reversal transition scored as a **state machine, not 
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-16 19:29 UTC — new suggested order — place in MT5 (debate FOR 5/AGAINST 2)
+- R391-XRP-1 XRP SHORT limit entry 0.9565 · stop 0.9635 · targets 0.9401 / 0.9367 · R 2.3 · expires 2026-11-16 23:29 UTC
+- BASIS: levels are PERP prices (perpRef 0.9557). Before placing in MT5 read spreads.XRPUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.9557 vs 0.9560), h4 RSI 39.8, day -1.8%
+- [FOR] footprint: bull 31 / bear 41; recent: Divergence/sell[vol], Divergence/buy[range]
+- [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×1, div:buy×3, div:sell×2, exh:buy×4, exh:sell×4, sdiv:buy×1, sdiv:sell×2, trap:buy×2 — net 12 buy-side vs 9 sell-side
+- [FOR] liquidation: long-liq magnet 0.9401 (str 60, ~$18M est, -1.60%) as target
+- [FOR] bookWalls: ±5% depth imbalance -0.142 (5m ago -0.061, falling bids); bid $0.05B vs ask $0.07B
+- [FOR] cvd: taker buy 48.2%, perpCvd -267, spotCvd -76, quadrant both-selling, latestDiv bear (recent)
+- [AGAINST] notifications: 6h weighted bias +3.9 (4 events)
+- → place on XRPUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-16 19:29 UTC — agent task from zai-desk
+- SCHEDULED ANALYSIS ROUND (manual-bound — desk/TRADE_FORMULATION_MANUAL.md):
+1. git pull --rebase origin main
+2. Read desk/inbox/WAKE.md + desk/TRADE_FORMULATION_MANUAL.md (the SOP)
+3. Pull live telemetry for target symbols: /api/cg/screener, /api/cg/narrative,
+   /api/cg/quant, /api/cg/options (BTC/ETH), /api/cg/bookwalls, /api/cg/lto,
+   /api/cg/liqlevels (3d/7d/30d), /api/cg/cvd, /api/cg/signals, desk/mt5.json
+4. Run the 6-step DECIDE (manual §1) per symbol across ALL 16 dimensions (§2)
+5. Compute the LSR and apply the Liquidation Magnet Gate (§4): LSR >= 2.5:1
+   bans S3 passive front-runs — wait for the S1 sweep
+6. Score Table 7 confluence (§5); apply hard vetoes; assign grade + risk %
+7. Grade >= B candidates: Formulation Card (§9.2) to
+   desk/deepscan/FORMULATION-<SYMBOL>-<ts>.md; order-worthy ones become
+   suggested orders in desk/state.json per desk/PROTOCOL.md
+8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
+   stop, 40/40/20 scale-outs)
+9. Commit + push; append the round entry to desk/log.md

@@ -10513,3 +10513,32 @@ analysis script rc=1
 **4-Voice Quantitative Desk Debate Consensus**:
 - **TradFi Slot 2**: 100% FILLED by `SPCXBUSD`. MSFT ($520.45, -4.27σ) and AVGO ($333.86, -2.59σ) remain on watch; additional TradFi entries blocked by Gate 9 (Sector Heat) and AVGO blocked by Gate 7 (0.1 min lot).
 - **Crypto Slot 1**: VACANT. 100% Cash Defense. BTC pushing $64,913 (Day VAH test) blocks altcoin shorts (Gate 10). TIA ($0.356) and VET ($0.005) waiting for liquidity sweep wicks before arming S1 reversal.
+## R391 · 2026-11-16 19:29 UTC · zai-desk
+
+**Market**: BTC 64,911.9 (-0.6%)  ETH 1,816.80 (-1.0%)  SOL 71.09 (-2.2%)  XAU 3,871.90 (-0.8%)  XAG 47.280 (-3.6%)
+**Bias (|score|≥2)**: XAG-3(TREND)  XRP-4(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- XAG SHORT confluence -3.2 — REJECTED: opposite liq magnet 48.100 (str 71, ~$14M est) within 1.2R of entry — wait for sweep
+- NEW R391-XRP-1 XRP SHORT limit 0.9565 · stop 0.9635 · T1 0.9401 · T2 0.9367 · R 2.3
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.9557 vs 0.9560), h4 RSI 39.8, day -1.8%
+      [FOR    ] footprint: bull 31 / bear 41; recent: Divergence/sell[vol], Divergence/buy[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×1, div:buy×3, div:sell×2, exh:buy×4, exh:sell×4, sdiv:buy×1, sdiv:sell×2, trap:buy×2 — net 12 buy-side vs 9 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.9401 (str 60, ~$18M est, -1.60%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.142 (5m ago -0.061, falling bids); bid $0.05B vs ask $0.07B
+      [FOR    ] cvd: taker buy 48.2%, perpCvd -267, spotCvd -76, quadrant both-selling, latestDiv bear (recent)
+      [AGAINST] notifications: 6h weighted bias +3.9 (4 events)
+
+### Order lifecycle
+- R382-XAU-1 EXPIRED (unfilled past expiry)
+- R382-XRP-2 EXPIRED (unfilled past expiry)
+- R388-DOGE-1 re-debated: FOR 4/AGAINST 2 — stands
+
+### Positions
+- no open positions
+
+
+## ROUND FAILED · 2026-11-16 19:29 UTC · zai-desk
+
+analysis script rc=1
+
