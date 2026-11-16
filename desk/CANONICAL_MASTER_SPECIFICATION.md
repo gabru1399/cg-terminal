@@ -69,11 +69,11 @@ On EVERY wake-up and execution round, the response MUST open with the explicit c
 
 #### Pre-Flight Checklist Verification Gates:
 1. **Gate C-01 (Single Spec Bound)**: `CANONICAL_MASTER_SPECIFICATION.md` is bound as the sole operational manual.
-2. **Gate C-02 (Fresh 61-Asset Screening)**: Execute direct Python compilation of `/api/cg/screener` covering all 30 Crypto + 28 TradFi + 3 Classic indices without truncating or echoing past subagent digests.
+2. **Gate C-02 (Purge Scanner / Mandatory Individual Asset Audit)**: Scanners and pre-aggregated screener tables (`/api/cg/screener`) are **STRICTLY PURGED**. On every wake-up, execute direct individual endpoint-by-endpoint analysis (`/api/cg/market?sym=`, `/api/cg/signals?sym=`, `/api/cg/liqlevels?sym=`, `/api/cg/cvd?sym=`, `/api/cg/narrative?sym=`) for each and every one of the 61 Curated Assets individually using `scripts/individual_asset_evaluator.py`. Zero reliance on pre-filtered scanner tables.
 3. **Gate C-03 (CLOB Reconciliation)**: Query `get_wallet_balances`, `get_margined_positions`, and `get_open_orders` live on Delta Exchange India.
 4. **Gate C-04 (First-Two-Fills Circuit Armed)**: Verify that if any 2 standing maker orders execute, all remaining candidate orders will be immediately terminated.
 5. **Gate C-05 (16-Dimension Telemetry Extraction)**: Extract all 16 live dimensions for any proposed candidate setup before submitting orders.
-6. **Gate C-06 (Dollar Risk Cap ≤ 1.0%)**: Stop loss dollar risk must be $\le 1.0\%$ of equity ($0.03 USD on ~$3 equity). Verify contract minimums (The BNB Invariant).
+6. **Gate C-06 (Dollar Risk Cap ≤ 1.0%)**: Stop loss dollar risk must be $\le 1.0\%$ of equity ($\le \$0.027\text{ USD}$ on $\approx \$2.76\text{ equity}$). Verify contract minimums (The LINK/BNB Invariant).
 7. **Gate C-07 (Single Timer Continuity)**: Verify via `manage_task(Action="list")` that strictly ONE timer is active.
 
 ---

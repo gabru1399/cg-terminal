@@ -63,7 +63,7 @@ Every execution round, autonomous turn, or trading response **MUST OPEN** with t
 
 ### Pre-Flight Verification Gates:
 - **Gate C-01 (Single Master Specification)**: Bound strictly to `desk/CANONICAL_MASTER_SPECIFICATION.md` (SOP v2.0.0). Multi-file divergences are purged.
-- **Gate C-02 (Fresh 61-Asset Screening)**: Query live telemetry from `/api/cg/screener` covering all 30 Crypto + 28 TradFi + 3 Classic assets from scratch. Zero cached or fabricated rows.
+- **Gate C-02 (Scanner Purged / Individual Asset Audit)**: Scanners and pre-aggregated tables are strictly purged. Analyze each and every one of the 61 Curated Assets individually via direct endpoint calls (`scripts/individual_asset_evaluator.py`). Zero cached or scanner-filtered shortcuts.
 - **Gate C-03 (CLOB & Margin Solvency)**: Audit live Delta Exchange India balances, positions, and orders (`get_wallet_balances`, `get_margined_positions`, `get_open_orders`).
 - **Gate C-04 (First-Two-Fills Circuit)**: The instant any 2 resting candidate maker orders execute, all remaining candidate limit orders are immediately cancelled.
 - **Gate C-05 (16-Dimension Telemetry Extraction)**: Complete the 16-point audit sheet for any proposed candidate.
