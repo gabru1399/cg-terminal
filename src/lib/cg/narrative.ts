@@ -510,14 +510,20 @@ export async function buildNarrative(symRaw: string): Promise<NarrativeVerdict> 
       const pocket = long
         ? [market.ema.h1.e13, market.ema.h1.e89].filter((x): x is number => x != null)
         : [market.ema.h1.e89, market.ema.h1.e13].filter((x): x is number => x != null);
+      // Pullback zone candidates: limit to levels within 3.0 ATR of price so macro distant POCs (e.g. Month POC from weeks ago) do not distort intraday entry/stop geometry
+      const refPx = price ?? vwap ?? 0;
+      const maxDist = 3.0 * ((atr && atr > 0 ? atr : refPx * 0.02) || 1);
       const candidates = [
         long ? vwap : null,
         long ? vwap! + (sd1 ?? 0) : vwap! - (sd1 ?? 0),
         dayPoc,
-        monthPoc,
+        monthPoc != null && Math.abs(monthPoc - refPx) <= maxDist ? monthPoc : null,
         long ? pdl : pdh,
         ...pocket,
-      ].filter((x): x is number => x != null && Number.isFinite(x));
+      ].filter((x): x is number => x != null && Number.isFinite(x) && Math.abs(x - refPx) <= maxDist);
+      if (candidates.length === 0) {
+        candidates.push(vwap ?? refPx);
+      }
       const zoneLoRaw = Math.max(...candidates) - (atr ?? 0) * 0.25;
       const zoneHiRaw = Math.min(...candidates) + (atr ?? 0) * 0.25;
       // GEOMETRY FIX (2026-11-12): a wide candidate spread (PDH vs POC vs
@@ -606,7 +612,11 @@ export async function buildNarrative(symRaw: string): Promise<NarrativeVerdict> 
       const t3 = t3Candidates.length ? (long ? Math.min(...t3Candidates) : Math.max(...t3Candidates)) : null;
 
       const risk = stop != null && compositeEntry > 0 ? Math.abs(compositeEntry - stop) : null;
-      const rOf = (lvl: number | null) => (lvl != null && risk != null && risk > 0 ? Math.abs(lvl - compositeEntry) / risk : null);
+      const rOf = (lvl: number | null) => {
+        if (lvl == null || risk == null || risk <= 0) return null;
+        const reward = long ? lvl - compositeEntry : compositeEntry - lvl;
+        return reward > 0 ? reward / risk : null;
+      };
       const r1 = rOf(t1);
       const r2 = rOf(t2);
       const r3 = rOf(t3);

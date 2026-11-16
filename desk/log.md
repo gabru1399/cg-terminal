@@ -8745,3 +8745,23 @@ analysis script rc=1
 ### Positions
 - None — data missing, HOLD (manual check)
 
+
+
+## EXEC · 2026-11-16 07:45 UTC (13:15 IST) · DELTA EXCHANGE CLOB ORDER PLACEMENT
+
+- **ORDER EXECUTION TELEMETRY**:
+    * Venue: **Delta Exchange India** (`india_prod` | Master Account `26902927`).
+    * Exchange Order ID: **`1685857607`**.
+    * Instrument: **BTCUSD** (Product ID `27` · Bitcoin Perpetual).
+    * Setup Archetype: **Setup S2 (Value Area Range High Fade)**.
+    * Order Type: **`limit_order`** (`post_only=true`, `time_in_force="gtc"`).
+    * Side: **`sell`** (Short from Day VAH / +2σ VWAP zone).
+    * Limit Execution Price: **`$65,280.0 USD`** (Strictly above best ask $64,941.0; resting maker liquidity).
+    * Size: **`1` contract** (0.001 BTC · Notional = $65.28 USD).
+    * Margin Mode & Leverage: **Isolated Margin · 50x Leverage** (Dynamically calibrated per Invariant P5-08).
+    * Capital Allocation: **$1.3056 USD** order margin locked (65% of available $2.00817 USD equity).
+    * Available Free Balance Remaining: **$0.6248 USD** | Total Balance: **$2.00817 USD**.
+    * Bracket Stop Loss: **`$65,580.0 USD`** (Risk = 300 pts / $0.30 USD · Mark Price trigger).
+    * Bracket Take Profit: **`$64,450.0 USD`** (Reward = 830 pts / $0.83 USD · Mark Price trigger).
+    * Asymmetric R-Multiple: **`2.76R`** (Reward-to-risk ratio = 830 / 300 = 2.76R).
+    * Order State: **`open`** (Confirmed live on Delta Exchange India order book).

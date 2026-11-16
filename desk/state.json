@@ -219,7 +219,25 @@
         "sym": "XRP",
         "score": -3.73
       }
-    ]
+    ],
+    "last_execution": {
+      "order_id": 1685857607,
+      "symbol": "BTCUSD",
+      "product_id": 27,
+      "side": "sell",
+      "size": 1,
+      "order_type": "limit_order",
+      "limit_price": 65280.0,
+      "leverage": 50,
+      "margin_mode": "isolated",
+      "bracket_sl": 65580.0,
+      "bracket_tp": 64450.0,
+      "stop_trigger_method": "mark_price",
+      "status": "open",
+      "created_at": 1794814915702,
+      "setup_archetype": "S2_RANGE_HIGH_FADE",
+      "r_multiple": 2.76
+    }
   },
   "orders": [
     {
@@ -625,6 +643,24 @@
       "r_multiple": 4.29,
       "notes": "Canonical Setup S1: Short Liquidity Sweep & Reclaim. Entry @ 0.7480 tags the $2.05M short liq cluster sweep @ 0.7479 + VWAP +2.1\u03c3. SL @ 0.7550 shielded in structural vacuum (Gate 1 distance 1.931%, Gate 2 $0.00 hazard). TP @ 0.7180 (Day POC/VWAP). 4.29R, Confluence 10.5/11.5 Grade A.",
       "cancellationReason": "liquidation_magnet_gate_lsr_exceeded_2.5:1"
+    },
+    {
+      "order_id": 1685857607,
+      "symbol": "BTCUSD",
+      "product_id": 27,
+      "side": "sell",
+      "size": 1,
+      "order_type": "limit_order",
+      "limit_price": 65280.0,
+      "leverage": 50,
+      "margin_mode": "isolated",
+      "bracket_sl": 65580.0,
+      "bracket_tp": 64450.0,
+      "stop_trigger_method": "mark_price",
+      "status": "open",
+      "created_at": 1794814915702,
+      "setup_archetype": "S2_RANGE_HIGH_FADE",
+      "r_multiple": 2.76
     }
   ],
   "positions": [
