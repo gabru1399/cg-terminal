@@ -9685,3 +9685,21 @@ analysis script rc=1
 
 - **PHASE 7: DYNAMIC TIMER RE-ARM**:
     * Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs, zero background daemons.
+## R371 · 2026-11-16 11:59 UTC · zai-desk
+
+**Market**: BTC 64,443.3 (-1.3%)  ETH 1,805.14 (-1.6%)  SOL 71.43 (-1.8%)  XAU 3,879.44 (-0.6%)  XAG 47.800 (-2.6%)
+**Bias (|score|≥2)**: DOGE-4(TRANS)  BTC-5(TREND)  ADA-4(TRANS)  XRP-4(TRANS)  XAU-4(TREND)  XAG-2(TRANS)  ETH-2(TREND)  LINK-2(TRANS)  BNB-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R358-DOGE-1 re-debated: FOR 6/AGAINST 1 — stands
+- R358-XAU-2 re-debated: FOR 7/AGAINST 1 — stands
+- R358-ETH-3 re-debated: FOR 5/AGAINST 1 — stands
+- R358-XRP-4 re-debated: FOR 6/AGAINST 1 — stands
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
