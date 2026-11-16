@@ -27,8 +27,8 @@
     }
   },
   "analysis": {
-    "last_round": "R307",
-    "last_round_ts": 1794803232630,
+    "last_round": "R308",
+    "last_round_ts": 1794804825191,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
@@ -215,7 +215,8 @@
         "sym": "XRP",
         "score": -3.47
       }
-    ]
+    ],
+    "summary": "Round 308: 30 crypto perps screened. HBAR, BNB, DOGE, NEAR, ETH, SUI, LTC audited. All short pullbacks vetoed by poor R-multiples (0.027R-0.290R to T1) and massive opposing bid walls (-.29M). BNB vetoed by VWAP chase guard (z=-2.04sd). Balance assets printed 0 footprint signals. Unanimous Hard Veto across 100% of candidates. 100% Cash Defense maintained (.00817 USD)."
   },
   "orders": [
     {
