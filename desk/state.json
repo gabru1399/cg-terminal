@@ -27,8 +27,8 @@
     }
   },
   "analysis": {
-    "last_round": "R311",
-    "last_round_ts": 1794815063780,
+    "last_round": "R312",
+    "last_round_ts": 1794816079324,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
@@ -5885,7 +5885,7 @@
       "notes": null
     }
   ],
-  "updatedAt": "2026-11-15T21:26:00.000Z",
+  "updatedAt": "2026-11-16T08:01:19.324815+00:00",
   "closedPositions": [
     {
       "ticket": 210050569,
@@ -5953,12 +5953,30 @@
   "atg": {
     "equityUsd": 2.1258,
     "balanceUsd": 2.00817,
-    "availableUsd": 2.00817,
-    "blockedMarginUsd": 0.0,
+    "availableUsd": 0.624769,
+    "blockedMarginUsd": 1.3834,
     "runningPositions": 0,
-    "openOrdersCount": 0,
-    "lastAudit": "2026-11-16T07:44:23.000Z",
-    "posture": "100%_CASH_DEFENSE",
-    "round": "R311"
+    "openOrdersCount": 1,
+    "activeOrders": [
+      {
+        "id": 1685857607,
+        "symbol": "BTCUSD",
+        "side": "sell",
+        "order_type": "limit_order",
+        "limit_price": 65280.0,
+        "size": 1,
+        "bracket_sl": 65580.0,
+        "bracket_tp": 64450.0,
+        "margin_mode": "isolated",
+        "leverage": 50,
+        "margin_locked": 1.3056,
+        "state": "open",
+        "r_multiple": 2.76,
+        "archetype": "S2 (VA Range High Fade)"
+      }
+    ],
+    "lastAudit": "2026-11-16T08:01:19.324815+00:00",
+    "posture": "RESTING_MAKER_ACTIVE_SLOT2_HUNT",
+    "round": "R312"
   }
 }
