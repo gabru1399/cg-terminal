@@ -232,9 +232,9 @@ Every point must originate strictly from live API telemetry. Any missing or coun
 
 ---
 
-## SECTION 6. THE 8 SOCRATIC SELF-AUDIT GATES & AGI PITFALL INQUESTS
+## SECTION 6. THE 11 SOCRATIC SELF-AUDIT GATES & THE 10 IMMUTABLE AGI PITFALL INQUESTS
 
-Before an order ticket is dispatched, it must pass all 8 Socratic Gates:
+Before an order ticket is dispatched, it must pass all 11 Socratic Gates without exception:
 
 1. **Gate 1: Active Session Auction Clearance**:
    The Stop Loss must be separated from the Session and Day Point of Control (POC) and Day VWAP by at least **$\ge 0.5\%$ safety cushion** (or $1.0\times$ ATR). Stops placed directly on high-volume nodes are vetoed.
@@ -248,11 +248,41 @@ Before an order ticket is dispatched, it must pass all 8 Socratic Gates:
    If price fails to reach $+0.5\text{R}$ within **8 bars (2 hours)** of filling, close or tighten the stop (P5-05).
 6. **Gate 6: Breakeven Invariant**:
    Move SL to entry immediately upon reaching **$\ge +1.0\text{R}$ excursion** (P5-04). Eliminate downside risk to $0.00 USD.
-7. **Gate 7: Contract Minimum Dollar Risk Gate (The BNB Pitfall Invariant)**:
-   Calculate: $\text{Dollar Risk} = \text{Contracts} \times \text{Contract Value} \times |\text{Entry} - \text{SL}|$.
-   **Dollar Risk MUST BE $\le 1.0\%$ of live Net Liquid Equity** ($\le \$0.03\text{ USD}$ on $\approx \$3\text{ equity}$). If an exchange contract minimum (e.g. 0.1 BNB) forces dollar risk $> 1.0\%$ (e.g. $0.70 USD / 23.7% heat), the trade is **STRICTLY VETOED**.
+7. **Gate 7: Mechanical Contract Minimum Dollar Risk Gate (The LINK/BNB Hard Ban)**:
+   Calculate: $\text{Effective Dollar Risk} = \text{Minimum Lot} \times \text{Contract Value} \times |\text{Entry} - \text{SL}| \times 1.20\text{ (slippage multiplier)}$.
+   **Effective Dollar Risk MUST BE $\le 1.0\%$ of live Net Liquid Equity** ($\le \$0.027\text{ USD}$ on $\approx \$2.76\text{ equity}$).
+   - **MANDATORY HARD BAN**: If an asset's minimum contract size (e.g., 1 LINK = $9.12 notional, 0.1 BNB = $59 notional, 0.001 BTC = $65 notional) forces dollar risk $> 1.0\%$ ($> \$0.027$), the asset is **PERMANENTLY AND MECHANICALLY VETOED**. Zero discretion.
+   - *Active Permitted Micro-Assets on Equity < $15*: `APTUSD`, `ADAUSD`, `ARBUSD`, `TIAUSD`, `SEIUSD`, `DOGEUSD`, `VETUSD`.
+   - *Active Banned Assets on Equity < $15*: `LINKUSD`, `BNBUSD`, `SOLUSD`, `BTCUSD`, `ETHUSD`, `AVAXUSD`.
 8. **Gate 8: Active Cascade Climax Gate**:
    If `Liq 5m > $500k`, no limit orders may be placed into the cascade. Wait for the exhaustion wick.
+9. **Gate 9: The Beta Correlation & Sector Isolation Gate (Anti-Avalanche Invariant)**:
+   Never hold 2 same-direction crypto positions simultaneously. Holding 2 crypto shorts (e.g. APT + LINK) represents 100% correlated beta to Bitcoin. If Slot 1 is Crypto, Slot 2 MUST BE TradFi (XAU/XAG/Oil/Equities) or 100% Cash.
+10. **Gate 10: Macro Anchor (BTC) Regime & Support/Resistance Gate**:
+    Crypto altcoin shorts are **STRICTLY BANNED** if BTC is within $0.75\%$ of its 24h low, testing major multi-day liquidity support, or below $-2.0\sigma$ daily VWAP (oversold). Altcoin shorts are only authorized when BTC itself is rejecting structural resistance (Day POC / Day VAH / VWAP upper band).
+11. **Gate 11: Slippage & Taker Fee Buffer (1.20x Invariant)**:
+    Every stop loss order placed as a market stop slips in low-liquidity books. All risk budgeting must multiply calculated stop distance by **$1.20\times$** to account for execution slippage and taker exit fees.
+
+---
+
+### 6.2 THE 10 IMMUTABLE AGI PITFALL INQUESTS (POST-MORTEM FORENSICS)
+
+Every failure in the live trading record transmutes into a permanent mathematical invariant. The AGI formulation engine MUST audit these 10 pitfalls before every order generation:
+
+| Pitfall ID | Name | Failure Mechanism | Empirical Case Study | Immutable Invariant Enforced |
+| :--- | :--- | :--- | :--- | :--- |
+| **PIT-01** | **Contract Minimum Lot Explosion** | Minimum exchange lot forces position notional far beyond account equity, converting a normal 1% stop into a 5% account catastrophe. | **LINKUSD (R334)**: 1 LINK min lot = $9.12 notional on $2.95 equity (309% leverage). A 1.4% stop movement caused a -$0.1505 loss (**5.10% equity loss**). | **Gate 7 Mechanical Ban**: Strict veto on any asset where 1 minimum lot exceeds 1.0% equity risk ($Lot \times CV \times \Delta P \times 1.20 \le 0.01 \times \text{Equity}$). LINK/BNB/SOL banned on small equity. |
+| **PIT-02** | **Correlated Double-Beta Avalanche** | Opening 2 same-direction crypto assets creates single-factor directional exposure that stops out simultaneously on BTC macro moves. | **APT + LINK Shorts (R334)**: Both shorts filled together. BTC bounced +$1,800 from $63.8k to $65.6k, stopping out both altcoins within 56 seconds of each other (-$0.1863 loss). | **Gate 9 Sector Isolation**: Maximum 1 crypto position per direction. Slot 2 must be TradFi/Metals or Cash. Zero unhedged dual-crypto bets. |
+| **PIT-03** | **Bottom-Tick Shorting / Oversold Trap** | Shorting an altcoin M1 pullback while the macro anchor (BTC) is sitting at its daily low / sweep support. | **R334 Altcoin Shorts**: Entered while BTC was -2.5% at $64.1k near day low ($63.8k), directly preceding a violent mean-reversion short squeeze. | **Gate 10 BTC Macro Filter**: Altcoin shorts banned when BTC is at day lows or <-2.0σ VWAP. Shorts allowed only when BTC rejects resistance. |
+| **PIT-04** | **Market Stop Slippage in Altcoins** | Market stop-loss orders in thin order books experience significant negative slippage during volatility spikes. | **APT & LINK (R334)**: APT slipped 4 ticks ($0.4635 \to 0.4639$); LINK slipped 15 ticks ($9.250 \to 9.265$), expanding realized losses by +15.8%. | **Gate 11 1.20x Multiplier**: Risk models must incorporate 20% friction buffer on all stop distance calculations. |
+| **PIT-05** | **High Volume Node (HVN) Stop Collision** | Placing stops directly on or inside high volume profile nodes where liquidity is dense and price consolidates. | Stops hit during normal Value Area rotation rather than structural trend invalidation. | **Gate 1 Clearance**: Stops must be placed $\ge 0.5\%$ beyond Session/Day POC and outside Value Area extremes. |
+| **PIT-06** | **Passive Front-Running in High Skew** | Placing passive limit maker orders directly in front of large liquidation clusters when Skew Ratio $\ge 2.5:1$. | Cascades blast straight through resting limit orders before reversing. | **Gate 3 LSR Sweep Gate**: If LSR $\ge 2.5:1$, maker front-running is banned. Must wait for the sweep wick. |
+| **PIT-07** | **Spread Drag & Fee Asymmetry** | Trading tight targets where exchange taker fees and spread consume $> 25\%$ of anticipated profit. | Commission drag turns positive gross EV into negative net realized PnL. | **Gate 4 Spread Drag**: Spread must consume $< 20\%$ of SL distance; all entries must be post-only maker. |
+| **PIT-08** | **Time Decay & Stale Execution** | Holding a stagnant position that chops around entry without moving toward target, exposing capital to overnight gap risk. | Chop consumes time and eventually breaks against the trader. | **Gate 5 Time Stop (P5-05)**: Hard exit or stop tightening after 8 15-minute bars (2 hours) if price $< +0.5\text{R}$. |
+| **PIT-09** | **Premature Breakeven vs. Late Trailing** | Discretionary stop manipulation: moving stop to BE too early (getting chopped out) or too late (turning winners into full losses). | Winning trade at +1.5R swings back to -1.0R loss because stop was never trailed. | **Gate 6 Invariant (P5-04)**: Non-discretionary move to exact entry at $\ge +1.0\text{R}$ excursion. Zero exceptions. |
+| **PIT-10** | **Asymmetric Taker Panic Liquidation** | Manually market-exiting during temporary pullbacks due to emotional loss aversion rather than structural invalidation. | Exiting at the exact bottom tick right before price rotates to target. | **P5-01 Rule**: Execution is 100% mechanical via pre-set CLOB bracket orders. No manual panic closes unless structural invalidation triggers. |
+
+---
 
 ---
 
@@ -261,14 +291,14 @@ Before an order ticket is dispatched, it must pass all 8 Socratic Gates:
 | Invariant | Name | Operational Rule |
 | :--- | :--- | :--- |
 | **P5-01b** | **Shared Account Isolation** | Track exclusively via internal order/client IDs. Never cancel, edit, or touch external/algo positions. |
-| **P5-02** | **Max 2 Concurrent Positions** | Maximum 2 active positions in the same direction at any time. Total portfolio heat $\le 1.0\%$. |
+| **P5-02** | **Max 2 Positions (Max 1 Crypto)** | Maximum 2 active positions total, but **MAXIMUM 1 CRYPTO POSITION** in any direction (Gate 9). Slot 2 is strictly reserved for TradFi/Metals (XAU, XAG, Oil, Equities) or 100% Cash. Zero unhedged dual-crypto bets. Total portfolio heat $\le 1.0\%$ ($\le \$0.027\text{ USD}$). |
 | **P5-03** | **Post-Only Maker Mandate** | All new entries MUST be Post-Only Maker Limit orders (`post_only: true`). Zero taker fees on entry. |
 | **P5-04** | **+1.0R Breakeven Invariant** | Non-discretionary: Move SL to entry immediately upon reaching $\ge +1.0\text{R}$ favorable excursion. |
 | **P5-05** | **8-Bar Time Stop** | If price fails to reach $+0.5\text{R}$ within 8 15-minute bars (2 hours), exit or tighten the stop. |
 | **P5-06** | **First-Two-Fills Circuit** | When resting maker orders are standing for multiple assets, the moment **ANY 2** fill into active positions, the engine MUST immediately cancel all remaining open candidate orders. |
-| **P5-07** | **Vacant Slot Hunter** | Maintain high-confluence standing maker orders at key structural nodes only when portfolio slots are vacant. |
+| **P5-07** | **Vacant Slot Hunter** | Maintain high-confluence standing maker orders at key structural nodes only when portfolio slots are vacant. Respect Gate 7 micro-asset constraint. |
 | **P5-08** | **Pruning Discipline** | Instantly cancel any order that falls below 5.0 confluence points, becomes overextended ($|z| \ge 2.0\sigma$), or violates margin solvency. |
-| **P5-09** | **Single Dynamic Recursion Timer**| Re-arm dynamic recursion using `schedule(DurationSeconds=1200)` with the canonical prompt string. Strictly **1 background timer**; zero duplicate timers, zero cron.<br>**Canonical Timer Prompt Format:**<br>`Timer: 20m, Prompt: /goal /executing-plans /plan /brainstorming /karpathy-guidelines /thinking-model-router Autonomous Delta Exchange Trade Execution & Recursive Self-Improving Engine Round R<n>. MANDATORY: Response MUST open with Pre-Flight Verification Checklist confirming fresh 61-curated asset screening from scratch. Audit all 61 Curated Assets and find high potential high confluence trading setup strictly using @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]  , apply thinking mental models (first principles, pre-mortem, probabilistic, red-team, margin of safety) and Karpathy guidelines, monitor live standing maker limit orders on Delta Exchange India (APTUSD @ $0.45700, ADAUSD @ $0.15240, ARBUSD @ $0.13350, LINKUSD @ $9.120, TIAUSD @ $0.34750), enforce First-Two-Fills circuit, +1.0R breakeven invariant and 8-bar time stop, audit margin and liquidity, and re-arm dynamic 1200s recursion.` |
+| **P5-09** | **Single Dynamic Recursion Timer**| Re-arm dynamic recursion using `schedule(DurationSeconds=1200)` with the canonical prompt string. Strictly **1 background timer**; zero duplicate timers, zero cron.<br>**Canonical Timer Prompt Format:**<br>`Timer: 20m, Prompt: /goal /executing-plans /plan /brainstorming /karpathy-guidelines /thinking-model-router Autonomous Delta Exchange Trade Execution & Recursive Self-Improving Engine Round R<n>. MANDATORY: Response MUST open with Pre-Flight Verification Checklist confirming fresh 61-curated asset screening from scratch. Audit all 61 Curated Assets strictly using @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]  , apply thinking mental models (first principles, pre-mortem, probabilistic, red-team, margin of safety) and Karpathy guidelines, enforce Gates 1-11 (Gate 7 Mechanical Ban on LINK/BNB/SOL/BTC, Gate 9 Max 1 Crypto Position, Gate 10 BTC Macro Filter, Gate 11 1.20x Slippage Multiplier), enforce +1.0R breakeven invariant and 8-bar time stop, audit margin and liquidity, and re-arm dynamic 1200s recursion.` |
 | **P5-10** | **Margin Solvency & Sizing** | Compute sizing: `contracts = floor((net_equity * risk_pct) / (stop_distance * contract_value))`. Verify `order_margin <= available_balance * 0.8`. |
 
 ---

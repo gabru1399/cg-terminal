@@ -77,7 +77,7 @@ Every execution round, autonomous turn, or trading response **MUST OPEN** with t
 Dynamic recursion is driven by a single 1200-second timer (`schedule(DurationSeconds=1200)`). The timer instruction and prompt MUST strictly follow this canonical format:
 
 ```text
-Timer: 20m, Prompt: /goal /executing-plans /plan /brainstorming /karpathy-guidelines /thinking-model-router Autonomous Delta Exchange Trade Execution & Recursive Self-Improving Engine Round R<n>. MANDATORY: Response MUST open with Pre-Flight Verification Checklist confirming fresh 61-curated asset screening from scratch. Audit all 61 Curated Assets and find high potential high confluence trading setup strictly using @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]  , apply thinking mental models (first principles, pre-mortem, probabilistic, red-team, margin of safety) and Karpathy guidelines, monitor live standing maker limit orders on Delta Exchange India (APTUSD @ $0.45700, ADAUSD @ $0.15240, ARBUSD @ $0.13350, LINKUSD @ $9.120, TIAUSD @ $0.34750), enforce First-Two-Fills circuit, +1.0R breakeven invariant and 8-bar time stop, audit margin and liquidity, and re-arm dynamic 1200s recursion.
+Timer: 20m, Prompt: /goal /executing-plans /plan /brainstorming /karpathy-guidelines /thinking-model-router Autonomous Delta Exchange Trade Execution & Recursive Self-Improving Engine Round R<n>. MANDATORY: Response MUST open with Pre-Flight Verification Checklist confirming fresh 61-curated asset screening from scratch. Audit all 61 Curated Assets strictly using @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]  , apply thinking mental models (first principles, pre-mortem, probabilistic, red-team, margin of safety) and Karpathy guidelines, enforce Gates 1-11 (Gate 7 Mechanical Ban on LINK/BNB/SOL/BTC, Gate 9 Max 1 Crypto Position, Gate 10 BTC Macro Filter, Gate 11 1.20x Slippage Multiplier), enforce +1.0R breakeven invariant and 8-bar time stop, audit margin and liquidity, and re-arm dynamic 1200s recursion.
 ```
 
 ---
@@ -85,8 +85,11 @@ Timer: 20m, Prompt: /goal /executing-plans /plan /brainstorming /karpathy-guidel
 ## 5. HARD OPERATIONAL INVARIANTS (NON-NEGOTIABLE)
 
 1. **Table 7 Scoring**: Factor 1 (Directional Trend) = 0.0 in `RANGE_BALANCE`. Score $< 5.0$ pts = HARD VETO (100% Cash Defense).
-2. **Shared Account Isolation**: Track orders strictly via internal order/ticket IDs. Never cancel or touch external/algo orders (`FIB4H_*`, `SOLVUSD`, `TACUSD`).
-3. **Maker Execution Only**: All limit orders must be Post-Only (`post_only: true`). Zero taker fees on entries.
-4. **Breakeven Invariant**: Move SL to entry immediately upon reaching $\ge +1.0\text{R}$ favorable excursion.
-5. **Time Stop**: Exit or tighten stop after 8 15-minute bars (2 hours) if price has not reached $+0.5\text{R}$.
-6. **Active Cascade Climax Gate**: If `Liq 5m > $500k`, no limit orders may be placed into the cascade. Wait for the exhaustion wick.
+2. **Gate 7 Mechanical Lot Ban**: On small accounts ($\le \$15\text{ equity}$), any asset where minimum contract size forces dollar risk $> 1.0\%$ of equity ($> \$0.027\text{ USD}$) is PERMANENTLY BANNED. Banned: `LINKUSD`, `BNBUSD`, `SOLUSD`, `BTCUSD`, `ETHUSD`. Allowed: `APTUSD`, `ADAUSD`, `ARBUSD`, `TIAUSD`, `SEIUSD`, `DOGEUSD`, `VETUSD`.
+3. **Gate 9 Sector Isolation (Max 1 Crypto)**: Maximum 1 active crypto position per direction. Slot 2 is reserved strictly for TradFi/Metals or Cash. Zero unhedged dual-crypto bets.
+4. **Gate 10 BTC Macro Filter**: Altcoin shorts are STRICTLY BANNED if BTC is within $0.75\%$ of daily low, oversold, or at major support.
+5. **Shared Account Isolation**: Track orders strictly via internal order/ticket IDs. Never cancel or touch external/algo orders (`FIB4H_*`, `SOLVUSD`, `TACUSD`).
+6. **Maker Execution Only**: All limit orders must be Post-Only (`post_only: true`). Zero taker fees on entries.
+7. **Breakeven Invariant**: Move SL to entry immediately upon reaching $\ge +1.0\text{R}$ favorable excursion.
+8. **Time Stop**: Exit or tighten stop after 8 15-minute bars (2 hours) if price has not reached $+0.5\text{R}$.
+9. **Active Cascade Climax Gate**: If `Liq 5m > $500k`, no limit orders may be placed into the cascade. Wait for the exhaustion wick.
