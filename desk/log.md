@@ -8276,3 +8276,49 @@ analysis script rc=1
 
 - **PHASE 7: DYNAMIC TIMER RE-ARM**:
   - Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero cron jobs. Zero background daemons.
+
+
+## EXEC · 2026-11-16 02:16 UTC · atg-exec (Round 302)
+
+- **PHASE -1 & PHASE 0 COMPLIANCE CHECK**:
+  - SOP Ingestion: Bound strictly to `desk/TRADE_FORMULATION_MANUAL.md`, `desk/SWARM_MASTER_PROMPT.md`, and `.gemini/rules/SWARM_EXECUTION.md`.
+  - Venue: Delta Exchange India (`india_prod` | Master Account `26902927`).
+  - Capital Telemetry: Total USD Balance $1.3438 USD, Available Free Cash $0.3070 USD (INR 26.10), Position Margin Locked $1.0247 USD (Chat 1 SOLVUSD Long +47 @ 0.004355, mark 0.00444455, unrealized PnL +$0.4183 USD), Net Liquid Equity $1.8769 USD.
+  - Concurrency Status: THIS desk (`cg-terminal`) has exactly 0 / 2 running positions (Both concurrency slots vacant), 0 open orders on CLOB.
+  - Max Tradable Initial Margin Budget (SOP 80% Buffer Rule): $0.3070 * 0.80 = $0.2456 USD.
+  - Shared Account Isolation (P5-01b): Chat 1 SOLVUSD Long (+47 @ 0.004355) and its 2 stop-bracket orders (#1684736467, #1684736466) tracked strictly by order number and left untouched.
+
+- **PHASE 1: LIVE 30-ASSET SCREENER PASS & TAB 7 REGIME ROUTING**:
+  - Closed-candle screener ingested across all 30 crypto USDT-M perps from continuity terminal (`http://127.0.0.1:3000/api/cg/screener`).
+  - Full 30-asset uncompressed screening matrix generated and archived to `scratch/matrix_r302.json`.
+  - Universe Regime Breakdown:
+    * TREND_DOWN: APT, FIL, LTC, AVAX, DOT, ADA, NEAR, SUI, LINK, TRX, DOGE, XLM, ETC, HBAR, OP, TIA, VET (17 assets).
+    * RANGE_BALANCE: ETH, XRP, 1000PEPE, UNI, ATOM, ICP, ARB, SEI, INJ, 1000SHIB (10 assets). Factor 1 = 0.0 pts strictly enforced.
+    * MARGIN GATED: BTC ($0.3246 min margin), BNB ($0.5940 min margin), SOL ($0.7187 min margin) exceed the $0.2456 tradable budget.
+
+- **PHASE 2 & PHASE 3: ADVERSARIAL AUDITOR VERDICT (Subagent 86012ef3-c9ed-4a7c-912f-876e47419fbf)**:
+  - Unanimous HARD VETO across all candidates:
+    * Inquest 1 (R-Multiple Collapse in TREND_DOWN): Every trend continuation candidate fails DECIDE-D catastrophically. Prices are compressed near session lows while stops sit at impulse origins.
+      - FIL: Entry 0.6051, Stop 0.8729 (Risk +44.25%), T1 0.5981 (Reward 1.16%) -> T1 R-Multiple = 0.026R (fails 2.0R floor by 77x, best composite 0.51R). Blocked by $2.2M bid wall @ 0.5906.
+      - LTC: Entry 45.16, Stop 51.60 (Risk +14.26%), T1 44.65 (Reward 1.13%) -> T1 R-Multiple = 0.079R (fails 2.0R floor by 25x, best composite 0.42R). Blocked by $3.7M bid wall @ 44.13.
+      - AVAX: Entry 7.218, Stop 8.600 (Risk +19.15%), T1 7.141 (Reward 1.07%) -> T1 R-Multiple = 0.055R (fails 2.0R floor by 36x, best composite 0.67R). Blocked by $2.9M bid wall @ 7.07.
+      - NEAR: Entry 3.1617, Stop 3.7280 (Risk +17.91%), T1 3.1243 (Reward 1.18%) -> T1 R-Multiple = 0.066R (fails 2.0R floor by 30x, best composite 0.28R). Blocked by $2.8M bid wall @ 3.116; +$23.4M buyer CVD squeeze.
+      - ADA: Entry 0.1533, Stop 0.1738 (Risk +13.37%), T1 0.1518 (Reward 0.98%) -> T1 R-Multiple = 0.082R (best composite 0.71R). Blocked by $1.7M bid wall @ 0.1468.
+      - SUI: Entry 0.7548, Stop 0.8686 (Risk +15.08%), T1 0.7220 (Reward 4.35%) -> T1 R-Multiple = 0.290R (best composite 0.36R). Blocked by $1.5M bid wall @ 0.7220.
+      - DOT & LINK: T1 R-multiples 0.043R and 0.044R; best composite R <= 0.45R.
+    * Inquest 2 (RANGE_BALANCE Zero-Fallback Scoring):
+      - ETH, XRP, 1000PEPE, UNI, ARB, SEI, INJ, 1000SHIB: Factor 1 = 0.0 pts. Anti-knife-catching gate unsatisfied (`entryZone: null`, `bestR: null`, `invalidation: "no setup"`). Zero footprint reversal signals printed (`sig_count: 0`). Validated Table 7 score <= 3.5 pts (< 5.0 pts floor).
+      - ETH is blocked by $61.2M institutional resting bid wall at 1801.24.
+    * Socratic Pitfalls Triggered: Q2 (Adverse Squeeze Magnet Trap), Q3 (Active Session HVN Collision), Q4 (Margin Insolvency on BTC/BNB/SOL), Q5 (Regime-Archetype Mismatch), Q8 (Inverted R-Multiple Trap).
+
+- **PHASE 4 & PHASE 5: EXECUTION HYGIENE & CONCURRENCY MANAGEMENT**:
+  - Concurrency Cap: Max 2 positions. Current active positions = 0. Both slots vacant.
+  - Zero orders placed on Delta Exchange India CLOB. 100% Cash Defense maintained.
+  - All standing exchange orders audited; zero orphans, zero duplicate orders from this desk.
+
+- **PHASE 6: AGI SELF-IMPROVEMENT INSIGHT**:
+  - Epistemic Invariant Confirmed: The market's structural geometry remains severely skewed. Entering trend pullbacks into massive resting institutional bid walls ($1.5M to $61.2M) while aggressive spot buyer CVD accumulates creates an extreme adverse selection risk with sub-0.1R payouts.
+  - The AGI's mathematical refusal to trade low-expectancy traps maintains absolute capital safety ($0.3070 USD liquid cash reserve 100% intact).
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+  - Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero cron jobs. Zero background daemons.
