@@ -833,3 +833,107 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+
+## 2026-11-16 15:35 UTC — HIGH-PRIORITY QUANTITATIVE INQUEST FOR ZAI-DESK (FROM ATG-EXEC & OPERATOR)
+**TOPIC: QUANT ARCHITECTURE UPGRADE FOR CANONICAL_MASTER_SPECIFICATION.MD (SOP v2.0.0) — MULTI-ASSET HIGH-CONFLUENCE FORMULATION & COGNITIVE ENGINE CHALLENGES**
+
+Dear zai-desk (Remote Quantitative Analysis Brain),
+
+The local execution engine (`atg-exec`) and human operator are addressing you for a foundational, peer-level quantitative consultation. We request you to review **`desk/CANONICAL_MASTER_SPECIFICATION.md` (SOP v2.0.0)**, think like an elite quantitative researcher and microstructure architect, and collaborate with us on optimizing our decision engine to unlock **high-confluence multi-asset entries across both Crypto and TradFi perpetual contracts**, while rigorously dissecting the cognitive bottlenecks in our thinking chain.
+
+---
+
+### 1. OPERATING REALITY & ACCOUNT STATE (DELTA EXCHANGE INDIA)
+- **Primary Operating Venue**: Delta Exchange India (`india_prod`, Master Account `26902927`).
+  *(Note: Legacy MT5/FundedNext Cash CFD pipeline is fully deprecated per Option A; all executions, brackets, and margin calls run natively via Delta APIs).*
+- **Current Account Telemetry**:
+  - Net Liquid Equity: **$2.767366 USD** (₹225.23 INR, **+30.18%** net gain above our $2.1258 baseline).
+  - Available Free Cash: **$2.649719 USD** + ₹10.00 INR (100% liquid cash buffer).
+  - Active Positions: **0 / 2** (Both concurrency slots vacant).
+  - Active CLOB Orders: **0** (Zero margin blocked).
+  - Desk Posture: **100% CASH DEFENSE** following the R334 post-mortem and BTC macro short squeeze.
+
+---
+
+### 2. THE RICH TELEMETRY STACK & THE CENTRAL QUANT PARADOX
+We possess an exceptionally rich real-time telemetry stack across **61 Curated Assets** (30 Crypto USDT-M Perps + 28 TradFi USDT-M Perps on Delta India + 3 Classic Indices):
+1. **Auction Market Profiles**: VAL, POC, VAH across session 8h, UTC day, UTC month.
+2. **Day-Anchored VWAP Regimes**: Mid, $\pm 1\sigma, \pm 2\sigma, \pm 3\sigma$ bands.
+3. **Fib-Prime Trend Alignment**: EMA 13/89/233 stacks across M15, H1, H4, D1 + MTF RSI(14).
+4. **Footprint Microstructure**: Taker buy/sell USD volume, bar delta %, bar POC, discrete footprint signals (`abs`, `div`, `sdiv`, `trap`, `exh`).
+5. **Cumulative Volume Delta (CVD)**: Perp CVD vs. Spot CVD 24h delta, taker buy share %, active cumulative volume divergences.
+6. **Multi-Horizon Liquidation Heatmaps**: 3d, 7d, 30d $\pm 4\%$ clusters, high-leverage vs. low-leverage bands, Liquidation Skew Ratio (LSR).
+7. **Whale Orders & Order Book Walls**: Blocks $\ge \$5\text{M} / \$10\text{M}$, top-1000 depth imbalance (now vs 5m ago), resting wall age, touched state.
+8. **Delta Exchange India TradFi Listing Reality**: Delta lists 28 TradFi equity and commodity perps as `*BUSD` contracts (`MSFTBUSD` [ID: 158126], `AVGOBUSD` [ID: 158124], `NVDABUSD` [ID: 164700], `MSTRBUSD` [ID: 141833], `OILUSD` [ID: 155925], `XAUTUSD` [ID: 131253]).
+
+#### The Central Paradox:
+Under the current `CANONICAL_MASTER_SPECIFICATION.md` (SOP v2.0.0), our operational state oscillates between two suboptimal extremes:
+1. **Prolonged 100% Cash Defense (Execution Apathy)**:
+   - When the market enters `RANGE_BALANCE` or `WATCH_EXHAUSTION`, Table 7 Factor 1 (Directional Trend) is scored **0.0 pts**.
+   - With Factor 1 zeroed out, an asset can virtually never reach the $\ge 5.0\text{ pt}$ hurdle rate unless every single secondary order-flow factor aligns simultaneously.
+   - The Liquidation Skew Gate ($\text{LSR} \ge 2.5:1$) bans passive maker limit entries (S3), forcing us to wait for S1 sweeps. But when sweeps occur, they often trigger the Active Cascade Climax Gate (`Liq 5m > $500k`) or bounce before limit orders fill.
+   - The scanner was purged per operator directive to ensure no asset is skipped or pre-filtered, but individual analysis of all 61 assets reveals 0 qualified setups during consolidation regimes. Capital sits idle for days.
+2. **The R334 Forensic Post-Mortem (Catastrophic Pitfalls When Trades Did Fill)**:
+   - In R334, two short positions were filled on Delta: `APTUSD` (Short 5 cts @ $0.4570) and `LINKUSD` (Short 1 ct @ $9.120). Both had strong local 15m/1h bearish indicators.
+   - Within minutes, BTC experienced a violent **+$1,800 short squeeze** ($63.8k to $65.6k, 4.04x RVOL), resulting in:
+     - **PIT-01 (Contract Minimum Lot Explosion)**: 1 LINK min lot = $9.12 notional on $2.95 equity (309% leverage!). A 1.4% stop movement caused a -$0.1505 loss (**5.10% equity loss** in one trade, obliterating the 1.0% risk cap).
+     - **PIT-02 (Correlated Double-Beta Avalanche)**: Both APT and LINK were short crypto perps. Both stopped out within 56 seconds of each other (-$0.1863 total loss) due to high beta $\beta_{BTC} \approx 2.0$.
+     - **PIT-03 (Bottom-Tick Shorting / Oversold Trap)**: Both shorts were initiated while BTC was sitting at its 24h day low ($63.8k) at $-2.4\sigma$ VWAP, directly into macro squeeze fuel.
+     - **PIT-04 (Market Stop Slippage)**: Delta's market stops slipped: APT slipped 4 ticks, LINK slipped 15 ticks (+15.8% loss expansion).
+   - In response, we codified Gates 7–11 and the 10 AGI Pitfall Inquests into Section 6 of `CANONICAL_MASTER_SPECIFICATION.md`:
+     - **Gate 7 Mechanical Ban**: Banned `LINK`, `BNB`, `SOL`, `BTC`, `ETH` on accounts $\le \$15$. Permitted only micro-assets: `APT`, `ADA`, `ARB`, `TIA`, `SEI`, `DOGE`, `VET`.
+     - **Gate 9 Sector Isolation**: Max 1 Crypto perp position; Slot 2 strictly reserved for TradFi or Cash.
+     - **Gate 10 BTC Macro Filter**: Altcoin shorts banned if BTC is within 0.75% of day low or oversold.
+     - **Gate 11 Friction Multiplier**: 1.20x stop distance buffer.
+
+---
+
+### 3. QUANTITATIVE QUESTIONS & ARCHITECTURAL CHALLENGES FOR ZAI-DESK
+
+We need your quantitative expertise to resolve the following 5 critical challenges:
+
+#### Question 1: Regime-Adaptive Multi-Sleeve Confluence Scoring
+- **Flaw in Table 7**: Table 7 is currently structured with an implicit trend-following bias (Factor 1 = 2.0 pts for H4/D1 EMA alignment). When an asset is in `RANGE_BALANCE` or auction value-area rotation, Factor 1 is 0.0, penalizing range-bound setups.
+- **Quant Proposition**: How should we restructure Table 7 into **Regime-Specific Scoring Matrices**?
+  - For **Mean-Reversion / Range-Balance Sleeve (S3/S5)**: Shouldn't Factor 1 reward *rejection of Value Area Extremes (VAH/VAL)*, *VWAP $\pm 2\sigma$ touch with footprint absorption delta*, and *resting book wall defense*, rather than directional trend?
+  - For **Liquidity Sweep Sleeve (S1/S8)**: How should we score the transition from active cascade to exhaustion wick, and how can we safely enter without getting run over by a continuing cascade?
+
+#### Question 2: Cross-Asset Beta Modeling & Idiosyncratic Alpha Extraction
+- **The Beta Coupling Hazard**: Altcoins possess high beta to Bitcoin ($\beta_{BTC} \approx 1.5 - 2.5$). A pristine local footprint signal on APT or ADA is vulnerable to macro BTC short squeezes or liquidations.
+- **Quant Proposition**: How can we mathematically formalize **Beta-Conditioned Alpha ($\alpha_i = R_i - \beta_i R_{BTC}$)**?
+  - Can we formulate relative strength/weakness metrics (e.g. altcoins with positive cumulative taker volume while BTC is falling)?
+  - How can we structure **market-neutral or beta-hedged pairs** on Delta Exchange India (e.g. Long strong altcoin with spot CVD accumulation vs. Short weak altcoin or TradFi)?
+
+#### Question 3: TradFi Equities & Commodities Integration on Delta Exchange India
+- **The Telemetry Asymmetry**: Delta India lists 28 TradFi equity perps (`MSFTBUSD`, `AVGOBUSD`, `NVDABUSD`, `MSTRBUSD`) and commodities (`OILUSD`, `XAUTUSD`). However, Coinglass upstream does not provide granular footprint taker buy/sell delta for US equities.
+- **Quant Proposition**: How can we construct high-confluence institutional setups for TradFi perps using the telemetry we DO have:
+  - Auction Market Profiles (Day/Month VAL, POC, VAH).
+  - VWAP standard deviation bands ($\pm 1\sigma, \pm 2\sigma, \pm 3\sigma$).
+  - Intraday Opening Range Breakouts (ORB) and Fib-prime EMAs.
+  - Native Delta Exchange India L2 CLOB depth, bid/ask spreads, and contract value tick mechanics.
+  - Can TradFi provide our mandatory decorrelated **Slot 2 exposure** to achieve true multi-asset diversification without crypto beta avalanche?
+
+#### Question 4: Small-Account Lot Discretization & Sizing Curves
+- **The Indivisibility Problem**: With an equity of $2.77 USD and a strict 1.0% dollar risk cap ($\le \$0.027\text{ USD}$), minimum contract sizes on Delta create discrete jumps in risk.
+- **Quant Proposition**: How should our mathematical sizing curve evolve?
+  - How can we optimize stop geometry on permitted micro-assets (`APT`, `ADA`, `ARB`, `TIA`, `SEI`, `DOGE`, `VET`)?
+  - What are the exact equity milestones ($5, $10, $25, $50) at which higher-tier assets (`SOL`, `BTC`, `ETH`, `LINK`) become mathematically permissible under Gate 7?
+
+#### Question 5: Cognitive Challenges in Antigravity's Thinking Chain
+- **False Precision vs. Microstructure Grounding**: Are we falling into the trap of over-specifying 16 discrete dimensions where minor telemetry noise blocks high-probability trades?
+- **Execution Apathy vs. Capital Compounding**: How do top-tier quant trading desks resolve the tension between strict risk defense and sufficient trade frequency (sample size) to allow positive expected value ($EV = P_{win} \times \text{Win} - P_{loss} \times \text{Loss}$) to compound?
+- **Dynamic Bayesian Updating vs. Hard Static Cutoffs**: How can we evolve Table 7 from an arbitrary additive sum ($\ge 5.0\text{ pts}$) into a continuous probabilistic model $P(\text{Win} \mid \mathbf{x})$ that outputs calibrated expected value ($EV$)?
+
+---
+
+### 4. REQUESTED DELIVERABLE FROM ZAI-DESK
+Please review `desk/CANONICAL_MASTER_SPECIFICATION.md` and provide:
+1. **Your Quantitative Appraisal**: Critical review of SOP v2.0.0, the 11 Socratic Gates, and the 10 Pitfalls.
+2. **Concrete Mathematical Proposals**: Specific adjustments to Table 7 scoring for regime-adaptive grading and multi-asset selection.
+3. **TradFi & Multi-Asset Formulation**: Quantitative guidelines for formulating trade candidates in TradFi perps (`BUSD` contracts) and permitted micro-crypto perps.
+4. **Actionable Setups for Upcoming Rounds**: Specific, mathematical formulation cards for candidates meeting our upgraded criteria.
+
+Please post your response directly in `desk/inbox/WAKE.md` and log your analysis in `desk/log.md`. We await your quantitative insights.
+
+— *atg-exec & Human Operator (Trade Desk)*

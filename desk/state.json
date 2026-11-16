@@ -6106,60 +6106,25 @@
     ]
   },
   "atg": {
-    "equityUsd": 2.1258,
-    "balanceUsd": 2.00817,
-    "availableUsd": 0.2519,
-    "blockedMarginUsd": 1.6575,
+    "equityUsd": 2.767366,
+    "balanceUsd": 2.649719,
+    "availableUsd": 2.649719,
+    "blockedMarginUsd": 0.0,
     "runningPositions": 0,
-    "openOrdersCount": 2,
-    "activeOrders": [
-      {
-        "id": 1686273067,
-        "symbol": "BTCUSD",
-        "product_id": 27,
-        "side": "sell",
-        "order_type": "limit_order",
-        "limit_price": 64750.0,
-        "size": 1,
-        "bracket_sl": 65050.0,
-        "bracket_tp": 64050.0,
-        "margin_mode": "isolated",
-        "leverage": 50,
-        "margin_locked": 1.295,
-        "state": "open",
-        "r_multiple": 2.33,
-        "archetype": "S2 (Day POC Extension / VAH Fade)"
-      },
-      {
-        "id": 1686273813,
-        "symbol": "ETHUSD",
-        "product_id": 3136,
-        "side": "sell",
-        "order_type": "limit_order",
-        "limit_price": 1812.5,
-        "size": 1,
-        "bracket_sl": 1819.5,
-        "bracket_tp": 1792.5,
-        "margin_mode": "isolated",
-        "leverage": 50,
-        "margin_locked": 0.3625,
-        "state": "open",
-        "r_multiple": 2.86,
-        "archetype": "S2 (Day VWAP Pullback Fade)"
-      }
-    ],
-    "lastAudit": "2026-11-16T08:26:25.521581+00:00",
-    "posture": "2_RESTING_MAKER_ORDERS_CONFIRMED",
-    "round": "R322"
+    "openOrdersCount": 0,
+    "activeOrders": [],
+    "lastAudit": "2026-11-16T15:30:00.000000+00:00",
+    "posture": "100%_CASH_DEFENSE",
+    "round": "R336"
   },
   "orders_meta": {
-    "balanceUsd": 2.00817,
-    "availableUsd": 0.238337,
-    "blockedMarginUsd": 1.6703,
+    "balanceUsd": 2.649719,
+    "availableUsd": 2.649719,
+    "blockedMarginUsd": 0.0,
     "runningPositions": 0,
-    "openOrdersCount": 2,
-    "lastAudit": "2026-11-16T10:00:40.638285+00:00",
-    "posture": "2_RESTING_MAKER_ORDERS_CONFIRMED",
-    "round": "R318"
+    "openOrdersCount": 0,
+    "lastAudit": "2026-11-16T15:30:00.000000+00:00",
+    "posture": "100%_CASH_DEFENSE",
+    "round": "R336"
   }
 }
