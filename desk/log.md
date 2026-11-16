@@ -9856,3 +9856,19 @@ analysis script rc=1
     * Order Margin Blocked: **$1.4934 USD** (All 5 orders funded).
     * Unencumbered Cash Cushion: **$1.2600 USD (₹107.10 INR)**.
     * Downside Portfolio Heat: 100% Risk-Bounded, Zero Orphan Brackets, Maker Post-Only.
+
+## 2026-11-16 12:29:16 UTC — atg-exec [SETUP QUALITY AUDIT & PRUNING]
+- User Directive: 'keep high quality setup's live'
+- Action:
+  1. Adversarial Audit executed against Table 7 Confluence Matrix:
+     - ADAUSD (#1686522407): Grade B+ (Score 5.0-6.0), 2.50R, .5M Liq Magnet, Entry @ Day POC (.1524), Risk: .018 USD (0.61%). KEPT LIVE.
+     - ARBUSD (#1686521803): Grade B+ (Score 5.0-6.0), 2.60R, .6M Liq Magnet, Entry @ Day VWAP (.1335), Risk: .025 USD (0.84%). KEPT LIVE.
+     - LINKUSD (#1686521123): Grade B (Score 4.5-5.0), 2.46R, Entry @ Session/Day POC (.12), Risk: .130 USD (4.4%). KEPT LIVE.
+     - TIAUSD (#1686523065): Grade B- (Score 4.5), 2.45R, Entry @ Day POC (.3475), Risk: .011 USD (0.37%). KEPT LIVE.
+     - BNBUSD (#1686518888): Score 4.0 (<5.0 = NO TRADE), price at -2.25 sigma VWAP oversold, blocked .18 margin (80% of account), single trade risk .70 (23.7% portfolio heat). CANCELLED.
+  2. Delta Exchange Balances Post-Pruning:
+     - Net Equity: .9564 USD (Rs 251.29 INR)
+     - Cash Balance: .8387 USD
+     - Order Margin: .3144 USD (down from .4934 USD)
+     - Available Balance: .5092 USD (freed .25 USD liquidity)
+     - Open Resting Orders: 4 (ADA, ARB, LINK, TIA)
