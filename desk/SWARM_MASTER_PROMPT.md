@@ -331,9 +331,13 @@ For EACH qualifying trade candidate, output a full multi-paragraph institutional
 @[plugin:persistent-memory] @[plugin:coderabbit] @[plugin:superpowers] @[plugin:trading-skills] /swarm launch 360 AUTONOMOUS DELTA EXCHANGE TRADE EXECUTION & RECURSIVE ENGINE ROUND (CANONICAL SOP v1.4.0 · 1200s DYNAMIC TIMER EDITION). EXECUTE NOW:
 1. read_file("desk/SWARM_MASTER_PROMPT.md") IN FULL — every line, every section
 2. Execute Phase -1 (self-audit) then Phases 0-7 IN STRICT ORDER — tool calls FIRST, output SECOND
-3. Table 7: Factor 1 = 0.0 in RANGE_BALANCE. Itemize all 8 factors. Max 9.5 in balance.
-4. LAST CALL: schedule(DurationSeconds=1200) — ZERO cron, ZERO daemon
-5. If running positions < 2: hunt qualified setups (P5-07). Apply Breakeven (P5-04) and 8-bar time stop (P5-05).
+3. Scan all 61 Curated Assets (30 Crypto USDT-M + 28 TradFi USDT-M + 3 Classic) every cycle with zero gaps
+4. Audit active standing CLOB orders (BTCUSD #1685857607) against live order-book depth and Gate 1/2 clearance
+5. Table 7: Factor 1 = 0.0 in RANGE_BALANCE. Itemize all 8 factors. Max 9.5 in balance.
+6. Shared account isolation (P5-01b): Track via internal order numbers only — ignore external algo orders
+7. If running positions < 2: hunt qualified setups (P5-07). Apply Breakeven (P5-04) and 8-bar time stop (P5-05).
+8. LAST CALL: schedule(DurationSeconds=1200) — ZERO cron, ZERO daemon
+Overall, Our Goal is find High Potential Candidates for trading and punch maker limit orders on Delta Exchange India.
 ```
 
 ---
