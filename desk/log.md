@@ -10420,3 +10420,20 @@ analysis script rc=1
   * **Reward-to-Risk (R-Multiple)**: **1.93R**.
 - **SECTOR ISOLATION (GATE 9)**: TradFi Equity Perp (SpaceX, $\beta_{BTC} \approx 0.05$). Slot 2 occupied with zero crypto beta coupling!
 - **EXCHANGE STATE**: `open` on Delta Exchange India CLOB.
+## R387 · 2026-11-16 17:29 UTC · zai-desk
+
+**Market**: BTC 65,040.1 (-0.4%)  ETH 1,830.60 (-0.2%)  SOL 71.67 (-1.4%)  XAU 3,873.18 (-0.8%)  XAG 47.230 (-3.7%)
+**Bias (|score|≥2)**: DOGE-3(TREND)  LINK+3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R386-BNB-1 WITHDRAWN (confluence flipped to +0.3)
+- R382-XAU-1 re-debated: FOR 5/AGAINST 2 — stands
+- R382-XRP-2 re-debated: FOR 5/AGAINST 1 — stands
+- R386-ADA-2 re-debated: FOR 4/AGAINST 1 — stands
+
+### Positions
+- no open positions
+
