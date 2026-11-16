@@ -27,8 +27,8 @@
     }
   },
   "analysis": {
-    "last_round": "R324",
-    "last_round_ts": 1794827956486,
+    "last_round": "R325",
+    "last_round_ts": 1794828764493,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
@@ -638,7 +638,7 @@
       "side": "short",
       "size": 1,
       "entry_price": 64750.0,
-      "mark_price": 64727.8,
+      "mark_price": 64635.7,
       "stop_loss": 65050.0,
       "take_profit": 64050.0,
       "sl_order_id": 1686273070,
@@ -646,8 +646,8 @@
       "margin_mode": "isolated",
       "leverage": 50,
       "margin_locked": 1.295,
-      "unrealized_pnl_usd": 0.0222,
-      "r_excursion": 0.07,
+      "unrealized_pnl_usd": 0.1143,
+      "r_excursion": 0.38,
       "filled_at_utc": "2026-11-16 11:17:10 UTC",
       "breakeven_target": 64450.0,
       "time_stop_bars_elapsed": 0
@@ -658,7 +658,7 @@
       "side": "short",
       "size": 1,
       "entry_price": 1812.5,
-      "mark_price": 1811.73,
+      "mark_price": 1808.86,
       "stop_loss": 1819.5,
       "take_profit": 1792.5,
       "sl_order_id": 1686273817,
@@ -666,8 +666,8 @@
       "margin_mode": "isolated",
       "leverage": 50,
       "margin_locked": 0.3625,
-      "unrealized_pnl_usd": 0.0077,
-      "r_excursion": 0.11,
+      "unrealized_pnl_usd": 0.0364,
+      "r_excursion": 0.52,
       "filled_at_utc": "2026-11-16 11:08:26 UTC",
       "breakeven_target": 1805.5,
       "time_stop_bars_elapsed": 0
@@ -5913,12 +5913,14 @@
     }
   ],
   "account": {
-    "login": "REDACTED-LOCAL-ONLY",
-    "balance": 4643.54,
-    "equity": 4647.58,
-    "margin": 389.66,
-    "margin_free": 4257.92,
-    "profit": 4.04
+    "balance_usd": 1.988611589,
+    "net_equity_usd": 2.258232888,
+    "position_margin_usd": 1.6575,
+    "order_margin_usd": 0.0,
+    "available_balance_usd": 0.281237414,
+    "inr_balance": 10.0,
+    "active_positions": 2,
+    "standing_orders": 4
   },
   "quant_engine": {
     "last_scan_ts": 1794675825067,

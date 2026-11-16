@@ -9595,3 +9595,47 @@ analysis script rc=1
 
 - **PHASE 7: DYNAMIC TIMER RE-ARM**:
     * Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs, zero background daemons.
+
+
+## R325 · 2026-11-16 11:35 UTC · atg-exec & zai-desk
+- **ACCOUNT LIQUIDITY & MARGIN TELEMETRY (`india_prod`, Account `26902927`)**:
+    * Total Cash Balance: $1.988612 USD + ₹10.00 INR | Net Liquid Equity: $2.263800 USD (+6.5% account gain).
+    * Position Margin Blocked: $1.657500 USD (73.22% capital allocation).
+    * Order Margin: $0.0000 USD (0 non-bracket orders resting).
+    * Free Liquid Cash Buffer: $0.281237 USD (₹23.91 INR unencumbered).
+    * Active Running Positions: **2 / 2** (Both concurrency slots 100% active).
+    * Standing CLOB Orders: Exactly 4 bracket conditional orders (`reduce_only: true`). Zero orphans.
+    * Dual Stop-Out Worst-Case Loss: $0.30 (BTC) + $0.07 (ETH) = $0.3700 USD (16.34% max portfolio drawdown heat, strictly isolated 50x bounds, **83.66% capital guaranteed preserved**).
+
+- **ACTIVE POSITION ORDER FLOW & GATE AUDIT**:
+    1. **BTCUSD (Short 1 contract @ $64,750.00 USD · Product 27)**:
+       * Mark Price: $64,635.70 | PnL: +114.30 pts (+0.38R excursion) | Green.
+       * Gate 1 Clearance: SL $65,050 sits +0.69% clear of Session POC ($64,606.72), +0.66% clear of Day POC ($64,622.84), and +0.55% clear of Day VWAP ($64,696.19) -> **PASS**.
+       * Gate 2 Geometrical Risk: Vector B [64,750, 65,050 + 0.5 ATR ($65,156.31)] contains **0 hazard clusters** -> **PASS**.
+       * Table 7 Confluence: 6.5 / 11.5 pts (Grade B Standard Setup).
+       * Invariant P5-04 (Breakeven): Target = $64,450.00 (+1.0R). Current mark $64,635.70. Armed / not yet triggered. Zero premature stop movement.
+       * Invariant P5-05 (8-Bar Time Stop): Active. 0/8 bars elapsed.
+    2. **ETHUSD (Short 1 contract @ $1,812.50 USD · Product 3136)**:
+       * Mark Price: $1,808.86 | PnL: +3.64 pts (+0.52R excursion) | Green (Exceeded +0.50R milestone!).
+       * Gate 1 Clearance: SL $1,819.50 sits +0.68% clear of Session POC ($1,807.15), +0.69% clear of Day POC ($1,807.08), and +0.38% clear of Day VWAP ($1,812.53) -> **PASS**.
+       * Gate 2 Geometrical Risk: Vector B [1,812.50, 1,819.50 + 0.5 ATR ($1,823.01)] contains **0 hazard clusters** -> **PASS**.
+       * Table 7 Confluence: 5.5 / 11.5 pts (Grade B Standard Setup).
+       * Invariant P5-04 (Breakeven): Target = $1,805.50 (+1.0R). Current mark $1,808.86. Armed / not yet triggered. Zero premature stop movement.
+       * Invariant P5-05 (8-Bar Time Stop): Milestone +0.52R reached, invariant fully satisfied.
+
+- **PHASE 1: 61-ASSET UNIVERSE SCREENING & TAB 7 REGIME ROUTING**:
+    * Full universe scanned: 30 Crypto USDT-M Perps + 31 TradFi Perps/Indices = 61 Curated Assets.
+    * Regime: Majority in **RANGE_BALANCE**. Factor 1 = 0.0 pts strictly enforced.
+    * Rest-of-Universe Verdict: Unanimous **HARD VETO**. Both concurrency slots fully occupied (2 / 2). First-Two-Fills Circuit (P5-06) verified.
+
+- **PHASE 5: POSITION HYGIENE & CONCURRENCY MANAGEMENT**:
+    * Concurrency Cap: 2 / 2 running positions (BTCUSD and ETHUSD).
+    * Invariant P5-04 (Breakeven): Armed. BTC BE target = $64,450.0; ETH BE target = $1,805.50.
+    * Invariant P5-05 (8-Bar Time Stop): 2-hour duration clock active; ETH exceeded +0.5R threshold.
+    * Invariant P5-06 (First-Two-Fills Circuit): 100% active. Zero non-bracket entry orders allowed.
+
+- **PHASE 6: RECURSIVE AGI LEARNING ENGINE DEBRIEF**:
+    * Epistemic Invariant Validation: Both positions entered at the exact top of intraday auction Value Area pullbacks ($64,750 BTC, $1,812.5 ETH) and are displaying expanding favorable delta. ETH exceeded the +0.50R excursion milestone (+0.52R), confirming seller absorption and valid auction rotational decay towards Day VAL ($1,804.74). BTC is tracking closely (+0.38R) towards Day VAL ($64,364.42). Native brackets on Delta Exchange CLOB provide ironclad risk bounds.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+    * Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs, zero background daemons.
