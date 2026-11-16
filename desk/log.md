@@ -10633,3 +10633,44 @@ analysis script rc=1
 
 analysis script rc=1
 
+## R394 · 2026-11-16 20:59 UTC · zai-desk
+
+**Market**: BTC 64,930.6 (-0.6%)  ETH 1,818.65 (-0.9%)  SOL 71.31 (-1.9%)  XAU 3,857.38 (-1.2%)  XAG 47.040 (-4.1%)
+**Bias (|score|≥2)**: LINK-4(TREND)  AVAX-3(TRANS)  XRP-5(TRANS)  ADA-4(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R394-LINK-1 LINK SHORT limit 9.154 · stop 9.215 · T1 8.979 · T2 8.946 · T3 8.920 · R 2.9
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (9.122 vs 9.152), h4 RSI 37.0, day -1.8%
+      [FOR    ] footprint: bull 41 / bear 44; recent: Divergence/sell[time], Divergence/buy[vol], Divergence/buy[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×5, abs:sell×4, div:buy×6, div:sell×5, exh:buy×3, exh:sell×3, sdiv:buy×1, sdiv:sell×1, trap:buy×1, trap:sell×1 — net 16 buy-side vs 14 sell-side
+      [FOR    ] liquidation: long-liq magnet 8.979 (str 81, ~$3M est, -1.55%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.061 (5m ago +0.007, falling bids); bid $0.01B vs ask $0.01B
+      [FOR    ] cvd: taker buy 48.8%, perpCvd -23, spotCvd -7, quadrant both-selling, latestDiv bull (recent)
+      [FOR    ] notifications: 6h weighted bias -1.0 (8 events)
+- NEW R394-AVAX-2 AVAX SHORT limit 7.148 · stop 7.199 · T1 7.020 · T2 6.990 · T3 6.970 · R 2.5
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (7.139 vs 7.145), h4 RSI 31.9, day -2.3%
+      [AGAINST] footprint: bull 57 / bear 44; recent: Exhaustion/sell[time], Absorption/sell[vol], Absorption/sell[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×8, abs:sell×5, div:buy×1, div:sell×6, exh:buy×4, exh:sell×4, sdiv:buy×2, sdiv:sell×3, trap:sell×2 — net 15 buy-side vs 20 sell-side
+      [FOR    ] liquidation: long-liq magnet 7.020 (str 90, ~$3M est, -1.75%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance +0.010 (5m ago +0.066, falling bids); bid $0.01B vs ask $0.01B
+      [FOR    ] cvd: taker buy 48.2%, perpCvd -40, spotCvd -2, quadrant both-selling, latestDiv bull (recent)
+      [FOR    ] notifications: 6h weighted bias -8.7 (11 events)
+- NEW R394-XRP-3 XRP SHORT limit 0.9565 · stop 0.9633 · T1 0.9404 · T2 0.9370 · R 2.3
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.9551 vs 0.9560), h4 RSI 40.1, day -1.9%
+      [FOR    ] footprint: bull 40 / bear 43; recent: Bull div/buy[time], Divergence/buy[vol], Divergence/buy[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×4, abs:sell×2, div:buy×5, div:sell×1, exh:buy×5, exh:sell×6, sdiv:buy×3, sdiv:sell×2, trap:buy×3 — net 20 buy-side vs 11 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.9404 (str 55, ~$18M est, -1.52%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.027 (5m ago -0.054, rising bids); bid $0.06B vs ask $0.06B
+      [FOR    ] cvd: taker buy 48.1%, perpCvd -272, spotCvd -79, quadrant both-selling, latestDiv bear (recent)
+
+### Order lifecycle
+- R393-XAU-1 re-debated: FOR 5/AGAINST 2 — stands
+
+### Positions
+- no open positions
+
+
+## ROUND FAILED · 2026-11-16 20:59 UTC · zai-desk
+
+analysis script rc=1
+
