@@ -788,3 +788,51 @@ of the account. **Do not re-run this pattern.** Win or lose, 17.48 % is not a ma
   candidate blocks ever. Fix `desk_round.py` before adding more agents.
 
 Full audit: `desk/deepscan/COUNCIL-R393-MULTIAGENT-20261116-2021.md`
+
+---
+
+## 2026-11-16 20:55 UTC — Second Council (arena.ai) · R394 SETUP-YIELD DIAGNOSIS
+
+**The constraint is conversion, not data. Your 9-tab dictionary is sufficient.**
+
+Measured over 81 KB of `desk/log.md`: **77 candidate blocks ever, 0 declare a setup
+archetype (S1–S8)**. S4 (Wall-Pull) has **0 uses all-time**. 27 of 30 crypto assets are
+permanently pinned to "WAIT FOR THE SWEEP". The generator's vocabulary is
+`M1_TREND_PULLBACK / M2_MEAN_REVERSION / WATCH_EXHAUSTION` — and **WATCH_EXHAUSTION is
+not in the manual**; it is a non-setup that appears 23× and always resolves to "wait".
+Because Table 7 veto #8 is "setup fits no card S1–S8", those candidates are
+**ungradeable by construction**.
+
+**Root cause, measured.** Run `scripts/run_setup_scanner.py` (new, 8 archetypes × N
+symbols) against the desk's own R392 ADA block → **0 armed setups**, with diagnostics:
+
+```
+S1 blocked on: z            S2 blocked on: day VAL/POC/VAH, gex
+S3 blocked on: walls[], liq_up_usd, liq_dn_usd      S4 blocked on: wall_pull
+S5 blocked on: z, rsi_h1    S7 blocked on: ema h4/d1 13/89, z
+S8 blocked on: oi_delta_4h_pct, gex
+```
+
+Every one of those is **already in the data dictionary** and is dropped in transit:
+z-score/σ bands (Tab 1 §1.3), auction VAL/POC/VAH (§1.2), wall `usd`+`ageMs`+`touched`
+(Tab 3 §3.3, Tab 5 §5.3), `pull` events (Tab 5 §5.4), LSR (§4.3), OI quadrants (§1.6),
+GEX, spread (§9.1). **The four Table 7 factors scoring 0.0 — F4+F7+F8 = 3.5 pts, a
+third of the table — are 0.0 because the fields are dropped, not absent.** That
+mechanically caps every setup at 8.0/11.5 and puts Grade A (≥7.0) on a knife-edge.
+
+**SPREAD GATE BUG — costing candidates now.** R234-ADA-1 was withdrawn on
+"Spread 2.25 %". That is the **MT5 CFD** spread, applied to a **Delta** order. ADA R392's
+stop is 0.65 %; a 2.25 % spread would be **346 % of it** — the trade would be impossible,
+yet the desk placed it. Delta has no such spread. Bars ADA, DOGE, LTC, LINK, XAG —
+five of the most liquid alts — while Gate 4 (spread < 20 % of stop) can never be
+evaluated because Delta's own spread is never recorded. **Fix: read Tab 9 §9.1
+`bestAsk-bestBid`; apply the MT5 gate to MT5 only.**
+
+**Actions (in order):** (1) fix the spread gate; (2) extend the candidate block to carry
+the 13 fields instead of the prose summary; (3) mandate `setup: S<n>` on every candidate
+(veto #8) — this deletes `WATCH_EXHAUSTION` as a category; (4) add coverage counters
+(`archetypes evaluated / reachable / armed`) so "no setups" is falsifiable.
+
+Scanner: `scripts/run_setup_scanner.py` — self-test passes (10 states, 5 armed, S1/S8
+conflict resolution working). **NOT run on live tape** — 0/61 priced, no egress.
+Full diagnosis: `desk/deepscan/COUNCIL-R394-SETUP-YIELD-20261116-2055.md`
