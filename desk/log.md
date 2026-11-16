@@ -10585,3 +10585,25 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+## EXEC R344 · 2026-11-16 20:22 UTC · atg-exec
+
+**Venue**: Delta Exchange India (`india_prod`, Account `26902927`)
+**Net Liquid Equity**: $2.7947 USD (₹227.55 INR, **+31.47%** all-time net gain from $2.1258 baseline)
+**Available Cash**: $2.6771 USD + ₹10.00 INR (100% liquid cash)
+
+**TRADE COMPLETED**:
+- `SPCXBUSD` LONG 1 contract: **TAKE PROFIT HIT @ $139.65** (+1.931R realized, fill #35c05e0dcc704348b0bb3125f50c7093)!
+- Realized Net PnL: **+$0.0280 USD** (+51.15% return on position margin).
+- Brackets cleanly finalized on Delta CLOB (zero orphan orders).
+
+**NEW ORDER DISPATCHED (4-Voice Committee Consensus Winner)**:
+- Asset: `MSFTBUSD` (Product ID 158126, TradFi Slot 2 Winner)
+- Setup: Sleeve R Mean-Reversion (Table 7 Score: 7.5/11.5 pts · Grade A)
+- Order ID: `#1687941528` · Side: Buy 1 contract (0.01 MSFT)
+- Type: Post-Only Maker Limit @ **$518.50**
+- Stop Loss: **$516.20** (Dollar Risk: **$0.0276 USD** = 0.988% equity <= 1.0% Gate 7 cap)
+- Take Profit: **$525.20** (Day POC gravity, Drive: **+$0.0670 USD**, **+2.91R** EV)
+- Status: OPEN on Delta India CLOB.
+
+**Crypto Slot 1**: VACANT (100% Cash Defense). Waiting for TIA ($0.3421) and VET ($0.0048) sweep wicks.
