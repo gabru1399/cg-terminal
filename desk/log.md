@@ -8148,3 +8148,45 @@ analysis script rc=1
 ### Positions
 - None — data missing, HOLD (manual check)
 
+
+
+## EXEC · 2026-11-16 00:55 UTC · atg-exec (Round 299)
+
+- **PHASE -1 & PHASE 0 COMPLIANCE CHECK**:
+  - SOP Ingestion: Bound strictly to `desk/TRADE_FORMULATION_MANUAL.md`, `desk/SWARM_MASTER_PROMPT.md`, and `.gemini/rules/SWARM_EXECUTION.md`.
+  - Venue: Delta Exchange India (`india_prod` | Master Account `26902927`).
+  - Capital Telemetry: Total USD Balance $1.3438 USD, Available Free Cash $0.3070 USD (INR 26.10), Position Margin Locked $1.0247 USD (Chat 1 SOLVUSD Long +47 @ 0.004355, mark 0.00432778, unrealized PnL -$0.1269 USD), Net Liquid Equity $1.3271 USD.
+  - Concurrency Status: THIS desk (`cg-terminal`) has exactly 0 / 2 running positions (Both concurrency slots vacant), 0 open orders on CLOB.
+  - Max Tradable Initial Margin Budget (SOP 80% Buffer Rule): $0.3070 * 0.80 = $0.2456 USD.
+  - Shared Account Isolation (P5-01b): Chat 1 SOLVUSD Long (+47 @ 0.004355) and its 2 stop-bracket orders (#1684736467, #1684736466) tracked strictly by order number and left untouched.
+
+- **PHASE 1: LIVE 30-ASSET SCREENER PASS & TAB 7 REGIME ROUTING**:
+  - Closed-candle screener ingested across all 30 crypto USDT-M perps from continuity terminal (`http://127.0.0.1:3000/api/cg/screener`).
+  - 28/30 assets remain in `TREND_DOWN` with downward directional bias.
+  - Full 30-asset uncompressed screening matrix generated and archived to `scratch/matrix_r299.json`.
+  - Top raw screener candidates evaluated:
+    * FIL: Raw Table 7 = 6.5 pts. Regime: TREND_DOWN. Model: M1_TREND_PULLBACK SHORT (88% conf).
+    * ETH: Raw Table 7 = 5.0 pts. Regime: TREND_DOWN. Model: M1_TREND_PULLBACK SHORT (88% conf).
+    * AVAX, DOGE, TRX, LINK, LTC, DOT, NEAR, UNI, APT, SUI: Raw Table 7 = 5.5 pts. Regime: TREND_DOWN.
+    * 1000SHIB: Raw Table 7 = 6.0 pts. Regime: TREND_DOWN.
+    * BTC, BNB: Raw 5.5 - 6.0 pts, but margin gated ($0.3244 and $0.5941 > $0.2456 tradable budget).
+    * INJ, 1000PEPE: In `RANGE_BALANCE` (Factor 1 = 0.0 pts), scores <= 4.5 pts.
+
+- **PHASE 2 & PHASE 3: ADVERSARIAL AUDITOR VERDICT (Subagent 86012ef3-c9ed-4a7c-912f-876e47419fbf)**:
+  - Unanimous HARD VETO across all 13 candidates scoring >= 5.0 pts:
+    * Inquest 1 (R-Multiple Collapse): Every candidate fails DECIDE-D catastrophically. Prices are compressed near session lows while stops sit at impulse highs. ETH risks +23.3% for +0.95% to T1 (0.041R to T1, best composite 0.43R); FIL risks +43.8% for +0.61% to T1 (0.014R to T1, best composite 0.50R); AVAX risks +18.8% for +0.73% to T1 (0.039R to T1, best composite 0.66R); DOGE pays 0.035R to T1 (best 0.38R); NEAR pays 0.079R to T1 (best 0.25R). All fail the mandatory >= 2.0R continuation floor and >= 1.5R composite floor.
+    * Inquest 2 (Order Book Blocks): Opposing massive institutional resting bid walls block downside discovery: ETH blocked by $51.8M wall at 1827.27; FIL blocked by $1.2M wall at 0.6034; AVAX blocked by $3.1M wall at 7.19; DOGE blocked by $3.3M wall at 0.05926; NEAR blocked by $3.0M wall at 3.170.
+    * Inquest 3 (Adverse CVD Flow): Aggressive buyer CVD presses into short setups (ETH +$414.6M, NEAR +$18.6M, DOGE +$4.4M).
+    * Socratic Pitfalls Triggered: Q2 (Adverse Squeeze Magnet Trap), Q3 (Active Session HVN Collision), Q5 (Regime-Archetype Mismatch), Q8 (Inverted R-Multiple Trap).
+
+- **PHASE 4 & PHASE 5: EXECUTION HYGIENE & CONCURRENCY MANAGEMENT**:
+  - Concurrency Cap: Max 2 positions. Current active positions = 0. Both slots vacant.
+  - Zero orders placed. 100% Cash Defense maintained.
+  - All standing exchange orders audited; zero orphans, zero duplicate orders from this desk.
+
+- **PHASE 6: AGI SELF-IMPROVEMENT INSIGHT**:
+  - Microstructure Geometry Invariant: After strong impulsive legs down, entering short at the bottom of the move with a stop above the impulse origin yields severe negative expectancy (R-multiples between 0.015R and 0.08R). Fading these moves is also vetoed because trend continuation pressure exists. The only mathematically valid institutional response is 100% Cash Defense until price either completes a full structural pullback to the VWAP / +1σ band (re-expanding R to >= 2.0R) or produces a confirmed exhaustion liquidation sweep (Setup S1).
+  - Uncompromised Discipline: Preserved $0.3070 USD liquid cash reserve with zero fee leakage, zero taker slippage, and zero adverse selection.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+  - Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero cron jobs. Zero background daemons.
