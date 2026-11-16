@@ -240,6 +240,31 @@ interface RawMt5 {
   spreads?: Record<string, { spreadPct?: number; pct?: number; spread_pct?: number }>;
 }
 
+/** A desk/state.json order row (status: suggested | placed | open | active ...). */
+interface RawOrder {
+  id: string;
+  round?: string;
+  sym?: string;
+  asset?: string;
+  mt5Symbol?: string;
+  side?: string;
+  action?: string;
+  type?: string;
+  status?: string;
+  entry?: number;
+  stop?: number;
+  targets?: number[];
+  riskR?: number;
+  regime?: string;
+  mode?: string;
+  rationale?: string;
+  notes?: string;
+  ticket?: number;
+  createdTs?: number;
+  expiresTs?: number | null;
+  [k: string]: unknown;
+}
+
 /** Fast lookup map for Screener Desk badges (`POS LONG`, `LIMIT SHORT`, `SUGGESTED`). */
 export function getDeskIndex(): Map<string, { badge: string; tone: "pos" | "limit" | "suggested" }> {
   const map = new Map<string, { badge: string; tone: "pos" | "limit" | "suggested" }>();
@@ -307,7 +332,7 @@ export async function buildDeskLiveSnapshot(): Promise<DeskLiveSnapshot> {
     : [];
   for (const o of stateOrders) {
     const sym = (o.sym || o.asset) as string | undefined;
-    if (sym && ["suggested", "placed", "open", "active"].includes(o.status)) activeSyms.add(sym.toUpperCase());
+    if (sym && ["suggested", "placed", "open", "active"].includes(o.status ?? "")) activeSyms.add(sym.toUpperCase());
   }
 
   const priceMap = new Map<string, number | null>();
@@ -385,7 +410,7 @@ export async function buildDeskLiveSnapshot(): Promise<DeskLiveSnapshot> {
         mt5Symbol: o.mt5Symbol ?? `${sym}USD`,
         side,
         type: o.type ?? "limit",
-        status: o.status,
+        status: o.status ?? "unknown",
         entry: o.entry ?? 0,
         stop: o.stop ?? 0,
         targets: o.targets ?? [],
@@ -398,7 +423,7 @@ export async function buildDeskLiveSnapshot(): Promise<DeskLiveSnapshot> {
         createdTs: o.createdTs ?? 0,
         expiresTs: o.expiresTs ?? null,
         livePrice,
-        distToEntryPct: ["suggested", "placed", "open", "active"].includes(o.status) ? distPct(o.entry ?? 0, livePrice) : null,
+        distToEntryPct: ["suggested", "placed", "open", "active"].includes(o.status ?? "") ? distPct(o.entry ?? 0, livePrice) : null,
       };
     });
 
