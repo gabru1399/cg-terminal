@@ -27,8 +27,8 @@
     }
   },
   "analysis": {
-    "last_round": "R327",
-    "last_round_ts": 1794830518592,
+    "last_round": "R328",
+    "last_round_ts": 1794830893724,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
@@ -643,7 +643,7 @@
       "side": "short",
       "size": 1,
       "entry_price": 64750.0,
-      "mark_price": 64395.95,
+      "mark_price": 64260.84,
       "stop_loss": 64750.0,
       "take_profit": 64050.0,
       "sl_order_id": 1686273070,
@@ -651,12 +651,12 @@
       "margin_mode": "isolated",
       "leverage": 50,
       "margin_locked": 1.295,
-      "unrealized_pnl_usd": 0.35405,
-      "r_excursion": 1.18,
+      "unrealized_pnl_usd": 0.4865,
+      "r_excursion": 1.705,
       "filled_at_utc": "2026-11-16 11:17:10 UTC",
       "breakeven_target": 64450.0,
-      "breakeven_status": "TRIGGERED & EXECUTED (SL @ 64750.00)",
-      "time_stop_bars_elapsed": 2
+      "breakeven_status": "LOCKED & ACTIVE (SL @ 64750.00 \u00b7 RISK-FREE)",
+      "time_stop_bars_elapsed": 3
     },
     {
       "symbol": "ETHUSD",
@@ -664,7 +664,7 @@
       "side": "short",
       "size": 1,
       "entry_price": 1812.5,
-      "mark_price": 1803.62,
+      "mark_price": 1801.5,
       "stop_loss": 1812.5,
       "take_profit": 1792.5,
       "sl_order_id": 1686273817,
@@ -672,12 +672,12 @@
       "margin_mode": "isolated",
       "leverage": 50,
       "margin_locked": 0.3625,
-      "unrealized_pnl_usd": 0.0888,
-      "r_excursion": 1.269,
+      "unrealized_pnl_usd": 0.108,
+      "r_excursion": 1.836,
       "filled_at_utc": "2026-11-16 11:08:26 UTC",
       "breakeven_target": 1805.5,
-      "breakeven_status": "TRIGGERED & EXECUTED (SL @ 1812.50)",
-      "time_stop_bars_elapsed": 3
+      "breakeven_status": "LOCKED & ACTIVE (SL @ 1812.50 \u00b7 RISK-FREE)",
+      "time_stop_bars_elapsed": 4
     }
   ],
   "closed": [
@@ -5921,7 +5921,7 @@
   ],
   "account": {
     "balance_usd": 1.988611589,
-    "net_equity_usd": 2.545590928,
+    "net_equity_usd": 2.705484728,
     "position_margin_usd": 1.6575,
     "order_margin_usd": 0.0,
     "available_balance_usd": 0.281237414,
@@ -5929,7 +5929,7 @@
     "active_positions": 2,
     "standing_orders": 4,
     "total_portfolio_risk_usd": 0.0,
-    "growth_pct_from_baseline": 19.75
+    "growth_pct_from_baseline": 27.27
   },
   "quant_engine": {
     "last_scan_ts": 1794675825067,
