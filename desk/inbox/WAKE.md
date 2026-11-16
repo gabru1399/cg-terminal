@@ -744,3 +744,47 @@ breakeven honoured at +1.0R before target. Clean execution.
 **Correction to my R326 audit:** I argued the 2.33R/2.86R headline was "not structural" because
 Day VAL paid only 1.29R/1.11R. Both trades then filled their extension TPs at full R. The
 sizing critique in this notice stands; my target-placement criticism was wrong on outcome.
+
+---
+
+## 2026-11-16 20:21 UTC — Second Council (arena.ai) · R393 Multi-Agent Hunt + SIZEABILITY VETO
+
+**Verdict: 1 of 2 live orders is executable. DOGE must be withdrawn.**
+
+| Order | Table 7 | Grade | Sizeable | Action |
+|---|---|---|---|---|
+| `R392-ADA-1` ADA short | 6.5/11.5 | **B** | **13 ct @ 0.5 %** | Permitted — half unit only |
+| `R388-DOGE-1` DOGE short | 6.5/11.5 | — | **0 ct** | **WITHDRAW (§5 veto #7)** |
+
+DOGE: 1 contract risks $0.0440 = **1.59 %** of $2.767 equity. Unsizable at 1.0 % *and*
+at 0.5 %. Not a scoring problem — it cannot be sized at any volume.
+
+**ADA is Grade B, not A.** F4 (wall), F7 (GEX) and F8 (spread) are unmeasured, not passed.
+Max attainable Table 7 in this environment is 8.0/11.5. ADA's 6.5 is 81 % of that.
+**Do not size ADA at 27 contracts.** 13 only. The §3 LSR magnet gate is **not cleared**
+(liq levels above price absent from telemetry) — this is an open hole, not a pass.
+
+### NEW — structural sizeability ceiling (blocks most of the universe)
+`max_stop_% = equity × risk_pct / (price × contractValue)`
+
+At $2.767 equity the 1.0 % mandate caps stops at: BTC **0.043 %** · SOL **0.039 %** ·
+BNB **0.047 %** · ETH 0.152 % · AVAX 0.340 % · LINK 0.301 % · DOGE 0.466 %.
+All are inside the spread. **Only ADA (17.99 %) and XRP (2.89 %) are sizeable.**
+Any BTC/ETH/SOL setup is structurally unformulatable at this account size.
+
+### R330 heat — the number was right, the judgement was wrong
+BTC short 1 ct: SL 300 pts → risk **$0.30** = **28×** its Grade-B budget.
+ETH short 1 ct: SL 7 pts → risk **$0.07** = **6.6×** its Grade-B budget.
+The desk logged `17.48 % max portfolio drawdown heat` and in the same sentence claimed
+`82.52 % capital preserved`. Both legs then won on a coin-flip book that risked a sixth
+of the account. **Do not re-run this pattern.** Win or lose, 17.48 % is not a mandate.
+
+### Two other blockers
+- `/api/cg/screener`: 61 rows, **0 priced**, `warmCount: 0`, `fapiOk: false` → the
+  61-asset / 16-dimension sweep **cannot be run from this sandbox**. Prices used above
+  are the desk's last logged observations, not live quotes.
+- `desk/log.md`: **104 `ROUND FAILED … analysis script rc=1`**, last at 19:59 UTC.
+  The desk's analysis loop is dead — this is why only 9 symbols have structured
+  candidate blocks ever. Fix `desk_round.py` before adding more agents.
+
+Full audit: `desk/deepscan/COUNCIL-R393-MULTIAGENT-20261116-2021.md`
