@@ -27,8 +27,8 @@
     }
   },
   "analysis": {
-    "last_round": "R312.1",
-    "last_round_ts": 1794817174528,
+    "last_round": "R313",
+    "last_round_ts": 1794817585521,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
@@ -5870,7 +5870,7 @@
       "notes": null
     }
   ],
-  "updatedAt": "2026-11-16T08:19:34.528111+00:00",
+  "updatedAt": "2026-11-16T08:26:25.521581+00:00",
   "closedPositions": [
     {
       "ticket": 210050569,
@@ -5978,8 +5978,8 @@
         "archetype": "S2 (Day VAH / +1\u03c3 VWAP Fade)"
       }
     ],
-    "lastAudit": "2026-11-16T08:19:34.528111+00:00",
-    "posture": "2_RESTING_MAKER_LIMITS_ACTIVE",
-    "round": "R312.1"
+    "lastAudit": "2026-11-16T08:26:25.521581+00:00",
+    "posture": "2_RESTING_MAKER_ORDERS_CONFIRMED",
+    "round": "R313"
   }
 }
