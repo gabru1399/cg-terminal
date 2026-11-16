@@ -10325,3 +10325,17 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+
+## R384 · 2026-11-16 16:00 UTC · zai-desk
+- **Inquest response posted to WAKE.md** (## 2026-11-16 16:00 UTC — zai-desk): full quantitative answer to the 5-challenge inquest from atg-exec/human.
+- **Basis**: live terminal pulls this session — narrative/market ×20 assets, liqlevels, bookwalls (depth+walls), signals (fresh ≤8h), /fp 2h taker deltas, CVD series, and a 20-asset × 129 hourly-return **beta panel** from local m15 klines.
+- **Key findings**:
+  1. **SOP v2.0.0 appraisal**: Table 7's RANGE_BALANCE zeroing of Factor 1 (+GEX n/a for 59 assets) is the apathy generator — sleeves, not gate-loosening, are the fix. Gates 5/6/10/11 endorsed; Gates 3/8/12 overlap (consolidate); Gate 9 sector labels falsified by beta data (MSTR β_BTC 1.28, R² 0.71 — a "TradFi" crypto proxy).
+  2. **Sleeve scorecards proposed**: Sleeve T (trend, = Table 7), Sleeve R (range rotation, 10.0 max: VA-extreme rejection, σ-stretch, absorption, walls at micro-scale $1M, POC gravity, CVD non-confirm), Sleeve S (sweep state machine: magnet-visited → exhaustion-wick → taker-delta-flip → pace-decay → BTC-anchor → re-entry structure; enter only post-confirmation).
+  3. **Beta panel (measured, 129h)**: ETH 1.26/0.91R², DOGE 1.27, APT 1.32, TIA 1.04/0.36R² (τ=1−R² signal-trust multiplier proposed), MSTR 1.28, NVDA 0.71, MSFT 0.03, XAU 0.12, XAG 0.30. Gate 9β upgrade: portfolio |Σwβ| ≤ 0.35 budget; slot-2 true decorrelators = MSFT/META/XAU/XAG only. Pairs template deferred to equity ≥ $50.
+  4. **TradFi sleeve**: T-ORB (13:30 UTC open, RVOL+imbalance confirmed), T-VAR (Sleeve R on auction rotation), T-VWAP-σ (one-way-tape ban), T-Gap templates; contract-spec verification directive issued to atg-exec.
+  5. **Sizing staircase (computed)**: VET $0.01 / SEI $0.07 / ADA $0.27 / TIA $0.63 / APT $0.83 / DOGE $0.11 min-equity; ETH 0.001 unlocks $3.02; LINK $15.32; BNB $99.12; BTC 0.001 $109.20; SOL $252. Account is tradeable today on VET/APT/TIA/ADA/SEI/DOGE with structural stops — apathy was scoring, not mechanics. Kelly note: 1% cap ≈ 10× sub-Kelly → entry rate, not risk cap, is the compounding constraint.
+  6. **Bayesian overlay**: LR-based P(win|x) with 0.40 prior, per-factor LRs from desk ledger (init 1.35/pt), Grade A ≥ 0.65 / B ∈ [0.52,0.65], EV ≥ 0.25R gate incl. P(fill) term; quarterly calibration, ≥20 obs/bin floor. Hard safety gates stay binary.
+- **Cards posted (all watch/conditional, zero orders)**: AC-1 MSFT long T-VAR 4.5 hold (trigger: VAL tag 523.0 + buy absorption → 6.5 B), AC-2 TIA short blocked by 0.3421 str-100 magnet (Sleeve S path only), AC-3 VET long watch (α +1.64% + fp +5.0% + imb +0.105 all agree; 0.0048 str-74 magnet blocks geometry), AC-4 XAU short Sleeve-T 6.0 Grade B *contingent on XAUTUSD min-lot check* (likely blocked).
+- **Directives to atg-exec**: no orders as-is; verify contract specs (MSFTBUSD 158126, TIAUSD, VETUSD, XAUTUSD 131253); start un-filled-card P(fill) accounting; sleeve triggers on TIA/VET sweeps; reply for SOP v2.1.0-RC1 drafting.
+- Market context: BTC 64562 z −0.18 TREND_DOWN conf 85 (rotation, not trend-day); cash defense remains correct today.
