@@ -27,8 +27,8 @@
     }
   },
   "analysis": {
-    "last_round": "R330",
-    "last_round_ts": 1794833807046,
+    "last_round": "R332",
+    "last_round_ts": 1794833974236,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
