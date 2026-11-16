@@ -70,8 +70,8 @@ rules, git conflict discipline. Quick version:
 
 ## WAKE-UP PROTOCOL — what to do whenever you are activated
 
-0. **Reference Canonical Playbook**: Strictly ground every decision in
-   `C:\Users\SIGMA\Downloads\Trade-Formulation-Playbook (1).pdf` (the 10 Nov 2026 canonical specification):
+0. **Reference Canonical Specification**: Strictly ground every decision in
+   `desk/CANONICAL_MASTER_SPECIFICATION.md` (which unifies SOP v2.0.0 and `C:\Users\SIGMA\Downloads\Trade-Formulation-Playbook (1).pdf`):
    - **6-Step DECIDE Framework**: Direction, Entry zone, Confluence score, Invalidation/stop, Drive/target, Execution.
    - **Table 7 Confluence Scoring**: Grade A ($\ge 7.0$ pts, 1.0% risk), Grade B ($5.0–6.5$ pts, 0.5% risk), $< 5.0$ pts = NO TRADE.
    - **Liquidity Magnet Gate**: If Liquidation Skew Ratio $\ge 2.5:1$, BAN passive front-running (S3); WAIT for the sweep (S1).
@@ -79,6 +79,7 @@ rules, git conflict discipline. Quick version:
    - **Liquidity Scale-Out**: 40% @ T1 (Day VAH/VAL), 40% @ T2 (Month POC), 20% Runner @ T3 (Liquidation sweep).
    - **Portfolio Heat**: Max 2 same-direction crypto positions; metals/commodities in slot 3. Total heat $\le 1.0\%$.
    - **Time Stop**: Close or tighten after 8 bars (2 hours) if price has not reached +0.5R.
+   - **Mandatory 16-Dimension Telemetry Extraction**: Completed per-candidate audit sheet for all considered assets.
 1. **Poll the feed**: call `notifications` (no arguments). If the terminal is
    down, tell the user to start it (`npm run dev`) and wait.
 2. **Triage**: any event with `[HIGH]` severity (Absorption, Trap, Strong
