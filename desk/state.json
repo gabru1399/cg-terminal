@@ -27,8 +27,8 @@
     }
   },
   "analysis": {
-    "last_round": "R358",
-    "last_round_ts": 1794821347239,
+    "last_round": "R316",
+    "last_round_ts": 1794821788151,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
@@ -5912,8 +5912,8 @@
     "blockedMarginUsd": 1.6703,
     "runningPositions": 0,
     "openOrdersCount": 2,
-    "lastAudit": "2026-11-16T09:10:30.770438+00:00",
+    "lastAudit": "2026-11-16T09:36:28.151160+00:00",
     "posture": "2_RESTING_MAKER_ORDERS_CONFIRMED",
-    "round": "R315"
+    "round": "R316"
   }
 }
