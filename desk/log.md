@@ -9662,3 +9662,24 @@ analysis script rc=1
 - **Artefacts**: `desk/deepscan/COUNCIL-R326-20261116-1148.md` (dossier) · `UNIVERSE-360-20261116-1150.md` · `decide-20261116-1150.json` · `desk/delta_contracts.json` · rewritten `scripts/run_canonical_decide.py` · `src/lib/desk/live.ts` build fix.
 - **Verdict**: **HOLD both shorts under a documented 16.38 % heat breach · PLACE NO NEW ORDERS · fix ledger + pipeline before the next round can improve on this one.**
 
+
+## 2026-11-16 12:20 UTC · arena.ai (Second Council) — INFRA: preview-delivery failure diagnosed & start wrapper hardened
+
+**Symptom reported by the operator:** the live preview panel read *"Connecting to sandbox…"* indefinitely; "start terminal… it is not running".
+
+**Actual state: the server was never down.** `GET /api/health` → 200, `GET /api/cg/screener` → 200 `totalCount: 61`, `/` → 200 (9 225 B), uptime unbroken. The failure was the **preview proxy → sandbox leg**, not the app.
+
+**Root causes (two, both in the start path):**
+1. **Loopback-only default bind.** `scripts/start-server.mjs` defaulted `HOSTNAME=127.0.0.1` ("safe default"). In this deployment the preview proxy connects *from outside loopback*, so a loopback bind answers `curl` inside the sandbox and looks healthy while the panel can never reach it. The platform compensated by overriding `HOSTNAME=0.0.0.0` on relaunch — any relaunch that missed the override produced a silently unreachable preview. Process history shows exactly this: 11:42 `node scripts/start-server.mjs` (loopback), then 11:56 and 11:58 launches carrying `HOSTNAME=0.0.0.0` that I did not issue.
+2. **Fatal EADDRINUSE on restart.** A relaunch while the old standalone process still held `:3000` died with `listen EADDRINUSE`, leaving the *previous* build serving while the operator believed a fresh one had started.
+
+**Fixes committed (`scripts/start-server.mjs`):**
+- Default bind is now **`0.0.0.0`**, with `HOSTNAME=127.0.0.1` available explicitly for local-only use. `||=` guards against a launcher passing an empty `HOSTNAME=`, which Next treats as unset and logs as an unhelpful `":3000"`.
+- **Build guard**: if `.next/standalone/server.js` is missing (a recycled sandbox loses `node_modules` and `.next` — both gitignored, so the platform auto-start used to `exit 1` against an empty tree and leave the preview **permanently** dead), the wrapper now runs `npm ci` when needed and `npm run build`, then starts. Verified end-to-end from an empty tree: build 8.3 s → serving `totalCount: 61`.
+- **Port-reuse detection**: probes `/api/health` on the configured port first; if something is already serving it logs the incumbent's uptime and stays alive as a handle instead of dying on `EADDRINUSE`.
+
+**Verification performed:** killed every `next-server`/wrapper, relaunched with **no env overrides at all** → binds `0.0.0.0:3000`, `/api/health` 200, `/` 200, `totalCount: 61`; preview-host simulation (`Host: 3000-…e2b.app` + same-origin headers) → 200. Relaunch-while-serving → detects incumbent, no duplicate. Confirmed no iframe-blocking headers and no client-side absolute `localhost` URLs anywhere in `src/`.
+
+**Correction to an earlier claim in this round:** I first reported `/api/health` as 404 — that was my own bad URL (`/api/cg/health`). The route is present and 200. Also, my first cold-start test was **invalid**: the build succeeded but the bind failed with `EADDRINUSE`, and the 200s I measured came from the pre-existing process. Re-run against a free port proved the build guard genuinely works.
+
+**Lesson (AGI-02):** a health check against `127.0.0.1` proves the *process* answers — it does not prove the *delivery path* works. For preview-served services the verification target must be the bind address and the proxy's Host, not loopback alone.
