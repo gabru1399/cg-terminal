@@ -27,8 +27,8 @@
     }
   },
   "analysis": {
-    "last_round": "R313",
-    "last_round_ts": 1794817585521,
+    "last_round": "R314",
+    "last_round_ts": 1794818219227,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
@@ -239,430 +239,52 @@
       "r_multiple": 2.76
     }
   },
-  "orders": [
-    {
-      "id": "MT5-210199407",
-      "asset": "BTC",
-      "sym": "BTC",
-      "mt5Symbol": "BTCUSD",
-      "action": "sell",
-      "side": "sell",
-      "type": "sell_limit",
-      "volume": 0.01,
-      "limitPrice": 69500,
-      "stopPrice": 70280,
-      "targetPrice": 67200,
-      "status": "placed",
-      "ticket": 210199407,
-      "placedTs": 1794609137000,
-      "notes": "Grade A (10.0/11.5) \u00b7 retest of Day VAH & +1\u03c3 VWAP band \u00b7 targeting 67,200 long liquidation sweep \u00b7 active in MT5"
-    },
-    {
-      "id": "MT5-210199455",
-      "asset": "XAU",
-      "sym": "XAU",
-      "mt5Symbol": "XAUUSD",
-      "action": "sell",
-      "side": "sell",
-      "type": "sell_limit",
-      "volume": 0.01,
-      "limitPrice": 3900.5,
-      "stopPrice": 3916.5,
-      "targetPrice": 3865,
-      "status": "placed",
-      "ticket": 210199455,
-      "placedTs": 1794609201000,
-      "notes": "Grade A/B+ (8.5/11.5) \u00b7 retest of Day POC & -1\u03c3 VWAP \u00b7 broker spread 0.0224% (<0.05%) \u00b7 fills Macro Slot 3 \u00b7 active in MT5"
-    },
-    {
-      "id": "R261-AVAX-1",
-      "createdTs": 1794652146623,
-      "round": "R261",
-      "sym": "AVAX",
-      "mt5Symbol": "AVAXUSD",
-      "side": "short",
-      "type": "limit",
-      "entry": 8.033,
-      "stop": 8.1,
-      "targets": [
-        7.86,
-        7.82
-      ],
-      "targetSources": [
-        "long-liq cluster str 41 (~$1M est)",
-        "long-liq cluster str 50 (~$1M est)"
-      ],
-      "riskR": 2.5,
-      "expiresTs": 1794666546623,
-      "status": "rejected",
-      "statusTs": 1794654589505,
-      "perpRefPrice": 7.978,
-      "regime": "TREND-DOWN",
-      "mode": "trend-pullback",
-      "debate": [
-        {
-          "source": "overview",
-          "verdict": "FOR",
-          "evidence": "h4 \u2193/d1 \u2193 EMA, price below day VWAP (7.978 vs 8.074), h4 RSI 38.3, day -3.1%"
-        },
-        {
-          "source": "footprint",
-          "verdict": "FOR",
-          "evidence": "bull 38 / bear 47; recent: Absorption/sell[time], Divergence/buy[vol], Divergence/sell[range]"
-        },
-        {
-          "source": "microFlow(abs/trap/exh)",
-          "verdict": "FOR",
-          "evidence": "6h micro-events: abs:buy\u00d72, abs:sell\u00d72, div:buy\u00d73, div:sell\u00d71, exh:sell\u00d74, sdiv:buy\u00d71, sdiv:sell\u00d71, trap:sell\u00d71 \u2014 net 6 buy-side vs 9 sell-side"
-        },
-        {
-          "source": "largeOrders",
-          "verdict": "NEUTRAL",
-          "evidence": "0 walls \u2265$5M, none within 2% of price"
-        },
-        {
-          "source": "liquidation",
-          "verdict": "NEUTRAL",
-          "evidence": "no strong same-direction magnet in \u00b14%"
-        },
-        {
-          "source": "stops(BTC heatmap)",
-          "verdict": "NEUTRAL",
-          "evidence": "n/a (upstream: BTC-only)"
-        },
-        {
-          "source": "bookWalls",
-          "verdict": "FOR",
-          "evidence": "\u00b15% depth imbalance +0.026 (5m ago +0.032, falling bids); bid $0.01B vs ask $0.01B"
-        },
-        {
-          "source": "cvd",
-          "verdict": "FOR",
-          "evidence": "taker buy 48.0%, perpCvd -24, spotCvd +0, quadrant spot-bid, latestDiv bull (recent)"
-        },
-        {
-          "source": "notifications",
-          "verdict": "FOR",
-          "evidence": "6h weighted bias -10.8 (11 events)"
-        }
-      ],
-      "rationale": "recent signals: Absorption/sell (time), Divergence/buy (vol), Exhaustion/sell (range); confluence -5.0 [notif -1.6 \u00b7 signals -1.0 \u00b7 trend -2 \u00b7 vwap -1 \u00b7 rsi +0.0 \u00b7 cvd +0.6] \u00b7 debate FOR 7/AGAINST 0; entry VWAP+1\u03c3/day-POC 8.033 [trend-pullback \u00b7 TREND-DOWN]; stop beyond 2\u03c3 zone; T1 long-liq cluster str 41 (~$1M est) \u00b7 T2 long-liq cluster str 50 (~$1M est) \u00b7 T3 \u2014; levels are PERP prices \u2014 translate to broker via live basis before MT5; liq clusters are Coinglass estimates",
-      "ticket": null,
-      "actualEntry": null,
-      "filledTs": null,
-      "notes": "Rejected / Disqualified: AVAXUSD has no MT5 execution venue (no tick on FundedNext broker) \u00b7 Crypto slots 2/2 saturated (ETHUSD active #210199486 + BTCUSD limit #210199407) \u00b7 LSR 10.8:1 Magnet Gate active (passive entry banned) \u00b7 Desk R 0.27 < 2.0"
-    },
-    {
-      "id": "R263-LINK-1",
-      "createdTs": 1794655747032,
-      "round": "R263",
-      "sym": "LINK",
-      "mt5Symbol": "LNKUSD",
-      "side": "short",
-      "type": "limit",
-      "entry": 9.598,
-      "stop": 9.677,
-      "targets": [
-        9.434,
-        9.4,
-        9.306
-      ],
-      "targetSources": [
-        "long-liq cluster str 100 (~$4M est)",
-        "long-liq cluster str 43 (~$2M est)",
-        "long-liq cluster str 42 (~$2M est)"
-      ],
-      "riskR": 2.1,
-      "expiresTs": 1794670147032,
-      "status": "rejected",
-      "statusTs": 1794657016913,
-      "perpRefPrice": 9.585,
-      "regime": "TREND-DOWN",
-      "mode": "trend-pullback",
-      "debate": [
-        {
-          "source": "overview",
-          "verdict": "FOR",
-          "evidence": "h4 \u2193/d1 \u2193 EMA, price below day VWAP (9.585 vs 9.640), h4 RSI 33.9, day -2.7%"
-        },
-        {
-          "source": "footprint",
-          "verdict": "FOR",
-          "evidence": "bull 35 / bear 50; recent: Divergence/buy[time], Trapped longs/sell[vol], Divergence/sell[range]"
-        },
-        {
-          "source": "microFlow(abs/trap/exh)",
-          "verdict": "FOR",
-          "evidence": "6h micro-events: abs:buy\u00d71, abs:sell\u00d71, div:buy\u00d73, div:sell\u00d73, exh:sell\u00d72, trap:sell\u00d71 \u2014 net 4 buy-side vs 7 sell-side"
-        },
-        {
-          "source": "largeOrders",
-          "verdict": "NEUTRAL",
-          "evidence": "7 walls \u2265$5M, none within 2% of price"
-        },
-        {
-          "source": "liquidation",
-          "verdict": "FOR",
-          "evidence": "long-liq magnet 9.468 (str 87, ~$4M est, -1.10%) as target"
-        },
-        {
-          "source": "stops(BTC heatmap)",
-          "verdict": "NEUTRAL",
-          "evidence": "n/a (upstream: BTC-only)"
-        },
-        {
-          "source": "bookWalls",
-          "verdict": "FOR",
-          "evidence": "\u00b15% depth imbalance -0.053 (5m ago -0.030, falling bids); bid $0.01B vs ask $0.02B"
-        },
-        {
-          "source": "cvd",
-          "verdict": "FOR",
-          "evidence": "taker buy 48.8%, perpCvd -23, spotCvd -7, quadrant both-selling, latestDiv bull (recent)"
-        },
-        {
-          "source": "notifications",
-          "verdict": "FOR",
-          "evidence": "6h weighted bias -3.9 (4 events)"
-        }
-      ],
-      "rationale": "recent signals: Divergence/buy (time), Trapped longs/sell (vol), Divergence/sell (range); confluence -4.6 [notif -1.3 \u00b7 signals -1.0 \u00b7 trend -2 \u00b7 vwap -1 \u00b7 rsi +0.0 \u00b7 cvd +0.7] \u00b7 debate FOR 7/AGAINST 0; entry VWAP+1\u03c3/day-POC 9.598 [trend-pullback \u00b7 TREND-DOWN]; stop beyond 2\u03c3 zone; T1 long-liq cluster str 100 (~$4M est) \u00b7 T2 long-liq cluster str 43 (~$2M est) \u00b7 T3 long-liq cluster str 42 (~$2M est); levels are PERP prices \u2014 translate to broker via live basis before MT5; liq clusters are Coinglass estimates",
-      "ticket": null,
-      "actualEntry": null,
-      "filledTs": null,
-      "notes": "Rejected / Disqualified: LNKUSD broker spread 0.5666% exceeds 0.15% Broker Spread Gate \u00b7 Crypto slots 2/2 saturated (ETHUSD active #210199486 + BTCUSD limit #210199407) \u00b7 Desk R 0.36 < 2.0"
-    },
-    {
-      "id": "DELTA-1680974187",
-      "symbol": "ETH",
-      "product_symbol": "ETHUSD",
-      "product_id": 3136,
-      "side": "sell",
-      "size": 1,
-      "contract_value": "0.01 ETH",
-      "status": "placed",
-      "ticket": 1680974187,
-      "entry": 1844,
-      "stop": 1875,
-      "targets": [
-        1780
-      ],
-      "venue": "Delta Exchange India",
-      "account": 26902927,
-      "margin_mode": "isolated",
-      "post_only": true,
-      "created_at": 1794664160433,
-      "r_multiple": 2.06,
-      "notes": "Tuned to Day VAL shelf retest (shallow pullback optimization)",
-      "updated_at": 1794680939862
-    },
-    {
-      "id": "DELTA-1680977628",
-      "symbol": "LINK",
-      "product_symbol": "LINKUSD",
-      "product_id": 15041,
-      "side": "sell",
-      "size": 1,
-      "contract_value": "1.0 LINK",
-      "status": "placed",
-      "ticket": 1680977628,
-      "entry": 9.28,
-      "stop": 9.45,
-      "targets": [
-        8.9
-      ],
-      "venue": "Delta Exchange India",
-      "account": 26902927,
-      "margin_mode": "isolated",
-      "post_only": true,
-      "created_at": 1794664160433,
-      "r_multiple": 2.23,
-      "notes": "Tuned to Day VAL shelf retest (shallow pullback optimization)",
-      "updated_at": 1794680939862
-    },
-    {
-      "id": "DELTA-PENDING-BTC-1",
-      "symbol": "BTC",
-      "product_symbol": "BTCUSD",
-      "product_id": 27,
-      "side": "sell",
-      "size": 1,
-      "contract_value": "0.001 BTC",
-      "status": "pending_margin",
-      "ticket": null,
-      "entry": 67344,
-      "stop": 68600,
-      "targets": [
-        64703
-      ],
-      "venue": "Delta Exchange India",
-      "account": 26902927,
-      "margin_mode": "isolated",
-      "post_only": true,
-      "created_at": 1794664160433,
-      "r_multiple": 2.09
-    },
-    {
-      "id": "DELTA-1681187234",
-      "symbol": "SUI",
-      "product_symbol": "SUIUSD",
-      "product_id": 17328,
-      "side": "sell",
-      "size": 1,
-      "contract_value": "1.0 SUI",
-      "status": "placed",
-      "ticket": 1681187234,
-      "entry": 0.742,
-      "stop": 0.762,
-      "targets": [
-        0.698
-      ],
-      "venue": "Delta Exchange India",
-      "account": 26902927,
-      "margin_mode": "isolated",
-      "post_only": true,
-      "created_at": 1794668464043,
-      "r_multiple": 2.2,
-      "notes": "Tuned to Day VAL shelf retest (shallow pullback optimization)",
-      "updated_at": 1794680939862
-    },
-    {
-      "id": "DELTA-1681189148",
-      "symbol": "LTC",
-      "product_symbol": "LTCUSD",
-      "product_id": 15040,
-      "side": "sell",
-      "size": 1,
-      "contract_value": "0.1 LTC",
-      "status": "placed",
-      "ticket": 1681189148,
-      "entry": 46.25,
-      "stop": 47.1,
-      "targets": [
-        44.1
-      ],
-      "venue": "Delta Exchange India",
-      "account": 26902927,
-      "margin_mode": "isolated",
-      "post_only": true,
-      "created_at": 1794668497996,
-      "r_multiple": 2.53,
-      "notes": "Tuned to Day VAL shelf retest (shallow pullback optimization)",
-      "updated_at": 1794680939862
-    },
-    {
-      "id": "DELTA-1684424777",
-      "symbol": "SOL",
-      "product_symbol": "SOLUSD",
-      "product_id": 14823,
-      "side": "sell",
-      "size": 1,
-      "contract_value": "1.0 SOL",
-      "status": "placed",
-      "ticket": 1684424777,
-      "entry": 72.45,
-      "stop": 73.15,
-      "targets": [
-        70.75
-      ],
-      "venue": "Delta Exchange India",
-      "account": 26902927,
-      "margin_mode": "isolated",
-      "post_only": true,
-      "created_at": 1794756339116,
-      "r_multiple": 2.43,
-      "notes": "Calibrated Option A: SL shielded behind .37M Ask Wall @ .00 into structural vacuum, >1.0% clear of all Bar POCs. TP at Day VWAP."
-    },
-    {
-      "id": "DELTA-1684442347",
-      "symbol": "ETH",
-      "product_symbol": "ETHUSD",
-      "product_id": 3136,
-      "side": "sell",
-      "size": 1,
-      "contract_value": "0.01 ETH",
-      "status": "placed",
-      "ticket": 1684442347,
-      "entry": 1838.5,
-      "stop": 1858.5,
-      "targets": [
-        1792.5
-      ],
-      "venue": "Delta Exchange India",
-      "account": 26902927,
-      "margin_mode": "isolated",
-      "post_only": true,
-      "created_at": 1794756495294,
-      "r_multiple": 2.3,
-      "notes": "Calibrated Setup S2: Day VAH retest. SL cleared above active Bar 274/199 HVNs into structural vacuum. TP at Day VWAP."
-    },
-    {
-      "id": "DELTA-1684443284",
-      "symbol": "LTC",
-      "product_symbol": "LTCUSD",
-      "product_id": 15040,
-      "side": "sell",
-      "size": 1,
-      "contract_value": "0.1 LTC",
-      "status": "placed",
-      "ticket": 1684443284,
-      "entry": 45.48,
-      "stop": 45.88,
-      "targets": [
-        44.5
-      ],
-      "venue": "Delta Exchange India",
-      "account": 26902927,
-      "margin_mode": "isolated",
-      "post_only": true,
-      "created_at": 1794756495294,
-      "r_multiple": 2.45,
-      "notes": "Calibrated Setup S2: Session POC / Day VAH retest. SL cleared 0.24% above Session VAH into structural vacuum. 9.10:1 Longs-Below skew."
-    },
-    {
-      "id": "DELTA-1684506647",
-      "symbol": "DOT",
-      "product_symbol": "DOTUSD",
-      "product_id": 15304,
-      "side": "sell",
-      "size": 1,
-      "contract_value": "1 DOT",
-      "status": "cancelled",
-      "ticket": 1684506647,
-      "entry": 0.748,
-      "stop": 0.755,
-      "targets": [
-        0.718
-      ],
-      "venue": "Delta Exchange India",
-      "account": 26902927,
-      "margin_mode": "isolated",
-      "leverage": 50,
-      "post_only": true,
-      "created_at": 1794758865455,
-      "r_multiple": 4.29,
-      "notes": "Canonical Setup S1: Short Liquidity Sweep & Reclaim. Entry @ 0.7480 tags the $2.05M short liq cluster sweep @ 0.7479 + VWAP +2.1\u03c3. SL @ 0.7550 shielded in structural vacuum (Gate 1 distance 1.931%, Gate 2 $0.00 hazard). TP @ 0.7180 (Day POC/VWAP). 4.29R, Confluence 10.5/11.5 Grade A.",
-      "cancellationReason": "liquidation_magnet_gate_lsr_exceeded_2.5:1"
-    },
-    {
-      "order_id": 1685857607,
-      "symbol": "BTCUSD",
-      "product_id": 27,
-      "side": "sell",
-      "size": 1,
-      "order_type": "limit_order",
-      "limit_price": 65280.0,
-      "leverage": 50,
-      "margin_mode": "isolated",
-      "bracket_sl": 65580.0,
-      "bracket_tp": 64450.0,
-      "stop_trigger_method": "mark_price",
-      "status": "open",
-      "created_at": 1794814915702,
-      "setup_archetype": "S2_RANGE_HIGH_FADE",
-      "r_multiple": 2.76
-    }
-  ],
+  "orders": {
+    "balanceUsd": 2.00817,
+    "availableUsd": 0.238337,
+    "blockedMarginUsd": 1.6703,
+    "runningPositions": 0,
+    "openOrdersCount": 2,
+    "activeOrders": [
+      {
+        "id": 1685857607,
+        "symbol": "BTCUSD",
+        "product_id": 27,
+        "side": "sell",
+        "order_type": "limit_order",
+        "limit_price": 65280.0,
+        "size": 1,
+        "bracket_sl": 65580.0,
+        "bracket_tp": 64450.0,
+        "margin_mode": "isolated",
+        "leverage": 50,
+        "margin_locked": 1.3056,
+        "state": "open",
+        "r_multiple": 2.77,
+        "archetype": "S2 (Day VAH / +2\u03c3 VWAP Fade)"
+      },
+      {
+        "id": 1685941006,
+        "symbol": "ETHUSD",
+        "product_id": 3136,
+        "side": "sell",
+        "order_type": "limit_order",
+        "limit_price": 1823.5,
+        "size": 1,
+        "bracket_sl": 1829.5,
+        "bracket_tp": 1809.0,
+        "margin_mode": "isolated",
+        "leverage": 50,
+        "margin_locked": 0.3647,
+        "state": "open",
+        "r_multiple": 2.42,
+        "archetype": "S2 (Day VAH / +1\u03c3 VWAP Fade)"
+      }
+    ],
+    "lastAudit": "2026-11-16T08:36:59.227914+00:00",
+    "posture": "2_RESTING_MAKER_ORDERS_CONFIRMED",
+    "round": "R314"
+  },
   "positions": [],
   "closed": [
     {
