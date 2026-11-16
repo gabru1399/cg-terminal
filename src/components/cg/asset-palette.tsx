@@ -39,9 +39,9 @@ export interface UniAsset {
 
 const KLASS_ORDER = ["crypto-perp", "tradfi-perp", "classic"];
 const KLASS_LABEL: Record<string, string> = {
-  "crypto-perp": "Crypto perps (30)",
-  "tradfi-perp": "TradFi perps — stocks · metals · energy (28)",
-  classic: "Classic — indices & oil, no perp (3)",
+  "crypto-perp": "Crypto perps",
+  "tradfi-perp": "TradFi perps — stocks · metals · energy",
+  classic: "Classic — indices & oil, no perp",
 };
 
 const KLASS_COLOR: Record<string, string> = {

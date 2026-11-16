@@ -1,0 +1,3346 @@
+{
+  "summary": {
+    "deltaLivePerps": 261,
+    "binanceLivePerps": 567,
+    "terminalCurated": 61,
+    "totalMutual": 197,
+    "alreadyInTerminal": 24,
+    "missingFromTerminal": 173
+  },
+  "missingCrypto": [
+    {
+      "deltaSymbol": "INITUSD",
+      "base": "INIT",
+      "binancePair": "INITUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "JASMYUSD",
+      "base": "JASMY",
+      "binancePair": "JASMYUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "XPLUSD",
+      "base": "XPL",
+      "binancePair": "XPLUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "LDOUSD",
+      "base": "LDO",
+      "binancePair": "LDOUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AIXBTUSD",
+      "base": "AIXBT",
+      "binancePair": "AIXBTUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PROVEUSD",
+      "base": "PROVE",
+      "binancePair": "PROVEUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "REDUSD",
+      "base": "RED",
+      "binancePair": "REDUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TNSRUSD",
+      "base": "TNSR",
+      "binancePair": "TNSRUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "COOKIEUSD",
+      "base": "COOKIE",
+      "binancePair": "COOKIEUSDT",
+      "contractValue": "10",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AIOTUSD",
+      "base": "AIOT",
+      "binancePair": "AIOTUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "GRIFFAINUSD",
+      "base": "GRIFFAIN",
+      "binancePair": "GRIFFAINUSDT",
+      "contractValue": "10",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "LIGHTUSD",
+      "base": "LIGHT",
+      "binancePair": "LIGHTUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MANTAUSD",
+      "base": "MANTA",
+      "binancePair": "MANTAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ENJUSD",
+      "base": "ENJ",
+      "binancePair": "ENJUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "USUALUSD",
+      "base": "USUAL",
+      "binancePair": "USUALUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SOONUSD",
+      "base": "SOON",
+      "binancePair": "SOONUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ZECUSD",
+      "base": "ZEC",
+      "binancePair": "ZECUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AUCTIONUSD",
+      "base": "AUCTION",
+      "binancePair": "AUCTIONUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ONDOUSD",
+      "base": "ONDO",
+      "binancePair": "ONDOUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "EDENUSD",
+      "base": "EDEN",
+      "binancePair": "EDENUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BERAUSD",
+      "base": "BERA",
+      "binancePair": "BERAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "DYDXUSD",
+      "base": "DYDX",
+      "binancePair": "DYDXUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "GRAMUSD",
+      "base": "GRAM",
+      "binancePair": "GRAMUSDT",
+      "contractValue": "10",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "RUNEUSD",
+      "base": "RUNE",
+      "binancePair": "RUNEUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "1MBABYDOGEUSD",
+      "base": "1MBABYDOGE",
+      "binancePair": "1MBABYDOGEUSDT",
+      "contractValue": "100",
+      "tickSize": "0.0000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "GALAUSD",
+      "base": "GALA",
+      "binancePair": "GALAUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ZROUSD",
+      "base": "ZRO",
+      "binancePair": "ZROUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ARIAUSD",
+      "base": "ARIA",
+      "binancePair": "ARIAUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BTWUSD",
+      "base": "BTW",
+      "binancePair": "BTWUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "XAUTUSD",
+      "base": "XAUT",
+      "binancePair": "XAUTUSDT",
+      "contractValue": "0.001",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ZORAUSD",
+      "base": "ZORA",
+      "binancePair": "ZORAUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ALLOUSD",
+      "base": "ALLO",
+      "binancePair": "ALLOUSDT",
+      "contractValue": "100",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "VELVETUSD",
+      "base": "VELVET",
+      "binancePair": "VELVETUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "INUSD",
+      "base": "IN",
+      "binancePair": "INUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BCHUSD",
+      "base": "BCH",
+      "binancePair": "BCHUSDT",
+      "contractValue": "0.01",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "NEIROUSD",
+      "base": "NEIRO",
+      "binancePair": "NEIROUSDT",
+      "contractValue": "1000",
+      "tickSize": "0.00000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SWARMSUSD",
+      "base": "SWARMS",
+      "binancePair": "SWARMSUSDT",
+      "contractValue": "10",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BLURUSD",
+      "base": "BLUR",
+      "binancePair": "BLURUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AAVEUSD",
+      "base": "AAVE",
+      "binancePair": "AAVEUSDT",
+      "contractValue": "1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "1000BONKUSD",
+      "base": "1000BONK",
+      "binancePair": "1000BONKUSDT",
+      "contractValue": "1000",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SKYAIUSD",
+      "base": "SKYAI",
+      "binancePair": "SKYAIUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "DASHUSD",
+      "base": "DASH",
+      "binancePair": "DASHUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "WLDUSD",
+      "base": "WLD",
+      "binancePair": "WLDUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PENGUUSD",
+      "base": "PENGU",
+      "binancePair": "PENGUUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SAHARAUSD",
+      "base": "SAHARA",
+      "binancePair": "SAHARAUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SOLVUSD",
+      "base": "SOLV",
+      "binancePair": "SOLVUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TACUSD",
+      "base": "TAC",
+      "binancePair": "TACUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "DUSKUSD",
+      "base": "DUSK",
+      "binancePair": "DUSKUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TRUMPUSD",
+      "base": "TRUMP",
+      "binancePair": "TRUMPUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "POLUSD",
+      "base": "POL",
+      "binancePair": "POLUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "IOTAUSD",
+      "base": "IOTA",
+      "binancePair": "IOTAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BASEDUSD",
+      "base": "BASED",
+      "binancePair": "BASEDUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ORDERUSD",
+      "base": "ORDER",
+      "binancePair": "ORDERUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BRUSD",
+      "base": "BR",
+      "binancePair": "BRUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "XANUSD",
+      "base": "XAN",
+      "binancePair": "XANUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "POPCATUSD",
+      "base": "POPCAT",
+      "binancePair": "POPCATUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "WCTUSD",
+      "base": "WCT",
+      "binancePair": "WCTUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BLESSUSD",
+      "base": "BLESS",
+      "binancePair": "BLESSUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "CHIPUSD",
+      "base": "CHIP",
+      "binancePair": "CHIPUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "GIGGLEUSD",
+      "base": "GIGGLE",
+      "binancePair": "GIGGLEUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "VIRTUALUSD",
+      "base": "VIRTUAL",
+      "binancePair": "VIRTUALUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "NMRUSD",
+      "base": "NMR",
+      "binancePair": "NMRUSDT",
+      "contractValue": "1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MUSD",
+      "base": "M",
+      "binancePair": "MUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "RSRUSD",
+      "base": "RSR",
+      "binancePair": "RSRUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AXSUSD",
+      "base": "AXS",
+      "binancePair": "AXSUSDT",
+      "contractValue": "10",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "STXUSD",
+      "base": "STX",
+      "binancePair": "STXUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ZENUSD",
+      "base": "ZEN",
+      "binancePair": "ZENUSDT",
+      "contractValue": "1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "DOODUSD",
+      "base": "DOOD",
+      "binancePair": "DOODUSDT",
+      "contractValue": "10000",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "QNTUSD",
+      "base": "QNT",
+      "binancePair": "QNTUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MANAUSD",
+      "base": "MANA",
+      "binancePair": "MANAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "LISTAUSD",
+      "base": "LISTA",
+      "binancePair": "LISTAUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AIOUSD",
+      "base": "AIO",
+      "binancePair": "AIOUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SUSHIUSD",
+      "base": "SUSHI",
+      "binancePair": "SUSHIUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "WIFUSD",
+      "base": "WIF",
+      "binancePair": "WIFUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "CROSSUSD",
+      "base": "CROSS",
+      "binancePair": "CROSSUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "LAYERUSD",
+      "base": "LAYER",
+      "binancePair": "LAYERUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TLMUSD",
+      "base": "TLM",
+      "binancePair": "TLMUSDT",
+      "contractValue": "10000",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MMTUSD",
+      "base": "MMT",
+      "binancePair": "MMTUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "DEEPUSD",
+      "base": "DEEP",
+      "binancePair": "DEEPUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SUSD",
+      "base": "S",
+      "binancePair": "SUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BILLUSD",
+      "base": "BILL",
+      "binancePair": "BILLUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PUMPUSD",
+      "base": "PUMP",
+      "binancePair": "PUMPUSDT",
+      "contractValue": "1000",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "VVVUSD",
+      "base": "VVV",
+      "binancePair": "VVVUSDT",
+      "contractValue": "1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ZKUSD",
+      "base": "ZK",
+      "binancePair": "ZKUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "DOGSUSD",
+      "base": "DOGS",
+      "binancePair": "DOGSUSDT",
+      "contractValue": "1000",
+      "tickSize": "0.00000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "OPNUSD",
+      "base": "OPN",
+      "binancePair": "OPNUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "HYPEUSD",
+      "base": "HYPE",
+      "binancePair": "HYPEUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MEUSD",
+      "base": "ME",
+      "binancePair": "MEUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "HUSD",
+      "base": "H",
+      "binancePair": "HUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MOVEUSD",
+      "base": "MOVE",
+      "binancePair": "MOVEUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "EVAAUSD",
+      "base": "EVAA",
+      "binancePair": "EVAAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AIGENSYNUSD",
+      "base": "AIGENSYN",
+      "binancePair": "AIGENSYNUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PARTIUSD",
+      "base": "PARTI",
+      "binancePair": "PARTIUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SPXUSD",
+      "base": "SPX",
+      "binancePair": "SPXUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ENAUSD",
+      "base": "ENA",
+      "binancePair": "ENAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "JUPUSD",
+      "base": "JUP",
+      "binancePair": "JUPUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "KSMUSD",
+      "base": "KSM",
+      "binancePair": "KSMUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AVAAIUSD",
+      "base": "AVAAI",
+      "binancePair": "AVAAIUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AKEUSD",
+      "base": "AKE",
+      "binancePair": "AKEUSDT",
+      "contractValue": "10000",
+      "tickSize": "0.0000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MUBARAKUSD",
+      "base": "MUBARAK",
+      "binancePair": "MUBARAKUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "HIVEUSD",
+      "base": "HIVE",
+      "binancePair": "HIVEUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TSTUSD",
+      "base": "TST",
+      "binancePair": "TSTUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "CAPUSD",
+      "base": "CAP",
+      "binancePair": "CAPUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MASKUSD",
+      "base": "MASK",
+      "binancePair": "MASKUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ESPORTSUSD",
+      "base": "ESPORTS",
+      "binancePair": "ESPORTSUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "RAVEUSD",
+      "base": "RAVE",
+      "binancePair": "RAVEUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "IOUSD",
+      "base": "IO",
+      "binancePair": "IOUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "COAIUSD",
+      "base": "COAI",
+      "binancePair": "COAIUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MEMEUSD",
+      "base": "MEME",
+      "binancePair": "MEMEUSDT",
+      "contractValue": "100",
+      "tickSize": "0.0000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "IOSTUSD",
+      "base": "IOST",
+      "binancePair": "IOSTUSDT",
+      "contractValue": "10000",
+      "tickSize": "0.0000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "NOTUSD",
+      "base": "NOT",
+      "binancePair": "NOTUSDT",
+      "contractValue": "100",
+      "tickSize": "0.0000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PEOPLEUSD",
+      "base": "PEOPLE",
+      "binancePair": "PEOPLEUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PAXGUSD",
+      "base": "PAXG",
+      "binancePair": "PAXGUSDT",
+      "contractValue": "0.001",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SAGAUSD",
+      "base": "SAGA",
+      "binancePair": "SAGAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BIOUSD",
+      "base": "BIO",
+      "binancePair": "BIOUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PNUTUSD",
+      "base": "PNUT",
+      "binancePair": "PNUTUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PIEVERSEUSD",
+      "base": "PIEVERSE",
+      "binancePair": "PIEVERSEUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "GTCUSD",
+      "base": "GTC",
+      "binancePair": "GTCUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BMTUSD",
+      "base": "BMT",
+      "binancePair": "BMTUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MELANIAUSD",
+      "base": "MELANIA",
+      "binancePair": "MELANIAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BANKUSD",
+      "base": "BANK",
+      "binancePair": "BANKUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "RAREUSD",
+      "base": "RARE",
+      "binancePair": "RAREUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PIPPINUSD",
+      "base": "PIPPIN",
+      "binancePair": "PIPPINUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "VANAUSD",
+      "base": "VANA",
+      "binancePair": "VANAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ORDIUSD",
+      "base": "ORDI",
+      "binancePair": "ORDIUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MONUSD",
+      "base": "MON",
+      "binancePair": "MONUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "GLMUSD",
+      "base": "GLM",
+      "binancePair": "GLMUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "1000FLOKIUSD",
+      "base": "1000FLOKI",
+      "binancePair": "1000FLOKIUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "JCTUSD",
+      "base": "JCT",
+      "binancePair": "JCTUSDT",
+      "contractValue": "1000",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TAOUSD",
+      "base": "TAO",
+      "binancePair": "TAOUSDT",
+      "contractValue": "0.01",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BEATUSD",
+      "base": "BEAT",
+      "binancePair": "BEATUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ARCUSD",
+      "base": "ARC",
+      "binancePair": "ARCUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AINUSD",
+      "base": "AIN",
+      "binancePair": "AINUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "STBLUSD",
+      "base": "STBL",
+      "binancePair": "STBLUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "WLFIUSD",
+      "base": "WLFI",
+      "binancePair": "WLFIUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "API3USD",
+      "base": "API3",
+      "binancePair": "API3USDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "XAIUSD",
+      "base": "XAI",
+      "binancePair": "XAIUSDT",
+      "contractValue": "10",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "XMRUSD",
+      "base": "XMR",
+      "binancePair": "XMRUSDT",
+      "contractValue": "0.01",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "FRAXUSD",
+      "base": "FRAX",
+      "binancePair": "FRAXUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "GOATUSD",
+      "base": "GOAT",
+      "binancePair": "GOATUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SUNUSD",
+      "base": "SUN",
+      "binancePair": "SUNUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "FFUSD",
+      "base": "FF",
+      "binancePair": "FFUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ARUSD",
+      "base": "AR",
+      "binancePair": "ARUSDT",
+      "contractValue": "1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "JTOUSD",
+      "base": "JTO",
+      "binancePair": "JTOUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MOODENGUSD",
+      "base": "MOODENG",
+      "binancePair": "MOODENGUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ASTERUSD",
+      "base": "ASTER",
+      "binancePair": "ASTERUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "KAITOUSD",
+      "base": "KAITO",
+      "binancePair": "KAITOUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MOVRUSD",
+      "base": "MOVR",
+      "binancePair": "MOVRUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "1000SATSUSD",
+      "base": "1000SATS",
+      "binancePair": "1000SATSUSDT",
+      "contractValue": "1000",
+      "tickSize": "0.00000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "LITUSD",
+      "base": "LIT",
+      "binancePair": "LITUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "STRKUSD",
+      "base": "STRK",
+      "binancePair": "STRKUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "HANAUSD",
+      "base": "HANA",
+      "binancePair": "HANAUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TOWNSUSD",
+      "base": "TOWNS",
+      "binancePair": "TOWNSUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SKLUSD",
+      "base": "SKL",
+      "binancePair": "SKLUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "IRYSUSD",
+      "base": "IRYS",
+      "binancePair": "IRYSUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SIGNUSD",
+      "base": "SIGN",
+      "binancePair": "SIGNUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SOPHUSD",
+      "base": "SOPH",
+      "binancePair": "SOPHUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "KITEUSD",
+      "base": "KITE",
+      "binancePair": "KITEUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "EIGENUSD",
+      "base": "EIGEN",
+      "binancePair": "EIGENUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "FARTCOINUSD",
+      "base": "FARTCOIN",
+      "binancePair": "FARTCOINUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ARKUSD",
+      "base": "ARK",
+      "binancePair": "ARKUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PENDLEUSD",
+      "base": "PENDLE",
+      "binancePair": "PENDLEUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ACTUSD",
+      "base": "ACT",
+      "binancePair": "ACTUSDT",
+      "contractValue": "10",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ETHFIUSD",
+      "base": "ETHFI",
+      "binancePair": "ETHFIUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ALTUSD",
+      "base": "ALT",
+      "binancePair": "ALTUSDT",
+      "contractValue": "10",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "RLCUSD",
+      "base": "RLC",
+      "binancePair": "RLCUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SONICUSD",
+      "base": "SONIC",
+      "binancePair": "SONICUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "RIVERUSD",
+      "base": "RIVER",
+      "binancePair": "RIVERUSDT",
+      "contractValue": "1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "CAKEUSD",
+      "base": "CAKE",
+      "binancePair": "CAKEUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SIRENUSD",
+      "base": "SIREN",
+      "binancePair": "SIRENUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    }
+  ],
+  "missingTradFi": [
+    {
+      "deltaSymbol": "ARBUSD",
+      "base": "AR",
+      "binancePair": "ARUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "TradFi"
+    },
+    {
+      "deltaSymbol": "BBUSD",
+      "base": "B",
+      "binancePair": "BUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "TradFi"
+    },
+    {
+      "deltaSymbol": "LABUSD",
+      "base": "LA",
+      "binancePair": "LAUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "TradFi"
+    }
+  ],
+  "allMutual": [
+    {
+      "deltaSymbol": "INITUSD",
+      "base": "INIT",
+      "binancePair": "INITUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "JASMYUSD",
+      "base": "JASMY",
+      "binancePair": "JASMYUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "XPLUSD",
+      "base": "XPL",
+      "binancePair": "XPLUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "LDOUSD",
+      "base": "LDO",
+      "binancePair": "LDOUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TIAUSD",
+      "base": "TIA",
+      "binancePair": "TIAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "XLMUSD",
+      "base": "XLM",
+      "binancePair": "XLMUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AIXBTUSD",
+      "base": "AIXBT",
+      "binancePair": "AIXBTUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PROVEUSD",
+      "base": "PROVE",
+      "binancePair": "PROVEUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "REDUSD",
+      "base": "RED",
+      "binancePair": "REDUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TNSRUSD",
+      "base": "TNSR",
+      "binancePair": "TNSRUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "COOKIEUSD",
+      "base": "COOKIE",
+      "binancePair": "COOKIEUSDT",
+      "contractValue": "10",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AIOTUSD",
+      "base": "AIOT",
+      "binancePair": "AIOTUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "GRIFFAINUSD",
+      "base": "GRIFFAIN",
+      "binancePair": "GRIFFAINUSDT",
+      "contractValue": "10",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "LIGHTUSD",
+      "base": "LIGHT",
+      "binancePair": "LIGHTUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MANTAUSD",
+      "base": "MANTA",
+      "binancePair": "MANTAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ENJUSD",
+      "base": "ENJ",
+      "binancePair": "ENJUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "XRPUSD",
+      "base": "XRP",
+      "binancePair": "XRPUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "USUALUSD",
+      "base": "USUAL",
+      "binancePair": "USUALUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SOONUSD",
+      "base": "SOON",
+      "binancePair": "SOONUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ZECUSD",
+      "base": "ZEC",
+      "binancePair": "ZECUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AUCTIONUSD",
+      "base": "AUCTION",
+      "binancePair": "AUCTIONUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ONDOUSD",
+      "base": "ONDO",
+      "binancePair": "ONDOUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "EDENUSD",
+      "base": "EDEN",
+      "binancePair": "EDENUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BERAUSD",
+      "base": "BERA",
+      "binancePair": "BERAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "DYDXUSD",
+      "base": "DYDX",
+      "binancePair": "DYDXUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "GRAMUSD",
+      "base": "GRAM",
+      "binancePair": "GRAMUSDT",
+      "contractValue": "10",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "1000PEPEUSD",
+      "base": "1000PEPE",
+      "binancePair": "1000PEPEUSDT",
+      "contractValue": "1000",
+      "tickSize": "0.0000001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "RUNEUSD",
+      "base": "RUNE",
+      "binancePair": "RUNEUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "1MBABYDOGEUSD",
+      "base": "1MBABYDOGE",
+      "binancePair": "1MBABYDOGEUSDT",
+      "contractValue": "100",
+      "tickSize": "0.0000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "GALAUSD",
+      "base": "GALA",
+      "binancePair": "GALAUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ZROUSD",
+      "base": "ZRO",
+      "binancePair": "ZROUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ARIAUSD",
+      "base": "ARIA",
+      "binancePair": "ARIAUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AVAXUSD",
+      "base": "AVAX",
+      "binancePair": "AVAXUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BTWUSD",
+      "base": "BTW",
+      "binancePair": "BTWUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "XAUTUSD",
+      "base": "XAUT",
+      "binancePair": "XAUTUSDT",
+      "contractValue": "0.001",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "UNIUSD",
+      "base": "UNI",
+      "binancePair": "UNIUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ZORAUSD",
+      "base": "ZORA",
+      "binancePair": "ZORAUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "FILUSD",
+      "base": "FIL",
+      "binancePair": "FILUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ALLOUSD",
+      "base": "ALLO",
+      "binancePair": "ALLOUSDT",
+      "contractValue": "100",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "VELVETUSD",
+      "base": "VELVET",
+      "binancePair": "VELVETUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "INUSD",
+      "base": "IN",
+      "binancePair": "INUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BCHUSD",
+      "base": "BCH",
+      "binancePair": "BCHUSDT",
+      "contractValue": "0.01",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "NEIROUSD",
+      "base": "NEIRO",
+      "binancePair": "NEIROUSDT",
+      "contractValue": "1000",
+      "tickSize": "0.00000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SWARMSUSD",
+      "base": "SWARMS",
+      "binancePair": "SWARMSUSDT",
+      "contractValue": "10",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BLURUSD",
+      "base": "BLUR",
+      "binancePair": "BLURUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AAVEUSD",
+      "base": "AAVE",
+      "binancePair": "AAVEUSDT",
+      "contractValue": "1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "1000BONKUSD",
+      "base": "1000BONK",
+      "binancePair": "1000BONKUSDT",
+      "contractValue": "1000",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SKYAIUSD",
+      "base": "SKYAI",
+      "binancePair": "SKYAIUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "DASHUSD",
+      "base": "DASH",
+      "binancePair": "DASHUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SUIUSD",
+      "base": "SUI",
+      "binancePair": "SUIUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "WLDUSD",
+      "base": "WLD",
+      "binancePair": "WLDUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PENGUUSD",
+      "base": "PENGU",
+      "binancePair": "PENGUUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SAHARAUSD",
+      "base": "SAHARA",
+      "binancePair": "SAHARAUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "LINKUSD",
+      "base": "LINK",
+      "binancePair": "LINKUSDT",
+      "contractValue": "1",
+      "tickSize": "0.001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SOLVUSD",
+      "base": "SOLV",
+      "binancePair": "SOLVUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TACUSD",
+      "base": "TAC",
+      "binancePair": "TACUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "DUSKUSD",
+      "base": "DUSK",
+      "binancePair": "DUSKUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TRUMPUSD",
+      "base": "TRUMP",
+      "binancePair": "TRUMPUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "APTUSD",
+      "base": "APT",
+      "binancePair": "APTUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "POLUSD",
+      "base": "POL",
+      "binancePair": "POLUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "IOTAUSD",
+      "base": "IOTA",
+      "binancePair": "IOTAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BASEDUSD",
+      "base": "BASED",
+      "binancePair": "BASEDUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ORDERUSD",
+      "base": "ORDER",
+      "binancePair": "ORDERUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BRUSD",
+      "base": "BR",
+      "binancePair": "BRUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "XANUSD",
+      "base": "XAN",
+      "binancePair": "XANUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "POPCATUSD",
+      "base": "POPCAT",
+      "binancePair": "POPCATUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "WCTUSD",
+      "base": "WCT",
+      "binancePair": "WCTUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "DOGEUSD",
+      "base": "DOGE",
+      "binancePair": "DOGEUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BLESSUSD",
+      "base": "BLESS",
+      "binancePair": "BLESSUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "CHIPUSD",
+      "base": "CHIP",
+      "binancePair": "CHIPUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "GIGGLEUSD",
+      "base": "GIGGLE",
+      "binancePair": "GIGGLEUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "VIRTUALUSD",
+      "base": "VIRTUAL",
+      "binancePair": "VIRTUALUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "NMRUSD",
+      "base": "NMR",
+      "binancePair": "NMRUSDT",
+      "contractValue": "1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MUSD",
+      "base": "M",
+      "binancePair": "MUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "RSRUSD",
+      "base": "RSR",
+      "binancePair": "RSRUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AXSUSD",
+      "base": "AXS",
+      "binancePair": "AXSUSDT",
+      "contractValue": "10",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "STXUSD",
+      "base": "STX",
+      "binancePair": "STXUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ZENUSD",
+      "base": "ZEN",
+      "binancePair": "ZENUSDT",
+      "contractValue": "1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "LTCUSD",
+      "base": "LTC",
+      "binancePair": "LTCUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.01",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "DOODUSD",
+      "base": "DOOD",
+      "binancePair": "DOODUSDT",
+      "contractValue": "10000",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "QNTUSD",
+      "base": "QNT",
+      "binancePair": "QNTUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MANAUSD",
+      "base": "MANA",
+      "binancePair": "MANAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "LISTAUSD",
+      "base": "LISTA",
+      "binancePair": "LISTAUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AIOUSD",
+      "base": "AIO",
+      "binancePair": "AIOUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SUSHIUSD",
+      "base": "SUSHI",
+      "binancePair": "SUSHIUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "WIFUSD",
+      "base": "WIF",
+      "binancePair": "WIFUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "CROSSUSD",
+      "base": "CROSS",
+      "binancePair": "CROSSUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "LAYERUSD",
+      "base": "LAYER",
+      "binancePair": "LAYERUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TLMUSD",
+      "base": "TLM",
+      "binancePair": "TLMUSDT",
+      "contractValue": "10000",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SOLUSD",
+      "base": "SOL",
+      "binancePair": "SOLUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MMTUSD",
+      "base": "MMT",
+      "binancePair": "MMTUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "DEEPUSD",
+      "base": "DEEP",
+      "binancePair": "DEEPUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SUSD",
+      "base": "S",
+      "binancePair": "SUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BILLUSD",
+      "base": "BILL",
+      "binancePair": "BILLUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PUMPUSD",
+      "base": "PUMP",
+      "binancePair": "PUMPUSDT",
+      "contractValue": "1000",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "VVVUSD",
+      "base": "VVV",
+      "binancePair": "VVVUSDT",
+      "contractValue": "1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ZKUSD",
+      "base": "ZK",
+      "binancePair": "ZKUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "HBARUSD",
+      "base": "HBAR",
+      "binancePair": "HBARUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SEIUSD",
+      "base": "SEI",
+      "binancePair": "SEIUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "DOGSUSD",
+      "base": "DOGS",
+      "binancePair": "DOGSUSDT",
+      "contractValue": "1000",
+      "tickSize": "0.00000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "OPNUSD",
+      "base": "OPN",
+      "binancePair": "OPNUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "HYPEUSD",
+      "base": "HYPE",
+      "binancePair": "HYPEUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MEUSD",
+      "base": "ME",
+      "binancePair": "MEUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "HUSD",
+      "base": "H",
+      "binancePair": "HUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MOVEUSD",
+      "base": "MOVE",
+      "binancePair": "MOVEUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "EVAAUSD",
+      "base": "EVAA",
+      "binancePair": "EVAAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AIGENSYNUSD",
+      "base": "AIGENSYN",
+      "binancePair": "AIGENSYNUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PARTIUSD",
+      "base": "PARTI",
+      "binancePair": "PARTIUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SPXUSD",
+      "base": "SPX",
+      "binancePair": "SPXUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "NEARUSD",
+      "base": "NEAR",
+      "binancePair": "NEARUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ENAUSD",
+      "base": "ENA",
+      "binancePair": "ENAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "JUPUSD",
+      "base": "JUP",
+      "binancePair": "JUPUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "KSMUSD",
+      "base": "KSM",
+      "binancePair": "KSMUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AVAAIUSD",
+      "base": "AVAAI",
+      "binancePair": "AVAAIUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AKEUSD",
+      "base": "AKE",
+      "binancePair": "AKEUSDT",
+      "contractValue": "10000",
+      "tickSize": "0.0000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MUBARAKUSD",
+      "base": "MUBARAK",
+      "binancePair": "MUBARAKUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "INJUSD",
+      "base": "INJ",
+      "binancePair": "INJUSDT",
+      "contractValue": "1",
+      "tickSize": "0.001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "HIVEUSD",
+      "base": "HIVE",
+      "binancePair": "HIVEUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TSTUSD",
+      "base": "TST",
+      "binancePair": "TSTUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "CAPUSD",
+      "base": "CAP",
+      "binancePair": "CAPUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MASKUSD",
+      "base": "MASK",
+      "binancePair": "MASKUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ESPORTSUSD",
+      "base": "ESPORTS",
+      "binancePair": "ESPORTSUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "RAVEUSD",
+      "base": "RAVE",
+      "binancePair": "RAVEUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "IOUSD",
+      "base": "IO",
+      "binancePair": "IOUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "COAIUSD",
+      "base": "COAI",
+      "binancePair": "COAIUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MEMEUSD",
+      "base": "MEME",
+      "binancePair": "MEMEUSDT",
+      "contractValue": "100",
+      "tickSize": "0.0000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ADAUSD",
+      "base": "ADA",
+      "binancePair": "ADAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "IOSTUSD",
+      "base": "IOST",
+      "binancePair": "IOSTUSDT",
+      "contractValue": "10000",
+      "tickSize": "0.0000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "NOTUSD",
+      "base": "NOT",
+      "binancePair": "NOTUSDT",
+      "contractValue": "100",
+      "tickSize": "0.0000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PEOPLEUSD",
+      "base": "PEOPLE",
+      "binancePair": "PEOPLEUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PAXGUSD",
+      "base": "PAXG",
+      "binancePair": "PAXGUSDT",
+      "contractValue": "0.001",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SAGAUSD",
+      "base": "SAGA",
+      "binancePair": "SAGAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BIOUSD",
+      "base": "BIO",
+      "binancePair": "BIOUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "OPUSD",
+      "base": "OP",
+      "binancePair": "OPUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.0001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PNUTUSD",
+      "base": "PNUT",
+      "binancePair": "PNUTUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PIEVERSEUSD",
+      "base": "PIEVERSE",
+      "binancePair": "PIEVERSEUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "GTCUSD",
+      "base": "GTC",
+      "binancePair": "GTCUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BMTUSD",
+      "base": "BMT",
+      "binancePair": "BMTUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MELANIAUSD",
+      "base": "MELANIA",
+      "binancePair": "MELANIAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BANKUSD",
+      "base": "BANK",
+      "binancePair": "BANKUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "RAREUSD",
+      "base": "RARE",
+      "binancePair": "RAREUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PIPPINUSD",
+      "base": "PIPPIN",
+      "binancePair": "PIPPINUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "VANAUSD",
+      "base": "VANA",
+      "binancePair": "VANAUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ORDIUSD",
+      "base": "ORDI",
+      "binancePair": "ORDIUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MONUSD",
+      "base": "MON",
+      "binancePair": "MONUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "GLMUSD",
+      "base": "GLM",
+      "binancePair": "GLMUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "1000FLOKIUSD",
+      "base": "1000FLOKI",
+      "binancePair": "1000FLOKIUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "JCTUSD",
+      "base": "JCT",
+      "binancePair": "JCTUSDT",
+      "contractValue": "1000",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TAOUSD",
+      "base": "TAO",
+      "binancePair": "TAOUSDT",
+      "contractValue": "0.01",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BEATUSD",
+      "base": "BEAT",
+      "binancePair": "BEATUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ETHUSD",
+      "base": "ETH",
+      "binancePair": "ETHUSDT",
+      "contractValue": "0.01",
+      "tickSize": "0.05",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ARCUSD",
+      "base": "ARC",
+      "binancePair": "ARCUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "AINUSD",
+      "base": "AIN",
+      "binancePair": "AINUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "STBLUSD",
+      "base": "STBL",
+      "binancePair": "STBLUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "WLFIUSD",
+      "base": "WLFI",
+      "binancePair": "WLFIUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "API3USD",
+      "base": "API3",
+      "binancePair": "API3USDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "XAIUSD",
+      "base": "XAI",
+      "binancePair": "XAIUSDT",
+      "contractValue": "10",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "XMRUSD",
+      "base": "XMR",
+      "binancePair": "XMRUSDT",
+      "contractValue": "0.01",
+      "tickSize": "0.01",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TRXUSD",
+      "base": "TRX",
+      "binancePair": "TRXUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "FRAXUSD",
+      "base": "FRAX",
+      "binancePair": "FRAXUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "GOATUSD",
+      "base": "GOAT",
+      "binancePair": "GOATUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SUNUSD",
+      "base": "SUN",
+      "binancePair": "SUNUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "FFUSD",
+      "base": "FF",
+      "binancePair": "FFUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ARUSD",
+      "base": "AR",
+      "binancePair": "ARUSDT",
+      "contractValue": "1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "JTOUSD",
+      "base": "JTO",
+      "binancePair": "JTOUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ARBUSD",
+      "base": "AR",
+      "binancePair": "ARUSDT",
+      "contractValue": "1",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "TradFi"
+    },
+    {
+      "deltaSymbol": "BBUSD",
+      "base": "B",
+      "binancePair": "BUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "TradFi"
+    },
+    {
+      "deltaSymbol": "MOODENGUSD",
+      "base": "MOODENG",
+      "binancePair": "MOODENGUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ASTERUSD",
+      "base": "ASTER",
+      "binancePair": "ASTERUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "KAITOUSD",
+      "base": "KAITO",
+      "binancePair": "KAITOUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "MOVRUSD",
+      "base": "MOVR",
+      "binancePair": "MOVRUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ETCUSD",
+      "base": "ETC",
+      "binancePair": "ETCUSDT",
+      "contractValue": "0.1",
+      "tickSize": "0.001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "1000SATSUSD",
+      "base": "1000SATS",
+      "binancePair": "1000SATSUSDT",
+      "contractValue": "1000",
+      "tickSize": "0.00000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "LITUSD",
+      "base": "LIT",
+      "binancePair": "LITUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "STRKUSD",
+      "base": "STRK",
+      "binancePair": "STRKUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "HANAUSD",
+      "base": "HANA",
+      "binancePair": "HANAUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "TOWNSUSD",
+      "base": "TOWNS",
+      "binancePair": "TOWNSUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "BTCUSD",
+      "base": "BTC",
+      "binancePair": "BTCUSDT",
+      "contractValue": "0.001",
+      "tickSize": "0.5",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "LABUSD",
+      "base": "LA",
+      "binancePair": "LAUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "TradFi"
+    },
+    {
+      "deltaSymbol": "SKLUSD",
+      "base": "SKL",
+      "binancePair": "SKLUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "IRYSUSD",
+      "base": "IRYS",
+      "binancePair": "IRYSUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SIGNUSD",
+      "base": "SIGN",
+      "binancePair": "SIGNUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SOPHUSD",
+      "base": "SOPH",
+      "binancePair": "SOPHUSDT",
+      "contractValue": "100",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "DOTUSD",
+      "base": "DOT",
+      "binancePair": "DOTUSDT",
+      "contractValue": "1",
+      "tickSize": "0.001",
+      "inTerminal": true,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "KITEUSD",
+      "base": "KITE",
+      "binancePair": "KITEUSDT",
+      "contractValue": "100",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "EIGENUSD",
+      "base": "EIGEN",
+      "binancePair": "EIGENUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "FARTCOINUSD",
+      "base": "FARTCOIN",
+      "binancePair": "FARTCOINUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ARKUSD",
+      "base": "ARK",
+      "binancePair": "ARKUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "PENDLEUSD",
+      "base": "PENDLE",
+      "binancePair": "PENDLEUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ACTUSD",
+      "base": "ACT",
+      "binancePair": "ACTUSDT",
+      "contractValue": "10",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ETHFIUSD",
+      "base": "ETHFI",
+      "binancePair": "ETHFIUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "ALTUSD",
+      "base": "ALT",
+      "binancePair": "ALTUSDT",
+      "contractValue": "10",
+      "tickSize": "0.000001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "RLCUSD",
+      "base": "RLC",
+      "binancePair": "RLCUSDT",
+      "contractValue": "10",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SONICUSD",
+      "base": "SONIC",
+      "binancePair": "SONICUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "RIVERUSD",
+      "base": "RIVER",
+      "binancePair": "RIVERUSDT",
+      "contractValue": "1",
+      "tickSize": "0.001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "CAKEUSD",
+      "base": "CAKE",
+      "binancePair": "CAKEUSDT",
+      "contractValue": "1",
+      "tickSize": "0.0001",
+      "inTerminal": false,
+      "category": "Crypto"
+    },
+    {
+      "deltaSymbol": "SIRENUSD",
+      "base": "SIREN",
+      "binancePair": "SIRENUSDT",
+      "contractValue": "10",
+      "tickSize": "0.00001",
+      "inTerminal": false,
+      "category": "Crypto"
+    }
+  ]
+}
