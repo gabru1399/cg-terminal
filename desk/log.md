@@ -10255,3 +10255,42 @@ analysis script rc=1
 
 - **PHASE 7: DYNAMIC TIMER RE-ARM**:
     * Dynamic 1200s timer scheduled via schedule(DurationSeconds=1200) for Round R337 with canonical prompt. Zero cron, zero duplicate tasks.
+## R382 · 2026-11-16 15:29 UTC · zai-desk
+
+**Market**: BTC 64,268.9 (-1.6%)  ETH 1,804.41 (-1.6%)  SOL 69.97 (-3.8%)  XAU 3,871.46 (-0.8%)  XAG 46.730 (-4.8%)
+**Bias (|score|≥2)**: XAU-5(TRANS)  XRP-4(TREND)  SOL-3(TREND)  DOGE-3(TREND)  XAG-2(TREND)  LTC-2(TREND)  LINK-3(TREND)  BTC-2(TREND)  ETH-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R382-XAU-1 XAU SHORT limit 3,876.72 · stop 3,892.21 · T1 3,800.58 · R 4.9
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (3,871.46 vs 3,871.90), h4 RSI 44.5, day -0.8%
+      [FOR    ] footprint: bull 9 / bear 19; recent: Exhaustion/sell[time], Exhaustion/sell[vol]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: div:sell×1, exh:sell×5 — net 0 buy-side vs 6 sell-side
+      [FOR    ] liquidation: long-liq magnet 3,800.58 (str 51, ~$41M est, -1.83%) as target
+      [AGAINST] liquidation-hazard: short-liq magnet 3,917.81 (str 100) sits between entry and stop — sweep risk
+      [FOR    ] bookWalls: ±5% depth imbalance +0.131 (5m ago +0.095, rising bids); bid $0.05B vs ask $0.04B
+      [FOR    ] cvd: taker buy 49.1%, perpCvd -124, spotCvd +0, quadrant both-selling, latestDiv bear (recent)
+- NEW R382-XRP-2 XRP SHORT limit 0.9565 · stop 0.9639 · T1 0.9401 · T2 0.9366 · T3 0.9261 · R 2.2
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.9454 vs 0.9560), h4 RSI 37.1, day -2.9%
+      [FOR    ] footprint: bull 29 / bear 37; recent: Divergence/sell[time], Divergence/sell[vol], Exhaustion/buy[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×1, abs:sell×1, div:buy×2, div:sell×8, exh:buy×3, exh:sell×1, sdiv:sell×1 — net 6 buy-side vs 11 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.9401 (str 60, ~$17M est, -0.64%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance +0.005 (5m ago -0.177, rising bids); bid $0.06B vs ask $0.06B
+      [FOR    ] cvd: taker buy 48.1%, perpCvd -280, spotCvd -83, quadrant both-selling, latestDiv bear (stale/none)
+      [AGAINST] notifications: 6h weighted bias +1.0 (1 events)
+- NEW R382-DOGE-3 DOGE SHORT limit 0.05876 · stop 0.05916 · T1 0.05754 · T2 0.05730 · T3 0.05707 · R 3.1
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.05827 vs 0.05882), h4 RSI 34.0, day -2.6%
+      [AGAINST] footprint: bull 32 / bear 31; recent: Absorption/buy[time], Absorption/buy[vol], Exhaustion/buy[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×3, div:sell×2, exh:buy×2, exh:sell×3, sdiv:buy×1, sdiv:sell×1, trap:buy×1 — net 7 buy-side vs 6 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.05754 (str 64, ~$7M est, -1.35%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance +0.004 (5m ago -0.067, rising bids); bid $0.03B vs ask $0.03B
+      [FOR    ] cvd: taker buy 48.8%, perpCvd -81, spotCvd -16, quadrant both-selling, latestDiv bear (stale/none)
+      [FOR    ] notifications: 6h weighted bias -1.0 (1 events)
+
+### Positions
+- no open positions
+
+
+## ROUND FAILED · 2026-11-16 15:30 UTC · zai-desk
+
+analysis script rc=1
+
