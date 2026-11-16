@@ -602,7 +602,7 @@
       "entry": 64750.0,
       "stop": 65050.0,
       "target": 64050.0,
-      "status": "filled",
+      "status": "closed",
       "ticket": 1686273067,
       "r_multiple": 2.33,
       "size": 1,
@@ -612,7 +612,10 @@
       "bracket_stop_trigger_method": "mark_price",
       "created_at_ms": 1794825957908,
       "actualEntry": 64750.0,
-      "filledTs": 1794827830578
+      "filledTs": 1794827830578,
+      "exit_price": 64050.5,
+      "realized_pnl": 0.6995,
+      "reason": "Take profit hit @ 64050.5 (+0.70 USD gain)"
     },
     {
       "id": 1686273813,
@@ -623,7 +626,7 @@
       "entry": 1812.5,
       "stop": 1819.5,
       "target": 1792.5,
-      "status": "filled",
+      "status": "closed",
       "ticket": 1686273813,
       "r_multiple": 2.86,
       "size": 1,
@@ -633,7 +636,10 @@
       "bracket_stop_trigger_method": "mark_price",
       "created_at_ms": 1794825957908,
       "actualEntry": 1812.5,
-      "filledTs": 1794827306730
+      "filledTs": 1794827306730,
+      "exit_price": 1792.6,
+      "realized_pnl": 0.199,
+      "reason": "Take profit hit @ 1792.6 (+0.20 USD gain)"
     },
     {
       "id": "1686483354",
@@ -664,6 +670,81 @@
       "ticket": 1686484401,
       "ts": 1794830954078,
       "reason": "Terminal Screener Grade B SELL Exhaustion pullback fade (EV +0.30R, 2.50R reward)"
+    },
+    {
+      "id": "1686518888",
+      "symbol": "BNBUSD",
+      "product_id": 15042,
+      "side": "sell",
+      "order_type": "limit_order",
+      "size": 1,
+      "price": 589.5,
+      "sl": 596.5,
+      "tp": 572.0,
+      "status": "open",
+      "ticket": 1686518888,
+      "ts": 1794831473970,
+      "reason": "Terminal Screener Grade A+ SELL Absorption (vol) at VWAP -2\u03c3 (2.50R)"
+    },
+    {
+      "id": "1686521123",
+      "symbol": "LINKUSD",
+      "product_id": 15041,
+      "side": "sell",
+      "order_type": "limit_order",
+      "size": 1,
+      "price": 9.12,
+      "sl": 9.25,
+      "tp": 8.8,
+      "status": "open",
+      "ticket": 1686521123,
+      "ts": 1794831473970,
+      "reason": "Terminal Screener Grade A SELL Divergence (time) 4H EMA- Below VWAP (2.46R)"
+    },
+    {
+      "id": "1686521803",
+      "symbol": "ARBUSD",
+      "product_id": 17331,
+      "side": "sell",
+      "order_type": "limit_order",
+      "size": 10,
+      "price": 0.1335,
+      "sl": 0.136,
+      "tp": 0.127,
+      "status": "open",
+      "ticket": 1686521803,
+      "ts": 1794831473970,
+      "reason": "Terminal Screener Grade A SELL Divergence (range) 4H EMA- Below VWAP (2.60R)"
+    },
+    {
+      "id": "1686522407",
+      "symbol": "ADAUSD",
+      "product_id": 16614,
+      "side": "sell",
+      "order_type": "limit_order",
+      "size": 10,
+      "price": 0.1524,
+      "sl": 0.1542,
+      "tp": 0.1479,
+      "status": "open",
+      "ticket": 1686522407,
+      "ts": 1794831473970,
+      "reason": "Terminal Screener Grade A+ SELL Absorption (vol) 4H EMA- Below VWAP (2.50R)"
+    },
+    {
+      "id": "1686523065",
+      "symbol": "TIAUSD",
+      "product_id": 17330,
+      "side": "sell",
+      "order_type": "limit_order",
+      "size": 2,
+      "price": 0.3475,
+      "sl": 0.353,
+      "tp": 0.334,
+      "status": "open",
+      "ticket": 1686523065,
+      "ts": 1794831473970,
+      "reason": "Terminal Screener Grade A SELL Divergence (vol) EV +0.86R (2.45R)"
     }
   ],
   "positions": [
