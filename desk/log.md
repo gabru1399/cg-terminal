@@ -8430,3 +8430,52 @@ analysis script rc=1
 ### Positions
 - None — data missing, HOLD (manual check)
 
+
+
+## EXEC · 2026-11-16 03:36 UTC · atg-exec (Round 305)
+
+- **PHASE -1 & PHASE 0 COMPLIANCE CHECK**:
+  - SOP Ingestion: Bound strictly to `desk/TRADE_FORMULATION_MANUAL.md`, `desk/SWARM_MASTER_PROMPT.md`, and `.gemini/rules/SWARM_EXECUTION.md`.
+  - Venue: Delta Exchange India (`india_prod` | Master Account `26902927`).
+  - Capital Telemetry:
+    * Total USD Balance: **$2.00817 USD** (INR 170.69) + ₹10.00 INR.
+    * Available Free Cash: **$2.00817 USD** (100% liquid cash reserves, zero margin locked).
+    * Net Liquid Equity: **$2.1258 USD**.
+    * Max Tradable Initial Margin Budget (SOP 80% Buffer Rule): $2.00817 * 0.80 = **$1.6065 USD**.
+    * Desk Concurrency Status: THIS desk (`cg-terminal`) has exactly 0 / 2 running positions (Both concurrency slots vacant), 0 open orders on CLOB, 0 orphaned brackets.
+    * Pitfall Q4 (Margin Insolvency): 100% resolved across all 30 assets.
+
+- **PHASE 1: LIVE 30-ASSET SCREENER PASS & TAB 7 REGIME ROUTING**:
+  - Closed-candle screener ingested across all 30 crypto USDT-M perps from continuity terminal (`http://127.0.0.1:3000/api/cg/screener`).
+  - Full 30-asset uncompressed screening matrix generated and archived to `scratch/matrix_r305.json`.
+  - Screener surfaced 4 preliminary Grade B candidates (BNB 6.5 pts, DOGE 6.0 pts, LINK 5.0 pts, 1000PEPE 5.0 pts).
+  - Balance Assets Invariant: Factor 1 (Directional Trend) = **0.0 pts** across all balance assets (G-06 / P2-01).
+
+- **PHASE 2 & PHASE 3: ADVERSARIAL AUDITOR VERDICT (Subagent 86012ef3-c9ed-4a7c-912f-876e47419fbf)**:
+  - Unanimous HARD VETO across all 30 assets:
+    * Inquest 1 (Fatally Incurable Inverted R-Multiples):
+      - BNB (`TREND_DOWN`): Entry 595.06, Stop 697.08 (risk +17.14%), T1 591.98 (reward 0.52%). **T1 R = 0.030R** (failing 2.0R floor by 66x). Best composite R = 0.52R << 1.5R.
+      - DOGE (`TREND_DOWN`): Entry 0.05931, Stop 0.07540 (risk +27.13%), T1 0.05869 (reward 1.05%). **T1 R = 0.039R** (failing 2.0R floor by 51x). Best composite R = 0.38R << 1.5R.
+      - LINK (`TREND_DOWN`): Entry 9.261, Stop 10.809 (risk +16.71%), T1 9.139 (reward 1.32%). **T1 R = 0.078R** (failing 2.0R floor by 25x). Best composite R = 0.32R << 1.5R.
+      - LTC (0.41R), XLM (1.35R), 1000SHIB (0.75R), SUI (0.45R) all fail 1.5R composite floor.
+    * Inquest 2 (Lethal Opposing Book Walls & CVD Squeeze Traps):
+      - DOGE: Opposing **$4.4M USD** bid wall @ 0.05876 directly blocking T1. Spot buyer CVD +$2.0M.
+      - BNB: Opposing **$2.1M USD** bid wall @ 590.33 directly blocking T1.
+      - LINK: Opposing **$1.8M USD** bid wall @ 8.933. Spot buyer CVD +$3.8M.
+      - LTC: Opposing **$2.21M USD** bid wall @ 44.40.
+    * Inquest 3 (Anti-Knife-Catching Gate in Balance):
+      - 1000PEPE, BTC, ETH, SOL, AVAX, FIL report `entryZone: null`, `bestR: null`, `invalidation: "no setup"`. Zero discrete footprint signals (`sig_count: 0`). Price chopping near Value Area midpoints.
+    * Socratic Pitfalls Triggered: Q1 (Wall Erasure), Q2 (Chasing & CVD Squeeze), Q3 (HVN Collision), Q5 (Regime Mismatch), Q6 (Phantom Plans), Q7 (Stale Telemetry), Q8 (Incurably Inverted R), Q10 (Negative EV).
+    * Auditor Mandate: **UNANIMOUS HARD VETO**. 100% Cash Defense maintained.
+
+- **PHASE 4 & PHASE 5: EXECUTION HYGIENE & CONCURRENCY MANAGEMENT**:
+  - Concurrency Cap: Max 2 positions. Current active positions = 0. Both slots vacant.
+  - Zero orders placed on Delta Exchange India CLOB. 100% Cash Defense maintained.
+  - All standing exchange orders audited; zero orphans, zero duplicate orders from this desk.
+
+- **PHASE 6: AGI SELF-IMPROVEMENT INSIGHT**:
+  - Deep Microstructure Verification Saves Capital: While simple screeners may show raw scores of 6.0–6.5 for trend pullbacks, auditing the actual risk/reward reveals that the stops are 50x–66x larger than the distance to T1, right into multi-million dollar institutional bid absorption walls. Refusing these inverted traps is what prevents account blowups.
+  - Capital Preservation: Total account liquid balance of $2.00817 USD (INR 170.69) is 100% preserved.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+  - Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero cron jobs. Zero background daemons.
