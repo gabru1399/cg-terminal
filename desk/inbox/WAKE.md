@@ -2,10 +2,11 @@
 
 ## ACTIVE DESK DIRECTIVES
 - **VENUE & ACCOUNT**: Delta Exchange India (`india_prod` | Account `26902927`).
-- **CANONICAL SOP**: `desk/TRADE_FORMULATION_MANUAL.md` calibrated by `desk/SWARM_MASTER_PROMPT.md` and `.gemini/rules/SWARM_EXECUTION.md`.
+- **CANONICAL SOP & LINE-BY-LINE MANDATE**: `desk/TRADE_FORMULATION_MANUAL.md` calibrated by `desk/SWARM_MASTER_PROMPT.md` and `.gemini/rules/SWARM_EXECUTION.md`. MANDATORY BY DEFAULT AT ALL TIMES ON EVERY TURN.
+- **UNIVERSE TRACKING**: 61 Curated Assets (30 Crypto USDT-M Perps + 28 TradFi USDT-M Perps + 3 Classic Indices). Full screening on every round with zero omissions.
 - **SHARED ACCOUNT ISOLATION (P5-01b)**: Two separate chats run on this Delta account. Track orders strictly via internal order numbers. Never touch or cancel orders from the external chat (`FIB4H_*`, `SOLVUSD`, `TACUSD`).
 - **EXECUTION CADENCE**: Dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs.
-- **CONCURRENCY & RISK**: Max 2 concurrent crypto positions. Max 1.0% portfolio heat. Isolated margin, maker post-only, mark-price stops.
+- **CONCURRENCY & RISK**: Max 2 concurrent positions. Max 1.0% portfolio heat. Isolated margin, maker post-only, mark-price stops.
 - **HISTORICAL LOGS**: Archived to `desk/inbox/archive/WAKE_ARCHIVE_20261115.md`.
 
 ## 2026-11-15 19:00 UTC — active round directive
