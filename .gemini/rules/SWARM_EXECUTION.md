@@ -40,7 +40,7 @@ On every activation and execution turn:
 - Autonomous propagation is single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`).
 - Never terminate an execution turn without re-arming the 1200s dynamic wake timer.
 - **Mandatory Timer Instruction & Prompt Format:**
-  `Timer: 20m, Prompt: /goal /executing-plans /plan /brainstorming Autonomous Delta Exchange Trade Execution & Recursive Self-Improving Engine Round R<n>. Audit all 61 Curated Assets and find high potential high confluence trading setup strictly using @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]  , monitor live running short positions on Delta Exchange India (BTCUSD @ $64,750 and ETHUSD @ $1,812.50), enforce +1.0R breakeven invariant ($64,450 BTC / $1,805.50 ETH) and 8-bar time stop, audit margin and liquidity, and re-arm dynamic 1200s recursion.`
+  `Timer: 20m, Prompt: /goal /executing-plans /plan /brainstorming Autonomous Delta Exchange Trade Execution & Recursive Self-Improving Engine Round R<n>. Audit all 61 Curated Assets and find high potential high confluence trading setup strictly using @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]  , monitor live standing maker limit orders on Delta Exchange India (APTUSD @ $0.45700, ADAUSD @ $0.15240, ARBUSD @ $0.13350, LINKUSD @ $9.120, TIAUSD @ $0.34750), enforce First-Two-Fills circuit, +1.0R breakeven invariant and 8-bar time stop, audit margin and liquidity, and re-arm dynamic 1200s recursion.`
 
 ## 6. CONTINUOUS PLANNING & BRAINSTORMING MANDATE (/plan & /brainstorming)
 - Every autonomous prompt, task formulation, and dynamic wakeup must explicitly carry `/goal /executing-plans /plan /brainstorming`.
