@@ -9269,3 +9269,48 @@ analysis script rc=1
 
 - **PHASE 7: DYNAMIC TIMER RE-ARM**:
     * Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs, zero background daemons.
+
+
+## R319 · 2026-11-16 10:20 UTC · atg-exec & zai-desk
+- **ACCOUNT LIQUIDITY & MARGIN TELEMETRY (`india_prod`, Account `26902927`)**:
+    * Total Cash Balance: $2.008170 USD + ₹10.00 INR | Net Liquid Equity: $2.125817 USD.
+    * Order Margin Blocked: $1.670300 USD (78.57% capital allocation).
+    * Free Liquid Cash Buffer: $0.238337 USD (₹20.26 INR unencumbered).
+    * Active Running Positions: 0 / 2 (Both concurrency slots open).
+    * Dual Stop-Out Worst-Case Loss: $0.30 (BTC) + $0.06 (ETH) = $0.3600 USD (16.93% max drawdown heat, strictly isolated 50x bounds, 83.07% capital preserved).
+
+- **STANDING ORDER BOOK TELEMETRY AUDIT**:
+    1. **BTCUSD (Order ID: #1685857607)**:
+       * Setup Archetype: **Setup S2 (Value Area High / +2σ VWAP Range Fade)**.
+       * Order Parameters: Sell Limit @ **$65,280.0 USD** | Bracket SL: **$65,580.0 USD** | Bracket TP: **$64,450.0 USD**.
+       * Mark Price: $64,384.8 (-1.42% 24h) | Entry distance: +1.39% overhead.
+       * Risk: 300 pts ($0.30 USD) | Reward: 830 pts ($0.83 USD) | Asymmetric Edge: **2.77R**.
+       * Gate 1 Clearance: SL $65,580 sits +0.809% clear of Day VAH ($65,053.5), +1.346% clear of Day POC ($64,709.0), and +50.0 pts above VWAP +3σ ($65,530.0).
+       * Gate 2 Geometrical Liquidation Risk: Zero adverse short clusters in Vector B [$65,280, $65,580]. Defended by $194.1M USD cumulative ask walls ($11.4M @ $65k, $26.7M @ $65,230, $22.4M @ $65,340, $20.8M @ $65,570). Nearest short liq cluster is far overhead at $66,142 (+2.64%).
+       * Auditor Verdict: **PASS / STAND ON CLOB**.
+    2. **ETHUSD (Order ID: #1685941006)**:
+       * Setup Archetype: **Setup S2 (Value Area High / +1σ VWAP Range Fade)**.
+       * Order Parameters: Sell Limit @ **$1,823.50 USD** | Bracket SL: **$1,829.50 USD** | Bracket TP: **$1,809.00 USD**.
+       * Mark Price: $1,798.85 (-1.93% 24h) | Entry distance: +1.37% overhead.
+       * Risk: 6.00 pts ($0.06 USD) | Reward: 14.50 pts ($0.145 USD) | Asymmetric Edge: **2.42R**.
+       * Gate 1 Clearance: SL $1,829.50 sits +1.021% clear of Day POC ($1,811.00), +0.555% clear of Session POC ($1,819.40), and +0.903% clear of Day VWAP ($1,813.12).
+       * Gate 2 Geometrical Liquidation Risk: Zero adverse short clusters in Vector B [$1,823.50, $1,829.50]. Defended by >$100M USD stacked ask walls ($18.8M @ $1,823, $20.0M @ $1,824, $17.5M @ $1,825, $16.2M @ $1,829). Nearest short liq cluster is at $1,843.92 (+2.39%).
+       * Auditor Verdict: **PASS / STAND ON CLOB**.
+
+- **PHASE 1: 61-ASSET UNIVERSE SCREENING & TAB 7 REGIME ROUTING**:
+    * Full universe scanned: 30 Crypto USDT-M Perps + 31 TradFi Perps/Indices = 61 Curated Assets.
+    * Regime: 97% of universe confirmed in **RANGE_BALANCE**.
+    * Table 7: Factor 1 = 0.0 pts strictly enforced. Non-active assets score <= 1.0 pt.
+    * Rest-of-Universe Verdict: Unanimous **HARD VETO** on new market/limit orders. Remaining $0.2383 USD cash buffer strictly protected.
+
+- **PHASE 5: HYGIENE & CONCURRENCY MANAGEMENT**:
+    * Active Running Positions: 0 (Both orders resting as post-only makers awaiting fill).
+    * Invariant P5-04 (Breakeven): Armed. BTC BE trigger = $64,980.0; ETH BE trigger = $1,817.50 (+1.0R excursion).
+    * Invariant P5-05 (8-Bar Time Stop): Armed. 2-hour duration clock begins upon fill.
+    * Invariant P5-06 (First-Two-Fills Circuit): Armed.
+
+- **PHASE 6: RECURSIVE AGI LEARNING ENGINE DEBRIEF**:
+    * Order-Book Microstructure Defense: Live multi-venue bookwalls confirm massive liquidity skew defending both short entries (BTC $194.1M asks vs ETH $100M+ asks). Price remains in discount rotation (BTC $64,384, ETH $1,798) with negative CVD (BTC perp CVD -$11.38M, ETH perp CVD -$6.33M) confirming both-selling quadrant. Standing limit orders at value resistance capture maker rebates while eliminating chop risk.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+    * Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs, zero background daemons.
