@@ -27,13 +27,13 @@
     }
   },
   "analysis": {
-    "last_round": "R319",
-    "last_round_ts": 1794824215409,
+    "last_round": "R320",
+    "last_round_ts": 1794825008136,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
-        "price": 64384.8,
-        "chgDayPct": -1.42,
+        "price": 64607.7,
+        "chgDayPct": -1.08,
         "score": -0.52,
         "parts": {
           "notif": 0.98,
@@ -45,8 +45,8 @@
         "error": null
       },
       "ETH": {
-        "price": 1798.85,
-        "chgDayPct": -1.93,
+        "price": 1808.18,
+        "chgDayPct": -1.42,
         "score": -3.57,
         "parts": {
           "notif": -0.32,
