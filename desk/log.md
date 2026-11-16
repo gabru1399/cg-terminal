@@ -10206,3 +10206,19 @@ analysis script rc=1
 
 analysis script rc=1
 
+## R380 · 2026-11-16 14:59 UTC · zai-desk
+
+**Market**: BTC 65,186.3 (-0.2%)  ETH 1,848.74 (+0.8%)  SOL 72.15 (-0.8%)  XAU 3,885.80 (-0.5%)  XAG 47.170 (-3.9%)
+**Bias (|score|≥2)**: XAG-3(TREND)  XRP-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R379-LINK-1 re-debated: FOR 3/AGAINST 2 — stands
+- R379-BNB-2 re-debated: FOR 5/AGAINST 0 — stands
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
