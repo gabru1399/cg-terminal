@@ -26,6 +26,7 @@ AUTONOMOUS DELTA EXCHANGE TRADE EXECUTION & RECURSIVE ENGINE ROUND
 | G-07 | ZERO mocks. All data must be live. No placeholders, simulated values, or assumed values. |
 | G-08 | The SOP manual and this calibrated specification are the sole authoritative references for all formulations, scoring, and execution invariants. |
 | G-09 | Phases 0 through 7 execute strictly in sequence. None may be skipped, reordered, or merged. |
+| G-10 | Continuous Planning & Brainstorming Invariant: Every execution cycle and trade calibration must incorporate structured planning (`/plan`) and multi-approach Socratic exploration (`/brainstorming`) to evaluate entry tightness, volume profiles, and liquidation magnets before order placement. |
 
 ### 1.2 The Recursive Self-Improving AGI Axioms (Meta-Learning Engine)
 

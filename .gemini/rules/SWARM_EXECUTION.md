@@ -40,3 +40,8 @@ On every activation and execution turn:
 ## 5. RECURSIVE TIMER CONTINUITY
 - Autonomous propagation is single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`).
 - Never terminate an execution turn without re-arming the 1200s dynamic wake timer.
+
+## 6. CONTINUOUS PLANNING & BRAINSTORMING MANDATE (/plan & /brainstorming)
+- Every autonomous prompt, task formulation, and dynamic wakeup must explicitly carry `/goal /executing-plans /plan /brainstorming`.
+- **`/plan`**: Enforces structured pre-flight technical design, verification, and artifact documentation before placing or altering exchange orders.
+- **`/brainstorming`**: Enforces Socratic exploration of alternative entry models (e.g., session VWAP/POC pullback fades vs. liquidation sweep retests) to prevent entry tightness and execution apathy.

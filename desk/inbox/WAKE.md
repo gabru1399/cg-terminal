@@ -3,6 +3,7 @@
 ## ACTIVE DESK DIRECTIVES
 - **VENUE & ACCOUNT**: Delta Exchange India (`india_prod` | Account `26902927`).
 - **CANONICAL SOP & LINE-BY-LINE MANDATE**: `desk/TRADE_FORMULATION_MANUAL.md` calibrated by `desk/SWARM_MASTER_PROMPT.md` and `.gemini/rules/SWARM_EXECUTION.md`. MANDATORY BY DEFAULT AT ALL TIMES ON EVERY TURN.
+- **MANDATORY SLASH COMMANDS**: All autonomous turns, dynamic prompts, and execution cycles MUST incorporate `/goal /executing-plans /plan /brainstorming` to enforce pre-flight planning and Socratic formulation testing.
 - **UNIVERSE TRACKING**: 61 Curated Assets (30 Crypto USDT-M Perps + 28 TradFi USDT-M Perps + 3 Classic Indices). Full screening on every round with zero omissions.
 - **SHARED ACCOUNT ISOLATION (P5-01b)**: Two separate chats run on this Delta account. Track orders strictly via internal order numbers. Never touch or cancel orders from the external chat (`FIB4H_*`, `SOLVUSD`, `TACUSD`).
 - **EXECUTION CADENCE**: Dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs.
