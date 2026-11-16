@@ -10017,3 +10017,10 @@ analysis script rc=1
 - Active Concurrency Guard (P5-06): Armed. The moment any 2 of the 5 orders fill, remaining 3 will be cancelled instantly.
 - Invariant Defense: P5-04 (+1.0R Breakeven) & P5-05 (8-Bar Time Stop) active.
 - Dynamic Timer: task-15508 active (DurationSeconds=1200) for Round R333.
+
+## 2026-11-16 13:08:52 UTC — atg-exec [PRE-FLIGHT CHECKLIST & FRESH 61-ASSET AUDIT CODIFIED]
+- User Directive: 'can we add checklist as well and at first it must be mention that checklist is completed and done fresh analysis of each 61 asset from scrach'
+- Action:
+  1. Formally codified Section 1.3 in desk/CANONICAL_MASTER_SPECIFICATION.md and updated .gemini/rules/SWARM_EXECUTION.md.
+  2. Mandated that EVERY round and response opens with the standardized Pre-Flight Verification Checklist header.
+  3. Enforced that each of the 61 Curated Assets must be analyzed fresh from scratch via live direct API ingestion (scripts/parse_screener_clean.py), with zero reliance on cached subagent summaries.
