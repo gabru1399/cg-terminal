@@ -27,8 +27,8 @@
     }
   },
   "analysis": {
-    "last_round": "R308",
-    "last_round_ts": 1794804825191,
+    "last_round": "R309",
+    "last_round_ts": 1794805759149,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
@@ -216,7 +216,7 @@
         "score": -3.47
       }
     ],
-    "summary": "Round 308: 30 crypto perps screened. HBAR, BNB, DOGE, NEAR, ETH, SUI, LTC audited. All short pullbacks vetoed by poor R-multiples (0.027R-0.290R to T1) and massive opposing bid walls (-.29M). BNB vetoed by VWAP chase guard (z=-2.04sd). Balance assets printed 0 footprint signals. Unanimous Hard Veto across 100% of candidates. 100% Cash Defense maintained (.00817 USD)."
+    "summary": "Round 309: Full 30-perp screening matrix ingested. 14 candidates audited. BTC, ETH, DOGE, HBAR, LTC, ARB, SUI, NEAR, OP, LINK, AVAX, SOL pullback shorts failed Gate 1 with T1 R-multiples between 0.038R and 0.303R vs 2.0R floor, blocked by massive bid walls (-) and positive buyer CVD (ETH +, BTC +). 1000PEPE mean-reversion failed with T1 R 0.456R vs 1.2R floor and - seller CVD. BNB vetoed by VWAP chase guard (z=-2.32sd). Unanimous Hard Veto across 100% of candidates. 100% Cash Defense maintained (.00817 USD)."
   },
   "orders": [
     {
