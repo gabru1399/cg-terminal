@@ -27,13 +27,13 @@
     }
   },
   "analysis": {
-    "last_round": "R321",
-    "last_round_ts": 1794825699048,
+    "last_round": "R322",
+    "last_round_ts": 1794826527322,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
-        "price": 64565.1,
-        "chgDayPct": -1.14,
+        "price": 64484.2,
+        "chgDayPct": -1.26,
         "score": -0.52,
         "parts": {
           "notif": 0.98,
@@ -45,7 +45,7 @@
         "error": null
       },
       "ETH": {
-        "price": 1806.58,
+        "price": 1806.54,
         "chgDayPct": -1.51,
         "score": -3.57,
         "parts": {
@@ -5902,49 +5902,49 @@
   "atg": {
     "equityUsd": 2.1258,
     "balanceUsd": 2.00817,
-    "availableUsd": 0.238337,
-    "blockedMarginUsd": 1.7698,
+    "availableUsd": 0.2519,
+    "blockedMarginUsd": 1.6575,
     "runningPositions": 0,
     "openOrdersCount": 2,
     "activeOrders": [
       {
-        "id": 1685857607,
+        "id": 1686273067,
         "symbol": "BTCUSD",
         "product_id": 27,
         "side": "sell",
         "order_type": "limit_order",
-        "limit_price": 65280.0,
+        "limit_price": 64750.0,
         "size": 1,
-        "bracket_sl": 65580.0,
-        "bracket_tp": 64450.0,
+        "bracket_sl": 65050.0,
+        "bracket_tp": 64050.0,
         "margin_mode": "isolated",
         "leverage": 50,
-        "margin_locked": 1.3056,
+        "margin_locked": 1.295,
         "state": "open",
-        "r_multiple": 2.77,
-        "archetype": "S2 (Day VAH / +2\u03c3 VWAP Fade)"
+        "r_multiple": 2.33,
+        "archetype": "S2 (Day POC Extension / VAH Fade)"
       },
       {
-        "id": 1685941006,
+        "id": 1686273813,
         "symbol": "ETHUSD",
         "product_id": 3136,
         "side": "sell",
         "order_type": "limit_order",
-        "limit_price": 1823.5,
+        "limit_price": 1812.5,
         "size": 1,
-        "bracket_sl": 1829.5,
-        "bracket_tp": 1809.0,
+        "bracket_sl": 1819.5,
+        "bracket_tp": 1792.5,
         "margin_mode": "isolated",
         "leverage": 50,
-        "margin_locked": 0.3647,
+        "margin_locked": 0.3625,
         "state": "open",
-        "r_multiple": 2.42,
-        "archetype": "S2 (Day VAH / +1\u03c3 VWAP Fade)"
+        "r_multiple": 2.86,
+        "archetype": "S2 (Day VWAP Pullback Fade)"
       }
     ],
     "lastAudit": "2026-11-16T08:26:25.521581+00:00",
     "posture": "2_RESTING_MAKER_ORDERS_CONFIRMED",
-    "round": "R313"
+    "round": "R322"
   },
   "orders_meta": {
     "balanceUsd": 2.00817,

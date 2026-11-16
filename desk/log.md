@@ -9451,3 +9451,50 @@ analysis script rc=1
   * Free Liquid Reserve Buffer: **$0.251900 USD** (INR 21.41 unencumbered cushion)
   * Active Running Positions: **0 / 2** (Both concurrency slots open)
   * Dual Stop-Out Worst-Case Loss: $0.300 + $0.070 = **$0.3700 USD** (17.40% max drawdown heat, 82.60% capital guaranteed preserved)
+
+
+## R322 · 2026-11-16 11:05 UTC · atg-exec & zai-desk
+- **ACCOUNT LIQUIDITY & MARGIN TELEMETRY (`india_prod`, Account `26902927`)**:
+    * Total Cash Balance: $2.008170 USD + ₹10.00 INR | Net Liquid Equity: $2.125817 USD.
+    * Order Margin Blocked: $1.657500 USD (77.97% capital allocation).
+    * Free Liquid Cash Buffer: $0.251900 USD (₹21.41 INR unencumbered).
+    * Active Running Positions: 0 / 2 (Both concurrency slots open).
+    * Dual Stop-Out Worst-Case Loss: $0.30 (BTC) + $0.07 (ETH) = $0.3700 USD (17.40% max drawdown heat, strictly isolated 50x bounds, 82.60% capital preserved).
+
+- **STANDING ORDER BOOK TELEMETRY AUDIT**:
+    1. **BTCUSD (Order ID: #1686273067)**:
+       * Setup Archetype: **Setup S2 (Day POC Extension / VAH Range Fade)**.
+       * Order Parameters: Sell Limit @ **$64,750.0 USD** | Bracket SL: **$65,050.0 USD** | Bracket TP: **$64,050.0 USD**.
+       * Mark Price: $64,484.2 (-1.26% 24h) | Entry distance: +0.41% overhead.
+       * Risk: 300 pts ($0.30 USD) | Reward: 700 pts ($0.70 USD) | Asymmetric Edge: **2.33R**.
+       * Gate 1 Clearance: SL $65,050 sits +0.527% clear of Day POC ($64,708.98), +0.542% clear of Day VWAP ($64,699.34), and +0.094% above Day VAH ($64,988.94).
+       * Gate 2 Geometrical Liquidation Risk: Zero adverse short clusters in Vector B [$64,750, $65,050]. Defended by 21 ask walls totalling $337.45M USD between $64,500 and $65,500. Nearest short liq clusters sit overhead at $66,495 (+3.15%) and $66,627 (+3.35%).
+       * CVD Telemetry: Perp CVD = -$11.44M USD, Spot CVD = -$746k USD, Quadrant = both-selling, Latest Div = bearish @ $65,475.10.
+       * Auditor Verdict: **PASS / STAND ON CLOB**.
+    2. **ETHUSD (Order ID: #1686273813)**:
+       * Setup Archetype: **Setup S2 (Day VWAP Pullback Fade)**.
+       * Order Parameters: Sell Limit @ **$1,812.50 USD** | Bracket SL: **$1,819.50 USD** | Bracket TP: **$1,792.50 USD**.
+       * Mark Price: $1,806.54 (-1.51% 24h) | Entry distance: +0.33% overhead.
+       * Risk: 7.00 pts ($0.07 USD) | Reward: 20.00 pts ($0.20 USD) | Asymmetric Edge: **2.86R**.
+       * Gate 1 Clearance: SL $1,819.50 sits +0.687% clear of Day POC ($1,807.08), +0.683% clear of Session POC ($1,807.15), and +0.379% clear of Day VWAP ($1,812.64).
+       * Gate 2 Geometrical Liquidation Risk: Zero adverse short clusters in Vector B [$1,812.50, $1,819.50]. Defended by 10 ask walls totalling $171.32M USD between $1,810 and $1,825. Nearest short liq clusters sit overhead at $1,861.09 (+3.04%) and $1,867.69 (+3.40%).
+       * CVD Telemetry: Perp CVD = -$6.34M USD, Spot CVD = -$1.08M USD, Quadrant = both-selling, Latest Div = bearish @ $1,833.40.
+       * Auditor Verdict: **PASS / STAND ON CLOB**.
+
+- **PHASE 1: 61-ASSET UNIVERSE SCREENING & TAB 7 REGIME ROUTING**:
+    * Full universe scanned: 30 Crypto USDT-M Perps + 31 TradFi Perps/Indices = 61 Curated Assets.
+    * Regime: 97% of universe confirmed in **RANGE_BALANCE**.
+    * Table 7: Factor 1 = 0.0 pts strictly enforced. Non-active assets score <= 1.0 pt.
+    * Rest-of-Universe Verdict: Unanimous **HARD VETO** on new market/limit orders. Remaining $0.2519 USD cash buffer strictly protected.
+
+- **PHASE 5: HYGIENE & CONCURRENCY MANAGEMENT**:
+    * Active Running Positions: 0 (Both orders resting as post-only makers awaiting fill).
+    * Invariant P5-04 (Breakeven): Armed. BTC BE trigger = $64,450.0; ETH BE trigger = $1,805.50 (+1.0R excursion).
+    * Invariant P5-05 (8-Bar Time Stop): Armed. 2-hour duration clock begins upon fill.
+    * Invariant P5-06 (First-Two-Fills Circuit): Armed.
+
+- **PHASE 6: RECURSIVE AGI LEARNING ENGINE DEBRIEF**:
+    * Dynamic Limit Calibration: Open limit orders were dynamically recalibrated to tighter value boundaries ($64,750 BTC and $1,812.5 ETH) with superior fill probability (0.33% - 0.41% overhead) while maintaining robust asymmetric edges (2.33R / 2.86R) and pristine Gate 1 POC clearance.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+    * Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs, zero background daemons.
