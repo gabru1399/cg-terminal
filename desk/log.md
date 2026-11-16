@@ -8870,3 +8870,26 @@ analysis script rc=1
 
 - **PHASE 7: DYNAMIC INTER-CYCLE TIMER RE-ARM**:
     * Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron, zero daemon.
+
+## EXEC · 2026-11-16 08:18 UTC (13:48 IST) · DELTA EXCHANGE CLOB ORDER PLACEMENT (ETHUSD)
+
+- **ORDER EXECUTION TELEMETRY (SLOT 2 RESTING MAKER PUNCH)**:
+    * Venue: **Delta Exchange India** (`india_prod` | Master Account `26902927`).
+    * Exchange Order ID: **`1685941006`**.
+    * Instrument: **ETHUSD** (Product ID `3136` · Ethereum Perpetual).
+    * Setup Archetype: **Setup S2 (Value Area Range High Fade)**.
+    * Order Type: **`limit_order`** (`post_only=true`, `time_in_force="gtc"`).
+    * Side: **`sell`** (Short from Day VAH / +1σ VWAP zone).
+    * Limit Execution Price: **`$1,823.50 USD`** (Resting maker liquidity strictly above best ask $1,808.80).
+    * Size: **`1` contract** (0.01 ETH · Notional = $18.235 USD).
+    * Margin Mode & Leverage: **Isolated Margin · 50x Leverage** (Dynamically calibrated per Invariant P5-08).
+    * Capital Allocation: **$0.3647 USD** order margin locked.
+    * Total Order Margin Blocked: **$1.6703 USD** ($1.3056 BTC + $0.3647 ETH) across $2.00817 USD balance.
+    * Free Liquid Balance Remaining: **$0.2383 USD** (INR 20.26) reserve.
+    * Bracket Stop Loss: **`$1,829.50 USD`** (Risk = 6.00 pts / $0.06 USD · Mark Price trigger).
+    * Bracket Take Profit: **`$1,809.00 USD`** (Reward = 14.50 pts / $0.145 USD · Mark Price trigger).
+    * Asymmetric R-Multiple: **`2.42R`** (14.50 reward / 6.00 risk = 2.42R).
+    * Gate 1 Clearance: Stop Loss $1,829.50 is +0.64% clear of Day POC ($1,817.83) and sits beyond +2σ VWAP ($1,829.30).
+    * Gate 2 Risk Zone: ZERO adverse short liquidation clusters $\ge \$5M$ in Vector B [$1,823.50, $1,829.50].
+    * Order State: **`open`** (Confirmed live on Delta Exchange India order book).
+    * Invariant P5-02 & P5-06 Status: Active running positions = 0 / 2. Active resting maker limits = 2. First-Two-Fills Circuit armed.

@@ -27,8 +27,8 @@
     }
   },
   "analysis": {
-    "last_round": "R312",
-    "last_round_ts": 1794816079324,
+    "last_round": "R312.1",
+    "last_round_ts": 1794817174528,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
@@ -5870,7 +5870,7 @@
       "notes": null
     }
   ],
-  "updatedAt": "2026-11-16T08:01:19.324815+00:00",
+  "updatedAt": "2026-11-16T08:19:34.528111+00:00",
   "closedPositions": [
     {
       "ticket": 210050569,
@@ -5938,14 +5938,15 @@
   "atg": {
     "equityUsd": 2.1258,
     "balanceUsd": 2.00817,
-    "availableUsd": 0.624769,
-    "blockedMarginUsd": 1.3834,
+    "availableUsd": 0.238337,
+    "blockedMarginUsd": 1.7698,
     "runningPositions": 0,
-    "openOrdersCount": 1,
+    "openOrdersCount": 2,
     "activeOrders": [
       {
         "id": 1685857607,
         "symbol": "BTCUSD",
+        "product_id": 27,
         "side": "sell",
         "order_type": "limit_order",
         "limit_price": 65280.0,
@@ -5956,12 +5957,29 @@
         "leverage": 50,
         "margin_locked": 1.3056,
         "state": "open",
-        "r_multiple": 2.76,
-        "archetype": "S2 (VA Range High Fade)"
+        "r_multiple": 2.77,
+        "archetype": "S2 (Day VAH / +2\u03c3 VWAP Fade)"
+      },
+      {
+        "id": 1685941006,
+        "symbol": "ETHUSD",
+        "product_id": 3136,
+        "side": "sell",
+        "order_type": "limit_order",
+        "limit_price": 1823.5,
+        "size": 1,
+        "bracket_sl": 1829.5,
+        "bracket_tp": 1809.0,
+        "margin_mode": "isolated",
+        "leverage": 50,
+        "margin_locked": 0.3647,
+        "state": "open",
+        "r_multiple": 2.42,
+        "archetype": "S2 (Day VAH / +1\u03c3 VWAP Fade)"
       }
     ],
-    "lastAudit": "2026-11-16T08:01:19.324815+00:00",
-    "posture": "RESTING_MAKER_ACTIVE_SLOT2_HUNT",
-    "round": "R312"
+    "lastAudit": "2026-11-16T08:19:34.528111+00:00",
+    "posture": "2_RESTING_MAKER_LIMITS_ACTIVE",
+    "round": "R312.1"
   }
 }
