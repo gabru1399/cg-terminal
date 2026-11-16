@@ -663,22 +663,7 @@
       "r_multiple": 2.76
     }
   ],
-  "positions": [
-    {
-      "symbol": "TAC",
-      "productId": 141648,
-      "size": -20,
-      "entryPrice": 0.001247,
-      "markPrice": 0.001253,
-      "stopLoss": 0.00127,
-      "takeProfit": 0.0009,
-      "margin": 0.2747,
-      "liquidationPrice": 0.00135317,
-      "status": "open",
-      "slOrderId": 1684721076,
-      "tpOrderId": 1684721077
-    }
-  ],
+  "positions": [],
   "closed": [
     {
       "id": "R1-BTC-1",
