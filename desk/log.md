@@ -9951,3 +9951,12 @@ analysis script rc=1
   - Available Liquid Balance: .3922 USD (84.3% free liquidity)
   - Total Order Margin: .4286 USD (covers all 5 active resting orders)
   - Active Running Positions: 0 / 2
+
+## 2026-11-16 12:56:53 UTC — atg-exec [CANONICAL TIMER PROMPT UPDATED]
+- User Directive: 'accordingly update timer prompt'
+- Action:
+  1. Updated canonical timer prompt format across CANONICAL_MASTER_SPECIFICATION.md and .gemini/rules/SWARM_EXECUTION.md.
+  2. The prompt now points exclusively to @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md].
+  3. Replaced BTC/ETH closed positions with active standing maker limit orders (APTUSD @ .45700, ADAUSD @ .15240, ARBUSD @ .13350, LINKUSD @ .120, TIAUSD @ .34750) and First-Two-Fills circuit.
+  4. Cancelled previous timer task-15447 and armed task-15508 (DurationSeconds=1200) for Round R332.
+  5. Verified strictly 1 timer running via manage_task.
