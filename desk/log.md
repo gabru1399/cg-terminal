@@ -8232,3 +8232,47 @@ analysis script rc=1
 
 - **PHASE 7: DYNAMIC TIMER RE-ARM**:
   - Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero cron jobs. Zero background daemons.
+
+
+## EXEC · 2026-11-16 01:45 UTC · atg-exec (Round 301)
+
+- **PHASE -1 & PHASE 0 COMPLIANCE CHECK**:
+  - SOP Ingestion: Bound strictly to `desk/TRADE_FORMULATION_MANUAL.md`, `desk/SWARM_MASTER_PROMPT.md`, and `.gemini/rules/SWARM_EXECUTION.md`.
+  - Venue: Delta Exchange India (`india_prod` | Master Account `26902927`).
+  - Capital Telemetry: Total USD Balance $1.3438 USD, Available Free Cash $0.3070 USD (INR 26.10), Position Margin Locked $1.0247 USD (Chat 1 SOLVUSD Long +47 @ 0.004355, mark 0.00444068, unrealized PnL +$0.3948 USD), Net Liquid Equity $1.8539 USD.
+  - Concurrency Status: THIS desk (`cg-terminal`) has exactly 0 / 2 running positions (Both concurrency slots vacant), 0 open orders on CLOB.
+  - Max Tradable Initial Margin Budget (SOP 80% Buffer Rule): $0.3070 * 0.80 = $0.2456 USD.
+  - Shared Account Isolation (P5-01b): Chat 1 SOLVUSD Long (+47 @ 0.004355) and its 2 stop-bracket orders (#1684736467, #1684736466) tracked strictly by order number and left untouched.
+
+- **PHASE 1: LIVE 30-ASSET SCREENER PASS & TAB 7 REGIME ROUTING**:
+  - Closed-candle screener ingested across all 30 crypto USDT-M perps from continuity terminal (`http://127.0.0.1:3000/api/cg/screener`).
+  - Full 30-asset uncompressed screening matrix generated and archived to `scratch/matrix_r301.json`.
+  - Top raw screener candidates evaluated:
+    * FIL: Raw Table 7 = 6.5 pts. Regime: TREND_DOWN. Model: M1_TREND_PULLBACK SHORT (88% conf).
+    * LTC: Raw Table 7 = 6.5 pts. Regime: TREND_DOWN. Model: M1_TREND_PULLBACK SHORT (88% conf).
+    * AVAX: Raw Table 7 = 6.5 pts. Regime: TREND_DOWN. Model: M1_TREND_PULLBACK SHORT (88% conf).
+    * 1000PEPE: Raw Table 7 = 6.0 pts. Regime: RANGE_BALANCE. Model: WATCH_EXHAUSTION LONG (35% conf). Factor 1 = 0.0 pts.
+    * ADA, TRX, LINK, DOT, NEAR, UNI, APT, SUI: Raw Table 7 = 5.5 pts. Regime: TREND_DOWN.
+    * ETH: Raw Table 7 = 5.0 pts. Regime: TREND_DOWN. Model: M1_TREND_PULLBACK SHORT (92% conf).
+    * BNB, BTC: Raw 5.0 - 6.5 pts, margin gated ($0.5910 and $0.3235 > $0.2456 tradable budget).
+    * INJ: In `RANGE_BALANCE` (Factor 1 = 0.0 pts), score 4.0 pts.
+
+- **PHASE 2 & PHASE 3: ADVERSARIAL AUDITOR VERDICT (Subagent 86012ef3-c9ed-4a7c-912f-876e47419fbf)**:
+  - Unanimous HARD VETO across all 13 candidates scoring >= 5.0 pts:
+    * 1000PEPE: In `RANGE_BALANCE` with `WATCH_EXHAUSTION LONG`, anti-knife-catching gate remains unsatisfied (`entryZone: null`, `bestR: null`, `invalidation: "no setup"`). Placing an order violates Socratic Pitfall Inquests Q5 (Regime-Archetype Mismatch) and Q6 (Phantom Signal Trap).
+    * Inquest 1 (R-Multiple Collapse): Every trend continuation candidate fails DECIDE-D catastrophically. Prices are compressed near session lows while stops sit at impulse origins. FIL risks +44.0% for +0.48% to T1 (0.012R to T1, best composite 0.50R); LTC risks +13.82% for +1.25% to T1 (0.091R to T1, best composite 0.40R); AVAX risks +19.09% for +1.06% to T1 (0.037R to T1, best composite 0.67R); ADA pays 0.082R to T1 (best 0.71R); NEAR pays 0.079R to T1 (best 0.27R); ETH risks +18.38% (best composite 0.31R); SUI triggers Chase Guard (z = -2.03σ). All fail the mandatory >= 2.0R continuation floor by 22x to 166x, and fail the composite >= 1.5R floor.
+    * Inquest 2 (Order Book Blocks): Confirmed resting bid walls block downside profit discovery on all shorts: ETH blocked by $51.8M wall at 1827.27; FIL blocked by $1.2M wall at 0.6034; LTC blocked by $3.7M wall at 44.13; AVAX blocked by $3.1M wall at 7.19; ADA blocked by $1.7M wall at 0.1468; NEAR blocked by $3.0M wall at 3.170; SUI blocked by $1.5M wall at 0.7220.
+    * Socratic Pitfalls Triggered: Q2 (Adverse Squeeze Magnet Trap), Q3 (Active Session HVN Collision), Q5 (Regime-Archetype Mismatch), Q8 (Inverted R-Multiple Trap).
+
+- **PHASE 4 & PHASE 5: EXECUTION HYGIENE & CONCURRENCY MANAGEMENT**:
+  - Concurrency Cap: Max 2 positions. Current active positions = 0. Both slots vacant.
+  - Zero orders placed. 100% Cash Defense maintained.
+  - All standing exchange orders audited; zero orphans, zero duplicate orders from this desk.
+
+- **PHASE 6: AGI SELF-IMPROVEMENT INSIGHT**:
+  - Regime Inversion Persistence: Over three consecutive rounds (R299, R300, R301), the market structure has remained pinned near session lows with major structural swing highs acting as the only objective invalidation points. This structural asymmetry mathematically compresses the continuation reward to under 0.1R while imposing 10%–45% stop distances.
+  - Cognitive Discipline Over Action Bias: The AGI's refusal to succumb to "Vacant Concurrency Apathy" (Q7) by forcing low-expectancy trades into massive institutional bid walls ($1.2M to $51.8M) is the core generative mechanism preserving capital ($0.3070 USD liquid cash reserve 100% intact).
+  - Capital Preservation: Zero fee leakage, zero taker slippage, zero adverse selection.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+  - Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero cron jobs. Zero background daemons.
