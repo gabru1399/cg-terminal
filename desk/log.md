@@ -10558,3 +10558,30 @@ analysis script rc=1
 **4-Voice Quantitative Desk Debate Consensus**:
 - **TradFi Slot 2**: 100% FILLED by `SPCXBUSD`. MSFT reached $518.33 (-6.26σ extension) entering the deep value accumulation zone ($518.20); held on watch until Slot 2 opens upon SPCX target fill.
 - **Crypto Slot 1**: VACANT. 100% Cash Defense. BTC consolidating at $64,762 (inside Day Value Area). TIA ($0.356) and VET ($0.005) short liquidation sweep magnets below remain unswept. Gate 3 forbids passive front-running.
+## R392 · 2026-11-16 19:59 UTC · zai-desk
+
+**Market**: BTC 65,031.2 (-0.4%)  ETH 1,822.68 (-0.6%)  SOL 71.42 (-1.8%)  XAU 3,870.14 (-0.9%)  XAG 47.190 (-3.8%)
+**Bias (|score|≥2)**: ADA-4(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R392-ADA-1 ADA SHORT limit 0.1538 · stop 0.1548 · T1 0.1512 · T2 0.1498 · T3 0.1490 · R 2.5
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (0.1538 vs 0.1526), h4 RSI 38.1, day -1.0%
+      [FOR    ] footprint: bull 59 / bear 63; recent: Trapped longs/sell[time], Divergence/sell[vol], Absorption/sell[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×7, abs:sell×9, div:buy×2, div:sell×2, exh:buy×4, exh:sell×6, sdiv:buy×2, sdiv:sell×2, trap:buy×2, trap:sell×6 — net 17 buy-side vs 25 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.1498 (str 70, ~$3M est, -2.57%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.406 (5m ago -0.266, falling bids); bid $0.01B vs ask $0.02B
+      [FOR    ] cvd: taker buy 48.3%, perpCvd -38, spotCvd -7, quadrant both-selling, latestDiv bear (recent)
+      [FOR    ] notifications: 6h weighted bias -1.9 (1 events)
+
+### Order lifecycle
+- R391-XRP-1 WITHDRAWN (confluence flipped to +0.6)
+- R388-DOGE-1 re-debated: FOR 4/AGAINST 3 — stands
+
+### Positions
+- no open positions
+
+
+## ROUND FAILED · 2026-11-16 19:59 UTC · zai-desk
+
+analysis script rc=1
+
