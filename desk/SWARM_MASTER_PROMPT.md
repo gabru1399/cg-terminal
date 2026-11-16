@@ -2,7 +2,7 @@
 
 ```text
 @[plugin:persistent-memory] @[plugin:coderabbit] @[plugin:superpowers] @[plugin:trading-skills]
-/swarm launch 360
+/goal /executing-plans /plan /brainstorming /swarm launch 360
 AUTONOMOUS DELTA EXCHANGE TRADE EXECUTION & RECURSIVE ENGINE ROUND
 (CANONICAL SOP v1.4.0 · RECURSIVE SELF-IMPROVING AGI & SOCRATIC PITFALL INQUEST EDITION)
 ```
