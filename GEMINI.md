@@ -27,6 +27,13 @@ Before deciding on any strategic question, setup formulation, architecture choic
 9. **Theory of Constraints (`/thinking-theory-of-constraints`)**: Identify the single bottleneck in the current operation (e.g., available liquid margin, execution latency, or contract minimums) and subordinate all actions to it.
 10. **Lindy Effect (`/thinking-lindy-effect`)**: Rely on time-tested microstructure invariants (auction market theory, volume profile, liquidation cascades) rather than fleeting curve-fitted indicators.
 
+### 1.2 The 4-Voice Quantitative Desk Debate Protocol (Mandatory Cognitive Inquest)
+Every setup and candidate evaluation must route through the 4-voice desk debate rather than shallow mechanical pass/fail filtering:
+1. **Alpha Strategist (Hunter)**: Detects statistical extensions ($|z| \ge 2.0\sigma$), auction gravity to POC, and footprint divergences.
+2. **Adversarial Risk Officer (Red Team)**: Stress-tests contract minimum lot risks (Gate 7), Vector B liquidation traps (Gate 2), and BTC macro drag (Gate 10).
+3. **Microstructure Quant (Empiricist)**: Computes exact Expected Value ($EV$), R-multiple hurdle ($\ge 1.50\text{R}$), notional sizing, and spread/fee drag.
+4. **Committee Arbiter (Synthesizer)**: Reconciles edge vs risk, identifies positive-EV maker limit levels, and authorizes execution.
+
 ---
 
 ## 2. KARPATHY GUIDELINES FOR CODE & EXECUTION (`/karpathy-guidelines`)
@@ -77,7 +84,7 @@ Every execution round, autonomous turn, or trading response **MUST OPEN** with t
 Dynamic recursion is driven by a single 1200-second timer (`schedule(DurationSeconds=1200)`). The timer instruction and prompt MUST strictly follow this canonical format:
 
 ```text
-Timer: 20m, Prompt: /goal /executing-plans /plan /brainstorming /karpathy-guidelines /thinking-model-router Autonomous Delta Exchange Trade Execution & Recursive Self-Improving Engine Round R<n>. MANDATORY: Response MUST open with Pre-Flight Verification Checklist confirming fresh 61-curated asset screening from scratch. Audit all 61 Curated Assets strictly using @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]  , apply thinking mental models (first principles, pre-mortem, probabilistic, red-team, margin of safety) and Karpathy guidelines, enforce Gates 1-11 (Gate 7 Mechanical Ban on LINK/BNB/SOL/BTC, Gate 9 Max 1 Crypto Position, Gate 10 BTC Macro Filter, Gate 11 1.20x Slippage Multiplier), enforce +1.0R breakeven invariant and 8-bar time stop, audit margin and liquidity, and re-arm dynamic 1200s recursion.
+Timer: 20m, Prompt: /goal /executing-plans /plan /brainstorming /karpathy-guidelines /thinking-model-router Autonomous Delta Exchange Trade Execution & Recursive Self-Improving Engine Round R<n>. MANDATORY: Response MUST open with Pre-Flight Verification Checklist confirming fresh 61-curated asset screening from scratch. Audit all 61 Curated Assets strictly using @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]  , execute 4-Voice Quantitative Desk Debate (Alpha Strategist, Red Team, Quant, Arbiter), apply thinking mental models (first principles, pre-mortem, probabilistic, red-team, margin of safety) and Karpathy guidelines, enforce Gates 1-11 (Gate 7 Mechanical Ban on LINK/BNB/SOL/BTC, Gate 9 Max 1 Crypto Position, Gate 10 BTC Macro Filter, Gate 11 1.20x Slippage Multiplier), enforce +1.0R breakeven invariant and 8-bar time stop, audit margin and liquidity, and re-arm dynamic 1200s recursion.
 ```
 
 ---
