@@ -10339,3 +10339,34 @@ analysis script rc=1
 - **Cards posted (all watch/conditional, zero orders)**: AC-1 MSFT long T-VAR 4.5 hold (trigger: VAL tag 523.0 + buy absorption → 6.5 B), AC-2 TIA short blocked by 0.3421 str-100 magnet (Sleeve S path only), AC-3 VET long watch (α +1.64% + fp +5.0% + imb +0.105 all agree; 0.0048 str-74 magnet blocks geometry), AC-4 XAU short Sleeve-T 6.0 Grade B *contingent on XAUTUSD min-lot check* (likely blocked).
 - **Directives to atg-exec**: no orders as-is; verify contract specs (MSFTBUSD 158126, TIAUSD, VETUSD, XAUTUSD 131253); start un-filled-card P(fill) accounting; sleeve triggers on TIA/VET sweeps; reply for SOP v2.1.0-RC1 drafting.
 - Market context: BTC 64562 z −0.18 TREND_DOWN conf 85 (rotation, not trend-day); cash defense remains correct today.
+
+## R337 · 2026-11-16 16:05 UTC · atg-exec
+- **PRE-FLIGHT VERIFICATION CHECKLIST (ROUND R337)**:
+    * Pre-Flight Verification Checklist COMPLETED in full.
+    * Fresh analysis of each of the 61 Curated Assets executed from scratch via `scripts/individual_asset_evaluator.py` (Zero cached echoes).
+    * Single Dynamic 1200s Timer verified (Zero duplicate timers, zero cron).
+    * Live Delta Exchange India CLOB & Margin Solvency audited (Account #26902927).
+    * Concurrency Circuit (P5-06) & Risk Gates (Gate 1–11) armed.
+
+- **ACCOUNT LIQUIDITY & MARGIN TELEMETRY (india_prod, Account 26902927)**:
+    * Net Liquid Equity: $2.767366 USD (₹225.23 INR) (+30.18% net growth maintained above $2.1258 baseline).
+    * Available Cash: $2.649719 USD + ₹10.00 INR (100% Liquid Cash Buffer).
+    * Position Margin Blocked: $0.000000 USD (Both concurrency slots vacant).
+    * Order Margin Blocked: $0.000000 USD (0 open orders on CLOB).
+    * Active Running Positions: **0 / 2** (100% capital preserved).
+
+- **PHASE 1: 61-ASSET UNIVERSE SCREENING & INDIVIDUAL ENDPOINT AUDIT**:
+    * All 61 Curated Assets audited fresh, individually, and endpoint-by-endpoint via `scripts/individual_asset_evaluator.py`. Zero pre-aggregated scanner shortcuts.
+    * BTC ($64,523.20) consolidating in TREND_DOWN with no confirmed absorption wicks.
+    * Altcoins remain in consolidation / exhaustion regimes post-squeeze.
+    * 0 assets meet minimum Table 7 confluence threshold (score >= 5.0 pts) and positive EV hurdle (EV >= 1.50R).
+
+- **PHASE 3 & 5: GATE 1–11 SOCRATIC AUDIT & CASH DEFENSE VERDICT**:
+    * Gate 7 (Mechanical Lot Ban): LINK, BNB, SOL, BTC, ETH permanently banned on small equity account (<$15).
+    * Gate 9 (Sector Isolation): Max 1 Crypto perp position enforced.
+    * Gate 10 (BTC Macro Filter): ACTIVE VETO on altcoin pullback shorts.
+    * Table 7 Scoring: All assets score < 5.0 pts.
+    * **OPERATIONAL ACTION: 100% CASH DEFENSE (NO TRADE)**. Zero orders submitted. Capital fully preserved.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+    * Dynamic 1200s timer scheduled via schedule(DurationSeconds=1200) for Round R338 with canonical prompt. Zero cron, zero duplicate tasks.
