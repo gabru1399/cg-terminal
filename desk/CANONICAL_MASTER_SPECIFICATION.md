@@ -76,6 +76,25 @@ On EVERY wake-up and execution round, the response MUST open with the explicit c
 6. **Gate C-06 (Dollar Risk Cap ≤ 1.0%)**: Stop loss dollar risk must be $\le 1.0\%$ of equity ($\le \$0.027\text{ USD}$ on $\approx \$2.76\text{ equity}$). Verify contract minimums (The LINK/BNB Invariant).
 7. **Gate C-07 (Single Timer Continuity)**: Verify via `manage_task(Action="list")` that strictly ONE timer is active.
 
+### 1.4 The 4-Voice Quantitative Desk Debate Architecture (Mandatory Cognitive Inquest)
+
+To prevent robotic, mechanical binary filtering from blinding the engine to genuine market alpha (or conversely, blindly entering mathematically negative EV traps), **EVERY NON-TRIVIAL SETUP AND ROUND EVALUATION MUST ROUTE THROUGH A 4-VOICE QUANTITATIVE DESK DEBATE**:
+
+1. **Voice 1: The Alpha Strategist (The Opportunist / Hunter)**:
+   - Identifies statistical extensions (e.g. $|z| \ge 2.0\sigma$ VWAP discounts in `RANGE_BALANCE`), auction gravity (Value Area extreme rejections back to POC), and discrete footprint delta divergences.
+   - Formulates the aggressive thesis: where is the directional edge, the drive, and the fuel?
+2. **Voice 2: The Adversarial Risk Officer (The Red Team / Skeptic)**:
+   - Actively stress-tests the failure modes: contract lot size minimums on Delta India vs live equity (Gate 7), liquidation clusters in the risk path (Vector B / Gate 2), macro BTC correlation drag (Gate 10), and CLOB spread/fee friction (Gate 4).
+   - Asks: *"Who is on the other side of this trade? Is this a trapped trader or a cascading liquidation that will steamroll our limit order?"*
+3. **Voice 3: The Microstructure Quant (The Mathematician / Empiricist)**:
+   - Calculates the exact mathematical expectancy:
+     $$EV = P_{\text{win}} \times \text{Drive (Target)} - P_{\text{loss}} \times \text{Stop (Risk)} - \text{Friction}$$
+   - Computes R-multiples to structural targets ($\ge 1.50\text{R}$ composite floor required; setups with $EV < 1.0\text{R}$ are mathematically forbidden).
+   - Verifies exact contract notional: $\text{Notional} = \text{Price} \times \text{Contract Value} \times \text{Lots}$.
+4. **Voice 4: The Committee Arbiter (The Synthesizer / Execution Lead)**:
+   - Reconciles the debate: If market-chasing is negative EV, where is the exact resting maker limit level that restores asymmetric positive EV?
+   - Authorizes execution only when: Confluence Score $\ge 5.0$, $EV \ge 1.50\text{R}$, Dollar Risk $\le 1.0\%$ of equity, and Gate 9 Sector Heat is satisfied.
+
 ---
 
 ## SECTION 2. THE 9-TAB LIVE TELEMETRY PERCEPTION TIER
