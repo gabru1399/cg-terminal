@@ -8088,3 +8088,52 @@ analysis script rc=1
 ### Positions
 - None — data missing, HOLD (manual check)
 
+
+## EXEC · 2026-11-16 00:23 UTC · atg-exec (Round 298)
+
+- **PHASE -1 & PHASE 0 COMPLIANCE CHECK**:
+  - SOP Ingestion: Bound strictly to `desk/TRADE_FORMULATION_MANUAL.md`, `desk/SWARM_MASTER_PROMPT.md`, and `.gemini/rules/SWARM_EXECUTION.md`.
+  - Venue: Delta Exchange India (`india_prod` | Master Account `26902927`).
+  - Capital Telemetry: Total USD Balance $1.3438 USD, Available Free Cash $0.3070 USD (INR 26.10), Position Margin Locked $1.0247 USD (Chat 1 SOLVUSD Long +47 @ 0.004355, mark 0.00435297, unrealized PnL -$0.0188 USD), Net Liquid Equity $1.4520 USD.
+  - Concurrency Status: THIS desk (`cg-terminal`) has exactly 0 / 2 running positions (Both concurrency slots vacant), 0 open orders on CLOB.
+  - Max Tradable Initial Margin Budget (SOP 80% Buffer Rule): $0.3070 * 0.80 = $0.2456 USD.
+  - Shared Account Isolation (P5-01b): Chat 1 SOLVUSD Long (+47 @ 0.004355) and its 2 stop-bracket orders (#1684736467, #1684736466) tracked strictly by order number and left untouched.
+
+- **PHASE 1: LIVE 30-ASSET SCREENER PASS & TAB 7 REGIME ROUTING**:
+  - Closed-candle screener ingested across all 30 crypto USDT-M perps from continuity terminal (`http://127.0.0.1:3000/api/cg/screener`).
+  - 28/30 assets shifted into `TREND_DOWN` with the 00:00 UTC day anchor.
+  - Top raw screener candidates:
+    * UNI, DOT, DOGE, NEAR, SUI, TIA: Raw scores 5.5 - 8.0 pts. Active model WAIT_PULLBACK SHORT (confidence 45%).
+    * ETH: Raw score 5.0 -> Validated Table 7 = 4.0 pts (< 5.0 required). Model M1_TREND_PULLBACK SHORT.
+    * AVAX: Raw score 5.5 -> Validated Table 7 = 4.0 pts (< 5.0 required). Model M1_TREND_PULLBACK SHORT.
+    * BTC: Raw score 6.0 -> Validated Table 7 = 3.5 pts; min margin $0.3250 exceeds budget $0.2456 USD (MARGIN GATED).
+    * 1000PEPE, INJ: In `RANGE_BALANCE` (Factor 1 = 0.0 pts), scores <= 4.5 pts.
+
+- **PHASE 2 & PHASE 3: ADVERSARIAL AUDITOR VERDICT (Subagent 86012ef3-c9ed-4a7c-912f-876e47419fbf)**:
+  - UNI Group (UNI, DOT, DOGE, NEAR, SUI, TIA): HARD VETO (Chase Guard).
+    * Dimension 3 Enforcement: All assets exhibit extreme downward extensions (|z| > 2.0σ, e.g. UNI z = -2.91σ).
+    * Native Terminal Engine Veto: "chase guard: > 2.0σ VWAP extension — wait for the pullback".
+    * Plan: entryZone is null, bestR is null. Socratic Pitfall Q5/Q6 triggered.
+  - ETH (ETHUSD): HARD VETO.
+    * Table 7: Validated score 4.0 / 11.5 pts (< 5.0 required).
+    * DECIDE-D: Fatal mathematical collapse. Entry 1828.91, Stop 2249.02 (Risk +22.97%), T1 1822.44 (Reward +0.35%) yielding an unacceptable 0.015R to T1 (mandate >= 2.0R continuation floor). Best composite R = 0.43R (< 1.5R floor).
+    * Order Book Barrier: Opposing $51.8M whale bid wall at 1827.27 sits directly in the path to T1, blocking downward price discovery.
+    * Flow Dynamics: 24h CVD is +$414.6M USD flowing aggressively against the short thesis.
+    * Socratic Pitfalls Triggered: Q2 (Opposing Whale Wall Block), Q3 (Active Session HVN Collision), Q8 (Inverted R-Multiple Trap).
+  - AVAX (AVAXUSD): HARD VETO.
+    * Table 7: Validated score 4.0 / 11.5 pts (< 5.0 required).
+    * DECIDE-D: Fatal mathematical collapse. Entry 7.266, Stop 8.601 (Risk +18.37%), T1 7.225 (Reward +0.56%) yielding an unacceptable 0.031R to T1 (mandate >= 2.0R). Best composite R = 0.66R (< 1.5R floor).
+    * Socratic Pitfalls Triggered: Q3 (Active Session HVN Collision), Q8 (Inverted R-Multiple Trap).
+
+- **PHASE 4 & PHASE 5: EXECUTION HYGIENE & CONCURRENCY MANAGEMENT**:
+  - Concurrency Cap: Max 2 positions. Current active positions = 0.
+  - Zero orders placed. 100% Cash Defense maintained.
+  - All standing exchange orders audited; zero orphans, zero duplicate orders from this desk.
+
+- **PHASE 6: AGI SELF-IMPROVEMENT INSIGHT**:
+  - Chase Guard Invariant Protection: Following UTC 00:00 turnover, market momentum produced widespread downward extensions > 2.0σ from VWAP. Naive momentum models would sell the bottom into extreme discount. Enforcing the Dimension 3 Chase Guard invariant strictly prevented catastrophic whipsaw losses.
+  - Order Book Forensics: On ETH, while trend was down, an immense $51.8M bid wall and +$414M buyer CVD completely blocked the 0.015R downside target. Deep multi-exchange order book analysis prevented a fatal short entry.
+  - Capital Preservation: Preserved $0.3070 USD liquid cash reserve with zero fee leakage and zero slippage drag.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+  - Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero cron jobs. Zero background daemons.
