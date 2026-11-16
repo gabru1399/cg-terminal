@@ -28,7 +28,7 @@
   },
   "analysis": {
     "last_round": "R328",
-    "last_round_ts": 1794830893724,
+    "last_round_ts": 1794831060295,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
@@ -5951,7 +5951,7 @@
   ],
   "account": {
     "balance_usd": 1.988611589,
-    "net_equity_usd": 2.705484728,
+    "net_equity_usd": 2.851960158,
     "position_margin_usd": 1.6575,
     "order_margin_usd": 0.0,
     "available_balance_usd": 0.281237414,
@@ -5959,7 +5959,7 @@
     "active_positions": 2,
     "standing_orders": 4,
     "total_portfolio_risk_usd": 0.0,
-    "growth_pct_from_baseline": 27.27
+    "growth_pct_from_baseline": 34.16
   },
   "quant_engine": {
     "last_scan_ts": 1794675825067,
