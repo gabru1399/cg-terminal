@@ -27,8 +27,8 @@
     }
   },
   "analysis": {
-    "last_round": "R314",
-    "last_round_ts": 1794818219227,
+    "last_round": "R315",
+    "last_round_ts": 1794820230770,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
@@ -239,52 +239,54 @@
       "r_multiple": 2.76
     }
   },
-  "orders": {
-    "balanceUsd": 2.00817,
-    "availableUsd": 0.238337,
-    "blockedMarginUsd": 1.6703,
-    "runningPositions": 0,
-    "openOrdersCount": 2,
-    "activeOrders": [
-      {
-        "id": 1685857607,
-        "symbol": "BTCUSD",
-        "product_id": 27,
-        "side": "sell",
-        "order_type": "limit_order",
-        "limit_price": 65280.0,
-        "size": 1,
-        "bracket_sl": 65580.0,
-        "bracket_tp": 64450.0,
-        "margin_mode": "isolated",
-        "leverage": 50,
-        "margin_locked": 1.3056,
-        "state": "open",
-        "r_multiple": 2.77,
-        "archetype": "S2 (Day VAH / +2\u03c3 VWAP Fade)"
-      },
-      {
-        "id": 1685941006,
-        "symbol": "ETHUSD",
-        "product_id": 3136,
-        "side": "sell",
-        "order_type": "limit_order",
-        "limit_price": 1823.5,
-        "size": 1,
-        "bracket_sl": 1829.5,
-        "bracket_tp": 1809.0,
-        "margin_mode": "isolated",
-        "leverage": 50,
-        "margin_locked": 0.3647,
-        "state": "open",
-        "r_multiple": 2.42,
-        "archetype": "S2 (Day VAH / +1\u03c3 VWAP Fade)"
-      }
-    ],
-    "lastAudit": "2026-11-16T08:36:59.227914+00:00",
-    "posture": "2_RESTING_MAKER_ORDERS_CONFIRMED",
-    "round": "R314"
-  },
+  "orders": [
+    {
+      "id": 1685857607,
+      "symbol": "BTCUSD",
+      "product_id": 27,
+      "side": "sell",
+      "order_type": "limit_order",
+      "limit_price": 65280.0,
+      "size": 1,
+      "bracket_sl": 65580.0,
+      "bracket_tp": 64450.0,
+      "margin_mode": "isolated",
+      "leverage": 50,
+      "margin_locked": 1.3056,
+      "state": "open",
+      "r_multiple": 2.77,
+      "archetype": "S2 (Day VAH / +2\u03c3 VWAP Fade)",
+      "asset": "BTC",
+      "sym": "BTC",
+      "status": "open",
+      "limitPrice": 65280.0,
+      "stopPrice": 65580.0,
+      "targetPrice": 64450.0
+    },
+    {
+      "id": 1685941006,
+      "symbol": "ETHUSD",
+      "product_id": 3136,
+      "side": "sell",
+      "order_type": "limit_order",
+      "limit_price": 1823.5,
+      "size": 1,
+      "bracket_sl": 1829.5,
+      "bracket_tp": 1809.0,
+      "margin_mode": "isolated",
+      "leverage": 50,
+      "margin_locked": 0.3647,
+      "state": "open",
+      "r_multiple": 2.42,
+      "archetype": "S2 (Day VAH / +1\u03c3 VWAP Fade)",
+      "asset": "ETH",
+      "sym": "ETH",
+      "status": "open",
+      "limitPrice": 1823.5,
+      "stopPrice": 1829.5,
+      "targetPrice": 1809.0
+    }
+  ],
   "positions": [],
   "closed": [
     {
@@ -5603,5 +5605,15 @@
     "lastAudit": "2026-11-16T08:26:25.521581+00:00",
     "posture": "2_RESTING_MAKER_ORDERS_CONFIRMED",
     "round": "R313"
+  },
+  "orders_meta": {
+    "balanceUsd": 2.00817,
+    "availableUsd": 0.238337,
+    "blockedMarginUsd": 1.6703,
+    "runningPositions": 0,
+    "openOrdersCount": 2,
+    "lastAudit": "2026-11-16T09:10:30.770438+00:00",
+    "posture": "2_RESTING_MAKER_ORDERS_CONFIRMED",
+    "round": "R315"
   }
 }

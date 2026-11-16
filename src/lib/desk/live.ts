@@ -252,7 +252,13 @@ export function getDeskIndex(): Map<string, { badge: string; tone: "pos" | "limi
   const norm = (asset?: string, mt5Sym?: string) =>
     (asset || revSym.get((mt5Sym ?? "").toUpperCase()) || (mt5Sym ?? "").replace(/USD$/i, "")).toUpperCase();
 
-  for (const o of st?.orders ?? []) {
+  const ordersList: RawOrder[] = Array.isArray(st?.orders)
+    ? st.orders
+    : Array.isArray((st?.orders as any)?.activeOrders)
+    ? (st?.orders as any).activeOrders
+    : [];
+
+  for (const o of ordersList) {
     const sym = (o.sym || o.asset) as string | undefined;
     const side = (o.side || o.action) as string | undefined;
     if (sym && side && (o.status === "suggested" || o.status === "placed" || o.status === "open" || o.status === "active")) {
@@ -294,7 +300,12 @@ export async function buildDeskLiveSnapshot(): Promise<DeskLiveSnapshot> {
   const activeSyms = new Set<string>();
   for (const p of mt5?.positions ?? []) activeSyms.add(symOf(p.asset, p.symbol));
   for (const o of mt5?.orders ?? []) activeSyms.add(symOf(o.asset, o.symbol));
-  for (const o of state?.orders ?? []) {
+  const stateOrders: RawOrder[] = Array.isArray(state?.orders)
+    ? state.orders
+    : Array.isArray((state?.orders as any)?.activeOrders)
+    ? (state?.orders as any).activeOrders
+    : [];
+  for (const o of stateOrders) {
     const sym = (o.sym || o.asset) as string | undefined;
     if (sym && ["suggested", "placed", "open", "active"].includes(o.status)) activeSyms.add(sym.toUpperCase());
   }
@@ -359,7 +370,7 @@ export async function buildDeskLiveSnapshot(): Promise<DeskLiveSnapshot> {
     };
   });
 
-  const orders: DeskOrderView[] = [...(state?.orders ?? [])]
+  const orders: DeskOrderView[] = [...stateOrders]
     .reverse()
     .slice(0, 20)
     .map((o) => {
