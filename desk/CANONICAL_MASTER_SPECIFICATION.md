@@ -243,11 +243,13 @@ Every point must originate strictly from live API telemetry. Any missing or coun
 
 ### Confluence Decision Gates
 
-| Score | Grade | Risk Allocation | Operational Action |
-| :--- | :---: | :---: | :--- |
-| **$\ge 7.0\text{ pts}$** | **Grade A** | **1.0% equity** | Pristine Institutional Setup. Authorizes full standard position unit. |
-| **$5.0 - 6.5\text{ pts}$** | **Grade B** | **0.5% equity** | Standard Setup. Authorizes half-unit risk allocation. |
-| **$< 5.0\text{ pts}$** | **NO TRADE** | **0.0% equity** | **HARD VETO. Capital Preserved.** Never enter sub-threshold setups. |
+| Score | Grade | Leverage Cap | Risk Allocation | Operational Action |
+| :--- | :---: | :---: | :---: | :--- |
+| **$\ge 7.0\text{ pts}$** | **Grade A** | **Up to 25X** | **1.0% – 2.5% equity** | Pristine Institutional Setup. Authorizes full standard position unit with up to 25X isolated leverage (per User Directive 2026-11-17). |
+| **$5.0 - 6.5\text{ pts}$** | **Grade B** | **Up to 20X** | **0.5% – 1.0% equity** | Standard Setup. Authorizes half-unit risk allocation. |
+| **$< 5.0\text{ pts}$** | **NO TRADE** | **0X** | **0.0% equity** | **HARD VETO. Capital Preserved.** Never enter sub-threshold setups. |
+
+*Canonical Parameter Inventory: All parameters across Tabs 1–9 are comprehensively defined in [`docs/DATA_POINT_INVENTORY.md`](file:///c:/Users/SIGMA/Documents/cg-terminal/docs/DATA_POINT_INVENTORY.md).*
 
 ---
 
@@ -267,12 +269,14 @@ Before an order ticket is dispatched, it must pass all 11 Socratic Gates without
    If price fails to reach $+0.5\text{R}$ within **8 bars (2 hours)** of filling, close or tighten the stop (P5-05).
 6. **Gate 6: Breakeven Invariant**:
    Move SL to entry immediately upon reaching **$\ge +1.0\text{R}$ excursion** (P5-04). Eliminate downside risk to $0.00 USD.
-7. **Gate 7: Mechanical Contract Minimum Dollar Risk Gate (The LINK/BNB Hard Ban)**:
+7. **Gate 7: Mechanical Contract Minimum Dollar Risk Gate (The LINK/BNB Hard Ban & TradFi Fractional Enabler)**:
    Calculate: $\text{Effective Dollar Risk} = \text{Minimum Lot} \times \text{Contract Value} \times |\text{Entry} - \text{SL}| \times 1.20\text{ (slippage multiplier)}$.
-   **Effective Dollar Risk MUST BE $\le 1.0\%$ of live Net Liquid Equity** ($\le \$0.027\text{ USD}$ on $\approx \$2.76\text{ equity}$).
-   - **MANDATORY HARD BAN**: If an asset's minimum contract size (e.g., 1 LINK = $9.12 notional, 0.1 BNB = $59 notional, 0.001 BTC = $65 notional) forces dollar risk $> 1.0\%$ ($> \$0.027$), the asset is **PERMANENTLY AND MECHANICALLY VETOED**. Zero discretion.
-   - *Active Permitted Micro-Assets on Equity < $15*: `APTUSD`, `ADAUSD`, `ARBUSD`, `TIAUSD`, `SEIUSD`, `DOGEUSD`, `VETUSD`.
-   - *Active Banned Assets on Equity < $15*: `LINKUSD`, `BNBUSD`, `SOLUSD`, `BTCUSD`, `ETHUSD`, `AVAXUSD`.
+   **Effective Dollar Risk MUST BE $\le 2.5\%$ of live Net Liquid Equity** ($\le \$0.070\text{ USD}$ on $\approx \$2.80\text{ equity}$, expanded per User Directive 2026-11-17 up to 25X leverage).
+   - **MANDATORY HARD BAN**: If an asset's minimum contract size (e.g., 1 LINK = $9.12 notional, 0.1 BNB = $59 notional, 0.001 BTC = $65 notional, 0.1 AVGO = $33.4 notional) forces dollar risk $> 2.5\%$ ($> \$0.070$), the asset is **PERMANENTLY AND MECHANICALLY VETOED**. Zero discretion.
+   - *Active Permitted Micro-Assets on Small Accounts*:
+     - **TradFi 0.01 Share Fractionals**: `MSFTBUSD`, `AMZNBUSD`, `GOOGLBUSD`, `AAPLBUSD`, `QQQBUSD`, `TSMBUSD`, `CRCLBUSD`.
+     - **Crypto Micro-Contracts**: `ARBUSD` (1 ARB), `ADAUSD` (1 ADA), `XRPUSD` (1 XRP), `APTUSD`, `TIAUSD`, `SEIUSD`, `DOGEUSD`, `VETUSD`.
+   - *Active Banned Assets on Small Accounts*: `LINKUSD`, `BNBUSD`, `SOLUSD`, `BTCUSD`, `ETHUSD`, `AVGOBUSD`.
 8. **Gate 8: Active Cascade Climax Gate**:
    If `Liq 5m > $500k`, no limit orders may be placed into the cascade. Wait for the exhaustion wick.
 9. **Gate 9: The Beta Correlation & Sector Isolation Gate (Anti-Avalanche Invariant)**:
