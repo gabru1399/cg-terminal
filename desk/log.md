@@ -8539,3 +8539,52 @@ analysis script rc=1
 
 - **PHASE 7: DYNAMIC TIMER RE-ARM**:
   - Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero cron jobs. Zero background daemons.
+
+
+## EXEC · 2026-11-16 04:27 UTC · atg-exec (Round 307)
+
+- **PHASE -1 & PHASE 0 COMPLIANCE CHECK**:
+  - SOP Ingestion: Bound strictly to `desk/TRADE_FORMULATION_MANUAL.md`, `desk/SWARM_MASTER_PROMPT.md`, and `.gemini/rules/SWARM_EXECUTION.md`.
+  - Venue: Delta Exchange India (`india_prod` | Master Account `26902927`).
+  - Capital Telemetry:
+    * Total USD Balance: **$2.00817 USD** (INR 170.69) + ₹10.00 INR.
+    * Available Free Cash: **$2.00817 USD** (100% liquid cash reserves, zero margin locked).
+    * Net Liquid Equity: **$2.1258 USD**.
+    * Max Tradable Initial Margin Budget (SOP 80% Buffer Rule): $2.00817 * 0.80 = **$1.6065 USD**.
+    * Desk Concurrency Status: THIS desk (`cg-terminal`) has exactly 0 / 2 running positions (Both concurrency slots vacant), 0 open orders on CLOB, 0 orphaned brackets.
+    * Pitfall Q4 (Margin Insolvency): 100% resolved across all 30 assets.
+
+- **PHASE 1: LIVE 30-ASSET SCREENER PASS & TAB 7 REGIME ROUTING**:
+  - Closed-candle screener ingested across all 30 crypto USDT-M perps from continuity terminal (`http://127.0.0.1:3000/api/cg/screener`).
+  - Full 30-asset uncompressed screening matrix generated and archived to `scratch/matrix_r307.json`.
+  - 10 top candidates audited via deep forensics (`scratch/deep_candidates_r307.json`).
+  - Balance Assets Invariant: Factor 1 (Directional Trend) = **0.0 pts** across all balance assets (G-06 / P2-01).
+
+- **PHASE 2 & PHASE 3: ADVERSARIAL AUDITOR VERDICT (Subagent 86012ef3-c9ed-4a7c-912f-876e47419fbf)**:
+  - Unanimous HARD VETO across all 30 assets:
+    * Inquest 1 (Fatally Inverted Risk/Reward Ratios):
+      - BNB (`TREND_DOWN`): Entry 594.88, Stop 697.08 (risk +17.18%), T1 591.90 (reward 0.50%). **T1 R = 0.029R (0.030R)** (failing 2.0R floor by 66x). Best composite R = 0.5097R << 1.5R.
+      - DOGE (`TREND_DOWN`): Entry 0.05929, Stop 0.07540 (risk +27.17%), T1 0.05869 (reward 1.01%). **T1 R = 0.037R** (failing 2.0R floor by 52x). Best composite R = 0.3816R << 1.5R.
+      - LTC (`TREND_DOWN`): Entry 45.17, Stop 51.60 (risk +14.23%), T1 44.76 (reward 0.91%). **T1 R = 0.064R** (failing 2.0R floor by 31x). Best composite R = 0.4179R << 1.5R.
+    * Inquest 2 (Lethal Opposing Book Walls & Spot Buyer Absorption):
+      - DOGE: Opposing **$3.96M USD** bid wall @ 0.0582 directly blocking T1. Spot buyer CVD +$0.4M.
+      - BNB: Opposing **$2.1M USD** bid wall @ 590.33 directly blocking T1.
+      - LTC: Opposing **$1.76M USD** bid wall @ 44.40 directly below entry. Spot buyer CVD +$1.6M.
+      - LINK: Opposing **$1.8M USD** bid wall @ 8.933. Spot buyer CVD +$3.6M.
+      - SUI: Opposing **$1.4M USD** bid wall @ 0.7175. Spot buyer CVD +$4.4M.
+    * Inquest 3 (Anti-Knife-Catching Gate in Balance):
+      - SUI, BTC, SOL, LINK, AVAX, 1000PEPE, ETH all report `entryZone: null`, `bestR: null`, `invalidation: "no setup"`. Zero discrete footprint signals (`sig_count: 0`). Price chopping in mid-value.
+    * Socratic Pitfalls Triggered: Q1 (Wall Erasure), Q2 (Chasing & CVD Squeeze), Q3 (HVN Collision), Q5 (Regime Mismatch), Q6 (Phantom Plans), Q7 (Stale Telemetry), Q8 (Incurably Inverted R), Q10 (Negative EV).
+    * Auditor Mandate: **UNANIMOUS HARD VETO**. 100% Cash Defense maintained.
+
+- **PHASE 4 & PHASE 5: EXECUTION HYGIENE & CONCURRENCY MANAGEMENT**:
+  - Concurrency Cap: Max 2 positions. Current active positions = 0. Both slots vacant.
+  - Zero orders placed on Delta Exchange India CLOB. 100% Cash Defense maintained.
+  - All standing exchange orders audited; zero orphans, zero duplicate orders from this desk.
+
+- **PHASE 6: AGI SELF-IMPROVEMENT INSIGHT**:
+  - Distinguishing Real Setups from Inverted Asymmetries: The screener may highlight M1 trend pullbacks with high confidence (88%–92%), but the structural geometry proves fatal when tested against real execution constraints. Placing stops +14% to +27% away to capture +0.5% to +1.0% reward yields sub-0.07R to T1. Rigorously rejecting these mathematical traps keeps our liquid capital 100% intact until asymmetric, positive-EV opportunities emerge.
+  - Capital Preservation: Total account liquid balance of $2.00817 USD (INR 170.69) is 100% preserved.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+  - Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero cron jobs. Zero background daemons.
