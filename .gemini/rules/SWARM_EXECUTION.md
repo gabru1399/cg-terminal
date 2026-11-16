@@ -37,9 +37,11 @@ On every activation and execution turn:
 - Track trades STRICTLY via internal exchange Order IDs / Ticket Numbers recorded in `desk/state.json`.
 - NEVER cancel, modify, or report external algo orders (`FIB4H_*`, `SOLVUSD`, `TACUSD`).
 
-## 5. RECURSIVE TIMER CONTINUITY
+## 5. RECURSIVE TIMER CONTINUITY & MANDATORY FORMAT
 - Autonomous propagation is single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`).
 - Never terminate an execution turn without re-arming the 1200s dynamic wake timer.
+- **Mandatory Timer Instruction & Prompt Format:**
+  `Timer: 20m, Prompt: /goal /executing-plans /plan /brainstorming Autonomous Delta Exchange Trade Execution & Recursive Self-Improving Engine Round R<n>. Audit all 61 Curated Assets and find high potential high confluence trading setup strictly using @[c:\Users\SIGMA\Documents\cg-terminal\desk\SWARM_MASTER_PROMPT.md] @[c:\Users\SIGMA\Documents\cg-terminal\desk\TRADE_FORMULATION_MANUAL.md]  , monitor live running short positions on Delta Exchange India (BTCUSD @ $64,750 and ETHUSD @ $1,812.50), enforce +1.0R breakeven invariant ($64,450 BTC / $1,805.50 ETH) and 8-bar time stop, audit margin and liquidity, and re-arm dynamic 1200s recursion.`
 
 ## 6. CONTINUOUS PLANNING & BRAINSTORMING MANDATE (/plan & /brainstorming)
 - Every autonomous prompt, task formulation, and dynamic wakeup must explicitly carry `/goal /executing-plans /plan /brainstorming`.

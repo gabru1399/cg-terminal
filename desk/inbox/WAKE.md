@@ -6,7 +6,7 @@
 - **MANDATORY SLASH COMMANDS**: All autonomous turns, dynamic prompts, and execution cycles MUST incorporate `/goal /executing-plans /plan /brainstorming` to enforce pre-flight planning and Socratic formulation testing.
 - **UNIVERSE TRACKING**: 61 Curated Assets (30 Crypto USDT-M Perps + 28 TradFi USDT-M Perps + 3 Classic Indices). Full screening on every round with zero omissions.
 - **SHARED ACCOUNT ISOLATION (P5-01b)**: Two separate chats run on this Delta account. Track orders strictly via internal order numbers. Never touch or cancel orders from the external chat (`FIB4H_*`, `SOLVUSD`, `TACUSD`).
-- **EXECUTION CADENCE**: Dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs.
+- **EXECUTION CADENCE & TIMER FORMAT**: Dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs. Standard format: `Timer: 20m, Prompt: /goal /executing-plans /plan /brainstorming Autonomous Delta Exchange Trade Execution & Recursive Self-Improving Engine Round R<n>. Audit all 61 Curated Assets and find high potential high confluence trading setup strictly using @[c:\Users\SIGMA\Documents\cg-terminal\desk\SWARM_MASTER_PROMPT.md] @[c:\Users\SIGMA\Documents\cg-terminal\desk\TRADE_FORMULATION_MANUAL.md]  , monitor live running short positions on Delta Exchange India (BTCUSD @ $64,750 and ETHUSD @ $1,812.50), enforce +1.0R breakeven invariant ($64,450 BTC / $1,805.50 ETH) and 8-bar time stop, audit margin and liquidity, and re-arm dynamic 1200s recursion.`
 - **CONCURRENCY & RISK**: Max 2 concurrent positions. Max 1.0% portfolio heat. Isolated margin, maker post-only, mark-price stops.
 - **HISTORICAL LOGS**: Archived to `desk/inbox/archive/WAKE_ARCHIVE_20261115.md`.
 
