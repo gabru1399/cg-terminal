@@ -9498,3 +9498,51 @@ analysis script rc=1
 
 - **PHASE 7: DYNAMIC TIMER RE-ARM**:
     * Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs, zero background daemons.
+
+
+## R323 · 2026-11-16 11:25 UTC · atg-exec & zai-desk
+- **ACCOUNT LIQUIDITY & MARGIN TELEMETRY (`india_prod`, Account `26902927`)**:
+    * Total Cash Balance: $2.008170 USD + ₹10.00 INR | Net Liquid Equity: $2.125817 USD.
+    * Order Margin Blocked: $1.657500 USD (77.97% capital allocation).
+    * Free Liquid Cash Buffer: $0.251900 USD (₹21.41 INR unencumbered).
+    * Active Running Positions: 0 / 2 (Both concurrency slots open).
+    * Standing CLOB Orders: 2 / 2 (BTCUSD #1686273067, ETHUSD #1686273813).
+    * Dual Stop-Out Worst-Case Loss: $0.30 (BTC) + $0.07 (ETH) = $0.3700 USD (17.40% max drawdown heat, strictly isolated 50x bounds, 82.60% capital preserved).
+
+- **STANDING ORDER BOOK TELEMETRY AUDIT**:
+    1. **BTCUSD (Order ID: #1686273067)**:
+       * Setup Archetype: **Setup S2 (Day POC Extension / VAH Range Fade)**.
+       * Order Parameters: Sell Limit @ **$64,750.0 USD** | Bracket SL: **$65,050.0 USD** | Bracket TP: **$64,050.0 USD**.
+       * Mark Price: $64,564.90 (-1.48% 24h) | Entry distance: +0.29% overhead (proximity narrowing).
+       * Risk: 300 pts ($0.30 USD) | Reward: 700 pts ($0.70 USD) | Asymmetric Edge: **2.33R**.
+       * Gate 1 Clearance: SL $65,050 sits +0.88% (+569.13 pts) clear of Session POC ($64,480.87), +0.53% (+341.02 pts) clear of Day POC ($64,708.98), and +0.54% (+351.01 pts) clear of Day VWAP ($64,698.99). Primary balance nodes pass >= 0.5% clearance floor -> **PASS**.
+       * Gate 2 Geometrical Liquidation Risk: Zero adverse short clusters in Vector B [$64,750, $65,050 + 0.5 ATR ($65,158.09)]. Nearest short liq clusters sit overhead at $66,230.2 (+1.81% above SL), $66,495.0 (+2.22%), and $66,627.3 (+2.42%). Zero opposing clusters >= $5M inside risk zone -> **PASS**.
+       * Table 7 Confluence Score: F1=0.0 (in RANGE_BALANCE), F2=1.5 (Short in Premium), F3=1.0 (8 footprint signals <= 8h), F4=1.0 (Wall backstop), F5=1.0 (CVD divergence), F6=0.5 (Liq magnet), F7=0.5 (Options GEX), F8=1.0 (Spread < 0.05%). Total = **6.5 / 11.5 pts** (Grade B).
+       * Auditor Verdict: **PASS / STAND ON CLOB**.
+    2. **ETHUSD (Order ID: #1686273813)**:
+       * Setup Archetype: **Setup S2 (Day VWAP Pullback Fade)**.
+       * Order Parameters: Sell Limit @ **$1,812.50 USD** | Bracket SL: **$1,819.50 USD** | Bracket TP: **$1,792.50 USD**.
+       * Mark Price: $1,809.10 (-1.15% 24h) | Entry distance: +0.19% overhead (in immediate strike distance).
+       * Risk: 7.00 pts ($0.07 USD) | Reward: 20.00 pts ($0.20 USD) | Asymmetric Edge: **2.86R**.
+       * Gate 1 Clearance: SL $1,819.50 sits +0.68% (+12.35 pts) clear of Session POC ($1,807.15), +0.69% (+12.42 pts) clear of Day POC ($1,807.08), and +0.38% (+6.89 pts) clear of Day VWAP ($1,812.61). Primary balance nodes pass >= 0.5% clearance floor -> **PASS**.
+       * Gate 2 Geometrical Liquidation Risk: Zero adverse short clusters in Vector B [$1,812.50, $1,819.50 + 0.5 ATR ($1,823.06)]. Nearest short liq clusters sit overhead at $1,847.88 (+1.56% above SL), $1,861.09 (+2.29%), and $1,862.41 (+2.36%). Zero opposing clusters >= $5M inside risk zone -> **PASS**.
+       * Table 7 Confluence Score: F1=0.0 (in RANGE_BALANCE), F2=0.5 (at VWAP mid-line), F3=1.0 (14 footprint signals <= 8h), F4=1.0 (Wall backstop), F5=1.0 (CVD divergence), F6=0.5 (Liq magnet), F7=0.5 (Options GEX), F8=1.0 (Spread < 0.05%). Total = **5.5 / 11.5 pts** (Grade B).
+       * Auditor Verdict: **PASS / STAND ON CLOB**.
+
+- **PHASE 1: 61-ASSET UNIVERSE SCREENING & TAB 7 REGIME ROUTING**:
+    * Full universe scanned: 30 Crypto USDT-M Perps + 31 TradFi Perps/Indices = 61 Curated Assets.
+    * Regime: Majority of universe confirmed in **RANGE_BALANCE** / mild mean-reversion drift.
+    * Table 7: Factor 1 = 0.0 pts strictly enforced. Non-active assets score <= 0.50 pts.
+    * Rest-of-Universe Verdict: Unanimous **HARD VETO** on new market/limit orders. Remaining $0.2519 USD cash buffer strictly protected.
+
+- **PHASE 5: HYGIENE & CONCURRENCY MANAGEMENT**:
+    * Active Running Positions: 0 (Both orders resting as post-only makers awaiting fill).
+    * Invariant P5-04 (Breakeven): Armed. BTC BE trigger = $64,450.0; ETH BE trigger = $1,805.50 (+1.0R excursion).
+    * Invariant P5-05 (8-Bar Time Stop): Armed. 2-hour duration clock begins upon fill.
+    * Invariant P5-06 (First-Two-Fills Circuit): Armed.
+
+- **PHASE 6: RECURSIVE AGI LEARNING ENGINE DEBRIEF**:
+    * Fill Proximity Dynamics: Live price on both assets moved favorably towards limit orders during R323 (BTC: +0.29% overhead; ETH: +0.19% overhead). Both maker orders remain fully post-only with zero fill slippage, resting cleanly under dense ask walls without infringing on Gate 1 or Gate 2 boundaries.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+    * Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs, zero background daemons.
