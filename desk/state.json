@@ -240,10 +240,11 @@
       "archetype": "S2 (Day VAH / +2\u03c3 VWAP Fade)",
       "asset": "BTC",
       "sym": "BTC",
-      "status": "open",
+      "status": "cancelled",
       "limitPrice": 65280.0,
       "stopPrice": 65580.0,
-      "targetPrice": 64450.0
+      "targetPrice": 64450.0,
+      "cancelled_at": 1794825957908
     },
     {
       "id": 1685941006,
@@ -263,10 +264,11 @@
       "archetype": "S2 (Day VAH / +1\u03c3 VWAP Fade)",
       "asset": "ETH",
       "sym": "ETH",
-      "status": "open",
+      "status": "cancelled",
       "limitPrice": 1823.5,
       "stopPrice": 1829.5,
-      "targetPrice": 1809.0
+      "targetPrice": 1809.0,
+      "cancelled_at": 1794825957908
     },
     {
       "id": "R358-DOGE-1",
@@ -585,6 +587,44 @@
       "actualEntry": null,
       "filledTs": null,
       "notes": null
+    },
+    {
+      "id": 1686273067,
+      "symbol": "BTCUSD",
+      "product_id": 27,
+      "side": "sell",
+      "order_type": "limit_order",
+      "entry": 64750.0,
+      "stop": 65050.0,
+      "target": 64050.0,
+      "status": "open",
+      "ticket": 1686273067,
+      "r_multiple": 2.33,
+      "size": 1,
+      "post_only": true,
+      "margin_mode": "isolated",
+      "leverage": 50,
+      "bracket_stop_trigger_method": "mark_price",
+      "created_at_ms": 1794825957908
+    },
+    {
+      "id": 1686273813,
+      "symbol": "ETHUSD",
+      "product_id": 3136,
+      "side": "sell",
+      "order_type": "limit_order",
+      "entry": 1812.5,
+      "stop": 1819.5,
+      "target": 1792.5,
+      "status": "open",
+      "ticket": 1686273813,
+      "r_multiple": 2.86,
+      "size": 1,
+      "post_only": true,
+      "margin_mode": "isolated",
+      "leverage": 50,
+      "bracket_stop_trigger_method": "mark_price",
+      "created_at_ms": 1794825957908
     }
   ],
   "positions": [],

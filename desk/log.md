@@ -9408,3 +9408,46 @@ analysis script rc=1
 
 - **PHASE 7: DYNAMIC TIMER RE-ARM**:
     * Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs, zero background daemons.
+
+## EXEC · 2026-11-16 10:45 UTC — ENTRY CALIBRATION & CLOB ORDER REPLACEMENT
+
+- **CONTEXT & USER DIRECTIVE**:
+  * User instruction addressed: *"I still believe we have too less entries or we are too tight... How about you analyze all data and try formulating an entry."*
+  * Forensic Diagnosis: Previous limit orders (#1685857607 @ $65,280.0 on BTC and #1685941006 @ $1,823.50 on ETH) sat +1.11% to +1.15% above market near extreme multi-day +2.5σ bands. In compressed low-volatility conditions (ATR rank 1.3%), price rejected repeatedly at Session VWAP and Day POC without reaching distant orders, causing execution apathy.
+  * Telemetry Analysis:
+    - BTC: Day POC = $64,708.98, VWAP = $64,702.25. Downside liquidation magnets: $64,024.0 ($5.82M) and $63,671.0 ($11.32M). Skew: 6.1:1 downward pull.
+    - ETH: Day POC = $1,811.00, VWAP = $1,812.74. Downside liquidation magnet: $1,789.79 ($119.6M). Recent absorption of $12.41M taker selling at low ($1,800.95) and trapped shorts bar ($1,815.60, high $1,818.50).
+  * Action Taken: Cancelled wide orders and immediately punched calibrated maker limit orders fading the immediate VWAP/POC resistance, within striking distance (+0.35% / +0.50%) while guaranteeing >= 2.0R asymmetric reward.
+
+- **CANCELLED ORDERS**:
+  1. `BTCUSD #1685857607`: Cancelled. Freed $1.3056 USD isolated margin.
+  2. `ETHUSD #1685941006`: Cancelled. Freed $0.3647 USD isolated margin.
+
+- **NEW ACTIVE CLOB ORDERS (PUNCHED ON DELTA EXCHANGE INDIA)**:
+  1. **BTCUSD (Order ID: #1686273067)**:
+     * Archetype: **Setup S2 / M1 Trend Pullback (Session VWAP / Day POC Fade)**
+     * Side / Type: **SELL LIMIT** (`post_only=true`, Maker, Isolated 50x)
+     * Limit Price: **$64,750.00 USD** (+0.35% / +230 pts from market $64,520; fades Day POC $64,708.98 and VWAP $64,702.25)
+     * Bracket Stop Loss: **$65,050.00 USD** (`mark_price` trigger, beyond Day VAH $64,988.94; Risk = 300 pts / $0.300 USD)
+     * Bracket Take Profit: **$64,050.00 USD** (`mark_price` trigger, into the $64,024.0 liquidation magnet; Reward = 700 pts / $0.700 USD)
+     * Asymmetric Risk/Reward: **2.33R** (Strictly satisfies >= 2.0R threshold)
+     * Blocked Margin: **$1.2950 USD** (50x isolated)
+     * State: **OPEN / RESTING ON CLOB**
+
+  2. **ETHUSD (Order ID: #1686273813)**:
+     * Archetype: **Setup S2 / M1 Trend Pullback (Session VWAP / Day POC Fade)**
+     * Side / Type: **SELL LIMIT** (`post_only=true`, Maker, Isolated 50x)
+     * Limit Price: **$1,812.50 USD** (+0.50% / +9.5 pts from market $1,803; fades Day POC $1,811.00 and VWAP $1,812.74)
+     * Bracket Stop Loss: **$1,819.50 USD** (`mark_price` trigger, above Trapped Shorts bar high $1,818.50; Risk = 7.00 pts / $0.070 USD)
+     * Bracket Take Profit: **$1,792.50 USD** (`mark_price` trigger, into the $1,789.79 liquidation cluster; Reward = 20.00 pts / $0.200 USD)
+     * Asymmetric Risk/Reward: **2.86R** (Strictly satisfies >= 2.0R threshold)
+     * Blocked Margin: **$0.3625 USD** (50x isolated)
+     * State: **OPEN / RESTING ON CLOB**
+
+- **ACCOUNT LIQUIDITY & MARGIN VERIFICATION**:
+  * Cash Balance: **$2.008170 USD** (INR 170.69) + ₹10.00 INR cash
+  * Net Liquid Equity: **$2.125817 USD**
+  * Total Blocked Margin: **$1.657500 USD** (77.97% allocation)
+  * Free Liquid Reserve Buffer: **$0.251900 USD** (INR 21.41 unencumbered cushion)
+  * Active Running Positions: **0 / 2** (Both concurrency slots open)
+  * Dual Stop-Out Worst-Case Loss: $0.300 + $0.070 = **$0.3700 USD** (17.40% max drawdown heat, 82.60% capital guaranteed preserved)
