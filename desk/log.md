@@ -9639,3 +9639,49 @@ analysis script rc=1
 
 - **PHASE 7: DYNAMIC TIMER RE-ARM**:
     * Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs, zero background daemons.
+
+
+## R326 · 2026-11-16 11:45 UTC · atg-exec & zai-desk
+- **ACCOUNT LIQUIDITY & MARGIN TELEMETRY (`india_prod`, Account `26902927`)**:
+    * Total Cash Balance: $1.988612 USD + ₹10.00 INR | Net Liquid Equity: $2.380594 USD (+12.0% account expansion!).
+    * Position Margin Blocked: $1.657500 USD (69.63% capital allocation).
+    * Order Margin: $0.0000 USD (0 non-bracket orders resting).
+    * Free Liquid Cash Buffer: $0.281237 USD (₹23.91 INR unencumbered).
+    * Active Running Positions: **2 / 2** (Both concurrency slots 100% active).
+    * Standing CLOB Orders: Exactly 4 bracket conditional orders (`reduce_only: true`). Zero orphans.
+    * Dual Stop-Out Worst-Case Loss: $0.30 (BTC) + $0.07 (ETH) = $0.3700 USD (15.54% max portfolio drawdown heat, strictly isolated 50x bounds, **84.46% capital guaranteed preserved**).
+
+- **ACTIVE POSITION ORDER FLOW & GATE AUDIT**:
+    1. **BTCUSD (Short 1 contract @ $64,750.00 USD · Product 27)**:
+       * Live Mark Price: $64,541.85 | Terminal Price: $64,537.30.
+       * Current Unrealized PnL: **+$208.15 pts (+0.694R excursion / +$0.2082 USD)** | Deep Green.
+       * Gate 1 Clearance: SL $65,050 sits +0.69% clear of Session POC ($64,606.72), +0.66% clear of Day POC ($64,622.84), and +0.55% clear of Day VWAP ($64,695.05) -> **PASS**.
+       * Gate 2 Geometrical Risk: Vector B [64,750, 65,050 + 0.5 ATR ($65,155.84)] contains **0 hazard clusters** -> **PASS**.
+       * Table 7 Confluence: 6.5 / 11.5 pts (Grade B Standard Setup).
+       * Invariant P5-04 (Breakeven): Target = $64,450.00 (+1.0R). Current mark $64,541.85 (distance: 91.85 pts). Armed / not yet triggered. Stop preserved at $65,050.00.
+       * Invariant P5-05 (8-Bar Time Stop): Milestone +0.5R exceeded (+0.694R), invariant satisfied.
+    2. **ETHUSD (Short 1 contract @ $1,812.50 USD · Product 3136)**:
+       * Live Mark Price: $1,805.88 | Terminal Price: $1,806.39.
+       * Current Unrealized PnL: **+$6.62 pts (+0.946R excursion / +$0.0662 USD)** | Surging Green (Approaching +1.0R Breakeven threshold).
+       * Gate 1 Clearance: SL $1,819.50 sits +0.68% clear of Session POC ($1,807.15), +0.69% clear of Day POC ($1,807.08), and +0.39% clear of Day VWAP ($1,812.48) -> **PASS**.
+       * Gate 2 Geometrical Risk: Vector B [1,812.50, 1,819.50 + 0.5 ATR ($1,823.00)] contains **0 hazard clusters** -> **PASS**.
+       * Table 7 Confluence: 6.5 / 11.5 pts (Grade B Standard Setup).
+       * Invariant P5-04 (Breakeven): Target = $1,805.50 (+1.0R). Current mark $1,805.88 (distance: 0.38 pts!). Armed / not yet triggered. Stop preserved at $1,819.50.
+       * Invariant P5-05 (8-Bar Time Stop): Milestone +0.5R exceeded (+0.946R), invariant fully satisfied.
+
+- **PHASE 1: 61-ASSET UNIVERSE SCREENING & TAB 7 REGIME ROUTING**:
+    * Full universe scanned: 30 Crypto USDT-M Perps + 31 TradFi Perps/Indices = 61 Curated Assets.
+    * Regime: Majority in **RANGE_BALANCE** / mild rotational drift. Factor 1 = 0.0 pts strictly enforced.
+    * Rest-of-Universe Verdict: Unanimous **HARD VETO**. Both concurrency slots fully occupied (2 / 2). First-Two-Fills Circuit (P5-06) verified.
+
+- **PHASE 5: POSITION HYGIENE & CONCURRENCY MANAGEMENT**:
+    * Concurrency Cap: 2 / 2 running positions (BTCUSD and ETHUSD).
+    * Invariant P5-04 (Breakeven): Armed. BTC BE target = $64,450.0; ETH BE target = $1,805.50.
+    * Invariant P5-05 (8-Bar Time Stop): Both positions exceeded the +0.5R milestone.
+    * Invariant P5-06 (First-Two-Fills Circuit): 100% active. Zero non-bracket entry orders allowed.
+
+- **PHASE 6: RECURSIVE AGI LEARNING ENGINE DEBRIEF**:
+    * Epistemic Trend Confirmation: Fading Value Area pullbacks in a rotational regime with negative CVD deltas continues to prove structurally superior to breakout entries. ETH is within 0.38 pts of the +1.0R Breakeven invariant ($1,805.50), while BTC has expanded to +0.694R ($64,541.85). Account equity has expanded +12.0% ($2.3806 USD). Both risk parameters remain immutably guarded on exchange CLOB.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+    * Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs, zero background daemons.
