@@ -25,7 +25,23 @@ import { NextRequest, NextResponse } from "next/server";
  * Host allowlist: Origin==Host alone does not survive DNS rebinding (both
  * headers come from the attacker's page). Mutating calls must arrive on a
  * loopback Host (or one listed in CG_ALLOWED_HOSTS for public previews).
+ *
+ * Preview hosts: when the terminal is served through a per-port preview
+ * proxy the browser's Host is the proxy's public name (e.g.
+ * `<port>-<sandbox>.e2b.app`), not loopback — and the proxy's Host-rewrite
+ * behaviour is not guaranteed, so a static allowlist cannot enumerate it.
+ * Such hosts are accepted only when they match a NARROW pattern, never a
+ * blanket "any non-loopback Host":
+ *   - CG_ALLOWED_HOSTS entries still work (explicit, wins first)
+ *   - loopback entries above still work
+ *   - `^\d{2,5}-[a-z0-9]{8,}\.(e2b\.app|e2b\.dev|arena\.ai)$`
+ *     — digits-dash-opaque-id, i.e. unguessable by an attacker who does not
+ *       already control the sandbox, and prefix-unique per port.
+ * Origin==Host is still enforced independently for mutations, so the preview
+ * pattern only relaxes the rebinding check, not the same-origin check.
  */
+const PREVIEW_HOST_RE = /^\d{2,5}-[a-z0-9]{8,}\.(e2b\.app|e2b\.dev|arena\.ai)$/i;
+
 const HOST_ALLOWLIST = new Set(
   [
     "localhost:3000",
@@ -34,9 +50,20 @@ const HOST_ALLOWLIST = new Set(
     "localhost:81",
     "127.0.0.1:81",
     "[::1]:81",
+    "127.0.0.1",
+    "localhost",
     ...(process.env.CG_ALLOWED_HOSTS ? process.env.CG_ALLOWED_HOSTS.split(",").map((h) => h.trim()) : []),
   ].filter(Boolean)
 );
+
+/** host[:port] → true when the mutation may proceed. */
+function hostAllowed(host: string): boolean {
+  const h = host.toLowerCase();
+  if (HOST_ALLOWLIST.has(h)) return true;
+  // strip an explicit port before pattern-matching the preview form
+  const hostname = h.replace(/:\d+$/, "");
+  return PREVIEW_HOST_RE.test(hostname);
+}
 
 export default function proxy(req: NextRequest) {
   // Cross-site browser requests are rejected for EVERY method (GET/HEAD
@@ -68,7 +95,7 @@ export default function proxy(req: NextRequest) {
     }
     // DNS-rebinding defense: the request must actually be addressed to a
     // local/allowed Host, not to an attacker-controlled name that rebinds
-    if (host && !HOST_ALLOWLIST.has(host.toLowerCase())) {
+    if (host && !hostAllowed(host)) {
       return NextResponse.json({ ok: false, error: "host not allowed for mutating calls" }, { status: 403 });
     }
   }
