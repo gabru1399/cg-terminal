@@ -6258,23 +6258,41 @@
   "atg": {
     "equityUsd": 2.767366,
     "balanceUsd": 2.649719,
-    "availableUsd": 2.649719,
-    "blockedMarginUsd": 0.0,
+    "availableUsd": 2.5950,
+    "blockedMarginUsd": 0.0547,
     "runningPositions": 0,
-    "openOrdersCount": 0,
-    "activeOrders": [],
-    "lastAudit": "2026-11-16T15:30:00.000000+00:00",
-    "posture": "100%_CASH_DEFENSE",
-    "round": "R336"
+    "openOrdersCount": 1,
+    "activeOrders": [
+      {
+        "id": 1687552976,
+        "symbol": "SPCXBUSD",
+        "product_id": 164703,
+        "side": "buy",
+        "order_type": "limit_order",
+        "limit_price": 136.85,
+        "size": 1,
+        "bracket_sl": 135.40,
+        "bracket_tp": 139.65,
+        "margin_mode": "isolated",
+        "leverage": 25,
+        "margin_locked": 0.0547,
+        "state": "open",
+        "r_multiple": 1.93,
+        "archetype": "Sleeve R (T-VAR SpaceX Value Area Low Bounce)"
+      }
+    ],
+    "lastAudit": "2026-11-16T16:57:00.000000+00:00",
+    "posture": "1_RESTING_MAKER_ORDER_SPCXBUSD",
+    "round": "R339"
   },
   "orders_meta": {
     "balanceUsd": 2.649719,
-    "availableUsd": 2.649719,
-    "blockedMarginUsd": 0.0,
+    "availableUsd": 2.5950,
+    "blockedMarginUsd": 0.0547,
     "runningPositions": 0,
-    "openOrdersCount": 0,
-    "lastAudit": "2026-11-16T15:30:00.000000+00:00",
-    "posture": "100%_CASH_DEFENSE",
-    "round": "R336"
+    "openOrdersCount": 1,
+    "lastAudit": "2026-11-16T16:57:00.000000+00:00",
+    "posture": "1_RESTING_MAKER_ORDER_SPCXBUSD",
+    "round": "R339"
   }
 }

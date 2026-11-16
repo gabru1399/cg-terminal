@@ -10403,3 +10403,20 @@ analysis script rc=1
 
 analysis script rc=1
 
+
+
+### EXEC · 2026-11-16 16:57 UTC · atg-exec — Placed Post-Only Buy Limit on SPCXBUSD (Order #1687552976)
+- **TICKET / ORDER ID**: `1687552976` (Client Order ID: `ATG_R339_SPCX_01`).
+- **ASSET**: `SPCXBUSD` (Product ID `164703` | SpaceX bStocks Token Perpetual).
+- **SETUP ARCHETYPE**: Sleeve R (T-VAR Range Rotation / Value Area Low Bounce).
+- **SIDE & TYPE**: BUY LIMIT (`post_only: true`, maker order).
+- **LIMIT PRICE**: $136.85 (Placed at best bid; book spread: $0.05 / 0.036%).
+- **SIZE**: 1 contract (Contract Value: 0.01 share $\to$ Position Notional: $1.3685 USD).
+- **LEVERAGE & MARGIN**: 25x isolated. Margin blocked: $0.0547 USD (~2.0% of available cash).
+- **BRACKET RISK CONTROLS**:
+  * **Stop Loss**: $135.40 (`mark_price` trigger, placed below 24h Low $136.06 + 1.20x buffer). Stop distance: $1.45 (1.06%).
+  * **Effective Dollar Risk**: $1.45 \times 0.01 \times 1.20 = \mathbf{\$0.0174\text{ USD}}$ (**0.63% of Net Equity**, strictly $\le \$0.0277$ cap, Gate 7 PASS!).
+  * **Take Profit**: $139.65 (`mark_price` trigger, placed at Day POC). Target distance: +$2.80 (+2.05%).
+  * **Reward-to-Risk (R-Multiple)**: **1.93R**.
+- **SECTOR ISOLATION (GATE 9)**: TradFi Equity Perp (SpaceX, $\beta_{BTC} \approx 0.05$). Slot 2 occupied with zero crypto beta coupling!
+- **EXCHANGE STATE**: `open` on Delta Exchange India CLOB.
