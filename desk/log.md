@@ -10222,3 +10222,36 @@ analysis script rc=1
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## R336 · 2026-11-16 15:05 UTC · atg-exec & zai-desk
+- **PRE-FLIGHT VERIFICATION CHECKLIST (ROUND R336)**:
+    * Pre-Flight Verification Checklist COMPLETED in full.
+    * Fresh analysis of each of the 61 Curated Assets executed from scratch (Zero cached echoes).
+    * Single Dynamic 1200s Timer verified (Zero duplicate timers, zero cron).
+    * Live Delta Exchange India CLOB & Margin Solvency audited (Account #26902927).
+    * Concurrency Circuit (P5-06) & Risk Gates (Gate 1–11) armed.
+
+- **ACCOUNT LIQUIDITY & MARGIN TELEMETRY (india_prod, Account 26902927)**:
+    * Net Liquid Equity: .767366 USD (₹225.23 INR) (+30.18% net growth maintained above .1258 baseline).
+    * Available Cash: .649719 USD + ₹10.00 INR (100% Liquid Cash Buffer).
+    * Position Margin Blocked: .000000 USD (Both concurrency slots vacant).
+    * Order Margin Blocked: .000000 USD (0 open orders on CLOB).
+    * Active Running Positions: **0 / 2** (100% capital preserved).
+
+- **PHASE 1: 61-ASSET UNIVERSE SCREENING & TAB 7 REGIME ROUTING**:
+    * All 61 Curated Assets screened fresh from scratch via scripts/parse_screener_clean.py.
+    * **Market Regime Shift**: Post-short squeeze volatility expansion.
+      - BTC surged to ,845 (day high ,679) on 4.04x RVOL.
+      - Nearly the entire crypto perp complex (BTC, ETH, BNB, SOL, XRP, ADA, DOGE, LINK, LTC, AVAX, DOT, NEAR, UNI, ATOM, ETC, FIL, APT, ARB, OP, SUI, INJ, TIA, VET) has shifted into WATCH_EXHAUSTION (B).
+      - Altcoin pullback shorts are strictly invalidated by the macro squeeze impulse.
+      - Mean-reversion longs lack confirmed absorption wicks and fail minimum R-multiple threshold (EV < 1.50R).
+
+- **PHASE 3 & 5: GATE 1–11 AUDIT & CASH DEFENSE VERDICT**:
+    * Gate 7 (Mechanical Lot Ban): LINK, BNB, SOL, BTC, ETH permanently banned on small equity account (<).
+    * Gate 9 (Sector Isolation): Max 1 Crypto perp position enforced.
+    * Gate 10 (BTC Macro Filter): ACTIVE VETO. BTC experiencing violent 4.04x RVOL short squeeze; no altcoin shorts allowed.
+    * Table 7 Scoring: All assets score < 5.0 pts (0.0 pts in RANGE_BALANCE / WATCH_EXHAUSTION).
+    * **OPERATIONAL ACTION: 100% CASH DEFENSE (NO TRADE)**. Zero orders submitted. Capital fully preserved.
+
+- **PHASE 7: DYNAMIC TIMER RE-ARM**:
+    * Dynamic 1200s timer scheduled via schedule(DurationSeconds=1200) for Round R337 with canonical prompt. Zero cron, zero duplicate tasks.
