@@ -10482,3 +10482,19 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R390 · 2026-11-16 18:59 UTC · zai-desk
+
+**Market**: BTC 65,022.7 (-0.4%)  ETH 1,820.46 (-0.8%)  SOL 71.47 (-1.7%)  XAU 3,860.42 (-1.1%)  XAG 47.070 (-4.1%)
+**Bias (|score|≥2)**: none significant
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R382-XAU-1 re-debated: FOR 5/AGAINST 2 — stands
+- R382-XRP-2 re-debated: FOR 4/AGAINST 2 — stands
+- R388-DOGE-1 re-debated: FOR 3/AGAINST 1 — stands
+
+### Positions
+- no open positions
+
