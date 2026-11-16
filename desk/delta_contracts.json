@@ -1,0 +1,226 @@
+{
+ "_provenance": {
+  "source": "desk/archive/legacy_telemetry/crypto_full_telemetry.json -> delta_contracts",
+  "capturedAtUtc": "2026-11-14T13:27:28Z",
+  "note": "Delta Exchange India product specs (contract_value, tick_size, product id). Static venue metadata, NOT market data: it does not move with price. Re-pull from GET /v2/products to refresh.",
+  "extractedBy": "arena.ai Second Council 2026-11-16"
+ },
+ "contracts": {
+  "1000PEPE": {
+   "symbol": "1000PEPEUSD",
+   "productId": 114716,
+   "contractValue": 1000.0,
+   "tickSize": 1e-07,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "1000SHIB": {
+   "symbol": "1000SHIBUSD",
+   "productId": 114715,
+   "contractValue": 1000.0,
+   "tickSize": 1e-06,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "ADA": {
+   "symbol": "ADAUSD",
+   "productId": 16614,
+   "contractValue": 1.0,
+   "tickSize": 1e-05,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "APT": {
+   "symbol": "APTUSD",
+   "productId": 20196,
+   "contractValue": 1.0,
+   "tickSize": 0.0001,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "ARB": {
+   "symbol": "ARBUSD",
+   "productId": 17331,
+   "contractValue": 1.0,
+   "tickSize": 1e-05,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "AVAX": {
+   "symbol": "AVAXUSD",
+   "productId": 14830,
+   "contractValue": 1.0,
+   "tickSize": 0.0001,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "BNB": {
+   "symbol": "BNBUSD",
+   "productId": 15042,
+   "contractValue": 0.1,
+   "tickSize": 0.001,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "BTC": {
+   "symbol": "BTCUSD",
+   "productId": 27,
+   "contractValue": 0.001,
+   "tickSize": 0.5,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "DOGE": {
+   "symbol": "DOGEUSD",
+   "productId": 14745,
+   "contractValue": 100.0,
+   "tickSize": 1e-06,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "DOT": {
+   "symbol": "DOTUSD",
+   "productId": 15304,
+   "contractValue": 1.0,
+   "tickSize": 0.001,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "ETC": {
+   "symbol": "ETCUSD",
+   "productId": 19615,
+   "contractValue": 0.1,
+   "tickSize": 0.001,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "ETH": {
+   "symbol": "ETHUSD",
+   "productId": 3136,
+   "contractValue": 0.01,
+   "tickSize": 0.05,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "FIL": {
+   "symbol": "FILUSD",
+   "productId": 19617,
+   "contractValue": 1.0,
+   "tickSize": 0.0001,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "HBAR": {
+   "symbol": "HBARUSD",
+   "productId": 18288,
+   "contractValue": 1.0,
+   "tickSize": 1e-05,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "INJ": {
+   "symbol": "INJUSD",
+   "productId": 16622,
+   "contractValue": 1.0,
+   "tickSize": 0.001,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "LINK": {
+   "symbol": "LINKUSD",
+   "productId": 15041,
+   "contractValue": 1.0,
+   "tickSize": 0.001,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "LTC": {
+   "symbol": "LTCUSD",
+   "productId": 15040,
+   "contractValue": 0.1,
+   "tickSize": 0.01,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "NEAR": {
+   "symbol": "NEARUSD",
+   "productId": 16615,
+   "contractValue": 1.0,
+   "tickSize": 0.0001,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "OP": {
+   "symbol": "OPUSD",
+   "productId": 19618,
+   "contractValue": 0.1,
+   "tickSize": 0.0001,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "SEI": {
+   "symbol": "SEIUSD",
+   "productId": 17329,
+   "contractValue": 10.0,
+   "tickSize": 1e-05,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "SOL": {
+   "symbol": "SOLUSD",
+   "productId": 14823,
+   "contractValue": 1.0,
+   "tickSize": 0.0001,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "SUI": {
+   "symbol": "SUIUSD",
+   "productId": 17328,
+   "contractValue": 1.0,
+   "tickSize": 0.0001,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "TIA": {
+   "symbol": "TIAUSD",
+   "productId": 17330,
+   "contractValue": 1.0,
+   "tickSize": 0.0001,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "TRX": {
+   "symbol": "TRXUSD",
+   "productId": 20193,
+   "contractValue": 1.0,
+   "tickSize": 1e-05,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "UNI": {
+   "symbol": "UNIUSD",
+   "productId": 15303,
+   "contractValue": 1.0,
+   "tickSize": 0.0001,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "XLM": {
+   "symbol": "XLMUSD",
+   "productId": 47598,
+   "contractValue": 1.0,
+   "tickSize": 1e-05,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  },
+  "XRP": {
+   "symbol": "XRPUSD",
+   "productId": 14969,
+   "contractValue": 1.0,
+   "tickSize": 0.0001,
+   "contractType": "perpetual_futures",
+   "quote": "USD"
+  }
+ }
+}

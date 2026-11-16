@@ -1,0 +1,546 @@
+{
+ "ts": "2026-11-16 11:50:38 UTC",
+ "engine": "arena-second-council/1.4.0",
+ "baseUrl": "http://127.0.0.1:3000",
+ "screener": {
+  "ok": true,
+  "totalCount": 61,
+  "fapiOk": false,
+  "stale": false,
+  "dataAt": 1794829829601
+ },
+ "d16": {
+  "portfolioHeatPct": 16.3845,
+  "portfolioHeatCapPct": 1.0,
+  "portfolioHeatBreached": true,
+  "perPosition": [
+   {
+    "symbol": "BTCUSD",
+    "side": "short",
+    "size": 1.0,
+    "entry": 64750.0,
+    "stop": 65050.0,
+    "target": 64050.0,
+    "stopDistancePts": 300.0,
+    "stopDistancePct": 0.4633,
+    "breakevenTarget": 64450.0,
+    "marginLockedUsd": 1.295,
+    "contractValue": 0.001,
+    "riskUsd1ct": 0.3,
+    "heatPct": 13.2847,
+    "rewardUsd1ct": 0.7,
+    "rMultiple": 2.33,
+    "riskBudgetA_usd": 0.022582,
+    "riskBudgetB_usd": 0.011291,
+    "maxContractsAtA": 0,
+    "maxContractsAtB": 0,
+    "sizeVerdict": "BREACH: 1 contract risks 13.28% of equity \u2014 exceeds the 1.0% Grade-A mandate by 13.3x; risk-first sizing yields 0 contracts"
+   },
+   {
+    "symbol": "ETHUSD",
+    "side": "short",
+    "size": 1.0,
+    "entry": 1812.5,
+    "stop": 1819.5,
+    "target": 1792.5,
+    "stopDistancePts": 7.0,
+    "stopDistancePct": 0.3862,
+    "breakevenTarget": 1805.5,
+    "marginLockedUsd": 0.3625,
+    "contractValue": 0.01,
+    "riskUsd1ct": 0.07,
+    "heatPct": 3.0998,
+    "rewardUsd1ct": 0.2,
+    "rMultiple": 2.86,
+    "riskBudgetA_usd": 0.022582,
+    "riskBudgetB_usd": 0.011291,
+    "maxContractsAtA": 0,
+    "maxContractsAtB": 0,
+    "sizeVerdict": "BREACH: 1 contract risks 3.10% of equity \u2014 exceeds the 1.0% Grade-A mandate by 3.1x; risk-first sizing yields 0 contracts"
+   }
+  ],
+  "activePositions": 2,
+  "stateActivePositions": 2,
+  "maxSlots": 4,
+  "cryptoSopSlots": 2,
+  "beArmed": false,
+  "barsSinceFill": 0,
+  "filledAt": [
+   "2026-11-16 11:17:10 UTC",
+   "2026-11-16 11:08:26 UTC"
+  ],
+  "equityUsd": 2.258232888,
+  "availableUsd": 0.281237414,
+  "scaleOut": [
+   {
+    "symbol": "BTCUSD",
+    "size": 1.0,
+    "t1": 0.4,
+    "t2": 0.4,
+    "t3": 0.2,
+    "integerExecutable": false
+   },
+   {
+    "symbol": "ETHUSD",
+    "size": 1.0,
+    "t1": 0.4,
+    "t2": 0.4,
+    "t3": 0.2,
+    "integerExecutable": false
+   }
+  ],
+  "minContractsFor404020": 5,
+  "riskBudgetPerTradeUsd": {
+   "A_1pct": 0.022582,
+   "B_halfpct": 0.011291
+  }
+ },
+ "coverage": {
+  "curatedTotal": 61,
+  "curatedWithPrice": 0,
+  "curatedWithoutPrice": 61,
+  "probeSyms": [
+   "BTC",
+   "ETH",
+   "SOL",
+   "XRP",
+   "DOGE",
+   "XAU",
+   "NVDA"
+  ],
+  "probeFeedsFed": 0,
+  "probeFeedsTotal": 70,
+  "scoringCoveragePct": 11.5,
+  "note": "Scoring coverage is intentionally limited to the named probe set; the other 54 symbols are billed 'NOT PROBED' rather than scored from a fallback. A 61-symbol deep probe is not run because the upstream radar sweeps 12 s/asset (~12.2 min for the full book) and a burst would trip the 429 cooldown."
+ },
+ "audit": [
+  {
+   "sym": "BTC",
+   "price": null,
+   "regime": "n/a",
+   "direction": "n/a",
+   "grade": "VETO",
+   "gradeNote": "VETO",
+   "table7": {
+    "f1_trend": 0.0,
+    "f2_vwap": 0.0,
+    "f3_signals": 0.0,
+    "f4_walls": 0.0,
+    "f5_cvd": 0.0,
+    "f6_liq_magnet": 0.0,
+    "f7_options": 0.0,
+    "f8_spread": 0.0,
+    "total": 0.0,
+    "lsr": null,
+    "dom_side": null,
+    "z_score": null,
+    "unfed": [
+     "D1",
+     "D2",
+     "D3",
+     "D4",
+     "D6",
+     "D7",
+     "D8",
+     "D9",
+     "D11",
+     "D12",
+     "D13",
+     "D15"
+    ],
+    "notes": [
+     "market feed unavailable \u2014 Table 7 cannot be scored"
+    ],
+    "max_achievable": 11.5
+   },
+   "vetoes": [
+    "feed-starved dimensions D1,D2,D3,D4,D6,D7,D8,D9,D11,D12,D13,D15 scored 0.0 (G-06/G-07)",
+    "Table 7 0.0/11.5 < 5.0 => HARD VETO"
+   ],
+   "fresh": {
+    "worstAgeMs": null,
+    "anyStale": false,
+    "dataAt": null
+   },
+   "feeds": {
+    "market": false,
+    "signals": false,
+    "cvd": false,
+    "walls": false,
+    "liq": false,
+    "options": false,
+    "narrative": false,
+    "quant": false,
+    "lto": false,
+    "spread": false
+   }
+  },
+  {
+   "sym": "ETH",
+   "price": null,
+   "regime": "n/a",
+   "direction": "n/a",
+   "grade": "VETO",
+   "gradeNote": "VETO",
+   "table7": {
+    "f1_trend": 0.0,
+    "f2_vwap": 0.0,
+    "f3_signals": 0.0,
+    "f4_walls": 0.0,
+    "f5_cvd": 0.0,
+    "f6_liq_magnet": 0.0,
+    "f7_options": 0.0,
+    "f8_spread": 0.0,
+    "total": 0.0,
+    "lsr": null,
+    "dom_side": null,
+    "z_score": null,
+    "unfed": [
+     "D1",
+     "D2",
+     "D3",
+     "D4",
+     "D6",
+     "D7",
+     "D8",
+     "D9",
+     "D11",
+     "D12",
+     "D13",
+     "D15"
+    ],
+    "notes": [
+     "market feed unavailable \u2014 Table 7 cannot be scored"
+    ],
+    "max_achievable": 11.5
+   },
+   "vetoes": [
+    "feed-starved dimensions D1,D2,D3,D4,D6,D7,D8,D9,D11,D12,D13,D15 scored 0.0 (G-06/G-07)",
+    "Table 7 0.0/11.5 < 5.0 => HARD VETO"
+   ],
+   "fresh": {
+    "worstAgeMs": null,
+    "anyStale": false,
+    "dataAt": null
+   },
+   "feeds": {
+    "market": false,
+    "signals": false,
+    "cvd": false,
+    "walls": false,
+    "liq": false,
+    "options": false,
+    "narrative": false,
+    "quant": false,
+    "lto": false,
+    "spread": false
+   }
+  },
+  {
+   "sym": "SOL",
+   "price": null,
+   "regime": "n/a",
+   "direction": "n/a",
+   "grade": "VETO",
+   "gradeNote": "VETO",
+   "table7": {
+    "f1_trend": 0.0,
+    "f2_vwap": 0.0,
+    "f3_signals": 0.0,
+    "f4_walls": 0.0,
+    "f5_cvd": 0.0,
+    "f6_liq_magnet": 0.0,
+    "f7_options": 0.0,
+    "f8_spread": 0.0,
+    "total": 0.0,
+    "lsr": null,
+    "dom_side": null,
+    "z_score": null,
+    "unfed": [
+     "D1",
+     "D2",
+     "D3",
+     "D4",
+     "D6",
+     "D7",
+     "D8",
+     "D9",
+     "D11",
+     "D12",
+     "D13",
+     "D15"
+    ],
+    "notes": [
+     "market feed unavailable \u2014 Table 7 cannot be scored"
+    ],
+    "max_achievable": 11.5
+   },
+   "vetoes": [
+    "feed-starved dimensions D1,D2,D3,D4,D6,D7,D8,D9,D11,D12,D13,D15 scored 0.0 (G-06/G-07)",
+    "Table 7 0.0/11.5 < 5.0 => HARD VETO"
+   ],
+   "fresh": {
+    "worstAgeMs": null,
+    "anyStale": false,
+    "dataAt": null
+   },
+   "feeds": {
+    "market": false,
+    "signals": false,
+    "cvd": false,
+    "walls": false,
+    "liq": false,
+    "options": false,
+    "narrative": false,
+    "quant": false,
+    "lto": false,
+    "spread": false
+   }
+  },
+  {
+   "sym": "XRP",
+   "price": null,
+   "regime": "n/a",
+   "direction": "n/a",
+   "grade": "VETO",
+   "gradeNote": "VETO",
+   "table7": {
+    "f1_trend": 0.0,
+    "f2_vwap": 0.0,
+    "f3_signals": 0.0,
+    "f4_walls": 0.0,
+    "f5_cvd": 0.0,
+    "f6_liq_magnet": 0.0,
+    "f7_options": 0.0,
+    "f8_spread": 0.0,
+    "total": 0.0,
+    "lsr": null,
+    "dom_side": null,
+    "z_score": null,
+    "unfed": [
+     "D1",
+     "D2",
+     "D3",
+     "D4",
+     "D6",
+     "D7",
+     "D8",
+     "D9",
+     "D11",
+     "D12",
+     "D13",
+     "D15"
+    ],
+    "notes": [
+     "market feed unavailable \u2014 Table 7 cannot be scored"
+    ],
+    "max_achievable": 11.5
+   },
+   "vetoes": [
+    "feed-starved dimensions D1,D2,D3,D4,D6,D7,D8,D9,D11,D12,D13,D15 scored 0.0 (G-06/G-07)",
+    "Table 7 0.0/11.5 < 5.0 => HARD VETO"
+   ],
+   "fresh": {
+    "worstAgeMs": null,
+    "anyStale": false,
+    "dataAt": null
+   },
+   "feeds": {
+    "market": false,
+    "signals": false,
+    "cvd": false,
+    "walls": false,
+    "liq": false,
+    "options": false,
+    "narrative": false,
+    "quant": false,
+    "lto": false,
+    "spread": false
+   }
+  },
+  {
+   "sym": "DOGE",
+   "price": null,
+   "regime": "n/a",
+   "direction": "n/a",
+   "grade": "VETO",
+   "gradeNote": "VETO",
+   "table7": {
+    "f1_trend": 0.0,
+    "f2_vwap": 0.0,
+    "f3_signals": 0.0,
+    "f4_walls": 0.0,
+    "f5_cvd": 0.0,
+    "f6_liq_magnet": 0.0,
+    "f7_options": 0.0,
+    "f8_spread": 0.0,
+    "total": 0.0,
+    "lsr": null,
+    "dom_side": null,
+    "z_score": null,
+    "unfed": [
+     "D1",
+     "D2",
+     "D3",
+     "D4",
+     "D6",
+     "D7",
+     "D8",
+     "D9",
+     "D11",
+     "D12",
+     "D13",
+     "D15"
+    ],
+    "notes": [
+     "market feed unavailable \u2014 Table 7 cannot be scored"
+    ],
+    "max_achievable": 11.5
+   },
+   "vetoes": [
+    "feed-starved dimensions D1,D2,D3,D4,D6,D7,D8,D9,D11,D12,D13,D15 scored 0.0 (G-06/G-07)",
+    "Table 7 0.0/11.5 < 5.0 => HARD VETO"
+   ],
+   "fresh": {
+    "worstAgeMs": null,
+    "anyStale": false,
+    "dataAt": null
+   },
+   "feeds": {
+    "market": false,
+    "signals": false,
+    "cvd": false,
+    "walls": false,
+    "liq": false,
+    "options": false,
+    "narrative": false,
+    "quant": false,
+    "lto": false,
+    "spread": false
+   }
+  },
+  {
+   "sym": "XAU",
+   "price": null,
+   "regime": "n/a",
+   "direction": "n/a",
+   "grade": "VETO",
+   "gradeNote": "VETO",
+   "table7": {
+    "f1_trend": 0.0,
+    "f2_vwap": 0.0,
+    "f3_signals": 0.0,
+    "f4_walls": 0.0,
+    "f5_cvd": 0.0,
+    "f6_liq_magnet": 0.0,
+    "f7_options": 0.0,
+    "f8_spread": 0.0,
+    "total": 0.0,
+    "lsr": null,
+    "dom_side": null,
+    "z_score": null,
+    "unfed": [
+     "D1",
+     "D2",
+     "D3",
+     "D4",
+     "D6",
+     "D7",
+     "D8",
+     "D9",
+     "D11",
+     "D12",
+     "D13",
+     "D15"
+    ],
+    "notes": [
+     "market feed unavailable \u2014 Table 7 cannot be scored"
+    ],
+    "max_achievable": 11.5
+   },
+   "vetoes": [
+    "feed-starved dimensions D1,D2,D3,D4,D6,D7,D8,D9,D11,D12,D13,D15 scored 0.0 (G-06/G-07)",
+    "Table 7 0.0/11.5 < 5.0 => HARD VETO"
+   ],
+   "fresh": {
+    "worstAgeMs": null,
+    "anyStale": false,
+    "dataAt": null
+   },
+   "feeds": {
+    "market": false,
+    "signals": false,
+    "cvd": false,
+    "walls": false,
+    "liq": false,
+    "options": false,
+    "narrative": false,
+    "quant": false,
+    "lto": false,
+    "spread": false
+   }
+  },
+  {
+   "sym": "NVDA",
+   "price": null,
+   "regime": "n/a",
+   "direction": "n/a",
+   "grade": "VETO",
+   "gradeNote": "VETO",
+   "table7": {
+    "f1_trend": 0.0,
+    "f2_vwap": 0.0,
+    "f3_signals": 0.0,
+    "f4_walls": 0.0,
+    "f5_cvd": 0.0,
+    "f6_liq_magnet": 0.0,
+    "f7_options": 0.0,
+    "f8_spread": 0.0,
+    "total": 0.0,
+    "lsr": null,
+    "dom_side": null,
+    "z_score": null,
+    "unfed": [
+     "D1",
+     "D2",
+     "D3",
+     "D4",
+     "D6",
+     "D7",
+     "D8",
+     "D9",
+     "D11",
+     "D12",
+     "D13",
+     "D15"
+    ],
+    "notes": [
+     "market feed unavailable \u2014 Table 7 cannot be scored"
+    ],
+    "max_achievable": 11.5
+   },
+   "vetoes": [
+    "feed-starved dimensions D1,D2,D3,D4,D6,D7,D8,D9,D11,D12,D13,D15 scored 0.0 (G-06/G-07)",
+    "Table 7 0.0/11.5 < 5.0 => HARD VETO"
+   ],
+   "fresh": {
+    "worstAgeMs": null,
+    "anyStale": false,
+    "dataAt": null
+   },
+   "feeds": {
+    "market": false,
+    "signals": false,
+    "cvd": false,
+    "walls": false,
+    "liq": false,
+    "options": false,
+    "narrative": false,
+    "quant": false,
+    "lto": false,
+    "spread": false
+   }
+  }
+ ],
+ "cards": []
+}

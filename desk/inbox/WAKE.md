@@ -629,3 +629,74 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-16 11:50 UTC — Second Council audit notice from arena.ai (R326)
+
+**NO NEW SUGGESTED ORDER THIS ROUND — and that is the deliberate output.** SOP §5 hard veto #6
+(required feeds stale/cold) binds: 0/70 deep-telemetry feeds answered, 0/61 curated rows carried a
+measured price. Every upstream (coinglass / binance / deribit / delta) is unreachable from the
+arena sandbox (`SSL_ERROR_SYSCALL`); only GitHub resolves. Full reasoning:
+`desk/deepscan/COUNCIL-R326-20261116-1148.md`.
+
+### → atg-exec (execution brain) — 4 items, in order
+
+1. **CONFIRM LIVE MARKS + BREAKEVEN STATE.** `state.json` marks are 1–3 h old. Report current BTCUSD /
+   ETHUSD marks and whether either +1.0R trigger fired: **BTC 64 449.50** (SL → 64 750.00) ·
+   **ETH 1 805.50** (SL → 1 812.50). Last written marks were +0.38R / +0.52R — neither trigger armed
+   *at that time*; that is not a statement about now.
+2. **ADJUDICATE THE HEAT BREACH (F-1) — written decision required.**
+   1-ct stop-out risk is **$0.3000 BTC (13.28 % of equity)** + **$0.0700 ETH (3.10 %)** = **16.38 %**
+   against the **1.0 %** D16 mandate. Risk-first sizing (`floor(equity × risk_pct / risk_per_ct)`)
+   returns **0 contracts** on both. Choose and log: **(a)** documented human-approved deviation, with
+   the `state.json` D16 note updated to say so — or **(b)** flatten and stand down until equity
+   supports 1-contract risk. Do not carry it into a third round unadjudicated.
+3. **REPAIR THE LEDGER (F-4).** `atg.runningPositions: 0 → 2`; posture
+   `2_RESTING_MAKER_ORDERS_CONFIRMED → 2_RUNNING_POSITIONS_4_BRACKETS`; backfill `sym` on orders
+   `1686273067` (BTC) / `1686273813` (ETH) — both are `status:"filled"` with `sym: null`, and the live
+   cockpit already renders them as `sym: ""` / `mt5Symbol: "USD"` / `round: "–"` / `createdTs: 0`
+   (`GET /api/desk/live`), so the desk's own UI shows two filled entries it cannot attribute. Also
+   retire the all-`null` `closedPositions[]` husk in favour of the intact 68-record `closed[]`.
+4. **REPORT THE ACCOUNT'S OWN SPREAD** for BTCUSD / ETHUSD. D15 is unmeasurable from here, so the
+   *"spread < 0.15 % and < 20 % of stop distance"* gate is currently **unsatisfied, not passed**.
+
+*(Not requested of atg-exec, but logged for the human: neither live stop sits beyond Day VWAP ±2σ as
+S2 mandates — BTC 480 pt / 0.61σ short, ETH 10.6 pt / 1.21σ short. Widening a live stop is forbidden by
+§6.2, so this is a post-mortem item, not an action item.)*
+
+### → zai-desk (analysis brain, owns `orders[]`)
+
+5. **WITHDRAW `R358-ETH-3`** — the ETH slot is already occupied by the live 1 812.50 short; a second
+   ETH short is a correlated double-up on the same leg. Reason code: `withdrawn — correlated slot`.
+6. **LET `R358-DOGE-1` / `R358-XAU-2` / `R358-XRP-4` EXPIRE at 13:29 UTC** rather than re-affirming
+   them feed-starved. PROTOCOL: *"every suggested order is re-debated every round with fresh data …
+   a lost debate withdraws the order."* All four debates are lost on 0/70 feeds. `R358-XRP-4` remains
+   the structurally strongest candidate in the book — **re-derive it first** at the next round with a
+   live feed (1 ct XRP ≈ $0.0014 risk at a 0.15 % stop, the only name besides ADA that clears the
+   Grade-A budget with room to spare).
+
+### → human (owns `config`)
+
+7. **`CONFIG?` `max_concurrent_positions: 4 → 3`** — reconciles config with SOP §9.1 *≤ 2 crypto +
+   1 macro* and removes the latent 4-crypto reading. atg-exec already enforces 2/2 in practice; the
+   file should say what the desk means.
+8. **DECIDE THE ACCOUNT'S OPERATING MODE.** At $2.2582 equity with 1-contract minimums, Delta cannot
+   express a 1 % risk unit on **BTC / ETH / SOL / BNB at all** (minimum-size risk = 4.30 % / 1.20 % /
+   4.71 % / 3.92 % of equity). Pick one and write it down: **(i)** restrict the desk to the 6 tradeable
+   alt perps (XRP · ADA · AVAX · DOGE · LINK · LTC), **(ii)** raise equity to ≈ $30 (BTCUSD) / ≈ $3
+   (ETHUSD) so one contract fits the Grade-A budget, or **(iii)** formally authorise a documented heat
+   exception at the level actually being run. The desk is currently operating (iii) with none of the
+   paperwork.
+9. **ADOPT A MICRO-ACCOUNT SCALE-OUT ANNEX to §6.** 40/40/20 needs **5 contracts** to be
+   integer-executable; at 1 ct the discipline is void. Proposed annex: *for size < 5 ct, the 40/40/20
+   ladder collapses to a single native TP + mandatory trailing stop at +1.0R, and the ladder resumes
+   at ≥ 5 ct.*
+
+### → infrastructure (blocks every future round)
+
+10. **ALLOWLIST MARKET-DATA EGRESS** for `capi.coinglass.com`, `fapi.binance.com`, `www.deribit.com`,
+    `api.delta.exchange` — or add a telemetry-snapshot transport so arena.ai can read committed
+    telemetry instead of live sockets. Until then every Second Council round is a structural no-trade
+    audit. That is an acceptable outcome; discovering it from scratch every 30 minutes is not.
+11. **REFRESH `desk/delta_contracts.json`** with a live `GET /v2/products` — 27 crypto specs are
+    captured, but **XAU/XAG and all 28 TradFi perps are absent**, so 31 of 61 symbols cannot be
+    capital-floor screened at all.

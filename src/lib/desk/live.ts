@@ -168,6 +168,29 @@ function calcR(side: "long" | "short", entry: number, sl: number, tp: number): n
   return +(reward / risk).toFixed(2);
 }
 
+interface RawOrder {
+  id: string;
+  round?: string;
+  sym?: string;
+  asset?: string;
+  mt5Symbol?: string;
+  side?: "long" | "short" | string;
+  action?: string;
+  type?: string;
+  status: string;
+  entry?: number;
+  stop?: number;
+  targets?: number[];
+  riskR?: number;
+  regime?: string;
+  mode?: string;
+  rationale?: string;
+  notes?: string;
+  ticket?: number | null;
+  createdTs?: number;
+  expiresTs?: number | null;
+}
+
 interface RawState {
   config?: { max_concurrent_positions?: number; symbol_map?: Record<string, string> };
   analysis?: {
@@ -176,28 +199,7 @@ interface RawState {
     engine?: string;
     assets?: Record<string, { price?: number; chgDayPct?: number; score?: number; error?: string | null }>;
   };
-  orders?: Array<{
-    id: string;
-    round?: string;
-    sym?: string;
-    asset?: string;
-    mt5Symbol?: string;
-    side?: "long" | "short" | string;
-    action?: string;
-    type?: string;
-    status: string;
-    entry?: number;
-    stop?: number;
-    targets?: number[];
-    riskR?: number;
-    regime?: string;
-    mode?: string;
-    rationale?: string;
-    notes?: string;
-    ticket?: number | null;
-    createdTs?: number;
-    expiresTs?: number | null;
-  }>;
+  orders?: RawOrder[] | { activeOrders?: RawOrder[] };
 }
 
 interface RawMt5 {
