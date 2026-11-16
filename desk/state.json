@@ -746,6 +746,24 @@
       "ticket": 1686523065,
       "ts": 1794831473970,
       "reason": "Terminal Screener Grade A SELL Divergence (vol) EV +0.86R (2.45R)"
+    },
+    {
+      "id": "DELTA-APT-R330",
+      "delta_order_id": 1686585178,
+      "product_id": 20196,
+      "symbol": "APTUSD",
+      "side": "sell",
+      "order_type": "limit_order",
+      "limit_price": 0.457,
+      "bracket_stop_loss_price": 0.4635,
+      "bracket_take_profit_price": 0.442,
+      "size": 5,
+      "status": "open",
+      "confluence_score": 9.5,
+      "grade": "A+",
+      "r_multiple": 2.31,
+      "max_risk_usd": 0.0325,
+      "timestamp": "2026-11-16T12:38:24.008537+00:00"
     }
   ],
   "positions": [],

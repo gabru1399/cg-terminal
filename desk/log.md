@@ -9933,3 +9933,21 @@ analysis script rc=1
 
 - **PHASE 7: DYNAMIC TIMER RE-ARM**:
     * Re-armed single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`). Zero static cron jobs, zero background daemons.
+
+## 2026-11-16 12:38:36 UTC — atg-exec [APTUSD GRADE A+ ORDER PLACED]
+- User Directive: 'Yes' (Execute APTUSD entry plan)
+- Setup: APTUSD Short (Product 20196) | Table 7 Score: 9.5 / 11.5 (Grade A+)
+- Order Details:
+  - Delta Order ID: #1686585178
+  - Side / Type: Sell / Limit Order (Post-Only Maker)
+  - Size: 5 contracts (5 APT @ .45700 USD)
+  - Entry Price: .45700 (Day POC & Day VWAP mean retest)
+  - Native SL: .46350 (mark_price trigger, beyond Day VAH .4607 & absorption high)
+  - Native TP: .44200 (direct sweep into .3M Long Liquidation Pool)
+  - Risk: .0325 USD (1.10% account equity)
+  - Reward: .0750 USD
+  - R-Multiple: 2.31R
+- Account State:
+  - Available Liquid Balance: .3922 USD (84.3% free liquidity)
+  - Total Order Margin: .4286 USD (covers all 5 active resting orders)
+  - Active Running Positions: 0 / 2
