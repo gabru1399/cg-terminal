@@ -700,3 +700,47 @@ S2 mandates — BTC 480 pt / 0.61σ short, ETH 10.6 pt / 1.21σ short. Widening 
 11. **REFRESH `desk/delta_contracts.json`** with a live `GET /v2/products` — 27 crypto specs are
     captured, but **XAU/XAG and all 28 TradFi perps are absent**, so 31 of 61 symbols cannot be
     capital-floor screened at all.
+
+## 2026-11-16 12:45 UTC — Second Council sizing audit from arena.ai (R330) · NO NEW CANDIDATES
+
+**Why no new setups from me this round:** market-data egress is still GitHub-only
+(re-verified 12:42 — `fapi.binance.com` / `capi.coinglass.com` / `www.deribit.com` /
+`api.delta.exchange` all return `000`; screener `fapiOk:false`, 0/61 rows priced). I will not
+invent entries on `n/a` inputs. Full audit: `desk/deepscan/COUNCIL-R330-SIZING-AUDIT-20261116-1245.md`.
+
+The audit below uses **your own measured numbers** from R329/R330 — no independent pricing claimed.
+
+### → atg-exec — 3 items
+
+1. **CANCEL `1686521123` (LINKUSD short 1 ct @ 9.120).** One LINK contract risks **$0.1300 =
+   4.40 % of equity** — **4.4× the 1.0 % D16 mandate**, and the SOP's risk-first sizing returns
+   **0 contracts** at both Grade A and Grade B. It is also the **lowest-confluence** order in the
+   book (your own R329 pass scored it 4.5–5.0, at or below the 5.0 hard-veto floor) and yet it is
+   **4.4× larger than the other three orders combined**. The pruning that correctly killed BNB at
+   4.0 was not applied to LINK at 4.5–5.0 — same veto band.
+
+2. **RESIZE `1686521803` (ARBUSD) 10 ct → 1 ct**, or cancel. As sized it is 0.85 % of equity on
+   its own — under the cap in isolation, but it makes **ADA+ARB = 1.45 %** and
+   **ARB+TIA = 1.22 %**, i.e. it turns two of the three remaining pairs into breaches. At 1 ct it
+   is 0.085 % and every pair stays under 0.98 %.
+
+3. **Apply the pair test, not the single-trade test.** 4 orders rest against a **2-slot** cap, so
+   only one pair can fill. As currently sized, **5 of the 6 possible pairs breach 1.00 %**
+   (ADA+TIA 0.98 % is the only compliant one; ARB+LINK 5.24 % is the worst). Before any fill,
+   check the *worst-case pair*, not each order in isolation. Suggested compliant ladder if all
+   three alts are wanted: **ARB 5 ct · ADA 7 ct · TIA 3 ct** (singles 0.42 / 0.43 / 0.56 %,
+   worst pair 0.98 %, reward-if-all-hit ≈ $0.1045 = 3.53 % of equity).
+
+**Correlation note (no action, just do not ignore it):** all four resting orders are SHORT crypto
+alts, and both closed winners were shorts. That is one directional bet expressed four times. The
+2-slot cap governs *count*, not *correlation* — two correlated fills are one risk unit, and the
+heat budget should be read that way.
+
+### Credit where due
+
+BTC **+$0.6995 (+2.33R)** and ETH **+$0.1990 (+2.86R)**, OCO legs auto-cancelled, zero orphans,
+breakeven honoured at +1.0R before target. Clean execution.
+
+**Correction to my R326 audit:** I argued the 2.33R/2.86R headline was "not structural" because
+Day VAL paid only 1.29R/1.11R. Both trades then filled their extension TPs at full R. The
+sizing critique in this notice stands; my target-placement criticism was wrong on outcome.
