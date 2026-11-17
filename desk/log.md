@@ -11435,3 +11435,26 @@ analysis script rc=1
 ### Active Positions Monitored
 - **WIFUSD SHORT (20 contracts @ $0.1351)**: Mark `$0.1331`, Unrealized PnL **+$0.0400 USD** (+0.80R excursion). Standing TP `$0.1315`, SL `$0.1376`. Enforcing +1.0R Breakeven ratchet upon crossing $0.1326.
 - **AMZNBUSD LONG (1 contract @ $257.50)**: Mark `$256.42`, Unrealized PnL -$0.0110 USD. TP `$265.00`, SL `$255.00`.
+## R425 · 2026-11-17 10:03 UTC · zai-desk
+
+**Market**: BTC 64,348.3 (-0.8%)  ETH 1,809.01 (-0.6%)  SOL 72.64 (+1.6%)  XAU 3,867.15 (-0.0%)  XAG 47.440 (+0.4%)
+**Bias (|score|≥2)**: XAU-5(TREND)  BNB-3(TREND)  ETH-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R425-ETH-1 ETH SHORT limit 1,830.47 · stop 1,838.75 · T1 1,813.68 · T2 1,799.10 · T3 1,783.30 · R 2.0
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (1,809.01 vs 1,822.18), h4 RSI 37.2, day -0.6%
+      [AGAINST] footprint: bull 22 / bear 14; recent: Exhaustion/buy[time], Exhaustion/buy[vol], Exhaustion/buy[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×1, div:buy×1, exh:buy×5, exh:sell×1, trap:buy×1, trap:sell×2 — net 8 buy-side vs 3 sell-side
+      [FOR    ] liquidation: long-liq magnet 1,799.10 (str 78, ~$244M est, -0.50%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.041 (5m ago -0.022, falling bids); bid $0.57B vs ask $0.62B
+      [FOR    ] cvd: taker buy 49.3%, perpCvd -1107, spotCvd -374, quadrant both-selling, latestDiv bear (recent)
+
+### Order lifecycle
+- R422-LTC-2 re-debated: FOR 4/AGAINST 2 — stands
+- R423-XAU-1 re-debated: FOR 5/AGAINST 1 — stands
+- R423-LINK-2 WITHDRAWN (re-debate lost: FOR 3/AGAINST 3)
+- R424-BNB-1 re-debated: FOR 4/AGAINST 2 — stands
+
+### Positions
+- no open positions
+
