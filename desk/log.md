@@ -11045,3 +11045,39 @@ analysis script rc=1
 4. **AMZNBUSD** Long Limit 1 contract (0.01 share) @ 257.50 (Order #1688520838)
    - Thesis: Amazon pullback to 24h low / Day VAL support (.27) with pre-market tech mean-reversion to Day POC.
    - Brackets: SL 255.00 (Risk .0250 USD = 0.89% equity) | TP 265.00 (Reward .0750 USD = +3.00R EV).
+## R410 · 2026-11-17 04:59 UTC · zai-desk
+
+**Market**: BTC 65,054.3 (+0.3%)  ETH 1,834.91 (+0.8%)  SOL 73.02 (+2.1%)  XAU 3,880.90 (+0.3%)  XAG 47.640 (+0.8%)
+**Bias (|score|≥2)**: SOL-5(TREND)  BNB-3(TREND)  DOGE-2(TREND)  XAU-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- SOL SHORT confluence -5.2 — REJECTED: opposite liq magnet 73.42 (str 100, ~$49M est) within 1.2R of entry — wait for sweep
+- NEW R410-BNB-1 BNB SHORT limit 595.60 · stop 597.98 · T1 589.83 · T2 582.78 · R 2.4
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (595.60 vs 592.56), h4 RSI 38.6, day +0.7%
+      [FOR    ] footprint: bull 36 / bear 45; recent: Bear div/sell[time], Trapped longs/sell[vol]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:sell×4, div:buy×2, div:sell×1, exh:buy×2, exh:sell×3, sdiv:buy×1, sdiv:sell×2, trap:sell×1 — net 5 buy-side vs 11 sell-side
+      [FOR    ] liquidation: long-liq magnet 582.78 (str 76, ~$10M est, -2.15%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance +0.024 (5m ago +0.007, rising bids); bid $0.02B vs ask $0.02B
+      [FOR    ] cvd: taker buy 48.2%, perpCvd -71, spotCvd -13, quadrant both-selling, latestDiv bear (recent)
+- NEW R410-XAU-2 XAU SHORT limit 3,880.90 · stop 3,896.42 · T1 3,832.92 · T2 3,800.58 · R 3.1
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (3,880.90 vs 3,869.21), h4 RSI 47.7, day +0.3%
+      [FOR    ] footprint: bull 12 / bear 20; recent: Exhaustion/sell[time], Exhaustion/sell[vol], Exhaustion/sell[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: div:buy×1, exh:sell×4 — net 1 buy-side vs 4 sell-side
+      [FOR    ] liquidation: long-liq magnet 3,832.92 (str 54, ~$44M est, -1.24%) as target
+      [AGAINST] liquidation-hazard: short-liq magnet 3,919.84 (str 83) sits between entry and stop — sweep risk
+      [FOR    ] bookWalls: ±5% depth imbalance +0.099 (5m ago +0.099, falling bids); bid $0.04B vs ask $0.04B
+      [FOR    ] cvd: taker buy 49.3%, perpCvd -89, spotCvd -1, quadrant both-selling, latestDiv bear (recent)
+
+### Order lifecycle
+- R402-XAU-1 EXPIRED (unfilled past expiry)
+- R402-BNB-2 EXPIRED (unfilled past expiry)
+- R406-DOGE-1 re-debated: FOR 6/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
+
+## ROUND FAILED · 2026-11-17 04:59 UTC · zai-desk
+
+analysis script rc=1
+
