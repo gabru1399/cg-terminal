@@ -12478,3 +12478,19 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R473 · 2026-11-17 23:03 UTC · zai-desk
+
+**Market**: BTC 64,885.0 (+0.0%)  ETH 1,817.34 (-0.1%)  SOL 74.11 (+3.6%)  XAU 3,861.81 (-0.2%)  XAG 47.690 (+0.9%)
+**Bias (|score|≥2)**: XAU-2(TREND)  SOL-4(TREND)  AVAX-4(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- SOL SHORT confluence -3.7 — REJECTED: opposite liq magnet 74.45 (str 100, ~$34M est) within 1.2R of entry — wait for sweep
+
+### Order lifecycle
+- R463-ADA-1 re-debated: FOR 4/AGAINST 2 — stands
+- R467-DOGE-1 re-debated: FOR 5/AGAINST 2 — stands
+- R469-AVAX-1 re-debated: FOR 6/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
