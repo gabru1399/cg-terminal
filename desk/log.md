@@ -12190,3 +12190,24 @@ analysis script rc=1
 ### Operational State
 - Dynamic 1200s recursion timer re-armed (task-20134).
 - Autonomous breakeven ratchet daemon active in desk_daemon.mjs.
+## R458 · 2026-11-17 19:02 UTC · zai-desk
+
+**Market**: BTC 63,716.2 (-1.8%)  ETH 1,787.91 (-1.7%)  SOL 72.33 (+1.1%)  XAU 3,859.79 (-0.2%)  XAG 47.440 (+0.4%)
+**Bias (|score|≥2)**: XAU-4(TREND)  AVAX-6(TREND)  ADA-3(TREND)  DOGE-5(TREND)  ETH-4(TREND)  SOL-3(TREND)  LTC-2(TREND)  XRP-2(TREND)  BNB-2(TREND)  LINK-2(TREND)  XAG-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R458-DOGE-1 DOGE SHORT limit 0.05863 · stop 0.05906 · T1 0.05731 · T2 0.05709 · T3 0.05666 · R 3.1
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.05854 vs 0.05879), h4 RSI 38.2, day -0.6%
+      [FOR    ] footprint: bull 24 / bear 29; recent: Divergence/buy[time], Exhaustion/sell[vol], Exhaustion/sell[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:sell×1, div:buy×1, exh:buy×2, exh:sell×5 — net 3 buy-side vs 6 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.05731 (str 69, ~$9M est, -2.11%) as target
+      [FOR    ] cvd: taker buy 49.2%, perpCvd -41, spotCvd -11, quadrant both-selling, latestDiv bear (recent)
+
+### Order lifecycle
+- R443-XAU-1 re-debated: FOR 5/AGAINST 1 — stands
+- R446-ADA-1 re-debated: FOR 6/AGAINST 0 — stands
+- R454-AVAX-1 re-debated: FOR 6/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
