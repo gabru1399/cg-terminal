@@ -2242,3 +2242,13 @@ The cascade→exhaustion→reversal transition scored as a **state machine, not 
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-17 13:23 UTC — new suggested order — place in MT5 (debate FOR 4/AGAINST 1)
+- R436-SOL-1 SOL SHORT limit entry 73.93 · stop 74.52 · targets 72.02 · R 3.2 · expires 2026-11-17 17:10 UTC
+- BASIS: levels are PERP prices (perpRef 73.93). Before placing in MT5 read spreads.SOLUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (73.93 vs 72.57), h4 RSI 47.8, day +3.4%
+- [FOR] footprint: bull 35 / bear 39; recent: Divergence/sell[vol], Divergence/sell[range]
+- [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×5, abs:sell×3, div:buy×2, div:sell×3, exh:buy×1, exh:sell×1, trap:buy×1, trap:sell×1 — net 9 buy-side vs 8 sell-side
+- [FOR] bookWalls: ±5% depth imbalance -0.107 (5m ago -0.075, falling bids); bid $0.10B vs ask $0.12B
+- [FOR] notifications: 6h weighted bias -3.9 (6 events)
+- → place on SOLUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
