@@ -11542,3 +11542,26 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R428 · 2026-11-17 11:08 UTC · zai-desk
+
+**Market**: BTC 64,193.8 (-1.0%)  ETH 1,791.86 (-1.5%)  SOL 72.34 (+1.1%)  XAU 3,865.38 (-0.1%)  XAG 47.570 (+0.6%)
+**Bias (|score|≥2)**: DOGE-5(TREND)  LINK-3(TRANS)  AVAX-4(TRANS)  XAU-4(TREND)  ETH-4(TREND)  LTC-4(TREND)  BTC-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R428-DOGE-1 DOGE SHORT limit 0.05892 · stop 0.05916 · T1 0.05784 · T2 0.05754 · R 4.5
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.05859 vs 0.05885), h4 RSI 37.4, day -0.5%
+      [FOR    ] footprint: bull 28 / bear 33; recent: Absorption/sell[time], Absorption/sell[vol], Absorption/sell[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×1, abs:sell×4, div:buy×4, exh:buy×3, sdiv:buy×2, trap:buy×1 — net 11 buy-side vs 4 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.05784 (str 53, ~$8M est, -1.29%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.006 (5m ago -0.008, rising bids); bid $0.03B vs ask $0.03B
+      [FOR    ] cvd: taker buy 48.9%, perpCvd -62, spotCvd -17, quadrant both-selling, latestDiv bull (recent)
+      [FOR    ] notifications: 6h weighted bias -3.9 (4 events)
+
+### Order lifecycle
+- R422-LTC-2 re-debated: FOR 6/AGAINST 1 — stands
+- R423-XAU-1 re-debated: FOR 5/AGAINST 2 — stands
+- R425-ETH-1 re-debated: FOR 5/AGAINST 2 — stands
+
+### Positions
+- no open positions
+
