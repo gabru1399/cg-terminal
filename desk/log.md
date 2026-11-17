@@ -11366,3 +11366,34 @@ analysis script rc=1
 - **POSITION UPDATE**: WIFUSD Short 20 contracts @ 0.1351 (Mark 0.13324 · Unrealized PnL: +$0.0360 USD · +0.74R in profit · Brackets armed TP 0.1315, SL 0.1376)
 - **POSITION UPDATE**: AMZNBUSD Long 1 contract @ 257.50 filled (Mark 256.55 · Brackets armed TP 265.00, SL 255.00)
 - **MULTI-SLOT EXPANSION**: Enforcing uncapped Grade A/A+ expansion across available margin ($1.70 USD available balance).
+## R423 · 2026-11-17 09:29 UTC · zai-desk
+
+**Market**: BTC 64,330.8 (-0.8%)  ETH 1,809.11 (-0.6%)  SOL 72.28 (+1.1%)  XAU 3,868.54 (+0.0%)  XAG 47.450 (+0.4%)
+**Bias (|score|≥2)**: XAU-5(TREND)  LINK-5(TREND)  BNB-4(TREND)  AVAX-4(TREND)  SOL-4(TRANS)  XAG-2(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R423-XAU-1 XAU SHORT limit 3,878.65 · stop 3,894.13 · T1 3,800.58 · T2 3,794.52 · R 5.0
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (3,868.54 vs 3,873.32), h4 RSI 44.5, day +0.0%
+      [FOR    ] footprint: bull 9 / bear 21; recent: Bull div/buy[time]
+      [FOR    ] liquidation: long-liq magnet 3,800.58 (str 77, ~$60M est, -1.76%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance +0.159 (5m ago +0.156, rising bids); bid $0.05B vs ask $0.04B
+      [FOR    ] cvd: taker buy 49.4%, perpCvd -78, spotCvd -1, quadrant both-selling, latestDiv bear (recent)
+      [FOR    ] notifications: 6h weighted bias -1.0 (1 events)
+- NEW R423-LINK-2 LINK SHORT limit 9.188 · stop 9.226 · T1 8.981 · R 5.5
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (9.097 vs 9.150), h4 RSI 37.1, day -0.4%
+      [FOR    ] footprint: bull 44 / bear 46; recent: Divergence/buy[time], Divergence/sell[vol], Divergence/buy[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×3, abs:sell×6, div:buy×6, div:sell×4, exh:buy×2, exh:sell×2, sdiv:buy×1, sdiv:sell×4, trap:sell×2 — net 12 buy-side vs 18 sell-side
+      [FOR    ] liquidation: long-liq magnet 8.981 (str 94, ~$3M est, -1.28%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.009 (5m ago +0.003, falling bids); bid $0.01B vs ask $0.01B
+      [FOR    ] cvd: taker buy 49.1%, perpCvd -19, spotCvd -1, quadrant both-selling, latestDiv bear (recent)
+      [FOR    ] notifications: 6h weighted bias -1.0 (3 events)
+
+### Order lifecycle
+- R411-SOL-1 EXPIRED (unfilled past expiry)
+- R415-DOGE-1 WITHDRAWN (re-debate lost: FOR 3/AGAINST 3)
+- R422-ETH-1 re-debated: FOR 4/AGAINST 2 — stands
+- R422-LTC-2 re-debated: FOR 4/AGAINST 2 — stands
+
+### Positions
+- no open positions
+
