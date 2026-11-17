@@ -44,6 +44,7 @@ In perpetual futures markets, prices are not moved by chart patterns, subjective
 | **G-07** | **ZERO Mocks**: All data must be live from the local Next.js terminal engine (`http://127.0.0.1:3000`) and Delta Exchange India APIs. Zero placeholders. |
 | **G-08** | **Single Source of Truth**: This document is the sole authoritative benchmark for scoring, sizing, dual-agent coordination, and execution invariants. |
 | **G-09** | **Continuous Planning & Brainstorming**: Every execution turn must incorporate structured planning (`/plan`) and multi-scenario exploration (`/brainstorming`) to evaluate entry tightness, auction levels, and liquidation magnets before order placement. |
+| **G-10** | **Mandatory Empirical Spec Reading on Wake-Up (Raw Habit Invariant)**: On EVERY wake-up, autonomous recursion round, or trading interaction, Antigravity MUST execute `read_file` on `desk/CANONICAL_MASTER_SPECIFICATION.md`. Never rely on cached echoes or prompt text. Actively load, analyze, and adhere to every section without omission. |
 
 ### 1.2 The Recursive Self-Improving AGI Axioms (Meta-Learning Engine)
 
