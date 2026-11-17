@@ -12365,3 +12365,27 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R467 · 2026-11-17 21:21 UTC · zai-desk
+
+**Market**: BTC 64,225.6 (-1.0%)  ETH 1,805.47 (-0.8%)  SOL 73.32 (+2.5%)  XAU 3,857.31 (-0.3%)  XAG 47.380 (+0.2%)
+**Bias (|score|≥2)**: XAU-3(TREND)  DOGE-4(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R467-DOGE-1 DOGE SHORT limit 0.05942 · stop 0.05984 · T1 0.05840 · T2 0.05737 · T3 0.05717 · R 2.4
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (0.05942 vs 0.05883), h4 RSI 43.7, day +0.9%
+      [FOR    ] footprint: bull 33 / bear 40; recent: Exhaustion/sell[time], Exhaustion/sell[vol], Divergence/sell[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×1, abs:sell×1, div:buy×2, div:sell×3, exh:buy×2, exh:sell×6 — net 5 buy-side vs 10 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.05737 (str 82, ~$9M est, -3.48%) as target
+      [AGAINST] liquidation-hazard: short-liq magnet 0.06013 (str 87) sits between entry and stop — sweep risk
+      [FOR    ] cvd: taker buy 49.3%, perpCvd -37, spotCvd -9, quadrant both-selling, latestDiv bear (recent)
+      [FOR    ] notifications: 6h weighted bias -3.0 (3 events)
+
+### Order lifecycle
+- R459-ETH-1 WITHDRAWN (confluence flipped to +1.6)
+- R461-LINK-1 WITHDRAWN (confluence flipped to +1.6)
+- R454-AVAX-1 re-debated: FOR 3/AGAINST 1 — stands
+- R463-ADA-1 re-debated: FOR 4/AGAINST 2 — stands
+
+### Positions
+- no open positions
+
