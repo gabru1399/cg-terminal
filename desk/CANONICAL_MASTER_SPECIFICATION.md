@@ -729,12 +729,11 @@ ATHENA ORACLE ARCHITECTURE: 6 MYTHOLOGICAL MICROSTRUCTURE GODS (0–100 SCALE)
 
 Per User Directives (2026-11-17), capital protection and asymmetric payoff are enforced through a strict risk budget and trailing runner mechanics:
 
-### 16.1 Two-Tier Conviction Risk Budget & High-Leverage Architecture (User Directive 2026-11-17)
-Per explicit User Authorization, the desk does not limit itself with blanket bans that forfeit prime opportunities:
-* **Tier 1 (High-Potential A/A+ Opportunities — BTC, SOL, BNB, ETH Unlocked)**:
-  - For pristine setups (Table 7 score $\ge 7.0$, Athena Oracle confirmation $\le 35$ or $\ge 65$, Best $R \ge 2.50\text{R}$), **Tier 1 assets are 100% UNBANNED**.
-  - High isolated leverage ($25\times - 50\times$, or up to venue maximum) is authorized to size 1 minimum contract lot with initial position margin $\le \$1.50\text{ USD}$ ($\le 55\%$ of available equity).
-  - Stop loss must be structurally tight ($\le 0.8\%$ distance beyond sweep wick or Value Area boundary). Dollar risk is calibrated up to $\$0.35 - \$0.65\text{ USD}$, capturing outsized asymmetric payoffs ($+30\%$ to $+60\%$ account gain on a single trade) while moving SL to Breakeven immediately at $+1.0\text{R}$ excursion.
+### 16.1 High-Potential Conviction Risk Budget & Asymmetric Leverage Architecture
+Per explicit User Authorization, high isolated leverage is authorized for high-potential trading setups where structural stops are placed so that SL will not hit:
+* **High-Potential Opportunities (A/A+ Setups with Structural Stops)**:
+  - For pristine setups (Table 7 score $\ge 7.0$, Athena Oracle confirmation $\le 35$ or $\ge 65$, Best $R \ge 2.50\text{R}$), high isolated leverage ($25\times - 50\times$, or up to venue maximum) is authorized across any asset to size 1 minimum contract lot with initial position margin $\le \$1.50\text{ USD}$ ($\le 55\%$ of available equity).
+  - Stop loss must be structurally placed beyond liquidation clusters ($\le 0.8\%$ distance beyond sweep wick or Value Area boundary in the cold zone). Dollar risk is calibrated up to $\$0.35 - \$0.65\text{ USD}$, capturing outsized asymmetric payoffs ($+30\%$ to $+60\%$ account gain on a single trade) while moving SL to Breakeven immediately at $+1.0\text{R}$ excursion.
 * **Tier 2 (Standard Grade B Setups)**:
   - Standard setups utilize micro-crypto contracts (`SEI`, `ADA`, `ARB`, `DOGE`, `APT`, `TIA`, `VET`, `WIF`) and TradFi fractionals (`AMZNB`, `MSFTB`, `CRCLB`) with conservative position margin ($\le \$0.30\text{ USD}$) and dollar risk $\le 1.0\% - 2.5\%$ ($\le \$0.028 - \$0.070\text{ USD}$).
 
