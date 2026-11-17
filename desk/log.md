@@ -11886,3 +11886,25 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+
+
+## EXEC · 2026-11-17 14:55 UTC · atg-exec — Blueberry Funded MT5 Orders Dispatched (XAUUSD.pi & NAS100.p)
+- **Venue**: Blueberry Funded (`BlueberryMarketsSVG-Live`, Login `#5126976`, Capital: $2,500.00 USD)
+- **User Authorization**: Authorized minimum-lot execution for high-confluence Grade A/A+ setups across uncorrelated asset classes (Metals & Indices) with strict structural SL/TP analysis.
+- **Order 1: Gold (`XAUUSD.pi`)**:
+  * Action: `SELL_LIMIT` · Ticket `#20218585`
+  * Limit Entry: $3,878.70 (L2: +1σ Day VWAP retest & Day POC rejection)
+  * Bracket SL: $3,894.20 (structural invalidation beyond $3,892.74 day high + $1.50 buffer; stop distance: $15.50)
+  * Bracket TP: $3,800.60 (T2: Prior weekly low & macro bid wall; +5.04R payoff multiple)
+  * Volume: 0.01 lot · Expected Risk: **$15.50 USD** (0.62% of equity) · Expected Gain: **+$78.10 USD**
+  * Invariant: `comment="cg_terminal"`, `magic=42001`.
+- **Order 2: Nasdaq 100 (`NAS100.p`)**:
+  * Action: `SELL_LIMIT` · Ticket `#20218649`
+  * Limit Entry: 27,330.00 (L2: +1σ Day VWAP retest in active M1 TREND_DOWN)
+  * Bracket SL: 27,584.00 (structural invalidation beyond Value Area ceiling; stop distance: 254 points)
+  * Bracket TP: 26,717.70 (T2: Primary short liquidation shelf; +2.41R payoff multiple)
+  * Volume: 0.01 lot · Expected Risk: **$25.40 USD** (1.01% of equity) · Expected Gain: **+$61.23 USD**
+  * Invariant: `comment="cg_terminal"`, `magic=42001`.
+- **Total Portfolio Heat Across MT5**:
+  * BTC ($5.20) + Gold ($15.50) + Nasdaq ($25.40) = **$46.10 USD total standing risk** (1.84% of equity, < 50% of the $100.00 daily limit).
+  * Potential Combined Gain: **+$151.33 USD (+6.05% account gain)**.
