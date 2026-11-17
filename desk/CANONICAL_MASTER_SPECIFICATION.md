@@ -225,8 +225,8 @@ Every candidate setup must explicitly evaluate and log all 16 dimensions before 
 | **D06** | **Footprint Bar Delta & POC** | `/api/cg/fp` | Bar delta %, taker buy/sell USD, intra-bar POC acceptance. High volume + small progress = absorption. |
 | **D07** | **Discrete Footprint Signals** | `/api/cg/signals` | Signals: `abs`, `div`, `sdiv`, `trap`, `exh` printed inside entry zone within $\le 8\text{h}$ recency. |
 | **D08** | **Cumulative Volume Delta** | `/api/cg/cvd` | Perp vs Spot CVD. Spot buying while Perp selling = smart money absorption $\implies$ **HARD VETO on shorts**. |
-| **D09** | **Book Walls & Lifecycle** | `/api/cg/bookwalls` | Confirmed resting walls $\ge \$5\text{M}$, age $> 1\text{h}$. Opposing wall $\ge \$5\text{M}$ within 1.5R = **HARD VETO**. |
-| **D10** | **Large Resting Orders (LTO)** | `/api/cg/lto` | Resting institutional blocks $\ge \$100\text{k}$. Queue priority placement 0.05% in front. |
+| **D09** | **Book Walls & Lifecycle** | `/api/cg/bookwalls` | Confirmed resting walls (Tier 1 $\ge \$5\text{M}$, Tier 2 $\ge \$1.0\text{M}$, Tier 3 $\ge \$250\text{k}-\$500\text{k}$, Tier 4 $\ge \$50\text{k}-\$100\text{k}$, or $\ge 20\%$ depth), age $> 1\text{h}$. Opposing wall within 1.5R = **HARD VETO**. |
+| **D10** | **Large Resting Orders (LTO)** | `/api/cg/lto` | Resting institutional blocks ($\ge \$500\text{k}$ BTC/ETH, $\ge \$100\text{k}$ large alts, $\ge \$25\text{k}$ micro alts). Queue priority placement 0.05% in front. |
 | **D11** | **Liquidation Clusters & Stopmap**| `/api/cg/liqlevels` & `/api/cg/stopmap` | Multi-venue clusters are sweep magnets. Take profit INTO clusters; never hold through them. |
 | **D12** | **Liquidation Magnet Gate (LSR)**| `/api/cg/liqlevels` | If $\text{LSR} \ge 2.5:1$, **BAN ALL PASSIVE ENTRIES INTO MAGNET PATH**. Switch strictly to S1 sweep reversal. |
 | **D13** | **Options GEX & Gamma Flip** | `/api/cg/options` | Positive Gamma favors mean reversion (S2/S5); Negative Gamma favors expansion (S1/S8) — BTC/ETH only. |
@@ -244,7 +244,7 @@ These are the ONLY permitted trade archetypes. Every opportunity that fits no ar
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **S1** | **Liquidation Sweep Reversal** | Over-extended / high LSR ($\ge 2.5:1$) | 15m close back inside value after stops wiped + delta flip | Beyond sweep wick high/low (+ 0.3–0.5 ATR buffer) | Opposite Day VAL/VAH & POC (40/40/20) |
 | **S2** | **Value Area Edge Fade** | Range Balance / High Gamma | Touch of Day VAH (short) / VAL (long) with footprint divergence | Beyond Day VWAP $\pm 2\sigma$ band | Day POC (mean reversion) |
-| **S3** | **Whale Wall Defense / Front-Run** | Trend Pullback (LSR < 2.0) | 0.05%–0.1% in front of confirmed wall $\ge \$10\text{M}$ (age > 2h) | Behind whale wall + 0.5 ATR buffer | Next opposing wall / POC |
+| **S3** | **Whale Wall Defense / Front-Run** | Trend Pullback (LSR < 2.0) | 0.05%–0.1% in front of confirmed wall (Tiered / $\ge 20\%$ depth) | Behind whale wall + 0.5 ATR buffer | Next opposing wall / POC |
 | **S4** | **Wall-Pull Breakout** | Momentum Expansion | Breakout candle through pulled wall with rising OI | Retest of broken level | +2σ or +3σ VWAP band |
 | **S5** | **VWAP Band Mean Reversion** | Extreme Extension ($|z| \ge 2.0\sigma$) | Touch of Day VWAP $\pm 3\sigma$ with RSI divergence & proof | 0.5 ATR beyond $\pm 3\sigma$ band | Day VWAP mean |
 | **S6** | **Trapped Traders Fade** | False Breakout | High volume cluster at extreme with failed progress | Beyond trapped candle wick | POC / Value Area midline |
@@ -254,7 +254,7 @@ These are the ONLY permitted trade archetypes. Every opportunity that fits no ar
 ### Archetype Detail & Execution Invariants:
 * **S1 — Liquidation Sweep Reversal**: The Magnet Gate's chosen setup when $\text{LSR} \ge 2.5:1$. Wait for the cluster to be wiped, wait for exhaustion print (`exh`), wait for taker delta flip, enter on the 15m confirmation close back inside value. Grade A+ eligible.
 * **S2 — Value Area Edge Fade**: Fade value boundaries back to POC. Grade cap: Grade B unless absorption cluster is $\ge \$5\text{M}$. Banned when $\text{LSR} \ge 2.5:1$.
-* **S3 — Whale Wall Defense**: Front-run large resting walls only when $\text{LSR} < 2.0:1$. Grade cap: Grade B (0.5% risk) always — wall-pull risk forbids full size.
+* **S3 — Whale Wall Defense**: Front-run large resting walls only when $\text{LSR} < 2.0:1$. Calibrated by liquidity tier: $\ge \$5\text{M}$ (BTC/ETH), $\ge \$1\text{M}$ (SOL/large), $\ge \$250\text{k}-\$500\text{k}$ (alts/equities), or $\ge 20\%$ depth within $\pm 1\%$. Grade cap: Grade B (0.5% risk) always — wall-pull risk forbids full size.
 * **S4 — Wall-Pull Breakout**: Enter on retest of pulled wall level with expanding OI. Grade B on break, Grade A on retest.
 * **S5 — VWAP Band Mean Reversion**: Requires stretch ($|z| \ge 2.0\sigma$), crowding (RSI $> 70/< 30$, funding extreme), and footprint reversal proof (`abs`, `div`, `sdiv`, `trap`, `exh`). Stretch without proof is WATCH, not a trade.
 * **S6 — Trapped Traders Fade**: Fade trapped breakout volume. Stop placed beyond trapped volume wick.
