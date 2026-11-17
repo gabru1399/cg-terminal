@@ -12389,3 +12389,19 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R468 · 2026-11-17 21:42 UTC · zai-desk
+
+**Market**: BTC 64,376.0 (-0.7%)  ETH 1,807.51 (-0.7%)  SOL 73.48 (+2.7%)  XAU 3,858.07 (-0.3%)  XAG 47.510 (+0.5%)
+**Bias (|score|≥2)**: XAU-3(TREND)  AVAX-3(TREND)  DOGE-3(TREND)  XAG-3(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- XAG SHORT confluence -3.2 — REJECTED: opposing bid wall $7.0M @ 47.400 (0.8R into path) caps the move to T1
+
+### Order lifecycle
+- R454-AVAX-1 re-debated: FOR 4/AGAINST 1 — stands
+- R463-ADA-1 re-debated: FOR 5/AGAINST 1 — stands
+- R467-DOGE-1 re-debated: FOR 5/AGAINST 1 — stands
+
+### Positions
+- no open positions
+
