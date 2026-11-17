@@ -11609,3 +11609,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+
+## EXEC · 2026-11-17 11:50 UTC · atg-exec
+- **ROUND R428/R429 RECURSION COMPLETE**: 61 Curated Assets audited endpoint-by-endpoint via scripts/individual_asset_evaluator.py.
+- **BTCUSD SHORT FILLED**: Order ID 1689324832 executed 1 contract (0.001 BTC @ ,550.0).
+  - Isolated Margin: .291 USD (50x leverage). Liquidation Price: ,679.625.
+  - Active On-Exchange Brackets: Stop Loss Order ID 1689324836 @ ,950.0 (.40 risk); Take Profit Order ID 1689324838 @ ,550.0 (+2.50R / +.00 reward).
+  - Current Mark: ,820.58.
+- **ACTIVE RUNNING POSITIONS SUMMARY**:
+  1. BTCUSD: Short 1 contract @ ,550.0 | Mark: ,820.58 | SL: ,950.0 | TP: ,550.0 (+2.50R).
+  2. WIFUSD: Short 20 contracts @ .13510 | Mark: .13506 | Flat/Green (+0.03R) | SL: .13760 | TP: .13150.
+  3. XLMUSD: Short 50 contracts @ .13780 | Mark: .13946 | SL: .14010 | TP: .13030 (+3.26R).
+  4. AMZNBUSD: Long 1 contract @ .50 | Mark: .34 | PnL: +.0184 USD (+0.92R green) | SL: .00 | TP: .00.
+- **RESTING MAKER LIMIT ORDERS**:
+  - TIAUSD: Sell Limit 10 contracts @ .35800 (Order ID 1689224145 | SL .36530 | TP .33270 | +3.46R).
+- **ACCOUNT SOLVENCY (ACCOUNT #26902927)**:
+  - Net Equity: .4082 USD | Position Margin: .8715 USD | Order Margin: .1790 USD | Free Buffer: .5332 USD.
+- **RECURSION CONTINUITY**: Single dynamic 1200s timer armed (Task task-18746).
