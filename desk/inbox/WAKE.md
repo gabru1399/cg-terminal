@@ -2337,3 +2337,14 @@ The cascade→exhaustion→reversal transition scored as a **state machine, not 
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-17 14:40 UTC — new suggested order — place in MT5 (debate FOR 5/AGAINST 1)
+- R441-DOGE-1 DOGE SHORT limit entry 0.05964 · stop 0.05995 · targets 0.05857 / 0.05784 · R 3.4 · expires 2026-11-17 18:38 UTC
+- BASIS: levels are PERP prices (perpRef 0.05964). Before placing in MT5 read spreads.DOGUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (0.05964 vs 0.05900), h4 RSI 42.9, day +1.2%
+- [FOR] footprint: bull 26 / bear 30; recent: Bear div/sell[time], Exhaustion/sell[vol], Absorption/buy[range]
+- [FOR] liquidation: long-liq magnet 0.05784 (str 62, ~$8M est, -2.80%) as target
+- [AGAINST] liquidation-hazard: short-liq magnet 0.06021 (str 74) sits between entry and stop — sweep risk
+- [FOR] cvd: taker buy 48.9%, perpCvd -65, spotCvd -16, quadrant both-selling, latestDiv bear (recent)
+- [FOR] notifications: 6h weighted bias -2.0 (2 events)
+- → place on DOGUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
