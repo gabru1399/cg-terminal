@@ -158,57 +158,97 @@ All 9 tabs in the terminal are ingested via local Next.js REST endpoints:
   * `longShortRatio`: Taker volume / account ratio of accounts net long vs net short.
 
 ### 4.2 Tab 2: Footprint (`Footprint` — `/api/cg/signals?sym=` & `/api/cg/fp?sym=`)
-* `barTimestamp` / `interval`: Timestamp and time-bucket duration (15m standard, auto-volume, auto-range).
-* `totalVolumeUsd`, `buyVolumeUsd`, `sellVolumeUsd`: Taker buy/sell volume USD executed at ask/bid.
-* `deltaUsd`: Net taker flow `buyVolumeUsd - sellVolumeUsd`.
-* `deltaPercent`: Relative imbalance `(deltaUsd / totalVolumeUsd) * 100`.
-* `barPOC`, `barVAL`, `barVAH`: Intra-bar volume distribution nodes.
+* **48-Hour Historical Tape Ingestion**: Complete tick-by-tick and bar-by-bar order-flow tape ingestion across the trailing **48 hours** to reconstruct complete historical volume, delta distributions, and auction memory for each asset individually.
+* **Bar Type Lattice (Attached Toggles)**:
+  * `15m` Standard Time Bars: Standard fixed-interval auction progression.
+  * `Volume` Bars: Dynamic fixed-volume accumulation bars (e.g. `Volume 2.0M` for XAN, calibrated dynamically by asset trading velocity), neutralizing low-volume overnight chop.
+  * `Range` Bars: Fixed price dispersion threshold bars (e.g. `Range 0.00002` for XAN), isolating pure price movement independent of time.
+* **Timeframe Resolution Lattice**: `1m`, `5m`, `15m`, `30m`, `1h`, `4h`.
+* **Viewing Mode Lattice**:
+  * `Volume`: Total executed contracts/USD at each price level.
+  * `Delta`: Net taker buying volume minus taker selling volume per tick (`Ask - Bid`).
+  * `Volume Bar`: Intra-bar horizontal volume histogram revealing high-volume nodes (HVN) and low-volume nodes (LVN).
+  * `Trade Count`: Total count of individual executed trade prints per level.
+  * `Avg Size`: Mean trade print size per level (distinguishes institutional block prints from retail algorithmic micro-prints).
+* **Valuation Units**: Native Base Token (e.g. `XAN`) vs Quote `USD`.
+* **Diagonal Imbalance Ratios**:
+  * `1.5x`, `2x`, `3x`, `4x` stacked diagonal buy/sell imbalances flagging aggressive market orders overwhelming the opposite resting limit queue.
+* **Intra-Bar Volume Profile**: `Profile` toggle enabled: projects bar Point of Control (`barPOC`), Value Area High (`barVAH`), and Value Area Low (`barVAL`).
 * **Microstructure Signal Engine**:
-  * `ABSORPTION`: Heavy taker volume failed to advance price (passive limit wall absorbed aggression).
-  * `DIVERGENCE`: Price printed a new extreme, but bar delta printed a reverse extreme.
-  * `STRONG_DIVERGENCE`: Multi-bar sustained price-delta divergence confirmed at VWAP bands.
-  * `TRAP`: Aggressive breakout buyers/sellers trapped as price promptly re-enters prior Value Area.
-  * `EXHAUSTION`: Sudden drop in taker volume at key swing structural highs/lows.
-* `imbalanceRatios`: Diagonal Bid/Ask imbalance ticks where buy volume $\ge 300\%$ sell volume (or vice versa).
+  * `ABSORPTION` (`abs`): Heavy taker volume failed to advance price (passive limit wall absorbed aggressive taker orders; available on vol, range, and time bars).
+  * `TRAP` (`trap`): Aggressive breakout buyers/sellers trapped as price promptly re-enters prior Value Area; high volume at candle extreme with close in opposite half.
+  * `STRONG_DIVERGENCE` (`sdiv`): Multi-bar sustained price-delta divergence confirmed at VWAP bands.
+  * `DIVERGENCE` (`div`): Price printed a new extreme, but bar delta printed a reverse extreme.
+  * `EXHAUSTION` (`exh`): Sudden drop in taker volume at key swing structural highs/lows.
+* **Live State Verification**: `• TAPE LIVE`, `• live`, `Refresh` sync.
 
 ### 4.3 Tab 3: Large Orders (`Large Orders` — `/api/cg/largeorder?sym=` & `/api/cg/lto?sym=`)
-* **Resting Whale Limit Walls & Liquidity-Calibrated Thresholds**:
-  * `exchange`, `side` (`BID`/`ASK`), `price`, `notionalUsd`, `distancePercent`, `wallAge`, `wallStatus` (`RESTING`, `PARTIALLY_FILLED`, `TOUCHED`).
-  * **Dynamic Whale Wall Tiering (Calibrated by Asset Class)**:
-    * *Tier 1 Mega-Cap (BTC, ETH)*: Whale Wall $\ge \$5.0\text{M}$ (Alerts $\ge \$10.0\text{M}$).
-    * *Tier 2 Large-Cap (SOL, XRP, DOGE, BNB, TradFi Indices SPX500/NDX100, Gold/Oil XAU/UKO)*: Whale Wall $\ge \$1.0\text{M}$.
-    * *Tier 3 Mid-Cap Alts & Equities (ADA, LINK, AVAX, SUI, NEAR, APT, ARB, TIA, SEI, INJ, NVDA, MSFT, AAPL, MSTR)*: Whale Wall $\ge \$250\text{k} - \$500\text{k}$.
-    * *Tier 4 Micro-Cap Alts & Tokenized Equities (VET, 1000PEPE, 1000SHIB, CRCL, TSM)*: Whale Wall $\ge \$50\text{k} - \$100\text{k}$.
-    * *Relative Depth Invariant*: Any resting limit order representing $\ge 15\% - 20\%$ of the total resting book depth within $\pm 1.0\%$ (Tab 5 `depthImbalanceRatio`) or $\ge 2.5\times$ rolling 15m bar volume qualifies as a confirmed institutional wall.
+* **Individual Asset Evaluation Invariant**: Must be evaluated individually for each asset across all venues—never grouped or skipped.
+* **Threshold Filters**: `All`, `≥$50K`, `≥$100K`, `≥$500K`, `≥$1M`, `≥$5M`.
+* **Exchanges Coverage**: 8/8 major venues across Spot and Perp (Binance, Upbit, Kraken, Bybit, OKX, Coinbase, Gate, Bitfinex).
+* **Side Separation**: `ALL`, `BID`, `ASK`.
+* **Sorting & Projection**: `Sort near price` (isolates active support/resistance) vs `Chart` projection.
+* **Order Flow Metrics**:
+  * `BUY/SELL WALL BALANCE`: Exact ratio of resting bids to asks (e.g. `0:100` = 100% ask dominated, zero bids; `$0.0 bid : $1.3M ask`).
+  * `NET WALL`: Total resting bid notional minus ask notional (e.g. `-$1.3M` across all venues).
+  * `OPEN ORDERS`: Total count of active institutional orders and exchange count with active data.
+  * `LAST PRICE`: Exact mid/last execution price.
+  * `THRESHOLD`: Minimum qualifying resting order size.
+* **Open Large Orders Ledger**:
+  * `Venue / side`: Exchange and order type (e.g. `Kraken SPOT Ask`, `Upbit SPOT Ask`).
+  * `Price`: Resting limit order price.
+  * `From price %`: Distance from current mid price (e.g. `+38,297.54%` identifies extreme spoofing/dust vs `+0.5%` active structural defense).
+  * `Initial`, `Remaining`, `Filled`, `Fills count`.
+  * `Age`: Time since order was placed (e.g. `17d ago`, `2d ago`, fresh $< 1\text{h}$).
+  * `Status`: `Open`, `Filled`, `Cancelled`.
+* **Whale-Order Walls (Defense Intensity & Support/Resistance Clusters)**:
+  * Aggregated resting orders at fine price buckets (e.g. `$0.000020` or $\pm 5\%$).
+  * `LARGEST BID WALL`, `LARGEST ASK WALL`, `WHALE BID DEPTH`, `WHALE ASK DEPTH`.
+  * Structural Defense vs Spoofing: Orders clustered near support/resistance defend price; phantom orders sitting far away are disregarded.
 * **Executed Block Trades (Tape Whales)**:
   * Single executed prints: $\ge \$500\text{k}$ (Tier 1), $\ge \$100\text{k}$ (Tier 2/3), $\ge \$25\text{k}$ (Tier 4).
   * `executionSide` (`BUY`/`SELL`), `executionPrice`, rolling executed imbalance ratio over 1h, 4h, 24h.
 
 ### 4.4 Tab 4: Liquidation Levels (`Liq Levels` — `/api/cg/liqlevels?sym=` & `/api/cg/stopmap?sym=`)
-* **Liquidation Clusters (3d / 7d / 30d Lookbacks)**:
+* **Multi-Horizon Lookbacks**: `3D` (tactical intraday), `7D` (structural weekly), `30D` (macro institutional).
+* **Spread Window Bands**: Full multi-tier spread distribution across `±1%`, `±2%`, `±3%`, `±4%`, `±5%`, `±6%`, `±7%`, `±8%`.
+* **Stops Heatmap (24h Exposure Grid)**:
+  * Quantifies resting stop-loss and liquidation concentrations above and below market price.
+  * Pinpoints high-density liquidation shelves that act as directional magnets.
+* **Liquidation Clusters**:
   * `clusterPrice`, `clusterNotionalUsd` (USD millions), `distanceToClusterPercent`.
   * `liquidationSide`: `LONG_LIQUIDATION` (downside magnet) or `SHORT_LIQUIDATION` (upside magnet).
-* **Liquidation Skew & Magnet Gate**:
+* **Liquidation Skew Ratio & Magnet Gate**:
   * `longLiqTotalUsd`, `shortLiqTotalUsd` within $\pm 4\%$.
   * `liquidationSkewRatio` ($\text{LSR} = \text{Dominant} / \text{Subordinate}$).
-  * `magnetGateStatus`: If $\text{LSR} \ge 2.5:1$, passive front-running is prohibited; execution must await cluster sweep.
+  * `magnetGateStatus`: If $\text{LSR} \ge 2.5:1$, passive front-running is prohibited; execution must await cluster sweep and reclaim wick (S1).
 
 ### 4.5 Tab 5: Book Walls (`Book Walls` — `/api/cg/bookwalls?sym=`)
+* **Venue Mode Toggle**: `Futures Aggregated` vs `Spot Aggregated`.
+* **Timeframe Resolutions**: `1m`, `5m`, `15m`, `1h`, `4h` depth history.
+* **Depth Bands**: `±0.5%`, `±1%`, `±2%`, `±5%` around mid price.
 * **Order Book Depth & Imbalance**:
-  * Band intervals ($\pm 0.5\%$, $\pm 1.0\%$, $\pm 2.0\%$, $\pm 5.0\%$).
   * `bidDepthUsd`, `askDepthUsd`.
   * `depthImbalanceRatio`: `(bidDepth - askDepth) / (bidDepth + askDepth)`.
   * `imbalanceDelta5m`: Net shift in imbalance compared to 5 minutes ago.
-* **Dynamic Wall Scanner**: Confirmed wall list, `wallAddEvents`, `wallPullEvents` (spoofing detection), `wallFillEvents`.
+* **Dynamic Wall Scanner & Lifecycle**:
+  * `wallAddEvents`: Institutional liquidity added.
+  * `wallPullEvents`: Liquidity pulled (spoofing detection / air pockets).
+  * `wallFillEvents`: Taker orders consuming wall.
+  * Confirmed wall list with `wallAge` and `touched` state.
 
 ### 4.6 Tab 6: Cumulative Volume Delta (`CVD` — `/api/cg/cvd?sym=`)
-* `perpCvd`: Cumulative Taker Delta for perpetual futures contracts.
-* `spotCvd`: Cumulative Taker Delta for physical spot markets (Binance, Coinbase).
-* `takerBuySharePercent`: Percentage of total volume driven by aggressive buyers.
-* **Structural Divergence**:
-  * `BULLISH_ABSORPTION`: Spot CVD rising while Perp CVD and Price are falling or flat.
-  * `BEARISH_EXHAUSTION`: Perp CVD aggressively surging into new highs while Spot CVD fails to confirm.
-  * `LEVERAGE_DRIVEN`: Rapid price expansion accompanied exclusively by Perp CVD spike and OI surge (fragile).
+* **Timeframe Resolutions**: `1m`, `5m`, `15m`, `30m`, `1h`, `4h`, `1d`.
+* **Modes**: `Combined CVD`, `Futures CVD`, `Spot CVD`.
+* **Anchor Options**: `Session`, `Day`, `Week`, `All`.
+* **Taker Buy Share & Delta Momentum**:
+  * `takerBuySharePercent`: Percentage of total volume driven by aggressive buyers.
+  * Net taker delta per bar and cumulative delta trajectory.
+* **Structural Divergence Diagnostics**:
+  * `BULLISH_ABSORPTION`: Spot CVD rising while Perp CVD and Price are falling or flat (Smart Money Accumulation).
+  * `BEARISH_EXHAUSTION`: Perp CVD aggressively surging into new highs while Spot CVD fails to confirm (Degenerate Perpetual Leverage Chasing $\to$ Fragile Long Trap).
+  * `LEVERAGE_DRIVEN`: Rapid price expansion accompanied exclusively by Perp CVD spike and OI surge (Vulnerable to sudden flash liquidation).
+  * `DELTA_DIVERGENCE`: Price printing higher highs while CVD prints lower highs (Bearish Exhaustion), or price printing lower lows while CVD prints higher lows (Bullish Absorption).
 
 ### 4.7 Tab 7: Strategy Narrative (`Narrative` — `/api/cg/narrative?sym=`)
 * **Primary Strategy Selector**:
@@ -223,6 +263,51 @@ All 9 tabs in the terminal are ingested via local Next.js REST endpoints:
 ### 4.9 Tab 9: Live L2 & Execution Bridge (`Live L2` — `/api/cg/livebook?sym=` & Delta MCP)
 * Top-1000 depth ladder bids and asks, spread in USD and bps, midpoint price.
 * Delta Exchange India execution bridge: `post_only: true` limit order, contract lot size, margin required, bracket stop loss (`mark_price` evaluation), take profit targets.
+
+---
+
+## SECTION 4B. MANDATORY 360° INDIVIDUAL ASSET FORENSIC AUDIT SPECIFICATION (ZERO DATA POINT OMISSION & MULTI-TOGGLE LATTICE)
+
+**CORE AXIOM: ZERO COMPRESSION · ZERO DATA POINT OMISSION · INDIVIDUAL ASSET FORENSICS**.
+Every trade formulation on Delta Exchange India or MT5 must be preceded by an exhaustive, individual audit of that specific asset across ALL 9 terminal tabs. Relying on pre-aggregated screener summaries, single-toggle snapshots, or skipped tabs is strictly prohibited:
+
+### 4B.1 The Multi-Toggle Footprint Audit Protocol
+For any candidate asset, the order-flow analyst must cross-examine the trailing 48-hour footprint across its toggle lattice:
+1. **Time Bar (15m)**: Confirm macro auction rotation, value area acceptance, and candle closure vs VWAP.
+2. **Volume Bar (e.g. 2.0M)**: Inspect order-flow at fixed volume intervals to detect high-density absorption clusters where millions in volume traded with zero price progress.
+3. **Range Bar (e.g. 0.00002)**: Strip out time distortion to reveal exact turning points, delta flips, and diagonal stacked imbalances ($1.5\times - 4\times$).
+4. **View Mode Cross-Examination**: Contrast `Volume` (participation), `Delta` (net aggression), `Trade Count` (breadth), and `Avg Size` (institutional footprint).
+5. **Discrete Signal Verification**: Verify presence of `abs`, `trap`, `sdiv`, `div`, or `exh` at key swing boundaries.
+
+### 4B.2 The Large Orders & Defense Intensity Protocol
+1. **Intensity Mapping**: Analyze the `BUY/SELL WALL BALANCE` and `NET WALL` notional. A ratio of `0:100` with `-$1.3M` net wall flags severe overhead supply; buying directly into it is strictly prohibited.
+2. **Cluster Defense Verification**: Filter orders near price (`Sort near price`) to determine if large orders are physically clustered within $\pm 1\%$ to $\pm 2\%$ of support/resistance to defend it, or if they are sitting $> 100\%$ away as passive dust/spoofing.
+3. **Multi-Exchange Ledger Audit**: Audit resting orders across all 8 venues (Binance, Upbit, Kraken, Bybit, OKX, etc.) to confirm whether defense is broad-based institutional liquidity or isolated exchange noise.
+
+### 4B.3 The Liquidation Levels & Spread Band Audit Protocol
+1. **Multi-Horizon Mapping**: Review `3D`, `7D`, and `30D` cumulative liquidation shelves.
+2. **Spread Band Sweep**: Evaluate liquidation density across all spread windows (`±1%`, `±2%`, `±3%`, `±4%`, `±5%`, `±6%`, `±7%`, `±8%`).
+3. **Magnet Gate Enforcement**: Compute the Liquidation Skew Ratio ($LSR$). If $LSR \ge 2.5:1$, passive front-running of the dominant pool is banned. Wait for the sweep-and-reclaim wick (S1).
+
+### 4B.4 The Book Walls Futures vs. Spot Audit Protocol
+1. **Venue Divergence**: Compare `Futures Aggregated` order book depth against `Spot Aggregated` order book depth across `1m`, `5m`, `15m`, `1h`, and `4h`.
+2. **Depth Bands**: Inspect depth at `±0.5%`, `±1%`, `±2%`, and `±5%`.
+3. **Wall Lifecycle**: Verify whether resting walls are aging ($> 1\text{h}$) and confirmed, or being rapidly pulled (`wallPullEvent`) as price approaches (spoofing).
+
+### 4B.5 The CVD & Delta Trajectory Audit Protocol
+1. **Multi-Timeframe CVD Behavior**: Track CVD progression across `1m`, `5m`, `15m`, `30m`, `1h`, `4h`, and `1d`.
+2. **Anchor Realism**: Evaluate Session-anchored, Day-anchored, and Week-anchored CVD to separate short-term noise from macro accumulation/distribution.
+3. **Spot vs. Perp Divergence**: Confirm whether price expansion is led by organic Spot CVD buying or fragile Perpetual CVD leverage spikes.
+
+### 4B.6 Grade A / A+ Setup Qualification Review
+A setup achieves Grade A ($\ge 7.0$ pts) or Grade A+ ($\ge 7.5$ pts) ONLY when:
+* Table 7 Confluence Score $\ge 7.0$ points with zero failing gates.
+* Expected Payoff Multiple $EV \ge 2.00\text{R}$ (hard floor).
+* Trailing 48h Footprint confirms institutional Absorption (`abs`) or Strong Divergence (`sdiv`).
+* Large Orders confirm strong resting wall defense ($\ge \$250\text{k} - \$5.0\text{M}$ tiered by asset).
+* Liquidation Magnet Gate confirms trade direction or S1 sweep is completed.
+* Spot CVD confirms or leads the move.
+* All 16 Telemetry Dimensions are extracted and logged in full.
 
 ---
 
