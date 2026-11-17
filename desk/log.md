@@ -11506,3 +11506,22 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+
+
+## EXEC · 2026-11-17 10:48 UTC · atg-exec (Delta Exchange India Account #26902927)
+
+**Net Equity**: $2.8271 USD | **Available**: $1.5228 USD | **Position Margin**: $0.5805 USD | **Order Margin**: $0.5210 USD
+
+### Order Pruning & New Execution
+- **BNBUSD SHORT CANCELLED (Order ID `1689098550`)**: Cancelled per P5-08 Pruning Discipline (BNB dropped to $588.64, entering `WAIT_PULLBACK`, losing active A+ confluence, re-debate lost in zai-desk R426). Released $1.18 USD in blocked order margin.
+- **TIAUSD SHORT PLACED (Order ID `1689224145`)**: Size 10 contracts @ limit `$0.3580` (Post-Only Maker), SL `$0.3653` (2.04% stop distance, $0.073 USD dollar risk), TP `$0.3327` (+7.07% drive distance, +$0.253 USD dollar gain, **+3.46R**). Sourced from Round R426 fresh 61-asset audit (Grade A+, 84.8% win probability).
+
+### Active Positions Monitored
+1. **XLMUSD SHORT (50 contracts @ $0.13780)**: Mark `$0.13763` | PnL: **+$0.0070 USD** (Profitable). TP `$0.13030` (+3.26R), SL `$0.14010`.
+2. **WIFUSD SHORT (20 contracts @ $0.13510)**: Mark `$0.13344` | PnL: **+$0.0320 USD** (+0.66R excursion). TP `$0.13150` (+1.44R), SL `$0.13760`. Breakeven ratchet armed at `$0.13260`.
+3. **AMZNBUSD LONG (1 contract @ $257.50)**: Mark `$257.44` | PnL: -$0.0005 USD (Flat breakeven). TP `$265.00`, SL `$255.00`.
+
+### Standing Maker Orders on CLOB
+1. **TIAUSD SHORT (Order ID `1689224145`)**: Sell 10 @ `$0.35800` | SL: `$0.36530` | TP: `$0.33270` (+3.46R).
+2. **DOTUSD SHORT (Order ID `1689037097`)**: Sell 10 @ `$0.73800` | SL: `$0.75250` | TP: `$0.68010` (+2.07R).
+3. **ADAUSD SHORT (Order ID `1688520363`)**: Sell 25 @ `$0.15550` | SL: `$0.15720` | TP: `$0.14990` (+3.29R).
