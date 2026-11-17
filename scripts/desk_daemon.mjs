@@ -305,6 +305,8 @@ async function runMt5(force = false) {
   if (!force && (dst.mt5Errors ?? 0) >= cfg.mt5.max_consecutive_errors)
     return { ok: false, skipped: "mt5 errored too many times — send an MT5_SNAPSHOT inbox instruction to retry" };
   const r = await sh(cfg.mt5.python_cmd, ["scripts/mt5_report.py"], { timeout: 90_000 });
+  // Continuous +1.0R Breakeven Ratchet Guard (isolated strictly to cg_terminal)
+  await sh(cfg.mt5.python_cmd, ["scripts/mt5_cg_trader.py", "--auto-be"], { timeout: 30_000 });
   dst.lastMt5Ts = Date.now();
   const mt = loadJson("desk/mt5.json", {});
   if (r.code !== 0 || mt.error) {

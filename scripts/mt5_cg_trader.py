@@ -317,6 +317,55 @@ def move_sl_to_breakeven(ticket: int):
         "new_sl": entry_price
     }
 
+def auto_ratchet_breakeven(verbose=True):
+    """
+    Scans all open cg_terminal positions.
+    If favorable excursion reaches >= +1.0R (move_pts >= initial_risk_pts),
+    automatically moves SL to price_open (Breakeven).
+    Strict isolation: Only touches comment == 'cg_terminal' positions.
+    """
+    init_mt5()
+    positions = mt5.positions_get() or ()
+    results = []
+    for p in positions:
+        if p.comment == CG_COMMENT or p.magic == MAGIC_NUMBER:
+            risk_pts = abs(p.price_open - p.sl)
+            if risk_pts <= 0:
+                continue
+            is_sell = (p.type == mt5.ORDER_TYPE_SELL)
+            current_move = (p.price_open - p.price_current) if is_sell else (p.price_current - p.price_open)
+            r_multiple = current_move / risk_pts
+            
+            already_be = False
+            if not is_sell and p.sl >= p.price_open:
+                already_be = True
+            elif is_sell and p.sl <= p.price_open and p.sl > 0:
+                already_be = True
+                
+            item = {
+                "ticket": p.ticket,
+                "symbol": p.symbol,
+                "type": "SELL" if is_sell else "BUY",
+                "open": p.price_open,
+                "current": p.price_current,
+                "sl": p.sl,
+                "risk_pts": round(risk_pts, 2),
+                "move_pts": round(current_move, 2),
+                "r_multiple": round(r_multiple, 2),
+                "profit_usd": p.profit,
+                "already_be": already_be
+            }
+            
+            if r_multiple >= 1.00 and not already_be:
+                res = move_sl_to_breakeven(p.ticket)
+                item["action"] = "RATCHETED_TO_BREAKEVEN"
+                item["result"] = res
+            else:
+                item["action"] = "MONITORING" if not already_be else "HOLDING_BREAKEVEN"
+                
+            results.append(item)
+    return results
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Blueberry Funded MT5 CG-Terminal Execution Engine")
     parser.add_argument("--status", action="store_true", help="Print account audit and isolated cg_terminal positions")
@@ -324,6 +373,7 @@ if __name__ == "__main__":
     parser.add_argument("--place", nargs=5, metavar=("SYMBOL", "TYPE", "ENTRY", "SL", "TP"), help="Place order with bracket SL/TP")
     parser.add_argument("--max-risk", type=float, default=MAX_RISK_USD, help="Max dollar risk cap (default $6.00, or user-authorized e.g. 25.00 for min lot)")
     parser.add_argument("--be", type=int, metavar="TICKET", help="Move SL of cg_terminal position to Breakeven")
+    parser.add_argument("--auto-be", action="store_true", help="Auto-ratchet any cg_terminal position with >= +1.0R to Breakeven")
     
     args = parser.parse_args()
     
@@ -341,6 +391,9 @@ if __name__ == "__main__":
             print(json.dumps(res, indent=2))
         elif args.be:
             res = move_sl_to_breakeven(args.be)
+            print(json.dumps(res, indent=2))
+        elif args.auto_be:
+            res = auto_ratchet_breakeven()
             print(json.dumps(res, indent=2))
         else:
             audit = get_account_audit()
