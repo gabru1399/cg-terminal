@@ -627,12 +627,14 @@ ATHENA ORACLE ARCHITECTURE: 6 MYTHOLOGICAL MICROSTRUCTURE GODS (0–100 SCALE)
 
 Per User Directives (2026-11-17), capital protection and asymmetric payoff are enforced through a strict risk budget and trailing runner mechanics:
 
-### 16.1 Dollar Risk Cap $\le 1.0\%$ of Net Liquid Equity
-* **Mathematical Invariant**:
-  $$\text{Dollar Risk} = |P_{\text{entry}} - P_{\text{stop}}| \times \text{Contract Size} \times \text{Multiplier} \le 1.0\% \times \text{Equity}_{\text{NetLiquid}}$$
-* On small equity accounts ($\approx \$2.77 - \$15.00\text{ USD}$), maximum loss per trade is strictly capped at:
-  $$\text{Max Dollar Loss} \le \$0.028\text{ USD}$$
-* This mathematical invariant enforces **Gate 7 (Mechanical Lot Sizing Ban)**: Any contract where minimum tick/lot notional forces risk $> \$0.028$ (e.g., `BTCUSD`, `ETHUSD`, `SOLUSD`, `BNBUSD`, `AVGO`) is **PERMANENTLY BANNED** from trade execution. Only micro-crypto (`SEI`, `ADA`, `ARB`, `DOGE`, `APT`, `TIA`, `VET`, `WIF`) and TradFi fractionals (`AMZNB`, `MSFTB`, `CRCLB`) are eligible.
+### 16.1 Two-Tier Conviction Risk Budget & High-Leverage Architecture (User Directive 2026-11-17)
+Per explicit User Authorization, the desk does not limit itself with blanket bans that forfeit prime opportunities:
+* **Tier 1 (High-Potential A/A+ Opportunities — BTC, SOL, BNB, ETH Unlocked)**:
+  - For pristine setups (Table 7 score $\ge 7.0$, Athena Oracle confirmation $\le 35$ or $\ge 65$, Best $R \ge 2.50\text{R}$), **Tier 1 assets are 100% UNBANNED**.
+  - High isolated leverage ($25\times - 50\times$, or up to venue maximum) is authorized to size 1 minimum contract lot with initial position margin $\le \$1.50\text{ USD}$ ($\le 55\%$ of available equity).
+  - Stop loss must be structurally tight ($\le 0.8\%$ distance beyond sweep wick or Value Area boundary). Dollar risk is calibrated up to $\$0.35 - \$0.65\text{ USD}$, capturing outsized asymmetric payoffs ($+30\%$ to $+60\%$ account gain on a single trade) while moving SL to Breakeven immediately at $+1.0\text{R}$ excursion.
+* **Tier 2 (Standard Grade B Setups)**:
+  - Standard setups utilize micro-crypto contracts (`SEI`, `ADA`, `ARB`, `DOGE`, `APT`, `TIA`, `VET`, `WIF`) and TradFi fractionals (`AMZNB`, `MSFTB`, `CRCLB`) with conservative position margin ($\le \$0.30\text{ USD}$) and dollar risk $\le 1.0\% - 2.5\%$ ($\le \$0.028 - \$0.070\text{ USD}$).
 
 ### 16.2 Hard $\ge 2.00\text{R}$ Payoff Hurdle
 * Minimum Expected R-Multiple is raised from 1.50R to **$\ge 2.00\text{R}$ hard floor** across all setups:
@@ -676,7 +678,7 @@ To guarantee that zero trading opportunities are missed, the desk operates a two
 
 ### 17.2 Terminal Grade A Signals vs Delta Exchange India Execution Gates
 The terminal's Alpha Matrix and Desk Setups Queue continuously generate high-quality structural signals (`XLM`, `OP`, `CRCL`, `SEI`, `DOGE`, `SOL`, `XAU`, `BNB`). However, execution on Delta Exchange India is strictly subordinated to the 11 Socratic Risk Gates:
-1. **Gate 7 (Lot Sizing Ban)**: On $\le \$15$ accounts, `BTC`, `SOL`, `BNB`, and `AVGO` are mechanically banned due to contract minimum lot size risk explosion ($> 15\%$ equity risk vs $1.0\%$ cap).
+1. **Gate 7 (Two-Tier Conviction Protocol)**: Tier 1 assets (`BTC`, `SOL`, `BNB`, `ETH`) are **100% UNBANNED** for Grade A/A+ setups using high isolated leverage ($25\times - 50\times$) with tight structural stops ($\le 0.8\%$), unlocking high-potential opportunities per User Directive 2026-11-17. Grade B setups remain restricted to micro-assets.
 2. **Gate 9 (Sector Heat — Max 1 Active Crypto)**: When `WIFUSD` Short is active, taking additional crypto shorts (`XLM`, `OP`, `DOGE`) is blocked to prevent correlated crypto avalanche (PIT-02).
 3. **Gate 10 (BTC Macro Anchor)**: When BTC trades within 0.75% of daily low or at major support, shorting altcoins is banned to prevent bottom-tick short squeezes.
 4. **4-Voice Committee Arbiter**: Reconciles terminal alpha against account constraints, authorizing execution ONLY when all gates pass.
