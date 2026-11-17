@@ -1976,3 +1976,27 @@ The cascade→exhaustion→reversal transition scored as a **state machine, not 
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-17 09:14 UTC — new suggested order — place in MT5 (debate FOR 5/AGAINST 2)
+- R422-ETH-1 ETH SHORT limit entry 1829.93 · stop 1837.32 · targets 1799.1 · R 4.2 · expires 2026-11-17 13:08 UTC
+- BASIS: levels are PERP prices (perpRef 1814.7). Before placing in MT5 read spreads.ETHUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (1,814.70 vs 1,824.16), h4 RSI 38.1, day -0.3%
+- [AGAINST] footprint: bull 20 / bear 19; recent: Exhaustion/buy[time], Exhaustion/buy[vol], Exhaustion/buy[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:sell×1, exh:buy×4, exh:sell×4, sdiv:sell×2, trap:sell×1 — net 4 buy-side vs 8 sell-side
+- [FOR] liquidation: long-liq magnet 1,799.10 (str 69, ~$244M est, -0.75%) as target
+- [FOR] bookWalls: ±5% depth imbalance -0.019 (5m ago +0.002, falling bids); bid $0.61B vs ask $0.64B
+- [FOR] cvd: taker buy 49.3%, perpCvd -925, spotCvd +0, quadrant spot-bid, latestDiv bear (recent)
+- [AGAINST] notifications: 6h weighted bias +1.0 (3 events)
+- → place on ETHUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-17 09:14 UTC — new suggested order — place in MT5 (debate FOR 6/AGAINST 1)
+- R422-LTC-2 LTC SHORT limit entry 44.64 · stop 44.82 · targets 43.7 / 43.61 · R 5.3 · expires 2026-11-17 13:08 UTC
+- BASIS: levels are PERP prices (perpRef 44.48). Before placing in MT5 read spreads.LTCUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (44.48 vs 44.65), h4 RSI 36.5, day +0.0%
+- [AGAINST] footprint: bull 36 / bear 30; recent: Divergence/buy[time], Absorption/sell[vol], Absorption/sell[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×3, abs:sell×9, div:buy×3, div:sell×4, sdiv:sell×2 — net 6 buy-side vs 15 sell-side
+- [FOR] liquidation: long-liq magnet 43.70 (str 47, ~$2M est, -1.73%) as target
+- [FOR] bookWalls: ±5% depth imbalance +0.036 (5m ago +0.043, falling bids); bid $0.01B vs ask $0.01B
+- [FOR] cvd: taker buy 48.1%, perpCvd -16, spotCvd +0, quadrant spot-bid, latestDiv bear (recent)
+- [FOR] notifications: 6h weighted bias -1.0 (3 events)
+- → place on LTCUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
