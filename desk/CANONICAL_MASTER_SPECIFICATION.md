@@ -75,12 +75,13 @@ On EVERY wake-up, autonomous recursion round, or trading response, the execution
     - First Principles, Pre-Mortem Analysis, Probabilistic Reasoning (EV hurdle >= 2.0R), Second-Order Effects, Red Team / Steel-Manning, Margin of Safety, Via Negativa, Map vs Territory, Theory of Constraints, Lindy Effect.
 [x] 4-Voice Quantitative Desk Debate executed (Alpha Strategist Hunter, Adversarial Risk Officer Red Team, Microstructure Quant Empiricist, Committee Arbiter Synthesizer).
 [x] Karpathy Guidelines & Ponytail Minimal Code Protocol strictly upheld (Think Before Acting, Simplicity First, Surgical Execution, Goal-Driven Empirical Verification).
-[x] Fresh individual analysis of each of the 234 Expanded Universe Assets executed from scratch (Zero cached echoes; endpoint-by-endpoint audit).
+[x] Fresh individual analysis of each of the 234 Expanded Universe Assets executed from scratch (Zero cached echoes; endpoint-by-endpoint audit across all 9 tabs: 48h Footprint, Large Orders intensity, 3D/7D/30D Liq levels, Book Walls, CVD).
 [x] Payoff & Confluence Hurdle enforced (Table 7 Score >= 5.0 pts, Expected Payoff >= 2.00R hard floor).
 [x] Live Delta Exchange India CLOB & Margin Solvency audited (Account #26902927; Net Liquid Equity, Position Margin, Order Margin, Free Cash Buffer).
+[x] Blueberry Funded MT5 Terminal & Shared Account Isolation audited (Login #5126976; Equity $2,499.96, $5-$6 Risk Cap, comment='cg_terminal' invariant).
 [x] Gate 7 Two-Tier Conviction Protocol & Gate 9 Dynamic Multi-Slot Expansion armed (Tier 1 BTC/ETH/BNB unlocked for Grade A/A+ with high isolated leverage & tight stops; Grade B micro-assets/TradFi fractionals; SOL reserved until equity >= $5.00).
 [x] Operational Invariants armed (Gate 10 BTC Macro Filter, +1.0R Breakeven Invariant, 8-Bar Time Stop, Post-Only Maker Execution, Mark-Price Brackets, Shared Account Isolation).
-[x] Section 19 Pitfalls Ledger enforced (PIT-01 L2 Deep-Edge Filter, PIT-03 Beta Buffer, PIT-04 Mechanical SOL Ban, PIT-09 Auto-Breakeven).
+[x] Section 19 Pitfalls Ledger enforced (PIT-01 L2 Deep-Edge Filter, PIT-03 Beta Buffer, PIT-04 Mechanical SOL Ban, PIT-09 Auto-Breakeven, PIT-14 MT5 Comment Isolation, PIT-15 Tab Omission).
 [x] Single Dynamic 1200s Timer verified (Zero duplicate timers, zero cron overlap).
 ```
 
