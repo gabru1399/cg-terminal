@@ -122,11 +122,11 @@ def get_account_audit():
     }
     return audit
 
-def calculate_lot_size(symbol: str, entry_price: float, sl_price: float, target_risk_usd: float = TARGET_RISK_USD):
+def calculate_lot_size(symbol: str, entry_price: float, sl_price: float, target_risk_usd: float = TARGET_RISK_USD, max_risk_cap_usd: float = MAX_RISK_USD, allow_min_lot: bool = False):
     """
     Computes exact lot size for an order such that:
-    actual_risk_usd <= MAX_RISK_USD ($6.00)
-    target_risk_usd is typically $5.00 - $5.50
+    actual_risk_usd <= max_risk_cap_usd
+    target_risk_usd is typically $5.00 - $5.50 (default) or higher if user authorized.
     """
     init_mt5()
     
@@ -149,13 +149,8 @@ def calculate_lot_size(symbol: str, entry_price: float, sl_price: float, target_
     vol_max = info.volume_max
     vol_step = info.volume_step
     
-    # Value of 1 lot moving stop_distance
-    # In MT5: 1 point move value = tick_value / tick_size * point
-    # For USD-quoted assets (BTCUSD, XAUUSD, EURUSD), risk per 1.0 lot for stop_distance:
-    # risk_per_lot = (stop_distance / tick_size) * tick_value
     risk_per_lot = (stop_distance / tick_size) * tick_value
     if risk_per_lot <= 0:
-        # Fallback to contract_size * stop_distance
         risk_per_lot = contract_size * stop_distance
 
     raw_lots = target_risk_usd / risk_per_lot
@@ -164,26 +159,26 @@ def calculate_lot_size(symbol: str, entry_price: float, sl_price: float, target_
     steps = round(raw_lots / vol_step)
     calc_lots = round(steps * vol_step, 2)
     
-    # If calc_lots < vol_min, check if min lot risk exceeds max allowed risk ($6.00)
+    # If calc_lots < vol_min, check if min lot risk exceeds max allowed risk
     if calc_lots < vol_min:
         min_lot_risk = vol_min * risk_per_lot
-        if min_lot_risk > MAX_RISK_USD:
+        if min_lot_risk > max_risk_cap_usd:
             raise ValueError(
                 f"Stop distance too wide for min lot ({vol_min}): "
-                f"risk would be ${min_lot_risk:.2f} USD, exceeding ${MAX_RISK_USD:.2f} max risk limit! Trade Vetoed."
+                f"risk would be ${min_lot_risk:.2f} USD, exceeding ${max_risk_cap_usd:.2f} max risk limit! Trade Vetoed."
             )
         calc_lots = vol_min
 
     # Verify risk with calc_lots
     actual_risk = calc_lots * risk_per_lot
     
-    # If risk exceeds MAX_RISK_USD, step down if possible
-    if actual_risk > MAX_RISK_USD:
+    # If risk exceeds max_risk_cap_usd, step down if possible
+    if actual_risk > max_risk_cap_usd:
         calc_lots = round(calc_lots - vol_step, 2)
         actual_risk = calc_lots * risk_per_lot
-        if calc_lots < vol_min or actual_risk > MAX_RISK_USD:
+        if calc_lots < vol_min or actual_risk > max_risk_cap_usd:
             raise ValueError(
-                f"Unable to size within ${MAX_RISK_USD:.2f} risk cap. "
+                f"Unable to size within ${max_risk_cap_usd:.2f} risk cap. "
                 f"Lot: {calc_lots}, Risk: ${actual_risk:.2f} USD. Trade Vetoed."
             )
             
@@ -200,11 +195,11 @@ def calculate_lot_size(symbol: str, entry_price: float, sl_price: float, target_
         "vol_step": vol_step,
         "calculated_lots": calc_lots,
         "actual_risk_usd": round(actual_risk, 2),
-        "max_risk_cap_usd": MAX_RISK_USD,
-        "is_valid": actual_risk <= MAX_RISK_USD and actual_risk >= MIN_RISK_USD * 0.8
+        "max_risk_cap_usd": max_risk_cap_usd,
+        "is_valid": actual_risk <= max_risk_cap_usd
     }
 
-def place_order(symbol: str, order_type_str: str, entry_price: float, sl_price: float, tp_price: float, lots: float = None):
+def place_order(symbol: str, order_type_str: str, entry_price: float, sl_price: float, tp_price: float, lots: float = None, max_risk_cap_usd: float = MAX_RISK_USD):
     """
     Submits a pending limit order or market order to MT5.
     order_type_str: 'BUY_LIMIT', 'SELL_LIMIT', 'BUY', 'SELL'
@@ -220,13 +215,13 @@ def place_order(symbol: str, order_type_str: str, entry_price: float, sl_price: 
         raise ValueError(f"Symbol {symbol} info not found")
         
     # Sizing check
-    sizing = calculate_lot_size(symbol, entry_price, sl_price)
+    sizing = calculate_lot_size(symbol, entry_price, sl_price, max_risk_cap_usd=max_risk_cap_usd)
     final_lots = lots if lots is not None else sizing["calculated_lots"]
     
     # Enforce maximum risk cap
-    risk_test = calculate_lot_size(symbol, entry_price, sl_price, target_risk_usd=TARGET_RISK_USD)
-    if final_lots * (abs(entry_price - sl_price) / info.trade_tick_size * info.trade_tick_value) > MAX_RISK_USD + 0.10:
-        raise ValueError(f"Lot size {final_lots} violates $6.00 risk cap on {symbol}!")
+    risk_test = final_lots * (abs(entry_price - sl_price) / info.trade_tick_size * info.trade_tick_value)
+    if risk_test > max_risk_cap_usd + 0.50:
+        raise ValueError(f"Lot size {final_lots} violates ${max_risk_cap_usd:.2f} risk cap on {symbol}! (Calculated: ${risk_test:.2f})")
 
     type_map = {
         "BUY_LIMIT": mt5.ORDER_TYPE_BUY_LIMIT,
@@ -325,8 +320,9 @@ def move_sl_to_breakeven(ticket: int):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Blueberry Funded MT5 CG-Terminal Execution Engine")
     parser.add_argument("--status", action="store_true", help="Print account audit and isolated cg_terminal positions")
-    parser.add_argument("--calc-risk", nargs=3, metavar=("SYMBOL", "ENTRY", "SL"), help="Calculate exact lot size for $5-$6 risk")
+    parser.add_argument("--calc-risk", nargs=3, metavar=("SYMBOL", "ENTRY", "SL"), help="Calculate exact lot size")
     parser.add_argument("--place", nargs=5, metavar=("SYMBOL", "TYPE", "ENTRY", "SL", "TP"), help="Place order with bracket SL/TP")
+    parser.add_argument("--max-risk", type=float, default=MAX_RISK_USD, help="Max dollar risk cap (default $6.00, or user-authorized e.g. 25.00 for min lot)")
     parser.add_argument("--be", type=int, metavar="TICKET", help="Move SL of cg_terminal position to Breakeven")
     
     args = parser.parse_args()
@@ -337,11 +333,11 @@ if __name__ == "__main__":
             print(json.dumps(audit, indent=2))
         elif args.calc_risk:
             sym, entry, sl = args.calc_risk[0], float(args.calc_risk[1]), float(args.calc_risk[2])
-            res = calculate_lot_size(sym, entry, sl)
+            res = calculate_lot_size(sym, entry, sl, max_risk_cap_usd=args.max_risk)
             print(json.dumps(res, indent=2))
         elif args.place:
             sym, o_type, entry, sl, tp = args.place[0], args.place[1], float(args.place[2]), float(args.place[3]), float(args.place[4])
-            res = place_order(sym, o_type, entry, sl, tp)
+            res = place_order(sym, o_type, entry, sl, tp, max_risk_cap_usd=args.max_risk)
             print(json.dumps(res, indent=2))
         elif args.be:
             res = move_sl_to_breakeven(args.be)
