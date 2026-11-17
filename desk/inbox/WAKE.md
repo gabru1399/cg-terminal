@@ -2070,3 +2070,14 @@ The cascade→exhaustion→reversal transition scored as a **state machine, not 
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-17 10:04 UTC — new suggested order — place in MT5 (debate FOR 4/AGAINST 2)
+- R425-ETH-1 ETH SHORT limit entry 1830.47 · stop 1838.75 · targets 1813.68 / 1799.1 / 1783.3 · R 2 · expires 2026-11-17 14:03 UTC
+- BASIS: levels are PERP prices (perpRef 1809.01). Before placing in MT5 read spreads.ETHUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (1,809.01 vs 1,822.18), h4 RSI 37.2, day -0.6%
+- [AGAINST] footprint: bull 22 / bear 14; recent: Exhaustion/buy[time], Exhaustion/buy[vol], Exhaustion/buy[range]
+- [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×1, div:buy×1, exh:buy×5, exh:sell×1, trap:buy×1, trap:sell×2 — net 8 buy-side vs 3 sell-side
+- [FOR] liquidation: long-liq magnet 1,799.10 (str 78, ~$244M est, -0.50%) as target
+- [FOR] bookWalls: ±5% depth imbalance -0.041 (5m ago -0.022, falling bids); bid $0.57B vs ask $0.62B
+- [FOR] cvd: taker buy 49.3%, perpCvd -1107, spotCvd -374, quadrant both-selling, latestDiv bear (recent)
+- → place on ETHUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
