@@ -11942,3 +11942,37 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R444 · 2026-11-17 15:28 UTC · zai-desk
+
+**Market**: BTC 65,002.6 (+0.2%)  ETH 1,808.14 (-0.6%)  SOL 73.47 (+2.7%)  XAU 3,875.32 (+0.2%)  XAG 47.810 (+1.1%)
+**Bias (|score|≥2)**: AVAX-3(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R438-AVAX-2 re-debated: FOR 5/AGAINST 0 — stands
+- R441-DOGE-1 re-debated: FOR 4/AGAINST 1 — stands
+- R442-ETH-1 WITHDRAWN (re-debate lost: FOR 3/AGAINST 3)
+- R443-XAU-1 re-debated: FOR 4/AGAINST 2 — stands
+
+### Positions
+- no open positions
+
+## R444 · 2026-11-17 15:29 UTC · zai-desk
+
+**Market**: BTC 65,002.6 (+0.2%)  ETH 1,808.14 (-0.6%)  SOL 73.47 (+2.7%)  XAU 3,875.32 (+0.2%)  XAG 47.810 (+1.1%)
+**Bias (|score|≥2)**: AVAX-3(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R438-AVAX-2 re-debated: FOR 5/AGAINST 0 — stands
+- R441-DOGE-1 re-debated: FOR 4/AGAINST 1 — stands
+- R442-ETH-1 WITHDRAWN (re-debate lost: FOR 3/AGAINST 3)
+- R443-XAU-1 re-debated: FOR 4/AGAINST 2 — stands
+
+### Positions
+- no open positions
+
