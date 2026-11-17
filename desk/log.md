@@ -12140,3 +12140,18 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R455 · 2026-11-17 18:13 UTC · zai-desk
+
+**Market**: XAU 3,866.86 (-0.0%)  XAG 47.510 (+0.5%)
+**Bias (|score|≥2)**: ADA-6(TREND)  XAU-3(TREND)  LTC-2(TREND)  XAG-3(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R443-XAU-1 re-debated: FOR 3/AGAINST 1 — stands
+- R446-ADA-1 re-debated: FOR 6/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
