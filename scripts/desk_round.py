@@ -321,7 +321,7 @@ def build_debate(sym, side, rec, deep, regime=None):
     rsi = (rec.get("rsi") or {}).get("h4")
     ev = (f"h4 {'↑' if h4_up else '↓'}/d1 {'↑' if d1_up else '↓'} EMA, price {'above' if above_v else 'below'} day VWAP "
           f"({fmt(sym, price)} vs {fmt(sym, vw.get('vwap'))}), h4 RSI {rsi and round(rsi, 1)}, day {(rec.get('chgDayPct') or 0):+.1f}%")
-    d.append({"source": "overview", "verdict": "FOR" if align >= 2 else ("AGAINST" if align <= 1 and (1 - align) >= 2 else "NEUTRAL"), "evidence": ev})
+    d.append({"source": "overview", "verdict": "FOR" if align >= 2 else ("AGAINST" if align == 0 else "NEUTRAL"), "evidence": ev})
     # 2. footprint signals
     c = rec.get("signals") or {}
     sig_sign = (c.get("bullish", 0) - c.get("bearish", 0)) * sgn
@@ -341,13 +341,16 @@ def build_debate(sym, side, rec, deep, regime=None):
     # 3. large orders (whale walls)
     walls = deep.get("walls") or []
     near = [w for w in walls if abs(w["price"] - (price or 0)) / (price or 1) <= 0.02]
-    opp_near = [w for w in near if (w["side"] == "ask") != long]
-    sup_near = [w for w in near if (w["side"] == "bid") == long]
+    if long:
+        opp_near = [w for w in near if w["side"] == "ask"]
+        sup_near = [w for w in near if w["side"] == "bid"]
+    else:
+        opp_near = [w for w in near if w["side"] == "bid"]
+        sup_near = [w for w in near if w["side"] == "ask"]
     if opp_near:
         w = opp_near[0]
         d.append({"source": "largeOrders", "verdict": "AGAINST",
-                  "evidence": f"{w['side']} wall ${w['usd'] / 1e6:.1f}M @ {fmt(sym, w['price'])} within 2% — opposing resting size" if False else
-                  f"{w['side']} wall ${w['usd'] / 1e6:.1f}M @ {fmt(sym, w['price'])} within 2% opposes"})
+                  "evidence": f"{w['side']} wall ${w['usd'] / 1e6:.1f}M @ {fmt(sym, w['price'])} within 2% opposes"})
     elif sup_near:
         w = sup_near[0]
         d.append({"source": "largeOrders", "verdict": "FOR",
@@ -385,8 +388,9 @@ def build_debate(sym, side, rec, deep, regime=None):
     bw = deep.get("bw") or {}
     imb = bw.get("imbalance")
     if imb is not None:
-        imb_long_fav = imb > IMB_FOR
-        imb_short_fav = imb < IMB_AGAINST
+        bid_share = (imb + 1.0) / 2.0
+        imb_long_fav = bid_share > IMB_FOR
+        imb_short_fav = bid_share < IMB_AGAINST
         v = "FOR" if (imb_long_fav if long else imb_short_fav) else ("AGAINST" if (imb_short_fav if long else imb_long_fav) else "NEUTRAL")
         delta = (imb - (bw.get("imbalance5mAgo") or imb))
         d.append({"source": "bookWalls", "verdict": v,

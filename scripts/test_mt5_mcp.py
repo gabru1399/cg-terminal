@@ -1,8 +1,13 @@
+import os
 import urllib.request
 import json
 
-url = "http://127.0.0.1:22346/mcp"
-api_key = "0faf260abfe80437bfc3343cbc3592d812b2f8dcee17184bd4d8b9c15fd8fb41f9992408fb24346771754149f26b4b9164048d7147708dc03135a1a9c33c8dd337d7fee2c9f26ea14347abb32ba4084eff9f3d21"
+url = os.environ.get("MT5_MCP_URL", "http://127.0.0.1:22346/mcp")
+api_key = os.environ.get("MT5_MCP_API_KEY", "")
+
+if not api_key:
+    print("MT5_MCP_API_KEY environment variable not set. Exiting safely.")
+    exit(0)
 
 headers = {
     "Authorization": f"Bearer {api_key}",

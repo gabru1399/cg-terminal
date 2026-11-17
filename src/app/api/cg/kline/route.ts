@@ -19,17 +19,21 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ ok: false, error: `invalid symbol ${symbol}` }, { status: 400 });
   }
   try {
-    let rows = (await cgGet(
-      `/api/v2/kline?symbol=${encodeURIComponent(`${symbol}#${type}`)}&interval=${interval}&minLimit=false&limit=${limit}`,
-      15_000
-    ).catch(() => null)) as KlineRow[] | OiKlineRow[] | null;
+    let rows: KlineRow[] | OiKlineRow[] | null = null;
 
-    if ((!Array.isArray(rows) || !rows.length) && type === "kline" && symbol.startsWith("Binance_")) {
+    if (type === "kline" && symbol.startsWith("Binance_")) {
       const rawBase = symbol.replace(/^Binance_/, "").replace(/USDT$/, "");
       const bin = await fetchBinCandles(rawBase, interval, limit).catch(() => []);
       if (bin.length) {
         rows = bin.map((b) => [Math.floor(b.t / 1000), b.o, b.h, b.l, b.c, b.v] as unknown as KlineRow);
       }
+    }
+
+    if (!rows || !rows.length) {
+      rows = (await cgGet(
+        `/api/v2/kline?symbol=${encodeURIComponent(`${symbol}#${type}`)}&interval=${interval}&minLimit=false&limit=${limit}`,
+        15_000
+      ).catch(() => null)) as KlineRow[] | OiKlineRow[] | null;
     }
 
     if (!Array.isArray(rows)) {

@@ -3,9 +3,12 @@ import { cgGet, FAPI } from "@/lib/cg/client";
 import { anyTerminalSym, knownSym } from "@/lib/cg/sym-gate";
 import { hlCoinOf, resolveCgSym } from "@/lib/binance/aliases";
 import { fetchHlCtxAndBook, fetchHlRecentTrades } from "@/lib/cg/fallbacks";
+import { BoundedMap } from "@/lib/cg/bounded";
 import type { LtoGroup, LtoSupport } from "@/lib/cg/types";
 
 export const dynamic = "force-dynamic";
+
+const cache = new BoundedMap<{ at: number; body: unknown }>(32);
 
 export async function GET(req: NextRequest) {
   const sp = req.nextUrl.searchParams;
@@ -14,6 +17,13 @@ export async function GET(req: NextRequest) {
   if (!(await anyTerminalSym(symbol))) {
     return NextResponse.json({ ok: false, error: `unknown asset ${symbol}` }, { status: 400 });
   }
+
+  const cacheKey = `${symbol}|${minVolUsd}`;
+  const hit = cache.get(cacheKey);
+  if (hit && Date.now() - hit.at < 60_000) {
+    return NextResponse.json(hit.body);
+  }
+
   const cgSym = resolveCgSym(symbol);
   const hasPerp = await knownSym(symbol);
 
@@ -118,7 +128,7 @@ export async function GET(req: NextRequest) {
       }
     }
 
-    return NextResponse.json({
+    const body = {
       ok: true,
       supported: hasPerp || !!hlFallback,
       symbol,
@@ -128,7 +138,9 @@ export async function GET(req: NextRequest) {
       groups,
       hlFallback,
       updatedAt: Date.now(),
-    });
+    };
+    cache.set(cacheKey, { at: Date.now(), body });
+    return NextResponse.json(body);
   } catch (e) {
     return NextResponse.json(
       { ok: false, error: e instanceof Error ? e.message : "fetch failed" },

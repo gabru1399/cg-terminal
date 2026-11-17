@@ -129,13 +129,21 @@ function clusterOf(sym: string): string {
 // h1 return series cache (Binance perps — free fapi)
 // ---------------------------------------------------------------------------
 
-const gRet = globalThis as unknown as { __cgRiskRets?: { at: number; map: Map<string, number[]> } };
+interface CachedRets {
+  at: number;
+  rets: number[];
+}
+const gRet = globalThis as unknown as { __cgRiskRets?: Map<string, CachedRets> };
 const RET_TTL = 5 * 60_000;
 
 async function returnsMap(syms: string[]): Promise<Map<string, number[]>> {
-  const g = (gRet.__cgRiskRets ??= { at: 0, map: new Map() });
-  const need = syms.filter((s) => !g.map.has(s));
-  if (need.length && Date.now() - g.at > RET_TTL) {
+  const map = (gRet.__cgRiskRets ??= new Map());
+  const now = Date.now();
+  const need = syms.filter((s) => {
+    const entry = map.get(s);
+    return !entry || now - entry.at > RET_TTL;
+  });
+  if (need.length) {
     await Promise.allSettled(
       need.map(async (s) => {
         try {
@@ -144,15 +152,18 @@ async function returnsMap(syms: string[]): Promise<Map<string, number[]>> {
           for (let i = 1; i < candles.length; i++) {
             if (candles[i - 1].c > 0 && candles[i].c > 0) rets.push(Math.log(candles[i].c / candles[i - 1].c));
           }
-          if (rets.length >= 24) g.map.set(s, rets);
+          if (rets.length >= 24) map.set(s, { at: now, rets });
         } catch {
           /* correlation for this sym stays null (honest) */
         }
       })
     );
-    g.at = Date.now();
   }
-  return g.map;
+  const result = new Map<string, number[]>();
+  for (const [k, v] of map.entries()) {
+    result.set(k, v.rets);
+  }
+  return result;
 }
 
 function corrOf(a: number[] | undefined, b: number[] | undefined, windowBars: number): number | null {
@@ -175,17 +186,20 @@ function corrOf(a: number[] | undefined, b: number[] | undefined, windowBars: nu
 }
 
 function betaOf(a: number[] | undefined, b: number[] | undefined, windowBars: number): number | null {
-  const c = corrOf(a, b, windowBars);
-  if (c == null || !a || !b) return null;
+  if (!a || !b) return null;
   const n = Math.min(a.length, b.length, windowBars);
+  if (n < 24) return null;
   const ra = a.slice(a.length - n);
   const rb = b.slice(b.length - n);
+  const ma = ra.reduce((s, x) => s + x, 0) / n;
   const mb = rb.reduce((s, x) => s + x, 0) / n;
+  let cov = 0;
   let vb = 0;
-  for (let i = 0; i < n; i++) vb += (rb[i] - mb) ** 2;
-  const sdA = Math.sqrt(ra.reduce((s, x) => s + x * x, 0) / n);
-  const sdB = Math.sqrt(vb / n);
-  return sdB > 0 ? Number((c * (sdA / sdB)).toFixed(3)) : null;
+  for (let i = 0; i < n; i++) {
+    cov += (ra[i] - ma) * (rb[i] - mb);
+    vb += (rb[i] - mb) ** 2;
+  }
+  return vb > 0 ? Number((cov / vb).toFixed(3)) : null;
 }
 
 // ---------------------------------------------------------------------------
@@ -254,16 +268,18 @@ async function gatherPositions(): Promise<{ positions: RiskPosition[]; equityUsd
     for (const o of st?.orders ?? []) {
       if (!o.sym || !["suggested", "placed", "open", "active"].includes(o.status ?? "")) continue;
       const stop = o.stop && o.stop > 0 ? o.stop : null;
+      const notionalUsd = o.entry && o.qty ? o.entry * o.qty : null;
+      const riskUsd = o.entry && stop && o.qty ? Math.abs(o.entry - stop) * o.qty : null;
       out.push({
         sym: o.sym.toUpperCase(),
         source: "desk-order",
         side: (o.side ?? "long").toLowerCase().includes("short") ? "short" : "long",
         qty: o.qty ?? null,
         entry: o.entry ?? null,
-        notionalUsd: null,
+        notionalUsd,
         stop,
         stopDistPct: stop != null && o.entry ? Number(((Math.abs(o.entry - stop) / o.entry) * 100).toFixed(2)) : null,
-        riskUsd: null,
+        riskUsd,
         mark: null,
         note: `desk ${o.status}`,
       });
@@ -391,7 +407,7 @@ export async function buildPortfolioRisk(): Promise<PortfolioRiskView> {
       for (const [sym, w] of weights) {
         const r = rets.get(sym);
         if (!r) continue;
-        const share = Math.abs(w) / wTotal;
+        const share = w / wTotal;
         const b7s = betaOf(r, ref, 168);
         const b24s = betaOf(r, ref, 24);
         if (b7s != null) {
@@ -467,7 +483,8 @@ export async function buildPortfolioRisk(): Promise<PortfolioRiskView> {
   }
   // new-setup correlation guard: virtual-book ARMED tickets + desk suggested
   // orders vs the current max-risk open position
-  const maxRisk = positions.filter((p) => p.riskUsd != null).sort((a, b) => (b.riskUsd as number) - (a.riskUsd as number))[0];
+  const maxRisk = positions.filter((p) => (p.riskUsd != null && p.riskUsd > 0) || (p.notionalUsd != null && p.notionalUsd > 0))
+    .sort((a, b) => ((b.riskUsd ?? b.notionalUsd ?? 0) as number) - ((a.riskUsd ?? a.notionalUsd ?? 0) as number))[0] ?? positions[0];
   if (maxRisk) {
     const candidates = positions.filter((p) => p.source === "virtual-book" || p.source === "desk-order");
     for (const c of candidates) {

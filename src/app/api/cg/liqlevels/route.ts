@@ -26,7 +26,7 @@ export async function GET(req: NextRequest) {
 
   const cacheKey = `${sym}|${range}|${lvR}|${limit}`;
   const hit = cache.get(cacheKey);
-  if (hit && Date.now() - hit.at < 25_000) {
+  if (hit && Date.now() - hit.at < 60_000) {
     return NextResponse.json(hit.body);
   }
   try {

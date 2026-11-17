@@ -83,9 +83,16 @@ def audit_single_asset(sym):
             price = market.get('price', {}).get('last', price)
             vwap = market.get('vwap', {}).get('vwap')
         signals = fetch_json(f"{base}/signals?sym={sym}", timeout=3.0)
-        sig_list = signals.get('signals', []) if signals else []
+        sig_list = []
+        if signals and signals.get('sets'):
+            for s_set in signals['sets']:
+                for s in s_set.get('sigs', []):
+                    sig_list.append(s)
+        sig_list.sort(key=lambda x: x.get('ts', 0), reverse=True)
         if sig_list:
-            top_sig = f"{sig_list[0].get('type')} ({sig_list[0].get('side')})"
+            top = sig_list[0]
+            sig_name = {"abs": "Absorption", "trap": "Trap", "sdiv": "Strong Div", "div": "Divergence", "exh": "Exhaustion"}.get(top.get('t'), top.get('t', 'Signal'))
+            top_sig = f"{sig_name} ({top.get('side')})"
     
     return {
         "sym": sym,
@@ -111,7 +118,7 @@ def main():
     t0 = time.time()
     print(f"Beginning fresh, individual, endpoint-by-endpoint audit of all {len(EXPANDED_UNIVERSE)} Expanded Universe Assets...", flush=True)
     results = {}
-    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
         future_to_sym = {executor.submit(audit_single_asset, sym): sym for sym in EXPANDED_UNIVERSE}
         for future in concurrent.futures.as_completed(future_to_sym):
             res = future.result()

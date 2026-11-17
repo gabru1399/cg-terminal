@@ -137,7 +137,7 @@ async function rawGet(url: string, cacheTs: string): Promise<{ status: number; h
   const res = await fetch(url, {
     headers: cgHeaders(cacheTs),
     cache: "no-store",
-    signal: AbortSignal.timeout(25_000),
+    signal: AbortSignal.timeout(8_000),
   });
   const headers: Record<string, string> = {};
   res.headers.forEach((v, k) => {

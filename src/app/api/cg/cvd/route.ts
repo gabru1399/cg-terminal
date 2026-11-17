@@ -166,10 +166,15 @@ async function buildCvd(reqSym: string, itvKey: string, limit: number): Promise<
   }
 
   try {
-    const kl = (await cgGet(
-      `/api/v2/kline?symbol=${encodeURIComponent(priceKey + "#kline")}&interval=${itv.api}&limit=${limit}&minLimit=false`,
-      60_000
-    )) as { data?: KlineRow[] } | KlineRow[];
+    const fetchWithTimeout = <T>(p: Promise<T>, ms = 4000): Promise<T> =>
+      Promise.race([p, new Promise<never>((_, rej) => setTimeout(() => rej(new Error("cvd timeout")), ms))]);
+
+    const kl = (await fetchWithTimeout(
+      cgGet(
+        `/api/v2/kline?symbol=${encodeURIComponent(priceKey + "#kline")}&interval=${itv.api}&limit=${limit}&minLimit=false`,
+        60_000
+      ) as Promise<{ data?: KlineRow[] } | KlineRow[]>
+    ));
     const klRows = Array.isArray(kl) ? kl : (kl.data ?? []);
     const candles = klRows.filter((r) => r && Number.isFinite(+r[4]));
     if (candles.length) {
@@ -177,11 +182,14 @@ async function buildCvd(reqSym: string, itvKey: string, limit: number): Promise<
       grid.setCandles(candles as unknown as [number, string | number, string | number, string | number, string | number][]);
       const loaded: { key: string; ok: boolean }[] = [];
       const flows = await mapLimit(inst, 4, async (v: CvdInstrument) => {
-        const r = (await cgGet(
-          `/api/v2/kline?symbol=${encodeURIComponent(v.key + "#bs_usd")}&interval=${itv.api}&limit=${limit}&minLimit=false`,
-          60_000
-        )) as { data?: [number, string | number, string | number][] } | [number, string | number, string | number][];
-        return (Array.isArray(r) ? r : (r.data ?? [])) as [number, string | number, string | number][];
+        const r = await fetchWithTimeout(
+          cgGet(
+            `/api/v2/kline?symbol=${encodeURIComponent(v.key + "#bs_usd")}&interval=${itv.api}&limit=${limit}&minLimit=false`,
+            60_000
+          ) as Promise<{ data?: [number, string | number, string | number][] } | [number, string | number, string | number][]>,
+          3000
+        ).catch(() => []);
+        return (Array.isArray(r) ? r : ((r as { data?: unknown })?.data ?? [])) as [number, string | number, string | number][];
       });
       let anyFlow = false;
       flows.forEach((rows, i) => {
@@ -276,7 +284,7 @@ export async function GET(req: NextRequest) {
   const key = `${sym}|${itvKey}|${limit}`;
   let built: BuiltCvd;
   const hit = cache.get(key);
-  if (hit && Date.now() - hit.at < 15_000 && hit.body && typeof hit.body === "object" && "built" in (hit.body as object)) {
+  if (hit && Date.now() - hit.at < 60_000 && hit.body && typeof hit.body === "object" && "built" in (hit.body as object)) {
     built = (hit.body as { built: BuiltCvd }).built;
   } else {
     try {

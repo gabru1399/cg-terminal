@@ -1,24 +1,24 @@
 #!/usr/bin/env python3
 """
+[QUARANTINED - AUDIT FINDING F02]
 scripts/run_canonical_decide.py
-Canonical 360° Order-Flow Decision Engine (SOP v1.4.0)
 
-Executes every single requirement of TRADE_FORMULATION_MANUAL.md and SWARM_MASTER_PROMPT.md:
-1. Ingests all 61 curated universe assets live from the Next.js server.
-2. Fetches deep telemetry for target symbols across all endpoints concurrently.
-3. Computes the 16 dimensions (D1 to D16) mathematically with zero simulated data.
-4. Computes Table 7 confluence scores (F1 through F8) with zero-fallback rules.
-5. Evaluates the LSR Magnet Gate (D12) with live liquidation maps.
-6. Evaluates the 8 Socratic Gates and the 10 Pitfall Inquests dynamically.
-7. Produces canonical Section 9.2 Formulation Cards into desk/deepscan/FORMULATION-<SYM>-<ts>.md.
-8. Produces desk/deepscan/UNIVERSE-360-<ts>.md.
+NOTICE: This legacy script has been quarantined per GPT ASTRA Audit Finding F02.
+Reason: It contains hardcoded card templates and fallback literals.
+Authority: Use `scripts/individual_asset_evaluator.py` for live, endpoint-by-endpoint,
+zero-mock evaluation across the full expanded universe.
 """
+
+import sys
+if "--force" not in sys.argv:
+    print("[ERROR] scripts/run_canonical_decide.py is QUARANTINED under Audit Finding F02.")
+    print("Use scripts/individual_asset_evaluator.py for authoritative live analysis.")
+    sys.exit(1)
 
 import urllib.request
 import json
 import time
 import os
-import sys
 from concurrent.futures import ThreadPoolExecutor
 
 BASE_URL = "http://127.0.0.1:3000"
