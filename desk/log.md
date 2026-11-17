@@ -11829,3 +11829,14 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+
+
+## EXEC · 2026-11-17 14:36 UTC · atg-exec — Blueberry Funded MT5 Order Dispatched (BTCUSD.pi)
+- **Venue**: Blueberry Funded (`BlueberryMarketsSVG-Live`, Login `#5126976`, Equity: $2,499.96 USD)
+- **Instrument**: `BTCUSD.pi` (Perpetual/Spot CFD, 1.0 contract size)
+- **Order Action**: `BUY_LIMIT` · Ticket `#20217070`
+- **Limit Entry**: $64,400.00 (retest of $97.65M absorption cluster and Day VWAP mean band)
+- **Bracket SL**: $63,880.00 (structural invalidation below $64,039.70 absorption sweep low and 64,146 sdiv node)
+- **Bracket TP**: $65,600.00 (upper short liquidation cluster shelf: $121.3M short pool; +2.30R)
+- **Risk Budget**: 0.01 lot $\times$ $520.00 distance = **$5.20 USD risk** ($\approx 0.208\%$ equity risk; strictly satisfies $5.00–$6.00 cap)
+- **Multi-Algo Isolation**: `comment="cg_terminal"`, `magic=42001` pinned. Zero interference with other algorithms.
