@@ -877,6 +877,51 @@ THE 12 BATTLE-TESTED MICROSTRUCTURE PITFALLS & MANDATORY PREVENTATIVE INVARIANTS
 * **The Failure Mode**: Relying on a stale subset (e.g. legacy 61 assets) in evaluation scripts when the terminal and exchange have expanded to 234 mutual assets leaves high-probability opportunities uninspected.
 * **The Immutable Invariant**: **FULL 360 UNIVERSE COVERAGE**. Individual asset audits must dynamically query the complete live universe from `src/lib/universe/curated.ts` (all 234 mutual assets: 30 Crypto Majors + 28 TradFi Perps + 173 Mutual Delta/Binance Perps + 3 Classic Indices), ensuring complete full-spectrum coverage without hardcoded blindspots.
 
+### 19.14 PIT-14: The Multi-Algo Shared Account Collision Trap (MT5 Comment Isolation Invariant)
+* **The Failure Mode**: Operating an execution agent on an account shared with other trading algorithms without strict tagging causes the agent to mistakenly manage, modify, or liquidate external positions, corrupting both systems.
+* **The Immutable Invariant**: **THE `cg_terminal` COMMENT INVARIANT**. On shared execution venues (e.g. Blueberry Funded MT5 Account `#5126976`), **EVERY SINGLE ORDER AND POSITION PLACED MUST HAVE `comment="cg_terminal"` AND `magic=42001`**. The agent is strictly and solely responsible for `cg_terminal` tagged orders. It is strictly forbidden to touch, modify, close, or evaluate orders belonging to other algorithms.
+
+### 19.15 PIT-15: The Tab Omission & Footprint Blindspot Trap (48h Tick-by-Tick & Multi-Toggle Invariant)
+* **The Failure Mode**: Evaluating an asset based solely on a single 15m candle snapshot while ignoring the trailing 48-hour volume/range bars, large order defense intensity, 3D/7D/30D liquidation skew, or Spot-Perp CVD leads to entering directly into massive institutional ask walls or active liquidation magnets.
+* **The Immutable Invariant**: **MANDATORY 360° ZERO-OMISSION TAB AUDIT**. For every trade candidate, the engine must systematically audit the trailing 48h Footprint across all toggle combinations (time, volume, range bars, diagonal imbalances, profile nodes), Large Orders intensity and defense clusters, 3D/7D/30D liquidation levels across all spread % bands, Futures vs Spot book walls, and multi-timeframe CVD behavior before placing an order.
+
+---
+
+## SECTION 20. BLUEBERRY FUNDED PRIME 2-STEP MT5 OPERATIONAL SPECIFICATION & EXECUTION PROTOCOL
+
+This section governs trade execution on the **Blueberry Funded Prime 2-Step Challenge ($2,500 Account)**:
+
+### 20.1 Account Parameters & Drawdown Guardrails
+* **Operating Venue**: Blueberry Funded (`BlueberryMarketsSVG-Live`, Login `#5126976`).
+* **Account Size**: **$2,500.00 USD**.
+* **Daily Drawdown Limit**: **4.0% ($100.00 USD)** based on the higher of starting daily balance or equity. Hard stop: if intraday losses reach $80.00 USD (80% of daily limit), trading halts immediately for the day.
+* **Maximum Overall Drawdown Limit**: **10.0% ($250.00 USD) Static Limit**. Account equity must **NEVER touch or drop below $2,250.00 USD**.
+* **Profit Targets**: Phase 1 = **8.0% ($200.00 USD)** $\to$ equity $2,700.00 USD; Phase 2 = **6.0% ($150.00 USD)** $\to$ equity $2,650.00 USD.
+* **Minimum Active Trading Days**: 3 trading days (a day with $\ge 0.5\%$ closed profit qualifies).
+* **Macroeconomic News Restriction**: **STRICT 2-MINUTE FREEZE**: Absolutely zero opening, closing, or modifying market/pending orders within 2 minutes before and 2 minutes after high-impact (red-folder) economic news events.
+
+### 20.2 Risk Sizing Axiom & Position Limits
+* **Strict Dollar Risk Budget**: **Max $5.00 – $6.00 USD risk per trade** ($\approx 0.20\% - 0.24\%$ equity risk on $2,500).
+* **Mathematical Sizing Formula**:
+  $$\text{Lots} = \text{round}\left(\frac{\text{Target Risk (\$5.50)}}{\text{Stop Distance} \times \text{Contract Size} \times \frac{\text{Tick Value}}{\text{Tick Size}}}, \text{Volume Step}\right)$$
+* **Absolute Dollar Risk Cap**: If calculated lots at minimum volume (0.01) yield risk $> \$6.00\text{ USD}$, the setup is **MECHANICALLY VETOED** (stop too wide for $2,500 account).
+* **Absorption Capacity**: At $\$5.50$ risk per trade, the account can absorb **18 consecutive stop-outs** without breaching the daily 4% limit ($100), and **45 consecutive stop-outs** without breaching max overall drawdown ($250).
+
+### 20.3 Multi-Algo Shared Account Isolation Invariant
+* **Single Comment Mandatory**: **`comment = "cg_terminal"`** must be written to 100% of orders dispatched by this system. Magic number is pinned to `42001`.
+* **Zero Cross-Contamination**: Other automated algorithms operate concurrently on account `#5126976`. Antigravity filters all position and order queries strictly by `comment == "cg_terminal"`:
+  ```python
+  cg_positions = [p for p in mt5.positions_get() if p.comment == "cg_terminal"]
+  ```
+  Never close, edit, cancel, or modify any order or position with a different comment or magic number.
+
+### 20.4 Dedicated Execution Engine (`scripts/mt5_cg_trader.py`)
+All MT5 operations are dispatched via `scripts/mt5_cg_trader.py`:
+* Audit account and isolated positions: `python scripts/mt5_cg_trader.py --status`
+* Pre-calculate risk and lots: `python scripts/mt5_cg_trader.py --calc-risk <SYMBOL> <ENTRY> <SL>`
+* Place bracketed limit order: `python scripts/mt5_cg_trader.py --place <SYMBOL> <TYPE> <ENTRY> <SL> <TP>`
+* Auto-ratchet to Breakeven at $\ge +1.0\text{R}$: `python scripts/mt5_cg_trader.py --be <TICKET>`
+
 ---
 
 *END OF CANONICAL MASTER SPECIFICATION (SOP v2.0.0 · UNIFIED MASTER BIBLE)*
