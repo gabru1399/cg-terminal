@@ -93,3 +93,15 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-17 21:22 UTC — new suggested order — place in MT5 (debate FOR 6/AGAINST 1)
+- R467-DOGE-1 DOGE SHORT limit entry 0.05942 · stop 0.05984 · targets 0.0584 / 0.05737 / 0.05717 · R 2.4 · expires 2026-11-18 01:21 UTC
+- BASIS: levels are PERP prices (perpRef 0.05942). Before placing in MT5 read spreads.DOGUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (0.05942 vs 0.05883), h4 RSI 43.7, day +0.9%
+- [FOR] footprint: bull 33 / bear 40; recent: Exhaustion/sell[time], Exhaustion/sell[vol], Divergence/sell[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×1, abs:sell×1, div:buy×2, div:sell×3, exh:buy×2, exh:sell×6 — net 5 buy-side vs 10 sell-side
+- [FOR] liquidation: long-liq magnet 0.05737 (str 82, ~$9M est, -3.48%) as target
+- [AGAINST] liquidation-hazard: short-liq magnet 0.06013 (str 87) sits between entry and stop — sweep risk
+- [FOR] cvd: taker buy 49.3%, perpCvd -37, spotCvd -9, quadrant both-selling, latestDiv bear (recent)
+- [FOR] notifications: 6h weighted bias -3.0 (3 events)
+- → place on DOGUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
