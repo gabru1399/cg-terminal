@@ -65,20 +65,33 @@ On EVERY wake-up, autonomous recursion round, or trading response, the execution
 ```text
 ### ✅ PRE-FLIGHT VERIFICATION CHECKLIST (ROUND R<n>)
 [x] Pre-Flight Verification Checklist COMPLETED in full.
-[x] Fresh analysis of each of the 61 Curated Assets executed from scratch (Zero cached echoes).
-[x] Single Dynamic 1200s Timer verified (Zero duplicate timers, zero cron).
-[x] Live Delta Exchange India CLOB & Margin Solvency audited (Account #26902927).
-[x] Concurrency Circuit (P5-06) & Risk Gates (Gate 1-11) armed.
+[x] Canonical Master Specification (@[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]) READ, ANALYZED & STRICTLY FOLLOWED (SOP v2.0.0 mandatory invariant).
+[x] Plugins, Skills & MCP Server Architecture verified LOADED & OPERATIONAL:
+    - Plugins: persistent-memory, coderabbit, superpowers, trading-skills, chrome-devtools-plugin, harness-antigravity.
+    - MCP Servers: delta-exchange-mcp, persistent-memory, agent-memory, chrome-devtools, godkiller-verification, code-review-graph, link-extension, sqlite.
+    - Skills: trading-skills suite, superpowers suite, karpathy-guidelines, ponytail, quant-analyst, backtesting-frameworks.
+[x] 10-Model Cognitive Thinking Chain Lattice verified (/thinking-model-router):
+    - First Principles, Pre-Mortem Analysis, Probabilistic Reasoning (EV hurdle >= 2.0R), Second-Order Effects, Red Team / Steel-Manning, Margin of Safety, Via Negativa, Map vs Territory, Theory of Constraints, Lindy Effect.
+[x] 4-Voice Quantitative Desk Debate executed (Alpha Strategist Hunter, Adversarial Risk Officer Red Team, Microstructure Quant Empiricist, Committee Arbiter Synthesizer).
+[x] Karpathy Guidelines & Ponytail Minimal Code Protocol strictly upheld (Think Before Acting, Simplicity First, Surgical Execution, Goal-Driven Empirical Verification).
+[x] Fresh individual analysis of each of the 61 Curated Assets executed from scratch (Zero cached echoes; endpoint-by-endpoint audit).
+[x] Payoff & Confluence Hurdle enforced (Table 7 Score >= 5.0 pts, Expected Payoff >= 2.00R hard floor).
+[x] Live Delta Exchange India CLOB & Margin Solvency audited (Account #26902927; Net Liquid Equity, Position Margin, Order Margin, Free Cash Buffer).
+[x] Gate 7 Two-Tier Conviction Protocol & Gate 9 Dynamic Multi-Slot Expansion armed (Tier 1 BTC/ETH/BNB unlocked for Grade A/A+ with high isolated leverage & tight stops; Grade B micro-assets/TradFi fractionals; SOL reserved until equity >= $5.00).
+[x] Operational Invariants armed (Gate 10 BTC Macro Filter, +1.0R Breakeven Invariant, 8-Bar Time Stop, Post-Only Maker Execution, Mark-Price Brackets, Shared Account Isolation).
+[x] Single Dynamic 1200s Timer verified (Zero duplicate timers, zero cron overlap).
 ```
 
 ### Pre-Flight Verification Gates:
-1. **Gate C-01 (Single Spec Bound)**: `CANONICAL_MASTER_SPECIFICATION.md` is bound as the sole operational manual.
-2. **Gate C-02 (Purge Scanner / Mandatory Individual Asset Audit)**: Scanners and pre-aggregated screener tables (`/api/cg/screener`) are **STRICTLY PURGED**. On every wake-up, execute direct individual endpoint-by-endpoint analysis (`/api/cg/market?sym=`, `/api/cg/signals?sym=`, `/api/cg/liqlevels?sym=`, `/api/cg/cvd?sym=`, `/api/cg/narrative?sym=`) for each and every one of the 61 Curated Assets individually using `scripts/individual_asset_evaluator.py`. Zero reliance on pre-filtered scanner tables.
-3. **Gate C-03 (CLOB Reconciliation)**: Query `get_wallet_balances`, `get_margined_positions`, and `get_open_orders` live on Delta Exchange India (`india_prod`, Account `#26902927`).
-4. **Gate C-04 (First-Two-Fills Circuit Armed)**: Verify that if any 2 standing maker orders execute, all remaining candidate orders will be immediately terminated.
-5. **Gate C-05 (16-Dimension Telemetry Extraction)**: Extract all 16 live dimensions for any proposed candidate setup before submitting orders.
-6. **Gate C-06 (Dollar Risk Cap ≤ 1.0%–2.5%)**: Stop loss dollar risk must be $\le 1.0\% - 2.5\%$ of equity ($\le \$0.070\text{ USD}$ on $\approx \$2.80\text{ equity}$). Verify contract minimums (The LINK/BNB Invariant).
-7. **Gate C-07 (Single Timer Continuity)**: Verify via `manage_task(Action="list")` that strictly ONE timer is active.
+1. **Gate C-01 (Single Spec Bound & Mandatory Read/Analyze Invariant)**: `CANONICAL_MASTER_SPECIFICATION.md` is bound as the sole operational manual. Antigravity must always read, analyze, and adhere to every section without omission.
+2. **Gate C-02 (Plugins, Skills & MCP Infrastructure Verification)**: Verify active availability of essential MCP servers (`delta-exchange-mcp`, `persistent-memory`, etc.), plugins, and analytical skills before formulation.
+3. **Gate C-03 (Cognitive Thinking Chain & 4-Voice Debate)**: Ensure no trade or code is generated without Socratic stress-testing across the 10 mental models and 4-voice desk debate.
+4. **Gate C-04 (Purge Scanner / Mandatory Individual Asset Audit)**: Scanners and pre-aggregated screener tables (`/api/cg/screener`) are **STRICTLY PURGED**. On every wake-up, execute direct individual endpoint-by-endpoint analysis (`/api/cg/market?sym=`, `/api/cg/signals?sym=`, `/api/cg/liqlevels?sym=`, `/api/cg/cvd?sym=`, `/api/cg/narrative?sym=`) for each and every one of the 61 Curated Assets individually using `scripts/individual_asset_evaluator.py`. Zero reliance on pre-filtered scanner tables.
+5. **Gate C-05 (CLOB Reconciliation)**: Query `get_wallet_balances`, `get_margined_positions`, and `get_open_orders` live on Delta Exchange India (`india_prod`, Account `#26902927`).
+6. **Gate C-06 (First-Two-Fills Circuit Armed)**: Verify that if any 2 standing maker orders execute, all remaining candidate orders will be immediately terminated.
+7. **Gate C-07 (16-Dimension Telemetry Extraction)**: Extract all 16 live dimensions for any proposed candidate setup before submitting orders.
+8. **Gate C-08 (Two-Tier Conviction Sizing)**: Tier 1 majors (`BTC`, `BNB`, `ETH`) permitted up to $\$1.50\text{ USD}$ margin with tight structural stops ($\le 0.8\%$); Grade B micro-assets permitted $\le 1.0\% - 2.5\%$ dollar risk.
+9. **Gate C-09 (Single Timer Continuity)**: Verify via `manage_task(Action="list")` that strictly ONE dynamic timer is active.
 
 ---
 
