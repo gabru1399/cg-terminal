@@ -10821,3 +10821,39 @@ analysis script rc=1
 
 analysis script rc=1
 
+## R402 · 2026-11-17 00:59 UTC · zai-desk
+
+**Market**: BTC 64,633.6 (-0.3%)  ETH 1,814.03 (-0.3%)  SOL 71.45 (-0.1%)  XAU 3,858.69 (-0.3%)  XAG 47.030 (-0.5%)
+**Bias (|score|≥2)**: DOGE-5(TRANS)  XAU-3(TREND)  BNB-4(TREND)  LTC-4(TRANS)  ADA-2(TREND)  XAG-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R402-XAU-1 XAU SHORT limit 3,864.26 · stop 3,879.69 · T1 3,800.58 · R 4.1
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (3,858.69 vs 3,863.93), h4 RSI 42.2, day -0.3%
+      [FOR    ] footprint: bull 20 / bear 29; recent: Exhaustion/sell[time], Exhaustion/sell[vol]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×1, exh:sell×3, sdiv:buy×1 — net 2 buy-side vs 3 sell-side
+      [FOR    ] liquidation: long-liq magnet 3,800.58 (str 58, ~$41M est, -1.51%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance +0.090 (5m ago +0.090, falling bids); bid $0.06B vs ask $0.05B
+      [FOR    ] cvd: taker buy 49.2%, perpCvd -102, spotCvd +0, quadrant both-selling, latestDiv bull (recent)
+- NEW R402-BNB-2 BNB SHORT limit 590.94 · stop 593.31 · T1 582.71 · T2 581.56 · T3 578.12 · R 3.5
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (590.84 vs 590.66), h4 RSI 34.5, day -0.1%
+      [FOR    ] footprint: bull 37 / bear 43; recent: Exhaustion/buy[time], Absorption/sell[vol], Bear div/sell[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:sell×4, div:buy×1, div:sell×2, exh:buy×2, exh:sell×2, sdiv:buy×1, sdiv:sell×3 — net 4 buy-side vs 11 sell-side
+      [FOR    ] liquidation: long-liq magnet 582.71 (str 56, ~$7M est, -1.38%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance +0.004 (5m ago -0.002, rising bids); bid $0.02B vs ask $0.02B
+      [FOR    ] cvd: taker buy 48.1%, perpCvd -73, spotCvd -15, quadrant both-selling, latestDiv bear (recent)
+      [FOR    ] notifications: 6h weighted bias -1.9 (7 events)
+
+### Order lifecycle
+- R393-XAU-1 EXPIRED (unfilled past expiry)
+- R398-LTC-1 re-debated: FOR 5/AGAINST 1 — stands
+- R401-DOGE-1 re-debated: FOR 6/AGAINST 1 — stands
+- R401-ADA-2 WITHDRAWN (re-debate lost: FOR 3/AGAINST 3)
+
+### Positions
+- no open positions
+
+
+## ROUND FAILED · 2026-11-17 00:59 UTC · zai-desk
+
+analysis script rc=1
+
