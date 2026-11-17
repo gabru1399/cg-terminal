@@ -263,7 +263,105 @@ These are the ONLY permitted trade archetypes. Every opportunity that fits no ar
 
 ---
 
-## SECTION 7. THE 6-STEP DECIDE FRAMEWORK
+## SECTION 7. RETAIL SETUP ⟷ ORDER-FLOW CONFIRMATION ENGINE
+
+Retail traders rely on visual chart patterns that treat price as a continuous geometric drawing. In reality, **price moves only when market orders consume resting limit depth**, and institutions exploit retail chart patterns to harvest liquidity.
+
+This engine bridges popular retail setups with the order-flow telemetry defined in companion inventory [`docs/DATA_POINT_INVENTORY.md`](file:///c:/Users/SIGMA/Documents/cg-terminal/docs/DATA_POINT_INVENTORY.md), explaining the underlying retail flaw, the exact order-flow confirmation telemetry required to validate or fade the setup, and the data-driven entry design:
+
+### 7.1 Setup R-01: Classical Support / Resistance Bounce (Horizontal Levels)
+* **Retail Concept**: "Price bounced off this horizontal support 3 times; buy the 4th touch with a market order."
+* **Microstructure Reality**: Each touch consumes resting limit bids. By the 3rd or 4th touch, bids are exhausted. Institutions know retail stops are clustered 10-20 bps below the line.
+* **Order-Flow Telemetry Checklist**:
+  1. **Tab 5 (Book Walls)**: Confirmed resting bid wall (Tiered threshold or $\ge 20\%$ depth) at the level.
+  2. **Tab 2 (Footprint)**: Absorption (`abs`) or Divergence (`div`) on the test bar — heavy sell volume fails to make downward progress.
+  3. **Tab 6 (CVD)**: Spot CVD flat or rising (institutions absorbing retail sell flow).
+  4. **Tab 1 (Auction POC)**: Support coincides with Day POC or Session POC.
+* **Data-Driven Entry**: Post-Only maker limit rested **+0.05% in front of the confirmed whale wall** (Setup S3) or at the absorption footprint zone (Setup S2). Stop placed 0.5% below the structural absorption low.
+
+### 7.2 Setup R-02: Classical S/R Breakout (Momentum Chasing)
+* **Retail Concept**: "Price broke above horizontal resistance with a big green candle; buy market on the breakout."
+* **Microstructure Reality**: 75% of breakouts in perpetual markets are fakeouts designed to trigger retail breakout buys into institutional limit sell walls (exit liquidity).
+* **Order-Flow Telemetry Checklist**:
+  1. **Tab 3 & 5 (Whale Walls)**: Verify there is NO opposing ask wall immediately above.
+  2. **Tab 5 (Dynamic Wall Scanner)**: Check for a `wallPullEvent` — if a previously resting wall was pulled, an air pocket opened, allowing genuine expansion (Setup S4).
+  3. **Tab 1 & 4 (OI Dynamics)**: Open Interest must be **EXPANDING** (+1% to +5% on 4H). Breakouts with falling OI are short covering only.
+  4. **Tab 2 (Footprint)**: If breakout candle prints a `trap` signal (high volume at high, closed in bottom half), **FADE THE BREAKOUT** back to Day POC (Setup S6).
+* **Data-Driven Entry**: Limit order on the **retest of broken Day VAH / resistance** (S8/S4), or fade the trap back to Day POC (S6).
+
+### 7.3 Setup R-03: Double Top / Double Bottom (W & M Patterns)
+* **Retail Concept**: "Price printed a 'W' double bottom; enter long when price breaks above the middle neckline."
+* **Microstructure Reality**: Waiting for the neckline break sacrifices 50%–70% of the trade's R-multiple ($< 1.2\text{R}$).
+* **Order-Flow Telemetry Checklist**:
+  1. **Tab 2 (Footprint Bar Delta)**: At the second bottom, price matches or sweeps first low, but **Bar Delta is significantly higher / positive** (`div` or `sdiv` signal).
+  2. **Tab 6 (CVD)**: Spot CVD prints a higher low while price prints an equal/lower low (Spot Absorption).
+  3. **Tab 1 (Day VWAP Z-Score)**: Second tap occurs at extreme statistical extension: **$z \le -2.0\sigma$ or $-3.0\sigma$ VWAP lower band**.
+  4. **Tab 4 (Liquidation Heatmap)**: Second tap cleanly swept retail stops sitting below the first low by 10-25 ticks, then snapped back.
+* **Data-Driven Entry (Setup S1 — Pristine)**: Enter at the **close of the 15m divergence candle** at Tap 2 (or 50% sweep wick retest). Stop 0.3% below lowest sweep wick. Target Day POC $\to$ Day VAH $\to$ Upper Liquidation Pool. **Increases EV to $3.5\text{R}–5.0\text{R}$**.
+
+### 7.4 Setup R-04: Trendline / Flag / Pennant Pullback
+* **Retail Concept**: "Price is in an uptrend channel and pulled back to diagonal trendline / bull flag support; buy."
+* **Microstructure Reality**: Diagonal trendlines have zero exchange matching engine reality. Price reacts to horizontal volume profiles and VWAP bands.
+* **Order-Flow Telemetry Checklist**:
+  1. **Tab 1 (Auction Confluence)**: Trendline touch coincides with **Day POC**, **Session POC**, or **Day VWAP $-1\sigma$ band**.
+  2. **Tab 1 (Trend Matrix)**: H4 & D1 Fib-Prime EMA Stacks ($EMA13 > EMA89 > EMA233$) with upward slope.
+  3. **Tab 2 (Footprint Exhaustion)**: Pullback bar displays **seller exhaustion (`exh`)** — volume $< 50\%$ 10-bar average.
+  4. **Tab 5 (Book Walls)**: Depth Imbalance within $\pm 1\%$ shows bids loading (+5m delta positive).
+* **Data-Driven Entry (Setup S7)**: 3-tier limit ladder: 40% @ Day POC, 40% @ $-1\sigma$ VWAP, 20% @ absorption low. Stop beyond $-2\sigma$ VWAP band.
+
+### 7.5 Setup R-05: RSI / Oscillator Oversold / Overbought Reversal
+* **Retail Concept**: "RSI is $< 25$ (oversold); buy the dip."
+* **Microstructure Reality**: In strong cascades, RSI stays $< 30$ indefinitely while price drops another 15%.
+* **Order-Flow Telemetry Checklist**:
+  1. **Tab 4 & 8 (Cascade Climax Gate — Gate 8)**: Verify rolling `Liq 5m < $500k`. If `Liq 5m > $500k`, cascade is raging $\implies$ **DO NOT BUY**.
+  2. **Tab 1 (VWAP Extension)**: Price must touch **Day VWAP $-2\sigma$ or $-3\sigma$ band** ($|z| \ge 2.0\sigma$).
+  3. **Tab 1 (Crowded Funding APR)**: Funding APR heavily negative ($< -20\%$, crowded retail shorts).
+  4. **Tab 2 (Footprint Reversal Proof)**: Footprint must print `abs`, `trap`, or `sdiv` with candle closing in top half.
+* **Data-Driven Entry (Setup S5)**: Limit order at confirmation bar close. Stop $0.5\times$ ATR beyond extreme wick. Target: Day VWAP Mean (paying $\ge 1.50\text{R}$).
+
+### 7.6 Setup R-06: Moving Average Crossover (Golden Cross / 9×21 EMA)
+* **Retail Concept**: "9 EMA crossed 21 EMA bullishly; buy the next bar."
+* **Microstructure Reality**: Moving averages lag. By the time cross occurs, price is at resistance. In range-bound chop, MA crossovers whipsaw 80% of the time.
+* **Order-Flow Telemetry Checklist**:
+  1. **Tab 7 (Regime Filter)**: Regime must be explicitly **`TREND_UP`** (100% VETO in `RANGE_BALANCE`).
+  2. **Tab 1 (Z-Score Chase Guard)**: Ensure $|z| < 1.0\sigma$. If $|z| \ge 2.0\sigma$, chasing is banned.
+  3. **Tab 3 & 5 (Whale Walls)**: Zero opposing wall within $1.5\text{R}$.
+* **Data-Driven Entry (Setup S7)**: Never buy crossover bar. Wait for pullback to **EMA13 / Day VWAP mean**. Stop below EMA89 structural baseline.
+
+### 7.7 Setup R-07: Liquidity Sweep / "Smart Money Concept" (SMC CHoCH)
+* **Retail Concept**: "Asian high swept, 1-minute CHoCH printed; short the fair value gap."
+* **Microstructure Reality**: 1m market structure breaks are random noise. Real sweeps require multi-million dollar liquidation clusters.
+* **Order-Flow Telemetry Checklist**:
+  1. **Tab 4 (Liq Levels / LSR Magnet Gate — D12 & Gate 3)**: Quantify swept pool. Cluster notional $\ge \$5\text{M}$ (Tier 1/2) or $\ge \$500\text{k}$ (Tier 3/4) / Strength $\ge 50$. Pre-sweep LSR $\ge 2.5:1$.
+  2. **Tab 2 (Footprint Delta Flip)**: Sweep bar printed massive taker volume (liquidated retail), but closed below high; next bar printed aggressive delta flip.
+  3. **Tab 1 (Auction Re-entry)**: Full 15m candle closes back inside Day Value Area (`VAH`).
+* **Data-Driven Entry (Setup S1 — Grade A+)**: Limit order on **15m close back inside Value Area** or at 50% retrace of sweep wick. Target Day POC (40%) $\to$ Opposite VAL (40%) $\to$ Runner (20%).
+
+### 7.8 Setup R-08: Range Breakout / Opening Range Breakout (ORB)
+* **Retail Concept**: "Price broke 30-minute opening range high; buy breakout."
+* **Microstructure Reality**: Breakouts fail $> 60\%$ of the time when Market Makers are dampening volatility in Positive Gamma.
+* **Order-Flow Telemetry Checklist**:
+  1. **Tab 5 (Dynamic Wall Scanner)**: Confirmed resting wall was pulled (`wallPullEvent`).
+  2. **Tab 1 & 4 (OI & Volume)**: Breakout volume $\ge 1.5\times$ 10-bar avg + expanding OI.
+  3. **Tab 13 (Options Gamma Regime)**: Negative Gamma (volatility expansion regime confirms breakout; positive gamma fades back into range).
+* **Data-Driven Entry (Setup S4)**: Limit order placed on the **retest of broken range boundary**. Stop inside broken boundary.
+
+### 7.9 Master Retail vs. Order-Flow Decision Matrix
+
+| Retail Setup Name | Primary Retail Indicator | Fatal Retail Failure Mode | Terminal Order-Flow Confirmation Telemetry | Institutional Setup Code | Minimum Required Confluence |
+| :--- | :--- | :--- | :--- | :---: | :---: |
+| **S/R Bounce** | Horizontal Line touch | Liquidity already exhausted; stops wiped | Tab 5 Confirmed Bid Wall + Tab 2 `abs` + Tab 1 POC | **S3 / S2** | $\ge 5.0\text{ pts}$ (Grade B) |
+| **S/R Breakout** | Green breakout bar | Buying into institutional Ask Wall | Tab 5 Wall-Pull + Tab 1 Expanding OI + Spot CVD Lead | **S4 / S8** | $\ge 6.5\text{ pts}$ (Grade A) |
+| **Double Bottom (W)**| Neckline breakout | Terrible R-multiple; late entry | Tab 2 Footprint Delta Divergence + Tab 6 Spot CVD Absorption | **S1 / S6** | $\ge 7.0\text{ pts}$ (Grade A+) |
+| **Trendline Retest** | Diagonal trendline touch | Floating in low-volume air | Tab 1 Day/Session POC + VWAP $-1\sigma$ + Tab 2 `exh` | **S7** | $\ge 6.0\text{ pts}$ (Grade A) |
+| **RSI Oversold** | RSI $< 30$ | Buying into raging liquidation cascade | Tab 4 `Liq 5m < $500k` + Tab 1 $|z| \ge 2.0\sigma$ + Tab 2 `abs`/`trap` | **S5** | $\ge 5.5\text{ pts}$ (Grade B/A) |
+| **MA Crossover** | 9 EMA crosses 21 EMA | Lagging indicator; buying top of chop | Tab 7 `TREND_UP` regime + Tab 1 Pullback to VWAP ($|z| < 1.0$) | **S7** | $\ge 5.0\text{ pts}$ (Grade B) |
+| **SMC Liquidity Sweep**| 1m CHoCH structure | 1m noise; swept level had zero liquidity | Tab 4 Cluster swept + 15m close back in value + Delta flip | **S1** | $\ge 7.5\text{ pts}$ (Grade A+) |
+| **Range Breakout (ORB)**| Session high/low break | Whipsaw false breakout in positive GEX | Tab 5 Wall-Pull + Tab 13 Negative GEX + Retest of boundary | **S4** | $\ge 6.0\text{ pts}$ (Grade A) |
+
+---
+
+## SECTION 8. THE 6-STEP DECIDE FRAMEWORK
 
 Every trade formulation must execute the DECIDE framework sequentially:
 
@@ -289,7 +387,7 @@ Every trade formulation must execute the DECIDE framework sequentially:
 
 ---
 
-## SECTION 8. TABLE 7 ZERO-FALLBACK CONFLUENCE MATRIX (MAX 11.5 PTS)
+## SECTION 9. TABLE 7 ZERO-FALLBACK CONFLUENCE MATRIX (MAX 11.5 PTS)
 
 Every point must originate strictly from live API telemetry. Any missing or counter-regime feature scores 0.0 pts (labeled `n/a`):
 
@@ -315,9 +413,9 @@ Every point must originate strictly from live API telemetry. Any missing or coun
 
 ---
 
-## SECTION 9. THE 11 SOCRATIC SELF-AUDIT GATES & THE 10 IMMUTABLE AGI PITFALL INQUESTS
+## SECTION 10. THE 11 SOCRATIC SELF-AUDIT GATES & THE 10 IMMUTABLE AGI PITFALL INQUESTS
 
-### 9.1 The 11 Socratic Self-Audit Gates
+### 10.1 The 11 Socratic Self-Audit Gates
 
 Before an order ticket is dispatched, it must pass all 11 Socratic Gates without exception:
 1. **Gate 1: Active Session Auction Clearance**: SL must be separated from Session/Day POC and Day VWAP by $\ge 0.5\%$ cushion (or $1.0\times$ ATR). Stops inside high-volume nodes are vetoed.
@@ -335,7 +433,7 @@ Before an order ticket is dispatched, it must pass all 11 Socratic Gates without
 10. **Gate 10: Macro Anchor (BTC) Regime Gate**: Altcoin shorts are strictly banned if BTC is within $0.75\%$ of daily low, oversold ($<-2.0\sigma$ VWAP), or testing major multi-day liquidity support.
 11. **Gate 11: Slippage & Taker Fee Buffer (1.20x Invariant)**: All stop risk budgeting must multiply calculated stop distance by $1.20\times$ for execution slippage and exit fees.
 
-### 9.2 The 10 Immutable AGI Pitfall Inquests (Post-Mortem Forensics)
+### 10.2 The 10 Immutable AGI Pitfall Inquests (Post-Mortem Forensics)
 
 | Pitfall ID | Name | Failure Mechanism | Empirical Case Study | Immutable Invariant Enforced |
 | :--- | :--- | :--- | :--- | :--- |
@@ -352,7 +450,7 @@ Before an order ticket is dispatched, it must pass all 11 Socratic Gates without
 
 ---
 
-## SECTION 10. DELTA EXCHANGE INDIA OPERATIONAL INVARIANTS
+## SECTION 11. DELTA EXCHANGE INDIA OPERATIONAL INVARIANTS
 
 | Invariant | Name | Operational Rule |
 | :--- | :--- | :--- |
