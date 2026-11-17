@@ -213,14 +213,20 @@ All 9 tabs in the terminal are ingested via local Next.js REST endpoints:
 ### 4.4 Tab 4: Liquidation Levels (`Liq Levels` — `/api/cg/liqlevels?sym=` & `/api/cg/stopmap?sym=`)
 * **Multi-Horizon Lookbacks**: `3D` (tactical intraday), `7D` (structural weekly), `30D` (macro institutional).
 * **Spread Window Bands**: Full multi-tier spread distribution across `±1%`, `±2%`, `±3%`, `±4%`, `±5%`, `±6%`, `±7%`, `±8%`.
-* **Stops Heatmap (24h Exposure Grid)**:
-  * Quantifies resting stop-loss and liquidation concentrations above and below market price.
+* **Stops Heatmap (24h Exposure Grid & Continuous Depth Bands)**:
+  * Visual intensity matching the CoinGlass Legend Heatmap (bright yellow/beige = highest density cascade threshold; purple/pink = intermediate; dark purple = low density).
+  * Quantifies resting stop-loss and liquidation concentrations above and below market price across 5 venues (Binance, OKX, Bybit, Bitget, Hyperliquid).
   * Pinpoints high-density liquidation shelves that act as directional magnets.
-* **Liquidation Clusters**:
-  * `clusterPrice`, `clusterNotionalUsd` (USD millions), `distanceToClusterPercent`.
-  * `liquidationSide`: `LONG_LIQUIDATION` (downside magnet) or `SHORT_LIQUIDATION` (upside magnet).
+* **Liquidation Strength Indexing (0.0% to 100.0%)**:
+  * Each key cluster is normalized to peak relative intensity: `Strength 100.0` represents the maximum density liquidation pool (e.g. `63,512.5` = 100% Long Liquidation Zone).
+  * Graded tiers: Strength $\ge 70\%$ = Critical Institutional Pool; Strength $40\% - 69\%$ = Significant Pool; Strength $< 40\%$ = Minor Shelf.
+* **Key Liquidation Levels Telemetry (Top 5 Per Side)**:
+  * `side`: `Short` (above price) vs `Long` (below price).
+  * `price`, `distance` (%), `leverage tier` (`High`, `Mid`, `Low`), `strength` score, `usd` notional, and venue breakdown.
+* **Strength by Distance Distribution**:
+  * Binned into `0-1%`, `1-2%`, `2-3%`, `3-5%`, `5-10%` to map immediate vs swing liquidity gravity.
 * **Liquidation Skew Ratio & Magnet Gate**:
-  * `longLiqTotalUsd`, `shortLiqTotalUsd` within $\pm 4\%$.
+  * `totalShortStrength` vs `totalLongStrength` (e.g. $906.9\text{K}$ shorts vs $221.0\text{K}$ longs = $\text{LSR} = 4.10:1$).
   * `liquidationSkewRatio` ($\text{LSR} = \text{Dominant} / \text{Subordinate}$).
   * `magnetGateStatus`: If $\text{LSR} \ge 2.5:1$, passive front-running is prohibited; execution must await cluster sweep and reclaim wick (S1).
 
