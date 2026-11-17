@@ -11483,3 +11483,26 @@ analysis script rc=1
 ### Round R425 Fresh 61-Asset Screening Summary
 - Audited all 61 Curated Assets from scratch via `scripts/individual_asset_evaluator.py`.
 - 6 qualifying setups identified meeting Table 7: BTC (2.60R, 86.9%), BNB (4.13R, 84.0%), ATOM (3.96R, 81.8%), XLM (2.36R, 89.7% — active), FIL (2.56R, 80.4%), TIA (2.78R, 87.7%).
+## R426 · 2026-11-17 10:19 UTC · zai-desk
+
+**Market**: BTC 64,345.4 (-0.8%)  ETH 1,802.49 (-0.9%)  SOL 72.50 (+1.4%)  XAU 3,862.46 (-0.2%)  XAG 47.410 (+0.3%)
+**Bias (|score|≥2)**: XAU-6(TREND)  ETH-4(TREND)  LINK-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R426-LINK-1 LINK SHORT limit 9.184 · stop 9.220 · T1 9.093 · R 2.5
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (9.125 vs 9.148), h4 RSI 37.9, day -0.1%
+      [FOR    ] footprint: bull 44 / bear 46; recent: Exhaustion/buy[time], Absorption/sell[vol], Exhaustion/buy[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×5, div:buy×6, div:sell×2, exh:buy×4, exh:sell×1, sdiv:buy×2, sdiv:sell×3, trap:sell×1 — net 14 buy-side vs 12 sell-side
+      [FOR    ] bookWalls: ±5% depth imbalance +0.053 (5m ago +0.053, falling bids); bid $0.01B vs ask $0.01B
+      [FOR    ] cvd: taker buy 49.3%, perpCvd -8, spotCvd +0, quadrant spot-bid, latestDiv bear (recent)
+      [AGAINST] notifications: 6h weighted bias +4.9 (5 events)
+
+### Order lifecycle
+- R422-LTC-2 re-debated: FOR 3/AGAINST 2 — stands
+- R423-XAU-1 re-debated: FOR 5/AGAINST 0 — stands
+- R424-BNB-1 WITHDRAWN (re-debate lost: FOR 2/AGAINST 3)
+- R425-ETH-1 re-debated: FOR 3/AGAINST 2 — stands
+
+### Positions
+- no open positions
+
