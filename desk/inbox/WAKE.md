@@ -2489,3 +2489,14 @@ The cascade→exhaustion→reversal transition scored as a **state machine, not 
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-17 17:58 UTC — new suggested order — place in MT5 (debate FOR 5/AGAINST 1)
+- R454-AVAX-1 AVAX SHORT limit entry 7.186 · stop 7.253 · targets 6.94 / 6.9 · R 3.7 · expires 2026-11-17 21:58 UTC
+- BASIS: levels are PERP prices (perpRef 7.083). Before placing in MT5 read spreads.AVAXUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (7.083 vs 7.153), h4 RSI 33.3, day -0.4%
+- [FOR] footprint: bull 42 / bear 46; recent: Exhaustion/sell[time], Absorption/buy[vol], Divergence/sell[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×6, abs:sell×6, div:buy×5, div:sell×8, exh:sell×2, sdiv:sell×2, trap:buy×3, trap:sell×2 — net 14 buy-side vs 20 sell-side
+- [FOR] liquidation: long-liq magnet 6.940 (str 75, ~$2M est, -2.04%) as target
+- [FOR] cvd: taker buy 48.9%, perpCvd -25, spotCvd +0, quadrant spot-bid, latestDiv bear (recent)
+- [AGAINST] notifications: 6h weighted bias +1.0 (1 events)
+- → place on AVAXUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
