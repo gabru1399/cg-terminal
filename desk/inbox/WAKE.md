@@ -2348,3 +2348,14 @@ The cascade→exhaustion→reversal transition scored as a **state machine, not 
 - [FOR] cvd: taker buy 48.9%, perpCvd -65, spotCvd -16, quadrant both-selling, latestDiv bear (recent)
 - [FOR] notifications: 6h weighted bias -2.0 (2 events)
 - → place on DOGUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-17 14:56 UTC — new suggested order — place in MT5 (debate FOR 5/AGAINST 1)
+- R442-ETH-1 ETH SHORT limit entry 1818.56 · stop 1830.36 · targets 1783.3 / 1772.02 · R 3 · expires 2026-11-17 18:55 UTC
+- BASIS: levels are PERP prices (perpRef 1807.02). Before placing in MT5 read spreads.ETHUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (1,807.02 vs 1,816.43), h4 RSI 36.7, day -0.7%
+- [AGAINST] footprint: bull 24 / bear 22; recent: Divergence/buy[time], Exhaustion/sell[vol], Absorption/sell[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×3, abs:sell×3, div:buy×2, div:sell×1, exh:buy×3, exh:sell×3, sdiv:sell×2 — net 8 buy-side vs 9 sell-side
+- [FOR] liquidation: long-liq magnet 1,783.30 (str 95, ~$278M est, -1.49%) as target
+- [FOR] cvd: taker buy 49.2%, perpCvd -539, spotCvd +0, quadrant spot-bid, latestDiv bear (recent)
+- [FOR] notifications: 6h weighted bias -2.0 (2 events)
+- → place on ETHUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
