@@ -17,7 +17,7 @@ CURATED_61 = [
     "SPX500", "UKO", "NDX100"
 ]
 
-def fetch_json(url, timeout=2.0):
+def fetch_json(url, timeout=8.0):
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=timeout) as response:
@@ -52,28 +52,15 @@ def audit_single_asset(sym):
     price = market.get('price', {}).get('last') if market else None
     vwap = market.get('vwap', {}).get('vwap') if market else None
     
-    # 3. Direct individual signals and liquidation call
+    # 3. Direct individual signals call
     top_sig = "NONE"
-    lsr = None
-    if ladder is not None or grade in ['A', 'A+', 'B']:
-        signals = fetch_json(f"{base}/signals?sym={sym}", timeout=1.5)
-        sig_list = signals.get('signals', []) if signals else []
-        if sig_list:
-            top_sig = f"{sig_list[0].get('type')} ({sig_list[0].get('side')})"
-        liq = fetch_json(f"{base}/liqlevels?sym={sym}", timeout=1.5)
-        lsr = liq.get('lsr') if liq else None
+    signals = fetch_json(f"{base}/signals?sym={sym}", timeout=3.0)
+    sig_list = signals.get('signals', []) if signals else []
+    if sig_list:
+        top_sig = f"{sig_list[0].get('type')} ({sig_list[0].get('side')})"
 
-    # 4. Direct individual Athena Oracle call
-    oracle_score = None
-    oracle_verdict = "n/a"
-    if grade in ['A', 'A+', 'B'] or model != "NONE":
-        oracle = fetch_json(f"{base}/oracle?sym={sym}", timeout=2.0)
-        if oracle and oracle.get('ok'):
-            oracle_score = oracle.get('score')
-            oracle_verdict = oracle.get('verdict', 'n/a')
-
-    # Candidate eligibility: Must have defined entry ladder, Grade A or A+, and composite Best R >= 1.50R
-    has_trade = (ladder is not None) and (best_r is not None and best_r >= 1.50) and (grade in ['A', 'A+'])
+    # Candidate eligibility: Must have defined entry ladder, Grade A or A+, and composite Best R >= 2.00R (User Directive: Target > 2R)
+    has_trade = (ladder is not None) and (best_r is not None and best_r >= 2.00) and (grade in ['A', 'A+'])
     
     return {
         "sym": sym,
@@ -88,9 +75,6 @@ def audit_single_asset(sym):
         "ev_r": ev_r,
         "p_win": p_win,
         "signal": top_sig,
-        "lsr": lsr,
-        "oracle_score": oracle_score,
-        "oracle_verdict": oracle_verdict,
         "has_trade": has_trade,
         "ladder": ladder,
         "entry_zone": entry_zone,
@@ -125,14 +109,30 @@ def main():
         print(f"{sym:<9} | {p_str:<9} | {r.get('regime'):<14} | {r.get('model'):<18} | {r.get('direction'):<5} | {r.get('grade'):<3} | {r_str:<6} | {win_str:<5} | {ora_str:<6} | {r.get('signal'):<16} | {status}", flush=True)
         
     print("\n" + "=" * 80, flush=True)
-    print(f"VERDICT: Found {len(candidates)} valid candidate setups meeting Table 7 (BestR >= 1.5R, Grade A/A+, ladder defined).", flush=True)
+    print(f"VERDICT: Found {len(candidates)} valid candidate setups meeting Table 7 (BestR >= 2.0R, Grade A/A+, ladder defined).", flush=True)
     if not candidates:
         print("ACTION: 100% CASH DEFENSE ENFORCED. No high-confluence setups exist across any individual asset.", flush=True)
     else:
+        base = "http://127.0.0.1:3000/api/cg"
+        print(f"\nExtracting Deep Forensic Telemetry (Oracle + Liq Levels) for {len(candidates)} candidate setups...", flush=True)
         for c in candidates:
-            print(f"\n-> CANDIDATE: {c['sym']} ({c['direction']} {c['grade']}) | Oracle: {c['oracle_score']}/100 ({c['oracle_verdict']})")
+            sym = c['sym']
+            oracle = fetch_json(f"{base}/oracle?sym={sym}", timeout=15.0)
+            if oracle and oracle.get('ok'):
+                c['oracle_score'] = oracle.get('score')
+                c['oracle_verdict'] = oracle.get('verdict', 'n/a')
+                c['oracle_factors'] = oracle.get('factors', [])
+            liq = fetch_json(f"{base}/liqlevels?sym={sym}", timeout=10.0)
+            if liq and liq.get('ok'):
+                c['lsr'] = liq.get('lsr')
+
+            print(f"\n-> CANDIDATE: {c['sym']} ({c['direction']} {c['grade']}) | Oracle: {c.get('oracle_score')}/100 ({c.get('oracle_verdict')})")
             print(f"   Entry Zone: {c['entry_zone']} | Stop: {c['stop']} | Best R: {c['best_r']:.2f}R | Win%: {c['p_win']}")
             print(f"   Targets: {c['targets']}")
+            if c.get('oracle_factors'):
+                print("   ATHENA ORACLE TELEMETRY (6 GODS CONFLUENCE):")
+                for f in c['oracle_factors']:
+                    print(f"     * {f.get('name')} ({f.get('id')}): {f.get('score')}/100 (wt {f.get('weight')}) -> {f.get('detail')}")
 
 if __name__ == '__main__':
     main()

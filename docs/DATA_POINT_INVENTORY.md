@@ -230,6 +230,25 @@ Real-time microstructural order book visualizer and execution venue bridge.
 
 ---
 
+### 10. TAB 10: ATHENA ORACLE (`Oracle` — `/api/cg/oracle?sym=`)
+The mythological quantitative confluence engine synthesizing 6 distinct order-flow and structural dimensions into a unified 0–100 score.
+
+#### 10.1 The 6 Microstructure Gods
+* `apollo` (Weight 25% — Trend & Momentum): Binance 15m/1h klines, EMA20/50/200 stack, RSI(14) regime, EMA50 3h slope, 1h HTF confirmation, and ATR volatility regime (`trend`, `range`, `squeeze`).
+* `poseidon` (Weight 20% — Order-Flow Tide): Multi-venue CVD slope over 24 bars (~6h), Spot vs Perp CVD divergence, taker buy volume ratio, and flow grid momentum.
+* `hades` (Weight 15% — Liquidation Gravity): 7-day liquidation clusters, distance & notional of long cluster below vs short cluster above (magnet pull effect), Liquidation Skew Ratio ($LSR$).
+* `zeus` (Weight 15% — Whale Strikes): Large Resting Orders ($LTO \ge \$1\text{M}$) net notional (bid vs ask), resting institutional order clusters.
+* `atlas` (Weight 15% — Wall Pressure): Order-book depth within $\pm 2\%$ of price, dominant wall side, 5m depth imbalance delta.
+* `nemesis` (Weight 10% — Funding Reversion): Annualized funding APR percentile vs historical baseline (crowded long liquidation risk vs crowded short squeeze fuel).
+
+#### 10.2 Composite Metrics & Regimes
+* `score`: 0–100 composite score (higher = more bullish).
+* `verdict`: Plain English narrative synthesis (e.g. `Cautious bearish lean 38/100 — trend broken`).
+* `regime`: Structural market regime (`trend`, `range`, `squeeze`).
+* `partial`: Array of degraded factors (if an upstream source fails, factor defaults to neutral 50 with tag; never mocked).
+
+---
+
 ## PART 3. THE RETAIL SETUP $\longleftrightarrow$ ORDER-FLOW CONFIRMATION ENGINE
 
 Retail traders rely on visual chart patterns that treat price as a continuous geometric drawing. In reality, **price moves only when market orders consume resting limit depth**, and institutions exploit retail chart patterns to harvest liquidity.
