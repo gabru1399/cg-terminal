@@ -11525,3 +11525,20 @@ analysis script rc=1
 1. **TIAUSD SHORT (Order ID `1689224145`)**: Sell 10 @ `$0.35800` | SL: `$0.36530` | TP: `$0.33270` (+3.46R).
 2. **DOTUSD SHORT (Order ID `1689037097`)**: Sell 10 @ `$0.73800` | SL: `$0.75250` | TP: `$0.68010` (+2.07R).
 3. **ADAUSD SHORT (Order ID `1688520363`)**: Sell 25 @ `$0.15550` | SL: `$0.15720` | TP: `$0.14990` (+3.29R).
+## R427 · 2026-11-17 10:43 UTC · zai-desk
+
+**Market**: BTC 64,232.6 (-1.0%)  ETH 1,793.70 (-1.4%)  SOL 72.38 (+1.2%)  XAU 3,865.27 (-0.1%)  XAG 47.540 (+0.6%)
+**Bias (|score|≥2)**: XAU-4(TREND)  BTC-4(TREND)  ETH-4(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- BTC SHORT confluence -4.5 — REJECTED: no structural target >= 2R (nearest magnet 64,157.5 = 1.5R)
+
+### Order lifecycle
+- R422-LTC-2 re-debated: FOR 3/AGAINST 2 — stands
+- R423-XAU-1 re-debated: FOR 4/AGAINST 2 — stands
+- R425-ETH-1 re-debated: FOR 4/AGAINST 2 — stands
+- R426-LINK-1 WITHDRAWN (re-debate lost: FOR 2/AGAINST 3)
+
+### Positions
+- no open positions
+
