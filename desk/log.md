@@ -11920,3 +11920,25 @@ analysis script rc=1
 - **Leverage**: 50x isolated · Size: 1 contract ($64.40 notional) · Margin: $1.29 USD
 - **Expected Risk**: $0.52 USD (~22% equity risk; captures +$1.20 USD gain = +51% account expansion on win)
 - **Post-Only**: `post_only: true` (zero taker fees on entry).
+## R443 · 2026-11-17 15:12 UTC · zai-desk
+
+**Market**: BTC 64,570.8 (-0.4%)  ETH 1,798.64 (-1.2%)  SOL 73.25 (+2.4%)  XAU 3,863.45 (-0.1%)  XAG 47.700 (+0.9%)
+**Bias (|score|≥2)**: XAU-4(TREND)  AVAX-5(TRANS)  SOL-4(TREND)  DOGE-4(TRANS)  ETH-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R443-XAU-1 XAU SHORT limit 3,865.69 · stop 3,881.15 · T1 3,824.84 · T2 3,796.54 · T3 3,790.48 · R 2.6
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (3,863.45 vs 3,869.58), h4 RSI 43.1, day -0.1%
+      [FOR    ] footprint: bull 8 / bear 20; recent: Exhaustion/sell[time], Exhaustion/sell[vol], Exhaustion/sell[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: exh:sell×3, sdiv:buy×2 — net 2 buy-side vs 3 sell-side
+      [FOR    ] liquidation: long-liq magnet 3,824.84 (str 44, ~$65M est, -1.02%) as target
+      [AGAINST] bookWalls: ±5% depth imbalance +0.226 (5m ago +0.226, falling bids); bid $0.06B vs ask $0.04B
+      [FOR    ] notifications: 6h weighted bias -3.0 (3 events)
+
+### Order lifecycle
+- R438-AVAX-2 re-debated: FOR 6/AGAINST 0 — stands
+- R441-DOGE-1 re-debated: FOR 6/AGAINST 0 — stands
+- R442-ETH-1 re-debated: FOR 4/AGAINST 3 — stands
+
+### Positions
+- no open positions
+
