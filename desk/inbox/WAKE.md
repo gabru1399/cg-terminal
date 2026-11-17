@@ -2564,3 +2564,14 @@ The cascade→exhaustion→reversal transition scored as a **state machine, not 
 - [FOR] liquidation: long-liq magnet 0.05731 (str 69, ~$9M est, -2.11%) as target
 - [FOR] cvd: taker buy 49.2%, perpCvd -41, spotCvd -11, quadrant both-selling, latestDiv bear (recent)
 - → place on DOGUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-17 19:17 UTC — new suggested order — place in MT5 (debate FOR 4/AGAINST 2)
+- R459-ETH-1 ETH SHORT limit entry 1819.11 · stop 1838.08 · targets 1748.32 / 1737.03 / 1726.87 · R 3.7 · expires 2026-11-17 23:17 UTC
+- BASIS: levels are PERP prices (perpRef 1791.58). Before placing in MT5 read spreads.ETHUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (1,791.58 vs 1,803.92), h4 RSI 35.5, day -1.5%
+- [AGAINST] footprint: bull 25 / bear 21; recent: Absorption/buy[vol], Absorption/buy[range]
+- [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×6, abs:sell×3, div:buy×1, div:sell×2, exh:buy×3, exh:sell×1, sdiv:sell×1, trap:buy×2, trap:sell×1 — net 12 buy-side vs 8 sell-side
+- [FOR] largeOrders: ask wall $11.9M @ 1,823.33 within 2% supports
+- [FOR] liquidation: long-liq magnet 1,748.32 (str 51, ~$148M est, -2.47%) as target
+- [FOR] cvd: taker buy 49.7%, perpCvd -418, spotCvd -326, quadrant both-selling, latestDiv bear (recent)
+- → place on ETHUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
