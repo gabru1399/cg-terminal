@@ -10912,3 +10912,20 @@ analysis script rc=1
 - Macro Validation: Bitcoin rejected at 15m EMA 233 / VWAP +2.0sigma (,664 -> ,807), dragging altcoin momentum downward into WIF short TP.
 - TradFi Fractional Advantage: MSFTBUSD capturing pre-market tech bid with zero overnight funding drag and asymmetric +2.91R EV.
 - Daemon Health: Next.js server on :3000 running (task-16750); 2-hour supervisor cron daemon active (task-16771).
+## R405 · 2026-11-17 02:29 UTC · zai-desk
+
+**Market**: BTC 64,434.9 (-0.6%)  ETH 1,811.87 (-0.4%)  SOL 71.56 (+0.1%)  XAU 3,869.67 (+0.0%)  XAG 47.300 (+0.1%)
+**Bias (|score|≥2)**: BNB-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R398-LTC-1 re-debated: FOR 3/AGAINST 2 — stands
+- R401-DOGE-1 WITHDRAWN (re-debate lost: FOR 3/AGAINST 3)
+- R402-XAU-1 re-debated: FOR 6/AGAINST 1 — stands
+- R402-BNB-2 re-debated: FOR 6/AGAINST 1 — stands
+
+### Positions
+- no open positions
+
