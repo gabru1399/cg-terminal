@@ -11697,3 +11697,24 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R434 · 2026-11-17 12:35 UTC · zai-desk
+
+**Market**: BTC 64,865.3 (+0.0%)  ETH 1,815.87 (-0.2%)  SOL 73.38 (+2.6%)  XAU 3,863.97 (-0.1%)  XAG 47.780 (+1.1%)
+**Bias (|score|≥2)**: XAU-3(TREND)  AVAX-4(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R434-AVAX-1 AVAX SHORT limit 7.214 · stop 7.260 · T1 7.020 · T2 7.000 · T3 6.980 · R 4.2
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (7.213 vs 7.168), h4 RSI 37.2, day +1.4%
+      [FOR    ] footprint: bull 31 / bear 34; recent: Absorption/buy[time], Divergence/sell[vol], Bear div/sell[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×2, div:buy×1, div:sell×5, exh:buy×2, sdiv:sell×1, trap:sell×3 — net 5 buy-side vs 11 sell-side
+      [FOR    ] liquidation: long-liq magnet 7.020 (str 89, ~$4M est, -2.72%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance +0.058 (5m ago +0.021, rising bids); bid $0.01B vs ask $0.01B
+      [FOR    ] cvd: taker buy 48.5%, perpCvd -33, spotCvd +0, quadrant both-selling, latestDiv bear (recent)
+      [FOR    ] notifications: 6h weighted bias -1.9 (1 events)
+
+### Order lifecycle
+- R423-XAU-1 re-debated: FOR 6/AGAINST 1 — stands
+
+### Positions
+- no open positions
+
