@@ -378,11 +378,11 @@ Every trade formulation must execute the DECIDE framework sequentially:
    - Must pass **Auction Clearance Gate 1** ($\ge 0.5\%$ cushion) and **Hazard Gate 2** (0 liquidation pools in Vector B).
 5. **D — Drive (Targets & Scale-Out)**:
    - **40% @ T1**: Nearest Value Area edge (Day VAH for longs, Day VAL for shorts).
-   - **40% @ T2**: High-volume node (Month POC / Session POC).
-   - **20% Runner @ T3**: Major liquidation pool or opposite whale barrier.
-   - Minimum R-Multiple: **$\ge 2.0\text{R}$ to T1** on continuation setups; minimum **1.50R** composite floor.
+   - **40% @ T2**: High-volume node (Month POC / Session POC / Primary Liquidation Cluster).
+   - **20% Runner @ T3**: Extended macro target trailed by Structure-Based Trailing Stop (15m Swing Pivot / 15m EMA 20).
+   - Minimum R-Multiple: **$\ge 2.00\text{R}$ hard floor** across all setups (User Directive 2026-11-17: target $> 2.0\text{R}$ trades with trailing runner extension). Setups under 2.00R are vetoed.
 6. **E — Execution & Risk Sizing**:
-   - Compute exact contract sizing from structural stop distance: 0.5% risk (Grade B) or 1.0%–2.5% risk (Grade A).
+   - Compute exact contract sizing from structural stop distance: strictly capped at **$\le 1.0\%$ Dollar Risk** of Net Liquid Equity ($\le \$0.028\text{ USD}$ on $\approx \$2.77$ equity).
    - Post-Only Maker limit execution (P5-03) with zero taker fees.
 
 ---
@@ -407,8 +407,8 @@ Every point must originate strictly from live API telemetry. Any missing or coun
 
 | Score | Grade | Leverage Cap | Risk Allocation | Operational Action |
 | :--- | :---: | :---: | :---: | :--- |
-| **$\ge 7.0\text{ pts}$** | **Grade A** | **Up to 25X** | **1.0% – 2.5% equity** | Pristine Institutional Setup. Authorizes full standard position unit with up to 25X isolated leverage (per User Directive 2026-11-17). |
-| **$5.0 - 6.5\text{ pts}$** | **Grade B** | **Up to 20X** | **0.5% – 1.0% equity** | Standard Setup. Authorizes half-unit risk allocation. |
+| **$\ge 7.0\text{ pts}$** | **Grade A** | **Up to 25X** | **1.0% equity cap** | Pristine Institutional Setup. Authorizes full standard position unit with up to 25X isolated leverage (Dollar Risk strictly $\le 1.0\%$ of Net Liquid Equity, e.g. $\le \$0.028\text{ USD}$ on $\approx \$2.77$ equity). |
+| **$5.0 - 6.5\text{ pts}$** | **Grade B** | **Up to 20X** | **0.5% equity cap** | Standard Setup. Authorizes half-unit risk allocation ($\le 0.5\%$ of equity). |
 | **$< 5.0\text{ pts}$** | **NO TRADE** | **0X** | **0.0% equity** | **HARD VETO. Capital Preserved.** Never enter sub-threshold setups. |
 
 ---
