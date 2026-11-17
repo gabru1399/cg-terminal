@@ -890,23 +890,38 @@ THE 12 BATTLE-TESTED MICROSTRUCTURE PITFALLS & MANDATORY PREVENTATIVE INVARIANTS
 
 ## SECTION 20. BLUEBERRY FUNDED PRIME 2-STEP MT5 OPERATIONAL SPECIFICATION & EXECUTION PROTOCOL
 
-This section governs trade execution on the **Blueberry Funded Prime 2-Step Challenge ($2,500 Account)**:
+This section governs trade execution on the **Blueberry Funded Prime 2-Step Challenge ($2,500 Account)** per official specifications (`help.blueberryfunded.com`):
 
-### 20.1 Account Parameters & Drawdown Guardrails
+### 20.1 Official Account Parameters & Drawdown Guardrails
 * **Operating Venue**: Blueberry Funded (`BlueberryMarketsSVG-Live`, Login `#5126976`).
-* **Account Size**: **$2,500.00 USD**.
-* **Daily Drawdown Limit**: **4.0% ($100.00 USD)** based on the higher of starting daily balance or equity. Hard stop: if intraday losses reach $80.00 USD (80% of daily limit), trading halts immediately for the day.
-* **Maximum Overall Drawdown Limit**: **10.0% ($250.00 USD) Static Limit**. Account equity must **NEVER touch or drop below $2,250.00 USD**.
-* **Profit Targets**: Phase 1 = **8.0% ($200.00 USD)** $\to$ equity $2,700.00 USD; Phase 2 = **6.0% ($150.00 USD)** $\to$ equity $2,650.00 USD.
-* **Minimum Active Trading Days**: 3 trading days (a day with $\ge 0.5\%$ closed profit qualifies).
+* **Account Capital**: **$2,500.00 USD**.
+* **Phase 1 Profit Target**: **8.0% ($200.00 USD)** $\to$ equity $2,700.00 USD.
+* **Phase 2 Profit Target**: **6.0% ($150.00 USD)** $\to$ equity $2,650.00 USD.
+* **Daily Drawdown Limit**: **4.0% of your initial balance** ($\mathbf{\$100.00\text{ USD}}$ fixed daily drawdown limit).
+  * Hard Floor: Daily equity must never touch starting balance $-\ \$100.00$. If intraday losses reach $\$80.00\text{ USD}$ (80% of daily limit), trading halts immediately for the day.
+* **Maximum Overall Drawdown Limit**: **10.0%, static** ($\mathbf{\$250.00\text{ USD}}$ fixed static limit).
+  * Hard Floor: Account equity must **NEVER touch or drop below $2,250.00 USD**.
+* **Minimum Active Trading Days**: **3 days per reward cycle** (for accounts purchased from 17 August 2026 onwards).
+* **Reward Cycle & Profit Split**: **14 days**, **80% Profit Split**.
+* **Exchange Leverage by Asset Class**:
+  * **Forex (FX)**: **1:30**
+  * **Indices & Metals**: **1:10** (`NAS100.p`, `XAUUSD.pi`, `XAGUSD.pi`)
+  * **Cryptocurrency**: **1:2** (`BTCUSD.pi`, `ETHUSD.pi`, `SOLUSD.p`)
+* **What Prime Challenge Does NOT Have (Explicit Freedoms)**:
+  * **No Consistency Rule**: No requirement on how profit is spread across days or trades.
+  * **No Risk Per Trade Idea Limit**: The 1.5% risk limit introduced elsewhere does not apply to Prime.
+  * **No Lot Size Restriction**: No artificial lot size ceilings.
 * **Macroeconomic News Restriction**: **STRICT 2-MINUTE FREEZE**: Absolutely zero opening, closing, or modifying market/pending orders within 2 minutes before and 2 minutes after high-impact (red-folder) economic news events.
 
-### 20.2 Risk Sizing Axiom & Position Limits
-* **Strict Dollar Risk Budget**: **Max $5.00 – $6.00 USD risk per trade** ($\approx 0.20\% - 0.24\%$ equity risk on $2,500).
+### 20.2 Two-Tier Risk Sizing Axiom & Minimum Lot Execution Protocol
+* **Standard Tier Risk ($5.00 – $6.00 USD)**:
+  * Standard setups target **$5.00 – $6.00 USD risk per trade** ($\approx 0.20\% - 0.24\%$ equity risk on $2,500).
+  * Ideal for micro-crypto (`BTCUSD.pi` at 0.01 lot $\times$ $520 stop = $5.20 risk) and FX (`EURUSD.pi` at 0.01 lot $\times$ 50 pips = $5.00 risk).
+* **High-Confluence Grade A/A+ Minimum Lot Exception Protocol (User Directive 2026-11-17)**:
+  * For premium assets where contract sizing makes 0.01 min lot exceed $6.00 USD (`XAUUSD.pi` at $15.50 risk / 0.62% equity; `NAS100.p` at $25.40 risk / 1.01% equity), **MINIMUM LOT 0.01 IS AUTHORIZED** for pristine Grade A/A+ setups with true structural stops and $EV \ge 2.00\text{R}$.
+  * **Portfolio Heat Constraint**: Total combined standing risk across all concurrent MT5 orders must remain strictly $\le \$50.00\text{ USD}$ ($\le 2.0\%$ of equity, $< 50\%$ of the $\$100.00$ daily limit), ensuring the account can absorb multiple full stop-outs without approaching daily drawdown.
 * **Mathematical Sizing Formula**:
-  $$\text{Lots} = \text{round}\left(\frac{\text{Target Risk (\$5.50)}}{\text{Stop Distance} \times \text{Contract Size} \times \frac{\text{Tick Value}}{\text{Tick Size}}}, \text{Volume Step}\right)$$
-* **Absolute Dollar Risk Cap**: If calculated lots at minimum volume (0.01) yield risk $> \$6.00\text{ USD}$, the setup is **MECHANICALLY VETOED** (stop too wide for $2,500 account).
-* **Absorption Capacity**: At $\$5.50$ risk per trade, the account can absorb **18 consecutive stop-outs** without breaching the daily 4% limit ($100), and **45 consecutive stop-outs** without breaching max overall drawdown ($250).
+  $$\text{Lots} = \max\left(\text{Vol Min}, \text{round}\left(\frac{\text{Target Risk}}{\text{Stop Distance} \times \text{Contract Size} \times \frac{\text{Tick Value}}{\text{Tick Size}}}, \text{Volume Step}\right)\right)$$
 
 ### 20.3 Multi-Algo Shared Account Isolation Invariant
 * **Single Comment Mandatory**: **`comment = "cg_terminal"`** must be written to 100% of orders dispatched by this system. Magic number is pinned to `42001`.
@@ -919,8 +934,8 @@ This section governs trade execution on the **Blueberry Funded Prime 2-Step Chal
 ### 20.4 Dedicated Execution Engine (`scripts/mt5_cg_trader.py`)
 All MT5 operations are dispatched via `scripts/mt5_cg_trader.py`:
 * Audit account and isolated positions: `python scripts/mt5_cg_trader.py --status`
-* Pre-calculate risk and lots: `python scripts/mt5_cg_trader.py --calc-risk <SYMBOL> <ENTRY> <SL>`
-* Place bracketed limit order: `python scripts/mt5_cg_trader.py --place <SYMBOL> <TYPE> <ENTRY> <SL> <TP>`
+* Pre-calculate risk and lots: `python scripts/mt5_cg_trader.py --calc-risk <SYMBOL> <ENTRY> <SL> [--max-risk <USD>]`
+* Place bracketed limit order: `python scripts/mt5_cg_trader.py --place <SYMBOL> <TYPE> <ENTRY> <SL> <TP> [--max-risk <USD>]`
 * Auto-ratchet to Breakeven at $\ge +1.0\text{R}$: `python scripts/mt5_cg_trader.py --be <TICKET>`
 
 ---
