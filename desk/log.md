@@ -10786,3 +10786,38 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R401 · 2026-11-17 00:29 UTC · zai-desk
+
+**Market**: BTC 64,592.0 (-0.4%)  ETH 1,815.30 (-0.2%)  SOL 71.50 (-0.0%)  XAU 3,862.13 (-0.2%)  XAG 47.120 (-0.3%)
+**Bias (|score|≥2)**: DOGE-4(TREND)  ADA-5(TRANS)  BTC-4(TREND)  ETH-4(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R401-DOGE-1 DOGE SHORT limit 0.05886 · stop 0.05909 · T1 0.05755 · T2 0.05746 · R 5.6
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.05877 vs 0.05881), h4 RSI 37.4, day -0.2%
+      [FOR    ] footprint: bull 27 / bear 32; recent: Exhaustion/buy[vol], Exhaustion/buy[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:sell×2, div:buy×1, exh:buy×3, sdiv:buy×1 — net 5 buy-side vs 2 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.05755 (str 73, ~$9M est, -2.13%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.036 (5m ago +0.019, falling bids); bid $0.03B vs ask $0.03B
+      [FOR    ] cvd: taker buy 48.8%, perpCvd -72, spotCvd -17, quadrant both-selling, latestDiv bear (stale/none)
+- NEW R401-ADA-2 ADA SHORT limit 0.1530 · stop 0.1536 · T1 0.1499 · T2 0.1497 · R 5.1
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.1528 vs 0.1528), h4 RSI 36.9, day -0.1%
+      [FOR    ] footprint: bull 59 / bear 60; recent: Trapped longs/sell[time], Divergence/buy[vol], Absorption/buy[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×3, abs:sell×7, div:buy×3, exh:buy×2, exh:sell×2, sdiv:buy×1, sdiv:sell×1, trap:buy×2, trap:sell×2 — net 11 buy-side vs 12 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.1499 (str 68, ~$4M est, -1.82%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.167 (5m ago -0.219, rising bids); bid $0.01B vs ask $0.02B
+      [FOR    ] cvd: taker buy 48.3%, perpCvd -38, spotCvd -7, quadrant both-selling, latestDiv bear (recent)
+
+### Order lifecycle
+- R394-LINK-1 WITHDRAWN (confluence flipped to +0.3)
+- R393-XAU-1 re-debated: FOR 6/AGAINST 1 — stands
+- R394-XRP-3 WITHDRAWN (re-debate lost: FOR 3/AGAINST 3)
+- R398-LTC-1 re-debated: FOR 4/AGAINST 2 — stands
+
+### Positions
+- no open positions
+
+
+## ROUND FAILED · 2026-11-17 00:29 UTC · zai-desk
+
+analysis script rc=1
+
