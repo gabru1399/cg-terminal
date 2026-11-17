@@ -424,10 +424,13 @@ Before an order ticket is dispatched, it must pass all 11 Socratic Gates without
 4. **Gate 4: Spread Drag Gate**: CLOB spread must be $< 0.15\%$ and consume $< 20\%$ of planned stop-loss distance.
 5. **Gate 5: Time Stop Realism**: If price fails to reach $+0.5\text{R}$ within 8 bars (2 hours), exit or tighten stop (P5-05).
 6. **Gate 6: Breakeven Invariant**: Move SL to entry immediately upon reaching $\ge +1.0\text{R}$ excursion (P5-04). Downside risk strictly $0.00 USD.
-7. **Gate 7: Mechanical Contract Minimum Dollar Risk Gate (The LINK/BNB Hard Ban & TradFi Fractional Enabler)**:
-   - $\text{Effective Dollar Risk} = \text{Minimum Lot} \times \text{Contract Value} \times |\text{Entry} - \text{SL}| \times 1.20$.
-   - **Effective Dollar Risk MUST BE $\le 2.5\%$ of live Net Liquid Equity** ($\le \$0.070\text{ USD}$ on $\approx \$2.80\text{ equity}$).
-   - **MANDATORY HARD BAN**: Any asset where 1 minimum lot exceeds this risk is **PERMANENTLY VETOED**. Banned: `LINKUSD`, `BNBUSD`, `SOLUSD`, `BTCUSD`, `ETHUSD`, `AVGOBUSD`. Permitted on small equity: TradFi 0.01 share fractionals (`MSFTBUSD`, `AMZNBUSD`, `GOOGLBUSD`, `AAPLBUSD`, `QQQBUSD`, `TSMBUSD`, `CRCLBUSD`) and Crypto micro-contracts (`ARBUSD`, `ADAUSD`, `XRPUSD`, `APTUSD`, `TIAUSD`, `SEIUSD`, `DOGEUSD`, `VETUSD`).
+7. **Gate 7: Two-Tier Conviction & High-Leverage Risk Protocol (Tier 1 Opportunity Unlock — User Directive 2026-11-17)**:
+   - **Tier 1 (High-Potential A/A+ Opportunities — BTC, SOL, BNB, ETH Unlocked)**:
+     - For pristine Grade A or A+ institutional setups (Table 7 score $\ge 7.0$, Athena Oracle confirmation $\le 35$ or $\ge 65$, Best $R \ge 2.50\text{R}$), **Tier 1 assets are 100% UNBANNED**.
+     - High isolated leverage ($25\times - 50\times$, or up to venue maximum) is authorized to size 1 minimum contract lot with initial position margin $\le \$1.50\text{ USD}$ ($\le 55\%$ of available equity).
+     - Structural stop loss must be tight ($\le 0.8\%$ distance beyond sweep wick or Value Area boundary). Dollar risk is calibrated up to $\$0.35 - \$0.65\text{ USD}$, capturing outsized asymmetric payoffs ($+30\%$ to $+60\%$ account gain) while moving SL to Breakeven immediately at $+1.0\text{R}$ excursion.
+   - **Tier 2 (Standard Grade B Setups)**:
+     - Standard setups remain restricted to micro-crypto contracts (`SEI`, `ADA`, `ARB`, `DOGE`, `APT`, `TIA`, `VET`, `WIF`) and TradFi fractionals (`MSFTB`, `AMZNB`, `CRCLB`) with conservative position margin ($\le \$0.30\text{ USD}$).
 8. **Gate 8: Active Cascade Climax Gate**: If `Liq 5m > $500k`, no limit orders into the cascade. Wait for the exhaustion wick.
 9. **Gate 9: Sector Isolation Gate (Anti-Avalanche Invariant)**: Never hold 2 same-direction crypto positions simultaneously. Slot 2 must be TradFi/Metals or Cash.
 10. **Gate 10: Macro Anchor (BTC) Regime Gate**: Altcoin shorts are strictly banned if BTC is within $0.75\%$ of daily low, oversold ($<-2.0\sigma$ VWAP), or testing major multi-day liquidity support.
