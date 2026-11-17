@@ -11840,3 +11840,25 @@ analysis script rc=1
 - **Bracket TP**: $65,600.00 (upper short liquidation cluster shelf: $121.3M short pool; +2.30R)
 - **Risk Budget**: 0.01 lot $\times$ $520.00 distance = **$5.20 USD risk** ($\approx 0.208\%$ equity risk; strictly satisfies $5.00–$6.00 cap)
 - **Multi-Algo Isolation**: `comment="cg_terminal"`, `magic=42001` pinned. Zero interference with other algorithms.
+## R441 · 2026-11-17 14:38 UTC · zai-desk
+
+**Market**: BTC 65,177.8 (+0.5%)  ETH 1,825.91 (+0.3%)  SOL 73.97 (+3.4%)  XAU 3,873.28 (+0.1%)  XAG 47.870 (+1.3%)
+**Bias (|score|≥2)**: ADA-3(TREND)  SOL-4(TREND)  DOGE-4(TREND)  AVAX-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- SOL SHORT confluence -3.8 — REJECTED: opposite liq magnet 74.44 (str 86, ~$21M est) within 1.2R of entry — wait for sweep
+- NEW R441-DOGE-1 DOGE SHORT limit 0.05964 · stop 0.05995 · T1 0.05857 · T2 0.05784 · R 3.4
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (0.05964 vs 0.05900), h4 RSI 42.9, day +1.2%
+      [FOR    ] footprint: bull 26 / bear 30; recent: Bear div/sell[time], Exhaustion/sell[vol], Absorption/buy[range]
+      [FOR    ] liquidation: long-liq magnet 0.05784 (str 62, ~$8M est, -2.80%) as target
+      [AGAINST] liquidation-hazard: short-liq magnet 0.06021 (str 74) sits between entry and stop — sweep risk
+      [FOR    ] cvd: taker buy 48.9%, perpCvd -65, spotCvd -16, quadrant both-selling, latestDiv bear (recent)
+      [FOR    ] notifications: 6h weighted bias -2.0 (2 events)
+
+### Order lifecycle
+- R438-AVAX-2 re-debated: FOR 5/AGAINST 1 — stands
+- R440-XAU-1 re-debated: FOR 4/AGAINST 3 — stands
+
+### Positions
+- no open positions
+
