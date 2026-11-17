@@ -11811,3 +11811,21 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R440 · 2026-11-17 14:23 UTC · zai-desk
+
+**Market**: BTC 64,965.9 (+0.2%)  ETH 1,822.82 (+0.2%)  SOL 73.76 (+3.1%)  XAU 3,866.75 (-0.0%)  XAG 47.600 (+0.7%)
+**Bias (|score|≥2)**: XAU-3(TRANS)  AVAX-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R440-XAU-1 XAU SHORT limit 3,878.72 · stop 3,894.19 · T1 3,824.84 · T2 3,800.58 · T3 3,786.43 · R 3.5
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (3,866.75 vs 3,869.50), h4 RSI 44.0, day -0.0%
+      [FOR    ] footprint: bull 9 / bear 17; recent: Bull div/buy[time], Divergence/sell[vol]
+      [FOR    ] liquidation: long-liq magnet 3,824.84 (str 74, ~$57M est, -1.08%) as target
+      [AGAINST] bookWalls: ±5% depth imbalance +0.221 (5m ago +0.266, falling bids); bid $0.06B vs ask $0.04B
+
+### Order lifecycle
+- R438-AVAX-2 re-debated: FOR 5/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
