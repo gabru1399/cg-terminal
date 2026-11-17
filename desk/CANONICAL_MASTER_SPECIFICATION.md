@@ -955,6 +955,14 @@ THE 12 BATTLE-TESTED MICROSTRUCTURE PITFALLS & MANDATORY PREVENTATIVE INVARIANTS
 * **The Failure Mode**: Evaluating an asset based solely on a single 15m candle snapshot while ignoring the trailing 48-hour volume/range bars, large order defense intensity, 3D/7D/30D liquidation skew, or Spot-Perp CVD leads to entering directly into massive institutional ask walls or active liquidation magnets.
 * **The Immutable Invariant**: **MANDATORY 360° ZERO-OMISSION TAB AUDIT**. For every trade candidate, the engine must systematically audit the trailing 48h Footprint across all toggle combinations (time, volume, range bars, diagonal imbalances, profile nodes), Large Orders intensity and defense clusters, 3D/7D/30D liquidation levels across all spread % bands, Futures vs Spot book walls, and multi-timeframe CVD behavior before placing an order.
 
+### 19.16 PIT-16: The Liquidation Cluster Stop Collision Trap (The Cold Zone Invariant)
+* **The Failure Mode**: Placing a Stop Loss in front of or inside a high-strength liquidation cluster (e.g. placing an SL at $63,880 when a 100% Strength Liquidation Zone sits at $63,512.5$). Market makers and aggressive taker algorithms are economically driven to sweep high-density liquidation pools. Placing an SL in the path of the magnet guarantees getting swept before the true market reversal.
+* **The Immutable Invariant**: **THE COLD ZONE STOP LOSS INVARIANT**. Stop losses MUST NEVER be placed inside or in front of high-density liquidation clusters ($\ge 40\%$ strength). The Stop Loss MUST be placed strictly in the *Cold Zone* beyond the entire multi-exchange liquidation shelf across 3D, 7D, and 30D lookbacks and spread bands `±1%` to `±8%`, where liquidation density drops to zero and structural anchors (Day VAL/VAH, -3σ VWAP, resting book walls) protect the position.
+
+### 19.17 PIT-17: The Macro EMA Spine & Trend Rejection Blindspot (EMA 89 × 233 & S9 Invariant)
+* **The Failure Mode**: Forcing counter-trend entries without evaluating the multi-timeframe Fibonacci trend spine (EMA 89 and EMA 233 on 15m, 1H, 4H, and 1D), or failing to exploit high-probability "Big Trend Rejection Candles" (pin bars with wicks $\ge 2:1$ slamming into declining EMA 89/233 on massive volume).
+* **The Immutable Invariant**: **THE MACRO TREND SPINE & S9 REJECTION INVARIANT**. Always evaluate the EMA 13 × 89 × 233 stack across 15m, 1H, 4H, and 1D. When counter-trend rallies spike into a declining EMA 89 or EMA 233 and print a long rejection wick with volume expansion ($\ge 1.5\times$ 20-MA) and footprint exhaustion/trap, execute Archetype S9. Place the stop loss tightly beyond the rejection wick in the cold zone and ride the asymmetric trend drive into the opposing 100% liquidation pool.
+
 ---
 
 ## SECTION 20. BLUEBERRY FUNDED PRIME 2-STEP MT5 OPERATIONAL SPECIFICATION & EXECUTION PROTOCOL
