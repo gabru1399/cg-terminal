@@ -218,3 +218,12 @@
 - [FOR] cvd: taker buy 50.1%, perpCvd -3, spotCvd +5, quadrant spot-bid, latestDiv bear (recent)
 - [FOR] notifications: 6h weighted bias -5.9 (6 events)
 - → place on LNKUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-17 23:50 UTC — new suggested order — place in MT5 (debate FOR 4/AGAINST 0)
+- R476-XRP-1 XRP SHORT limit entry 0.9843 · stop 0.9929 · targets 0.9539 · R 3.5 · expires 2026-11-18 03:49 UTC
+- BASIS: levels are PERP prices (perpRef 0.9843). Before placing in MT5 read spreads.XRPUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (0.9843 vs 0.9650), h4 RSI 51.6, day +3.1%
+- [FOR] footprint: bull 37 / bear 45; recent: Divergence/sell[vol], Divergence/sell[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×4, abs:sell×3, div:sell×5, exh:sell×2, sdiv:buy×1, trap:buy×1, trap:sell×1 — net 6 buy-side vs 11 sell-side
+- [FOR] notifications: 6h weighted bias -6.8 (11 events)
+- → place on XRPUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
