@@ -62,7 +62,7 @@ Every execution round, autonomous turn, or trading response **MUST OPEN** with t
 ```text
 ### ✅ PRE-FLIGHT VERIFICATION CHECKLIST (ROUND R<n>)
 [x] Pre-Flight Verification Checklist COMPLETED in full.
-[x] Canonical Master Specification (@[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]) READ, ANALYZED & STRICTLY FOLLOWED (SOP v2.0.0 mandatory invariant).
+[x] Canonical Master Specification (@[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]) READ (Empirical read_file executed on wake-up), ANALYZED & STRICTLY FOLLOWED (SOP v2.0.0 mandatory invariant).
 [x] Plugins, Skills & MCP Server Architecture verified LOADED & OPERATIONAL:
     - Plugins: persistent-memory, coderabbit, superpowers, trading-skills, chrome-devtools-plugin, harness-antigravity.
     - MCP Servers: delta-exchange-mcp, persistent-memory, agent-memory, chrome-devtools, godkiller-verification, code-review-graph, link-extension, sqlite.
@@ -76,11 +76,12 @@ Every execution round, autonomous turn, or trading response **MUST OPEN** with t
 [x] Live Delta Exchange India CLOB & Margin Solvency audited (Account #26902927; Net Liquid Equity, Position Margin, Order Margin, Free Cash Buffer).
 [x] Gate 7 Two-Tier Conviction Protocol & Gate 9 Dynamic Multi-Slot Expansion armed (Tier 1 BTC/ETH/BNB unlocked for Grade A/A+ with high isolated leverage & tight stops; Grade B micro-assets/TradFi fractionals; SOL reserved until equity >= $5.00).
 [x] Operational Invariants armed (Gate 10 BTC Macro Filter, +1.0R Breakeven Invariant, 8-Bar Time Stop, Post-Only Maker Execution, Mark-Price Brackets, Shared Account Isolation).
+[x] Section 19 Pitfalls Ledger enforced (PIT-01 L2 Deep-Edge Filter, PIT-03 Beta Buffer, PIT-04 Mechanical SOL Ban, PIT-09 Auto-Breakeven).
 [x] Single Dynamic 1200s Timer verified (Zero duplicate timers, zero cron overlap).
 ```
 
 ### Pre-Flight Verification Gates:
-- **Gate C-01 (Single Master Specification Invariant)**: Bound strictly to `desk/CANONICAL_MASTER_SPECIFICATION.md` (SOP v2.0.0). Always read, analyze, and adhere to every section without omission. Multi-file divergences are purged.
+- **Gate C-01 (Single Master Specification Invariant & Mandatory read_file Call)**: Bound strictly to `desk/CANONICAL_MASTER_SPECIFICATION.md` (SOP v2.0.0). Antigravity MUST execute `read_file` on `desk/CANONICAL_MASTER_SPECIFICATION.md` on every wake-up as an ingrained raw habit before analyzing markets or placing orders. Multi-file divergences are purged.
 - **Gate C-02 (Plugins, Skills & MCP Infrastructure Gate)**: Verify active availability of essential MCP servers (`delta-exchange-mcp`, `persistent-memory`, etc.), plugins, and analytical skills before formulation.
 - **Gate C-03 (Cognitive Thinking Chain & 4-Voice Debate)**: Ensure no trade or code is generated without Socratic stress-testing across the 10 mental models and 4-voice desk debate.
 - **Gate C-04 (Scanner Purged / Individual Asset Audit)**: Scanners and pre-aggregated tables are strictly purged. Analyze each and every one of the 61 Curated Assets individually via direct endpoint calls (`scripts/individual_asset_evaluator.py`). Zero cached or scanner-filtered shortcuts.
@@ -89,6 +90,7 @@ Every execution round, autonomous turn, or trading response **MUST OPEN** with t
 - **Gate C-07 (16-Dimension Telemetry Extraction)**: Complete the 16-point audit sheet for any proposed candidate.
 - **Gate C-08 (Two-Tier Conviction Sizing)**: Tier 1 majors (`BTC`, `BNB`, `ETH`) permitted up to $\$1.50\text{ USD}$ margin with tight structural stops ($\le 0.8\%$); Grade B micro-assets permitted $\le 1.0\% - 2.5\%$ dollar risk.
 - **Gate C-09 (Single Timer Continuity)**: Verify via `manage_task(Action="list")` that strictly ONE dynamic timer is active.
+- **Gate C-10 (Section 19 Battle-Scar Pitfalls Enforcement)**: Strictly enforce the 12 empirical invariants codified in Section 19 of `CANONICAL_MASTER_SPECIFICATION.md` (PIT-01 L2 Deep-Edge Entry, PIT-03 Beta Buffer, PIT-04 Mechanical SOL Ban, PIT-06 Stale Order Pruning, PIT-08 Maker Post-Only, PIT-09 Instant Breakeven Ratchet).
 
 ---
 

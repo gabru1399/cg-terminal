@@ -79,7 +79,7 @@ const ROOT = resolveRoot();
  * only matter for continuity bookkeeping (lastTs/gaps) — capping keeps disk
  * and memory bounded after months of uptime. bookwalls grows ~74k rows/day.
  */
-const MAX_ROWS = Math.max(2_000, Number(process.env.CG_STORE_MAX_ROWS ?? 60_000) || 60_000);
+const MAX_ROWS = Math.max(2_000, Number(process.env.CG_STORE_MAX_ROWS ?? 5_000) || 5_000);
 
 /**
  * The store map lives on globalThis: Next.js dev mode can instantiate this

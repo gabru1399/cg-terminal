@@ -4,9 +4,12 @@ import { buildLiqModel, liqStats, type RawLiqPayload, type LiqStats } from "@/li
 import { liqVenues, symDecs } from "@/lib/cg/assets";
 import { anyTerminalSym, knownSym } from "@/lib/cg/sym-gate";
 import { getLivePrice } from "@/lib/live/server-price";
+import { BoundedMap } from "@/lib/cg/bounded";
 import type { LiquidationLevel } from "@/lib/cg/types";
 
 export const dynamic = "force-dynamic";
+
+const cache = new BoundedMap<{ at: number; body: unknown }>(32);
 
 export async function GET(req: NextRequest) {
   const sp = req.nextUrl.searchParams;
@@ -20,6 +23,12 @@ export async function GET(req: NextRequest) {
   const range = ["3d", "7d", "30d"].includes(rangeRaw) ? rangeRaw : "3d";
   const lvR = Math.min(Math.max(Number(sp.get("lvR") ?? 4) || 4, 1), 8);
   const limit = Math.min(Number(sp.get("limit") ?? 4000) || 4000, 6000);
+
+  const cacheKey = `${sym}|${range}|${lvR}|${limit}`;
+  const hit = cache.get(cacheKey);
+  if (hit && Date.now() - hit.at < 25_000) {
+    return NextResponse.json(hit.body);
+  }
   try {
     const live = await getLivePrice(sym).catch(() => null);
     if (!hasPerp) {
@@ -94,7 +103,7 @@ export async function GET(req: NextRequest) {
       priceDecs: symDecs(sym, live?.price ?? null),
     });
 
-    return NextResponse.json({
+    const payload = {
       ok: true,
       supported: true,
       sym,
@@ -104,7 +113,9 @@ export async function GET(req: NextRequest) {
       perVenue,
       stats,
       updatedAt: Date.now(),
-    });
+    };
+    cache.set(cacheKey, { at: Date.now(), body: payload });
+    return NextResponse.json(payload);
   } catch (e) {
     return NextResponse.json(
       { ok: false, error: e instanceof Error ? e.message : "fetch failed" },

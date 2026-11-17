@@ -3,19 +3,34 @@ import json
 import concurrent.futures
 import time
 import sys
+import os
+import re
 
-CURATED_61 = [
-    # 30 Crypto USDT-M
-    "BTC", "ETH", "BNB", "SOL", "XRP", "ADA", "DOGE", "TRX", "LINK", "LTC",
-    "AVAX", "DOT", "NEAR", "UNI", "ATOM", "XLM", "ETC", "FIL", "ICP", "HBAR",
-    "APT", "ARB", "OP", "SUI", "SEI", "INJ", "TIA", "VET", "1000PEPE", "1000SHIB",
-    # 28 TradFi USDT-M
-    "XAU", "NVDA", "SNDK", "SOXL", "SPCX", "GOOGL", "MU", "SKHY", "XAG", "CL",
-    "INTC", "CRCL", "MSTR", "QQQ", "ANTHROPIC", "AAPL", "TSLA", "DRAM", "KORU", "META",
-    "NBIS", "MSFT", "AMZN", "AMD", "COIN", "NFLX", "AVGO", "TSM",
-    # 3 Classic
-    "SPX500", "UKO", "NDX100"
-]
+def load_universe():
+    curated_path = os.path.join(os.path.dirname(__file__), '..', 'src', 'lib', 'universe', 'curated.ts')
+    if os.path.exists(curated_path):
+        with open(curated_path, 'r', encoding='utf-8') as f:
+            text = f.read()
+        syms = re.findall(r'sym:\s*"([^"]+)"', text)
+        seen = set()
+        universe = []
+        for s in syms:
+            if s not in seen:
+                seen.add(s)
+                universe.append(s)
+        if universe:
+            return universe
+    return [
+        "BTC", "ETH", "BNB", "SOL", "XRP", "ADA", "DOGE", "TRX", "LINK", "LTC",
+        "AVAX", "DOT", "NEAR", "UNI", "ATOM", "XLM", "ETC", "FIL", "ICP", "HBAR",
+        "APT", "ARB", "OP", "SUI", "SEI", "INJ", "TIA", "VET", "1000PEPE", "1000SHIB",
+        "XAU", "NVDA", "SNDK", "SOXL", "SPCX", "GOOGL", "MU", "SKHY", "XAG", "CL",
+        "INTC", "CRCL", "MSTR", "QQQ", "ANTHROPIC", "AAPL", "TSLA", "DRAM", "KORU", "META",
+        "NBIS", "MSFT", "AMZN", "AMD", "COIN", "NFLX", "AVGO", "TSM",
+        "SPX500", "UKO", "NDX100"
+    ]
+
+EXPANDED_UNIVERSE = load_universe()
 
 def fetch_json(url, timeout=8.0):
     try:
@@ -28,8 +43,8 @@ def fetch_json(url, timeout=8.0):
 def audit_single_asset(sym):
     base = "http://127.0.0.1:3000/api/cg"
     
-    # 1. Direct individual narrative call
-    narrative = fetch_json(f"{base}/narrative?sym={sym}")
+    # 1. Direct individual narrative call (consolidated microstructure intelligence)
+    narrative = fetch_json(f"{base}/narrative?sym={sym}", timeout=4.0)
     regime = narrative.get('regime') if narrative else "UNKNOWN"
     model = narrative.get('activeModel') if narrative else "NONE"
     direction = narrative.get('direction') if narrative else "NEUTRAL"
@@ -47,20 +62,30 @@ def audit_single_asset(sym):
     p_win = prob.get('pWin') if prob else None
     ev_r = prob.get('evR') if prob else None
     
-    # 2. Direct individual market call
-    market = fetch_json(f"{base}/market?sym={sym}")
-    price = market.get('price', {}).get('last') if market else None
-    vwap = market.get('vwap', {}).get('vwap') if market else None
+    ctx = narrative.get('context') if narrative else {}
+    price = ctx.get('price') if ctx else None
+    vwap = None
     
-    # 3. Direct individual signals call
-    top_sig = "NONE"
-    signals = fetch_json(f"{base}/signals?sym={sym}", timeout=3.0)
-    sig_list = signals.get('signals', []) if signals else []
-    if sig_list:
-        top_sig = f"{sig_list[0].get('type')} ({sig_list[0].get('side')})"
-
     # Candidate eligibility: Must have defined entry ladder, Grade A or A+, and composite Best R >= 2.00R (User Directive: Target > 2R)
     has_trade = (ladder is not None) and (best_r is not None and best_r >= 2.00) and (grade in ['A', 'A+'])
+    
+    top_sig = "NONE"
+    if narrative and narrative.get('checklist'):
+        for item in narrative['checklist']:
+            if item.get('key') == 'footprint' and item.get('pass'):
+                top_sig = item.get('value', 'PASS')[:18]
+                break
+
+    # If candidate setup, enrich with market VWAP and signals
+    if has_trade:
+        market = fetch_json(f"{base}/market?sym={sym}", timeout=4.0)
+        if market:
+            price = market.get('price', {}).get('last', price)
+            vwap = market.get('vwap', {}).get('vwap')
+        signals = fetch_json(f"{base}/signals?sym={sym}", timeout=3.0)
+        sig_list = signals.get('signals', []) if signals else []
+        if sig_list:
+            top_sig = f"{sig_list[0].get('type')} ({sig_list[0].get('side')})"
     
     return {
         "sym": sym,
@@ -84,10 +109,10 @@ def audit_single_asset(sym):
 
 def main():
     t0 = time.time()
-    print("Beginning fresh, individual, endpoint-by-endpoint audit of all 61 Curated Assets...", flush=True)
+    print(f"Beginning fresh, individual, endpoint-by-endpoint audit of all {len(EXPANDED_UNIVERSE)} Expanded Universe Assets...", flush=True)
     results = {}
-    with concurrent.futures.ThreadPoolExecutor(max_workers=15) as executor:
-        future_to_sym = {executor.submit(audit_single_asset, sym): sym for sym in CURATED_61}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
+        future_to_sym = {executor.submit(audit_single_asset, sym): sym for sym in EXPANDED_UNIVERSE}
         for future in concurrent.futures.as_completed(future_to_sym):
             res = future.result()
             results[res['sym']] = res
@@ -97,7 +122,7 @@ def main():
     print("-" * 120, flush=True)
     
     candidates = []
-    for sym in CURATED_61:
+    for sym in EXPANDED_UNIVERSE:
         r = results.get(sym, {})
         status = "CANDIDATE SETUP" if r.get('has_trade') else "NO_TRADE (VETO)"
         if r.get('has_trade'):

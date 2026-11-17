@@ -122,8 +122,8 @@ export default function FootprintTool({ sym = "BTC" }: { sym?: string }) {
   // ---- data: the exact calls the live page makes ----
   // time series at the selected interval (their TBS/D, 300 bars)
   const tfQ = usePolling<FpResponse>(`/api/cg/fp?sym=${sym}&itv=${tf}&limit=300`, 10_000);
-  // m1 series for volume / range bars (their M1S, 1000 bars)
-  const m1Q = usePolling<FpResponse>(`/api/cg/fp?sym=${sym}&itv=m1&limit=1000`, 30_000);
+  // m1 series for volume / range bars (bounded to 300 bars for fast load)
+  const m1Q = usePolling<FpResponse>(`/api/cg/fp?sym=${sym}&itv=m1&limit=300`, 30_000);
 
   // ---- LIVE LANES ----
   // fast REST lane: the last ≤8 bars of the ACTIVE bar-type's source series,
@@ -567,7 +567,7 @@ export default function FootprintTool({ sym = "BTC" }: { sym?: string }) {
             />
           ) : (
             <div className="flex h-full items-center justify-center text-sm text-neutral-500">
-              {tfQ.loading || m1Q.loading ? "Loading aggregated order flow…" : "No order-flow data"}
+              {(bt === "time" ? tfQ.loading : (m1Q.loading && !m1Bars.length)) ? "Loading aggregated order flow…" : "No order-flow data"}
             </div>
           )}
         </div>
@@ -691,7 +691,7 @@ export default function FootprintTool({ sym = "BTC" }: { sym?: string }) {
                 })}
                 {!rows.length && (
                   <div className="px-3 py-8 text-center text-xs text-neutral-600">
-                    {sets.length ? "No signals match the current filters." : "Loading the three bar series…"}
+                    {sets.length ? "No signals match the current filters." : (tfQ.loading ? "Loading signals…" : "No signals detected")}
                   </div>
                 )}
               </div>
