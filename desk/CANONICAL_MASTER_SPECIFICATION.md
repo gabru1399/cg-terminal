@@ -81,7 +81,7 @@ On EVERY wake-up, autonomous recursion round, or trading response, the execution
 [x] Blueberry Funded MT5 Terminal & Shared Account Isolation audited (Login #5126976; Equity $2,499.96, $5-$6 Risk Cap, comment='cg_terminal' invariant).
 [x] Gate 7 High-Potential Conviction Protocol & Gate 9 Dynamic Multi-Slot Expansion armed (High isolated leverage permitted on high-potential setups with verified structural stops; Grade B micro-assets/TradFi fractionals; SOL reserved until equity >= $5.00).
 [x] Operational Invariants armed (Gate 10 BTC Macro Filter, +1.0R Breakeven Invariant, 8-Bar Time Stop, Post-Only Maker Execution, Mark-Price Brackets, Shared Account Isolation).
-[x] Section 19 Pitfalls Ledger enforced (PIT-01 L2 Deep-Edge Filter, PIT-03 Beta Buffer, PIT-04 Mechanical SOL Ban, PIT-09 Auto-Breakeven, PIT-14 MT5 Comment Isolation, PIT-15 Tab Omission).
+[x] Section 19 Pitfalls Ledger enforced (PIT-01 L2 Deep-Edge Filter, PIT-03 Beta Buffer, PIT-04 Mechanical SOL Ban, PIT-09 Auto-Breakeven, PIT-14 MT5 Comment Isolation, PIT-15 Tab Omission, PIT-16 Cold Zone SL, PIT-17 Macro EMA Spine & S9 Rejection).
 [x] Single Dynamic 1200s Timer verified (Zero duplicate timers, zero cron overlap).
 ```
 
