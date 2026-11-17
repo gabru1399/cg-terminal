@@ -10957,3 +10957,20 @@ analysis script rc=1
 
 analysis script rc=1
 
+## R407 · 2026-11-17 03:29 UTC · zai-desk
+
+**Market**: BTC 65,072.2 (+0.3%)  ETH 1,828.26 (+0.5%)  SOL 72.60 (+1.5%)  XAU 3,881.52 (+0.3%)  XAG 47.660 (+0.8%)
+**Bias (|score|≥2)**: DOGE-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R398-LTC-1 EXPIRED (unfilled past expiry)
+- R402-XAU-1 re-debated: FOR 6/AGAINST 1 — stands
+- R402-BNB-2 re-debated: FOR 5/AGAINST 1 — stands
+- R406-DOGE-1 re-debated: FOR 7/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
