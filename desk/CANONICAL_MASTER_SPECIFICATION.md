@@ -75,7 +75,7 @@ On EVERY wake-up, autonomous recursion round, or trading response, the execution
     - First Principles, Pre-Mortem Analysis, Probabilistic Reasoning (EV hurdle >= 2.0R), Second-Order Effects, Red Team / Steel-Manning, Margin of Safety, Via Negativa, Map vs Territory, Theory of Constraints, Lindy Effect.
 [x] 4-Voice Quantitative Desk Debate executed (Alpha Strategist Hunter, Adversarial Risk Officer Red Team, Microstructure Quant Empiricist, Committee Arbiter Synthesizer).
 [x] Karpathy Guidelines & Ponytail Minimal Code Protocol strictly upheld (Think Before Acting, Simplicity First, Surgical Execution, Goal-Driven Empirical Verification).
-[x] Fresh individual analysis of each of the 61 Curated Assets executed from scratch (Zero cached echoes; endpoint-by-endpoint audit).
+[x] Fresh individual analysis of each of the 234 Expanded Universe Assets executed from scratch (Zero cached echoes; endpoint-by-endpoint audit).
 [x] Payoff & Confluence Hurdle enforced (Table 7 Score >= 5.0 pts, Expected Payoff >= 2.00R hard floor).
 [x] Live Delta Exchange India CLOB & Margin Solvency audited (Account #26902927; Net Liquid Equity, Position Margin, Order Margin, Free Cash Buffer).
 [x] Gate 7 Two-Tier Conviction Protocol & Gate 9 Dynamic Multi-Slot Expansion armed (Tier 1 BTC/ETH/BNB unlocked for Grade A/A+ with high isolated leverage & tight stops; Grade B micro-assets/TradFi fractionals; SOL reserved until equity >= $5.00).
@@ -88,7 +88,7 @@ On EVERY wake-up, autonomous recursion round, or trading response, the execution
 1. **Gate C-01 (Single Spec Bound & Mandatory read_file Wake-Up Invariant)**: `CANONICAL_MASTER_SPECIFICATION.md` is bound as the sole operational manual. Antigravity must execute `read_file` on this document on every wake-up as an ingrained habit before analyzing markets or placing orders. Multi-file divergences are purged.
 2. **Gate C-02 (Plugins, Skills & MCP Infrastructure Verification)**: Verify active availability of essential MCP servers (`delta-exchange-mcp`, `persistent-memory`, etc.), plugins, and analytical skills before formulation.
 3. **Gate C-03 (Cognitive Thinking Chain & 4-Voice Debate)**: Ensure no trade or code is generated without Socratic stress-testing across the 10 mental models and 4-voice desk debate.
-4. **Gate C-04 (Purge Scanner / Mandatory Individual Asset Audit)**: Scanners and pre-aggregated screener tables (`/api/cg/screener`) are **STRICTLY PURGED**. On every wake-up, execute direct individual endpoint-by-endpoint analysis (`/api/cg/market?sym=`, `/api/cg/signals?sym=`, `/api/cg/liqlevels?sym=`, `/api/cg/cvd?sym=`, `/api/cg/narrative?sym=`) for each and every one of the 61 Curated Assets individually using `scripts/individual_asset_evaluator.py`. Zero reliance on pre-filtered scanner tables.
+4. **Gate C-04 (Purge Scanner / Mandatory Individual Asset Audit)**: Scanners and pre-aggregated screener tables (`/api/cg/screener`) are **STRICTLY PURGED**. On every wake-up, execute direct individual endpoint-by-endpoint analysis (`/api/cg/market?sym=`, `/api/cg/signals?sym=`, `/api/cg/liqlevels?sym=`, `/api/cg/cvd?sym=`, `/api/cg/narrative?sym=`) for each and every one of the 234 Expanded Universe Assets (30 Crypto + 28 TradFi + 173 Mutual Delta/Binance + 3 Classic) individually using `scripts/individual_asset_evaluator.py`. Zero reliance on pre-filtered scanner tables.
 5. **Gate C-05 (CLOB Reconciliation)**: Query `get_wallet_balances`, `get_margined_positions`, and `get_open_orders` live on Delta Exchange India (`india_prod`, Account `#26902927`).
 6. **Gate C-06 (First-Two-Fills Circuit Armed)**: Verify that if any 2 standing maker orders execute, all remaining candidate orders will be immediately terminated.
 7. **Gate C-07 (16-Dimension Telemetry Extraction)**: Extract all 16 live dimensions for any proposed candidate setup before submitting orders.
@@ -787,6 +787,10 @@ THE 12 BATTLE-TESTED MICROSTRUCTURE PITFALLS & MANDATORY PREVENTATIVE INVARIANTS
 ### 19.12 PIT-12: The Wake-Up Grounding Amnesia (Skipping the Spec)
 * **The Failure Mode**: Relying on internal model memory or prompt echoes on wake-up leads to drift, shallow checklist ticking, and forgotten rules.
 * **The Immutable Invariant**: **MANDATORY EMPIRICAL SPEC READING**. Antigravity MUST execute `read_file` on `desk/CANONICAL_MASTER_SPECIFICATION.md` on EVERY turn/wake-up. No trade formulation or execution is authorized without actively reading the spec into the turn context.
+
+### 19.13 PIT-13: The Universe Scope Amnesia (Map vs. Territory Invariant)
+* **The Failure Mode**: Relying on a stale subset (e.g. legacy 61 assets) in evaluation scripts when the terminal and exchange have expanded to 234 mutual assets leaves high-probability opportunities uninspected.
+* **The Immutable Invariant**: **FULL 360 UNIVERSE COVERAGE**. Individual asset audits must dynamically query the complete live universe from `src/lib/universe/curated.ts` (all 234 mutual assets: 30 Crypto Majors + 28 TradFi Perps + 173 Mutual Delta/Binance Perps + 3 Classic Indices), ensuring complete full-spectrum coverage without hardcoded blindspots.
 
 ---
 
