@@ -12155,3 +12155,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R456 · 2026-11-17 18:39 UTC · zai-desk
+
+**Market**: BTC 63,787.5 (-1.6%)  ETH 1,793.65 (-1.4%)  SOL 72.56 (+1.5%)  XAG 47.480 (+0.4%)
+**Bias (|score|≥2)**: ADA-6(TREND)  DOGE-6(TRANS)  AVAX-4(TREND)  ETH-2(TREND)  XAG-4(TRANS)  BNB-2(TREND)  BTC-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- DOGE SHORT confluence -5.5 — REJECTED: no structural target >= 2R (nearest magnet 0.05873 = 0.4R)
+- XAG SHORT confluence -3.5 — REJECTED: no structural target >= 2R (nearest magnet 47.421 = 0.8R)
+
+### Order lifecycle
+- R441-DOGE-1 EXPIRED (unfilled past expiry)
+- R446-ADA-1 re-debated: FOR 6/AGAINST 0 — stands
+- R454-AVAX-1 re-debated: FOR 4/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
