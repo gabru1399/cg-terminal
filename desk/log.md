@@ -11718,3 +11718,18 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R435 · 2026-11-17 12:51 UTC · zai-desk
+
+**Market**: SOL 73.55 (+2.8%)  XAU 3,865.37 (-0.1%)  XAG 47.890 (+1.3%)
+**Bias (|score|≥2)**: XAU-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R423-XAU-1 re-debated: FOR 3/AGAINST 1 — stands
+- R434-AVAX-1 re-debated: FOR 3/AGAINST 2 — stands
+
+### Positions
+- no open positions
+
