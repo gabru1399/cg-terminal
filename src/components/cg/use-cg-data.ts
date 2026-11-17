@@ -178,7 +178,7 @@ export function useTicker(sym: string, restIntervalMs = 500) {
     price != null &&
     (hlUsable ||
       wsUsable ||
-      (q.data?.ok === true && q.data?.sym === binSym && source === "rest" && !q.error));
+      (q.data?.ok === true && q.data?.sym === binSym && (source === "rest" || source === "rest-cg") && !q.error));
 
   return {
     price,

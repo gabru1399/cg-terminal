@@ -30,7 +30,7 @@
  */
 
 import { buildMarketSnapshot, type MarketSnapshot } from "./market";
-import { getSignalsSnapshot, getCvdSnapshot, getWhaleSnapshot, getLiqSnapshot, type SignalsSnapshot, type CvdSnapshot, type WhaleSnapshot, type LiqSnapshot } from "./scan";
+import { getSignalsSnapshot, getCvdSnapshot, getWhaleSnapshot, getLiqSnapshot, warmAssetScan, type SignalsSnapshot, type CvdSnapshot, type WhaleSnapshot, type LiqSnapshot } from "./scan";
 import { computeCgSignals, type CgSignal } from "./cg-signals";
 import { loadFpBars } from "./fp-load";
 import { classicOf } from "./classic";
@@ -385,7 +385,14 @@ export async function buildNarrative(symRaw: string): Promise<NarrativeVerdict> 
   const cvd = getCvdSnapshot(sym) ?? getCvdSnapshot(resolveCgSym(sym));
   if (cvd) trackFresh(fresh, "cvd", Date.now() - cvd.updatedAt, 20 * 60_000);
   const whale = getWhaleSnapshot(sym) ?? getWhaleSnapshot(resolveCgSym(sym));
-  if (whale) trackFresh(fresh, "walls", Date.now() - whale.updatedAt, 20 * 60_000);
+  if (whale) {
+    trackFresh(fresh, "walls", Date.now() - whale.updatedAt, 30 * 60_000);
+    if (Date.now() - whale.updatedAt > 10 * 60_000) {
+      void warmAssetScan(sym).catch(() => undefined);
+    }
+  } else {
+    void warmAssetScan(sym).catch(() => undefined);
+  }
   const liq = getLiqSnapshot(sym) ?? getLiqSnapshot(resolveCgSym(sym));
   if (liq) trackFresh(fresh, "liq", Date.now() - liq.updatedAt, 20 * 60_000);
 

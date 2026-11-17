@@ -27,11 +27,20 @@ export class FapiBannedError extends Error {
 export async function fapiFetch(pathAndQuery: string, timeoutMs = 4_000): Promise<unknown> {
   const b = fapiBanned();
   if (b.banned) throw new FapiBannedError(b.until);
-  const res = await fetch(`${FAPI}${pathAndQuery}`, {
-    cache: "no-store",
-    signal: AbortSignal.timeout(timeoutMs),
-    headers: { accept: "application/json" },
-  });
+  let res: Response;
+  try {
+    res = await fetch(`${FAPI}${pathAndQuery}`, {
+      cache: "no-store",
+      signal: AbortSignal.timeout(timeoutMs),
+      headers: { accept: "application/json" },
+    });
+  } catch (netErr) {
+    // Egress connection timeout / network block (e.g. ISP filter in India):
+    // Open the circuit breaker for 60s so subsequent requests don't hang on dead sockets.
+    breaker.until = Date.now() + 60_000;
+    breaker.why = netErr instanceof Error ? netErr.message : "network timeout";
+    throw netErr;
+  }
   if (res.status === 429 || res.status === 418) {
     // REAL-WINDOW BACKOFF: Binance's 418 body carries the authoritative ban
     // end ("...auto-banned until 2026-11-11T16:09:25.641Z") and ANY request

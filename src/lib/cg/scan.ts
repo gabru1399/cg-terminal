@@ -346,7 +346,7 @@ interface LtoRawGroup {
   list?: { id: number; price: number; side: number; currentUsd: number; currentAmount?: number }[];
 }
 
-async function scanWhale(sym: string) {
+export async function scanWhale(sym: string) {
   const st = stateOf(sym);
   const support = (await cgGet(`/api/largeTakerOrder/support/v3?symbol=${encodeURIComponent(sym)}`, 10 * 60_000, FAPI).catch(() => null)) as {
     futures?: { exchange: string }[];
@@ -818,7 +818,7 @@ export function getCvdSnapshot(sym: string): CvdSnapshot | null {
   return S.cvd.get(sym.toUpperCase()) ?? null;
 }
 
-/** On-demand coalesced warm-up for any registered asset (populates Market, Signals, Liq, CVD). */
+/** On-demand coalesced warm-up for any registered asset (populates Market, Signals, Liq, CVD, Whale walls). */
 export async function warmAssetScan(symRaw: string): Promise<void> {
   const sym = symRaw.toUpperCase();
   if (!assetOf(sym)) return;
@@ -828,6 +828,7 @@ export async function warmAssetScan(symRaw: string): Promise<void> {
     scanAssetAll(sym),
     scanLiq(sym),
     scanCvd(sym),
+    scanWhale(sym),
   ])
     .then(() => undefined)
     .finally(() => {
@@ -1008,6 +1009,12 @@ export function startScanner() {
       if (hotBusy.has(sym)) continue;
       hotBusy.add(sym);
       scanAssetAll(sym)
+        .then(async () => {
+          const w = S.whale.get(sym);
+          if (!w || Date.now() - w.updatedAt > 10 * 60_000) {
+            await scanWhale(sym).catch(() => undefined);
+          }
+        })
         .catch(() => undefined)
         .finally(() => hotBusy.delete(sym));
     }

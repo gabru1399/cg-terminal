@@ -131,7 +131,7 @@ function applyBookTick(d: { s?: string; b?: string; a?: string; T?: number; E?: 
 async function seed24hStats() {
   if (typeof window === "undefined") return;
   try {
-    const res = await fetch(FAPI_24H_URL, { cache: "no-store", signal: AbortSignal.timeout(7_000) });
+    const res = await fetch(FAPI_24H_URL, { cache: "no-store", signal: AbortSignal.timeout(2_500) });
     if (res.ok) {
       const arr = (await res.json()) as {
         symbol: string;
@@ -173,26 +173,32 @@ async function seed24hStats() {
   try {
     const res = await fetch("/api/binance/quotes", { cache: "no-store", signal: AbortSignal.timeout(5_000) });
     if (!res.ok) return;
-    const j = (await res.json()) as { ok?: boolean; quotes?: Record<string, { last: number; bid: number; ask: number }> };
+    const j = (await res.json()) as {
+      ok?: boolean;
+      quotes?: Record<string, { last: number; bid?: number; ask?: number; chgPct?: number; high?: number; low?: number; quoteVol?: number }>;
+    };
     if (!j.ok || !j.quotes) return;
     const now = Date.now();
     for (const [sym, q] of Object.entries(j.quotes)) {
       const pair = sym.endsWith("USDT") ? sym : `${sym}USDT`;
       const prev = S.tickers.get(pair);
-      if (!prev && q.last > 0) {
+      if (q.last > 0) {
+        const pct = q.chgPct;
+        const open = pct != null && Number.isFinite(pct) && pct > -99.9 ? q.last / (1 + pct / 100) : prev?.open ?? 0;
         S.tickers.set(pair, {
-          last: q.last,
-          bid: q.bid,
-          ask: q.ask,
-          open: 0,
-          high: q.last,
-          low: q.last,
-          quoteVol: 0,
-          at: now,
-          dir: "flat",
+          last: prev && now - prev.at < 15_000 ? prev.last : q.last,
+          bid: q.bid ?? prev?.bid,
+          ask: q.ask ?? prev?.ask,
+          open,
+          high: q.high ?? prev?.high ?? q.last,
+          low: q.low ?? prev?.low ?? q.last,
+          quoteVol: q.quoteVol ?? prev?.quoteVol ?? 0,
+          at: prev?.at ?? now,
+          dir: prev?.dir ?? "flat",
         });
       }
     }
+    S.statsLoadedAt = now;
     notify();
   } catch {
     /* non-fatal */
