@@ -11976,3 +11976,25 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R446 · 2026-11-17 15:44 UTC · zai-desk
+
+**Market**: BTC 64,249.9 (-0.9%)  ETH 1,778.77 (-2.2%)  SOL 72.22 (+1.0%)  XAU 3,891.87 (+0.6%)  XAG 47.950 (+1.4%)
+**Bias (|score|≥2)**: AVAX-6(TREND)  DOGE-6(TREND)  ADA-3(TREND)  SOL-5(TREND)  LINK-3(TREND)  XRP-2(TREND)  LTC-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R446-ADA-1 ADA SHORT limit 0.1545 · stop 0.1555 · T1 0.1499 · T2 0.1485 · R 4.6
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.1519 vs 0.1536), h4 RSI 37.3, day -0.7%
+      [FOR    ] footprint: bull 35 / bear 39; recent: Divergence/sell[time], Exhaustion/sell[vol], Absorption/buy[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×4, abs:sell×6, div:sell×2, exh:sell×5, trap:sell×1 — net 4 buy-side vs 14 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.1499 (str 92, ~$4M est, -0.88%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.325 (5m ago +0.031, falling bids); bid $0.01B vs ask $0.02B
+      [FOR    ] cvd: taker buy 48.8%, perpCvd -27, spotCvd -5, quadrant both-selling, latestDiv bull (recent)
+
+### Order lifecycle
+- R438-AVAX-2 re-debated: FOR 6/AGAINST 0 — stands
+- R441-DOGE-1 re-debated: FOR 7/AGAINST 0 — stands
+- R443-XAU-1 re-debated: FOR 4/AGAINST 3 — stands
+
+### Positions
+- no open positions
+
