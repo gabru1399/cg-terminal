@@ -9,17 +9,11 @@ AUTONOMOUS DELTA EXCHANGE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 ```
 
 **STATUS: SOLE AUTHORITATIVE BINDING SPECIFICATION.**
-*Reference Source: `C:\Users\SIGMA\Downloads\Trade-Formulation-Playbook (1).pdf` (Canonical Specification)*
 *Operating Venue: Delta Exchange India (`india_prod`, Account `26902927`)*
 *Operating Roles: `atg-exec` (Local Execution & Risk Gate) · `zai-desk` (Remote Analysis Brain) · Human (Capital & Config Authority)*
-*Provenance: This single master specification permanently merges, unifies, and supersedes:*
-1. `desk/TRADE_FORMULATION_MANUAL.md` (Trade Formulation Manual v1.4.0)
-2. `desk/PROTOCOL.md` (Dual-Agent Operating Contract & Desk Protocol)
-3. `desk/SWARM_MASTER_PROMPT.md` (Swarm Master Prompt & Execution Phases)
-4. `docs/DATA_POINT_INVENTORY.md` (Canonical Telemetry Data Point Inventory)
-5. `desk/archive/redundant_manuals/` (All archived legacy drafts)
+*Architecture: Standalone, Self-Contained Autonomous Trading Intelligence Specification (SOP v2.0.0).*
 
-*Any conflict between any other document, code comment, or older draft and THIS specification resolves strictly in favor of THIS specification. All agents (`atg-exec`, `zai-desk`), subagents, and automated recursion loops MUST strictly adhere to this single authoritative bible.*
+*This single master document contains the complete, authoritative, and exhaustive rules for market analysis, order flow telemetry, confluence scoring, dual-agent coordination, risk management, and execution. All agents (`atg-exec`, `zai-desk`), subagents, and automated recursion loops MUST strictly adhere to this single authoritative bible.*
 
 ---
 
