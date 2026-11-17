@@ -11458,3 +11458,28 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+
+
+## EXEC · 2026-11-17 10:22 UTC · atg-exec (Delta Exchange India Account #26902927)
+
+**Net Equity**: $2.7963 USD | **Available**: $0.4431 USD | **Position Margin**: $0.5805 USD | **Order Margin**: $1.5340 USD
+
+### Position Fills & Execution Updates
+- **XLMUSD SHORT FILLED**: 50 contracts executed at limit `$0.1378` (Post-Only Maker fill).
+  - Bracket Stop Loss active: Market stop @ `$0.1401` (Order ID `1689037577`, risk: $0.115 USD / 1.66%).
+  - Bracket Take Profit active: Market TP @ `$0.1303` (Order ID `1689037578`, gain: +$0.375 USD / +3.26R).
+  - Position Margin blocked: $0.3445 USD.
+
+### Active Positions Monitored
+1. **XLMUSD SHORT (50 contracts @ $0.1378)**: Mark `$0.137805` | PnL: -$0.0010 USD. SL `$0.1401`, TP `$0.1303`.
+2. **WIFUSD SHORT (20 contracts @ $0.1351)**: Mark `$0.13347` | PnL: **+$0.0300 USD** (+0.65R excursion). SL `$0.1376`, TP `$0.1315`.
+3. **AMZNBUSD LONG (1 contract @ $257.50)**: Mark `$257.27` | PnL: -$0.0020 USD. SL `$255.00`, TP `$265.00`.
+
+### Standing Maker Orders on CLOB
+1. **BNBUSD SHORT (Order ID `1689098550`)**: Sell 1 @ `$596.000` | SL: `$599.300` | TP: `$566.000` (+9.09R).
+2. **DOTUSD SHORT (Order ID `1689037097`)**: Sell 10 @ `$0.7380` | SL: `$0.7525` | TP: `$0.6801` (+2.07R).
+3. **ADAUSD SHORT (Order ID `1688520363`)**: Sell 25 @ `$0.1555` | SL: `$0.1572` | TP: `$0.1499` (+3.29R).
+
+### Round R425 Fresh 61-Asset Screening Summary
+- Audited all 61 Curated Assets from scratch via `scripts/individual_asset_evaluator.py`.
+- 6 qualifying setups identified meeting Table 7: BTC (2.60R, 86.9%), BNB (4.13R, 84.0%), ATOM (3.96R, 81.8%), XLM (2.36R, 89.7% — active), FIL (2.56R, 80.4%), TIA (2.78R, 87.7%).
