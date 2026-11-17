@@ -11397,3 +11397,26 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R424 · 2026-11-17 09:45 UTC · zai-desk
+
+**Market**: BTC 64,453.3 (-0.6%)  ETH 1,814.95 (-0.3%)  SOL 72.55 (+1.4%)  XAU 3,871.34 (+0.1%)  XAG 47.490 (+0.5%)
+**Bias (|score|≥2)**: XAU-5(TRANS)  LINK-4(TRANS)  BNB-3(TREND)  ADA-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R424-BNB-1 BNB SHORT limit 594.04 · stop 596.40 · T1 582.80 · R 4.8
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (590.95 vs 592.50), h4 RSI 35.6, day -0.1%
+      [AGAINST] footprint: bull 37 / bear 33; recent: Exhaustion/buy[time], Exhaustion/buy[vol], Divergence/buy[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:sell×3, div:buy×5, div:sell×1, exh:buy×3, sdiv:buy×2 — net 10 buy-side vs 4 sell-side
+      [FOR    ] liquidation: long-liq magnet 582.80 (str 75, ~$8M est, -1.36%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance +0.027 (5m ago +0.032, falling bids); bid $0.02B vs ask $0.02B
+      [FOR    ] cvd: taker buy 48.1%, perpCvd -57, spotCvd +0, quadrant spot-bid, latestDiv bear (recent)
+
+### Order lifecycle
+- R422-ETH-1 WITHDRAWN (re-debate lost: FOR 2/AGAINST 3)
+- R422-LTC-2 re-debated: FOR 4/AGAINST 2 — stands
+- R423-XAU-1 re-debated: FOR 5/AGAINST 2 — stands
+- R423-LINK-2 re-debated: FOR 5/AGAINST 1 — stands
+
+### Positions
+- no open positions
+
