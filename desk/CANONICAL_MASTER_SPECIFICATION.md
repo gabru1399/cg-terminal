@@ -298,7 +298,7 @@ Every point must originate strictly from live API telemetry. Any missing or coun
 | **1** | **Directional Trend** | H4 AND D1 EMA 13×89 aligned in trade direction AND compatible with active regime (Scores 0.0 in `RANGE_BALANCE` where slope is flat). | **+2.0** |
 | **2** | **Auction / VWAP Regime** | Long in Discount (below VWAP, $|z| \le 1.0$) / Short in Premium (above VWAP, $|z| \le 1.0$) or at exact POC/VWAP mean retest. | **+1.5** |
 | **3** | **Footprint Order-Flow** | Strong Divergence or Absorption at the entry zone ($\le 8\text{h}$ recency) = +2.0; Divergence/Exhaustion = +1.0. | **+2.0** |
-| **4** | **Whale Wall Backstop** | Entry defended by confirmed resting wall $\ge \$5\text{M}$ AND age $> 1\text{h}$. | **+1.5** |
+| **4** | **Whale Wall Backstop** | Entry defended by confirmed resting wall (Tier 1 $\ge \$5\text{M}$, Tier 2 $\ge \$1.0\text{M}$, Tier 3 $\ge \$250\text{k}-\$500\text{k}$, Tier 4 $\ge \$50\text{k}-\$100\text{k}$, or $\ge 20\%$ depth within $\pm 1\%$) AND age $> 1\text{h}$. | **+1.5** |
 | **5** | **CVD Alignment** | Spot and Perp CVD delta confirming price swing or showing absorption divergence. | **+1.0** |
 | **6** | **Liquidity Magnet Gate** | Liquidation skew favors trade direction; LSR $< 2.5:1$; Vector B risk zone clear of hazard pools. | **+1.5** |
 | **7** | **Options GEX Context** | Gamma regime confirms setup type (Positive for S2/S5, Negative for S1/S8 — BTC/ETH only). | **+1.0** |
