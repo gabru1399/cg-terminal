@@ -2310,3 +2310,12 @@ The cascade→exhaustion→reversal transition scored as a **state machine, not 
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-17 14:23 UTC — new suggested order — place in MT5 (debate FOR 3/AGAINST 1)
+- R440-XAU-1 XAU SHORT limit entry 3878.72 · stop 3894.19 · targets 3824.84 / 3800.58 / 3786.43 · R 3.5 · expires 2026-11-17 18:23 UTC
+- BASIS: levels are PERP prices (perpRef 3866.75). Before placing in MT5 read spreads.XAUUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (3,866.75 vs 3,869.50), h4 RSI 44.0, day -0.0%
+- [FOR] footprint: bull 9 / bear 17; recent: Bull div/buy[time], Divergence/sell[vol]
+- [FOR] liquidation: long-liq magnet 3,824.84 (str 74, ~$57M est, -1.08%) as target
+- [AGAINST] bookWalls: ±5% depth imbalance +0.221 (5m ago +0.266, falling bids); bid $0.06B vs ask $0.04B
+- → place on XAUUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
