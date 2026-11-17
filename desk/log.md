@@ -11124,3 +11124,29 @@ analysis script rc=1
 - Invariant Gate 6 (Breakeven): No position exceeded +1.0R excursion during the cycle; stops remain firmly anchored at structural boundaries.
 - Invariant Gate 8 (Time Stop): Active positions hold intact structural invalidations; zero execution slippage or unbracketed exposure.
 - Solvency Preservation: 77.2% cash cushion (.0265 USD) preserved against unexpected volatility spikes.
+## R411 · 2026-11-17 05:29 UTC · zai-desk
+
+**Market**: BTC 64,980.0 (+0.2%)  ETH 1,838.76 (+1.1%)  SOL 72.87 (+1.9%)  XAU 3,887.79 (+0.5%)  XAG 47.790 (+1.1%)
+**Bias (|score|≥2)**: SOL-4(TREND)  DOGE-3(TREND)  BNB-3(TREND)  XAU-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R411-SOL-1 SOL SHORT limit 72.87 · stop 73.41 · T1 71.67 · R 2.2
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (72.87 vs 72.17), h4 RSI 42.8, day +1.9%
+      [FOR    ] footprint: bull 41 / bear 45; recent: Absorption/buy[time], Trapped longs/sell[vol], Absorption/buy[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×6, abs:sell×3, div:sell×4, exh:sell×8, sdiv:sell×1, trap:buy×4, trap:sell×3 — net 10 buy-side vs 19 sell-side
+      [FOR    ] cvd: taker buy 49.4%, perpCvd -194, spotCvd -59, quadrant both-selling, latestDiv bear (recent)
+      [FOR    ] notifications: 6h weighted bias -2.9 (9 events)
+
+### Order lifecycle
+- R406-DOGE-1 re-debated: FOR 7/AGAINST 0 — stands
+- R410-BNB-1 re-debated: FOR 6/AGAINST 0 — stands
+- R410-XAU-2 re-debated: FOR 5/AGAINST 1 — stands
+
+### Positions
+- no open positions
+
+
+## ROUND FAILED · 2026-11-17 05:29 UTC · zai-desk
+
+analysis script rc=1
+
