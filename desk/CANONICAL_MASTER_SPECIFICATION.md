@@ -11,9 +11,10 @@ AUTONOMOUS DELTA EXCHANGE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 **STATUS: SOLE AUTHORITATIVE BINDING SPECIFICATION.**
 *Operating Venue: Delta Exchange India (`india_prod`, Account `26902927`)*
 *Operating Roles: `atg-exec` (Local Execution & Risk Gate) · `zai-desk` (Remote Analysis Brain) · Human (Capital & Config Authority)*
-*Architecture: Standalone, Self-Contained Autonomous Trading Intelligence Specification (SOP v2.0.0).*
+*Companion Telemetry Inventory: [`docs/DATA_POINT_INVENTORY.md`](file:///c:/Users/SIGMA/Documents/cg-terminal/docs/DATA_POINT_INVENTORY.md) (Canonical Telemetry Data Point Inventory & Retail Confirmation Engine).*
+*Architecture: Unified Autonomous Trading Intelligence Specification (SOP v2.0.0).*
 
-*This single master document contains the complete, authoritative, and exhaustive rules for market analysis, order flow telemetry, confluence scoring, dual-agent coordination, risk management, and execution. All agents (`atg-exec`, `zai-desk`), subagents, and automated recursion loops MUST strictly adhere to this single authoritative bible.*
+*This single master document contains the complete, authoritative, and exhaustive rules for market analysis, order flow telemetry, confluence scoring, dual-agent coordination, risk management, and execution. All parameters across Tabs 1–9 are comprehensively defined in companion inventory [`docs/DATA_POINT_INVENTORY.md`](file:///c:/Users/SIGMA/Documents/cg-terminal/docs/DATA_POINT_INVENTORY.md). All agents (`atg-exec`, `zai-desk`), subagents, and automated recursion loops MUST strictly adhere to this single authoritative bible.*
 
 ---
 
@@ -156,13 +157,16 @@ All 9 tabs in the terminal are ingested via local Next.js REST endpoints:
 * `imbalanceRatios`: Diagonal Bid/Ask imbalance ticks where buy volume $\ge 300\%$ sell volume (or vice versa).
 
 ### 4.3 Tab 3: Large Orders (`Large Orders` — `/api/cg/largeorder?sym=` & `/api/cg/lto?sym=`)
-* **Resting Whale Limit Walls**:
-  * `exchange`, `side` (`BID`/`ASK`), `price`, `notionalUsd`.
-  * `distancePercent`: `(orderPrice - lastPrice) / lastPrice * 100`.
-  * `wallAge`: Duration the order has rested on the book without being cancelled.
-  * `wallStatus`: `RESTING`, `PARTIALLY_FILLED`, or `TOUCHED` (tested by market price).
+* **Resting Whale Limit Walls & Liquidity-Calibrated Thresholds**:
+  * `exchange`, `side` (`BID`/`ASK`), `price`, `notionalUsd`, `distancePercent`, `wallAge`, `wallStatus` (`RESTING`, `PARTIALLY_FILLED`, `TOUCHED`).
+  * **Dynamic Whale Wall Tiering (Calibrated by Asset Class)**:
+    * *Tier 1 Mega-Cap (BTC, ETH)*: Whale Wall $\ge \$5.0\text{M}$ (Alerts $\ge \$10.0\text{M}$).
+    * *Tier 2 Large-Cap (SOL, XRP, DOGE, BNB, TradFi Indices SPX500/NDX100, Gold/Oil XAU/UKO)*: Whale Wall $\ge \$1.0\text{M}$.
+    * *Tier 3 Mid-Cap Alts & Equities (ADA, LINK, AVAX, SUI, NEAR, APT, ARB, TIA, SEI, INJ, NVDA, MSFT, AAPL, MSTR)*: Whale Wall $\ge \$250\text{k} - \$500\text{k}$.
+    * *Tier 4 Micro-Cap Alts & Tokenized Equities (VET, 1000PEPE, 1000SHIB, CRCL, TSM)*: Whale Wall $\ge \$50\text{k} - \$100\text{k}$.
+    * *Relative Depth Invariant*: Any resting limit order representing $\ge 15\% - 20\%$ of the total resting book depth within $\pm 1.0\%$ (Tab 5 `depthImbalanceRatio`) or $\ge 2.5\times$ rolling 15m bar volume qualifies as a confirmed institutional wall.
 * **Executed Block Trades (Tape Whales)**:
-  * Single executed prints $\ge \$100\text{k}$ alts, $\ge \$500\text{k}$ BTC.
+  * Single executed prints: $\ge \$500\text{k}$ (Tier 1), $\ge \$100\text{k}$ (Tier 2/3), $\ge \$25\text{k}$ (Tier 4).
   * `executionSide` (`BUY`/`SELL`), `executionPrice`, rolling executed imbalance ratio over 1h, 4h, 24h.
 
 ### 4.4 Tab 4: Liquidation Levels (`Liq Levels` — `/api/cg/liqlevels?sym=` & `/api/cg/stopmap?sym=`)
