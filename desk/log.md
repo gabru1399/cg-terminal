@@ -11565,3 +11565,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R429 · 2026-11-17 11:24 UTC · zai-desk
+
+**Market**: BTC 64,372.1 (-0.7%)  ETH 1,804.70 (-0.8%)  SOL 72.82 (+1.8%)  XAU 3,865.02 (-0.1%)  XAG 47.570 (+0.6%)
+**Bias (|score|≥2)**: XAU-5(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R422-LTC-2 WITHDRAWN (confluence flipped to +0.3)
+- R428-DOGE-1 WITHDRAWN (confluence flipped to +0.7)
+- R423-XAU-1 re-debated: FOR 4/AGAINST 1 — stands
+- R425-ETH-1 WITHDRAWN (re-debate lost: FOR 2/AGAINST 3)
+
+### Positions
+- no open positions
+
