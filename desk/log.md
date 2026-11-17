@@ -11862,3 +11862,27 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R442 · 2026-11-17 14:55 UTC · zai-desk
+
+**Market**: BTC 64,877.3 (+0.0%)  ETH 1,807.02 (-0.7%)  SOL 73.73 (+3.1%)  XAU 3,869.51 (+0.0%)  XAG 47.840 (+1.2%)
+**Bias (|score|≥2)**: XAU-3(TRANS)  ETH-4(TREND)  SOL-4(TREND)  AVAX-4(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- XAU SHORT confluence -3.1 — REJECTED: debate lost: FOR 3 / AGAINST 3 (overview:FOR; footprint:FOR; microFlow(abs/trap/exh):AGAINST; liquidation:FOR; liquidation-hazard:AGAINST; bookWalls:AGAINST)
+- NEW R442-ETH-1 ETH SHORT limit 1,818.56 · stop 1,830.36 · T1 1,783.30 · T2 1,772.02 · R 3.0
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (1,807.02 vs 1,816.43), h4 RSI 36.7, day -0.7%
+      [AGAINST] footprint: bull 24 / bear 22; recent: Divergence/buy[time], Exhaustion/sell[vol], Absorption/sell[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×3, abs:sell×3, div:buy×2, div:sell×1, exh:buy×3, exh:sell×3, sdiv:sell×2 — net 8 buy-side vs 9 sell-side
+      [FOR    ] liquidation: long-liq magnet 1,783.30 (str 95, ~$278M est, -1.49%) as target
+      [FOR    ] cvd: taker buy 49.2%, perpCvd -539, spotCvd +0, quadrant spot-bid, latestDiv bear (recent)
+      [FOR    ] notifications: 6h weighted bias -2.0 (2 events)
+- SOL SHORT confluence -3.8 — REJECTED: opposite liq magnet 74.44 (str 85, ~$27M est) within 1.2R of entry — wait for sweep
+
+### Order lifecycle
+- R438-AVAX-2 re-debated: FOR 6/AGAINST 0 — stands
+- R440-XAU-1 WITHDRAWN (re-debate lost: FOR 3/AGAINST 3)
+- R441-DOGE-1 re-debated: FOR 4/AGAINST 1 — stands
+
+### Positions
+- no open positions
+
