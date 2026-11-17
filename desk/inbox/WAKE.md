@@ -2081,3 +2081,14 @@ The cascade→exhaustion→reversal transition scored as a **state machine, not 
 - [FOR] bookWalls: ±5% depth imbalance -0.041 (5m ago -0.022, falling bids); bid $0.57B vs ask $0.62B
 - [FOR] cvd: taker buy 49.3%, perpCvd -1107, spotCvd -374, quadrant both-selling, latestDiv bear (recent)
 - → place on ETHUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-17 10:28 UTC — new suggested order — place in MT5 (debate FOR 4/AGAINST 2)
+- R426-LINK-1 LINK SHORT limit entry 9.184 · stop 9.22 · targets 9.093 · R 2.5 · expires 2026-11-17 14:19 UTC
+- BASIS: levels are PERP prices (perpRef 9.125). Before placing in MT5 read spreads.LNKUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (9.125 vs 9.148), h4 RSI 37.9, day -0.1%
+- [FOR] footprint: bull 44 / bear 46; recent: Exhaustion/buy[time], Absorption/sell[vol], Exhaustion/buy[range]
+- [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×5, div:buy×6, div:sell×2, exh:buy×4, exh:sell×1, sdiv:buy×2, sdiv:sell×3, trap:sell×1 — net 14 buy-side vs 12 sell-side
+- [FOR] bookWalls: ±5% depth imbalance +0.053 (5m ago +0.053, falling bids); bid $0.01B vs ask $0.01B
+- [FOR] cvd: taker buy 49.3%, perpCvd -8, spotCvd +0, quadrant spot-bid, latestDiv bear (recent)
+- [AGAINST] notifications: 6h weighted bias +4.9 (5 events)
+- → place on LNKUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
