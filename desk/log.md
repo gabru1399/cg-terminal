@@ -11908,3 +11908,15 @@ analysis script rc=1
 - **Total Portfolio Heat Across MT5**:
   * BTC ($5.20) + Gold ($15.50) + Nasdaq ($25.40) = **$46.10 USD total standing risk** (1.84% of equity, < 50% of the $100.00 daily limit).
   * Potential Combined Gain: **+$151.33 USD (+6.05% account gain)**.
+
+
+## EXEC · 2026-11-17 15:06 UTC · atg-exec — Delta Exchange India Order Dispatched (BTCUSD)
+- **Venue**: Delta Exchange India (`india_prod`, Account `#26902927`, Net Equity: $2.327 USD)
+- **Product**: `BTCUSD` (Product ID `27`, 0.001 BTC contract value)
+- **Order Action**: `buy` limit · Order ID `#1690003539`
+- **Limit Entry**: $64,400.00 (retest of $97.65M absorption cluster and Day VWAP mean band)
+- **Bracket SL**: $63,880.00 (`mark_price` evaluation; structural invalidation below $64,039 sweep low)
+- **Bracket TP**: $65,600.00 (upper short liquidation shelf: $121.3M short pool; +2.30R)
+- **Leverage**: 50x isolated · Size: 1 contract ($64.40 notional) · Margin: $1.29 USD
+- **Expected Risk**: $0.52 USD (~22% equity risk; captures +$1.20 USD gain = +51% account expansion on win)
+- **Post-Only**: `post_only: true` (zero taker fees on entry).
