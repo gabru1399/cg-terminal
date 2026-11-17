@@ -351,33 +351,47 @@ Every trade formulation submitted to the exchange CLOB or MT5 MUST include an em
      - Execution Advantage: Maker limit exit orders filled directly by aggressive taker liquidation cascades.
      ```
 
-### 4B.8 Macro Trend Spine Architecture (EMA 13 × 89 × 233 Multi-Timeframe Stack & Dynamic Trend Rejection Candles)
-**CORE AXIOM: NEVER FIGHT THE MACRO 233 EMA SPINE · EXPLOIT BIG REJECTION CANDLES AT DYNAMIC LEVELS.**
+### 4B.8 Macro Trend Spine Architecture: The Dual-Spine EMA 89 ⟷ EMA 233 Narrative Matrix (15m & 1H Synergies)
+**CORE AXIOM: DISCARD NOISY FAST EMAS · NEVER FIGHT THE 1H EMA 233 SPINE · EXPLOIT TRAP ZONE & COINCIDING REJECTIONS.**
 
-1. **The Fibonacci Triple-EMA Hierarchy (`/api/cg/market?sym=`)**:
-   - **EMA 13 (Fast Momentum Trigger)**: Measures immediate auction acceleration and momentum shifts.
-   - **EMA 89 (Intermediate Fibonacci Baseline)**: Dynamic swing support in uptrends, dynamic swing resistance in downtrends.
-   - **EMA 233 (Macro Fibonacci Spine)**: The ultimate institutional dividing line between macro bull regimes and macro bear regimes.
-   - **Multi-Timeframe Stack Diagnostics across m15, h1, h4, d1**:
-     - **Stage 2 Structural Bull Trend**: $\text{Price} > \text{EMA 13} > \text{EMA 89} > \text{EMA 233}$. Only Longs permitted; pullbacks to EMA 89/233 are prime institutional demand entries.
-     - **Stage 4 Structural Bear Trend**: $\text{Price} < \text{EMA 13} < \text{EMA 89} < \text{EMA 233}$. Only Shorts permitted on trend continuations; counter-trend longs require extreme statistical discount ($|z| \ge 2.5\sigma$) and confirmed 100% liquidation sweep.
-     - **Regime Transition / Compression**: Tangled EMAs signify range balance (Factor 1 = 0.0 pts in Table 7).
+1. **Why EMA 13 is Discarded for Structural Narrative**:
+   - Fast moving averages (EMA 13) are overly sensitive to intraday micro-noise and generate frequent false whipsaws.
+   - The authoritative institutional trend backbone is governed strictly by the interaction between the **EMA 89 (Intermediate Fibonacci Baseline)** and the **EMA 233 (Macro Fibonacci Spine)** across **15m** and **1H** timeframes.
 
-2. **Big Trend Rejection Candle Architecture (Pin-Bar Sweeps at Dynamic EMA 89 / 233 Levels)**:
-   - **Microstructure Mechanism**: In a macro downtrend (e.g. 15m/1H/4H price < EMA 233), sharp counter-trend short squeezes frequently spike into the declining EMA 89 or EMA 233. Weak longs buy the breakout; smart money steps in with massive passive limit selling, absorbing aggressive taker demand and rejecting price down.
-   - **Candle Morphology Criteria**:
-     - **Rejection Wick Ratio**: Wick length $\ge 2.0\times$ candle body size (long upper wick for shorts, long lower wick for longs).
-     - **Close Location**: Candle must close in the bottom 30% of its range (for bearish rejection) or top 30% of its range (for bullish rejection).
-     - **Volume Expansion**: Volume bar must be $\ge 1.5\times$ the 20-period moving average volume (e.g. 574.49K on Delta 15m chart).
-     - **Dynamic Collision**: Wick penetrates or touches the declining EMA 89 or EMA 233 and violently rejects back below it.
-   - **Footprint Order-Flow Signature**:
-     - Prints **Exhaustion (`exh`)**, **Bearish Trap (`trap`)**, or **Strong Divergence (`sdiv`)** at the tip of the wick.
-     - Delta flips sharply negative on the bar or immediate following bar.
-   - **Execution Protocol**:
-     - **Entry**: Limit order at the 50% retracement of the rejection wick or market/post-only entry on the close of the rejection candle.
-     - **Stop Loss**: Placed strictly beyond the rejection wick high $+ 0.1\%$ buffer (in the cold zone where local liquidity was already swept).
-     - **Target**: Next major Value Area boundary (Day VAL / -2σ VWAP) and the primary liquidation cluster (e.g. 100% Strength zone).
-     - **Asymmetry**: Delivers high win-rate, pristine R-multiples ($\ge 3.0\text{R} - 5.0\text{R}$) with virtually zero chance of stop hunt because the liquidity sweep has already executed.
+2. **The 4 Primary Structural Trend & Rejection Narrative Scenarios**:
+
+   * **SCENARIO 1: Structural Bear Trend Continuum ($\text{EMA 89} < \text{EMA 233}$)**:
+     - **Sub-Scenario 1A: Direct 1H EMA 89 Dynamic Resistance Rejection**:
+       - *Microstructure*: Price bounces from below in a downtrend, collides directly with the declining 1H EMA 89 (e.g. `PAXGUSD` at $\$3,860.63$ on 1H), absorbs buying, prints rejection wicks, and resumes the downward drive.
+       - *Narrative*: Bears actively defend the primary trend baseline; sellers are aggressive and unwilling to allow price to reach the macro spine.
+       - *Execution*: Short limit on 1H EMA 89 touch or 15m delta flip. Stop placed beyond the local swing high + cold zone buffer.
+     - **Sub-Scenario 1B: The "Trap Zone" (Price Above 89, Below 233) ⟷ EMA 233 Rejection**:
+       - *Microstructure*: Counter-trend short squeeze pierces *above* the declining EMA 89, luring breakout longs into the trap pocket between EMA 89 and EMA 233. Price violently collides with the declining EMA 233 (e.g. `BTCUSD` 15m spike to $\$65,115.2$ into 15m EMA 233 / Day POC), prints a massive upper rejection wick ($\ge 2:1$ wick-to-body), and slams back down below EMA 89 on surging volume.
+       - *Narrative*: Classic institutional Bear Trap! Weak longs chase the false break of EMA 89, only to be crushed by institutional passive limit supply defending the macro spine (EMA 233).
+       - *Execution*: Enter Short on rejection candle close or 50% wick retest. Stop placed tightly beyond the rejection wick high ($+0.1\%$ buffer) in the cold zone. Targets the opposing 100% liquidation pool (e.g. $\$63,512.5$).
+     - **Sub-Scenario 1C: Coinciding Dynamic-Static Structural Confluence**:
+       - *Microstructure*: The declining EMA 89 or EMA 233 coincides at the exact same price coordinate with a static auction level: Day VAH, Session POC, or a confirmed resting Whale Ask Wall ($\ge \$1\text{M}-\$5\text{M}$).
+       - *Narrative*: Impenetrable double-barrier resistance. Dynamic moving average supply reinforces horizontal auction supply, delivering highest-probability short edge.
+
+   * **SCENARIO 2: Structural Bull Trend Continuum ($\text{EMA 89} > \text{EMA 233}$)**:
+     - **Sub-Scenario 2A: Direct 1H EMA 89 Dynamic Support Bounce**:
+       - *Microstructure*: Pullback from above tests the rising 1H EMA 89, prints footprint absorption (`abs`) or hammer wick, and continues higher.
+     - **Sub-Scenario 2B: The "Discount Zone" (Price Below 89, Above 233) ⟷ EMA 233 Support Bounce**:
+       - *Microstructure*: Price dips *below* EMA 89, flushing weak longs into the discount pocket above EMA 233. Price absorbs aggressive selling at the rising EMA 233, prints a long lower rejection wick, and reclaims EMA 89.
+       - *Narrative*: Bull Trap for short sellers! Bears short the break of EMA 89, getting absorbed at the macro spine (EMA 233).
+       - *Execution*: Enter Long on reclaim of EMA 89. Stop placed strictly below EMA 233 in the cold zone.
+     - **Sub-Scenario 2C: Coinciding Dynamic-Static Support Confluence**:
+       - *Microstructure*: Rising EMA 89 or EMA 233 coincides with Day VAL, Month POC, or a confirmed resting Whale Bid Wall.
+
+   * **SCENARIO 3: Macro Regime Invalidation & Reclaim**:
+     - Price closes above 1H EMA 233 with expanding volume and Spot CVD lead, converting EMA 233 from resistance into new support on retest. Invalidates bear trend narrative.
+
+   * **SCENARIO 4: Volatility Compression Squeeze**:
+     - Price is tightly compressed between converging EMA 89 and EMA 233. Signals an impending high-velocity liquidation expansion breakout (Archetype S8).
+
+3. **Multi-Timeframe Synchronization (15m ⟷ 1H Synergies)**:
+   - **Rule of Dual Alignment**: A 15m rejection off 15m EMA 233 that occurs while 1H price is below 1H EMA 89/233 represents a pristine multi-timeframe confluence setup (Grade A+ eligible).
+   - Invalidation is always razor-sharp: placed just beyond the dynamic level / rejection wick tip in the cold zone, ensuring the SL will NOT be hit while capturing outsized multi-R trend continuation runs.
 
 ---
 
