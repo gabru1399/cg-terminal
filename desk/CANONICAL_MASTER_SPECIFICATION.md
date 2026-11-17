@@ -432,7 +432,9 @@ Before an order ticket is dispatched, it must pass all 11 Socratic Gates without
    - **Tier 2 (Standard Grade B Setups)**:
      - Standard setups remain restricted to micro-crypto contracts (`SEI`, `ADA`, `ARB`, `DOGE`, `APT`, `TIA`, `VET`, `WIF`) and TradFi fractionals (`MSFTB`, `AMZNB`, `CRCLB`) with conservative position margin ($\le \$0.30\text{ USD}$).
 8. **Gate 8: Active Cascade Climax Gate**: If `Liq 5m > $500k`, no limit orders into the cascade. Wait for the exhaustion wick.
-9. **Gate 9: Sector Isolation Gate (Anti-Avalanche Invariant)**: Never hold 2 same-direction crypto positions simultaneously. Slot 2 must be TradFi/Metals or Cash.
+9. **Gate 9: Dynamic Multi-Slot Alpha Expansion Protocol (User Directive 2026-11-17)**:
+   - **Standard Setups (Grade B)**: Restricted to max 2 concurrent slots (1 crypto + 1 TradFi or Cash) to prevent unhedged avalanche.
+   - **Grade A / A+ High-Conviction Unlock**: The 2-slot restriction is **UNLOCKED**. When high-potential Grade A or A+ opportunities qualify (Table 7 $\ge 7.0$, Best $R \ge 2.0\text{R}$, Athena Oracle confirmed), the desk is fully authorized to punch them concurrently across all available margin, provided account liquid solvency is maintained. Each position strictly enforces the $+1.0\text{R}$ Breakeven Invariant to de-risk slots rapidly.
 10. **Gate 10: Macro Anchor (BTC) Regime Gate**: Altcoin shorts are strictly banned if BTC is within $0.75\%$ of daily low, oversold ($<-2.0\sigma$ VWAP), or testing major multi-day liquidity support.
 11. **Gate 11: Slippage & Taker Fee Buffer (1.20x Invariant)**: All stop risk budgeting must multiply calculated stop distance by $1.20\times$ for execution slippage and exit fees.
 

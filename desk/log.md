@@ -11327,3 +11327,35 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R422 · 2026-11-17 09:08 UTC · zai-desk
+
+**Market**: BTC 64,300.1 (-0.9%)  ETH 1,814.70 (-0.3%)  SOL 72.28 (+1.1%)  XAU 3,874.65 (+0.2%)  XAG 47.490 (+0.5%)
+**Bias (|score|≥2)**: SOL-5(TRANS)  ETH-4(TREND)  LTC-4(TREND)  XAU-3(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R422-ETH-1 ETH SHORT limit 1,829.93 · stop 1,837.32 · T1 1,799.10 · R 4.2
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (1,814.70 vs 1,824.16), h4 RSI 38.1, day -0.3%
+      [AGAINST] footprint: bull 20 / bear 19; recent: Exhaustion/buy[time], Exhaustion/buy[vol], Exhaustion/buy[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:sell×1, exh:buy×4, exh:sell×4, sdiv:sell×2, trap:sell×1 — net 4 buy-side vs 8 sell-side
+      [FOR    ] liquidation: long-liq magnet 1,799.10 (str 69, ~$244M est, -0.75%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.019 (5m ago +0.002, falling bids); bid $0.61B vs ask $0.64B
+      [FOR    ] cvd: taker buy 49.3%, perpCvd -925, spotCvd +0, quadrant spot-bid, latestDiv bear (recent)
+      [AGAINST] notifications: 6h weighted bias +1.0 (3 events)
+- NEW R422-LTC-2 LTC SHORT limit 44.64 · stop 44.82 · T1 43.70 · T2 43.61 · R 5.3
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (44.48 vs 44.65), h4 RSI 36.5, day +0.0%
+      [AGAINST] footprint: bull 36 / bear 30; recent: Divergence/buy[time], Absorption/sell[vol], Absorption/sell[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×3, abs:sell×9, div:buy×3, div:sell×4, sdiv:sell×2 — net 6 buy-side vs 15 sell-side
+      [FOR    ] liquidation: long-liq magnet 43.70 (str 47, ~$2M est, -1.73%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance +0.036 (5m ago +0.043, falling bids); bid $0.01B vs ask $0.01B
+      [FOR    ] cvd: taker buy 48.1%, perpCvd -16, spotCvd +0, quadrant spot-bid, latestDiv bear (recent)
+      [FOR    ] notifications: 6h weighted bias -1.0 (3 events)
+
+### Order lifecycle
+- R410-BNB-1 EXPIRED (unfilled past expiry)
+- R410-XAU-2 EXPIRED (unfilled past expiry)
+- R411-SOL-1 re-debated: FOR 5/AGAINST 1 — stands
+- R415-DOGE-1 re-debated: FOR 4/AGAINST 2 — stands
+
+### Positions
+- no open positions
+
