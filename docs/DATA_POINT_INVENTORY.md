@@ -94,7 +94,7 @@ Provides microstructural inside-the-bar order execution analysis, decomposing ca
 ### 3. TAB 3: LARGE ORDERS (`Large Orders` — `/api/cg/largeorder?sym=` & `/api/cg/lto?sym=`)
 Tracks resting institutional liquidity and executed block trades across the aggregated venue books.
 
-#### 3.1 Resting Whale Limit Walls
+#### 3.1 Resting Whale Limit Walls & Liquidity-Calibrated Thresholds
 * `orderId` / `hash`: Unique identifier of the resting order.
 * `exchange`: Originating exchange (`Binance`, `OKX`, `Bybit`, etc.).
 * `side`: `BID` (resting support) or `ASK` (resting resistance).
@@ -103,6 +103,12 @@ Tracks resting institutional liquidity and executed block trades across the aggr
 * `distancePercent`: Percentage distance from current mark price `(orderPrice - lastPrice) / lastPrice * 100`.
 * `wallAge`: Duration the order has rested on the book without being cancelled.
 * `wallStatus`: `RESTING`, `PARTIALLY_FILLED`, or `TOUCHED` (tested by market price).
+* **Dynamic Whale Wall Tiering (Calibrated by Asset Class)**:
+  * *Tier 1 Mega-Cap (BTC, ETH)*: Whale Wall $\ge \$5.0\text{M}$ (Alerts $\ge \$10.0\text{M}$).
+  * *Tier 2 Large-Cap (SOL, XRP, DOGE, BNB, TradFi Indices SPX500/NDX100, Gold/Oil XAU/UKO)*: Whale Wall $\ge \$1.0\text{M}$.
+  * *Tier 3 Mid-Cap Alts & Equities (ADA, LINK, AVAX, SUI, NEAR, APT, ARB, TIA, SEI, INJ, NVDA, MSFT, AAPL, MSTR)*: Whale Wall $\ge \$250\text{k} - \$500\text{k}$.
+  * *Tier 4 Micro-Cap Alts & Tokenized Equities (VET, 1000PEPE, 1000SHIB, CRCL, TSM)*: Whale Wall $\ge \$50\text{k} - \$100\text{k}$.
+  * *Relative Depth Invariant*: Any resting limit order representing $\ge 15\% - 20\%$ of the total resting book depth within $\pm 1.0\%$ (Tab 5 `depthImbalanceRatio`) or $\ge 2.5\times$ rolling 15m bar volume qualifies as a confirmed institutional wall.
 
 #### 3.2 Executed Block Trades (Tape Whales)
 * `tradeTimestamp`: Millisecond execution timestamp.
