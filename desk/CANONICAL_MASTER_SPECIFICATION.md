@@ -588,4 +588,124 @@ Table 7 Score : <pts> / 11.5 | Grade: <A/B/NO_TRADE> | Action: <EXECUTE / REJECT
 ```
 
 ---
+---
+
+## SECTION 15. ATHENA ORACLE (QUANT × DIVINE CONFLUENCE ENGINE)
+
+The Athena Oracle (`/api/cg/oracle?sym=`) synthesizes six distinct quantitative microstructure dimensions into an unvarnished 0–100 composite score. Every number is grounded in real exchange telemetry (Binance lead, Coinglass aggregates); any failing source defaults to a neutral 50 with `partial[]` tagging:
+
+```text
+====================================================================================================
+ATHENA ORACLE ARCHITECTURE: 6 MYTHOLOGICAL MICROSTRUCTURE GODS (0–100 SCALE)
+====================================================================================================
+1. APOLLO (Weight: 25%)   | Trend & Momentum    : 15m/1h EMA20/50/200 stack, RSI(14), EMA50 3h slope,
+                          |                     : 1h HTF confirmation, and ATR volatility regime.
+2. POSEIDON (Weight: 20%) | Order-Flow Tide    : CVD slope over 24 bars (~6h), Spot vs Perp CVD
+                          |                     : divergence, taker buy ratio, and flow momentum.
+3. HADES (Weight: 15%)    | Liquidation Gravity : 7-day liquidation clusters, distance & notional of
+                          |                     : long pool below vs short pool above (magnet pull).
+4. ZEUS (Weight: 15%)     | Whale Strikes       : Large Resting Orders (LTO >= $1M) net notional
+                          |                     : (bid vs ask), resting institutional wall clusters.
+5. ATLAS (Weight: 15%)    | Wall Pressure       : Order-book depth within ±2% of price, dominant wall
+                          |                     : side, 5m depth imbalance delta.
+6. NEMESIS (Weight: 10%)  | Funding Reversion   : Funding APR percentile vs historical baseline
+                          |                     : (crowded longs = long cascade risk; shorts = squeeze).
+====================================================================================================
+```
+
+### Composite Score Interpretation & Narrative Confirmation
+* **Score $< 35$ (Bearish Lean / Dominance)**: Confirms Short continuation (`M1_TREND_PULLBACK`) and breakdown setups (`S1`, `S4`, `S7`). **Vetoes Long setups**.
+* **Score $> 65$ (Bullish Lean / Dominance)**: Confirms Long pullback and breakout setups (`S1`, `S4`, `S7`). **Vetoes Short setups**.
+* **Score $40 - 60$ (Neutral Equilibrium / Chop)**: Market is in balanced auction. Vetoes trend breakouts; mandates mean-reversion at VWAP bands (`M2_VWAP_MEAN_REVER`) or **100% Cash Defense**.
+
+---
+
+## SECTION 16. THE 1.0% RISK BUDGET, $\ge 2.0\text{R}$ HURDLE & TRANCHE TRAILING STOP PROTOCOL
+
+Per User Directives (2026-11-17), capital protection and asymmetric payoff are enforced through a strict risk budget and trailing runner mechanics:
+
+### 16.1 Dollar Risk Cap $\le 1.0\%$ of Net Liquid Equity
+* **Mathematical Invariant**:
+  $$\text{Dollar Risk} = |P_{\text{entry}} - P_{\text{stop}}| \times \text{Contract Size} \times \text{Multiplier} \le 1.0\% \times \text{Equity}_{\text{NetLiquid}}$$
+* On small equity accounts ($\approx \$2.77 - \$15.00\text{ USD}$), maximum loss per trade is strictly capped at:
+  $$\text{Max Dollar Loss} \le \$0.028\text{ USD}$$
+* This mathematical invariant enforces **Gate 7 (Mechanical Lot Sizing Ban)**: Any contract where minimum tick/lot notional forces risk $> \$0.028$ (e.g., `BTCUSD`, `ETHUSD`, `SOLUSD`, `BNBUSD`, `AVGO`) is **PERMANENTLY BANNED** from trade execution. Only micro-crypto (`SEI`, `ADA`, `ARB`, `DOGE`, `APT`, `TIA`, `VET`, `WIF`) and TradFi fractionals (`AMZNB`, `MSFTB`, `CRCLB`) are eligible.
+
+### 16.2 Hard $\ge 2.00\text{R}$ Payoff Hurdle
+* Minimum Expected R-Multiple is raised from 1.50R to **$\ge 2.00\text{R}$ hard floor** across all setups:
+  $$\text{Payoff Multiple} = \frac{T_2 - \text{Entry}}{\text{Entry} - \text{SL}} \ge 2.00\text{R}$$
+* Any setup offering $< 2.00\text{R}$ is strictly vetoed by the Microstructure Quant, preserving capital for high-skew opportunities.
+
+### 16.3 The 3-Tranche Scale-Out & Structure-Based Trailing Stop Architecture
+To capture outsized $> 3.0\text{R}$ to $6.0\text{R}+$ runs without risking banked gains, executions are split into a 40/40/20 tranche ladder:
+
+```mermaid
+flowchart LR
+    Entry["Entry Filled (L1-L3)"] --> T1["T1: 40% @ +1.0R<br/>(Day VAH/VAL)"]
+    T1 --> BE["SL Moved to Breakeven<br/>(Risk = ZERO)"]
+    BE --> T2["T2: 40% @ +2.0R<br/>(Liq Cluster / Month POC)"]
+    T2 --> T3["T3: 20% Runner<br/>(Trailing SL on 15m Pivots)"]
+    T3 --> Moon["Macro Extension<br/>(+3.0R to +6.0R+)"]
+```
+
+1. **Tranche 1 (T1: 40% Scale-Out @ $+1.0\text{R}$ to $+1.5\text{R}$)**:
+   - Target: Session/Day Value Area boundary (`VAH` / `VAL`) or $\pm 1.5\sigma$ VWAP.
+   - **Immediate Invariant**: The instant T1 is filled, the Stop Loss on the remaining 60% of the position is **automatically moved to Breakeven ($SL \to \text{Entry}$)**. Trade risk is permanently zero.
+2. **Tranche 2 (T2: 40% Scale-Out @ $+2.0\text{R}$ to $+2.5\text{R}$)**:
+   - Target: Primary Liquidation Cluster or Opposite Value Area boundary.
+   - **Result**: Banks substantial profit. Total realized gain across T1 + T2 guarantees a net winning trade of $\ge +1.20\text{R}$ minimum.
+3. **Tranche 3 (T3: 20% Free-Roll Runner Extension)**:
+   - Held as an unencumbered runner to capture multi-day trend expansions, macro whale wall breaks, or cascading liquidation sweeps.
+   - **Trailing Stop Protocol**:
+     * **Anchor**: Trailed strictly behind **15m Structural Swing Pivots** (prior swing high for shorts; prior swing low for longs) or the **15m EMA 20** baseline.
+     * **Buffer**: $1.5\times \text{ATR}(14)$ on 15m bars to avoid premature chop-outs.
+     * **Ratchet**: The stop only ratchets in the favorable direction; it is never loosened or widened.
+     * **Exhaustion Climax Exit**: If rolling `Liq 5m > $1.0M` prints or an opposing whale wall $\ge \$5\text{M}$ is absorbed, the runner is closed at market.
+
+---
+
+## SECTION 17. FRESH 61-ASSET AUDIT & TERMINAL GRADE A SIGNAL EVALUATION
+
+### 17.1 Zero-Echo Individual Asset Screening Architecture
+To guarantee that zero trading opportunities are missed, the desk operates a two-stage forensic screening engine (`scripts/individual_asset_evaluator.py`):
+* **Stage 1 (Parallel Screening across all 61 Assets)**: Direct endpoint queries (`/api/cg/narrative`, `/api/cg/market`, `/api/cg/signals`) audit every asset in the Curated 61 universe (30 Crypto USDT-M + 28 TradFi USDT-M + 3 Classic) from scratch in ~15–30 seconds.
+* **Stage 2 (Deep Telemetry Extraction on Candidates)**: For every candidate meeting Grade A/A+ with Best $R \ge 2.00\text{R}$, the engine queries deep telemetry (`/api/cg/oracle`, `/api/cg/liqlevels`, book walls).
+
+### 17.2 Terminal Grade A Signals vs Delta Exchange India Execution Gates
+The terminal's Alpha Matrix and Desk Setups Queue continuously generate high-quality structural signals (`XLM`, `OP`, `CRCL`, `SEI`, `DOGE`, `SOL`, `XAU`, `BNB`). However, execution on Delta Exchange India is strictly subordinated to the 11 Socratic Risk Gates:
+1. **Gate 7 (Lot Sizing Ban)**: On $\le \$15$ accounts, `BTC`, `SOL`, `BNB`, and `AVGO` are mechanically banned due to contract minimum lot size risk explosion ($> 15\%$ equity risk vs $1.0\%$ cap).
+2. **Gate 9 (Sector Heat — Max 1 Active Crypto)**: When `WIFUSD` Short is active, taking additional crypto shorts (`XLM`, `OP`, `DOGE`) is blocked to prevent correlated crypto avalanche (PIT-02).
+3. **Gate 10 (BTC Macro Anchor)**: When BTC trades within 0.75% of daily low or at major support, shorting altcoins is banned to prevent bottom-tick short squeezes.
+4. **4-Voice Committee Arbiter**: Reconciles terminal alpha against account constraints, authorizing execution ONLY when all gates pass.
+
+---
+
+## SECTION 18. THE 3-LAYER PLUGIN & SKILL ACTIVATION GUARANTEE
+
+To ensure that all attached plugins (`persistent-memory`, `coderabbit`, `superpowers`, `trading-skills`) and specialized skills (`/plan`, `/brainstorming`, `/karpathy-guidelines`, `/thinking-model-router`) are 100% active on every turn and timer wakeup:
+
+```text
+====================================================================================================
+THE 3-LAYER ACTIVATION GUARANTEE ARCHITECTURE
+====================================================================================================
+LAYER 1: Dynamic Timer Prompt String (Invocation Level)
+         Explicit @[plugin:...] and /<slash-command> tokens prime the UI and tool dispatcher:
+         "@[plugin:persistent-memory] @[plugin:coderabbit] @[plugin:superpowers] @[plugin:trading-skills]
+          /goal /executing-plans /plan /brainstorming /karpathy-guidelines /thinking-model-router ..."
+
+LAYER 2: Workspace & Global Cognitive Kernel Directives (Rule Level)
+         Both c:\Users\SIGMA\Documents\cg-terminal\GEMINI.md and C:\Users\SIGMA\.gemini\config\rules\GEMINI.md
+         are configured with 'trigger: always_on'. Injected into every model turn regardless of context truncation.
+
+LAYER 3: Mandatory Pre-Flight Verification Checklist (Self-Enforcing Code Gate)
+         Every response MUST open with the completed Pre-Flight Verification Checklist header:
+         - Fresh 61-curated asset screening executed from scratch (scripts/individual_asset_evaluator.py).
+         - Persistent memory checked via get_user_profile and search_past_memory.
+         - Delta Exchange India CLOB & Solvency verified via live MCP tools.
+         - Single 1200s timer verified.
+====================================================================================================
+```
+
+---
+
 *END OF CANONICAL MASTER SPECIFICATION (SOP v2.0.0 · UNIFIED MASTER BIBLE)*
