@@ -2406,3 +2406,14 @@ The cascade→exhaustion→reversal transition scored as a **state machine, not 
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-17 15:46 UTC — new suggested order — place in MT5 (debate FOR 6/AGAINST 0)
+- R446-ADA-1 ADA SHORT limit entry 0.1545 · stop 0.1555 · targets 0.1499 / 0.1485 · R 4.6 · expires 2026-11-17 19:44 UTC
+- BASIS: levels are PERP prices (perpRef 0.1519). Before placing in MT5 read spreads.ADAUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.1519 vs 0.1536), h4 RSI 37.3, day -0.7%
+- [FOR] footprint: bull 35 / bear 39; recent: Divergence/sell[time], Exhaustion/sell[vol], Absorption/buy[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×4, abs:sell×6, div:sell×2, exh:sell×5, trap:sell×1 — net 4 buy-side vs 14 sell-side
+- [FOR] liquidation: long-liq magnet 0.1499 (str 92, ~$4M est, -0.88%) as target
+- [FOR] bookWalls: ±5% depth imbalance -0.325 (5m ago +0.031, falling bids); bid $0.01B vs ask $0.02B
+- [FOR] cvd: taker buy 48.8%, perpCvd -27, spotCvd -5, quadrant both-selling, latestDiv bull (recent)
+- → place on ADAUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
