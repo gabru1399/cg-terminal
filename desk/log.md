@@ -10929,3 +10929,31 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R406 · 2026-11-17 02:59 UTC · zai-desk
+
+**Market**: BTC 64,425.6 (-0.7%)  ETH 1,811.59 (-0.4%)  SOL 71.70 (+0.3%)  XAU 3,875.61 (+0.2%)  XAG 47.640 (+0.8%)
+**Bias (|score|≥2)**: DOGE-6(TREND)  BNB-6(TREND)  XRP-3(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R406-DOGE-1 DOGE SHORT limit 0.05876 · stop 0.05900 · T1 0.05782 · T2 0.05757 · T3 0.05744 · R 4.0
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.05872 vs 0.05879), h4 RSI 37.2, day -0.3%
+      [FOR    ] footprint: bull 27 / bear 29; recent: Absorption/sell[time], Divergence/buy[vol], Absorption/sell[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:sell×4, div:buy×3, exh:buy×3, exh:sell×2, trap:sell×2 — net 6 buy-side vs 8 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.05782 (str 60, ~$8M est, -1.55%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.009 (5m ago +0.031, falling bids); bid $0.03B vs ask $0.03B
+      [FOR    ] cvd: taker buy 48.9%, perpCvd -70, spotCvd -16, quadrant both-selling, latestDiv bear (stale/none)
+      [FOR    ] notifications: 6h weighted bias -8.6 (11 events)
+
+### Order lifecycle
+- R398-LTC-1 re-debated: FOR 3/AGAINST 2 — stands
+- R402-XAU-1 re-debated: FOR 7/AGAINST 1 — stands
+- R402-BNB-2 re-debated: FOR 7/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
+
+## ROUND FAILED · 2026-11-17 02:59 UTC · zai-desk
+
+analysis script rc=1
+
