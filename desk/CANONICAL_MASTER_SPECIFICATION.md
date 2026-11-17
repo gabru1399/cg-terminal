@@ -316,6 +316,69 @@ A setup achieves Grade A ($\ge 7.0$ pts) or Grade A+ ($\ge 7.5$ pts) ONLY when:
 * Spot CVD confirms or leads the move.
 * All 16 Telemetry Dimensions are extracted and logged in full.
 
+### 4B.7 Mandatory Multi-Horizon Liquidation & Stop Heatmap Forensic Justification for SL and TP Formulation
+**CORE AXIOM: ZERO SL PLACEMENT IN FRONT OF / INSIDE LIQUIDATION MAGNETS · ZERO TP INTO AIR POCKETS.**
+Every trade formulation submitted to the exchange CLOB or MT5 MUST include an empirical forensic justification for Stop Loss (SL) and Take Profit (TP) grounded in live `/api/cg/liqlevels?sym=` and `/api/cg/stopmap?sym=` telemetry across `3D`, `7D`, and `30D` horizons, and spread bands `±1%` to `±8%`:
+
+1. **Stop Loss (SL) Forensic Placement Rules & The "Cold Zone" Invariant**:
+   - **The 100% Strength Anti-Collision Rule**: NEVER place a Stop Loss in front of or inside a high-strength liquidation cluster ($\ge 40.0\%$ strength, especially a `100.0%` peak cluster like `63,512.5`). Market makers and aggressive taker algorithms are financially incentivized to drive price straight into high-density liquidation pools to unlock liquidity. Placing an SL between current price and a high-strength cluster guarantees getting stopped out right before the market reverses.
+   - **The "Cold Zone" Invariant**: The Stop Loss MUST be placed strictly in the *Cold Zone* — beyond the entire multi-exchange liquidation shelf across 3D, 7D, and 30D lookbacks (e.g. if liquidation clusters span from `63,512.5` [100%] down to `63,174.5` [48%], the SL must be placed at `63,080`, below the entire cluster shelf with a buffer of $0.15\% - 0.25\%$). In the cold zone, liquidation density drops to zero, stripping predatory algorithms of any economic incentive to hunt the level.
+   - **Structural Anchor Confluence**: The cold zone SL must be structurally reinforced: beyond Day VAL (for longs) or Day VAH (for shorts), beyond $\pm 2.5\sigma$ or $\pm 3.0\sigma$ VWAP, or behind confirmed resting book walls ($\ge \$5\text{M}$ notional).
+   - **Mandatory SL Justification Output Block**:
+     ```text
+     [SL Forensic Justification]
+     - Selected SL Price: $X (Distance: D_SL%)
+     - Nearest High-Strength Liquidation Cluster: $Y (Strength: Z%, Window: 3D/7D, Distance: D_cluster%)
+     - Lowest Cluster in Shelf: $W (Strength: S_low%)
+     - Cold Zone Clearance Buffer: B pts (C%) beyond the terminal cluster shelf boundary
+     - Structural Anchor Backstop: e.g. Below Day VAL / Below -3σ VWAP / Behind $5M Bid Wall
+     - Liquidity Immunity Verdict: Confirmed immune from liquidity sweep; predatory cascade exhausts before reaching SL.
+     ```
+
+2. **Take Profit (TP) Forensic Placement Rules & Liquidation Magnet Targeting**:
+   - **Liquidation Skew Ratio (LSR) Directional Pull**: TPs must target the dominant opposite liquidation pools revealed by the LSR across 3D/7D lookbacks. (e.g. If Total Short Strength is 906.9K vs Total Long Strength 221.0K [LSR 4.10:1], price possesses overwhelming directional gravity toward the overhead short liquidation pools between $65,934 and $66,596).
+   - **Tranche Alignment to Microstructure Milestones**:
+     - **T1 (40% Core Banking & Breakeven Trigger)**: Target the first structural milestone $\ge +1.0\text{R}$ (Day VAH for longs / Day VAL for shorts, or 1st resting Ask Wall). Upon fill, SL is immediately ratcheted to Breakeven ($0.00 risk).
+     - **T2 (40% Primary Liquidation Pool)**: Placed directly INTO the high-strength liquidation cluster (e.g., $65,934 – $66,168 with Strength 58% – 78% on 7D lookback). Resting maker sell limit orders get passively filled by forced market-buy liquidations of squeezed shorts (zero slippage, maker rebate).
+     - **T3 (20% Terminal Macro Runner)**: Placed at the terminal macro liquidation cluster (e.g., $66,596 with Strength 79.2% on 30D lookback), or trailed with 15m swing pivot structure.
+   - **Mandatory TP Forensic Justification Output Block**:
+     ```text
+     [TP Forensic Justification]
+     - Liquidation Skew Ratio (LSR): Dominant : Subordinate (e.g. 4.10:1 Short Dominance; 906.9K vs 221.0K)
+     - T1 Target ($X, +R1): Intraday structural milestone (Day VAH / Ask Wall) for instant Breakeven ratchet.
+     - T2 Target ($Y, +R2): Primary Liquidation Cluster ($Y, Strength: S2%, Window: 7D) absorbing forced short liquidations.
+     - T3 Target ($Z, +R3): Terminal Macro Liquidation Pool ($Z, Strength: S3%, Window: 30D) for runner expansion.
+     - Execution Advantage: Maker limit exit orders filled directly by aggressive taker liquidation cascades.
+     ```
+
+### 4B.8 Macro Trend Spine Architecture (EMA 13 × 89 × 233 Multi-Timeframe Stack & Dynamic Trend Rejection Candles)
+**CORE AXIOM: NEVER FIGHT THE MACRO 233 EMA SPINE · EXPLOIT BIG REJECTION CANDLES AT DYNAMIC LEVELS.**
+
+1. **The Fibonacci Triple-EMA Hierarchy (`/api/cg/market?sym=`)**:
+   - **EMA 13 (Fast Momentum Trigger)**: Measures immediate auction acceleration and momentum shifts.
+   - **EMA 89 (Intermediate Fibonacci Baseline)**: Dynamic swing support in uptrends, dynamic swing resistance in downtrends.
+   - **EMA 233 (Macro Fibonacci Spine)**: The ultimate institutional dividing line between macro bull regimes and macro bear regimes.
+   - **Multi-Timeframe Stack Diagnostics across m15, h1, h4, d1**:
+     - **Stage 2 Structural Bull Trend**: $\text{Price} > \text{EMA 13} > \text{EMA 89} > \text{EMA 233}$. Only Longs permitted; pullbacks to EMA 89/233 are prime institutional demand entries.
+     - **Stage 4 Structural Bear Trend**: $\text{Price} < \text{EMA 13} < \text{EMA 89} < \text{EMA 233}$. Only Shorts permitted on trend continuations; counter-trend longs require extreme statistical discount ($|z| \ge 2.5\sigma$) and confirmed 100% liquidation sweep.
+     - **Regime Transition / Compression**: Tangled EMAs signify range balance (Factor 1 = 0.0 pts in Table 7).
+
+2. **Big Trend Rejection Candle Architecture (Pin-Bar Sweeps at Dynamic EMA 89 / 233 Levels)**:
+   - **Microstructure Mechanism**: In a macro downtrend (e.g. 15m/1H/4H price < EMA 233), sharp counter-trend short squeezes frequently spike into the declining EMA 89 or EMA 233. Weak longs buy the breakout; smart money steps in with massive passive limit selling, absorbing aggressive taker demand and rejecting price down.
+   - **Candle Morphology Criteria**:
+     - **Rejection Wick Ratio**: Wick length $\ge 2.0\times$ candle body size (long upper wick for shorts, long lower wick for longs).
+     - **Close Location**: Candle must close in the bottom 30% of its range (for bearish rejection) or top 30% of its range (for bullish rejection).
+     - **Volume Expansion**: Volume bar must be $\ge 1.5\times$ the 20-period moving average volume (e.g. 574.49K on Delta 15m chart).
+     - **Dynamic Collision**: Wick penetrates or touches the declining EMA 89 or EMA 233 and violently rejects back below it.
+   - **Footprint Order-Flow Signature**:
+     - Prints **Exhaustion (`exh`)**, **Bearish Trap (`trap`)**, or **Strong Divergence (`sdiv`)** at the tip of the wick.
+     - Delta flips sharply negative on the bar or immediate following bar.
+   - **Execution Protocol**:
+     - **Entry**: Limit order at the 50% retracement of the rejection wick or market/post-only entry on the close of the rejection candle.
+     - **Stop Loss**: Placed strictly beyond the rejection wick high $+ 0.1\%$ buffer (in the cold zone where local liquidity was already swept).
+     - **Target**: Next major Value Area boundary (Day VAL / -2σ VWAP) and the primary liquidation cluster (e.g. 100% Strength zone).
+     - **Asymmetry**: Delivers high win-rate, pristine R-multiples ($\ge 3.0\text{R} - 5.0\text{R}$) with virtually zero chance of stop hunt because the liquidity sweep has already executed.
+
 ---
 
 ## SECTION 5. THE 16 TELEMETRY DATA DIMENSIONS (DATA CONTRACT)
