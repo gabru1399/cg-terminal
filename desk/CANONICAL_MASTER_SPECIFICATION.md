@@ -406,7 +406,7 @@ Every candidate setup must explicitly evaluate and log all 16 dimensions before 
 
 ---
 
-## SECTION 6. THE 8 STANDARDIZED PLAYBOOK STRATEGY ARCHETYPES (S1 TO S8)
+## SECTION 6. THE 9 STANDARDIZED PLAYBOOK STRATEGY ARCHETYPES (S1 TO S9)
 
 These are the ONLY permitted trade archetypes. Every opportunity that fits no archetype is **NO TRADE**:
 
@@ -420,6 +420,7 @@ These are the ONLY permitted trade archetypes. Every opportunity that fits no ar
 | **S6** | **Trapped Traders Fade** | False Breakout | High volume cluster at extreme with failed progress | Beyond trapped candle wick | POC / Value Area midline |
 | **S7** | **High-Volume Absorption Continuation** | Strong Trend (M1) | Retest of absorbed high-volume node in trend direction | Other side of absorption bar | Same-direction liquidation pool |
 | **S8** | **Liquidation Breakout Continuation** | Negative Gamma Expansion | Clean 15m close beyond major liquidation shelf with rising volume | Inside edge of broken shelf | Next liquidity pocket |
+| **S9** | **Dynamic Trend Rejection Candle** | Macro Trend Pullback (Stage 2/4) | 15m/1H spike into EMA 89 or EMA 233 with rejection wick $\ge 2:1$ & volume surge | Beyond tip of rejection wick + 0.1% buffer | Value Area boundary & 100% liquidation pool |
 
 ### Archetype Detail & Execution Invariants:
 * **S1 — Liquidation Sweep Reversal**: The Magnet Gate's chosen setup when $\text{LSR} \ge 2.5:1$. Wait for the cluster to be wiped, wait for exhaustion print (`exh`), wait for taker delta flip, enter on the 15m confirmation close back inside value. Grade A+ eligible.
@@ -430,6 +431,7 @@ These are the ONLY permitted trade archetypes. Every opportunity that fits no ar
 * **S6 — Trapped Traders Fade**: Fade trapped breakout volume. Stop placed beyond trapped volume wick.
 * **S7 — High-Volume Absorption Continuation**: M1 trend pullback. Enter via 3-tier limit ladder: 40% at POC, 40% at trend-side $\pm 1\sigma$ VWAP, 20% at absorption high/low. Stop beyond absorption bar.
 * **S8 — Liquidation Breakout Continuation**: Continuation through broken liquidation shelf. Stop at inside edge of shelf.
+* **S9 — Dynamic Trend Rejection Candle**: Prime institutional trend continuation entry. When counter-trend short squeezes or bear bounces spike into the declining EMA 89 or EMA 233 (or rising in uptrend) and print a long rejection wick (wick $\ge 2.0\times$ body) on heavy volume ($\ge 1.5\times$ 20-MA) with footprint exhaustion/trap, enter on the 50% wick retest or candle close. Stop loss placed tightly beyond the rejection wick in the cold zone. Targets the opposing high-density liquidation pool (e.g. 100% Strength zone). Grade A+ eligible.
 
 ---
 
