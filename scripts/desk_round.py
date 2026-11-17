@@ -27,6 +27,11 @@ import json, sys, time, urllib.request, urllib.error, re
 from pathlib import Path
 from datetime import datetime, timezone
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 ROOT = Path(__file__).resolve().parent.parent
 DESK = ROOT / "desk"
 STATE_FILE = DESK / "state.json"
