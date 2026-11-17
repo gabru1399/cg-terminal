@@ -11420,3 +11420,18 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+
+
+## EXEC · 2026-11-17 09:47 UTC · atg-exec (Delta Exchange India Account #26902927)
+
+**Net Equity**: $2.8005 USD | **Available**: $0.4406 USD | **Blocked**: $2.2096 USD
+
+### Live Orders Executed / Standing on CLOB
+- **BNBUSD SHORT (Order ID `1689098550`)**: Size 1 contract (0.1 BNB, ~$59.60 notional), Limit `$596.000` (Post-Only Maker), SL `$599.300` (0.55% risk, $0.33 dollar risk), TP `$566.000` (+9.09R payoff), Bracket `mark_price`. Sourced via Gate 7 Two-Tier Conviction Protocol (Grade A+ setup, 87.4% win rate, convergence with zai-desk R424-BNB-1).
+- **DOTUSD SHORT (Order ID `1689037097`)**: Size 10 contracts @ limit `$0.7380`, SL `$0.7525`, TP `$0.6801` (+2.07R).
+- **XLMUSD SHORT (Order ID `1689037574`)**: Size 50 contracts @ limit `$0.13780`, SL `$0.14010`, TP `$0.13030` (+4.60R).
+- **ADAUSD SHORT (Order ID `1688520363`)**: Size 25 contracts @ limit `$0.1555`, SL `$0.1572`, TP `$0.1499` (+3.29R).
+
+### Active Positions Monitored
+- **WIFUSD SHORT (20 contracts @ $0.1351)**: Mark `$0.1331`, Unrealized PnL **+$0.0400 USD** (+0.80R excursion). Standing TP `$0.1315`, SL `$0.1376`. Enforcing +1.0R Breakeven ratchet upon crossing $0.1326.
+- **AMZNBUSD LONG (1 contract @ $257.50)**: Mark `$256.42`, Unrealized PnL -$0.0110 USD. TP `$265.00`, SL `$255.00`.
