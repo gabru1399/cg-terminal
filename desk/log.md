@@ -11595,3 +11595,17 @@ analysis script rc=1
   - XLMUSD: Short 50 @ .1378 | Mark: .1384 | PnL: -.0355 USD. Active brackets: SL .1401, TP .1303 (+3.26R).
   - AMZNBUSD: Long 1 @ .50 | Mark: .69 | PnL: +.0010 USD. Active brackets: SL .00, TP .00.
 - **ACCOUNT SOLVENCY**: Net Liquid Equity: .7388 USD | Position Margin: .5805 USD | Order Margin: .4700 USD | Free Buffer: .5103 USD.
+## R430 · 2026-11-17 11:43 UTC · zai-desk
+
+**Market**: BTC 64,775.8 (-0.1%)  ETH 1,817.25 (-0.1%)  SOL 73.38 (+2.6%)  XAU 3,869.67 (+0.0%)  XAG 47.720 (+1.0%)
+**Bias (|score|≥2)**: XAU-5(TRANS)  BTC+3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R423-XAU-1 re-debated: FOR 5/AGAINST 3 — stands
+
+### Positions
+- no open positions
+
