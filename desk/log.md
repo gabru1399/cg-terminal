@@ -12534,3 +12534,23 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R476 · 2026-11-17 23:49 UTC · zai-desk
+
+**Market**: BTC 64,927.6 (+0.1%)  ETH 1,824.77 (+0.3%)  SOL 75.03 (+4.9%)  XAU 3,854.51 (-0.4%)  XAG 47.550 (+0.6%)
+**Bias (|score|≥2)**: XRP-3(TREND)  ADA-3(TREND)  AVAX-5(TREND)  XAU-3(TREND)  LINK-4(TREND)  DOGE-4(TREND)  LTC-2(TREND)  XAG-2(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R476-XRP-1 XRP SHORT limit 0.9843 · stop 0.9929 · T1 0.9539 · R 3.5
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (0.9843 vs 0.9650), h4 RSI 51.6, day +3.1%
+      [FOR    ] footprint: bull 37 / bear 45; recent: Divergence/sell[vol], Divergence/sell[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×4, abs:sell×3, div:sell×5, exh:sell×2, sdiv:buy×1, trap:buy×1, trap:sell×1 — net 6 buy-side vs 11 sell-side
+      [FOR    ] notifications: 6h weighted bias -6.8 (11 events)
+
+### Order lifecycle
+- R467-DOGE-1 re-debated: FOR 5/AGAINST 1 — stands
+- R469-AVAX-1 re-debated: FOR 5/AGAINST 1 — stands
+- R475-LINK-1 re-debated: FOR 5/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
