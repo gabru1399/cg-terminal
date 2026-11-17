@@ -465,7 +465,7 @@ export default function AlphaMatrix({
 
               return (
                 <tr
-                  key={r.sym}
+                  key={`${r.kind}-${r.sym}`}
                   onClick={() => onPickAsset(r.sym)}
                   className={`cursor-pointer transition-colors hover:bg-neutral-800/40 ${isCur ? "bg-emerald-500/8" : ""}`}
                 >

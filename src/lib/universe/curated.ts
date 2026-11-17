@@ -297,9 +297,6 @@ export const CURATED: readonly CuratedAsset[] = [
   { sym: "RIVER", pair: "RIVERUSDT", kind: "crypto-perp", category: "Crypto", name: "RIVER Token", sub: "DeFi / Altcoin", punchable: true, origin: "fill" },
   { sym: "CAKE", pair: "CAKEUSDT", kind: "crypto-perp", category: "Crypto", name: "PancakeSwap", sub: "DeFi DEX", punchable: true, origin: "fill" },
   { sym: "SIREN", pair: "SIRENUSDT", kind: "crypto-perp", category: "Crypto", name: "SIREN Token", sub: "DeFi / Altcoin", punchable: true, origin: "fill" },
-  { sym: "AR", pair: "ARUSDT", kind: "tradfi-perp", category: "TradFi", name: "AR bStocks Token", sub: "Tokenized Equity", punchable: true, origin: "fill" },
-  { sym: "B", pair: "BUSDT", kind: "tradfi-perp", category: "TradFi", name: "B bStocks Token", sub: "Tokenized Equity", punchable: true, origin: "fill" },
-  { sym: "LA", pair: "LAUSDT", kind: "tradfi-perp", category: "TradFi", name: "LA bStocks Token", sub: "Tokenized Equity", punchable: true, origin: "fill" },
 
   // ─── CLASSIC 3 (no Binance perp — Yahoo/tradeXYZ venues) ──────────────
   { sym: "SPX500", kind: "classic", category: "TradFi", name: "S&P 500", sub: "Index", aliases: ["SP500", "SPY", "GSPC"], punchable: false, origin: "user" },
