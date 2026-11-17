@@ -11733,3 +11733,24 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R436 · 2026-11-17 13:10 UTC · zai-desk
+
+**Market**: BTC 65,055.8 (+0.3%)  ETH 1,822.29 (+0.1%)  SOL 73.93 (+3.4%)  XAU 3,864.96 (-0.1%)
+**Bias (|score|≥2)**: XAU-4(TREND)  SOL-3(TREND)  BTC+2(TREND)  BNB+2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- XAU SHORT confluence -3.7 — REJECTED: no structural target >= 2R (nearest magnet 3,863.48 = 0.3R)
+- NEW R436-SOL-1 SOL SHORT limit 73.93 · stop 74.52 · T1 72.02 · R 3.2
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (73.93 vs 72.57), h4 RSI 47.8, day +3.4%
+      [FOR    ] footprint: bull 35 / bear 39; recent: Divergence/sell[vol], Divergence/sell[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×5, abs:sell×3, div:buy×2, div:sell×3, exh:buy×1, exh:sell×1, trap:buy×1, trap:sell×1 — net 9 buy-side vs 8 sell-side
+      [FOR    ] bookWalls: ±5% depth imbalance -0.107 (5m ago -0.075, falling bids); bid $0.10B vs ask $0.12B
+      [FOR    ] notifications: 6h weighted bias -3.9 (6 events)
+
+### Order lifecycle
+- R434-AVAX-1 WITHDRAWN (confluence flipped to +0.3)
+- R423-XAU-1 WITHDRAWN (re-debate lost: FOR 2/AGAINST 2)
+
+### Positions
+- no open positions
+
