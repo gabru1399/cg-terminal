@@ -2018,3 +2018,26 @@ The cascade→exhaustion→reversal transition scored as a **state machine, not 
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-17 09:30 UTC — new suggested order — place in MT5 (debate FOR 6/AGAINST 0)
+- R423-XAU-1 XAU SHORT limit entry 3878.65 · stop 3894.13 · targets 3800.58 / 3794.52 · R 5 · expires 2026-11-17 13:29 UTC
+- BASIS: levels are PERP prices (perpRef 3868.54). Before placing in MT5 read spreads.XAUUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (3,868.54 vs 3,873.32), h4 RSI 44.5, day +0.0%
+- [FOR] footprint: bull 9 / bear 21; recent: Bull div/buy[time]
+- [FOR] liquidation: long-liq magnet 3,800.58 (str 77, ~$60M est, -1.76%) as target
+- [FOR] bookWalls: ±5% depth imbalance +0.159 (5m ago +0.156, rising bids); bid $0.05B vs ask $0.04B
+- [FOR] cvd: taker buy 49.4%, perpCvd -78, spotCvd -1, quadrant both-selling, latestDiv bear (recent)
+- [FOR] notifications: 6h weighted bias -1.0 (1 events)
+- → place on XAUUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-17 09:30 UTC — new suggested order — place in MT5 (debate FOR 7/AGAINST 0)
+- R423-LINK-2 LINK SHORT limit entry 9.188 · stop 9.226 · targets 8.981 · R 5.5 · expires 2026-11-17 13:29 UTC
+- BASIS: levels are PERP prices (perpRef 9.097). Before placing in MT5 read spreads.LNKUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (9.097 vs 9.150), h4 RSI 37.1, day -0.4%
+- [FOR] footprint: bull 44 / bear 46; recent: Divergence/buy[time], Divergence/sell[vol], Divergence/buy[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×3, abs:sell×6, div:buy×6, div:sell×4, exh:buy×2, exh:sell×2, sdiv:buy×1, sdiv:sell×4, trap:sell×2 — net 12 buy-side vs 18 sell-side
+- [FOR] liquidation: long-liq magnet 8.981 (str 94, ~$3M est, -1.28%) as target
+- [FOR] bookWalls: ±5% depth imbalance -0.009 (5m ago +0.003, falling bids); bid $0.01B vs ask $0.01B
+- [FOR] cvd: taker buy 49.1%, perpCvd -19, spotCvd -1, quadrant both-selling, latestDiv bear (recent)
+- [FOR] notifications: 6h weighted bias -1.0 (3 events)
+- → place on LNKUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
