@@ -467,11 +467,11 @@ Before an order ticket is dispatched, it must pass all 11 Socratic Gates without
 
 ---
 
-## SECTION 11. DUAL-AGENT COORDINATION & DESK OPERATING PROTOCOL
+## SECTION 12. DUAL-AGENT COORDINATION & DESK OPERATING PROTOCOL
 
 This section governs the coordination between the **analysis brain** (Z.ai sandbox agent, `zai-desk`) and the **execution brain** (local Antigravity agent on Delta Exchange India, `atg-exec`). GitHub `main` is the primary transport bus.
 
-### 11.1 Agent Roles & Cadence Architecture
+### 12.1 Agent Roles & Cadence Architecture
 
 | Dimension | `zai-desk` (Remote Sandbox Brain) | `atg-exec` (Local Delta Execution Brain) |
 | :--- | :--- | :--- |
@@ -479,7 +479,7 @@ This section governs the coordination between the **analysis brain** (Z.ai sandb
 | **Does** | Market structure analysis, confluence synthesis, order suggestions, trade reviews, user reporting. | Executes `scripts/desk_round.sh`, audits CLOB, punches Delta orders, manages brackets, enforces invariants. |
 | **Never Does** | Places live trades, edits `positions[]` or execution fields directly. | Edits `analysis`, invents arbitrary levels, overrides stops without logging. |
 
-### 11.2 The Local Desk Daemon (`scripts/desk_daemon.mjs`)
+### 12.2 The Local Desk Daemon (`scripts/desk_daemon.mjs`)
 One always-on process on the local machine runs the event loop:
 1. Auto-commit dirty `desk/` files $\to$ `git fetch` $\to$ `pull --rebase` when behind.
 2. Run `scripts/desk_round.sh` when a round is due (every 15 min).
@@ -488,10 +488,10 @@ One always-on process on the local machine runs the event loop:
 5. Refresh CLOB/account status in `desk/state.json`.
 6. Commit & push all `desk/` changes.
 
-### 11.3 Safe Command Execution (`notify_cmd` / `wake_cmd`)
+### 12.3 Safe Command Execution (`notify_cmd` / `wake_cmd`)
 Alert titles and agent tasks originate from git-synced files (untrusted content). The daemon runs commands **WITHOUT A SHELL** (`spawn(file, argv)` with `shell:false`). Metacharacters can never escape their argv slot. No variable expansion, `&&`, pipes, or redirects.
 
-### 11.4 Instruction Channel & Git Message Bus
+### 12.4 Instruction Channel & Git Message Bus
 Fixed action vocabulary in `desk/inbox/`:
 * `PING`: Liveness check (returns host, uptime, last round ts).
 * `CLOB_SNAPSHOT`: Force a fresh snapshot of Delta Exchange balances, positions, and orders.
@@ -499,7 +499,7 @@ Fixed action vocabulary in `desk/inbox/`:
 * `REPORT`: Account refresh + compact desk report.
 * `AGENT_TASK`: Queue text for local agent in `desk/inbox/WAKE.md`.
 
-### 11.5 Field & File Ownership Matrix
+### 12.5 Field & File Ownership Matrix
 * `desk/state.json` (Machine-readable single source of truth):
   * `config`: Owned strictly by the **human** (risk limits, symbol map). Agents read only.
   * `analysis`: Written only by `zai-desk` (replaced each round).
@@ -508,7 +508,7 @@ Fixed action vocabulary in `desk/inbox/`:
   * `closed[]`: Final closed trade records appended by `atg-exec`.
 * `desk/log.md`: Append-only journal. One entry per round (`## R<n>`) and one entry per execution action (`EXEC`, `DIALOG`). Never edit or delete older entries.
 
-### 11.6 Order Lifecycle State Machine
+### 12.6 Order Lifecycle State Machine
 ```text
 suggested ──(atg places on Delta)──► placed ──(fill)──► filled ──(close)──► closed
     │                                    │                  │
@@ -516,7 +516,7 @@ suggested ──(atg places on Delta)──► placed ──(fill)──► fill
     └──(confluence invalidated)───────► withdrawn           └──(review: CLOSE rec)──► closed
 ```
 
-### 11.7 Directive Protocol & The Reasoning Mandate
+### 12.7 Directive Protocol & The Reasoning Mandate
 Directives issued by `zai-desk` (`EXECUTE_ORDER`, `CANCEL_ORDER`, `MODIFY_POSITION`, `CLOSE_POSITION`, `INVESTIGATE`, `PREPARE`):
 * **The Reasoning Mandate**: `atg-exec` **NEVER EXECUTES A DIRECTIVE ON BLIND TRUST**. Before acting, it must:
   1. Re-derive every number itself (live CLOB quote, basis offset, contract lot sizing, risk cap).
@@ -525,7 +525,7 @@ Directives issued by `zai-desk` (`EXECUTE_ORDER`, `CANCEL_ORDER`, `MODIFY_POSITI
 * **Reply Contract**: Output to `desk/outbox/<basename>.reply.md` with:
   `VERDICT: EXECUTED | COUNTER | REJECTED | DEFERRED`.
 
-### 11.8 Running-Trade Review Verdicts (Every Round)
+### 12.8 Running-Trade Review Verdicts (Every Round)
 For each active position, evaluate:
 * `HOLD`: Trade progressing within normal parameters.
 * `MOVE_STOP_TO_BREAKEVEN`: Position reached $\ge +1.0\text{R}$ excursion (P5-04).
@@ -534,7 +534,7 @@ For each active position, evaluate:
 * `CLOSE_RECOMMENDED`: Structural invalidation triggered or regime flipped.
 * `CHECK_EXCHANGE`: Price beyond stop level; verify fill status on Delta India.
 
-### 11.9 Git Discipline & Conflict Avoidance
+### 12.9 Git Discipline & Conflict Avoidance
 1. Always `git pull --rebase origin main` before editing.
 2. Keep edit windows short; commit and push immediately after.
 3. Commit prefixes: `desk(round):` (`zai-desk`) · `desk(exec):` (`atg-exec`).
@@ -542,7 +542,7 @@ For each active position, evaluate:
 
 ---
 
-## SECTION 12. MULTI-AGENT SWARM ORCHESTRATION & AUTONOMOUS EXECUTION PHASES
+## SECTION 13. MULTI-AGENT SWARM ORCHESTRATION & AUTONOMOUS EXECUTION PHASES
 
 When executing rounds or deploying subagents, the Trading AGI operates through structured phases:
 
@@ -557,7 +557,7 @@ When executing rounds or deploying subagents, the Trading AGI operates through s
 
 ---
 
-## SECTION 13. THE MANDATORY PER-CANDIDATE 16-POINT TELEMETRY AUDIT SHEET
+## SECTION 14. THE MANDATORY PER-CANDIDATE 16-POINT TELEMETRY AUDIT SHEET
 
 For **EVERY** asset proposed for entry, the agent must output this completed audit sheet before submitting any order:
 
