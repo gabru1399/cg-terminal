@@ -7297,12 +7297,12 @@
     ]
   },
   "atg": {
-    "equityUsd": 2.794598,
-    "balanceUsd": 2.673856,
-    "availableUsd": 2.329808,
-    "positionMarginUsd": 0.341151,
+    "equityUsd": 2.794882,
+    "balanceUsd": 2.673239,
+    "availableUsd": 2.026516,
+    "positionMarginUsd": 0.340534,
     "runningPositions": 2,
-    "openOrdersCount": 4,
+    "openOrdersCount": 6,
     "positions": [
       {
         "symbol": "MSFTBUSD",
@@ -7345,11 +7345,49 @@
         "breakeven_price": 0.1326
       }
     ],
-    "lastAudit": "2026-11-17T04:00:17.934764+00:00",
-    "posture": "2_RUNNING_POSITIONS_FULL_CAPACITY",
+    "lastAudit": "2026-11-17T04:42:31.730581+00:00",
+    "posture": "4_SLOT_EXPANDED_PORTFOLIO",
     "curatedUniverseTotal": 234,
     "curatedPerps": 231,
-    "round": "R408"
+    "round": "R408",
+    "orderMarginUsd": 0.297375,
+    "maxSlots": 4,
+    "activeOrders": [
+      {
+        "id": 1688520363,
+        "symbol": "ADAUSD",
+        "product_id": 16614,
+        "side": "sell",
+        "order_type": "limit_order",
+        "limit_price": 0.1555,
+        "size": 25,
+        "bracket_sl": 0.1572,
+        "bracket_tp": 0.1499,
+        "margin_mode": "isolated",
+        "leverage": 20,
+        "margin_locked": 0.194,
+        "state": "open",
+        "r_multiple": 3.29,
+        "thesis": "Statistical extension +2.06sigma VWAP mean reversion into .09M long liq magnet"
+      },
+      {
+        "id": 1688520838,
+        "symbol": "AMZNBUSD",
+        "product_id": 164704,
+        "side": "buy",
+        "order_type": "limit_order",
+        "limit_price": 257.5,
+        "size": 1,
+        "bracket_sl": 255.0,
+        "bracket_tp": 265.0,
+        "margin_mode": "isolated",
+        "leverage": 25,
+        "margin_locked": 0.103,
+        "state": "open",
+        "r_multiple": 3.0,
+        "thesis": "Amazon 24h low / Day VAL support bounce into pre-market tech bid"
+      }
+    ]
   },
   "orders_meta": {
     "balanceUsd": 2.649719,

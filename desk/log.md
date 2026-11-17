@@ -11028,3 +11028,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+
+## EXEC · 2026-11-17 04:45 UTC · atg-exec (Delta India #26902927) · 4-Slot Capacity Expansion
+
+**Operator Directive**: Expanded capacity beyond 2 slots up to 4 concurrent positions. 20-minute recursion timer armed.
+**Solvency**: Net Liquid Equity .7949 USD | Available Cash .0265 USD | Blocked Margin .6379 USD (22.8% util)
+
+### Running Positions (2 Active)
+1. **MSFTBUSD** Long 1 contract (0.01 share) @ .50 (Mark .00 | PnL +.0050 USD | SL .20 | TP .20)
+2. **WIFUSD** Short 20 contracts (20 WIF) @ .1351 (Mark .13519 | PnL -.0040 USD | SL .1376 | TP .1315)
+
+### New Candidate Limit Orders Placed (2 Resting on CLOB)
+3. **ADAUSD** Short Limit 25 contracts @ 0.15550 (Order #1688520363)
+   - Thesis: Statistical overextension (+2.06sigma VWAP), 15m Exhaustion signal, and .09M long liquidation cluster at 0.1497.
+   - Brackets: SL 0.15720 (Risk .0425 USD = 1.52% equity) | TP 0.14990 (Reward .1400 USD = +3.29R EV).
+4. **AMZNBUSD** Long Limit 1 contract (0.01 share) @ 257.50 (Order #1688520838)
+   - Thesis: Amazon pullback to 24h low / Day VAL support (.27) with pre-market tech mean-reversion to Day POC.
+   - Brackets: SL 255.00 (Risk .0250 USD = 0.89% equity) | TP 265.00 (Reward .0750 USD = +3.00R EV).
