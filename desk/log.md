@@ -12405,3 +12405,27 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R469 · 2026-11-17 21:58 UTC · zai-desk
+
+**Market**: BTC 64,294.6 (-0.9%)  ETH 1,802.29 (-1.0%)  SOL 73.38 (+2.6%)  XAU 3,857.00 (-0.3%)  XAG 47.500 (+0.5%)
+**Bias (|score|≥2)**: XAU-2(TREND)  AVAX-4(TRANS)  ETH-3(TRANS)  XAG-3(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R469-AVAX-1 AVAX SHORT limit 7.186 · stop 7.252 · T1 6.940 · T2 6.920 · T3 6.890 · R 3.8
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (7.152 vs 7.148), h4 RSI 37.2, day +0.5%
+      [FOR    ] footprint: bull 41 / bear 51; recent: Divergence/sell[time], Absorption/buy[vol], Absorption/sell[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×5, abs:sell×5, div:buy×5, div:sell×6, exh:buy×2, exh:sell×1, sdiv:buy×1, sdiv:sell×1, trap:buy×2, trap:sell×1 — net 15 buy-side vs 14 sell-side
+      [FOR    ] liquidation: long-liq magnet 6.940 (str 84, ~$2M est, -3.03%) as target
+      [FOR    ] cvd: taker buy 49.1%, perpCvd -21, spotCvd +1, quadrant spot-bid, latestDiv bear (recent)
+      [FOR    ] notifications: 6h weighted bias -2.0 (1 events)
+- ETH SHORT confluence -3.1 — REJECTED: opposite liq magnet 1,838.20 (str 82, ~$239M est) within 1.2R of entry — wait for sweep
+- XAG SHORT confluence -3.2 — REJECTED: opposing bid wall $6.2M @ 47.400 (0.8R into path) caps the move to T1
+
+### Order lifecycle
+- R454-AVAX-1 EXPIRED (unfilled past expiry)
+- R463-ADA-1 re-debated: FOR 5/AGAINST 1 — stands
+- R467-DOGE-1 re-debated: FOR 4/AGAINST 1 — stands
+
+### Positions
+- no open positions
+
