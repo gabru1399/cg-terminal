@@ -13944,3 +13944,16 @@ analysis script rc=1
 - User asked to punch orders straight into local MT5 from the terminal. Built: `scripts/mt5_punch.py` (order_send bridge, prop guards: $6 risk cap hard, comment cg_terminal, magic 42001, daily 4%/overall 10% DD floors, volume-step clamping, IOC→FOK fallback) + `POST /api/desk/mt5-punch` (broker-symbol resolution SOL→SOLUSD.p / BTC→BTCUSD.pi via symbol_map + mt5.json live keys → universe fallback; perp→CFD level translation via live basisPct; spawns python; mirrors ticket into state.json status "placed-mt5" + WAKE EXEC section) + `GET /api/desk/mt5-punch` (panel resolver). Playbook panel now has a PUNCH DESTINATION toggle: MT5 DIRECT (default, amber) vs DESK QUEUE (atg-exec/Delta India). T1 rides as broker TP; 40/40/20 + auto-BE stay with the cg_terminal loop (mt5_cg_trader.py --auto-be, already called by the daemon every cycle).
 - Verified in sandbox: resolver maps SOL/BTC/ETH/DOGE correctly + AVAX honestly unresolvable (broker has none); invalid/armed/cross-origin/unmapped rejections all correct; no-MT5 error surfaces the pip-install hint; desk-queue punch unaffected; standalone-cwd path bug fixed (ROOT walk-up). Not live-tested against a real MT5 terminal — that requires the user's Windows PC (MetaTrader5 pip pkg + terminal running); WAKE note added for atg-exec.
 
+## R559 · 2026-11-18 20:49 UTC · zai-desk
+
+**Market**: BTC 62,468.3 (-3.8%)  ETH 1,749.02 (-4.1%)  SOL 72.97 (-2.9%)  XAU 3,738.47 (-3.0%)  XAG 45.200 (-5.0%)
+**Bias (|score|≥2)**: ADA-6(TREND)  BNB-3(TREND)  ETH-2(TREND)  LTC-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
