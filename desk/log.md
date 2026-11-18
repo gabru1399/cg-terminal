@@ -13324,6 +13324,7 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+<<<<<<< HEAD
 ## R517 · 2026-11-18 10:52 UTC · zai-desk
 
 **Market**: BTC 64,339.6 (-0.9%)  ETH 1,805.28 (-1.0%)  SOL 74.68 (-0.6%)  XAU 3,777.05 (-2.0%)  XAG 45.900 (-3.5%)
@@ -13343,6 +13344,39 @@ analysis script rc=1
 - R505-ADA-1 re-debated: FOR 6/AGAINST 1 — stands
 - R507-LINK-1 re-debated: FOR 3/AGAINST 2 — stands
 - R513-DOGE-1 re-debated: FOR 5/AGAINST 1 — stands
+
+### Positions
+- no open positions
+
+=======
+
+## R501 · 2026-11-18 11:00 UTC · zai-desk
+- **SSRN order-flow research digest posted to WAKE.md** (## 2026-11-18 ~11:00 UTC — zai-desk): operator-directed literature mining for entry strategies confirmable by our telemetry.
+- **Access note**: SSRN blocked automated access on all surfaces (Cloudflare loop on HQ login; "Content Blocked" on www/papers; 403 on Delivery.cfm PDFs). Credentials unused. Research executed via public mirrors — web-indexed SSRN abstracts + arXiv q-fin API. No full texts: mapping uses abstract-level findings only.
+- **12-paper evidence base** (SSRN IDs unless arXiv): Cont/Kukanov/Stoikov OFI (1712822, 804 cites — OFI linearly predicts mid-price, slope ∝ 1/depth); Multi-Level OFI (arXiv 1907.06230 — fit improves with book depth); Forecasting HF OFI (arXiv 2408.03594 — Hawkes OFI momentum); Schmalz BTC/USDT OFI 1-10s (7227998 — OFI edge confirmed on crypto); Vafin OFI review (6938742); Rehan sweeps/acceptance grammar (7557779); Perry 216,376-event VA-extreme delta proxy pre-registration (7106618); Howard VA-breakout stop distance + first-30-min penalty (6350238, p<0.001); Zarattini ORB 41.6%/yr Sharpe 2.8 with 10%-ATR stops (4729284/4416622); Lim cascade anatomy minute-level (6579278); Lim two-regime liquidity recovery + hidden-liquidity bias (6636998/6891658); Barone Hyperliquid sunshine TWAP (arXiv 2606.15715).
+- **6 new entry archetypes defined** (each mapped to telemetry dimensions + sleeve + gates):
+  - EA-1 Rolling OFI Trigger (Sleeve T timing; consolidates D09/D14/D15 into one composite; low effort from livebook top-1000)
+  - EA-2 Sweep-Acceptance Protocol (Sleeve S formal spec via Rehan's lookahead-free grammar; acceptance bar = entry bar; spread-blowout kill-switch from Lim)
+  - EA-3 VA-Extreme Delta Reversion (Sleeve R spec via Perry's pre-registered design; Howard stop = 0.25×VA-width beyond extreme; 30-min post-open stand-down)
+  - EA-4 RVOL-Gated 30-min ORB (TradFi T-ORB upgrade via Zarattini; ATR stop not OR-opposite stop; slot-2/Gate 9β names only)
+  - EA-5 Cascade-Exhaustion Recovery (Sleeve S post-cascade: Liq-5m decay + perp CVD basing + spread ≤1.3× median re-entry + visible-TWAP catalyst from Barone)
+  - EA-6 ITSM Overlay (first-30-min return as daily direction prior; pure D05-D08 reuse; feeds Bayesian LR overlay)
+- **Governance**: paper parameters ≠ desk parameters — every archetype enters the ledger as hypothesis with paper prior, calibrated on our fills via the R384 LR overlay (≥20 outcomes); pre-registration discipline (rule logged before trade, no intra-quarter edits); unverified items listed (exact coefficients in P4/P7/P8 full texts).
+- **Directives to atg-exec**: implement EA-1 first; wire EA-2/EA-3 into next scanner revision; EA-4 slot-2 only after Busd spec check; add `archetype` field to cards in state.json for LR outcome tracking; reply with implementation notes for SOP v2.1.0-RC1 fold-in.
+>>>>>>> origin/main
+## R519 · 2026-11-18 11:08 UTC · zai-desk
+
+**Market**: BTC 64,184.7 (-1.1%)  ETH 1,799.00 (-1.4%)  SOL 74.37 (-1.0%)  XAU 3,774.47 (-2.1%)  XAG 45.890 (-3.5%)
+**Bias (|score|≥2)**: BTC-3(TREND)  BNB-5(TREND)  DOGE-5(TREND)  ADA-4(TREND)  XAU-2(TREND)  ETH-3(TREND)  XRP-2(TRANS)  AVAX-2(TREND)  LTC-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R505-ADA-1 re-debated: FOR 6/AGAINST 1 — stands
+- R507-LINK-1 re-debated: FOR 4/AGAINST 2 — stands
+- R513-DOGE-1 re-debated: FOR 5/AGAINST 1 — stands
+- R517-BNB-1 re-debated: FOR 5/AGAINST 1 — stands
 
 ### Positions
 - no open positions

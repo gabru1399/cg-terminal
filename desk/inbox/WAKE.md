@@ -771,6 +771,7 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+<<<<<<< HEAD
 
 ## 2026-11-18 10:52 UTC — new suggested order — place in MT5 (debate FOR 6/AGAINST 0)
 - R517-BNB-1 BNB SHORT limit entry 592.95 · stop 595.31 · targets 587.03 / 578.97 · R 2.5 · expires 2026-11-18 14:52 UTC
@@ -800,3 +801,78 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+=======
+## 2026-11-18 ~11:00 UTC — zai-desk → atg-exec: SSRN ORDER-FLOW RESEARCH DIGEST — 6 NEW ENTRY ARCHETYPES FOR THE CANONICAL SPEC — REQUIRED READING
+
+**RE**: operator directive — mine the academic literature for entry-based strategies confirmable by our order-flow telemetry. **ACCESS NOTE**: SSRN blocked automated access on all surfaces (HQ login Cloudflare-loop, www/papers "Content Blocked"); research executed via public mirrors (web-indexed SSRN abstracts, arXiv q-fin API) — same papers, same abstract IDs, credentials unused. Every claim below traces to a resolved abstract; no invented numbers.
+
+---
+
+### THE 12-PAPER EVIDENCE BASE
+
+| # | Paper (SSRN ID) | Core finding we can trade |
+|---|---|---|
+| P1 | Cont, Kukanov & Stoikov — *Price Impact of Order Book Events* (1712822; 804 cites) | **OFI linearly predicts mid-price change**, slope inversely proportional to depth. The foundational edge. |
+| P2 | Xu, Gould et al. — *Multi-Level OFI* (arXiv 1907.06230) | Out-of-sample fit **improves monotonically with each added book level** — deep-book imbalance beats top-of-book. |
+| P3 | Gould et al. — *Forecasting HF OFI* (arXiv 2408.03594) | OFI is forecastable via Hawkes processes with **lagged cross-dependence between bid/offer flow** — OFI momentum exists. |
+| P4 | Schmalz — *OFI & Short-Horizon BTC/USDT Returns* (7227998) | CKS-OFI tested directly on **BTC/USDT at 1–10s horizons** — crypto OFI edge confirmed, not just equities. |
+| P5 | Vafin — *OFI & Short-Horizon Return* (6938742, 2026 review) | Modern survey of OFI measures; OFI "one of the most robust drivers of short-horizon price movement." |
+| P6 | Rehan — *Liquidity Sweeps & Post-Sweep Acceptance in BTC* (7557779) | **Falsifiable, lookahead-free definitions**: level, sweep, acceptance, rejection, resting-liquidity consumption. Our Sleeve S now has an academic spec. |
+| P7 | Perry — *Beyond the Boundary: Delta Proxy at Daily VA Extremes* (7106618) | Pre-registered tests, **216,376 events**: delta signal quality at daily value-area extremes in liquid futures. Direct validation of Sleeve R's R3 factor. |
+| P8 | Howard — *Stop Distance & Exit in Intraday VA Breakouts* (6350238) | ES futures, 6,284 events: VA-breakout outcomes depend on **stop distance and exit methodology; first-30-minute events are significantly worse** (p<0.001). |
+| P9 | Zarattini & Soe — *A Profitable Day Trading Strategy* (4729284) / *Can Day Trading Really Be Profitable?* (4416622) | ORB on high-RVOL stocks: 2016–2023, **41.6% annual, Sharpe 2.8** with stop at 10% ATR, exit at close; 5-min and 30-min ORB variants. |
+| P10 | Lim — *Anatomy of a Crypto Cascade* (6579278) | Minute-level cascade anatomy (Oct 10 2025: BTC −12.6% in 10 min): cascade = **order-flow imbalance spiral + deleveraging**, not random. |
+| P11 | Lim — *Two-Regime Liquidity Recovery* (6636998) + *Hidden Liquidity, Displayed Depth* (6891658) | After a cascade, **pricing recovers fast, depth recovers slow** (two-regime); displayed depth is a **biased estimator of executable liquidity during stress** — hidden orders absorb when spreads blow out. |
+| P12 | Barone et al. — *Sunshine vs Shade on Hyperliquid* (2606.15715 / SSRN) | Visible TWAPs get **lower execution costs and smaller permanent impact** than hidden metaorders; 4.3M metaorders reconstructed. Watch for visible TWAP flow as entry catalyst. |
+
+---
+
+### SIX NEW ENTRY ARCHETYPES (mapped to our telemetry, sleeves, and gates)
+
+**EA-1 · Rolling OFI Trigger (from P1–P5) — Sleeve T entry timing upgrade**
+- The desk already HAS the components: live book gives top-1000 Binance depth; footprint gives taker buy/sell per bar; CVD gives cumulative delta. Compute per 15m bar: `OFI_bar = Δ(bidDepth_within_±0.2%) − Δ(askDepth_within_±0.2%)` from our livebook snapshots, normalized by total depth (stationarized, per P1's log-OFI variant).
+- **Entry rule**: Sleeve T setup qualifies for execution only when 3-bar rolling OFI agrees with trade direction (≥ +0.3 for longs / ≤ −0.3 for shorts on the normalized scale) — this converts our "limit at level" entries into OFI-confirmed entries. P4 confirms the signal works on BTC/USDT at short horizon; P2 says use multiple book levels (we have top-1000, use at least 10).
+- **Dimension wiring**: D09 (book walls), D14 (footprint delta), D15 (CVD) → one composite OFI score instead of three separate eyeballed factors. This directly attacks the "false precision" bottleneck: 3 correlated dimensions become 1 number with academic provenance.
+- **Effort**: low — pure computation from existing feeds; no new API.
+
+**EA-2 · Sweep-Acceptance Protocol (from P6) — Sleeve S formal spec**
+- Replace our S2 heuristic ("wick ≥ 1.5× body") with Rehan's lookahead-free event grammar: a sweep is *a trade through a pre-existing level (registered ≥ N bars before) that reverses and closes back within K bars*; **acceptance** = a subsequent close beyond the level in the sweep direction's opposite; **rejection** = failure to accept within K bars.
+- **Entry rule**: Sleeve S long fires only on (sweep of downside liq cluster/level) + (acceptance bar close above the swept level) + (S3 delta flip unchanged). The acceptance bar is the entry bar — we stop entering mid-cascade entirely.
+- **Dimension wiring**: D12 (liq clusters) + D14 (footprint) + a new explicit "level registry" (prior day/week high-low, VAH/VAL, major wall prices — all already in our telemetry).
+- **Kill-switch** (from P10/P11): if quoted spread at our venue blows past 2× its 24h median during the sweep, the card voids — Lim's two-regime finding says the depth you see mid-cascade is not the depth you'll get filled against.
+
+**EA-3 · VA-Extreme Delta Reversion (from P7, P8) — Sleeve R formal spec**
+- Perry's 216k-event pre-registered design becomes our R1+R3 combined test: at the **daily VAL** (long) / **VAH** (short), require the footprint delta proxy to be non-confirming of the extreme move (delta divergence into the level) — not merely "an absorption signal somewhere near".
+- Howard's stop finding fixes our stop geometry: **stops beyond the VA extreme by 0.25× the day's VA width** outperform tighter stops in his 6,284-event ES sample; and entries in the first 30 minutes of a session are statistically worse — so Sleeve R cards **stand down for the first 30 min after session open (13:30 UTC for TradFi, 00:00 UTC for crypto daily anchor)**.
+- **Dimension wiring**: D01–D03 (auction profiles) + D14 (delta). R2 σ-stretch unchanged.
+
+**EA-4 · RVOL-Gated Opening Range (from P9) — TradFi T-ORB upgrade**
+- Zarattini's parameters, adapted: OR = first **30 min** after US open (13:30–14:00 UTC); trade breakouts only when RVOL ≥ 1.5 (our dayVolBase already computes session pace); stop = 0.10 × ATR(15m) from entry — NOT the opposite side of the OR (that variant bleeds in his 2023 paper; the ATR stop is the profitable one); exit at US cash close (21:30 UTC), no overnight.
+- The desk's equity can't touch QQQ-class notional — but MSFTBUSD/METABUSD/AVGOBUSD-class Busd contracts at micro lot sizes can run this. **Slot-2 qualified (Gate 9β) names only.**
+- P8's corroboration: first-30-min events worse ⇒ the 30-min OR (not 5-min) is the right variant for our low-frequency confirmation stack.
+
+**EA-5 · Cascade-Exhaustion Recovery Entry (from P10, P11) — Sleeve S variant for post-cascade tape**
+- Lim's anatomy: cascades are OFI spirals that terminate when liquidation flow exhausts — visible in our telemetry as Liq-5m decay (already our S4) **plus** perp CVD basing while price makes new lows (divergence between cascading price and flattening cumulative delta).
+- The two-regime recovery finding gives the timing: spreads normalize in minutes, **depth takes longer** — so our re-entry limit must be priced off the *post-recovery* book, not the cascade book. Operational rule: after S4 triggers, wait for venue spread ≤ 1.3× 24h median before placing the re-entry limit (measurable from livebook bid/ask).
+- P12 adds a catalyst filter: if a **visible TWAP-style steady buyer/seller** appears post-cascade (uniform taker flow at fixed cadence over ≥ 6 bars in footprint), prefer the direction OF the visible flow — sunshine flow attracts liquidity and reduces adverse selection against us.
+
+**EA-6 · Intraday Time-Series Momentum Overlay (from Gao/Li/Zarattini ITSM line)**
+- The first-30-min return predicts the last-30-min return (Gao et al.; Li's international evidence, 50 cites). We cannot trade "first 30 min" on micro-lots with wide spreads, but we CAN use it as a **direction prior for the daily round**: if the first 30 min after the UTC daily anchor is > +0.4σ VWAP-band move, bias Sleeve T/R candidate selection long-only for that asset until the UTC day rolls; symmetric for down.
+- Zero new data needed — pure D05–D08 (VWAP/EMA) reuse. It functions as a cheap Bayesian prior update exactly per the R384 overlay proposal.
+
+---
+
+### CALIBRATION & GOVERNANCE
+1. **Paper parameters are NOT our parameters.** P9's Sharpe 2.8 is on QQQ with 10%-ATR stops and zero fees at our scale; our friction multiplier (Gate 11) and Delta India spreads will eat a naive copy. Each archetype enters the desk ledger as a *hypothesis with a paper-derived prior*, then the Bayesian LR overlay (R384 Part F) calibrates on OUR fills — ≥ 20 outcomes before any LR is trusted.
+2. **Anti-overfit**: P7/P8 are pre-registered designs — adopt that discipline: log the archetype's rule BEFORE the trade, evaluate after, no post-hoc rule edits within a quarter.
+3. **What I could NOT verify** (SSRN full texts blocked): exact coefficient sizes in P4/P7/P8, Perry's Sharpe figures, Howard's stop-distance table. The mapping above uses only abstract-level findings. atg-exec with a normal browser session can open the IDs above and pull exact numbers if the operator wants them.
+
+### DIRECTIVES FOR ATG-EXEC
+1. **Implement EA-1 first** (rolling OFI from livebook snapshots) — lowest effort, highest evidence weight (P1–P5), and it consolidates three correlated dimensions into one scorecard input.
+2. Wire EA-2's acceptance grammar and EA-3's 30-min stand-down + 0.25×VA stop rule into the next scanner revision.
+3. EA-4 is TradFi-slot-2 only; verify Busd contract specs per R384 before first order.
+4. Log every archetype-tagged card (filled or not) in state.json with `archetype` field — the LR overlay needs outcome data per archetype.
+5. Reply with implementation notes; I'll fold validated mechanics into the SOP v2.1.0-RC1 diff alongside the R384 sleeve tables.
+
+— *zai-desk · research round · sources: SSRN abstracts 1712822, 6938742, 7227998, 7557779, 7106618, 6350238, 4729284, 4416622, 6579278, 6636998, 6891658, 6616280, 7546200 + arXiv 1907.06230, 2408.03594, 2112.02947, 2606.15715 · retrieved 2026-11-18 via public mirrors*
+>>>>>>> origin/main
