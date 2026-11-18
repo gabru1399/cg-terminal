@@ -1133,3 +1133,21 @@
 - TIER 3 libraries: joshyattridge/smart-money-concepts (2.2k, MIT, pip) — FVG/BOS/CHoCH/order-block/liquidity-zone/prev-HL detectors on OHLCV → P0 QUICK WIN: attach to kline_series as mechanical confirmations for EA-2 level registry + EA-3 structure tests (adopt detectors, NOT the ICT narrative). tetratensor/street-algo-trader (13★, JS-competition client) — port pennying quote logic (one tick inside best, per-symbol exposure accounting) for Delta limits + convert-arb template for perp-vs-MT5 basis (spreads already in mt5.json). No license file → concepts only, zero code copy.
 - TIER 4 elite-firm: janestreet/agent_skills (10.1k, MIT) — SAME SKILL.md format as our skills/; socratic-tutor CLONED, INSPECTED (benign, no network), INSTALLED to skills/socratic-tutor this session — use for operator mastery training on microstructure (aligns with the spec's 11 Socratic Gates). Optiver Kaggle solutions (liyiyan128/optiver-trading-at-the-close) = order-book feature checklist (multi-level WAP, size/depth imbalance, matched-level imbalance) → EA-1 feature audit. IMC Prosperity 3 winners (chrispyroberts 1st USA/7th global, TimoDiehm) = constrained-MM governance analogs.
 - DIRECTIVES: (1) P0 this week — SMC detector columns on kline_series + Optiver feature audit on livebook; EA-1 OFI per standing R501 directive. (2) P1 2-4 wks — hftbacktest validation harness (Binance historical L2 for curated 30) producing measured fill/slippage distributions for EA-1/2/5 before any live wiring; pennying micro-adjust in execution notes; basis template prototype. (3) P2 quarter — qlib-architecture LR-overlay harness (pre-registered per-archetype outcomes, ≥20 before trusting any LR); ABIDES stress scenarios; scheduler sophistication only when size justifies. (4) Every repo-derived column/feature earns its place in the LR overlay same as paper signals; data-honesty rules unchanged; post an implementation-notes reply for the SOP v2.1.0-RC1 fold-in.
+
+## 2026-11-18 18:29 UTC — agent task from zai-desk
+- SCHEDULED ANALYSIS ROUND (manual-bound — desk/TRADE_FORMULATION_MANUAL.md):
+1. git pull --rebase origin main
+2. Read desk/inbox/WAKE.md + desk/TRADE_FORMULATION_MANUAL.md (the SOP)
+3. Pull live telemetry for target symbols: /api/cg/screener, /api/cg/narrative,
+   /api/cg/quant, /api/cg/options (BTC/ETH), /api/cg/bookwalls, /api/cg/lto,
+   /api/cg/liqlevels (3d/7d/30d), /api/cg/cvd, /api/cg/signals, desk/mt5.json
+4. Run the 6-step DECIDE (manual §1) per symbol across ALL 16 dimensions (§2)
+5. Compute the LSR and apply the Liquidation Magnet Gate (§4): LSR >= 2.5:1
+   bans S3 passive front-runs — wait for the S1 sweep
+6. Score Table 7 confluence (§5); apply hard vetoes; assign grade + risk %
+7. Grade >= B candidates: Formulation Card (§9.2) to
+   desk/deepscan/FORMULATION-<SYMBOL>-<ts>.md; order-worthy ones become
+   suggested orders in desk/state.json per desk/PROTOCOL.md
+8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
+   stop, 40/40/20 scale-outs)
+9. Commit + push; append the round entry to desk/log.md
