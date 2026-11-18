@@ -13834,3 +13834,16 @@ analysis script rc=1
 - **PORTFOLIO + FULL TERMINAL INTEGRATION shipped.** EA-6 SMC BOS+FVG validated on the same real Binance 15m data (945 trades, +206.9R, PF 1.40, all 3 syms); EA-7 (PF 0.49) and EA-8 (PF 0.26) suspended with autopsies. 3-engine portfolio (weights EA5 .467 / EA2 .30 / EA6 .233, inverse-maxDD risk parity): +130.8R weighted, PF 1.51, maxDD 25.6R, corr ≤0.12, 6/7 months positive.
 - **Terminal**: src/lib/strategy/playbook.ts (pure live detector, closed-bars only), GET /api/strategy/cards, POST /api/desk/punch (state.json orders[] + WAKE.md, config untouched, proxy.ts same-origin respected), Playbook▸Punch tab (badge R547) with qty-hint sizing + punched-order lifecycle. tsc exit 0; next build green; smoke-tested on real data (cards ok:true; punch order tp-* verified then desk files restored).
 - **Files**: scripts/backtest_portfolio.py, scripts/portfolio_assemble.py, scripts/charts_r547.py; data/backtest/{trades_v2,results_v2,portfolio,equity_portfolio}.{json,csv}; download/charts/r547_portfolio_equity.png; PLAYBOOK V2 appended below V1 in desk/PLAYBOOK-EA-VALIDATED.md (still sole card source — now 3 engines).
+## R550 · 2026-11-18 19:00 UTC · zai-desk
+
+**Market**: BTC 63,050.0 (-2.9%)  ETH 1,769.27 (-3.0%)  SOL 73.72 (-1.9%)  XAU 3,740.22 (-3.0%)  XAG 45.250 (-4.9%)
+**Bias (|score|≥2)**: BNB-5(TREND)  XRP-3(TREND)  ADA-5(TRANS)  XAU-4(TREND)  SOL-4(TREND)  ETH-2(TREND)  BTC-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
