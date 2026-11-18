@@ -1264,3 +1264,16 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-18T21:11:15.522Z — terminal-punch: XAUUSDT SHORT (EA6)
+- Punched from the terminal Playbook panel by the human. Execute per desk SOP.
+- short XAUUSDT · LIMIT @ 3740.55 · SL 3750.786642857143 · targets 3730.8335714285713 / 3708.4267142857148 / 3708.4267142857148
+- engine EA6 (pending-fill) · risk weight 0.233 · planned R 3
+- note: bearish BOS → FVG retest limit @ mid (zone 3733.35–3747.75)
+- qty hint: 0.569034 (0.25% × weight 0.233 on $10000)
+- on fill: write status/ticket/actualEntry back to state.json orders[] and log EXEC.
+
+## 2026-11-18T21:11:24Z — terminal-mt5-punch: SOLUSDT SHORT (EA6)
+- Punched STRAIGHT to MT5 from terminal Playbook: SOLUSD.p 0.07 lots, ticket 20277826, risk $5.46.
+- entry 73.285 · SL 74.065 · T1 73.04 · T2 71.51 · T3 70.95 (planned 3.0R).
+- on fill: mirror into positions[], manage auto-BE + scale-outs per desk SOP.
