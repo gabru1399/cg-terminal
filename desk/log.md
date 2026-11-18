@@ -13812,3 +13812,16 @@ analysis script rc=1
 - **Tier 3 (libraries)**: smartmoneyconcepts 2.2k MIT (FVG/BOS/CHoCH/OB/liquidity detectors → P0 quick win on kline_series); street-algo-trader (JS-competition: pennying, bond MM, ETF/ADR convert arb → port patterns for Delta limits + basis trades; no license → concepts only).
 - **Tier 4 (elite-firm)**: janestreet/agent_skills 10.1k MIT — socratic-tutor cloned/inspected/installed to skills/socratic-tutor (same SKILL.md pattern as desk; complements 11 Socratic Gates); Optiver Kaggle solutions = book-feature checklist for EA-1; IMC Prosperity 3 winners = constrained-MM governance analogs.
 - **Roadmap**: P0 (SMC columns + feature audit + EA-1) / P1 (hftbacktest fill-rate validation of EA-1/2/5; pennying adjust; basis prototype) / P2 (qlib LR harness, ABIDES stress, execution schedulers). Governance: repo-derived features enter LR overlay like paper signals; data-honesty rules unchanged.
+## R546 · 2026-11-18 18:11 UTC · zai-desk
+
+**Market**: BTC 63,128.0 (-2.8%)  ETH 1,767.15 (-3.1%)  SOL 73.49 (-2.2%)  XAU 3,744.22 (-2.9%)  XAG 45.110 (-5.2%)
+**Bias (|score|≥2)**: XAU-5(TREND)  AVAX-3(TREND)  BNB-5(TREND)  XRP-3(TREND)  ADA-4(TREND)  LINK-4(TREND)  DOGE-2(TREND)  LTC-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
