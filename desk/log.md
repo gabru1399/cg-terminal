@@ -13395,3 +13395,25 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R521 · 2026-11-18 11:40 UTC · zai-desk
+
+**Market**: BTC 64,213.5 (-1.1%)  ETH 1,799.00 (-1.4%)  SOL 74.52 (-0.8%)  XAU 3,771.71 (-2.2%)  XAG 45.760 (-3.8%)
+**Bias (|score|≥2)**: XRP-3(TRANS)  BNB-5(TREND)  DOGE-5(TREND)  ADA-5(TREND)  XAU-2(TREND)  SOL-3(TREND)  ETH-3(TREND)  BTC-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R521-XRP-1 XRP SHORT limit 0.9982 · stop 1.0079 · T1 0.9751 · T2 0.9682 · T3 0.9584 · R 2.4
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.9894 vs 0.9899), h4 RSI 52.5, day +0.6%
+      [FOR    ] footprint: bull 19 / bear 29; recent: Divergence/sell[time], Absorption/sell[vol], Exhaustion/buy[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×4, div:sell×2, exh:buy×1, trap:buy×1, trap:sell×4 — net 4 buy-side vs 10 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.9849 (str 42, ~$10M est, -0.36%) as target
+      [FOR    ] notifications: 6h weighted bias -1.0 (2 events)
+
+### Order lifecycle
+- R505-ADA-1 re-debated: FOR 6/AGAINST 1 — stands
+- R507-LINK-1 WITHDRAWN (re-debate lost: FOR 2/AGAINST 3)
+- R513-DOGE-1 re-debated: FOR 4/AGAINST 1 — stands
+- R517-BNB-1 re-debated: FOR 5/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
