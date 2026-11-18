@@ -292,3 +292,25 @@
 - [AGAINST] bookWalls: ±5% depth imbalance +0.160 (5m ago +0.105, rising bids); bid $0.06B vs ask $0.04B
 - [FOR] notifications: 6h weighted bias -4.0 (6 events)
 - → place on XAUUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-18 01:24 UTC — new suggested order — place in MT5 (debate FOR 6/AGAINST 0)
+- R482-ADA-1 ADA SHORT limit entry 0.1547 · stop 0.1553 · targets 0.153 · R 2.7 · expires 2026-11-18 05:22 UTC
+- BASIS: levels are PERP prices (perpRef 0.1532). Before placing in MT5 read spreads.ADAUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.1532 vs 0.1543), h4 RSI 42.0, day -1.4%
+- [FOR] footprint: bull 38 / bear 55; recent: Absorption/sell[time], Exhaustion/sell[vol], Absorption/sell[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×5, abs:sell×7, div:buy×3, div:sell×2, exh:buy×1, exh:sell×3, trap:buy×1, trap:sell×2 — net 10 buy-side vs 14 sell-side
+- [FOR] liquidation: long-liq magnet 0.1489 (str 76, ~$4M est, -2.81%) as target
+- [FOR] bookWalls: ±5% depth imbalance -0.434 (5m ago -0.473, rising bids); bid $0.01B vs ask $0.02B
+- [FOR] notifications: 6h weighted bias -2.0 (2 events)
+- → place on ADAUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-18 01:24 UTC — new suggested order — place in MT5 (debate FOR 5/AGAINST 1)
+- R482-SOL-2 SOL SHORT limit entry 74.95 · stop 75.24 · targets 74.15 / 73.52 · R 2.7 · expires 2026-11-18 05:22 UTC
+- BASIS: levels are PERP prices (perpRef 74.64). Before placing in MT5 read spreads.SOLUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (74.64 vs 74.97), h4 RSI 51.5, day -0.7%
+- [FOR] footprint: bull 34 / bear 37; recent: Absorption/sell[time], Trapped longs/sell[vol], Bear div/sell[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×1, div:buy×1, div:sell×4, exh:sell×2, sdiv:sell×2, trap:sell×3 — net 3 buy-side vs 12 sell-side
+- [AGAINST] largeOrders: bid wall $9.0M @ 74.30 within 2% opposes
+- [FOR] liquidation: long-liq magnet 74.15 (str 92, ~$12M est, -0.49%) as target
+- [FOR] cvd: taker buy 50.0%, perpCvd +65, spotCvd -58, quadrant perp-driven, latestDiv bear (recent)
+- → place on SOLUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
