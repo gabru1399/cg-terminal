@@ -27,16 +27,16 @@
     }
   },
   "analysis": {
-    "last_round": "R562",
-    "last_round_ts": 1795038018097,
+    "last_round": "R563",
+    "last_round_ts": 1795038949409,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
-        "price": 62332.4,
-        "chgDayPct": -3.9873076508371694,
-        "score": -0.39,
+        "price": 62292,
+        "chgDayPct": -4.049537129742302,
+        "score": -1.05,
         "parts": {
-          "notif": 1.61,
+          "notif": 0.95,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
@@ -45,11 +45,11 @@
         "error": null
       },
       "ETH": {
-        "price": 1764.24,
-        "chgDayPct": -3.2932818803718606,
-        "score": -0.01,
+        "price": 1764.19,
+        "chgDayPct": -3.2960226276091853,
+        "score": -0.37,
         "parts": {
-          "notif": 1.99,
+          "notif": 1.63,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
@@ -58,26 +58,25 @@
         "error": null
       },
       "SOL": {
-        "price": 73.04,
-        "chgDayPct": -2.8077178975382555,
-        "score": -3.0,
+        "price": 72.97,
+        "chgDayPct": -2.9008649367930897,
+        "score": -2.0,
         "parts": {
           "notif": 0.0,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
-          "rsi": 0,
-          "cvd": -1.0
+          "rsi": 0
         },
         "error": null
       },
       "BNB": {
-        "price": 577.52,
-        "chgDayPct": -3.4053656252090745,
-        "score": -4.03,
+        "price": 577.15,
+        "chgDayPct": -3.4672509533685716,
+        "score": -4.37,
         "parts": {
-          "notif": 0.33,
-          "signals": -0.33,
+          "notif": 0.32,
+          "signals": -0.66,
           "trend": -2.0,
           "vwap": -1,
           "rsi": 0,
@@ -86,12 +85,12 @@
         "error": null
       },
       "XRP": {
-        "price": 0.97,
-        "chgDayPct": -1.3626194834248606,
-        "score": -2.59,
+        "price": 0.9675,
+        "chgDayPct": -1.616839536302626,
+        "score": -3.2,
         "parts": {
-          "notif": -0.99,
-          "signals": 0.33,
+          "notif": -1.28,
+          "signals": 0.0,
           "trend": -2.0,
           "vwap": -1,
           "rsi": 0,
@@ -100,38 +99,39 @@
         "error": null
       },
       "ADA": {
-        "price": 0.1512,
-        "chgDayPct": -2.7027027027027084,
-        "score": -7.15,
+        "price": 0.1506,
+        "chgDayPct": -3.088803088803088,
+        "score": -7.18,
         "parts": {
           "notif": -2,
           "signals": -1,
           "trend": -2.0,
           "vwap": -1,
           "rsi": 0,
-          "cvd": -1.15
+          "cvd": -1.18
         },
         "error": null
       },
       "AVAX": {
-        "price": 6.996,
-        "chgDayPct": -4.098697738176826,
-        "score": -1.36,
+        "price": 6.968,
+        "chgDayPct": -4.482522275531185,
+        "score": -1.76,
         "parts": {
-          "notif": 0.64,
+          "notif": -0.66,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
-          "rsi": 0
+          "rsi": 0,
+          "cvd": 0.9
         },
         "error": null
       },
       "DOGE": {
-        "price": 0.05863,
-        "chgDayPct": -2.462152720013301,
-        "score": -5.37,
+        "price": 0.05847,
+        "chgDayPct": -2.7283313924471733,
+        "score": -5.7,
         "parts": {
-          "notif": -0.32,
+          "notif": -0.65,
           "signals": -1,
           "trend": -2.0,
           "vwap": -1,
@@ -141,25 +141,25 @@
         "error": null
       },
       "LINK": {
-        "price": 9.041,
-        "chgDayPct": -3.0351780351780295,
-        "score": -3.54,
+        "price": 9.006,
+        "chgDayPct": -3.4105534105534066,
+        "score": -4.55,
         "parts": {
-          "notif": -0.64,
+          "notif": -1.63,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
           "rsi": 0,
-          "cvd": -0.9
+          "cvd": -0.93
         },
         "error": null
       },
       "LTC": {
-        "price": 43.83,
-        "chgDayPct": -3.3303925893251103,
-        "score": -1.36,
+        "price": 43.73,
+        "chgDayPct": -3.5509483899426693,
+        "score": -2.33,
         "parts": {
-          "notif": 0.64,
+          "notif": -0.33,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
@@ -168,12 +168,12 @@
         "error": null
       },
       "XAU": {
-        "price": 3732.7,
-        "chgDayPct": -3.1669771037517154,
-        "score": -1.55,
+        "price": 3732,
+        "chgDayPct": -3.1851363761356084,
+        "score": -1.16,
         "parts": {
-          "notif": 1.95,
-          "signals": -1,
+          "notif": 2,
+          "signals": -0.66,
           "trend": -2.0,
           "vwap": -1,
           "rsi": 0.5
@@ -181,11 +181,11 @@
         "error": null
       },
       "XAG": {
-        "price": 45.18,
-        "chgDayPct": -5.004205214465943,
-        "score": -1.17,
+        "price": 45.17,
+        "chgDayPct": -5.025231286795628,
+        "score": -1.51,
         "parts": {
-          "notif": 0.33,
+          "notif": -0.01,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
@@ -197,27 +197,27 @@
     "watchlist": [
       {
         "sym": "ADA",
-        "score": -7.15
+        "score": -7.18
       },
       {
         "sym": "DOGE",
-        "score": -5.37
+        "score": -5.7
       },
       {
         "sym": "XRP",
-        "score": -2.59
-      },
-      {
-        "sym": "BNB",
-        "score": -4.03
+        "score": -3.2
       },
       {
         "sym": "LINK",
-        "score": -3.54
+        "score": -4.55
       },
       {
-        "sym": "SOL",
-        "score": -3.0
+        "sym": "BNB",
+        "score": -4.37
+      },
+      {
+        "sym": "AVAX",
+        "score": -1.76
       }
     ]
   },
@@ -442,35 +442,6 @@
       "risk_usd": 9,
       "r_multiple": 4.33,
       "confluence": 7.5
-    },
-    {
-      "id": "tp-1795035232017",
-      "round": "R547",
-      "sym": "SOLUSDT",
-      "side": "short",
-      "action": "short",
-      "type": "limit",
-      "status": "suggested",
-      "source": "terminal-punch",
-      "engine": "EA6",
-      "entry": 73.285,
-      "stop": 74.06467857142857,
-      "targets": [
-        73.04321428571428,
-        71.51064285714284,
-        70.94596428571427
-      ],
-      "riskR": 3,
-      "riskPct": 0.05825,
-      "regime": "playbook:EA6",
-      "mode": "terminal-punch",
-      "rationale": "bearish BOS \u2192 FVG retest limit @ mid (zone 73.03\u201373.54)",
-      "notes": "T1 73.04321428571428 \u00b7 T2 71.51064285714284 \u00b7 T3 70.94596428571427 \u00b7 pending-fill card from SOLUSDT playbook scan",
-      "qtyHint": 7.47103,
-      "equityHint": 10000,
-      "createdTs": 1795035232017,
-      "expiresTs": 1795038300000,
-      "ticket": null
     },
     {
       "id": "mt5-1795036284481",
@@ -11251,6 +11222,36 @@
       "expiresTs": 1795037400000,
       "ticket": null,
       "statusTs": 1795038018097
+    },
+    {
+      "id": "tp-1795035232017",
+      "round": "R547",
+      "sym": "SOLUSDT",
+      "side": "short",
+      "action": "short",
+      "type": "limit",
+      "status": "expired",
+      "source": "terminal-punch",
+      "engine": "EA6",
+      "entry": 73.285,
+      "stop": 74.06467857142857,
+      "targets": [
+        73.04321428571428,
+        71.51064285714284,
+        70.94596428571427
+      ],
+      "riskR": 3,
+      "riskPct": 0.05825,
+      "regime": "playbook:EA6",
+      "mode": "terminal-punch",
+      "rationale": "bearish BOS \u2192 FVG retest limit @ mid (zone 73.03\u201373.54)",
+      "notes": "T1 73.04321428571428 \u00b7 T2 71.51064285714284 \u00b7 T3 70.94596428571427 \u00b7 pending-fill card from SOLUSDT playbook scan",
+      "qtyHint": 7.47103,
+      "equityHint": 10000,
+      "createdTs": 1795035232017,
+      "expiresTs": 1795038300000,
+      "ticket": null,
+      "statusTs": 1795038949409
     }
   ],
   "updatedAt": "2026-11-16T08:26:25.521581+00:00",
