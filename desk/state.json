@@ -308,7 +308,7 @@
       ],
       "riskR": 2.5,
       "expiresTs": 1795013532651,
-      "status": "suggested",
+      "status": "placed",
       "statusTs": 1794999132651,
       "perpRefPrice": 589.79,
       "regime": "TREND-DOWN",
@@ -361,10 +361,12 @@
         }
       ],
       "rationale": "recent signals: Trapped longs/sell (time), Absorption/sell (vol), Absorption/sell (range); confluence -5.6 [notif -0.7 \u00b7 signals -1.0 \u00b7 trend -2 \u00b7 vwap -1 \u00b7 rsi +0.0 \u00b7 cvd -0.9] \u00b7 debate FOR 6/AGAINST 0; entry VWAP+1\u03c3/day-POC 592.95 [trend-pullback \u00b7 TREND-DOWN]; stop beyond 2\u03c3 zone; T1 long-liq cluster str 69 (~$9M est) \u00b7 T2 long-liq cluster str 100 (~$13M est) \u00b7 T3 \u2014; levels are PERP prices \u2014 translate to broker via live basis before MT5; liq clusters are Coinglass estimates",
-      "ticket": null,
-      "actualEntry": null,
+      "ticket": 20240006,
+      "actualEntry": 593.5,
       "filledTs": null,
-      "notes": null
+      "notes": null,
+      "actualSL": 601.1,
+      "actualTP": 566.0
     },
     {
       "id": "R522-ADA-1",
@@ -386,7 +388,7 @@
       ],
       "riskR": 3.0,
       "expiresTs": 1795017339563,
-      "status": "suggested",
+      "status": "vetoed",
       "statusTs": 1795002939563,
       "perpRefPrice": 0.153,
       "regime": "TREND-DOWN",
@@ -442,10 +444,73 @@
       "ticket": null,
       "actualEntry": null,
       "filledTs": null,
-      "notes": null
+      "notes": null,
+      "vetoReason": "Spread (0.0021) > 25% of SL (0.0007) - PIT-03/07"
+    },
+    {
+      "id": "R524-BTC-1",
+      "symbol": "BTC",
+      "venue": "MT5",
+      "status": "placed",
+      "ticket": 20259518,
+      "side": "SELL_LIMIT",
+      "volume": 0.02,
+      "actualEntry": 64668.0,
+      "actualSL": 64924.7,
+      "actualTP": 63279.6,
+      "rMultiple": 5.4,
+      "expectedRiskUsd": 5.13
+    },
+    {
+      "id": "R520-DOGE-1",
+      "symbol": "DOGE",
+      "venue": "Delta_India",
+      "status": "placed",
+      "orderId": 1692772135,
+      "side": "SELL_LIMIT",
+      "size": 1,
+      "actualEntry": 0.0598,
+      "actualSL": 0.06058,
+      "actualTP": 0.05736,
+      "rMultiple": 2.28,
+      "expectedRiskUsd": 0.078
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "NAS100.p",
+      "venue": "MT5",
+      "ticket": 20218649,
+      "type": "SELL",
+      "volume": 0.01,
+      "entry": 27358.96,
+      "sl": 27290.0,
+      "tp": 26709.94,
+      "profit_locked_usd": 6.9
+    },
+    {
+      "symbol": "BTCUSD",
+      "venue": "Delta_India",
+      "product_id": 27,
+      "type": "SELL",
+      "size": 1,
+      "entry": 64750.0,
+      "sl": 64750.0,
+      "tp": 61950.0,
+      "risk_usd": 0.0
+    },
+    {
+      "symbol": "TIAUSD",
+      "venue": "Delta_India",
+      "product_id": 17330,
+      "type": "SELL",
+      "size": 10,
+      "entry": 0.358,
+      "sl": 0.358,
+      "tp": 0.3327,
+      "risk_usd": 0.0
+    }
+  ],
   "closed": [
     {
       "id": "R1-BTC-1",
