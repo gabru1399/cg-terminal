@@ -12844,3 +12844,25 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R491 · 2026-11-18 03:59 UTC · zai-desk
+
+**Market**: ETH 1,802.24 (-1.2%)  SOL 74.58 (-0.8%)  XAU 3,794.83 (-1.6%)  XAG 46.020 (-3.2%)
+**Bias (|score|≥2)**: ADA-5(TRANS)  SOL-5(TRANS)  AVAX-5(TREND)  DOGE-5(TREND)  XAU-3(TREND)  ETH-5(TREND)  XRP-3(TRANS)  BNB-2(TREND)  LINK-2(TREND)  LTC-2(TRANS)  XAG-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R491-AVAX-1 AVAX SHORT limit 7.143 · stop 7.187 · T1 6.950 · T2 6.920 · T3 6.890 · R 4.3
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (7.137 vs 7.195), h4 RSI 39.0, day -2.2%
+      [FOR    ] footprint: bull 48 / bear 57; recent: Exhaustion/buy[time], Divergence/buy[vol], Divergence/buy[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×1, abs:sell×3, div:buy×4, div:sell×11, exh:buy×3, sdiv:sell×3, trap:sell×1 — net 8 buy-side vs 18 sell-side
+      [FOR    ] liquidation: long-liq magnet 6.950 (str 56, ~$2M est, -2.78%) as target
+      [FOR    ] cvd: taker buy 49.7%, perpCvd -9, spotCvd +3, quadrant spot-bid, latestDiv bear (recent)
+
+### Order lifecycle
+- R476-XRP-1 EXPIRED (unfilled past expiry)
+- R482-ADA-1 re-debated: FOR 7/AGAINST 0 — stands
+- R482-SOL-2 re-debated: FOR 6/AGAINST 1 — stands
+- R489-ETH-1 re-debated: FOR 4/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
