@@ -12883,3 +12883,25 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R494 · 2026-11-18 04:31 UTC · zai-desk
+
+**Market**: BTC 64,546.6 (-0.6%)  ETH 1,807.64 (-0.9%)  SOL 75.02 (-0.2%)  XAU 3,794.12 (-1.6%)  XAG 46.050 (-3.2%)
+**Bias (|score|≥2)**: AVAX-6(TREND)  ADA-3(TRANS)  DOGE-5(TRANS)  XAU-3(TREND)  SOL-3(TREND)  XAG-3(TREND)  LTC-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R494-DOGE-1 DOGE SHORT limit 0.05972 · stop 0.05999 · T1 0.05911 · T2 0.05899 · R 2.3
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.05941 vs 0.05946), h4 RSI 44.4, day -1.2%
+      [FOR    ] footprint: bull 30 / bear 37; recent: Absorption/buy[vol], Absorption/buy[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×4, abs:sell×1, div:buy×1, div:sell×1, exh:buy×1, exh:sell×1, trap:buy×1 — net 7 buy-side vs 3 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.05736 (str 75, ~$7M est, -3.45%) as target
+      [FOR    ] cvd: taker buy 49.9%, perpCvd -1, spotCvd -4, quadrant both-selling, latestDiv bear (recent)
+
+### Order lifecycle
+- R482-ADA-1 re-debated: FOR 5/AGAINST 0 — stands
+- R482-SOL-2 re-debated: FOR 6/AGAINST 2 — stands
+- R489-ETH-1 WITHDRAWN (re-debate lost: FOR 3/AGAINST 3)
+- R491-AVAX-1 re-debated: FOR 6/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
