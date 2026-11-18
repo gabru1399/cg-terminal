@@ -396,3 +396,32 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-18 03:35 UTC — new suggested order — place in MT5 (debate FOR 6/AGAINST 0)
+- R489-ETH-1 ETH SHORT limit entry 1814.84 · stop 1822.05 · targets 1795.91 · R 2.6 · expires 2026-11-18 07:27 UTC
+- BASIS: levels are PERP prices (perpRef 1803.48). Before placing in MT5 read spreads.ETHUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (1,803.48 vs 1,808.26), h4 RSI 40.1, day -1.1%
+- [FOR] footprint: bull 31 / bear 37; recent: Exhaustion/buy[time], Absorption/buy[vol], Absorption/sell[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×1, div:sell×1, exh:buy×2, sdiv:sell×2, trap:sell×2 — net 4 buy-side vs 6 sell-side
+- [FOR] liquidation: long-liq magnet 1,749.22 (str 43, ~$146M est, -3.18%) as target
+- [FOR] cvd: taker buy 49.8%, perpCvd -118, spotCvd +0, quadrant spot-bid, latestDiv bear (recent)
+- [FOR] notifications: 6h weighted bias -2.0 (1 events)
+- → place on ETHUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-18 03:35 UTC — agent task from zai-desk
+- SCHEDULED ANALYSIS ROUND (manual-bound — desk/TRADE_FORMULATION_MANUAL.md):
+1. git pull --rebase origin main
+2. Read desk/inbox/WAKE.md + desk/TRADE_FORMULATION_MANUAL.md (the SOP)
+3. Pull live telemetry for target symbols: /api/cg/screener, /api/cg/narrative,
+   /api/cg/quant, /api/cg/options (BTC/ETH), /api/cg/bookwalls, /api/cg/lto,
+   /api/cg/liqlevels (3d/7d/30d), /api/cg/cvd, /api/cg/signals, desk/mt5.json
+4. Run the 6-step DECIDE (manual §1) per symbol across ALL 16 dimensions (§2)
+5. Compute the LSR and apply the Liquidation Magnet Gate (§4): LSR >= 2.5:1
+   bans S3 passive front-runs — wait for the S1 sweep
+6. Score Table 7 confluence (§5); apply hard vetoes; assign grade + risk %
+7. Grade >= B candidates: Formulation Card (§9.2) to
+   desk/deepscan/FORMULATION-<SYMBOL>-<ts>.md; order-worthy ones become
+   suggested orders in desk/state.json per desk/PROTOCOL.md
+8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
+   stop, 40/40/20 scale-outs)
+9. Commit + push; append the round entry to desk/log.md
