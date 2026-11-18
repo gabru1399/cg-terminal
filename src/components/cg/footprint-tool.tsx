@@ -138,44 +138,46 @@ export default function FootprintTool({ sym = "BTC" }: { sym?: string }) {
   const aggUpdatedAt = liveOk ? (liveQ.data as FpResponse & { updatedAt?: number }).updatedAt ?? null : null;
 
   // merge the fresh tail into the heavy history loads (same-ts bars: fresh wins)
-  const mergeTail = (big: FpBar[], small: FpBar[] | undefined): FpBar[] => {
-    if (!small?.length) return big;
-    if (!big.length) return small;
-    const cutoff = small[0].ts;
-    return [...big.filter((b) => b.ts < cutoff), ...small];
+  const mergeTail = (big: FpBar[] | undefined, small: FpBar[] | undefined): FpBar[] => {
+    const b = Array.isArray(big) ? big : [];
+    const s = Array.isArray(small) ? small : [];
+    if (!s.length) return b;
+    if (!b.length) return s;
+    const cutoff = s[0].ts;
+    return [...b.filter((bar) => bar.ts < cutoff), ...s];
   };
 
   // defense-in-depth: never render bars that belong to another symbol
   const timeBars = useMemo(
-    () => mergeTail(tfQ.data?.sym === sym ? tfQ.data.bars : [], liveOk && liveItv === tf ? liveQ.data?.bars : undefined),
+    () => mergeTail(tfQ.data?.sym === sym && Array.isArray(tfQ.data.bars) ? tfQ.data.bars : [], liveOk && liveItv === tf && Array.isArray(liveQ.data?.bars) ? liveQ.data.bars : undefined),
     [tfQ.data, liveQ.data, sym, tf, liveItv, liveOk]
   );
   const m1Bars = useMemo(
-    () => mergeTail(m1Q.data?.sym === sym ? m1Q.data.bars : [], liveOk && liveItv === "m1" ? liveQ.data?.bars : undefined),
+    () => mergeTail(m1Q.data?.sym === sym && Array.isArray(m1Q.data.bars) ? m1Q.data.bars : [], liveOk && liveItv === "m1" && Array.isArray(liveQ.data?.bars) ? liveQ.data.bars : undefined),
     [m1Q.data, liveQ.data, sym, liveItv, liveOk]
   );
 
   // ---- auto thresholds (their ef) ----
-  const volAuto = useMemo(() => (m1Bars.length ? autoThreshold(m1Bars, "vol") : 0), [m1Bars]);
-  const rangeAuto = useMemo(() => (m1Bars.length ? autoThreshold(m1Bars, "range") : 0), [m1Bars]);
+  const volAuto = useMemo(() => (m1Bars && m1Bars.length ? autoThreshold(m1Bars, "vol") : 0), [m1Bars]);
+  const rangeAuto = useMemo(() => (m1Bars && m1Bars.length ? autoThreshold(m1Bars, "range") : 0), [m1Bars]);
   // manual threshold applies to the currently displayed derived bars only
   const volThr = btvMode === "auto" || bt !== "vol" ? volAuto : volAuto * btvMode;
   const rangeThr = btvMode === "auto" || bt !== "range" ? rangeAuto : rangeAuto * btvMode;
 
   // ---- the three bar series (their sigSets) ----
   const timeSet: SignalSet | null = useMemo(() => {
-    if (!timeBars.length) return null;
+    if (!timeBars?.length) return null;
     return { bt: "time", label: TF_LABEL[tf] ?? tf, bars: timeBars, sigs: computeCgSignals(timeBars) };
   }, [timeBars, tf]);
 
   const volSet: SignalSet | null = useMemo(() => {
-    if (!m1Bars.length || !volThr) return null;
+    if (!m1Bars?.length || !volThr) return null;
     const bars = buildDerivedBars(m1Bars, "vol", volThr);
     return { bt: "vol", label: `Volume ${fmtQty(volThr)} ${sym}`, bars, sigs: computeCgSignals(bars) };
   }, [m1Bars, volThr, sym]);
 
   const rangeSet: SignalSet | null = useMemo(() => {
-    if (!m1Bars.length || !rangeThr) return null;
+    if (!m1Bars?.length || !rangeThr) return null;
     const bars = buildDerivedBars(m1Bars, "range", rangeThr);
     return { bt: "range", label: `Range ${fmtPriceDec(rangeThr, decOf(rangeThr))}`, bars, sigs: computeCgSignals(bars) };
   }, [m1Bars, rangeThr]);
@@ -566,8 +568,22 @@ export default function FootprintTool({ sym = "BTC" }: { sym?: string }) {
               activeSignalTs={activeSignal && (activeSignal.bt ?? bt) === bt ? activeSignal.ts : null}
             />
           ) : (
-            <div className="flex h-full items-center justify-center text-sm text-neutral-500">
-              {(bt === "time" ? tfQ.loading : (m1Q.loading && !m1Bars.length)) ? "Loading aggregated order flow…" : "No order-flow data"}
+            <div className="flex h-full flex-col items-center justify-center gap-2 p-6 text-center text-sm text-neutral-500">
+              {tfQ.data?.supported === false ? (
+                <>
+                  <div className="font-semibold text-neutral-300">{sym} · Classic Benchmark / Index</div>
+                  <div className="max-w-md text-xs text-neutral-400">
+                    {tfQ.data.reason ?? "This asset trades as a classical cash/futures benchmark (MT5 / Globex). Aggregated crypto perpetual footprint candles are not generated upstream."}
+                  </div>
+                  <div className="mt-2 text-xs text-emerald-400">
+                    Switch to &apos;Overview&apos;, &apos;Book Walls&apos;, or &apos;TradFi Quant&apos; tab for live quotes, COT positioning &amp; auction structure.
+                  </div>
+                </>
+              ) : (bt === "time" ? tfQ.loading : (m1Q.loading && !m1Bars.length)) ? (
+                "Loading aggregated order flow…"
+              ) : (
+                "No order-flow data"
+              )}
             </div>
           )}
         </div>

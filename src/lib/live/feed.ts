@@ -200,7 +200,41 @@ function scheduleReconnect() {
   }, wait);
 }
 
+let visibilityHooked = false;
+function hookVisibility() {
+  if (visibilityHooked || typeof document === "undefined") return;
+  visibilityHooked = true;
+  const onWake = () => {
+    if (document.visibilityState === "visible") {
+      // Chrome tab resumed from background: reset backoff and immediately reconnect WebSocket if inactive
+      S.backoffMs = 500;
+      if (S.wants && (!S.ws || S.ws.readyState !== WebSocket.OPEN || S.status === "stale" || S.status === "closed")) {
+        if (S.reconnectTimer) {
+          clearTimeout(S.reconnectTimer);
+          S.reconnectTimer = null;
+        }
+        if (S.ws) {
+          try {
+            S.ws.close();
+          } catch {
+            /* noop */
+          }
+          S.ws = null;
+        }
+        openConnection();
+      }
+    }
+  };
+  document.addEventListener("visibilitychange", onWake);
+  if (typeof window !== "undefined") {
+    window.addEventListener("focus", onWake);
+  }
+}
+
 function startWatchdog() {
+  if (typeof window !== "undefined") {
+    hookVisibility();
+  }
   if (S.watchdog || typeof window === "undefined") return;
   S.watchdog = setInterval(() => {
     if (!S.wants) return;

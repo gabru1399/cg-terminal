@@ -250,8 +250,39 @@ function scheduleReconnect() {
   }, wait);
 }
 
+let hlVisibilityHooked = false;
+function hookHlVisibility() {
+  if (hlVisibilityHooked || typeof document === "undefined") return;
+  hlVisibilityHooked = true;
+  const onWake = () => {
+    if (document.visibilityState === "visible") {
+      S.backoffMs = 500;
+      if ((S.wantAllMids > 0 || S.wantBook > 0) && (!S.ws || S.ws.readyState !== WebSocket.OPEN)) {
+        if (S.reconnectTimer) {
+          clearTimeout(S.reconnectTimer);
+          S.reconnectTimer = null;
+        }
+        if (S.ws) {
+          try {
+            S.ws.close();
+          } catch {
+            /* noop */
+          }
+          S.ws = null;
+        }
+        openConnection();
+      }
+    }
+  };
+  document.addEventListener("visibilitychange", onWake);
+  if (typeof window !== "undefined") {
+    window.addEventListener("focus", onWake);
+  }
+}
+
 function ensureTimers() {
   if (typeof window === "undefined") return;
+  hookHlVisibility();
   if (!S.keepaliveTimer) {
     S.keepaliveTimer = setInterval(() => {
       if (S.ws?.readyState === WebSocket.OPEN) {

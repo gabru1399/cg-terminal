@@ -317,6 +317,42 @@ def move_sl_to_breakeven(ticket: int):
         "new_sl": entry_price
     }
 
+def modify_position_sltp(ticket: int, sl: float, tp: float = None):
+    """
+    Modifies the SL and/or TP of an open position with strict cg_terminal isolation.
+    """
+    init_mt5()
+    positions = mt5.positions_get(ticket=ticket)
+    if not positions:
+        raise ValueError(f"Position ticket {ticket} not found")
+    pos = positions[0]
+    if pos.comment != CG_COMMENT and pos.magic != MAGIC_NUMBER:
+        raise PermissionError(f"DENIED: Position {ticket} does not belong to cg_terminal (comment='{pos.comment}').")
+        
+    info = mt5.symbol_info(pos.symbol)
+    digits = info.digits if info else 2
+    sl = round(sl, digits)
+    tp = round(tp, digits) if tp is not None else pos.tp
+    
+    request = {
+        "action": mt5.TRADE_ACTION_SLTP,
+        "position": ticket,
+        "symbol": pos.symbol,
+        "sl": sl,
+        "tp": tp,
+        "magic": MAGIC_NUMBER,
+        "comment": CG_COMMENT
+    }
+    res = mt5.order_send(request)
+    return {
+        "status": "MODIFIED" if res.retcode == mt5.TRADE_RETCODE_DONE else "FAILED",
+        "retcode": res.retcode,
+        "comment": res.comment,
+        "ticket": ticket,
+        "new_sl": sl,
+        "new_tp": tp
+    }
+
 def auto_ratchet_breakeven(verbose=True):
     """
     Scans all open cg_terminal positions.
@@ -366,13 +402,68 @@ def auto_ratchet_breakeven(verbose=True):
             results.append(item)
     return results
 
+def cancel_order(ticket: int):
+    """Cancels a pending limit/stop order with cg_terminal isolation verification."""
+    init_mt5()
+    orders = mt5.orders_get(ticket=ticket)
+    if not orders:
+        raise ValueError(f"Order ticket {ticket} not found")
+    o = orders[0]
+    if o.comment != CG_COMMENT and o.magic != MAGIC_NUMBER:
+        raise ValueError(f"Order ticket {ticket} does not belong to cg_terminal (magic={o.magic}, comment={o.comment})! VETOED by isolation gate.")
+    request = {
+        "action": mt5.TRADE_ACTION_REMOVE,
+        "order": ticket,
+        "magic": MAGIC_NUMBER,
+        "comment": CG_COMMENT
+    }
+    res = mt5.order_send(request)
+    return {
+        "status": "CANCELLED" if res.retcode == mt5.TRADE_RETCODE_DONE else "FAILED",
+        "retcode": res.retcode,
+        "comment": res.comment,
+        "ticket": ticket
+    }
+
+def modify_pending_order(ticket: int, price: float = None, sl: float = None, tp: float = None):
+    """Modifies price, SL, or TP of a pending order with strict cg_terminal isolation."""
+    init_mt5()
+    orders = mt5.orders_get(ticket=ticket)
+    if not orders:
+        raise ValueError(f"Order ticket {ticket} not found")
+    o = orders[0]
+    if o.comment != CG_COMMENT and o.magic != MAGIC_NUMBER:
+        raise ValueError(f"Order ticket {ticket} does not belong to cg_terminal (magic={o.magic}, comment={o.comment})! VETOED by isolation gate.")
+    request = {
+        "action": mt5.TRADE_ACTION_MODIFY,
+        "order": ticket,
+        "price": price if price is not None else o.price_open,
+        "sl": sl if sl is not None else o.sl,
+        "tp": tp if tp is not None else o.tp,
+        "magic": MAGIC_NUMBER,
+        "comment": CG_COMMENT
+    }
+    res = mt5.order_send(request)
+    return {
+        "status": "MODIFIED" if res.retcode == mt5.TRADE_RETCODE_DONE else "FAILED",
+        "retcode": res.retcode,
+        "comment": res.comment,
+        "ticket": ticket,
+        "price": request["price"],
+        "sl": request["sl"],
+        "tp": request["tp"]
+    }
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Blueberry Funded MT5 CG-Terminal Execution Engine")
     parser.add_argument("--status", action="store_true", help="Print account audit and isolated cg_terminal positions")
     parser.add_argument("--calc-risk", nargs=3, metavar=("SYMBOL", "ENTRY", "SL"), help="Calculate exact lot size")
     parser.add_argument("--place", nargs=5, metavar=("SYMBOL", "TYPE", "ENTRY", "SL", "TP"), help="Place order with bracket SL/TP")
+    parser.add_argument("--cancel", type=int, metavar="TICKET", help="Cancel a pending cg_terminal order")
+    parser.add_argument("--modify", nargs=4, metavar=("TICKET", "PRICE", "SL", "TP"), help="Modify pending order price, SL, and TP")
     parser.add_argument("--max-risk", type=float, default=MAX_RISK_USD, help="Max dollar risk cap (default $6.00, or user-authorized e.g. 25.00 for min lot)")
     parser.add_argument("--be", type=int, metavar="TICKET", help="Move SL of cg_terminal position to Breakeven")
+    parser.add_argument("--trail", nargs="+", metavar="VAL", help="Trail/modify SL and optional TP of an open cg_terminal position: --trail TICKET SL [TP]")
     parser.add_argument("--auto-be", action="store_true", help="Auto-ratchet any cg_terminal position with >= +1.0R to Breakeven")
     
     args = parser.parse_args()
@@ -389,8 +480,21 @@ if __name__ == "__main__":
             sym, o_type, entry, sl, tp = args.place[0], args.place[1], float(args.place[2]), float(args.place[3]), float(args.place[4])
             res = place_order(sym, o_type, entry, sl, tp, max_risk_cap_usd=args.max_risk)
             print(json.dumps(res, indent=2))
+        elif args.cancel:
+            res = cancel_order(args.cancel)
+            print(json.dumps(res, indent=2))
+        elif args.modify:
+            ticket, price, sl, tp = int(args.modify[0]), float(args.modify[1]), float(args.modify[2]), float(args.modify[3])
+            res = modify_pending_order(ticket, price=price, sl=sl, tp=tp)
+            print(json.dumps(res, indent=2))
         elif args.be:
             res = move_sl_to_breakeven(args.be)
+            print(json.dumps(res, indent=2))
+        elif args.trail:
+            t = int(args.trail[0])
+            s = float(args.trail[1])
+            p = float(args.trail[2]) if len(args.trail) > 2 else None
+            res = modify_position_sltp(t, s, p)
             print(json.dumps(res, indent=2))
         elif args.auto_be:
             res = auto_ratchet_breakeven()

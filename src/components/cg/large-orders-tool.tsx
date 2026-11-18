@@ -60,10 +60,10 @@ export default function LargeOrdersTool({ sym = "BTC" }: { sym?: string }) {
     [klineQ.data, sym]
   );
   const hlFb = ltoQ.data?.symbol === sym ? (ltoQ.data.hlFallback ?? null) : null;
-  const lastPrice = tk.price ?? (candles.length ? candles[candles.length - 1].c : null) ?? (hlFb?.recentTrades[0]?.px ?? null);
+  const lastPrice = tk.price ?? (candles.length ? candles[candles.length - 1].c : null) ?? (hlFb?.recentTrades?.[0]?.px ?? null);
   // defense-in-depth: never render orders that belong to another symbol
   const groups = useMemo(
-    () => (ltoQ.data?.symbol === sym ? ltoQ.data.groups : []),
+    () => (ltoQ.data?.symbol === sym && Array.isArray(ltoQ.data.groups) ? ltoQ.data.groups : []),
     [ltoQ.data, sym]
   );
   const decs = symDecs(sym, lastPrice);
@@ -80,7 +80,8 @@ export default function LargeOrdersTool({ sym = "BTC" }: { sym?: string }) {
       if (exSelected && !exSelected.has(ex)) continue;
       if (marketMode === "perp" && mkt !== "futures") continue;
       if (marketMode === "spot" && mkt !== "spot") continue;
-      for (const o of g.list) out.push({ order: o, exName: ex, market: mkt, instrumentId: g.instrument?.instrumentId ?? "" });
+      const list = Array.isArray(g.list) ? g.list : [];
+      for (const o of list) out.push({ order: o, exName: ex, market: mkt, instrumentId: g.instrument?.instrumentId ?? "" });
     }
     return out;
   }, [groups, exSelected, marketMode]);
@@ -106,7 +107,8 @@ export default function LargeOrdersTool({ sym = "BTC" }: { sym?: string }) {
         m.set(ex, e);
       }
       e.markets.add(marketOf(g.instrument?.type ?? 10));
-      for (const o of g.list) {
+      const list = Array.isArray(g.list) ? g.list : [];
+      for (const o of list) {
         e.count++;
         if (o.side === 2) e.bid += o.currentUsd;
         else e.ask += o.currentUsd;

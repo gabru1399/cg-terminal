@@ -63,12 +63,40 @@ export function usePolling<T>(url: string | null, intervalMs: number) {
       void load();
     }, 0);
     const t = setInterval(load, intervalMs);
+
+    // Auto-wake when tab is focused or returns from background in Chrome
+    const onVisible = () => {
+      if (typeof document !== "undefined" && document.visibilityState === "visible") {
+        if (alive.current && url) {
+          void load();
+        }
+      }
+    };
+    const onFocus = () => {
+      if (alive.current && url) {
+        void load();
+      }
+    };
+
+    if (typeof document !== "undefined") {
+      document.addEventListener("visibilitychange", onVisible);
+    }
+    if (typeof window !== "undefined") {
+      window.addEventListener("focus", onFocus);
+    }
+
     return () => {
       alive.current = false;
       clearTimeout(init);
       clearInterval(t);
+      if (typeof document !== "undefined") {
+        document.removeEventListener("visibilitychange", onVisible);
+      }
+      if (typeof window !== "undefined") {
+        window.removeEventListener("focus", onFocus);
+      }
     };
-  }, [load, intervalMs]);
+  }, [load, intervalMs, url]);
 
   return { data, error, loading, updatedAt, refresh: load };
 }
