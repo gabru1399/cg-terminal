@@ -678,3 +678,14 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-18 08:32 UTC — new suggested order — place in MT5 (debate FOR 5/AGAINST 1)
+- R508-BTC-1 BTC LONG limit entry 64374.5 · stop 64115.7 · targets 65581.5 / 65684.6 / 65856.4 · R 4.7 · expires 2026-11-18 12:32 UTC
+- BASIS: levels are PERP prices (perpRef 64706.1). Before placing in MT5 read spreads.BTCUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] footprint: bull 17 / bear 13; recent: Exhaustion/sell[time], Divergence/sell[vol], Absorption/buy[range]
+- [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×1, div:sell×1, exh:sell×2, sdiv:sell×2, trap:sell×1 — net 1 buy-side vs 6 sell-side
+- [FOR] liquidation: short-liq magnet 65,856.4 (str 83, ~$618M est, +1.76%) as target
+- [FOR] stops(BTC heatmap): 24h liq exposure below $490M vs above $323M
+- [FOR] cvd: taker buy 50.1%, perpCvd +284, spotCvd +152, quadrant both-buying, latestDiv bull (recent)
+- [FOR] notifications: 6h weighted bias +7.8 (6 events)
+- → place on BTCUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
