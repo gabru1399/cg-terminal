@@ -29,6 +29,6 @@ else:
         tick = mt5.symbol_info_tick(o.symbol)
         last_time = datetime.datetime.fromtimestamp(tick.time) if tick else 'No tick'
         vol = getattr(o, 'volume_current', getattr(o, 'volume_initial', 'n/a'))
-    print(f"  {o.symbol} (Ticket #{o.ticket}) | Type: {o.type} | Lots: {vol} | Price: {o.price_open} | Last Tick: {last_time}")
+        print(f"  {o.symbol} (Ticket #{o.ticket}) | Type: {o.type} | Lots: {vol} | Price: {o.price_open} | Last Tick: {last_time}")
 
     mt5.shutdown()
