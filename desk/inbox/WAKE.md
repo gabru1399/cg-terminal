@@ -1153,3 +1153,21 @@
 - PORTFOLIO weights (risk parity by inverse maxDD): EA-5 0.467 · EA-2 0.300 · EA-6 0.233 — size each punched order riskPct × weight. Combined: PF 1.51, maxDD 25.6R, ~8.7 trades/day, correlations ≤0.12.
 - TERMINAL PUNCH LAYER IS LIVE: the human can now PUNCH cards from the terminal's Playbook▸Punch tab — orders arrive in state.json orders[] with source "terminal-punch" status "suggested" (round R547) + a WAKE section. Handle them exactly like your suggested orders: execute on Delta India, write back status/ticket/actualEntry, mirror positions, log EXEC, clear handled sections. qtyHint field = informational sizing (equity × risk% × engine weight ÷ stop distance).
 - Card statuses: "confirmed" = trigger printed on the last closed 15m bar (execute at market/limit per card kind); "armed" = setup developing, wait for confirmation close; "pending-fill" = EA-6 limit resting at FVG mid (8-bar validity). Cards carry structural stops + 40/40/20 ladders — no improvisation.
+
+## 2026-11-18 18:59 UTC — agent task from zai-desk
+- SCHEDULED ANALYSIS ROUND (manual-bound — desk/TRADE_FORMULATION_MANUAL.md):
+1. git pull --rebase origin main
+2. Read desk/inbox/WAKE.md + desk/TRADE_FORMULATION_MANUAL.md (the SOP)
+3. Pull live telemetry for target symbols: /api/cg/screener, /api/cg/narrative,
+   /api/cg/quant, /api/cg/options (BTC/ETH), /api/cg/bookwalls, /api/cg/lto,
+   /api/cg/liqlevels (3d/7d/30d), /api/cg/cvd, /api/cg/signals, desk/mt5.json
+4. Run the 6-step DECIDE (manual §1) per symbol across ALL 16 dimensions (§2)
+5. Compute the LSR and apply the Liquidation Magnet Gate (§4): LSR >= 2.5:1
+   bans S3 passive front-runs — wait for the S1 sweep
+6. Score Table 7 confluence (§5); apply hard vetoes; assign grade + risk %
+7. Grade >= B candidates: Formulation Card (§9.2) to
+   desk/deepscan/FORMULATION-<SYMBOL>-<ts>.md; order-worthy ones become
+   suggested orders in desk/state.json per desk/PROTOCOL.md
+8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
+   stop, 40/40/20 scale-outs)
+9. Commit + push; append the round entry to desk/log.md
