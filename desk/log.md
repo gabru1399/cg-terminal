@@ -12922,3 +12922,21 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R496 · 2026-11-18 05:02 UTC · zai-desk
+
+**Market**: BTC 64,339.1 (-0.9%)  ETH 1,801.10 (-1.3%)  SOL 74.77 (-0.5%)  XAU 3,788.65 (-1.7%)  XAG 45.920 (-3.4%)
+**Bias (|score|≥2)**: DOGE-3(TREND)  XAU-2(TREND)  ETH-3(TREND)  LTC-3(TREND)  XAG-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- DOGE SHORT confluence -3.1 — REJECTED: no structural target >= 2R (nearest magnet 0.05911 = 1.0R)
+- ETH SHORT confluence -3.4 — REJECTED: no structural target >= 2R (nearest magnet 1,797.92 = 1.0R)
+- LTC SHORT confluence -3.2 — REJECTED: no structural target >= 2R (nearest magnet 44.35 = 1.0R)
+- XAG SHORT confluence -3.1 — REJECTED: no structural target >= 2R (nearest magnet 45.844 = 0.6R)
+
+### Order lifecycle
+- R482-SOL-2 re-debated: FOR 3/AGAINST 1 — stands
+- R494-DOGE-1 WITHDRAWN (re-debate lost: FOR 2/AGAINST 1)
+
+### Positions
+- no open positions
+
