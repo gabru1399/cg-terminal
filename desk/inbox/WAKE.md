@@ -574,3 +574,13 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-18 06:40 UTC — new suggested order — place in MT5 (debate FOR 5/AGAINST 0)
+- R501-BNB-1 BNB SHORT limit entry 592.45 · stop 594.82 · targets 587.03 / 578.97 · R 2.3 · expires 2026-11-18 10:39 UTC
+- BASIS: levels are PERP prices (perpRef 592.3). Before placing in MT5 read spreads.BNBUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (592.30 vs 593.53), h4 RSI 40.5, day -0.9%
+- [FOR] footprint: bull 40 / bear 46; recent: Divergence/sell[time], Divergence/sell[vol], Exhaustion/buy[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:sell×1, div:buy×1, div:sell×4, exh:buy×4, exh:sell×2, sdiv:sell×1 — net 5 buy-side vs 8 sell-side
+- [FOR] liquidation: long-liq magnet 587.03 (str 69, ~$9M est, -0.92%) as target
+- [FOR] notifications: 6h weighted bias -2.0 (2 events)
+- → place on BNBUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
