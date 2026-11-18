@@ -1,0 +1,127 @@
+# INVOCATION (load first, uncached)
+@[plugin:persistent-memory]  @[plugin:coderabbit]  @[plugin:superpowers]  @[plugin:trading-skills] 
+/gravitas  /goal  /executing-plans  /plan  /brainstorming  /karpathy-guidelines  /thinking-model-router 
+@[plugin:trading-skills] 
+# ENGINE: Autonomous Dual-Venue Trade Execution & Recursive Self-Improving Engine
+# ROUND: R559
+
+## RULES OF ENGAGEMENT
+- Every numbered step below is MANDATORY and must be executed in order.
+- Each step must end with a status line: `[STEP n: DONE | FAILED | N/A + reason]`.
+- No step may be merged, skipped, or summarized away.
+- If any step FAILS, state why and fix it before proceeding.
+
+---
+
+## STEP 0: META-COGNITIVE REVIEW (FIRST ACTION, BEFORE ANYTHING ELSE)
+0.1 Review the previous thinking chain.
+0.2 Identify what was missed or omitted.
+0.3 Measure execution latency.
+0.4 Apply continuous self-improvement lessons to this round.
+Output: list of misses + lessons applied.
+
+## STEP 1: PRE-FLIGHT VERIFICATION CHECKLIST (RESPONSE MUST OPEN WITH THIS)
+Confirm each item explicitly:
+- [ ] Fresh, individual audit of ALL assets from scratch (no cached results)
+- [ ] Audit covers all 10 modules
+- [ ] Universe covered: 234 Delta Exchange India + 156 MT5 Blueberry assets
+- [ ] All skills loaded fresh/uncached
+- [ ] All plugins loaded fresh/uncached
+- [ ] All MCPs loaded fresh/uncached
+
+## STEP 2: OPERATOR INQUEST (ASK AND ANSWER EVERY ROUND)
+Question: "What are potential high confluence A+ setups for Delta and MT5 that can be punched right away?"
+Output: explicit answer, per venue.
+
+## STEP 3: SPECIFICATION AUDIT
+- Audit BOTH venues strictly against:
+  @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]
+- Report any deviation found.
+
+## STEP 4: 4-VOICE QUANTITATIVE DESK DEBATE
+Run all four voices, each with a written position:
+1. Alpha Strategist
+2. Red Team
+3. Quant
+4. Arbiter (final ruling)
+
+## STEP 5: MENTAL MODELS + KARPATHY GUIDELINES
+Apply and show evidence of each:
+- First principles
+- Pre-mortem
+- Probabilistic thinking
+- Red-team
+- Margin of safety
+- Karpathy guidelines
+
+## STEP 6: GATE ENFORCEMENT (GATES 1-11, EACH WITH PASS/FAIL)
+- Gates 1-6, 8: enforce per canonical spec
+- Gate 7: High-Potential Conviction Sizing with Structural Stops
+- Gate 9: Dynamic Multi-Slot Expansion
+- Gate 10: BTC Macro Filter
+- Gate 11: 1.20x Slippage Multiplier
+- Target: >= 2.0R trades, with Trailing SL Runner Extension
+
+## STEP 7: RESTING LIMIT ORDER RE-ANALYSIS (PIT-06)
+For every resting limit order on both venues:
+- Re-validate ongoing structural validity
+- Prune if stale
+- Output: KEEP / PRUNE per order, with reason
+
+## STEP 8: AUDIT OF ALL RUNNING TRADES (BOTH VENUES)
+Scope: ALL running trades on Delta and MT5, including co-located algo trades on MT5.
+
+8.1 Liquidity trap check (Directive 2026-11-18)
+- Use rich orderflow, stopmap, and liquidation data.
+- Verify no SL sits inside a liquidity sweep or heatmap cluster.
+- If trapped, move the SL into a structural cold zone, even if risk increases slightly.
+
+8.2 Optimization
+- SL breakeven ratchet at +1.0R
+- Structure-based trailing stops
+- Dynamically adapt TP targets into high-density liquidity clusters (>= 2.0R hard floor)
+- Enforce the 8-bar time stop
+
+Output: per-trade table (venue, symbol, SL action, TP action, time-stop status).
+
+## STEP 9: NEW OPPORTUNITY HUNT & EXECUTION (CORE GOAL)
+- Hunt across the entire universe (234 Delta + 156 MT5).
+- Qualify only A+ Grade setups: score >= 7.0 pts AND EV >= 2.0R, with high confluence and high potential.
+- For each qualifying setup, produce a pristine execution card:
+  - Venue, symbol, direction
+  - Maker limit entry
+  - Structural stop
+  - High-density liquidity target(s) (>= 2.0R)
+  - Score, EV, R-multiple
+  - Gate 1-11 results
+- Punch maker limit orders on both platforms for qualifying setups.
+- If none qualify, state so explicitly, with the best near-miss and what it lacks.
+
+## STEP 10: MARGIN & LIQUIDITY AUDIT
+- Audit margin usage and available liquidity on both venues.
+- Confirm new orders fit within limits.
+
+## STEP 11: RECURSION
+- Update desk/CANONICAL_PROMPT.txt with Round R560.
+- Re-arm the dynamic 1200s recursion for the next round.
+- Carry forward this round's lessons to Step 0 of the next round.
+
+---
+
+## FINAL COMPLIANCE GATE (RESPONSE IS INVALID WITHOUT THIS)
+End the response with this table, every row marked DONE / FAILED / N/A:
+
+| Step | Requirement | Status |
+|------|-------------|--------|
+| 0 | Meta-cognitive review | |
+| 1 | Pre-flight checklist | |
+| 2 | Operator inquest | |
+| 3 | Canonical spec audit | |
+| 4 | 4-voice debate | |
+| 5 | Mental models + Karpathy | |
+| 6 | Gates 1-11 | |
+| 7 | Resting orders (PIT-06) | |
+| 8 | Running-trade audit + SL cold-zone check | |
+| 9 | A+ hunt + execution cards + orders | |
+| 10 | Margin & liquidity | |
+| 11 | 1200s recursion re-armed | |
