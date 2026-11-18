@@ -1,8 +1,8 @@
 # scripts/auto_prompt_paster.ps1
-# Automates pasting the canonical invocation prompt into Antigravity and hitting Enter
+# Automates pasting whatever is ALREADY copied in your Windows Clipboard into Antigravity and hitting Enter
 
 param (
-    [int]$IntervalSeconds = 1200 # 20 minutes
+    [int]$IntervalSeconds = 1200 # 20 minutes (default)
 )
 
 Add-Type -AssemblyName System.Windows.Forms
@@ -32,8 +32,6 @@ Add-Type @"
   }
 "@
 
-$promptPath = "desk/CANONICAL_PROMPT.txt"
-
 function Get-AntigravityWindow {
     $targetHwnd = [IntPtr]::Zero
     $callback = [Win32+EnumWindowsProc]{
@@ -54,15 +52,15 @@ function Get-AntigravityWindow {
 }
 
 function Send-PromptToAntigravity {
-    if (-not (Test-Path $promptPath)) {
-        Write-Warning "Prompt file $promptPath not found!"
+    # 1. Read existing Windows Clipboard without modifying it
+    $clip = Get-Clipboard -Raw -ErrorAction SilentlyContinue
+    if ([string]::IsNullOrWhiteSpace($clip)) {
+        Write-Warning "[$(Get-Date -Format 'HH:mm:ss')] Clipboard is currently empty! Please copy your prompt first."
         return
     }
-    $promptText = Get-Content $promptPath -Raw
 
-    # 1. Set Windows Clipboard
-    Set-Clipboard -Value $promptText
-    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] Canonical prompt copied to clipboard."
+    $preview = if ($clip.Length -gt 70) { $clip.Substring(0, 70).Replace("`n", " ").Replace("`r", "") + "..." } else { $clip }
+    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] Pasting copied clipboard: '$preview'"
 
     # 2. Locate Antigravity Window
     $hwnd = Get-AntigravityWindow
@@ -76,24 +74,24 @@ function Send-PromptToAntigravity {
         [Win32]::SetForegroundWindow($hwnd)
         Start-Sleep -Milliseconds 400
 
-        # 3. Paste and Send Enter
+        # 3. Paste (Ctrl+V) and Send Enter
         [System.Windows.Forms.SendKeys]::SendWait("^v")
         Start-Sleep -Milliseconds 300
         [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
-        Write-Host "[$(Get-Date -Format 'HH:mm:ss')] Successfully pasted prompt and hit ENTER into Antigravity!"
+        Write-Host "[$(Get-Date -Format 'HH:mm:ss')] Successfully pasted copied text and hit ENTER into Antigravity!"
     } else {
         Write-Warning "Could not find Antigravity window. Please ensure Antigravity IDE is open on your desktop."
     }
 }
 
 Write-Host "=========================================================="
-Write-Host "Antigravity Autonomous Prompt Paster Initialized"
+Write-Host "Antigravity Pure-Clipboard Auto-Paster Active"
 Write-Host "Interval: $IntervalSeconds seconds"
-Write-Host "Source: $promptPath"
+Write-Host "Behavior: Pastes whatever you have copied in Windows Clipboard"
 Write-Host "=========================================================="
 
 while ($true) {
     Send-PromptToAntigravity
-    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] Sleeping for $IntervalSeconds seconds until next round..."
+    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] Next paste scheduled in $IntervalSeconds seconds (leave your prompt copied)..."
     Start-Sleep -Seconds $IntervalSeconds
 }

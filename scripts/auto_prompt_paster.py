@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-scripts/auto_prompt_paster.py — Automates copying the canonical prompt, focusing Antigravity,
-pasting via Ctrl+V, and hitting Enter.
+scripts/auto_prompt_paster.py — Pure Clipboard Auto-Paster.
+Pastes whatever text is ALREADY copied in your Windows Clipboard into Antigravity
+and presses Enter. It NEVER overwrites your clipboard.
 
 Runs on an interval (default 1200 seconds / 20 minutes).
 """
@@ -10,46 +11,35 @@ import os
 import sys
 import time
 import subprocess
-from datetime import datetime, timezone
+from datetime import datetime
 
-PROMPT_FILE = "desk/CANONICAL_PROMPT.txt"
 INTERVAL_SECONDS = 1200
 
-def get_prompt_text():
-    if not os.path.exists(PROMPT_FILE):
-        return None
-    with open(PROMPT_FILE, "r", encoding="utf-8") as f:
-        return f.read()
-
 def run_paster_round():
-    text = get_prompt_text()
-    if not text:
-        print(f"[{datetime.now().strftime('%H:%M:%S')}] ERROR: Prompt file {PROMPT_FILE} not found!")
-        return False
-
-    # Call PowerShell helper for rock-solid clipboard and window sendkeys
     ps_cmd = [
         "powershell",
         "-ExecutionPolicy", "Bypass",
         "-NoProfile",
         "-File", "scripts/auto_prompt_paster.ps1",
-        "-IntervalSeconds", "0" # Run once
+        "-IntervalSeconds", "0" # One-shot execution per tick
     ]
     try:
         res = subprocess.run(ps_cmd, capture_output=True, text=True, timeout=15)
-        print(res.stdout)
+        if res.stdout:
+            print(res.stdout.strip())
         if res.stderr:
-            print(f"[WARN] {res.stderr}")
+            print(f"[WARN] {res.stderr.strip()}")
         return True
     except Exception as e:
         print(f"[ERROR] Paster execution failed: {e}")
         return False
 
 def main():
-    print(f"=== Antigravity Auto Prompt Paster Loop Started (Interval: {INTERVAL_SECONDS}s) ===")
+    print(f"=== Antigravity Pure-Clipboard Auto-Paster (Interval: {INTERVAL_SECONDS}s) ===")
+    print("Keep your prompt copied in Windows Clipboard. It will be pasted automatically.\n")
     while True:
         run_paster_round()
-        print(f"Sleeping for {INTERVAL_SECONDS} seconds until next scheduled execution...\n")
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] Sleeping for {INTERVAL_SECONDS} seconds until next paste...\n")
         time.sleep(INTERVAL_SECONDS)
 
 if __name__ == "__main__":
