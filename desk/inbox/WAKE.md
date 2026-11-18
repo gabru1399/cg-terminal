@@ -1241,3 +1241,8 @@
 - note: bearish BOS → FVG retest limit @ mid (zone 73.03–73.54)
 - qty hint: 7.47103 (0.25% × weight 0.233 on $10000)
 - on fill: write status/ticket/actualEntry back to state.json orders[] and log EXEC.
+
+## 2026-11-18 20:54 UTC — new suggested order — place in MT5 (debate FOR 0/AGAINST 0)
+- tp-1795035232017 SOLUSDT SHORT limit entry 73.285 · stop 74.06467857142857 · targets 73.04321428571428 / 71.51064285714284 / 70.94596428571427 · R 3 · expires 2026-11-18 21:45 UTC
+- BASIS: levels are PERP prices (perpRef ?). Before placing in MT5 read spreads.undefined.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- → place on undefined in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
