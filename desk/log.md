@@ -12828,3 +12828,19 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R491 · 2026-11-18 03:50 UTC · zai-desk
+
+**Market**: BTC 64,520.0 (-0.6%)  ETH 1,807.06 (-0.9%)  SOL 74.96 (-0.3%)  XAU 3,800.03 (-1.4%)  XAG 46.130 (-3.0%)
+**Bias (|score|≥2)**: ETH-5(TRANS)  XAU-3(TREND)  LTC-3(TRANS)  XAG-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- XAG SHORT confluence -3.1 — REJECTED: no structural target >= 2R (nearest magnet 45.844 = 0.7R)
+
+### Order lifecycle
+- R476-XRP-1 EXPIRED (unfilled past expiry)
+- R482-SOL-2 re-debated: FOR 3/AGAINST 1 — stands
+- R489-ETH-1 re-debated: FOR 3/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
