@@ -13124,3 +13124,18 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R506 · 2026-11-18 08:01 UTC · zai-desk
+
+**Market**: BTC 64,794.6 (-0.2%)  ETH 1,814.72 (-0.5%)  SOL 75.07 (-0.1%)  XAU 3,778.91 (-2.0%)  XAG 46.020 (-3.2%)
+**Bias (|score|≥2)**: XAG-4(TREND)  ADA-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- XAG SHORT confluence -4.1 — REJECTED: opposing bid wall $6.6M @ 45.800 (0.8R into path) caps the move to T1
+
+### Order lifecycle
+- R501-BNB-1 re-debated: FOR 4/AGAINST 0 — stands
+- R505-ADA-1 re-debated: FOR 6/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
