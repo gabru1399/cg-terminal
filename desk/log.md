@@ -13804,3 +13804,11 @@ analysis script rc=1
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## R545 · 2026-11-18 18:02 UTC · zai-desk
+- **GitHub institutional-stack research digest posted to WAKE.md** (operator directive: find repos/skills for trading like institutions — Jane Street school). ~20 repositories verified directly; full report delivered as download/R545_GitHub_Institutional_Trading_Stack.docx (+PDF, 10 pages, postcheck 8/9, visual-checked).
+- **Tier 1 (engines)**: hftbacktest 5.1k MIT (L2/L3, queue/latency-aware fills, Binance MM w/ imbalance+basis alpha) → designated offline validation harness for entry archetypes; Hummingbot v2.4.0 quoting reference; Lean 22.6k Apache / NautilusTrader reference-only.
+- **Tier 2 (research/sim)**: qlib 50.3k (nested decision = our sleeve hierarchy; LR-overlay research harness); ABIDES (cascade scenario lab).
+- **Tier 3 (libraries)**: smartmoneyconcepts 2.2k MIT (FVG/BOS/CHoCH/OB/liquidity detectors → P0 quick win on kline_series); street-algo-trader (JS-competition: pennying, bond MM, ETF/ADR convert arb → port patterns for Delta limits + basis trades; no license → concepts only).
+- **Tier 4 (elite-firm)**: janestreet/agent_skills 10.1k MIT — socratic-tutor cloned/inspected/installed to skills/socratic-tutor (same SKILL.md pattern as desk; complements 11 Socratic Gates); Optiver Kaggle solutions = book-feature checklist for EA-1; IMC Prosperity 3 winners = constrained-MM governance analogs.
+- **Roadmap**: P0 (SMC columns + feature audit + EA-1) / P1 (hftbacktest fill-rate validation of EA-1/2/5; pennying adjust; basis prototype) / P2 (qlib LR harness, ABIDES stress, execution schedulers). Governance: repo-derived features enter LR overlay like paper signals; data-honesty rules unchanged.
