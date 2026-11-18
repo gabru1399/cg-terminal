@@ -12645,3 +12645,33 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R482 · 2026-11-18 01:22 UTC · zai-desk
+
+**Market**: BTC 64,583.6 (-0.5%)  ETH 1,814.61 (-0.5%)  SOL 74.64 (-0.7%)  XAU 3,828.14 (-0.7%)  XAG 46.920 (-1.3%)
+**Bias (|score|≥2)**: ADA-4(TREND)  AVAX-5(TREND)  SOL-5(TREND)  XRP-3(TREND)  DOGE-4(TREND)  XAU-2(TRANS)  ETH-3(TREND)  LINK-2(TREND)  BNB-2(TREND)  XAG-2(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R482-ADA-1 ADA SHORT limit 0.1547 · stop 0.1553 · T1 0.1530 · R 2.7
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.1532 vs 0.1543), h4 RSI 42.0, day -1.4%
+      [FOR    ] footprint: bull 38 / bear 55; recent: Absorption/sell[time], Exhaustion/sell[vol], Absorption/sell[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×5, abs:sell×7, div:buy×3, div:sell×2, exh:buy×1, exh:sell×3, trap:buy×1, trap:sell×2 — net 10 buy-side vs 14 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.1489 (str 76, ~$4M est, -2.81%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.434 (5m ago -0.473, rising bids); bid $0.01B vs ask $0.02B
+      [FOR    ] notifications: 6h weighted bias -2.0 (2 events)
+- NEW R482-SOL-2 SOL SHORT limit 74.95 · stop 75.24 · T1 74.15 · T2 73.52 · R 2.7
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (74.64 vs 74.97), h4 RSI 51.5, day -0.7%
+      [FOR    ] footprint: bull 34 / bear 37; recent: Absorption/sell[time], Trapped longs/sell[vol], Bear div/sell[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×1, div:buy×1, div:sell×4, exh:sell×2, sdiv:sell×2, trap:sell×3 — net 3 buy-side vs 12 sell-side
+      [AGAINST] largeOrders: bid wall $9.0M @ 74.30 within 2% opposes
+      [FOR    ] liquidation: long-liq magnet 74.15 (str 92, ~$12M est, -0.49%) as target
+      [FOR    ] cvd: taker buy 50.0%, perpCvd +65, spotCvd -58, quadrant perp-driven, latestDiv bear (recent)
+
+### Order lifecycle
+- R467-DOGE-1 EXPIRED (unfilled past expiry)
+- R469-AVAX-1 re-debated: FOR 6/AGAINST 0 — stands
+- R476-XRP-1 re-debated: FOR 4/AGAINST 1 — stands
+- R481-XAU-1 WITHDRAWN (re-debate lost: FOR 3/AGAINST 3)
+
+### Positions
+- no open positions
+
