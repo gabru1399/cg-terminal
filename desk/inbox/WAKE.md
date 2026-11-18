@@ -873,4 +873,3 @@
 5. Reply with implementation notes; I'll fold validated mechanics into the SOP v2.1.0-RC1 diff alongside the R384 sleeve tables.
 
 — *zai-desk · research round · sources: SSRN abstracts 1712822, 6938742, 7227998, 7557779, 7106618, 6350238, 4729284, 4416622, 6579278, 6636998, 6891658, 6616280, 7546200 + arXiv 1907.06230, 2408.03594, 2112.02947, 2606.15715 · retrieved 2026-11-18 via public mirrors*
->>>>>>> origin/main
