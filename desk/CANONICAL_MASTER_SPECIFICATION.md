@@ -1035,4 +1035,72 @@ All MT5 operations are dispatched via `scripts/mt5_cg_trader.py`:
 
 ---
 
+## SECTION 21. QUANTITATIVE MICROSTRUCTURE & ALPHA COMBO FOUNDATIONS (KAKUSHADZE-SERUR SSRN-3247865 INTEGRATION)
+
+This section synthesizes empirical market microstructure and quantitative portfolio methods from Kakushadze & Serur (2018), *"151 Trading Strategies"* (SSRN-3247865), directly into the live Coinglass/Delta/Blueberry terminal order-flow architecture.
+
+### 21.1 Adverse Selection Defense & Toxic Order-Flow Filtration (Paper §3.19 Market-Making)
+* **The Core Microstructure Problem**:
+  In quote-driven and limit-order markets, passive liquidity provision ($Rule = \{\text{Buy at Bid}, \text{Sell at Ask}\}$, Eq. 359) captures the bid-ask spread when order flow is uninformed ("dumb retail"), but suffers catastrophic adverse selection when incoming order flow is informed ("toxic smart institutional flow").
+* **Terminal Order-Flow Invariant**:
+  1. **Toxic Flow Vector**: When taker volume delta surges ($\Delta\text{CVD} \ge 2.5\sigma$, Footprint delta $> 65\%$ aggressive takers, or $Liq_{5m} > \$500\text{k}$), passive quoting at the near-touch or inside the cascade path is strictly forbidden.
+  2. **Adverse Selection Buffer**: Limit entries must be displaced to the **Deep-Edge** (Section 19 PIT-01): beyond the nearest resting whale wall or at the outer $\pm 2\sigma/\pm 3\sigma$ VWAP boundary where institutional flow exhausts against structural limit absorption.
+  3. **Exhaustion Trigger**: Limit orders are posted ONLY upon confirmation of the **Absorption Wick** (footprint delta flips from negative to positive at the extreme wick, or resting limit wall absorbs incoming volume without breaking).
+
+### 21.2 Futures Market Activity Dynamics: Volume & Open Interest Log-Divergence (Paper §10.3.1)
+* **Mathematical Formulation (Kakushadze & Serur Eqs. 472–473 & Footnote 169)**:
+  $$v_i = \ln(V_t / V_{t-1})$$
+  $$u_i = \ln(OI_t / OI_{t-1})$$
+  Where $V_t$ represents rolling 15m/1h trading volume and $OI_t$ represents rolling Open Interest.
+* **Microstructure Regime Classification**:
+  | Regime | $v_i = \ln(V_t/V_{t-1})$ | $u_i = \ln(OI_t/OI_{t-1})$ | Market Microstructure Interpretation | Playbook Archetype |
+  | :--- | :--- | :--- | :--- | :--- |
+  | **Regime I: Liquidation / Exhaustion Snap-Back** | $v_i > +0.50$ (Volume Surge) | $u_i < -0.15$ (OI Plummet) | Forced margin liquidations / stop cascades consuming liquidity; positions closing violently. Prime mean-reversion snap-back. | **S1 Sweep & Retest**, **S5 Trap** |
+  | **Regime II: Structural Trend Initiation** | $v_i > +0.50$ (Volume Surge) | $u_i > +0.15$ (OI Expansion) | Aggressive new positioning by informed institutional capital; true breakout momentum. Never fade. | **S2 Breakdown**, **S7 Trend Run** |
+  | **Regime III: Low-Liquidity Absorption Drift** | $v_i < -0.20$ (Volume Dry-up) | $u_i \approx 0.0$ (Flat OI) | Passive auction consolidation inside Value Area. Range-bound mean reversion to POC. | **S4 Range Fade**, **S6 POC Pullback** |
+  | **Regime IV: Unwinding Squeeze** | $v_i < 0.0$ (Normal/Low Vol) | $u_i < -0.20$ (Severe OI Drop) | Passive position closure / holiday de-risking without aggressive taker participation. | **No Trade (Stand Down)** |
+
+### 21.3 Cross-Sectional Alpha Combination & Confluence Index Normalization (Paper §3.20 Alpha Combos)
+* **Mathematical Synthesis (Kakushadze & Yu 2017b, Eqs. 360)**:
+  Raw technical signals across different assets and indicators suffer from scale variance and cross-sectional collinearity (especially in crypto where BTC drags all alts). To construct an orthogonalized confluence score:
+  1. **Serially Demean & Volatility Normalize**:
+     $$Y_{is} = \frac{R_{is} - \bar{R}_i}{\sigma_i}$$
+  2. **Cross-Sectionally Demean to Eliminate Macro Drag**:
+     $$\Lambda_{is} = Y_{is} - \frac{1}{N} \sum_{j=1}^N Y_{js}$$
+  3. **Orthogonal Residual Weighting**:
+     $$w_i = \eta \frac{\tilde{\varepsilon}_i}{\sigma_i}, \quad \sum_{i=1}^N |w_i| = 1$$
+* **Application to Table 7 Confluence Matrix**:
+  The 7 scoring factors (Auction Value Area, Footprint Delta, CVD Divergence, Whale Walls, Stopmap Fuel, Trend EMA, Options GEX) are treated as idiosyncratic alpha components. When crypto-wide market beta is high, Factor 1 (Trend) and Factor 5 (Stopmap) must be demeaned relative to BTC, preventing false confluence where multiple alts simply echo BTC's macro move.
+
+### 21.4 Hyperbolic Tangent Continuous Conviction Smoothing (Paper §10.4)
+* **Mathematical Formulation (Kakushadze & Serur Eqs. 474–475)**:
+  Discrete binary indicator steps (e.g. $+1.0$ pt if CVD is positive, $0.0$ if negative) introduce artificial instability near the zero boundary. The formulation engine implements continuous hyperbolic tangent smoothing:
+  $$\eta_i = \tanh\left(\frac{Z_{\text{indicator}}}{\kappa}\right)$$
+  Where $Z_{\text{indicator}}$ is the Z-score of Cumulative Volume Delta or Order Book Imbalance, and $\kappa = 1.50$ is the saturation scale.
+  * For small deviations ($|Z| < 0.5\sigma$), $\eta_i \approx 0$, suppressing noise.
+  * For strong deviations ($|Z| \ge 2.0\sigma$), $\eta_i \to \pm 1.0$, awarding full conviction points smoothly.
+
+### 21.5 Mean-Variance Optimization & Volatility-Inverted Position Sizing (Paper §3.18 & §3.18.1)
+* **Mathematical Formulation (Markowitz 1952, Kakushadze 2015b, Eqs. 350, 358)**:
+  Under the diagonal risk model (where idiosyncratic asset variance dominates):
+  $$w_i \propto \frac{E_i}{\sigma_i^2}$$
+  Where $E_i$ is the expected alpha payoff ($EV \ge 2.00\text{R}$) and $\sigma_i$ is the asset's realized volatility ($\text{ATR}_{14} / \text{Price}$).
+* **Execution Rule**:
+  Position sizing across concurrent slots must strictly invert by normalized volatility. Volatile altcoins (`SOL`, `TIA`, `DOGE` with daily volatility $6\% - 10\%$) receive proportionately smaller contract sizes than low-volatility anchors (`BTC` at $2.5\%$, `XAU` at $1.2\%$), keeping total portfolio dollar risk strictly uniform ($\le 1.0\%$).
+
+### 21.6 Mandatory Dynamic Order Lifecycle & In-Flight Trade Optimization Protocol
+Every autonomous execution round (20m timer cycle) MUST rigorously execute the dual lifecycle check:
+
+1. **Resting Limit Order Structural Validity Re-Analysis (PIT-06 Stale Pruning)**:
+   * **Distance-to-Market Audit**: If price has drifted $> 1.50\%$ away from the pending limit without fill for $> 8$ bars (2 hours), the order is flagged STALE.
+   * **Structural Level Liquidation Audit**: If the resting order book wall that justified the entry has been pulled/cancelled, or if Day POC has migrated away from the entry price by $> 0.50\%$, **CANCEL THE ORDER IMMEDIATELY**. Never leave unanchored limit orders resting on the CLOB.
+   * **Macro Invalidation**: If BTC breaks market structure opposite to an altcoin limit order, cancel the altcoin order instantly.
+
+2. **In-Flight Trade Optimization Protocol (SL Ratchet & Liquidity TP Extension)**:
+   * **Breakeven Ratchet Invariant**: The instant any position reaches $\ge +1.00\text{R}$ favorable excursion, the Stop Loss MUST be moved to entry price ($\text{SL} = \text{Entry}$, $0.00 downside risk).
+   * **Structure-Based Trailing Stop**: For running trades reaching $\ge +1.50\text{R}$, trail the Stop Loss behind the most recent 15m Swing Pivot / 15m EMA 20 with a $1.5\times \text{ATR}$ buffer.
+   * **Liquidity Magnet TP Optimization**: If an emerging high-density liquidation cluster forms within $0.50\%$ of the initial TP target, dynamically adapt the TP limit price directly into the cluster apex to capture the liquidity sweep fill.
+
+---
+
 *END OF CANONICAL MASTER SPECIFICATION (SOP v2.0.0 · UNIFIED MASTER BIBLE)*
