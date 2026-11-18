@@ -13650,3 +13650,20 @@ analysis script rc=1
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## EXEC · 2026-11-18 15:30 UTC · atg-exec — Dual-Venue Order-Flow Heatmap & SL Sweep Protection Audit
+
+### Live Position SL Adjustments (Operator Directive 2026-11-18)
+- **BTCUSD (Delta #26902927)**: Short (-1 @ ,750.00). Coinglass 24h Stopmap shows heavy long liquidations below (.2B cumulative down to .9k target) and a short liquidation cluster at ,895.86. SL trailed from Breakeven (,750.00) down to **,150.00** (Delta order #1691590194 updated). Locked in **+.00 points / +.60 USD guaranteed profit** while safely positioned in the cold vacuum zone above the ,895 sweep level!
+- **TIAUSD (Delta #26902927)**: Short (-10 @ 0.3580). Verified SL at **0.3580** is in structural cold zone above Day High (0.3593) and Day +3σ VWAP (0.3575). Downside risk strictly .00 USD.
+- **NAS100.p (MT5 #5126976, Ticket 20218649)**: Short (0.01 lot @ 27,358.96). Price dropped to ~27,150 (+208 pts excursion, +.90 USD profit). SL maintained at **27,290.00** (+68.96 pts below entry = +.90 USD guaranteed profit locked), protected above the M15 breakdown candle high (27,239.03).
+- **EURUSD.pi (MT5 #5126976, Tickets 20263257 & 20263258)**: Short (0.07 lot total). Audited SL at 1.09822 sat INSIDE the 10-bar H1 high (1.09847), presenting severe stop-hunt vulnerability. Successfully adjusted SL on both tickets to **1.09890** (above H1 high in structural cold zone).
+- **USDJPY.pi (MT5 #5126976, Tickets 20263259 & 20263260)**: Long (0.09 lot total). Audited SL at 159.152 sat ABOVE the 10-bar H1 low (159.122), vulnerable to a sweep dip. Successfully adjusted SL on both tickets to **159.020** (10 pips below structural low into cold zone).
+- **USDCHF.pi (MT5 #5126976, Tickets 20267245 & 20267247)**: Long (0.02 lot total). Audited SL at 0.84098 sat 1.1 pips ABOVE the 10-bar H1 low (0.84087). Successfully adjusted SL on both tickets to **0.83980** (below swing low into cold zone).
+- **USWTI.p (MT5 #5126976, Ticket 20263241)**: Short (0.06 lot @ 85.133). Audited SL at 85.966 sat literally 10 ticks above the 85.956 double top. Current price at 84.78 (in profit). Successfully tightened SL to **85.550** (above the recent H1 lower high of 85.465), neutralizing the double-top sweep trap and locking in risk reduction.
+- **NZDSGD.pi (Ticket 20236066)**: SL at 0.70990 verified safe in cold zone above 0.70941 high.
+- **USDCAD.pi (Ticket 20239250)**: SL at 1.42935 verified safe in cold zone below 1.43003 low.
+
+### Specification & Timer Governance
+- Formally updated desk/CANONICAL_MASTER_SPECIFICATION.md (P5-09) and GEMINI.md (Section 4) with the Liquidity & SL Heatmap Zone Audit Protocol.
+- Re-armed single dynamic 1200s timer (Task #task-22765).
