@@ -12962,3 +12962,24 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R498 · 2026-11-18 05:45 UTC · zai-desk
+
+**Market**: BTC 64,700.4 (-0.3%)  ETH 1,812.32 (-0.7%)  SOL 75.16 (+0.0%)  XAU 3,796.22 (-1.5%)  XAG 46.240 (-2.8%)
+**Bias (|score|≥2)**: AVAX-4(TRANS)  LTC-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R498-LTC-1 LTC SHORT limit 44.59 · stop 44.82 · T1 43.59 · T2 43.49 · T3 43.35 · R 4.4
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (44.57 vs 44.69), h4 RSI 40.8, day -1.7%
+      [AGAINST] footprint: bull 44 / bear 31; recent: Absorption/buy[time], Divergence/buy[vol], Absorption/buy[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×6, div:buy×5, div:sell×1, trap:buy×1 — net 8 buy-side vs 7 sell-side
+      [FOR    ] liquidation: long-liq magnet 43.59 (str 84, ~$2M est, -2.18%) as target
+      [FOR    ] bookWalls: ±5% depth imbalance -0.160 (5m ago +0.051, falling bids); bid $0.01B vs ask $0.01B
+      [FOR    ] cvd: taker buy 49.9%, perpCvd -2, spotCvd +1, quadrant spot-bid, latestDiv bear (recent)
+
+### Order lifecycle
+- R491-AVAX-1 re-debated: FOR 4/AGAINST 2 — stands
+- R497-DOGE-1 re-debated: FOR 3/AGAINST 2 — stands
+
+### Positions
+- no open positions
+
