@@ -12940,3 +12940,25 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R497 · 2026-11-18 05:27 UTC · zai-desk
+
+**Market**: BTC 64,718.4 (-0.3%)  ETH 1,814.83 (-0.5%)  SOL 75.41 (+0.3%)  XAU 3,798.38 (-1.5%)  XAG 46.220 (-2.8%)
+**Bias (|score|≥2)**: XAU-3(TREND)  AVAX-4(TRANS)  DOGE-3(TRANS)  XAG-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R497-DOGE-1 DOGE SHORT limit 0.05969 · stop 0.05995 · T1 0.05911 · R 2.3
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (0.05953 vs 0.05944), h4 RSI 45.0, day -1.0%
+      [FOR    ] footprint: bull 29 / bear 36; recent: Absorption/buy[vol], Absorption/buy[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×1, div:buy×1, exh:buy×1, trap:buy×1 — net 5 buy-side vs 1 sell-side
+      [FOR    ] liquidation: long-liq magnet 0.05736 (str 74, ~$7M est, -3.64%) as target
+      [FOR    ] cvd: taker buy 49.7%, perpCvd -13, spotCvd -4, quadrant both-selling, latestDiv bear (recent)
+- XAG SHORT confluence -3.2 — REJECTED: opposite liq magnet 46.888 (str 94, ~$19M est) within 1.2R of entry — wait for sweep
+
+### Order lifecycle
+- R482-ADA-1 EXPIRED (unfilled past expiry)
+- R482-SOL-2 EXPIRED (unfilled past expiry)
+- R491-AVAX-1 re-debated: FOR 4/AGAINST 2 — stands
+
+### Positions
+- no open positions
+
