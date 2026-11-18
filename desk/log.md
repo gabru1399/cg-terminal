@@ -13073,3 +13073,19 @@ analysis script rc=1
   - Gate 10 BTC Macro Filter: Price below 1H/4H EMA 233 and EMA 89 -> Shorts only. Counter-trend longs strictly banned.
   - +1.0R Breakeven Invariant: Enforced across all venues.
   - RAM Optimization: 4.8 GB free physical RAM maintained.
+## R503 · 2026-11-18 07:10 UTC · zai-desk
+
+**Market**: BTC 64,730.7 (-0.3%)  ETH 1,814.63 (-0.5%)  SOL 74.98 (-0.2%)  XAU 3,781.63 (-1.9%)  XAG 46.010 (-3.3%)
+**Bias (|score|≥2)**: ADA-2(TRANS)  XAG-4(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- XAG SHORT confluence -3.9 — REJECTED: no structural target >= 2R (nearest magnet 45.844 = 0.6R)
+
+### Order lifecycle
+- R497-DOGE-1 WITHDRAWN (re-debate lost: FOR 2/AGAINST 2)
+- R498-LTC-1 WITHDRAWN (re-debate lost: FOR 1/AGAINST 3)
+- R501-BNB-1 re-debated: FOR 3/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
