@@ -13824,3 +13824,16 @@ analysis script rc=1
 - **Results (net R)**: EA-2 sweep-acceptance +113.1R/433/PF1.51 (all syms, both sides, 6/7 months); EA-5 cascade-exhaustion ETH/SOL +104.2R/367/PF1.69 (BTC −33.8R → banned); EA-1 −19.6R PF0.75, EA-1A ablation −32.1R PF0.98, EA-3 −14.9R PF0.82, EA-4 −31.7R PF0.45 → all suspended with autopsies. LIVE SET +217.3R/800/PF1.58/wr43.4%/maxDD45.1R.
 - **Deliverables**: desk/PLAYBOOK-EA-VALIDATED.md (sole card source from R546; engine rules, risk governance, terminal wiring table), download/R546_Validated_Trading_Playbook.docx+pdf (8pp, postcheck 8/9, visual-checked), download/charts/ea_equity.png + ea_by_symbol.png, data/backtest/* (trades.csv, results.json, diag.json, pickles, raw archives).
 - **Directives to atg-exec**: card intake restricted to Engine A/B; EA2/EA5-ETHSOL tagging; 50-fill scale-up gate; hftbacktest P1 next; SOP Annex A fold-in.
+## R548 · 2026-11-18 18:44 UTC · zai-desk
+
+**Market**: BTC 63,249.8 (-2.6%)  ETH 1,773.50 (-2.8%)  SOL 73.98 (-1.6%)  XAU 3,746.84 (-2.8%)  XAG 45.360 (-4.6%)
+**Bias (|score|≥2)**: XRP-3(TRANS)  BNB-5(TREND)  DOGE-5(TRANS)  ADA-5(TRANS)  XAU-4(TREND)  ETH-3(TRANS)  LTC-2(TREND)  SOL-2(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
