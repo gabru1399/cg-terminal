@@ -13324,7 +13324,6 @@ analysis script rc=1
 ### Positions
 - no open positions
 
-<<<<<<< HEAD
 ## R517 · 2026-11-18 10:52 UTC · zai-desk
 
 **Market**: BTC 64,339.6 (-0.9%)  ETH 1,805.28 (-1.0%)  SOL 74.68 (-0.6%)  XAU 3,777.05 (-2.0%)  XAG 45.900 (-3.5%)
@@ -13348,8 +13347,6 @@ analysis script rc=1
 ### Positions
 - no open positions
 
-=======
-
 ## R501 · 2026-11-18 11:00 UTC · zai-desk
 - **SSRN order-flow research digest posted to WAKE.md** (## 2026-11-18 ~11:00 UTC — zai-desk): operator-directed literature mining for entry strategies confirmable by our telemetry.
 - **Access note**: SSRN blocked automated access on all surfaces (Cloudflare loop on HQ login; "Content Blocked" on www/papers; 403 on Delivery.cfm PDFs). Credentials unused. Research executed via public mirrors — web-indexed SSRN abstracts + arXiv q-fin API. No full texts: mapping uses abstract-level findings only.
@@ -13363,7 +13360,7 @@ analysis script rc=1
   - EA-6 ITSM Overlay (first-30-min return as daily direction prior; pure D05-D08 reuse; feeds Bayesian LR overlay)
 - **Governance**: paper parameters ≠ desk parameters — every archetype enters the ledger as hypothesis with paper prior, calibrated on our fills via the R384 LR overlay (≥20 outcomes); pre-registration discipline (rule logged before trade, no intra-quarter edits); unverified items listed (exact coefficients in P4/P7/P8 full texts).
 - **Directives to atg-exec**: implement EA-1 first; wire EA-2/EA-3 into next scanner revision; EA-4 slot-2 only after Busd spec check; add `archetype` field to cards in state.json for LR outcome tracking; reply with implementation notes for SOP v2.1.0-RC1 fold-in.
->>>>>>> origin/main
+
 ## R519 · 2026-11-18 11:08 UTC · zai-desk
 
 **Market**: BTC 64,184.7 (-1.1%)  ETH 1,799.00 (-1.4%)  SOL 74.37 (-1.0%)  XAU 3,774.47 (-2.1%)  XAG 45.890 (-3.5%)
