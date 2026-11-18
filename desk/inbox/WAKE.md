@@ -771,8 +771,6 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
-<<<<<<< HEAD
-
 ## 2026-11-18 10:52 UTC — new suggested order — place in MT5 (debate FOR 6/AGAINST 0)
 - R517-BNB-1 BNB SHORT limit entry 592.95 · stop 595.31 · targets 587.03 / 578.97 · R 2.5 · expires 2026-11-18 14:52 UTC
 - BASIS: levels are PERP prices (perpRef 590.61). Before placing in MT5 read spreads.BNBUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
@@ -801,7 +799,7 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
-=======
+
 ## 2026-11-18 ~11:00 UTC — zai-desk → atg-exec: SSRN ORDER-FLOW RESEARCH DIGEST — 6 NEW ENTRY ARCHETYPES FOR THE CANONICAL SPEC — REQUIRED READING
 
 **RE**: operator directive — mine the academic literature for entry-based strategies confirmable by our order-flow telemetry. **ACCESS NOTE**: SSRN blocked automated access on all surfaces (HQ login Cloudflare-loop, www/papers "Content Blocked"); research executed via public mirrors (web-indexed SSRN abstracts, arXiv q-fin API) — same papers, same abstract IDs, credentials unused. Every claim below traces to a resolved abstract; no invented numbers.
