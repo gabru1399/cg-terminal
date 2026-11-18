@@ -1103,4 +1103,96 @@ Every autonomous execution round (20m timer cycle) MUST rigorously execute the d
 
 ---
 
+## SECTION 22. THE 12-PAPER SSRN ORDER-FLOW EVIDENCE BASE & SIX STANDARDIZED ENTRY ARCHETYPES (EA-1 TO EA-6 · R501 RESEARCH DIGEST INTEGRATION)
+
+This section integrates the 12-paper academic order-flow evidence base and the Six Standardized Entry Archetypes (EA-1 to EA-6) formulated in the R501 SSRN Research Digest (`desk/R501_SSRN_OrderFlow_Research_Digest_extracted.txt`) directly into the desk's operational execution engine.
+
+### 22.1 The 12-Paper Empirical Microstructure Evidence Base
+The following peer-reviewed and pre-registered working papers form the immutable theoretical and quantitative foundation for order-flow formulation:
+
+| Paper ID | Authors & Citation | SSRN / arXiv ID | Core Empirical Microstructure Edge |
+| :--- | :--- | :--- | :--- |
+| **P1** | Cont, Kukanov & Stoikov (2014) | SSRN 1712822 (804 citations) | **Price Impact of Order Book Events**: Order Flow Imbalance (OFI) linearly predicts mid-price change; impact slope is inversely proportional to resting depth. The foundational OFI edge. |
+| **P2** | Xu, Gould et al. (2019) | arXiv 1907.06230 | **Multi-Level OFI**: Out-of-sample predictive power improves monotonically with each added order-book level. Deep-book imbalance strictly dominates top-of-book quotes. |
+| **P3** | Gould et al. (2024) | arXiv 2408.03594 | **Forecasting High-Frequency OFI**: OFI exhibits structural momentum forecastable via multi-variate Hawkes point processes with lagged cross-dependence between bid and offer queues. |
+| **P4** | Schmalz (2026) | SSRN 7227998 | **OFI in Crypto Perpetual Futures**: Validates Cont-Kukanov-Stoikov OFI metrics directly on BTC/USDT at 1–10 second horizons. Confirms OFI predictive power holds across high-volatility crypto perps. |
+| **P5** | Vafin (2026) | SSRN 6938742 | **Comprehensive Survey of OFI Metrics**: Identifies multi-level stationarized OFI as the single most robust short-horizon price driver across global electronic CLOBs. |
+| **P6** | Rehan (2025) | SSRN 7557779 | **Liquidity Sweeps and Post-Sweep Acceptance in BTC**: Establishes falsifiable, lookahead-free event grammar for level registration, sweep penetration, acceptance, and resting liquidity exhaustion. |
+| **P7** | Perry (2025) | SSRN 7106618 | **Beyond the Boundary: Delta Proxy at Daily Value-Area Extremes**: Pre-registered study across 216,376 liquid futures events demonstrating statistical edge of delta non-confirmation at Value Area boundaries. |
+| **P8** | Howard (2025) | SSRN 6350238 | **Stop Distance and Exit in Intraday Value-Area Breakouts**: Sample of 6,284 ES events proving quarter-VA width stops outperform tighter structural stops; proves first 30-min session penalty ($p < 0.001$). |
+| **P9** | Zarattini & Soe (2024) | SSRN 4729284 / 4416622 | **RVOL-Gated 30-Minute Opening Range Breakout**: 41.6% annualized return (Sharpe 2.8) across high-RVOL names ($\ge 1.5\times$ baseline volume) with tight $0.10\times\text{ATR}_{15}$ stops and cash close exits. |
+| **P10** | Lim (2026) | SSRN 6579278 | **Anatomy of a Crypto Cascade**: Minute-level forensic analysis of the Oct 2025 crash (BTC −12.6% in 10 min). Proves cascades are deterministic OFI spirals driven by forced margin liquidation feedback loops. |
+| **P11** | Lim (2026) | SSRN 6636998 / 6891658 | **Two-Regime Liquidity Recovery & Hidden Liquidity**: Post-cascade pricing recovers in minutes, but CLOB depth recovers slowly. Quoted spread must normalize ($\le 1.30\times$ median) before placing limit entries. |
+| **P12** | Barone et al. (2026) | arXiv 2606.15715 | **Sunshine vs Shade on Hyperliquid**: Reconstruction of 4.3M metaorders proving visible TWAP flow faces lower permanent price impact and acts as a safe liquidity magnet to co-trade. |
+
+---
+
+### 22.2 The Six Standardized Entry Archetypes (EA-1 to EA-6)
+
+Every setup formulated by `zai-desk` or executed by `atg-exec` must map to one of these six standardized archetypes, assigned to its designated sleeve:
+
+#### 1. EA-1: Rolling Multi-Level OFI Trigger (Sleeve T · Trend Timing Upgrade)
+* **Microstructure Mechanism (P1, P2, P4, P5)**:
+  Replaces subjective, correlated visual heuristics (book walls + CVD + footprint) with a rigorous, stationarized multi-level Order Flow Imbalance metric computed over the Binance top-1000 depth engine:
+  $$\text{OFI}_t = \frac{\Delta \text{Depth}_{\text{Bids}}(10\text{ levels}) - \Delta \text{Depth}_{\text{Asks}}(10\text{ levels})}{\text{Total Band Depth}}$$
+* **Execution Rule**:
+  A Trend-Sleeve setup becomes executable ONLY when the 3-bar rolling $\text{OFI}_{15m}$ aligns with the trade bias at or beyond a **$+0.30$ normalized threshold** (for longs) or **$-0.30$ threshold** (for shorts).
+
+#### 2. EA-2: Sweep-Acceptance Protocol (Sleeve S · Liquidity Sweep Formal Specification)
+* **Microstructure Mechanism (P6 Rehan, P10 Lim)**:
+  Replaces vague "wick size" heuristics with a mathematically formal, lookahead-free event grammar:
+  1. **Level Pre-Registration**: Level must be established at least $N \ge 4$ bars earlier from registered auction extremes (Day/Week VAH/VAL, Session High/Low, or major Whale Walls).
+  2. **Sweep Penetration**: Price wicks through the pre-registered liquidity cluster or stopmap shelf.
+  3. **Acceptance Reversal**: Price reverses and produces a candle close back inside the swept level within $K \le 3$ bars.
+  4. **Delta-Flip Confirmation**: Footprint taker delta must flip positive on downside sweeps (or negative on upside sweeps).
+* **Spread Kill-Switch**:
+  If the exchange quoted spread during the sweep exceeds **$2.0\times$ its 24-hour median**, the setup is VOID. Never quote resting limits during active cascade widening.
+
+#### 3. EA-3: Value-Area-Extreme Delta Reversion (Sleeve R · Range Mean-Reversion)
+* **Microstructure Mechanism (P7 Perry, P8 Howard)**:
+  1. **Delta Non-Confirmation**: At Day VAL (for longs) or Day VAH (for shorts), footprint taker delta must fail to confirm the extreme price push (bearish delta drying up at VAL; bullish delta drying up at VAH).
+  2. **Quarter-VA Stop Geometry**: Stop Loss must be placed beyond the Value Area extreme by exactly **one-quarter of the Value Area width**:
+     $$\text{Stop Distance} = 0.25 \times (\text{VAH} - \text{VAL})$$
+  3. **30-Minute Anchor Stand-Down**: Range-reversion setups are strictly prohibited during the first 30 minutes following session open (13:30–14:00 UTC for TradFi; 00:00–00:30 UTC for Crypto), eliminating high-failure opening noise ($p < 0.001$).
+
+#### 4. EA-4: RVOL-Gated 30-Minute Opening Range Breakout (TradFi Sleeve T-ORB)
+* **Microstructure Mechanism (P9 Zarattini & Soe)**:
+  1. **Opening Window**: 30-minute opening range established from US cash open (13:30–14:00 UTC).
+  2. **RVOL Filter**: Relative Volume must exceed **$1.50\times$ baseline volume** ($\text{RVOL} \ge 1.50$).
+  3. **Stop Geometry**: Structural Stop Loss is set to **$0.10\times\text{ATR}_{15}$ from entry price** (never across the full OR range).
+  4. **Strict Cash Close Exit**: Positions close at the US cash close (21:00 UTC); zero overnight gap risk.
+  5. **Asset Eligibility**: Restricted to Gate 9-qualified, low-beta TradFi fractional contracts (`MSFTB`, `METAB`, `AVGO`, `CRCLB`).
+
+#### 5. EA-5: Cascade-Exhaustion Recovery Entry (Sleeve S · Post-Cascade Re-Entry)
+* **Microstructure Mechanism (P10 Lim, P11 Lim, P12 Barone)**:
+  1. **Exhaustion Signature**: 5-minute liquidation pace decaying $> 60\%$ from peak cascade velocity while Cumulative Volume Delta ($\text{CVD}$) bases and flattens against new price lows.
+  2. **Two-Regime Spread Normalization**: Quoted bid-ask spread must recover to **$\le 1.30\times$ 24-hour median spread** before placing limit orders.
+  3. **Visible TWAP Catalyst (Barone Sunshine Filter)**: If uniform taker flow at fixed cadence appears across $\ge 6$ footprint bars post-cascade, align limit entries with the visible TWAP participant.
+
+#### 6. EA-6: Intraday Time-Series Momentum Overlay (ITSM Bayesian Prior)
+* **Microstructure Mechanism (Gao et al., Li 2024)**:
+  The first 30-minute return after the session anchor predicts the final session return.
+* **Operational Execution**:
+  If the first 30 minutes following the UTC daily anchor moves $> 0.40\sigma$ of the developing VWAP band, restrict candidate selection for that asset to the SAME direction until the day rolls over. Functions as an objective Bayesian prior update feeding the Table 7 confluence scoring engine.
+
+---
+
+### 22.3 Telemetry Dimension Wiring & Calibration Governance
+
+| Archetype | Sleeve | Telemetry Dimensions Consumed | Required Computational Pipeline |
+| :--- | :--- | :--- | :--- |
+| **EA-1 (OFI Trigger)** | Sleeve T (Trend) | D09 (Book Walls), D14 (Footprint Delta), D15 (CVD) | Rolling 3-bar stationarized multi-level OFI ($\ge 0.30$) from live top-1000 depth |
+| **EA-2 (Sweep-Acceptance)** | Sleeve S (Sweep) | D12 (Liq Clusters), D14 (Footprint Delta), Level Registry (D01–D03) | N-bar pre-registration tracker, acceptance-close detector, spread kill-switch |
+| **EA-3 (VA Delta Reversion)** | Sleeve R (Range) | D01–D03 (Auction Profiles), D14 (Footprint Delta) | Delta divergence-at-extreme test, 0.25 VA-width stop geometry, 30m stand-down |
+| **EA-4 (RVOL ORB)** | Sleeve T-ORB (TradFi) | D05 (VWAP), Day Volume Base (RVOL), Delta L2 Book | 30m Opening Range tracker, RVOL $\ge 1.50$ gate, $0.10\times\text{ATR}_{15}$ stop engine |
+| **EA-5 (Cascade Recovery)** | Sleeve S (Post-Cascade) | D12 (Liq Pace), D15 (Perp CVD), Livebook Spread | Spread-median tracker ($\le 1.30\times$), 6-bar visible TWAP cadence detector |
+| **EA-6 (ITSM Overlay)** | All Sleeves (Prior) | D05–D08 (VWAP Bands & Multi-Timeframe EMA Stack) | First-30m $\pm 0.40\sigma$ VWAP move classifier at 00:00 UTC day anchor |
+
+* **Empirical Calibration & Likelihood-Ratio Governance**:
+  Every EA enters the desk state as an empirical hypothesis. Parameters are calibrated against actual exchange fills via the Bayesian Likelihood Ratio overlay:
+  * Minimum **20 verified trade outcomes** per archetype before adjusting risk weights.
+  * Strict pre-registration discipline: Entry rule, stop geometry, and target are logged before submission, audited after fill/stop, and never modified mid-flight.
+
+---
+
 *END OF CANONICAL MASTER SPECIFICATION (SOP v2.0.0 · UNIFIED MASTER BIBLE)*
