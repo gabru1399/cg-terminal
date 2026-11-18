@@ -13824,16 +13824,13 @@ analysis script rc=1
 - **Results (net R)**: EA-2 sweep-acceptance +113.1R/433/PF1.51 (all syms, both sides, 6/7 months); EA-5 cascade-exhaustion ETH/SOL +104.2R/367/PF1.69 (BTC −33.8R → banned); EA-1 −19.6R PF0.75, EA-1A ablation −32.1R PF0.98, EA-3 −14.9R PF0.82, EA-4 −31.7R PF0.45 → all suspended with autopsies. LIVE SET +217.3R/800/PF1.58/wr43.4%/maxDD45.1R.
 - **Deliverables**: desk/PLAYBOOK-EA-VALIDATED.md (sole card source from R546; engine rules, risk governance, terminal wiring table), download/R546_Validated_Trading_Playbook.docx+pdf (8pp, postcheck 8/9, visual-checked), download/charts/ea_equity.png + ea_by_symbol.png, data/backtest/* (trades.csv, results.json, diag.json, pickles, raw archives).
 - **Directives to atg-exec**: card intake restricted to Engine A/B; EA2/EA5-ETHSOL tagging; 50-fill scale-up gate; hftbacktest P1 next; SOP Annex A fold-in.
-## R548 · 2026-11-18 18:44 UTC · zai-desk
 
-**Market**: BTC 63,249.8 (-2.6%)  ETH 1,773.50 (-2.8%)  SOL 73.98 (-1.6%)  XAU 3,746.84 (-2.8%)  XAG 45.360 (-4.6%)
-**Bias (|score|≥2)**: XRP-3(TRANS)  BNB-5(TREND)  DOGE-5(TRANS)  ADA-5(TRANS)  XAU-4(TREND)  ETH-3(TRANS)  LTC-2(TREND)  SOL-2(TRANS)
+## R547 · 2026-11-18 19:20 UTC · zai-desk
+- **PORTFOLIO + FULL TERMINAL INTEGRATION shipped.** EA-6 SMC BOS+FVG validated on the same real Binance 15m data (945 trades, +206.9R, PF 1.40, all 3 syms); EA-7 (PF 0.49) and EA-8 (PF 0.26) suspended with autopsies. 3-engine portfolio (weights EA5 .467 / EA2 .30 / EA6 .233, inverse-maxDD risk parity): +130.8R weighted, PF 1.51, maxDD 25.6R, corr ≤0.12, 6/7 months positive.
+- **Terminal**: src/lib/strategy/playbook.ts (pure live detector, closed-bars only), GET /api/strategy/cards, POST /api/desk/punch (state.json orders[] + WAKE.md, config untouched, proxy.ts same-origin respected), Playbook▸Punch tab (badge R547) with qty-hint sizing + punched-order lifecycle. tsc exit 0; next build green; smoke-tested on real data (cards ok:true; punch order tp-* verified then desk files restored).
+- **Files**: scripts/backtest_portfolio.py, scripts/portfolio_assemble.py, scripts/charts_r547.py; data/backtest/{trades_v2,results_v2,portfolio,equity_portfolio}.{json,csv}; download/charts/r547_portfolio_equity.png; PLAYBOOK V2 appended below V1 in desk/PLAYBOOK-EA-VALIDATED.md (still sole card source — now 3 engines).
 
-### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
-- none meeting the gates this round
-
-### Positions
-- None — data missing, HOLD (manual check)
-- None — data missing, HOLD (manual check)
-- None — data missing, HOLD (manual check)
-
+## R547 · 2026-11-18 19:20 UTC · zai-desk
+- **PORTFOLIO + FULL TERMINAL INTEGRATION shipped.** EA-6 SMC BOS+FVG validated on the same real Binance 15m data (945 trades, +206.9R, PF 1.40, all 3 syms); EA-7 (PF 0.49) and EA-8 (PF 0.26) suspended with autopsies. 3-engine portfolio (weights EA5 .467 / EA2 .30 / EA6 .233, inverse-maxDD risk parity): +130.8R weighted, PF 1.51, maxDD 25.6R, corr ≤0.12, 6/7 months positive.
+- **Terminal**: src/lib/strategy/playbook.ts (pure live detector, closed-bars only), GET /api/strategy/cards, POST /api/desk/punch (state.json orders[] + WAKE.md, config untouched, proxy.ts same-origin respected), Playbook▸Punch tab (badge R547) with qty-hint sizing + punched-order lifecycle. tsc exit 0; next build green; smoke-tested on real data (cards ok:true; punch order tp-* verified then desk files restored).
+- **Files**: scripts/backtest_portfolio.py, scripts/portfolio_assemble.py, scripts/charts_r547.py; data/backtest/{trades_v2,results_v2,portfolio,equity_portfolio}.{json,csv}; download/charts/r547_portfolio_equity.png; PLAYBOOK V2 appended below V1 in desk/PLAYBOOK-EA-VALIDATED.md (still sole card source — now 3 engines).

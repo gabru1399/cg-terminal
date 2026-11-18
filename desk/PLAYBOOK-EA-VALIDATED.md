@@ -64,3 +64,41 @@
 | Walls/clusters for target sanity | `liquidation_levels`, `whale_orders`, `book_walls` |
 
 **atg-exec directive:** generate candidate cards ONLY from Engine A / Engine B rules above; tag each card `EA2` or `EA5-ETHSOL`; cards from suspended archetypes are rejected at intake. zai-desk runs the same rules per 15-min round and posts suggested orders to WAKE.md as usual.
+
+---
+
+# V2 (R547, 2026-11-18) — PORTFOLIO EXPANSION + FULL TERMINAL INTEGRATION
+
+**Supersedes the engine set above with a 3-engine portfolio. Rules V1 remain the precise definitions; V2 adds EA-6, portfolio weights, two more suspensions, and the terminal Punch-Trade layer.**
+
+## NEW VALIDATED ENGINE — EA-6 SMC STRUCTURE (BOS + FVG retest; all crypto perps)
+
+1. **Structure**: swing highs/lows (fractal k=2, confirmed 2 bars later); BOS-up = close above last swing high; track the last 3-bar FVG (bull: low > high[2 back]) formed on the impulse leg.
+2. **Entry**: after BOS-up (h4 EMA13>EMA89 bias gate), LIMIT at the FVG midpoint; fill on touch within 8 bars.
+3. **Stop**: below min(FVG low, impulse swing low) − 0.05 ATR14. **Targets**: T1 = BOS high + 0.5 ATR · T2 = +2R · T3 = +3R (40/40/20).
+4. **Evidence (same real-data engine, 201 days, net)**: 945 trades · **+206.9R · PF 1.40 · wr 47.7%** · positive on BTC (+37.5R) / ETH (+74.1R) / SOL (+95.3R) · chronological maxDD 65.6R.
+
+## NEW SUSPENSIONS (do not trade, autopsies recorded)
+
+- **EA-7 VWAP 2σ climax reversion**: PF 0.49, −68.9R — knife-catching re-entry confirms too late; band fades bleed in cascade regimes.
+- **EA-8 momentum-burst continuation**: PF 0.26, −284.3R — buying strong closes at 15m with taker entries is the EA-1A pathology; the burst premium is systematically expensive.
+
+## PORTFOLIO (inverse-maxDD risk parity; data/backtest/portfolio.json)
+
+| Sleeve | Weight | Evidence |
+|---|---|---|
+| EA-5 cascade-exhaustion (ETH/SOL) | **0.467** | PF 1.69 · +104.2R |
+| EA-2 sweep-acceptance (all) | **0.300** | PF 1.51 · +113.1R |
+| EA-6 SMC BOS+FVG (all) | **0.233** | PF 1.40 · +206.9R |
+
+**Combined (weighted): +130.8R · PF 1.51 · wr 45.8% · maxDD 25.6R (vs 45.1R two-engine R546 set) · ~8.7 trades/day · daily-Sharpe 0.199 · 6/7 months positive (May −2.2R ≈ flat).**
+**Diversification is real: engine daily-R correlations EA2×EA6 0.03, EA2×EA5 0.12, EA5×EA6 0.12.**
+Heat cap unchanged: 2 same-direction crypto positions, ≤1.0% total, metals slot 3. Scale-up gate: 50 real fills vs backtest distribution (LR ledger), then 0.25% → 0.5%.
+
+## TERMINAL INTEGRATION (LIVE — Punch-Trade layer)
+
+- `src/lib/strategy/playbook.ts` — 1:1 port of EA-2/EA-5/EA-6 to a pure live detector (closed 15m bars only; stops/targets frozen at signal time exactly as backtested). Suspended engines are structurally never emitted.
+- `GET /api/strategy/cards` — scans BTC/ETH/SOL (or ?sym=) through the terminal's own fapi chain (taker-buy split → honest delta); returns confirmed / armed / pending-fill cards with structural stops + ladders.
+- `POST /api/desk/punch` — the PUNCH button bridge: appends status "suggested" order to `desk/state.json` orders[] (config never touched) + WAKE section; atg-exec executes on Delta India and writes back status/ticket. Same-origin/host-allowlist protected (src/proxy.ts).
+- UI: **Playbook ▸ Punch tab (badge R547)** — session context strip (VWAP/±1σ/POC/VAH/VAL/PDH/PDL/h4 bias), cards with qty hint (equity × risk% × engine weight ÷ stop distance), punched-order lifecycle table from /api/desk/live.
+- Verified end-to-end on real data: cards route `ok:true` on live Binance klines; punch route wrote order tp-* with qty hint 0.0375 and WAKE section, then restored.

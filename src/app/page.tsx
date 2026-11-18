@@ -14,6 +14,7 @@ import LiquidationLevelsTool from "@/components/cg/liquidation-levels-tool";
 import BookWallsTool from "@/components/cg/book-walls-tool";
 import CvdTool from "@/components/cg/cvd-tool";
 import AlertsTool from "@/components/cg/alerts-tool";
+import { PlaybookDesk } from "@/components/cg/playbook-desk";
 import LivePrice from "@/components/cg/live-price";
 import EngineStatus from "@/components/cg/engine-status";
 import AssetPalette, { type PaletteFilter, type UniAsset } from "@/components/cg/asset-palette";
@@ -27,7 +28,7 @@ import { CURATED } from "@/lib/universe/curated";
 import type { DeskLiveSnapshot } from "@/lib/desk/live";
 
 type CockpitView = "terminal" | "matrix" | "desk" | "markets";
-type ToolTab = "overview" | "footprint" | "largeorders" | "liqlevels" | "bookwalls" | "cvd" | "alerts" | "l2" | "quant" | "backtest";
+type ToolTab = "overview" | "footprint" | "largeorders" | "liqlevels" | "bookwalls" | "cvd" | "alerts" | "l2" | "quant" | "backtest" | "playbook";
 
 // ---------------------------------------------------------------------------
 // THE CURATED 61 — the terminal's complete, FIXED universe (user directive
@@ -141,6 +142,7 @@ const ALL_TOOL_TABS = new Set<ToolTab>([
   "l2",
   "quant",
   "backtest",
+  "playbook",
 ]);
 
 function fmtMacroPx(v: number | null | undefined): string {
@@ -616,6 +618,7 @@ function TerminalCockpit() {
                 { id: "cvd", label: "CVD" },
                 { id: "quant", label: "TradFi Quant", badge: "COT" },
                 { id: "backtest" as const, label: "Backtest" },
+                { id: "playbook" as const, label: "Playbook ▸ Punch", badge: "R547" },
                 { id: "alerts" as const, label: "Alerts" },
                 { id: "l2" as const, label: "Live L2 & Ticket", badge: "WS" },
               ];
@@ -673,6 +676,15 @@ function TerminalCockpit() {
                   {activeTab === "liqlevels" && <LiquidationLevelsTool sym={sym} />}
                   {activeTab === "bookwalls" && <BookWallsTool sym={sym} />}
                   {activeTab === "cvd" && <CvdTool sym={sym} />}
+                  {activeTab === "playbook" && (
+                    classic ? (
+                      <div className="rounded-lg border border-neutral-800 bg-[#11151a] p-4 text-sm text-neutral-400">
+                        The Playbook engines run on Binance perp order flow — not applicable to classic indices (Yahoo-quoted; order-flow tabs hidden per canon). Switch to a crypto or TradFi perp.
+                      </div>
+                    ) : (
+                      <PlaybookDesk sym={sym} />
+                    )
+                  )}
                   {activeTab === "backtest" && <BacktestTool sym={sym} />}
                   {activeTab === "alerts" && <AlertsTool sym={sym} />}
                   {activeTab === "l2" && (
