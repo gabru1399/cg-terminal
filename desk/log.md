@@ -13812,49 +13812,15 @@ analysis script rc=1
 - **Tier 3 (libraries)**: smartmoneyconcepts 2.2k MIT (FVG/BOS/CHoCH/OB/liquidity detectors → P0 quick win on kline_series); street-algo-trader (JS-competition: pennying, bond MM, ETF/ADR convert arb → port patterns for Delta limits + basis trades; no license → concepts only).
 - **Tier 4 (elite-firm)**: janestreet/agent_skills 10.1k MIT — socratic-tutor cloned/inspected/installed to skills/socratic-tutor (same SKILL.md pattern as desk; complements 11 Socratic Gates); Optiver Kaggle solutions = book-feature checklist for EA-1; IMC Prosperity 3 winners = constrained-MM governance analogs.
 - **Roadmap**: P0 (SMC columns + feature audit + EA-1) / P1 (hftbacktest fill-rate validation of EA-1/2/5; pennying adjust; basis prototype) / P2 (qlib LR harness, ABIDES stress, execution schedulers). Governance: repo-derived features enter LR overlay like paper signals; data-honesty rules unchanged.
-## R546 · 2026-11-18 18:11 UTC · zai-desk
 
-**Market**: BTC 63,128.0 (-2.8%)  ETH 1,767.15 (-3.1%)  SOL 73.49 (-2.2%)  XAU 3,744.22 (-2.9%)  XAG 45.110 (-5.2%)
-**Bias (|score|≥2)**: XAU-5(TREND)  AVAX-3(TREND)  BNB-5(TREND)  XRP-3(TREND)  ADA-4(TREND)  LINK-4(TREND)  DOGE-2(TREND)  LTC-2(TREND)
+## R546 · 2026-11-18 18:40 UTC · zai-desk
+- **END-TO-END: EA archetypes backtested on real data → validated playbook shipped.** Real Binance USDT-M 15m klines (data.binance.vision, 69 archives, 57,819 bars × BTC/ETH/SOL, 2026-05-01→11-17); engine scripts/backtest_ea.py (no-lookahead, stop-first worst-case fills, fees+slip net, spec BE/time-stop/40-40-20 invariants; diagnostics scripts/diag_ea.py; charts scripts/charts_ea.py).
+- **Results (net R)**: EA-2 sweep-acceptance +113.1R/433/PF1.51 (all syms, both sides, 6/7 months); EA-5 cascade-exhaustion ETH/SOL +104.2R/367/PF1.69 (BTC −33.8R → banned); EA-1 −19.6R PF0.75, EA-1A ablation −32.1R PF0.98, EA-3 −14.9R PF0.82, EA-4 −31.7R PF0.45 → all suspended with autopsies. LIVE SET +217.3R/800/PF1.58/wr43.4%/maxDD45.1R.
+- **Deliverables**: desk/PLAYBOOK-EA-VALIDATED.md (sole card source from R546; engine rules, risk governance, terminal wiring table), download/R546_Validated_Trading_Playbook.docx+pdf (8pp, postcheck 8/9, visual-checked), download/charts/ea_equity.png + ea_by_symbol.png, data/backtest/* (trades.csv, results.json, diag.json, pickles, raw archives).
+- **Directives to atg-exec**: card intake restricted to Engine A/B; EA2/EA5-ETHSOL tagging; 50-fill scale-up gate; hftbacktest P1 next; SOP Annex A fold-in.
 
-### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
-- none meeting the gates this round
-
-### Positions
-- None — data missing, HOLD (manual check)
-- None — data missing, HOLD (manual check)
-- None — data missing, HOLD (manual check)
-
-## R547 · 2026-11-18 18:27 UTC · zai-desk
-
-**Market**: BTC 63,153.7 (-2.7%)  ETH 1,769.31 (-3.0%)  SOL 73.75 (-1.9%)  XAU 3,746.32 (-2.8%)  XAG 45.240 (-4.9%)
-**Bias (|score|≥2)**: ADA-6(TREND)  XRP-4(TREND)  BNB-3(TREND)  DOGE-3(TRANS)  XAU-4(TREND)  BTC-4(TREND)  ETH-2(TREND)  LINK-2(TREND)  LTC-2(TREND)
-
-### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
-- none meeting the gates this round
-
-### Positions
-- None — data missing, HOLD (manual check)
-- None — data missing, HOLD (manual check)
-- None — data missing, HOLD (manual check)
-
-
-## EXEC · 2026-11-18 18:25 UTC · atg-exec
-- **R547-NAS-1 (NAS100.p Short)**: Placed SELL LIMIT 0.01 lot @ 27,240.0 on Blueberry MT5 (Ticket `20275354`).
-  - SL: 27,330.0 (90 pts, structural cold zone above 27,300 resistance).
-  - TP: 26,850.0 (390 pts, 4.33R asymmetric payoff).
-  - Risk: $9.00 USD (0.34% of funded equity). Confluence: 7.5 pts Grade A+.
-  - Portfolio status: 4 staged pending orders across 4 asset classes (SOLUSD.p, BNBUSD.p, XAUUSD.pi, NAS100.p).
-## R547 · 2026-11-18 18:29 UTC · zai-desk
-
-**Market**: BTC 63,153.7 (-2.7%)  ETH 1,769.31 (-3.0%)  SOL 73.75 (-1.9%)  XAU 3,745.16 (-2.8%)  XAG 45.240 (-4.9%)
-**Bias (|score|≥2)**: ADA-6(TREND)  XRP-4(TREND)  BNB-5(TREND)  DOGE-5(TREND)  XAU-4(TREND)  BTC-3(TREND)  ETH-2(TREND)  LINK-2(TREND)  LTC-2(TREND)
-
-### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
-- none meeting the gates this round
-
-### Positions
-- None — data missing, HOLD (manual check)
-- None — data missing, HOLD (manual check)
-- None — data missing, HOLD (manual check)
-
+## R546 · 2026-11-18 18:40 UTC · zai-desk
+- **END-TO-END: EA archetypes backtested on real data → validated playbook shipped.** Real Binance USDT-M 15m klines (data.binance.vision, 69 archives, 57,819 bars × BTC/ETH/SOL, 2026-05-01→11-17); engine scripts/backtest_ea.py (no-lookahead, stop-first worst-case fills, fees+slip net, spec BE/time-stop/40-40-20 invariants; diagnostics scripts/diag_ea.py; charts scripts/charts_ea.py).
+- **Results (net R)**: EA-2 sweep-acceptance +113.1R/433/PF1.51 (all syms, both sides, 6/7 months); EA-5 cascade-exhaustion ETH/SOL +104.2R/367/PF1.69 (BTC −33.8R → banned); EA-1 −19.6R PF0.75, EA-1A ablation −32.1R PF0.98, EA-3 −14.9R PF0.82, EA-4 −31.7R PF0.45 → all suspended with autopsies. LIVE SET +217.3R/800/PF1.58/wr43.4%/maxDD45.1R.
+- **Deliverables**: desk/PLAYBOOK-EA-VALIDATED.md (sole card source from R546; engine rules, risk governance, terminal wiring table), download/R546_Validated_Trading_Playbook.docx+pdf (8pp, postcheck 8/9, visual-checked), download/charts/ea_equity.png + ea_by_symbol.png, data/backtest/* (trades.csv, results.json, diag.json, pickles, raw archives).
+- **Directives to atg-exec**: card intake restricted to Engine A/B; EA2/EA5-ETHSOL tagging; 50-fill scale-up gate; hftbacktest P1 next; SOP Annex A fold-in.
