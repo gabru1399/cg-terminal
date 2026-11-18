@@ -13139,3 +13139,25 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R507 · 2026-11-18 08:16 UTC · zai-desk
+
+**Market**: BTC 64,577.5 (-0.5%)  ETH 1,808.13 (-0.9%)  SOL 74.78 (-0.5%)  XAU 3,768.94 (-2.2%)  XAG 45.730 (-3.8%)
+**Bias (|score|≥2)**: BNB-5(TRANS)  ADA-4(TREND)  LINK-4(TRANS)  SOL-2(TRANS)  XAG-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R507-LINK-1 LINK SHORT limit 9.261 · stop 9.298 · T1 9.183 · T2 9.157 · R 2.1
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (9.232 vs 9.228), h4 RSI 45.5, day -1.0%
+      [FOR    ] footprint: bull 53 / bear 55; recent: Divergence/buy[time], Absorption/sell[vol], Absorption/sell[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×3, abs:sell×4, div:buy×6, div:sell×3, exh:buy×1, exh:sell×4, sdiv:buy×2, sdiv:sell×3, trap:buy×1, trap:sell×4 — net 13 buy-side vs 18 sell-side
+      [FOR    ] liquidation: long-liq magnet 9.029 (str 80, ~$2M est, -2.12%) as target
+      [FOR    ] cvd: taker buy 50.6%, perpCvd +2, spotCvd +8, quadrant both-buying, latestDiv bear (recent)
+      [FOR    ] notifications: 6h weighted bias -3.9 (11 events)
+- XAG SHORT confluence -3.2 — REJECTED: opposing bid wall $7.3M @ 45.600 (1.2R into path) caps the move to T1
+
+### Order lifecycle
+- R501-BNB-1 re-debated: FOR 5/AGAINST 0 — stands
+- R505-ADA-1 re-debated: FOR 6/AGAINST 0 — stands
+
+### Positions
+- no open positions
+
