@@ -425,6 +425,23 @@
       "risk_usd": 6.0,
       "r_multiple": 2.46,
       "confluence": 7.5
+    },
+    {
+      "id": "R547-NAS-1",
+      "symbol": "NAS100",
+      "mt5_symbol": "NAS100.p",
+      "venue": "Blueberry-MT5",
+      "side": "short",
+      "type": "SELL_LIMIT",
+      "volume": 0.01,
+      "entry": 27240.0,
+      "sl": 27330.0,
+      "tp": 26850.0,
+      "status": "placed",
+      "ticket": 20275354,
+      "risk_usd": 9.0,
+      "r_multiple": 4.33,
+      "confluence": 7.5
     }
   ],
   "positions": [
