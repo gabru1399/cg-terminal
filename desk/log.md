@@ -13886,3 +13886,9 @@ analysis script rc=1
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## EXEC · 2026-11-18 19:55 UTC · atg-exec
+- **BTCUSD Short SL Trailed**: Trailed Stop Loss on Delta Exchange India from $64,150.00 down to **$63,650.00** (Order `#1691590194`).
+  - Entry: $64,750.00 | Current Mark: $62,594.87 | Trailed SL: $63,650.00 (+1,100 pts locked profit in cold zone).
+  - Target: $61,950.00 (resting on top of $7.7M liquidation magnet pool at $61,943.60).
+  - MT5 Status: Equity surged to **$2,639.84 USD** (+5.59% net gain). All running positions green. All 4 pending limit orders active.
