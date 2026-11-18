@@ -45,6 +45,7 @@ In perpetual futures markets, prices are not moved by chart patterns, subjective
 | **G-08** | **Single Source of Truth**: This document is the sole authoritative benchmark for scoring, sizing, dual-agent coordination, and execution invariants. |
 | **G-09** | **Continuous Planning & Brainstorming**: Every execution turn must incorporate structured planning (`/plan`) and multi-scenario exploration (`/brainstorming`) to evaluate entry tightness, auction levels, and liquidation magnets before order placement. |
 | **G-10** | **Mandatory Empirical Spec Reading on Wake-Up (Raw Habit Invariant)**: On EVERY wake-up, autonomous recursion round, or trading interaction, Antigravity MUST execute `read_file` on `desk/CANONICAL_MASTER_SPECIFICATION.md`. Never rely on cached echoes or prompt text. Actively load, analyze, and adhere to every section without omission. |
+| **G-11** | **Mandatory Uncached Fresh Loading on Wake-Up (Directive 2026-11-18)**: On EVERY timer expiration, autonomous turn, or trading event, Antigravity MUST re-verify and load all skills, plugins, MCP tools, and live exchange data afresh from live system calls (zero cached echoes). Never assume state; observe reality directly. |
 
 ### 1.2 The Recursive Self-Improving AGI Axioms (Meta-Learning Engine)
 
@@ -78,7 +79,7 @@ On EVERY wake-up, autonomous recursion round, or trading response, the execution
 [x] Fresh individual analysis of each of the 234 Expanded Universe Assets (Delta Exchange India) & 156 MT5 Blueberry Assets executed from scratch across all 10 modules (Zero cached echoes; endpoint-by-endpoint audit).
 [x] Payoff & Confluence Hurdle enforced (Table 7 Score >= 5.0 pts, Expected Payoff >= 2.00R hard floor).
 [x] Live Delta Exchange India CLOB & Margin Solvency audited (Account #26902927; Net Liquid Equity, Position Margin, Order Margin, Free Cash Buffer).
-[x] Blueberry Funded MT5 Terminal & Shared Account Isolation audited (Login #5126976; Equity $2,499.96, $5-$6 Risk Cap, comment='cg_terminal' invariant).
+[x] Blueberry Funded MT5 Terminal & Shared Account Isolation audited (Login #5126976; Equity $2,580.78, Risk Cap $10-$15 for A+ High-Confluence min-lot setups / $5-$6 standard, comment='cg_terminal' invariant).
 [x] Gate 7 High-Potential Conviction Protocol & Gate 9 Dynamic Multi-Slot Expansion armed (High isolated leverage permitted on high-potential setups with verified structural stops; Grade B micro-assets/TradFi fractionals; SOL reserved until equity >= $5.00).
 [x] Operational Invariants armed (Gate 10 BTC Macro Filter, +1.0R Breakeven Invariant, 8-Bar Time Stop, Post-Only Maker Execution, Mark-Price Brackets, Shared Account Isolation).
 [x] Section 19 Pitfalls Ledger enforced (PIT-01 L2 Deep-Edge Filter, PIT-03 Beta Buffer, PIT-04 Mechanical SOL Ban, PIT-09 Auto-Breakeven, PIT-14 MT5 Comment Isolation, PIT-15 Tab Omission, PIT-16 Cold Zone SL, PIT-17 Macro EMA Spine & S9 Rejection).
@@ -610,12 +611,15 @@ Before an order ticket is dispatched, it must pass all 11 Socratic Gates without
 4. **Gate 4: Spread Drag Gate**: CLOB spread must be $< 0.15\%$ and consume $< 20\%$ of planned stop-loss distance.
 5. **Gate 5: Time Stop Realism**: If price fails to reach $+0.5\text{R}$ within 8 bars (2 hours), exit or tighten stop (P5-05).
 6. **Gate 6: Breakeven Invariant**: Move SL to entry immediately upon reaching $\ge +1.0\text{R}$ excursion (P5-04). Downside risk strictly $0.00 USD.
-7. **Gate 7: High-Potential Conviction & Structural Stop Protocol**:
-   - **High-Potential Opportunities (A/A+ Setups with Verified Structural Stops)**:
-     - For pristine Grade A or A+ institutional setups (Table 7 score $\ge 7.0$, Athena Oracle confirmation $\le 35$ or $\ge 65$, Best $R \ge 2.50\text{R}$), high isolated leverage ($25\times - 50\times$, or up to venue maximum) is authorized across all assets (BTC, SOL, BNB, ETH, TradFi, etc.) to size 1 minimum contract lot with initial position margin $\le \$1.50\text{ USD}$ ($\le 55\%$ of available equity).
-     - Structural stop loss must be placed with verified data-driven invalidation beyond liquidation clusters ($\le 0.8\%$ distance beyond sweep wick or Value Area boundary in the cold zone). Dollar risk is calibrated up to $\$0.35 - \$0.65\text{ USD}$, capturing outsized asymmetric payoffs ($+30\%$ to $+60\%$ account gain) while moving SL to Breakeven immediately at $+1.0\text{R}$ excursion.
+7. **Gate 7: High-Potential Conviction & Structural Stop Protocol (Updated 2026-11-18 with Operator Risk Expansion Directive)**:
+   - **Operator Risk Expansion Directive (2026-11-18)**: *If a slight risk increase captures an A+ high-confluence trade ($EV \ge 2.0\text{R}$), opt for it.*
+   - **Blueberry Funded MT5 (`#5126976`, Balance ~\$2,566 USD, Equity ~\$2,580 USD)**:
+     - For assets where broker minimum lot constraints (e.g. `0.01` lot on `XRPUSD.pi` or `0.02` lot on `BTCUSD.pi`) produce a dollar risk of \$7.00–\$15.00 USD ($\le 0.6\%$ of account equity), risk is authorized up to **\$10.00–\$15.00 USD max risk per trade** provided the setup is Grade A/A+ (Table 7 score $\ge 7.0$), has verified structural stop placement beyond sweep wicks or Value Area cold zones, and expected payoff is $\ge 2.0\text{R}$. Standard Grade B setups remain capped at \$5.00–\$6.00 USD.
+   - **Delta Exchange India (`#26902927`, Equity ~\$2.52 USD)**:
+     - Pristine Grade A/A+ institutional setups (Table 7 score $\ge 7.0$, Athena Oracle confirmation $\le 35$ or $\ge 65$, Best $R \ge 2.50\text{R}$) are authorized high isolated leverage ($25\times - 50\times$, or venue maximum) to size 1 minimum contract lot with initial position margin $\le \$1.50\text{ USD}$ ($\le 55\%$ of available equity). Structural stop loss must be placed with verified data-driven invalidation beyond liquidation clusters ($\le 0.8\%$ distance beyond sweep wick or Value Area boundary in the cold zone; dollar risk calibrated at $\$0.35 - \$0.65\text{ USD}$).
+     - Under Gate 9 Dynamic Multi-Slot Expansion, Slot 3 is unlocked to capture additional high-confluence setups (e.g. `DOGEUSD`, `TIAUSD`, micro-caps, TradFi fractionals) when active running positions are locked at Breakeven (downside risk strictly \$0.00 USD).
    - **Tier 2 (Standard Grade B Setups)**:
-     - Standard setups remain restricted to micro-crypto contracts (`SEI`, `ADA`, `ARB`, `DOGE`, `APT`, `TIA`, `VET`, `WIF`) and TradFi fractionals (`MSFTB`, `AMZNB`, `CRCLB`) with conservative position margin ($\le \$0.30\text{ USD}$).
+     - Standard setups remain restricted to micro-crypto contracts (`SEI`, `ADA`, `ARB`, `DOGE`, `APT`, `TIA`, `VET`, `WIF`) and TradFi fractionals (`MSFTB`, `AMZNB`, `CRCLB`) with conservative position margin ($\le \$0.30\text{ USD}$) and \$5.00–\$6.00 USD risk cap on MT5.
 8. **Gate 8: Active Cascade Climax Gate**: If `Liq 5m > $500k`, no limit orders into the cascade. Wait for the exhaustion wick.
 9. **Gate 9: Dynamic Multi-Slot Alpha Expansion Protocol (User Directive 2026-11-17)**:
    - **Standard Setups (Grade B)**: Restricted to max 2 concurrent slots (1 crypto + 1 TradFi or Cash) to prevent unhedged avalanche.
