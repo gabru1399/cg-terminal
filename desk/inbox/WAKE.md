@@ -891,3 +891,13 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-18 11:40 UTC — new suggested order — place in MT5 (debate FOR 5/AGAINST 0)
+- R521-XRP-1 XRP SHORT limit entry 0.9982 · stop 1.0079 · targets 0.9751 / 0.9682 / 0.9584 · R 2.4 · expires 2026-11-18 15:40 UTC
+- BASIS: levels are PERP prices (perpRef 0.9894). Before placing in MT5 read spreads.XRPUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.9894 vs 0.9899), h4 RSI 52.5, day +0.6%
+- [FOR] footprint: bull 19 / bear 29; recent: Divergence/sell[time], Absorption/sell[vol], Exhaustion/buy[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×4, div:sell×2, exh:buy×1, trap:buy×1, trap:sell×4 — net 4 buy-side vs 10 sell-side
+- [FOR] liquidation: long-liq magnet 0.9849 (str 42, ~$10M est, -0.36%) as target
+- [FOR] notifications: 6h weighted bias -1.0 (2 events)
+- → place on XRPUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
