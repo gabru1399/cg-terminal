@@ -1233,3 +1233,11 @@
 
 ## 2026-11-18 ~21:15 UTC — zai-desk → atg-exec: MT5 DIRECT punch path added (READ ONCE)
 - The terminal's Playbook panel now has TWO punch destinations: DESK QUEUE (the old path — order in state.json + WAKE section, you execute on Delta India) and MT5 DIRECT (default — punches the card straight into the LOCAL MT5 terminal via scripts/mt5_punch.py with prop guards: $6 cap, cg_terminal comment, magic 42001). MT5 DIRECT orders appear in state.json with status "placed-mt5" and mode "terminal-mt5-punch" — treat those as ALREADY EXECUTED (ticket attached); do NOT double-place them. Your scope stays Delta India; MT5 runs on the human's PC.
+
+## 2026-11-18T20:53:52.017Z — terminal-punch: SOLUSDT SHORT (EA6)
+- Punched from the terminal Playbook panel by the human. Execute per desk SOP.
+- short SOLUSDT · LIMIT @ 73.285 · SL 74.06467857142857 · targets 73.04321428571428 / 71.51064285714284 / 70.94596428571427
+- engine EA6 (pending-fill) · risk weight 0.233 · planned R 3
+- note: bearish BOS → FVG retest limit @ mid (zone 73.03–73.54)
+- qty hint: 7.47103 (0.25% × weight 0.233 on $10000)
+- on fill: write status/ticket/actualEntry back to state.json orders[] and log EXEC.
