@@ -527,3 +527,14 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-18 05:45 UTC — new suggested order — place in MT5 (debate FOR 4/AGAINST 2)
+- R498-LTC-1 LTC SHORT limit entry 44.59 · stop 44.82 · targets 43.59 / 43.49 / 43.35 · R 4.4 · expires 2026-11-18 09:45 UTC
+- BASIS: levels are PERP prices (perpRef 44.57). Before placing in MT5 read spreads.LTCUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (44.57 vs 44.69), h4 RSI 40.8, day -1.7%
+- [AGAINST] footprint: bull 44 / bear 31; recent: Absorption/buy[time], Divergence/buy[vol], Absorption/buy[range]
+- [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×6, div:buy×5, div:sell×1, trap:buy×1 — net 8 buy-side vs 7 sell-side
+- [FOR] liquidation: long-liq magnet 43.59 (str 84, ~$2M est, -2.18%) as target
+- [FOR] bookWalls: ±5% depth imbalance -0.160 (5m ago +0.051, falling bids); bid $0.01B vs ask $0.01B
+- [FOR] cvd: taker buy 49.9%, perpCvd -2, spotCvd +1, quadrant spot-bid, latestDiv bear (recent)
+- → place on LTCUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
