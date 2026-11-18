@@ -13053,3 +13053,23 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+
+
+### EXEC · 2026-11-18 07:12 UTC · atg-exec — DUAL-VENUE EXECUTION & SYNC (ROUND R492)
+- **Blueberry Funded MT5 (Login #5126976 | Server: BlueberryMarketsSVG-Live)**:
+  - **Account Equity**: ,587.08 USD (+.08 / +3.48% Net Profit on Challenge).
+  - **Position NAS100.p** (Ticket #20218649): Short 0.01 @ 27,358.96 | Floating: +.18 USD | Stop Loss: Locked at Breakeven 27,358.96 (.00 downside risk).
+  - **Placed Order BNBUSD.p** (Ticket #20240006 / R501-BNB-1): Sell Limit 0.72 lots @ 593.50 | SL: 601.10 | TP: 566.00 | Risk: .47 USD | Payoff: +3.62R. Status: OPEN & ACTIVE.
+  - **Placed Order XAUUSD.pi** (Ticket #20244935 / R502-XAU-1): Sell Limit 0.01 lots @ 3,794.50 | SL: 3,800.50 | TP: 3,776.00 | Risk: .00 USD | Payoff: +3.08R. Status: OPEN & ACTIVE.
+  - **Total MT5 Portfolio Heat**: .00 (NAS100) + .47 (BNB) + .00 (XAU) = .47 USD (0.44% of equity, strictly <= 1.0%).
+- **Delta Exchange India (Account #26902927 | india_prod)**:
+  - **Position BTCUSD**: Short -1 contract from ,750.00 (.295 margin, 50x) | Current Mark: ~,719 | Floating in profit.
+    * Server Bracket TP: Order #1691590195 @ ,950.00 (+3.25R target).
+    * Server Bracket SL: Order #1691590194 @ ,610.00 (Cold Zone SL beyond 1H EMA 89).
+  - **Position TIAUSD**: Short -10 contracts from 0.3580 | Current Mark: 0.3544 | Floating in profit.
+    * Server Bracket TP: Order #1689224150 @ 0.3327.
+    * Server Bracket SL: Order #1689224149 @ 0.3653.
+- **Invariants Verified**:
+  - Gate 10 BTC Macro Filter: Price below 1H/4H EMA 233 and EMA 89 -> Shorts only. Counter-trend longs strictly banned.
+  - +1.0R Breakeven Invariant: Enforced across all venues.
+  - RAM Optimization: 4.8 GB free physical RAM maintained.

@@ -383,10 +383,9 @@
       "side": "short",
       "type": "limit",
       "entry": 592.45,
-      "stop": 594.82,
+      "stop": 601.1,
       "targets": [
-        587.03,
-        578.97
+        566.0
       ],
       "targetSources": [
         "long-liq cluster str 69 (~$9M est)",
@@ -394,8 +393,8 @@
       ],
       "riskR": 2.3,
       "expiresTs": 1794998349980,
-      "status": "suggested",
-      "statusTs": 1794983949980,
+      "status": "placed",
+      "statusTs": 1794985950481,
       "perpRefPrice": 592.66,
       "regime": "TREND-DOWN",
       "mode": "trend-pullback",
@@ -447,10 +446,10 @@
         }
       ],
       "rationale": "recent signals: Divergence/sell (time), Divergence/sell (vol), Exhaustion/buy (range); confluence -3.6 [notif -0.7 \u00b7 signals -1.0 \u00b7 trend -2 \u00b7 vwap -1 \u00b7 rsi +0.0 \u00b7 cvd +1.0] \u00b7 debate FOR 5/AGAINST 0; entry VWAP+1\u03c3/day-POC 592.45 [trend-pullback \u00b7 TREND-DOWN]; stop beyond 2\u03c3 zone; T1 long-liq cluster str 69 (~$9M est) \u00b7 T2 long-liq cluster str 100 (~$13M est) \u00b7 T3 \u2014; levels are PERP prices \u2014 translate to broker via live basis before MT5; liq clusters are Coinglass estimates",
-      "ticket": null,
-      "actualEntry": null,
+      "ticket": 20240006,
+      "actualEntry": 593.5,
       "filledTs": null,
-      "notes": null
+      "notes": "Placed in MT5 as Sell Limit 0.72 lots with cold zone SL beyond structural shelf. Risk: .47 USD."
     }
   ],
   "positions": [],
