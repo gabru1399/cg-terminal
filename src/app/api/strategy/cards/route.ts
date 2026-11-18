@@ -30,7 +30,9 @@ const HIST_TTL = 15 * 60_000;
 
 export async function GET(req: NextRequest) {
   const symParam = req.nextUrl.searchParams.get("sym")?.trim().toUpperCase() ?? "";
-  const syms = symParam ? [symParam] : DEFAULT_SYMS;
+  const syms = symParam
+    ? symParam.split(",").map((s) => s.trim()).filter(Boolean)
+    : DEFAULT_SYMS;
   const out: { sym: string; ok: boolean; error?: string; cards: PlaybookCard[]; ctx: unknown }[] = [];
   const now = Date.now();
 

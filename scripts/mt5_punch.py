@@ -60,14 +60,41 @@ def main():
             print(json.dumps({"ok": False, "error": f"overall drawdown guard: equity {acc.equity:.2f} hit the ${MAX_OVERALL_DRAWDOWN_USD:.2f} floor"}))
             sys.exit(1)
 
-        sym = req["symbol"]
+        raw_sym = req["symbol"]
         side = req["side"].lower()
         kind = req.get("kind", "market").lower()
         stop = float(req["stop"])
         tp = float(req["tp"]) if req.get("tp") else 0.0
 
+        # Automatic broker symbol and suffix resolution
+        clean_base = raw_sym.replace("USDT", "").replace("USDT-M", "").replace("USD", "").upper()
+        quirks = {
+            "DOGE": "DOG",
+            "AVAX": "AVX",
+            "LINK": "LNK",
+        }
+        broker_base = quirks.get(clean_base, clean_base)
+        candidates = [
+            raw_sym,
+            f"{raw_sym}.p",
+            f"{raw_sym}.pi",
+            f"{clean_base}USD.p",
+            f"{clean_base}USD.pi",
+            f"{broker_base}USD.p",
+            f"{broker_base}USD.pi",
+            f"{clean_base}USD",
+            f"{broker_base}USD",
+        ]
+        sym = None
+        for c in candidates:
+            if mt5.symbol_info(c) is not None:
+                sym = c
+                break
+        if sym is None:
+            sym = raw_sym
+
         if not mt5.symbol_select(sym, True):
-            print(json.dumps({"ok": False, "error": f"symbol_select failed for {sym} — check broker suffix"}))
+            print(json.dumps({"ok": False, "error": f"symbol_select failed for {sym} (tried: {candidates}) — check broker suffix"}))
             sys.exit(1)
         info = mt5.symbol_info(sym)
         if info is None:

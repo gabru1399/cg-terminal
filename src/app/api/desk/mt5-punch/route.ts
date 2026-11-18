@@ -189,8 +189,21 @@ export async function POST(req: NextRequest) {
   const tr = (lvl: number) => (fresh && Number.isFinite(basisPct) ? lvl * (1 + basisPct / 100) : lvl);
   const entry = tr(card.entry);
   const stop = tr(card.stop);
-  const t1 = card.targets.find((t) => t > 0) ?? 0;
-  const tp = t1 > 0 ? tr(t1) : 0;
+  const stopDist = Math.abs(card.entry - card.stop);
+  let targetLevel = 0;
+  if (Array.isArray(card.targets) && card.targets.length > 0) {
+    // Enforce Canonical >= 2.0R hurdle: select target delivering >= 1.95R
+    for (const t of card.targets) {
+      if (t > 0 && Math.abs(card.entry - t) >= 1.95 * stopDist) {
+        targetLevel = t;
+        break;
+      }
+    }
+    if (targetLevel === 0) {
+      targetLevel = card.targets[1] ?? card.targets[card.targets.length - 1] ?? 0;
+    }
+  }
+  const tp = targetLevel > 0 ? tr(targetLevel) : 0;
 
   const payload = {
     symbol: resolved.symbol,
