@@ -13892,3 +13892,16 @@ analysis script rc=1
   - Entry: $64,750.00 | Current Mark: $62,594.87 | Trailed SL: $63,650.00 (+1,100 pts locked profit in cold zone).
   - Target: $61,950.00 (resting on top of $7.7M liquidation magnet pool at $61,943.60).
   - MT5 Status: Equity surged to **$2,639.84 USD** (+5.59% net gain). All running positions green. All 4 pending limit orders active.
+## R554 · 2026-11-18 20:02 UTC · zai-desk
+
+**Market**: BTC 62,716.3 (-3.4%)  ETH 1,755.04 (-3.8%)  SOL 73.02 (-2.8%)  XAU 3,730.30 (-3.2%)  XAG 45.000 (-5.4%)
+**Bias (|score|≥2)**: XRP-4(TREND)  ADA-6(TREND)  DOGE-6(TREND)  BNB-5(TREND)  ETH-4(TREND)  LTC-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
