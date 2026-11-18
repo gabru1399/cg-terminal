@@ -13540,3 +13540,19 @@ analysis script rc=1
   - R522-ADA-1: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
   - R524-BTC-1: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher ,750 entry).
 - **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **.00 USD**. All running equity is strictly risk-free.
+## R528 · 2026-11-18 13:38 UTC · zai-desk
+
+**Market**: BTC 64,091.9 (-1.3%)  ETH 1,795.75 (-1.6%)  SOL 74.41 (-1.0%)  XAU 3,784.15 (-1.8%)  XAG 45.870 (-3.6%)
+**Bias (|score|≥2)**: XAU-3(TRANS)  BTC-3(TREND)  BNB-3(TREND)  DOGE-3(TRANS)  ETH-3(TREND)  ADA-2(TREND)  LINK-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R513-DOGE-1 re-debated: FOR 4/AGAINST 2 — stands
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
