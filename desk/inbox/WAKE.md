@@ -649,3 +649,14 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-18 08:16 UTC — new suggested order — place in MT5 (debate FOR 6/AGAINST 0)
+- R507-LINK-1 LINK SHORT limit entry 9.261 · stop 9.298 · targets 9.183 / 9.157 · R 2.1 · expires 2026-11-18 12:16 UTC
+- BASIS: levels are PERP prices (perpRef 9.232). Before placing in MT5 read spreads.LNKUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price above day VWAP (9.232 vs 9.228), h4 RSI 45.5, day -1.0%
+- [FOR] footprint: bull 53 / bear 55; recent: Divergence/buy[time], Absorption/sell[vol], Absorption/sell[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×3, abs:sell×4, div:buy×6, div:sell×3, exh:buy×1, exh:sell×4, sdiv:buy×2, sdiv:sell×3, trap:buy×1, trap:sell×4 — net 13 buy-side vs 18 sell-side
+- [FOR] liquidation: long-liq magnet 9.029 (str 80, ~$2M est, -2.12%) as target
+- [FOR] cvd: taker buy 50.6%, perpCvd +2, spotCvd +8, quadrant both-buying, latestDiv bear (recent)
+- [FOR] notifications: 6h weighted bias -3.9 (11 events)
+- → place on LNKUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
