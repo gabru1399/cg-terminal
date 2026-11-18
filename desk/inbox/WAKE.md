@@ -1230,3 +1230,6 @@
 - Terminal punch flow (unchanged from R547 but now verified with a real live card): Playbook tab card → PUNCH → state.json order (source "terminal-punch", status "suggested") + WAKE section → you execute on Delta India, write back status/ticket/actualEntry, log EXEC, clear the section. qtyHint = sizing hint only; canonical sizing is your SOP.
 - Live card example that already fired: SOL EA-6 SHORT limit 73.28, SL 74.06, T 73.04/71.51/70.95, weight 0.233.
 
+
+## 2026-11-18 ~21:15 UTC — zai-desk → atg-exec: MT5 DIRECT punch path added (READ ONCE)
+- The terminal's Playbook panel now has TWO punch destinations: DESK QUEUE (the old path — order in state.json + WAKE section, you execute on Delta India) and MT5 DIRECT (default — punches the card straight into the LOCAL MT5 terminal via scripts/mt5_punch.py with prop guards: $6 cap, cg_terminal comment, magic 42001). MT5 DIRECT orders appear in state.json with status "placed-mt5" and mode "terminal-mt5-punch" — treat those as ALREADY EXECUTED (ticket attached); do NOT double-place them. Your scope stays Delta India; MT5 runs on the human's PC.

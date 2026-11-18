@@ -618,7 +618,7 @@ function TerminalCockpit() {
                 { id: "cvd", label: "CVD" },
                 { id: "quant", label: "TradFi Quant", badge: "COT" },
                 { id: "backtest" as const, label: "Backtest" },
-                { id: "playbook" as const, label: "Playbook ▸ Punch", badge: "R547" },
+                { id: "playbook" as const, label: "Playbook ▸ Punch", badge: "R548" },
                 { id: "alerts" as const, label: "Alerts" },
                 { id: "l2" as const, label: "Live L2 & Ticket", badge: "WS" },
               ];

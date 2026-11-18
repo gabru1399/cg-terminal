@@ -50,10 +50,35 @@ export function PlaybookDesk({ sym }: { sym: string }) {
   const [riskPct, setRiskPct] = useState("0.25");
   const [punching, setPunching] = useState<string | null>(null);
   const [punched, setPunched] = useState<Record<string, string>>({});
+  const [dest, setDest] = useState<"mt5" | "desk">("mt5");
+  const [mt5Symbols, setMt5Symbols] = useState<Record<string, { symbol: string; basisPct: number | null; fresh: boolean }>>({});
   const [now, setNow] = useState(Date.now());
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 15_000);
     return () => clearInterval(t);
+  }, []);
+
+  // MT5 symbol resolution — light GET on the punch route (reads desk/mt5.json server-side)
+  useEffect(() => {
+    let alive = true;
+    fetch("/api/desk/mt5-punch")
+      .then((r) => r.json())
+      .then((d: { ok: boolean; symbols?: Record<string, { symbol: string; basisPct: number | null; fresh: boolean }> }) => {
+        if (alive && d.ok && d.symbols) setMt5Symbols(d.symbols);
+      })
+      .catch(() => {});
+    const t = setInterval(() => {
+      fetch("/api/desk/mt5-punch")
+        .then((r) => r.json())
+        .then((d: { ok: boolean; symbols?: Record<string, { symbol: string; basisPct: number | null; fresh: boolean }> }) => {
+          if (alive && d.ok && d.symbols) setMt5Symbols(d.symbols);
+        })
+        .catch(() => {});
+    }, 60_000);
+    return () => {
+      alive = false;
+      clearInterval(t);
+    };
   }, []);
 
   const asset = cards.data?.assets?.[0];
@@ -63,20 +88,28 @@ export function PlaybookDesk({ sym }: { sym: string }) {
     [asset, now]
   );
   const punchedOrders = useMemo(
-    () => (desk.data?.orders ?? []).filter((o) => o.round === "R547" || (o as { mode?: string }).mode === "terminal-punch").slice(0, 8),
+    () => (desk.data?.orders ?? []).filter((o) => (o as { mode?: string }).mode === "terminal-punch" || (o as { mode?: string }).mode === "terminal-mt5-punch").slice(0, 8),
     [desk]
   );
 
   async function punch(card: PlaybookCard) {
     setPunching(card.id);
     try {
-      const res = await fetch("/api/desk/punch", {
+      const endpoint = dest === "mt5" ? "/api/desk/mt5-punch" : "/api/desk/punch";
+      const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ card, equity: Number(equity) || undefined, riskPct: Number(riskPct) || undefined }),
       });
-      const j = (await res.json()) as { ok: boolean; orderId?: string; error?: string };
-      setPunched((p) => ({ ...p, [card.id]: j.ok ? `queued ${j.orderId}` : `failed: ${j.error}` }));
+      const j = (await res.json()) as { ok: boolean; orderId?: string; error?: string; ticket?: number; lots?: number; riskUsd?: number; mt5Symbol?: string };
+      setPunched((p) => ({
+        ...p,
+        [card.id]: j.ok
+          ? dest === "mt5"
+            ? `MT5 ticket ${j.ticket} · ${j.mt5Symbol} ${j.lots} lots · $${j.riskUsd}`
+            : `queued ${j.orderId}`
+          : `failed: ${j.error}`,
+      }));
     } catch (e) {
       setPunched((p) => ({ ...p, [card.id]: `failed: ${e instanceof Error ? e.message : "network"}` }));
     } finally {
@@ -90,10 +123,31 @@ export function PlaybookDesk({ sym }: { sym: string }) {
         <div>
           <div className="text-sm font-semibold text-neutral-100">{sym} · Validated Playbook & Punch Trade</div>
           <div className="mt-1 text-xs text-neutral-400">
-            EA-2 sweep-acceptance · EA-5 cascade-exhaustion (ETH/SOL) · EA-6 SMC BOS+FVG — 1:1 ports of the R546/R547 real-data backtests. PUNCH queues the order for atg-exec (Delta India) via the desk wake file.
+            EA-2 sweep-acceptance · EA-5 cascade-exhaustion (ETH/SOL) · EA-6 SMC BOS+FVG — 1:1 parity ports of the R546/R548 backtests (120/120 replay-exact). PUNCH fires the order: MT5 DIRECT (this PC's MetaTrader) or DESK QUEUE (atg-exec, Delta India).
           </div>
         </div>
-        <span className="rounded bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold text-amber-300">PF 1.51 · maxDD 25.6R · weights EA5 .467 / EA2 .30 / EA6 .233</span>
+        <span className="rounded bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold text-amber-300">PF 1.50 · maxDD 26.2R · weights EA5 .467 / EA2 .30 / EA6 .233</span>
+      </div>
+
+      {/* punch destination */}
+      <div className="flex flex-wrap items-center gap-2 rounded-lg border border-neutral-800/80 bg-[#0d1117] px-3 py-2 text-xs">
+        <span className="text-neutral-500 uppercase tracking-wider text-[10px] font-semibold">punch destination</span>
+        {([["mt5", "MT5 DIRECT ▸ this PC's MetaTrader"], ["desk", "DESK QUEUE ▸ atg-exec (Delta India)"]] as const).map(([v, label]) => (
+          <button
+            key={v}
+            onClick={() => setDest(v)}
+            className={`rounded-md px-3 py-1 font-semibold transition-colors ${dest === v ? (v === "mt5" ? "bg-amber-600 text-white" : "bg-sky-600 text-white") : "bg-neutral-800 text-neutral-400 hover:bg-neutral-700"}`}
+          >
+            {label}
+          </button>
+        ))}
+        {dest === "mt5" && (
+          <span className="text-neutral-500">
+            {mt5Symbols[sym]
+              ? `→ ${mt5Symbols[sym].symbol}${mt5Symbols[sym].basisPct != null ? ` · basis ${mt5Symbols[sym].basisPct}%${mt5Symbols[sym].fresh ? "" : " (stale)"}` : ""} · $6 prop risk cap · comment cg_terminal`
+              : "· no MT5 symbol mapped for this asset (desk/mt5.json) — punch will be rejected"}
+          </span>
+        )}
       </div>
 
       {/* session context strip */}
@@ -187,12 +241,14 @@ export function PlaybookDesk({ sym }: { sym: string }) {
                   className={`rounded-md px-4 py-1.5 text-xs font-bold transition-all ${
                     state || punching === c.id
                       ? "bg-neutral-700 text-neutral-400"
+                      : dest === "mt5"
+                      ? "bg-amber-600 text-white hover:bg-amber-500 shadow-[0_0_16px_-6px_rgba(245,158,11,0.7)]"
                       : c.side === "long"
                       ? "bg-emerald-600 text-white hover:bg-emerald-500 shadow-[0_0_16px_-6px_rgba(16,185,129,0.7)]"
                       : "bg-red-600 text-white hover:bg-red-500 shadow-[0_0_16px_-6px_rgba(239,68,68,0.7)]"
                   }`}
                 >
-                  {punching === c.id ? "queuing…" : state ? state : `PUNCH ${c.side.toUpperCase()} ▸ atg-exec`}
+                  {punching === c.id ? (dest === "mt5" ? "sending to MT5…" : "queuing…") : state ? state : dest === "mt5" ? `PUNCH ${c.side.toUpperCase()} ▸ MT5` : `PUNCH ${c.side.toUpperCase()} ▸ atg-exec`}
                 </button>
               ) : (
                 <span className="rounded bg-neutral-800 px-3 py-1.5 text-[10px] text-neutral-500">armed — punch enabled once the confirmation close prints</span>
@@ -234,8 +290,8 @@ export function PlaybookDesk({ sym }: { sym: string }) {
       )}
 
       <div className="text-[10px] leading-relaxed text-neutral-500">
-        Engines: {Object.entries(cards.data?.engines ?? {}).map(([k, v]) => `${k} ${v}`).join(" · ")} — portfolio PF 1.51, maxDD 25.6R, engine correlations ≤ 0.12 (201-day real-data validation, net of fees/slippage, stop-first worst-case fills).
-        Suspended and never emitted: {(cards.data?.suspended ?? ["EA1", "EA3", "EA4", "EA7", "EA8"]).join(", ")}. Cards expire when their entry window closes; the tape decides, the panel only reports it.
+        Engines: {Object.entries(cards.data?.engines ?? {}).map(([k, v]) => `${k} ${v}`).join(" · ")} — portfolio PF 1.50, +128.1R weighted, maxDD 26.2R, engine correlations ≤ 0.12 (201-day real-data validation, net of fees/slippage, stop-first worst-case fills; EA-6 re-validated no-lookahead R548).
+        Suspended and never emitted: {(cards.data?.suspended ?? ["EA1", "EA3", "EA4", "EA7", "EA8"]).join(", ")}. Cards expire when their entry window closes; the tape decides, the panel only reports it. MT5 DIRECT punches carry the T1 rung as the broker TP; the 40/40/20 ladder and auto-BE are then managed by the desk's cg_terminal loop (scripts/mt5_cg_trader.py --auto-be).
       </div>
     </div>
   );
