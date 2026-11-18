@@ -1282,3 +1282,8 @@
 - tp-1795036275522 XAUUSDT SHORT limit entry 3740.55 · stop 3750.786642857143 · targets 3730.8335714285713 / 3708.4267142857148 / 3708.4267142857148 · R 3 · expires 2026-11-18 21:30 UTC
 - BASIS: levels are PERP prices (perpRef ?). Before placing in MT5 read spreads.undefined.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
 - → place on undefined in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
+
+## 2026-11-18 21:18:21 UTC — autonomous-mt5-punch: ETHUSDT SHORT (EA6)
+- Automatically punched by auto_punch_engine: ETHUSD.pi 0.33 lots, ticket 20277881, risk $5.45.
+- Entry 1757.865 · SL 1774.3816785714287 · T1 1747.4032142857143 (planned 3R).
+

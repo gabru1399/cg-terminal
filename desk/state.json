@@ -527,6 +527,34 @@
       "mt5RiskUsd": 5.46,
       "ticket": 20277826,
       "createdTs": 1795036284481
+    },
+    {
+      "id": "auto-mt5-1795036701059",
+      "round": "R558",
+      "sym": "ETHUSDT",
+      "side": "short",
+      "action": "short",
+      "type": "limit",
+      "status": "placed-mt5",
+      "source": "autonomous-punch-engine",
+      "engine": "EA6",
+      "entry": 1757.865,
+      "stop": 1774.3816785714287,
+      "targets": [
+        1747.4032142857143,
+        1716.5666428571426,
+        1708.314964285714
+      ],
+      "riskR": 3,
+      "riskPct": null,
+      "regime": "playbook:EA6",
+      "mode": "autonomous-mt5-punch",
+      "rationale": "bearish BOS \u2192 FVG retest limit @ mid (zone 1752.97\u20131762.76)",
+      "mt5Symbol": "ETHUSD.pi",
+      "mt5Lots": 0.33,
+      "mt5RiskUsd": 5.45,
+      "ticket": 20277881,
+      "createdTs": 1795036701059
     }
   ],
   "positions": [
