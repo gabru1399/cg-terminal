@@ -892,28 +892,6 @@
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
 
-## 2026-11-18 11:40 UTC — new suggested order — place in MT5 (debate FOR 5/AGAINST 0)
-- R521-XRP-1 XRP SHORT limit entry 0.9982 · stop 1.0079 · targets 0.9751 / 0.9682 / 0.9584 · R 2.4 · expires 2026-11-18 15:40 UTC
-- BASIS: levels are PERP prices (perpRef 0.9894). Before placing in MT5 read spreads.XRPUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
-- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.9894 vs 0.9899), h4 RSI 52.5, day +0.6%
-- [FOR] footprint: bull 19 / bear 29; recent: Divergence/sell[time], Absorption/sell[vol], Exhaustion/buy[range]
-- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×2, abs:sell×4, div:sell×2, exh:buy×1, trap:buy×1, trap:sell×4 — net 4 buy-side vs 10 sell-side
-- [FOR] liquidation: long-liq magnet 0.9849 (str 42, ~$10M est, -0.36%) as target
-- [FOR] notifications: 6h weighted bias -1.0 (2 events)
-- → place on XRPUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
-
-## 2026-11-18 11:56 UTC — new suggested order — place in MT5 (debate FOR 6/AGAINST 1)
-- R522-ADA-1 ADA SHORT limit entry 0.1535 · stop 0.1542 · targets 0.1514 / 0.1493 · R 3 · expires 2026-11-18 15:55 UTC
-- BASIS: levels are PERP prices (perpRef 0.1534). Before placing in MT5 read spreads.ADAUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
-- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (0.1534 vs 0.1538), h4 RSI 43.0, day -1.3%
-- [FOR] footprint: bull 33 / bear 49; recent: Exhaustion/buy[time], Exhaustion/buy[vol], Absorption/sell[range]
-- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×6, abs:sell×8, div:buy×1, div:sell×2, exh:buy×2, trap:sell×2 — net 9 buy-side vs 12 sell-side
-- [FOR] liquidation: long-liq magnet 0.1514 (str 58, ~$3M est, -1.26%) as target
-- [FOR] bookWalls: ±5% depth imbalance -0.341 (5m ago -0.202, falling bids); bid $0.01B vs ask $0.02B
-- [FOR] cvd: taker buy 49.6%, perpCvd -7, spotCvd +0, quadrant both-selling, latestDiv bear (recent)
-- [AGAINST] notifications: 6h weighted bias +1.9 (4 events)
-- → place on ADAUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
-
 ## 2026-11-18 11:59 UTC — agent task from zai-desk
 - SCHEDULED ANALYSIS ROUND (manual-bound — desk/TRADE_FORMULATION_MANUAL.md):
 1. git pull --rebase origin main
@@ -949,16 +927,6 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
-
-## 2026-11-18 12:34 UTC — new suggested order — place in MT5 (debate FOR 4/AGAINST 1)
-- R524-BTC-1 BTC SHORT limit entry 64668 · stop 64924.7 · targets 63279.6 · R 5.4 · expires 2026-11-18 16:34 UTC
-- BASIS: levels are PERP prices (perpRef 64184.1). Before placing in MT5 read spreads.BTCUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
-- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (64,184.1 vs 64,489.1), h4 RSI 38.7, day -1.1%
-- [FOR] footprint: bull 10 / bear 13; recent: Bull div/buy[vol], Absorption/sell[range]
-- [FOR] liquidation: long-liq magnet 63,279.6 (str 67, ~$493M est, -1.40%) as target
-- [AGAINST] stops(BTC heatmap): 24h liq exposure below $542M vs above $372M
-- [FOR] notifications: 6h weighted bias -2.0 (3 events)
-- → place on BTCUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
 
 ## 2026-11-18 12:59 UTC — agent task from zai-desk
 - SCHEDULED ANALYSIS ROUND (manual-bound — desk/TRADE_FORMULATION_MANUAL.md):
