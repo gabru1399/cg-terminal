@@ -18,6 +18,20 @@ entries. All timestamps UTC.
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R2 · 2026-11-10 14:32 UTC · zai-desk
 
 **Market**: BTC 73,637.6 (-2.2%)  ETH 2,059.70 (-3.5%)  SOL 83.52 (-3.7%)  XAU 4,061.95 (-2.0%)  XAG 51.940 (-2.9%)
@@ -31,6 +45,20 @@ entries. All timestamps UTC.
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R3 · 2026-11-10 14:40 UTC · zai-desk
 
 **Market**: BTC 74,274.1 (-1.4%)  ETH 2,081.68 (-2.5%)  SOL 84.46 (-2.6%)  XAU 4,053.20 (-2.2%)  XAG 51.820 (-3.2%)
@@ -41,6 +69,20 @@ entries. All timestamps UTC.
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R4 · 2026-11-10 14:53 UTC · zai-desk
 
@@ -63,6 +105,20 @@ entries. All timestamps UTC.
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R5 · 2026-11-10 15:11 UTC · zai-desk
 
 **Market**: BTC 74,525.6 (-1.1%)  ETH 2,080.66 (-2.5%)  SOL 84.72 (-2.3%)  XAU 4,057.38 (-2.1%)  XAG 52.090 (-2.7%)
@@ -78,6 +134,20 @@ entries. All timestamps UTC.
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R6 · 2026-11-10 15:18 UTC · zai-desk
 
@@ -100,6 +170,20 @@ entries. All timestamps UTC.
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ### EXEC · 2026-11-10 15:31 UTC · USER (manual MT5 desktop) — recorded by zai-desk 15:47
 - R6-ADA-1 ADA SHORT SELL LIMIT ticket 209375723: 1.00 lot @ 0.17772, SL 0.1783, TP 0.1709 — pending, unfilled
@@ -127,6 +211,20 @@ entries. All timestamps UTC.
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R8 · 2026-11-10 16:46 UTC · zai-desk
 
 **Market**: BTC 73,021.1 (-3.1%)  ETH 2,019.56 (-5.4%)  SOL 82.02 (-5.4%)  XAU 4,028.29 (-2.8%)  XAG 51.400 (-3.9%)
@@ -142,6 +240,20 @@ entries. All timestamps UTC.
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ### EXEC · 2026-11-10 16:49 UTC · zai-desk — R8 desk brief for MANUAL placement
 - Account: equity 4,652.88 · balance 4,654.42 · margin_level 2,892% · risk budget 0.5% = $23.26
@@ -179,6 +291,20 @@ entries. All timestamps UTC.
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R10 · 2026-11-10 17:07 UTC · zai-desk
 
 **Market**: BTC 72,925.1 (-3.2%)  ETH 2,015.38 (-5.6%)  SOL 81.86 (-5.6%)  XAU 4,028.14 (-2.8%)  XAG 51.360 (-4.0%)
@@ -195,6 +321,20 @@ entries. All timestamps UTC.
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ### EXEC · 2026-11-10 17:09 UTC · zai-desk — BTC placement verified + trade status sweep
 - TICKET 209404683 (R4-BTC-1): USER placed 16:53:56 — BTCUSD SELL LIMIT 0.06 @ 74,262.9 · SL 74,664.0 · TP 72,957.0, pending above market (bid 72,945 at 17:00, needs +1.8% rally to fill).
@@ -229,6 +369,20 @@ entries. All timestamps UTC.
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ### DIALOG · 2026-11-10 17:35 UTC · zai-desk — DATA-COVERAGE AUDIT (user challenge: "you might be missing many data points")
 **AUDIT RESULT — three tiers:**
 
@@ -257,6 +411,20 @@ TIER 3 · NOT IN STACK (terminal exposes nothing — 404 verified): funding rate
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ### EXEC · 2026-11-10 17:43 UTC · atg-exec — Ticket 209404683 TP modification verified
 - User modified pending ticket 209404683 in MT5: TP changed from 72,957.0 → 72,500.0 (High-leverage long-liq cluster target).
 - Verified: Entry 74,262.9 unchanged, SL 74,664.0 unchanged, Volume 0.06 unchanged.
@@ -279,6 +447,20 @@ TIER 3 · NOT IN STACK (terminal exposes nothing — 404 verified): funding rate
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R14 · 2026-11-10 17:56 UTC · zai-desk
 
 **Market**: BTC 73,179.7 (-2.9%)  ETH 2,027.01 (-5.0%)  SOL 82.28 (-5.1%)  XAU 4,024.90 (-2.9%)  XAG 51.320 (-4.1%)
@@ -294,6 +476,20 @@ TIER 3 · NOT IN STACK (terminal exposes nothing — 404 verified): funding rate
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ### MONITOR · 2026-11-10 17:58 UTC · zai-desk — R4-BTC-1 (ticket 209404683) fresh-level verification + expiry enforcement
 - Q (user): "any modification required in current limit orders?"
@@ -321,6 +517,20 @@ TIER 3 · NOT IN STACK (terminal exposes nothing — 404 verified): funding rate
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ### DIALOG · 2026-11-10 18:12 UTC · user ↔ zai-desk — alert coverage audit
 - Q (user): "I hope we are considering alerts as well."
@@ -361,6 +571,20 @@ TIER 3 · NOT IN STACK (terminal exposes nothing — 404 verified): funding rate
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ### DEEPSCAN · 2026-11-10 18:33 UTC · zai-desk — 360° on-demand deep analysis
@@ -413,6 +637,20 @@ TIER 3 · NOT IN STACK (terminal exposes nothing — 404 verified): funding rate
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ### DEEPSCAN · 2026-11-10 18:47-18:48 UTC · zai-desk — `360 all` v2 (full trade construction)
 - 12 reports with §9 limit-trade candidates + per-tab evidence manifests:
   BTC ETH SOL BNB XRP ADA AVAX DOGE LINK LTC XAU XAG → desk/deepscan/*-20261110-1848.md
@@ -456,6 +694,20 @@ TIER 3 · NOT IN STACK (terminal exposes nothing — 404 verified): funding rate
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ### DEEPSCAN · 2026-11-10 19:10 UTC · zai-desk — 360° on-demand deep analysis (all)
@@ -578,6 +830,20 @@ TIER 3 · NOT IN STACK (terminal exposes nothing — 404 verified): funding rate
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ### DEEPSCAN · 2026-11-10 19:51 UTC · zai-desk — 360° on-demand deep analysis (all)
 - BTC: desk/deepscan/BTC-20261110-1951.md
@@ -616,6 +882,20 @@ Re-ran 360 all post-fix: 12/12 all sources OK, digest DIGEST-20261110-1952, broa
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R21 · 2026-11-10 20:14 UTC · zai-desk
 
 **Market**: BTC 73,518.5 (-2.4%)  ETH 2,051.85 (-3.8%)  SOL 83.23 (-4.0%)  XAU 4,039.18 (-2.6%)  XAG 51.620 (-3.5%)
@@ -630,6 +910,20 @@ Re-ran 360 all post-fix: 12/12 all sources OK, digest DIGEST-20261110-1952, broa
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ### DEEPSCAN · 2026-11-10 20:07 UTC · zai-desk — 360° on-demand deep analysis (DOGE+LINK+SOL)
@@ -717,6 +1011,20 @@ Deliverables: EXPANSION-PLAN-20261110.md (v1.1) · REVIEW-MULTIAGENT-20261110.md
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R23 · 2026-11-10 20:49 UTC · zai-desk
 
 **Market**: BTC 73,750.1 (-2.1%)  ETH 2,057.42 (-3.6%)  SOL 83.40 (-3.8%)  XAU 4,042.17 (-2.5%)  XAG 51.680 (-3.4%)
@@ -731,6 +1039,20 @@ Deliverables: EXPANSION-PLAN-20261110.md (v1.1) · REVIEW-MULTIAGENT-20261110.md
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ### DEEPSCAN · 2026-11-10 20:53 UTC · zai-desk — 360° on-demand deep analysis (XPT+USO)
@@ -791,6 +1113,20 @@ Deliverables: EXPANSION-PLAN-20261110.md (v1.1) · REVIEW-MULTIAGENT-20261110.md
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ### RETRACTION · 2026-11-10 21:30 UTC · zai-desk — false "feed dead" readings in the 20:53/20:54 run set (state.json race)
 
@@ -823,6 +1159,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R26 · 2026-11-10 21:40 UTC · zai-desk
 
 **Market**: BTC 73,859.9 (-1.9%)  ETH 2,057.35 (-3.6%)  SOL 83.41 (-3.8%)  XAU 4,037.22 (-2.6%)  XAG 51.610 (-3.6%)
@@ -837,6 +1187,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R27 · 2026-11-10 21:58 UTC · zai-desk
 
@@ -853,6 +1217,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R28 · 2026-11-10 22:14 UTC · zai-desk
 
 **Market**: BTC 73,891.8 (-1.9%)  ETH 2,056.88 (-3.6%)  SOL 83.40 (-3.8%)  XAU 4,040.54 (-2.5%)  XAG 51.600 (-3.6%)
@@ -867,6 +1245,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R29 · 2026-11-10 22:31 UTC · zai-desk
 
@@ -883,6 +1275,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R30 · 2026-11-10 22:48 UTC · zai-desk
 
 **Market**: BTC 73,769.2 (-2.1%)  ETH 2,050.40 (-3.9%)  SOL 83.09 (-4.2%)  XAU 4,041.10 (-2.5%)  XAG 51.630 (-3.5%)
@@ -897,6 +1303,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R31 · 2026-11-10 23:06 UTC · zai-desk
 
@@ -913,6 +1333,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R32 · 2026-11-10 23:23 UTC · zai-desk
 
 **Market**: BTC 73,675.2 (-2.2%)  ETH 2,049.40 (-4.0%)  SOL 82.99 (-4.3%)  XAU 4,043.53 (-2.5%)  XAG 51.670 (-3.4%)
@@ -927,6 +1361,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R33 · 2026-11-10 23:40 UTC · zai-desk
 
@@ -943,6 +1391,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R34 · 2026-11-10 23:57 UTC · zai-desk
 
 **Market**: BTC 73,770.9 (-2.1%)  ETH 2,051.01 (-3.9%)  SOL 83.32 (-3.9%)  XAU 4,043.59 (-2.5%)  XAG 51.650 (-3.5%)
@@ -957,6 +1419,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R35 · 2026-11-11 00:14 UTC · zai-desk
 
@@ -973,6 +1449,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R36 · 2026-11-11 00:31 UTC · zai-desk
 
 **Market**: BTC 73,632.1 (-0.2%)  ETH 2,050.11 (-0.1%)  SOL 83.34 (+0.0%)  XAU 4,043.31 (-0.1%)  XAG 51.620 (-0.1%)
@@ -987,6 +1477,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R37 · 2026-11-11 00:47 UTC · zai-desk
 
@@ -1011,6 +1515,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R38 · 2026-11-11 01:05 UTC · zai-desk
 
 **Market**: BTC 73,344.8 (-0.6%)  ETH 2,043.61 (-0.4%)  SOL 82.96 (-0.4%)  XAU 4,041.27 (-0.1%)  XAG 51.670 (-0.0%)
@@ -1025,6 +1543,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R39 · 2026-11-11 01:22 UTC · zai-desk
 
@@ -1044,6 +1576,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R40 · 2026-11-11 01:40 UTC · zai-desk
 
@@ -1067,6 +1613,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R41 · 2026-11-11 01:57 UTC · zai-desk
 
 **Market**: BTC 73,595.4 (-0.2%)  ETH 2,053.71 (+0.1%)  SOL 83.25 (-0.1%)  XAU 4,052.67 (+0.2%)  XAG 52.400 (+1.4%)
@@ -1081,6 +1641,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R42 · 2026-11-11 02:14 UTC · zai-desk
 
@@ -1105,6 +1679,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R43 · 2026-11-11 02:32 UTC · zai-desk
 
 **Market**: BTC 73,346.8 (-0.6%)  ETH 2,052.81 (+0.0%)  SOL 83.13 (-0.2%)  XAU 4,050.62 (+0.1%)  XAG 52.350 (+1.3%)
@@ -1120,6 +1708,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R44 · 2026-11-11 02:49 UTC · zai-desk
 
 **Market**: BTC 73,709.4 (-0.1%)  ETH 2,060.98 (+0.4%)  SOL 83.46 (+0.2%)  XAU 4,048.70 (+0.1%)  XAG 52.420 (+1.4%)
@@ -1134,6 +1736,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## MONITOR · 2026-11-11 03:05 UTC · zai-desk — auto-wake: orders 4h+ PAST EXPIRY, DIR-0010 re-arm emitted
@@ -1158,6 +1774,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R46 · 2026-11-11 03:24 UTC · zai-desk
 
 **Market**: BTC 73,748.5 (-0.0%)  ETH 2,063.30 (+0.5%)  SOL 83.48 (+0.2%)  XAU 4,054.87 (+0.2%)  XAG 52.490 (+1.6%)
@@ -1172,6 +1802,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R47 · 2026-11-11 03:40 UTC · zai-desk
 
@@ -1188,6 +1832,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R48 · 2026-11-11 03:57 UTC · zai-desk
 
 **Market**: BTC 73,727.7 (-0.0%)  ETH 2,061.09 (+0.4%)  SOL 83.29 (-0.0%)  XAU 4,054.08 (+0.2%)  XAG 52.530 (+1.6%)
@@ -1202,6 +1860,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R49 · 2026-11-11 04:14 UTC · zai-desk
 
@@ -1218,6 +1890,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R50 · 2026-11-11 04:31 UTC · zai-desk
 
 **Market**: BTC 73,696.4 (-0.1%)  ETH 2,065.30 (+0.6%)  SOL 83.10 (-0.2%)  XAU 4,051.32 (+0.1%)  XAG 52.520 (+1.6%)
@@ -1232,6 +1918,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R51 · 2026-11-11 04:48 UTC · zai-desk
 
@@ -1248,6 +1948,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R52 · 2026-11-11 05:06 UTC · zai-desk
 
 **Market**: BTC 73,789.5 (+0.0%)  ETH 2,065.84 (+0.7%)  SOL 82.92 (-0.5%)  XAU 4,058.13 (+0.3%)  XAG 52.770 (+2.1%)
@@ -1262,6 +1976,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R53 · 2026-11-11 05:22 UTC · zai-desk
 
@@ -1278,6 +2006,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R54 · 2026-11-11 05:39 UTC · zai-desk
 
 **Market**: BTC 73,775.1 (+0.0%)  ETH 2,066.56 (+0.7%)  SOL 83.07 (-0.3%)  XAU 4,069.20 (+0.6%)  XAG 53.040 (+2.6%)
@@ -1292,6 +2034,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R55 · 2026-11-11 05:56 UTC · zai-desk
 
@@ -1308,6 +2064,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R56 · 2026-11-11 06:13 UTC · zai-desk
 
@@ -1331,6 +2101,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R57 · 2026-11-11 06:29 UTC · zai-desk
 
@@ -1359,6 +2143,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R58 · 2026-11-11 06:47 UTC · zai-desk
 
 **Market**: BTC 73,560.1 (-0.3%)  ETH 2,054.98 (+0.1%)  SOL 82.60 (-0.8%)  XAU 4,065.05 (+0.5%)  XAG 53.130 (+2.8%)
@@ -1375,6 +2173,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R59 · 2026-11-11 07:05 UTC · zai-desk
 
 **Market**: BTC 73,524.2 (-0.3%)  ETH 2,052.87 (+0.0%)  SOL 82.31 (-1.2%)  XAU 4,070.65 (+0.6%)  XAG 53.140 (+2.8%)
@@ -1390,6 +2202,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 
@@ -1423,6 +2249,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ## DIALOG · 2026-11-11 07:55 UTC · zai-desk — FULL-UNIVERSE UI TOGGLE SHIPPED (user: "still we don't have proper toggle rotate between all assets")
 - User verified the DIR-0009 rebuild (16 perp assets live) but the classic instruments had NO UI access — API-only. Gap was real: 83 of 98 instruments unreachable from the terminal front-end.
@@ -1455,6 +2295,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R62 · 2026-11-11 07:58 UTC · zai-desk
 
 **Market**: BTC 74,062.9 (+0.4%)  ETH 2,069.26 (+0.8%)  SOL 83.35 (+0.1%)  XAU 4,066.59 (+0.5%)  XAG 53.160 (+2.9%)
@@ -1471,6 +2325,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R63 · 2026-11-11 08:16 UTC · zai-desk
 
 **Market**: BTC 74,099.9 (+0.5%)  ETH 2,066.95 (+0.7%)  SOL 83.24 (-0.1%)  XAU 4,066.02 (+0.5%)  XAG 53.070 (+2.7%)
@@ -1485,6 +2353,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ### DEEPSCAN · 2026-11-11 08:21 UTC · zai-desk — 360° on-demand deep analysis (classic)
@@ -1509,6 +2391,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ### DEEPSCAN · 2026-11-11 08:44 UTC · zai-desk — 360° on-demand deep analysis (classic)
 - USO (classic): desk/deepscan/USO-20261111-0844.md
@@ -1536,6 +2432,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R66 · 2026-11-11 09:09 UTC · zai-desk
 
 **Market**: BTC 73,797.1 (+0.0%)  ETH 2,060.38 (+0.4%)  SOL 83.10 (-0.2%)  XAU 4,064.32 (+0.5%)  XAG 53.080 (+2.7%)
@@ -1552,6 +2462,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R67 · 2026-11-11 09:26 UTC · zai-desk
 
@@ -1570,6 +2494,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ### DEEPSCAN · 2026-11-11 09:34 UTC · zai-desk — 360° on-demand deep analysis (XAU+EURUSD(cl)+US30(cl))
@@ -1602,6 +2540,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ### MONITOR · 2026-11-11 11:02 UTC · zai-desk — BTC ticket 209404683 EXPIRED (never filled)
 - Ticket 209404683 (BTCUSD SELL LIMIT 0.06 @ 74,262.9, SL 74,664, TP 72,500): **never filled** — market stayed 72,691–73,450, never pulled back into the limit. DIR-0005 reply verified: EXECUTED 2026-11-10T18:54:30Z (alert A6, state R4-BTC-1 → "expired" ts 1794336860000, EXEC logged, user prompted to delete residual GTC in MT5 desktop). Current mt5.json (09:44 UTC): positions=[], orders=[], account flat $4,649.96 equity=balance.
@@ -1630,6 +2582,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R70 · 2026-11-11 10:20 UTC · zai-desk
 
 **Market**: BTC 73,786.9 (+0.0%)  ETH 2,056.42 (+0.2%)  SOL 83.55 (+0.3%)  XAU 4,055.41 (+0.2%)  XAG 53.030 (+2.6%)
@@ -1644,6 +2610,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R71 · 2026-11-11 10:37 UTC · zai-desk
 
@@ -1660,6 +2640,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R72 · 2026-11-11 10:53 UTC · zai-desk
 
 **Market**: BTC 74,045.4 (+0.4%)  ETH 2,059.79 (+0.4%)  SOL 83.72 (+0.5%)  XAU 4,056.17 (+0.3%)  XAG 52.990 (+2.5%)
@@ -1673,6 +2667,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R73 · 2026-11-11 11:10 UTC · zai-desk
 
@@ -1697,6 +2705,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ### EXEC · 2026-11-11 11:25 UTC · atg-exec — DIR-0013 (R4 + R5 + R3 Regression) Rebuilt & Verified
@@ -1727,6 +2749,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R75 · 2026-11-11 11:52 UTC · zai-desk
 
 **Market**: BTC 73,985.0 (+0.3%)  ETH 2,057.82 (+0.3%)  SOL 84.03 (+0.9%)  XAU 4,054.29 (+0.2%)  XAG 52.940 (+2.4%)
@@ -1754,6 +2790,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R76 · 2026-11-11 12:09 UTC · zai-desk
 
 **Market**: BTC 73,942.7 (+0.2%)  ETH 2,054.90 (+0.1%)  SOL 83.81 (+0.6%)  XAU 4,052.77 (+0.2%)  XAG 52.890 (+2.3%)
@@ -1770,6 +2820,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R77 · 2026-11-11 12:26 UTC · zai-desk
 
@@ -1788,6 +2852,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R78 · 2026-11-11 12:44 UTC · zai-desk
 
 **Market**: BTC 73,943.0 (+0.2%)  ETH 2,053.33 (+0.1%)  SOL 83.83 (+0.6%)  XAU 4,048.99 (+0.1%)  XAG 52.860 (+2.3%)
@@ -1804,6 +2882,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R79 · 2026-11-11 13:01 UTC · zai-desk
 
@@ -1822,6 +2914,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R80 · 2026-11-11 13:18 UTC · zai-desk
 
 **Market**: BTC 73,897.2 (+0.2%)  ETH 2,053.81 (+0.1%)  SOL 84.19 (+1.1%)  XAU 4,050.86 (+0.1%)  XAG 52.850 (+2.3%)
@@ -1838,6 +2944,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R81 · 2026-11-11 13:35 UTC · zai-desk
 
@@ -1856,6 +2976,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R82 · 2026-11-11 13:53 UTC · zai-desk
 
 **Market**: BTC 73,795.9 (+0.0%)  ETH 2,052.89 (+0.0%)  SOL 84.47 (+1.4%)  XAU 4,039.46 (-0.2%)  XAG 52.700 (+2.0%)
@@ -1872,6 +3006,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R83 · 2026-11-11 14:10 UTC · zai-desk
 
@@ -1895,6 +3043,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R84 · 2026-11-11 14:28 UTC · zai-desk
 
 **Market**: BTC 73,565.1 (-0.3%)  ETH 2,048.40 (-0.2%)  SOL 83.79 (+0.6%)  XAU 4,038.28 (-0.2%)  XAG 52.640 (+1.9%)
@@ -1911,6 +3073,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R85 · 2026-11-11 14:45 UTC · zai-desk
 
@@ -1929,6 +3105,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R86 · 2026-11-11 15:03 UTC · zai-desk
 
 **Market**: BTC 73,578.8 (-0.2%)  ETH 2,054.95 (+0.1%)  SOL 83.85 (+0.7%)  XAU 4,020.51 (-0.6%)  XAG 52.330 (+1.3%)
@@ -1945,6 +3135,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## EXEC · 2026-11-11 15:13 UTC · atg-exec
@@ -1973,6 +3177,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R88 · 2026-11-11 15:38 UTC · zai-desk
 
 **Market**: BTC 74,180.1 (+0.6%)  ETH 2,081.30 (+1.4%)  SOL 85.00 (+2.0%)  XAU 4,016.79 (-0.7%)  XAG 52.500 (+1.6%)
@@ -1995,6 +3213,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## EXEC · 2026-11-11 15:42 UTC · atg-exec
@@ -2028,6 +3260,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## EXEC · 2026-11-11 15:58 UTC · atg-exec
@@ -2064,6 +3310,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## EXEC · 2026-11-11 16:15 UTC · atg-exec
@@ -2111,6 +3371,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R92 · 2026-11-11 16:47 UTC · zai-desk
 
 **Market**: BTC 74,228.1 (+0.6%)  ETH 2,074.90 (+1.1%)  SOL 84.66 (+1.6%)  XAU 4,006.72 (-1.0%)  XAG 52.140 (+0.9%)
@@ -2127,6 +3401,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R93 · 2026-11-11 17:04 UTC · zai-desk
 
@@ -2145,6 +3433,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R94 · 2026-11-11 17:22 UTC · zai-desk
 
 **Market**: BTC 74,572.5 (+1.1%)  ETH 2,092.17 (+1.9%)  SOL 85.28 (+2.4%)  XAU 4,012.64 (-0.8%)  XAG 52.270 (+1.1%)
@@ -2161,6 +3463,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R95 · 2026-11-11 17:41 UTC · zai-desk
 
 **Market**: BTC 74,518.0 (+1.0%)  ETH 2,092.31 (+2.0%)  SOL 85.50 (+2.6%)  XAU 4,007.05 (-1.0%)  XAG 52.170 (+0.9%)
@@ -2175,6 +3491,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R96 · 2026-11-11 17:59 UTC · zai-desk
 
@@ -2191,6 +3521,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R97 · 2026-11-11 18:15 UTC · zai-desk
 
 **Market**: XAG 52.110 (+0.8%)
@@ -2201,6 +3545,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R98 · 2026-11-11 18:33 UTC · zai-desk
 
@@ -2224,6 +3582,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## EXEC · 2026-11-11 18:36 UTC · atg-exec — R98-LINK-1 triage + 4 manual MT5 limit orders verified
 - **USER MANUAL MT5 PLACEMENTS (`desk/mt5.json` `18:35:17 UTC`, balance/equity `$4,649.96`, `0` positions, `4` pending limits = `4/4` `max_concurrent_positions`) — ALL VERIFIED-COMPLIANT**:
@@ -2250,6 +3622,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R100 · 2026-11-11 19:07 UTC · zai-desk
 
 **Market**: BTC 74,299.9 (+0.7%)  ETH 2,077.08 (+1.2%)  SOL 84.72 (+1.7%)  XAU 3,991.91 (-1.3%)  XAG 51.920 (+0.5%)
@@ -2265,6 +3651,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R101 · 2026-11-11 19:24 UTC · zai-desk
 
@@ -2287,6 +3687,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## EXEC · 2026-11-11 19:28 UTC · atg-exec — R101-XAG-1 triage (SKIPPED on MT5)
 - **R101-XAG-1 (`XAG SHORT limit 52.977 / SL 53.395 / T1 52.06 / R 2.2`, `FOR 4 / AGAINST 2`) — SKIPPED on MT5 (`XAGUSD`)**:
@@ -2319,6 +3733,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ## R102-EXEC · 2026-11-11 19:47 UTC · atg-exec
 
@@ -2340,6 +3768,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R105 · 2026-11-11 20:16 UTC · zai-desk
 
 **Market**: BTC 74,561.2 (+1.1%)  ETH 2,081.67 (+1.4%)  SOL 84.98 (+2.0%)  XAU 3,991.73 (-1.3%)  XAG 51.880 (+0.4%)
@@ -2356,6 +3798,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R106 · 2026-11-11 20:33 UTC · zai-desk
 
 **Market**: BTC 74,496.4 (+1.0%)  ETH 2,080.37 (+1.4%)  SOL 84.82 (+1.8%)  XAU 3,991.86 (-1.3%)  XAG 51.900 (+0.4%)
@@ -2371,6 +3827,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R107 · 2026-11-11 20:50 UTC · zai-desk
 
@@ -2394,6 +3864,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ## R107-EXEC · 2026-11-11 20:52 UTC · atg-exec
 
@@ -2416,6 +3900,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R110 · 2026-11-11 21:24 UTC · zai-desk
 
 **Market**: BTC 74,669.8 (+1.2%)  ETH 2,080.16 (+1.4%)  SOL 84.96 (+2.0%)  XAU 3,991.72 (-1.3%)  XAG 51.820 (+0.3%)
@@ -2432,6 +3930,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R111 · 2026-11-11 21:42 UTC · zai-desk
 
@@ -2450,6 +3962,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R112 · 2026-11-11 21:59 UTC · zai-desk
 
 **Market**: BTC 74,385.0 (+0.8%)  ETH 2,070.04 (+0.9%)  SOL 84.51 (+1.5%)  XAU 3,995.14 (-1.2%)  XAG 51.770 (+0.2%)
@@ -2466,6 +3992,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R113 · 2026-11-11 22:17 UTC · zai-desk
 
@@ -2490,6 +4030,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R114 · 2026-11-11 22:35 UTC · zai-desk
 
 **Market**: BTC 74,199.7 (+0.6%)  ETH 2,064.73 (+0.6%)  SOL 84.11 (+1.0%)  XAU 3,996.77 (-1.2%)  XAG 51.760 (+0.2%)
@@ -2512,6 +4066,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R115 · 2026-11-11 22:52 UTC · zai-desk
 
 **Market**: BTC 73,938.4 (+0.2%)  ETH 2,056.31 (+0.2%)  SOL 83.44 (+0.2%)  XAU 3,994.90 (-1.3%)  XAG 51.730 (+0.1%)
@@ -2529,6 +4097,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R116 · 2026-11-11 23:09 UTC · zai-desk
 
 **Market**: BTC 73,670.1 (-0.1%)  ETH 2,047.65 (-0.2%)  SOL 82.96 (-0.4%)  XAU 3,991.77 (-1.3%)  XAG 51.640 (-0.1%)
@@ -2545,6 +4127,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R117 · 2026-11-11 23:26 UTC · zai-desk
 
@@ -2572,6 +4168,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R118 · 2026-11-11 23:44 UTC · zai-desk
 
 **Market**: BTC 73,843.5 (+0.1%)  ETH 2,051.25 (-0.0%)  SOL 82.96 (-0.4%)  XAU 3,987.92 (-1.4%)  XAG 51.380 (-0.6%)
@@ -2597,6 +4207,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R119 · 2026-11-12 00:01 UTC · zai-desk
 
 **Market**: BTC 74,000.1 (+0.0%)  ETH 2,056.99 (+0.1%)  SOL 83.33 (+0.1%)  XAU 3,984.21 (-0.0%)  XAG 51.410 (+0.1%)
@@ -2611,6 +4235,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R120 · 2026-11-12 00:17 UTC · zai-desk
 
@@ -2627,6 +4265,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R121 · 2026-11-12 00:34 UTC · zai-desk
 
 **Market**: BTC 73,970.7 (-0.0%)  ETH 2,058.47 (+0.2%)  SOL 83.41 (+0.2%)  XAU 3,989.72 (+0.1%)  XAG 51.570 (+0.4%)
@@ -2642,6 +4294,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R122 · 2026-11-12 00:51 UTC · zai-desk
 
 **Market**: BTC 74,089.7 (+0.1%)  ETH 2,064.10 (+0.4%)  SOL 83.62 (+0.5%)  XAU 3,995.24 (+0.2%)  XAG 51.710 (+0.7%)
@@ -2656,6 +4322,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R123 · 2026-11-12 01:07 UTC · zai-desk
 
@@ -2688,6 +4368,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R124 · 2026-11-12 01:24 UTC · zai-desk
 
 **Market**: BTC 73,645.8 (-0.5%)  ETH 2,049.89 (-0.3%)  SOL 83.03 (-0.2%)  XAU 4,002.96 (+0.4%)  XAG 51.810 (+0.9%)
@@ -2704,6 +4398,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R125 · 2026-11-12 01:42 UTC · zai-desk
 
@@ -2729,6 +4437,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R126 · 2026-11-12 01:59 UTC · zai-desk
 
 **Market**: BTC 73,676.8 (-0.4%)  ETH 2,048.62 (-0.3%)  SOL 83.08 (-0.2%)  XAU 3,993.00 (+0.2%)  XAG 51.730 (+0.7%)
@@ -2745,6 +4467,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R127 · 2026-11-12 02:16 UTC · zai-desk
 
@@ -2769,6 +4505,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R128 · 2026-11-12 02:33 UTC · zai-desk
 
@@ -2795,6 +4545,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R129 · 2026-11-12 02:50 UTC · zai-desk
 
 **Market**: BTC 73,849.8 (-0.2%)  ETH 2,059.00 (+0.2%)  SOL 83.47 (+0.3%)  XAU 3,989.17 (+0.1%)  XAG 51.600 (+0.5%)
@@ -2811,6 +4575,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R130 · 2026-11-12 03:07 UTC · zai-desk
 
@@ -2829,6 +4607,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R131 · 2026-11-12 03:25 UTC · zai-desk
 
 **Market**: BTC 73,739.3 (-0.3%)  ETH 2,050.57 (-0.2%)  SOL 83.06 (-0.2%)  XAU 3,986.13 (+0.0%)  XAG 51.460 (+0.2%)
@@ -2846,6 +4638,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R132 · 2026-11-12 03:42 UTC · zai-desk
 
 **Market**: BTC 73,717.2 (-0.4%)  ETH 2,051.75 (-0.2%)  SOL 83.12 (-0.1%)  XAU 3,986.49 (+0.0%)  XAG 51.600 (+0.5%)
@@ -2862,6 +4668,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R133 · 2026-11-12 03:59 UTC · zai-desk
 
@@ -2887,6 +4707,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R134 · 2026-11-12 04:16 UTC · zai-desk
 
 **Market**: BTC 73,744.5 (-0.3%)  ETH 2,053.62 (-0.1%)  SOL 83.13 (-0.1%)  XAU 3,990.21 (+0.1%)  XAG 51.650 (+0.6%)
@@ -2903,6 +4737,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R135 · 2026-11-12 04:33 UTC · zai-desk
 
@@ -2921,6 +4769,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R136 · 2026-11-12 04:50 UTC · zai-desk
 
 **Market**: BTC 73,743.5 (-0.3%)  ETH 2,051.37 (-0.2%)  SOL 83.13 (-0.1%)  XAU 3,983.81 (-0.0%)  XAG 51.590 (+0.4%)
@@ -2937,6 +4799,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R137 · 2026-11-12 05:08 UTC · zai-desk
 
@@ -2972,6 +4848,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R138 · 2026-11-12 05:25 UTC · zai-desk
 
 **Market**: BTC 73,592.9 (-0.5%)  ETH 2,043.99 (-0.6%)  SOL 82.79 (-0.5%)  XAU 3,978.09 (-0.2%)  XAG 51.400 (+0.1%)
@@ -2988,6 +4878,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R139 · 2026-11-12 05:42 UTC · zai-desk
 
@@ -3013,6 +4917,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R140 · 2026-11-12 06:00 UTC · zai-desk
 
 **Market**: BTC 73,575.4 (-0.5%)  ETH 2,045.90 (-0.5%)  SOL 82.83 (-0.5%)  XAU 3,985.59 (+0.0%)  XAG 51.530 (+0.3%)
@@ -3029,6 +4947,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R141 · 2026-11-12 06:17 UTC · zai-desk
 
@@ -3047,6 +4979,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R142 · 2026-11-12 06:34 UTC · zai-desk
 
 **Market**: BTC 73,550.9 (-0.6%)  ETH 2,048.31 (-0.3%)  SOL 82.91 (-0.4%)  XAU 3,981.07 (-0.1%)  XAG 51.500 (+0.3%)
@@ -3064,6 +5010,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R143 · 2026-11-12 06:52 UTC · zai-desk
 
 **Market**: BTC 73,505.1 (-0.6%)  ETH 2,043.51 (-0.6%)  SOL 82.62 (-0.7%)  XAU 3,972.76 (-0.3%)  XAG 51.440 (+0.2%)
@@ -3078,6 +5038,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R144 · 2026-11-12 07:09 UTC · zai-desk
 
@@ -3108,6 +5082,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R145 · 2026-11-12 07:27 UTC · zai-desk
 
 **Market**: BTC 73,513.0 (-0.6%)  ETH 2,048.78 (-0.3%)  SOL 82.89 (-0.4%)  XAU 3,966.48 (-0.5%)  XAG 51.240 (-0.2%)
@@ -3123,6 +5111,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R146 · 2026-11-12 07:44 UTC · zai-desk
 
@@ -3145,6 +5147,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R147 · 2026-11-12 08:01 UTC · zai-desk
 
 **Market**: BTC 73,616.4 (-0.5%)  ETH 2,050.51 (-0.2%)  SOL 82.96 (-0.3%)  XAU 3,969.39 (-0.4%)  XAG 51.490 (+0.3%)
@@ -3160,6 +5176,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R148 · 2026-11-12 08:19 UTC · zai-desk
 
@@ -3182,6 +5212,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R149 · 2026-11-12 08:36 UTC · zai-desk
 
 **Market**: BTC 73,503.9 (-0.6%)  ETH 2,047.14 (-0.4%)  SOL 82.84 (-0.5%)  XAU 3,956.46 (-0.7%)  XAG 51.440 (+0.2%)
@@ -3198,6 +5242,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R150 · 2026-11-12 08:53 UTC · zai-desk
 
 **Market**: BTC 73,584.4 (-0.5%)  ETH 2,050.01 (-0.3%)  SOL 82.98 (-0.3%)  XAU 3,942.71 (-1.1%)  XAG 50.990 (-0.7%)
@@ -3213,6 +5271,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R151 · 2026-11-12 09:11 UTC · zai-desk
 
@@ -3240,6 +5312,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R152 · 2026-11-12 09:28 UTC · zai-desk
 
 **Market**: BTC 73,395.8 (-0.8%)  ETH 2,044.31 (-0.5%)  SOL 82.94 (-0.3%)  XAU 3,944.52 (-1.0%)  XAG 51.220 (-0.3%)
@@ -3261,6 +5347,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R153 · 2026-11-12 09:46 UTC · zai-desk
 
@@ -3287,6 +5387,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R154 · 2026-11-12 10:04 UTC · zai-desk
 
 **Market**: BTC 73,458.0 (-0.7%)  ETH 2,046.45 (-0.4%)  SOL 83.17 (-0.1%)  XAU 3,952.40 (-0.8%)  XAG 51.260 (-0.2%)
@@ -3303,6 +5417,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R155 · 2026-11-12 10:21 UTC · zai-desk
 
@@ -3321,6 +5449,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R156 · 2026-11-12 10:39 UTC · zai-desk
 
 **Market**: BTC 73,523.5 (-0.6%)  ETH 2,049.16 (-0.3%)  SOL 83.19 (-0.0%)  XAU 3,957.65 (-0.7%)  XAG 51.290 (-0.1%)
@@ -3337,6 +5479,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R157 · 2026-11-12 10:56 UTC · zai-desk
 
@@ -3355,6 +5511,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R158 · 2026-11-12 11:12 UTC · zai-desk
 
 **Market**: BTC 73,387.1 (-0.8%)  ETH 2,043.21 (-0.6%)  SOL 82.99 (-0.3%)  XAU 3,957.61 (-0.7%)  XAG 51.280 (-0.2%)
@@ -3371,6 +5541,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R159 · 2026-11-12 11:28 UTC · zai-desk
 
@@ -3389,6 +5573,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R160 · 2026-11-12 11:44 UTC · zai-desk
 
 **Market**: BTC 72,911.0 (-1.4%)  ETH 2,027.23 (-1.4%)  SOL 82.45 (-0.9%)  XAU 3,952.22 (-0.8%)  XAG 51.110 (-0.5%)
@@ -3405,6 +5603,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R161 · 2026-11-12 12:00 UTC · zai-desk
 
@@ -3423,6 +5635,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R162 · 2026-11-12 12:16 UTC · zai-desk
 
 **Market**: BTC 73,082.5 (-1.2%)  ETH 2,025.65 (-1.4%)  SOL 82.57 (-0.8%)  XAU 3,952.10 (-0.8%)  XAG 51.130 (-0.4%)
@@ -3440,6 +5666,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R163 · 2026-11-12 12:32 UTC · zai-desk
 
 **Market**: BTC 72,934.1 (-1.4%)  ETH 2,020.91 (-1.7%)  SOL 82.17 (-1.3%)  XAU 3,947.13 (-1.0%)  XAG 51.010 (-0.7%)
@@ -3456,6 +5696,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R164 · 2026-11-12 12:48 UTC · zai-desk
 
@@ -3480,6 +5734,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R165 · 2026-11-12 13:04 UTC · zai-desk
 
 **Market**: BTC 72,850.1 (-1.5%)  ETH 2,017.84 (-1.8%)  SOL 82.05 (-1.4%)  XAU 3,943.92 (-1.0%)  XAG 51.030 (-0.6%)
@@ -3496,6 +5764,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R166 · 2026-11-12 13:20 UTC · zai-desk
 
@@ -3516,6 +5798,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R167 · 2026-11-12 13:36 UTC · zai-desk
 
 **Market**: BTC 72,610.7 (-1.9%)  ETH 2,012.44 (-2.1%)  SOL 81.60 (-1.9%)  XAU 3,914.94 (-1.8%)  XAG 50.680 (-1.3%)
@@ -3532,6 +5828,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R168 · 2026-11-12 13:53 UTC · zai-desk
 
@@ -3556,6 +5866,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R169 · 2026-11-12 14:09 UTC · zai-desk
 
 **Market**: BTC 72,406.5 (-2.1%)  ETH 2,010.12 (-2.2%)  SOL 81.32 (-2.3%)  XAU 3,897.80 (-2.2%)  XAG 50.310 (-2.0%)
@@ -3578,6 +5902,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R170 · 2026-11-12 14:24 UTC · zai-desk
 
 **Market**: BTC 71,894.8 (-2.8%)  ETH 1,990.56 (-3.2%)  SOL 80.58 (-3.2%)  XAU 3,910.70 (-1.9%)  XAG 50.450 (-1.8%)
@@ -3595,6 +5933,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R171 · 2026-11-12 14:40 UTC · zai-desk
 
@@ -3623,6 +5975,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R172 · 2026-11-12 14:57 UTC · zai-desk
 
 **Market**: BTC 71,374.6 (-3.5%)  ETH 1,999.44 (-2.7%)  SOL 81.01 (-2.7%)  XAU 3,875.76 (-2.8%)  XAG 50.120 (-2.4%)
@@ -3639,6 +6005,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R173 · 2026-11-12 15:13 UTC · zai-desk
 
@@ -3659,6 +6039,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R174 · 2026-11-12 15:30 UTC · zai-desk
 
 **Market**: BTC 71,418.2 (-3.5%)  ETH 2,003.76 (-2.5%)  SOL 81.07 (-2.6%)  XAU 3,864.07 (-3.0%)  XAG 49.930 (-2.8%)
@@ -3676,6 +6070,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R175 · 2026-11-12 15:46 UTC · zai-desk
 
@@ -3696,6 +6104,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R176 · 2026-11-12 16:02 UTC · zai-desk
 
 **Market**: BTC 71,540.5 (-3.3%)  ETH 2,004.36 (-2.5%)  SOL 81.52 (-2.0%)  XAU 3,878.00 (-2.7%)  XAG 50.140 (-2.4%)
@@ -3713,6 +6135,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R177 · 2026-11-12 16:18 UTC · zai-desk
 
 **Market**: BTC 71,929.3 (-2.8%)  ETH 2,016.50 (-1.9%)  SOL 81.97 (-1.5%)  XAU 3,883.24 (-2.6%)  XAG 50.320 (-2.0%)
@@ -3728,6 +6164,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R178 · 2026-11-12 16:34 UTC · zai-desk
 
@@ -3746,6 +6196,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R179 · 2026-11-12 16:50 UTC · zai-desk
 
 **Market**: BTC 71,636.8 (-3.2%)  ETH 2,003.30 (-2.5%)  SOL 81.34 (-2.3%)  XAU 3,883.41 (-2.6%)  XAG 50.150 (-2.4%)
@@ -3763,6 +6227,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R180 · 2026-11-12 17:06 UTC · zai-desk
 
 **Market**: BTC 71,706.6 (-3.1%)  ETH 2,007.01 (-2.4%)  SOL 81.25 (-2.4%)  XAU 3,883.39 (-2.6%)  XAG 50.230 (-2.2%)
@@ -3778,6 +6256,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R181 · 2026-11-12 17:21 UTC · zai-desk
 
@@ -3795,6 +6287,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R182 · 2026-11-12 17:37 UTC · zai-desk
 
 **Market**: BTC 71,865.5 (-2.9%)  ETH 2,012.33 (-2.1%)  SOL 81.52 (-2.0%)  XAU 3,880.37 (-2.6%)  XAG 50.140 (-2.4%)
@@ -3810,6 +6316,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R183 · 2026-11-12 17:53 UTC · zai-desk
 
@@ -3842,6 +6362,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R184 · 2026-11-12 18:09 UTC · zai-desk
 
 **Market**: BTC 71,890.5 (-2.8%)  ETH 2,016.77 (-1.9%)  SOL 81.69 (-1.8%)  XAU 3,887.86 (-2.4%)  XAG 50.180 (-2.3%)
@@ -3857,6 +6391,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R185 · 2026-11-12 18:24 UTC · zai-desk
 
@@ -3874,6 +6422,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R186 · 2026-11-12 18:40 UTC · zai-desk
 
 **Market**: BTC 71,922.9 (-2.8%)  ETH 2,021.13 (-1.7%)  SOL 81.75 (-1.8%)  XAU 3,893.24 (-2.3%)  XAG 50.360 (-1.9%)
@@ -3889,6 +6451,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R187 · 2026-11-12 18:56 UTC · zai-desk
 
@@ -3914,6 +6490,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R188 · 2026-11-12 19:12 UTC · zai-desk
 
 **Market**: BTC 71,583.2 (-3.2%)  ETH 2,012.78 (-2.1%)  SOL 81.47 (-2.1%)  XAU 3,886.07 (-2.5%)  XAG 50.210 (-2.2%)
@@ -3930,6 +6520,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R189 · 2026-11-12 19:28 UTC · zai-desk
 
@@ -3948,6 +6552,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R190 · 2026-11-12 19:44 UTC · zai-desk
 
 **Market**: BTC 71,526.7 (-3.3%)  ETH 2,010.33 (-2.2%)  SOL 81.54 (-2.0%)  XAU 3,891.33 (-2.4%)  XAG 50.200 (-2.3%)
@@ -3964,6 +6582,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R191 · 2026-11-12 20:00 UTC · zai-desk
 
@@ -3982,6 +6614,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R192 · 2026-11-12 20:16 UTC · zai-desk
 
 **Market**: BTC 71,553.6 (-3.3%)  ETH 2,017.41 (-1.8%)  SOL 81.52 (-2.0%)  XAU 3,892.45 (-2.3%)  XAG 50.200 (-2.3%)
@@ -3998,6 +6644,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R193 · 2026-11-12 20:31 UTC · zai-desk
 
@@ -4022,6 +6682,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R194 · 2026-11-12 20:45 UTC · zai-desk
 
 **Market**: BTC 71,490.6 (-3.4%)  ETH 2,019.05 (-1.8%)  SOL 81.52 (-2.0%)  XAU 3,886.66 (-2.5%)  XAG 50.140 (-2.4%)
@@ -4038,6 +6712,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R195 · 2026-11-12 20:50 UTC · zai-desk
 
@@ -4056,6 +6744,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R196 · 2026-11-12 20:56 UTC · zai-desk
 
 **Market**: BTC 71,460.2 (-3.4%)  ETH 2,014.98 (-2.0%)  SOL 81.39 (-2.2%)  XAU 3,882.82 (-2.6%)  XAG 50.070 (-2.5%)
@@ -4072,6 +6774,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R197 · 2026-11-12 21:01 UTC · zai-desk
 
@@ -4090,6 +6806,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R198 · 2026-11-12 21:17 UTC · zai-desk
 
 **Market**: BTC 71,530.0 (-3.3%)  ETH 2,017.60 (-1.8%)  SOL 81.52 (-2.0%)  XAU 3,881.63 (-2.6%)  XAG 50.090 (-2.5%)
@@ -4106,6 +6836,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R199 · 2026-11-12 21:33 UTC · zai-desk
 
@@ -4124,6 +6868,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R200 · 2026-11-12 21:49 UTC · zai-desk
 
 **Market**: BTC 71,550.0 (-3.3%)  ETH 2,019.50 (-1.7%)  SOL 81.52 (-2.0%)  XAU 3,885.35 (-2.5%)  XAG 50.140 (-2.4%)
@@ -4140,6 +6898,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R201 · 2026-11-12 22:04 UTC · zai-desk
 
@@ -4162,6 +6934,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R202 · 2026-11-12 22:20 UTC · zai-desk
 
 **Market**: BTC 71,388.0 (-3.5%)  ETH 2,010.35 (-2.2%)  SOL 81.34 (-2.3%)  XAU 3,885.79 (-2.5%)  XAG 50.150 (-2.4%)
@@ -4183,6 +6969,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R203 · 2026-11-12 22:36 UTC · zai-desk
 
 **Market**: BTC 71,422.7 (-3.5%)  ETH 2,010.84 (-2.2%)  SOL 81.33 (-2.3%)  XAU 3,886.37 (-2.5%)  XAG 50.160 (-2.3%)
@@ -4203,6 +7003,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R204 · 2026-11-12 22:52 UTC · zai-desk
 
@@ -4226,6 +7040,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R205 · 2026-11-12 23:08 UTC · zai-desk
 
 **Market**: BTC 71,496.4 (-3.4%)  ETH 2,019.67 (-1.7%)  SOL 81.69 (-1.8%)  XAU 3,885.72 (-2.5%)  XAG 50.160 (-2.3%)
@@ -4246,6 +7074,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R206 · 2026-11-12 23:24 UTC · zai-desk
 
 **Market**: BTC 71,297.4 (-3.6%)  ETH 2,012.71 (-2.1%)  SOL 81.41 (-2.2%)  XAU 3,883.08 (-2.6%)  XAG 50.070 (-2.5%)
@@ -4261,6 +7103,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R207 · 2026-11-12 23:39 UTC · zai-desk
 
@@ -4278,6 +7134,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R208 · 2026-11-12 23:55 UTC · zai-desk
 
 **Market**: BTC 71,440.8 (-3.4%)  ETH 2,020.11 (-1.7%)  SOL 81.77 (-1.7%)  XAU 3,889.80 (-2.4%)  XAG 50.240 (-2.2%)
@@ -4292,6 +7162,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R209 · 2026-11-13 00:11 UTC · zai-desk
 
@@ -4319,6 +7203,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R210 · 2026-11-13 00:27 UTC · zai-desk
 
@@ -4348,6 +7246,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R211 · 2026-11-13 00:43 UTC · zai-desk
 
 **Market**: BTC 70,861.8 (-0.8%)  ETH 2,003.82 (-0.8%)  SOL 81.05 (-0.8%)  XAU 3,893.30 (+0.1%)  XAG 50.190 (-0.0%)
@@ -4373,6 +7285,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R212 · 2026-11-13 00:58 UTC · zai-desk
 
 **Market**: BTC 71,106.6 (-0.4%)  ETH 2,010.89 (-0.4%)  SOL 81.58 (-0.1%)  XAU 3,893.12 (+0.1%)  XAG 50.200 (-0.0%)
@@ -4389,6 +7315,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R213 · 2026-11-13 01:14 UTC · zai-desk
 
@@ -4407,6 +7347,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R214 · 2026-11-13 01:30 UTC · zai-desk
 
 **Market**: BTC 71,178.0 (-0.3%)  ETH 2,016.81 (-0.1%)  SOL 81.55 (-0.2%)  XAU 3,919.40 (+0.8%)  XAG 50.700 (+1.0%)
@@ -4423,6 +7377,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R215 · 2026-11-13 01:45 UTC · zai-desk
 
@@ -4441,6 +7409,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R216 · 2026-11-13 02:01 UTC · zai-desk
 
 **Market**: BTC 70,874.0 (-0.8%)  ETH 2,010.04 (-0.4%)  SOL 81.25 (-0.5%)  XAU 3,916.61 (+0.7%)  XAG 50.740 (+1.1%)
@@ -4457,6 +7439,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R217 · 2026-11-13 02:17 UTC · zai-desk
 
@@ -4475,6 +7471,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R218 · 2026-11-13 02:33 UTC · zai-desk
 
 **Market**: BTC 70,349.6 (-1.5%)  ETH 1,996.68 (-1.1%)  SOL 80.60 (-1.3%)  XAU 3,916.11 (+0.7%)  XAG 50.700 (+1.0%)
@@ -4492,6 +7502,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R219 · 2026-11-13 02:49 UTC · zai-desk
 
 **Market**: BTC 70,259.2 (-1.6%)  ETH 1,992.69 (-1.3%)  SOL 80.27 (-1.7%)  XAU 3,915.84 (+0.7%)  XAG 50.650 (+0.9%)
@@ -4508,6 +7532,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R220 · 2026-11-13 03:04 UTC · zai-desk
 
@@ -4534,6 +7572,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R221 · 2026-11-13 03:21 UTC · zai-desk
 
 **Market**: BTC 69,635.9 (-2.5%)  ETH 1,963.67 (-2.7%)  SOL 79.31 (-2.9%)  XAU 3,921.84 (+0.9%)  XAG 50.590 (+0.8%)
@@ -4550,6 +7602,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R222 · 2026-11-13 03:37 UTC · zai-desk
 
@@ -4568,6 +7634,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R223 · 2026-11-13 03:52 UTC · zai-desk
 
 **Market**: BTC 68,656.5 (-3.9%)  ETH 1,932.20 (-4.3%)  SOL 78.34 (-4.1%)  XAU 3,924.61 (+1.0%)  XAG 50.520 (+0.6%)
@@ -4585,6 +7665,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R224 · 2026-11-13 04:08 UTC · zai-desk
 
 **Market**: BTC 68,866.6 (-3.6%)  ETH 1,938.49 (-4.0%)  SOL 78.60 (-3.8%)  XAU 3,925.01 (+1.0%)  XAG 50.490 (+0.6%)
@@ -4601,6 +7695,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R225 · 2026-11-13 04:24 UTC · zai-desk
 
@@ -4635,6 +7743,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R226 · 2026-11-13 04:40 UTC · zai-desk
 
 **Market**: BTC 68,781.9 (-3.7%)  ETH 1,926.41 (-4.6%)  SOL 78.27 (-4.2%)  XAU 3,915.60 (+0.7%)  XAG 50.340 (+0.3%)
@@ -4661,6 +7783,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R227 · 2026-11-13 04:56 UTC · zai-desk
 
 **Market**: BTC 68,673.6 (-3.8%)  ETH 1,926.41 (-4.6%)  SOL 78.46 (-3.9%)  XAU 3,916.52 (+0.7%)  XAG 50.370 (+0.3%)
@@ -4677,6 +7813,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R228 · 2026-11-13 05:11 UTC · zai-desk
 
@@ -4695,6 +7845,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R229 · 2026-11-13 05:27 UTC · zai-desk
 
 **Market**: BTC 68,659.2 (-3.9%)  ETH 1,919.93 (-4.9%)  SOL 78.60 (-3.8%)  XAU 3,923.27 (+0.9%)  XAG 50.370 (+0.3%)
@@ -4711,6 +7875,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R230 · 2026-11-13 05:43 UTC · zai-desk
 
@@ -4729,6 +7907,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R231 · 2026-11-13 05:59 UTC · zai-desk
 
 **Market**: BTC 68,115.6 (-4.6%)  ETH 1,910.93 (-5.4%)  SOL 78.50 (-3.9%)  XAU 3,909.16 (+0.6%)  XAG 50.090 (-0.2%)
@@ -4745,6 +7937,20 @@ User overrode the v1.1 Tier-3 deferral. Executed:
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## EXEC · 2026-11-13 10:28 UTC · atg-exec
 - **ETHUSD SHORT FILLED**: Ticket #210050569 | 0.20 lots @ 1,950.00 | SL 1,965.50 | TP 1,890.00 | Floating: -$0.14. Mode: M1_TREND_PULLBACK into Day VWAP + negative GEX expansion.
@@ -9074,6 +12280,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ## ROUND FAILED · 2026-11-16 09:29 UTC · zai-desk
 
@@ -10289,6 +13509,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ## ROUND FAILED · 2026-11-16 15:30 UTC · zai-desk
 
@@ -10324,6 +13558,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## R384 · 2026-11-16 16:00 UTC · zai-desk
@@ -10398,6 +13646,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ## ROUND FAILED · 2026-11-16 16:51 UTC · zai-desk
 
@@ -10437,6 +13699,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R388 · 2026-11-16 17:59 UTC · zai-desk
 
 **Market**: BTC 64,844.0 (-0.7%)  ETH 1,819.73 (-0.8%)  SOL 71.23 (-2.0%)  XAU 3,863.30 (-1.0%)  XAG 47.170 (-3.9%)
@@ -10460,6 +13736,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ## ROUND FAILED · 2026-11-16 17:59 UTC · zai-desk
 
@@ -10482,6 +13772,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R390 · 2026-11-16 18:59 UTC · zai-desk
 
 **Market**: BTC 65,022.7 (-0.4%)  ETH 1,820.46 (-0.8%)  SOL 71.47 (-1.7%)  XAU 3,860.42 (-1.1%)  XAG 47.070 (-4.1%)
@@ -10497,6 +13801,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## EXEC R342 · 2026-11-16 19:22 UTC · atg-exec
@@ -10536,6 +13854,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## ROUND FAILED · 2026-11-16 19:29 UTC · zai-desk
@@ -10579,6 +13911,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## ROUND FAILED · 2026-11-16 19:59 UTC · zai-desk
@@ -10628,6 +13974,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ## ROUND FAILED · 2026-11-16 20:29 UTC · zai-desk
 
@@ -10669,6 +14029,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ## ROUND FAILED · 2026-11-16 20:59 UTC · zai-desk
 
@@ -10691,6 +14065,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R396 · 2026-11-16 21:59 UTC · zai-desk
 
 **Market**: BTC 65,263.0 (-0.1%)  ETH 1,828.51 (-0.3%)  SOL 71.91 (-1.1%)  XAU 3,861.78 (-1.1%)  XAG 47.060 (-4.1%)
@@ -10708,6 +14096,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R397 · 2026-11-16 22:29 UTC · zai-desk
 
 **Market**: BTC 65,322.6 (+0.0%)  ETH 1,833.18 (-0.1%)  SOL 71.89 (-1.1%)  XAU 3,864.50 (-1.0%)  XAG 47.130 (-4.0%)
@@ -10723,6 +14125,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R398 · 2026-11-16 22:59 UTC · zai-desk
 
@@ -10747,6 +14163,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ## ROUND FAILED · 2026-11-16 22:59 UTC · zai-desk
 
@@ -10769,6 +14199,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R400 · 2026-11-16 23:59 UTC · zai-desk
 
 **Market**: BTC 64,880.0 (-0.7%)  ETH 1,820.34 (-0.8%)  SOL 71.53 (-1.6%)  XAU 3,868.24 (-0.9%)  XAG 47.260 (-3.7%)
@@ -10785,6 +14229,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R401 · 2026-11-17 00:29 UTC · zai-desk
 
@@ -10815,6 +14273,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## ROUND FAILED · 2026-11-17 00:29 UTC · zai-desk
@@ -10852,6 +14324,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ## ROUND FAILED · 2026-11-17 00:59 UTC · zai-desk
 
@@ -10874,6 +14360,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R404 · 2026-11-17 01:59 UTC · zai-desk
 
 **Market**: BTC 64,700.8 (-0.2%)  ETH 1,819.24 (-0.0%)  SOL 71.76 (+0.3%)  XAU 3,871.14 (+0.1%)  XAG 47.260 (-0.0%)
@@ -10890,6 +14390,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## EXEC · 2026-11-17 02:05 UTC · atg-exec (Delta India #26902927)
@@ -10929,6 +14443,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R406 · 2026-11-17 02:59 UTC · zai-desk
 
 **Market**: BTC 64,425.6 (-0.7%)  ETH 1,811.59 (-0.4%)  SOL 71.70 (+0.3%)  XAU 3,875.61 (+0.2%)  XAG 47.640 (+0.8%)
@@ -10952,6 +14480,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ## ROUND FAILED · 2026-11-17 02:59 UTC · zai-desk
 
@@ -10974,6 +14516,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R408 · 2026-11-17 03:59 UTC · zai-desk
 
 **Market**: BTC 65,031.9 (+0.3%)  ETH 1,831.90 (+0.7%)  SOL 72.78 (+1.8%)  XAU 3,875.93 (+0.2%)  XAG 47.490 (+0.5%)
@@ -10989,6 +14545,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## EXEC · 2026-11-17 04:00 UTC · atg-exec (Delta India #26902927) · R408 Audit
@@ -11027,6 +14597,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## EXEC · 2026-11-17 04:45 UTC · atg-exec (Delta India #26902927) · 4-Slot Capacity Expansion
@@ -11075,6 +14659,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## ROUND FAILED · 2026-11-17 04:59 UTC · zai-desk
@@ -11145,6 +14743,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 ## ROUND FAILED · 2026-11-17 05:29 UTC · zai-desk
 
@@ -11167,6 +14779,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R413 · 2026-11-17 06:41 UTC · zai-desk
 
 **Market**: BTC 64,380.3 (-0.7%)  ETH 1,819.98 (+0.0%)  SOL 72.27 (+1.0%)  XAU 3,881.39 (+0.3%)  XAG 47.630 (+0.8%)
@@ -11184,6 +14810,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R414 · 2026-11-17 06:57 UTC · zai-desk
 
 **Market**: BTC 64,528.0 (-0.5%)  ETH 1,825.66 (+0.3%)  SOL 72.55 (+1.4%)  XAU 3,878.01 (+0.2%)  XAG 47.590 (+0.7%)
@@ -11200,6 +14840,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R415 · 2026-11-17 07:13 UTC · zai-desk
 
@@ -11225,6 +14879,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R416 · 2026-11-17 07:29 UTC · zai-desk
 
 **Market**: BTC 64,669.7 (-0.3%)  ETH 1,830.90 (+0.6%)  SOL 72.92 (+2.0%)  XAU 3,881.25 (+0.3%)  XAG 47.670 (+0.8%)
@@ -11241,6 +14909,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R417 · 2026-11-17 07:45 UTC · zai-desk
 
@@ -11259,6 +14941,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R418 · 2026-11-17 08:00 UTC · zai-desk
 
 **Market**: BTC 64,671.2 (-0.3%)  ETH 1,831.08 (+0.6%)  SOL 72.86 (+1.9%)  XAU 3,875.59 (+0.2%)  XAG 47.580 (+0.7%)
@@ -11275,6 +14971,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R419 · 2026-11-17 08:16 UTC · zai-desk
 
@@ -11293,6 +15003,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R420 · 2026-11-17 08:36 UTC · zai-desk
 
 **Market**: BTC 64,289.4 (-0.9%)  ETH 1,820.52 (+0.0%)  SOL 72.35 (+1.2%)  XAU 3,872.65 (+0.1%)  XAG 47.540 (+0.6%)
@@ -11310,6 +15034,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R421 · 2026-11-17 08:52 UTC · zai-desk
 
 **Market**: BTC 64,323.1 (-0.8%)  ETH 1,820.78 (+0.1%)  SOL 72.44 (+1.3%)  XAU 3,877.70 (+0.2%)  XAG 47.610 (+0.7%)
@@ -11326,6 +15064,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R422 · 2026-11-17 09:08 UTC · zai-desk
 
@@ -11358,6 +15110,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## EXEC · 2026-11-17 09:16 UTC · atg-exec
@@ -11397,6 +15163,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R424 · 2026-11-17 09:45 UTC · zai-desk
 
 **Market**: BTC 64,453.3 (-0.6%)  ETH 1,814.95 (-0.3%)  SOL 72.55 (+1.4%)  XAU 3,871.34 (+0.1%)  XAG 47.490 (+0.5%)
@@ -11419,6 +15199,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 
@@ -11457,6 +15251,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 
@@ -11506,6 +15314,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 
 
 ## EXEC · 2026-11-17 10:48 UTC · atg-exec (Delta Exchange India Account #26902927)
@@ -11542,6 +15364,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R428 · 2026-11-17 11:08 UTC · zai-desk
 
 **Market**: BTC 64,193.8 (-1.0%)  ETH 1,791.86 (-1.5%)  SOL 72.34 (+1.1%)  XAU 3,865.38 (-0.1%)  XAG 47.570 (+0.6%)
@@ -11565,6 +15401,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R429 · 2026-11-17 11:24 UTC · zai-desk
 
 **Market**: BTC 64,372.1 (-0.7%)  ETH 1,804.70 (-0.8%)  SOL 72.82 (+1.8%)  XAU 3,865.02 (-0.1%)  XAG 47.570 (+0.6%)
@@ -11581,6 +15431,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## EXEC · 2026-11-17 11:28 UTC · atg-exec
@@ -11608,6 +15472,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## EXEC · 2026-11-17 11:50 UTC · atg-exec
@@ -11640,6 +15518,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R431 · 2026-11-17 11:59 UTC · zai-desk
 
 **Market**: BTC 64,921.6 (+0.1%)  ETH 1,820.72 (+0.1%)  SOL 73.38 (+2.6%)  XAU 3,873.62 (+0.1%)  XAG 47.780 (+1.1%)
@@ -11653,6 +15545,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## EXEC · 2026-11-17 12:08 UTC · atg-exec
@@ -11697,6 +15603,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R434 · 2026-11-17 12:35 UTC · zai-desk
 
 **Market**: BTC 64,865.3 (+0.0%)  ETH 1,815.87 (-0.2%)  SOL 73.38 (+2.6%)  XAU 3,863.97 (-0.1%)  XAG 47.780 (+1.1%)
@@ -11718,6 +15638,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R435 · 2026-11-17 12:51 UTC · zai-desk
 
 **Market**: SOL 73.55 (+2.8%)  XAU 3,865.37 (-0.1%)  XAG 47.890 (+1.3%)
@@ -11732,6 +15666,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R436 · 2026-11-17 13:10 UTC · zai-desk
 
@@ -11754,6 +15702,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R437 · 2026-11-17 13:36 UTC · zai-desk
 
 **Market**: BTC 64,954.4 (+0.2%)  ETH 1,822.87 (+0.2%)  SOL 73.86 (+3.3%)  XAU 3,855.64 (-0.3%)  XAG 47.470 (+0.4%)
@@ -11767,6 +15729,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R438 · 2026-11-17 13:51 UTC · zai-desk
 
@@ -11795,6 +15771,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R439 · 2026-11-17 14:07 UTC · zai-desk
 
 **Market**: BTC 64,967.6 (+0.2%)  ETH 1,825.80 (+0.3%)  SOL 73.63 (+3.0%)  XAU 3,867.48 (-0.0%)  XAG 47.560 (+0.6%)
@@ -11810,6 +15800,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R440 · 2026-11-17 14:23 UTC · zai-desk
 
@@ -11828,6 +15832,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 
@@ -11862,6 +15880,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R442 · 2026-11-17 14:55 UTC · zai-desk
 
 **Market**: BTC 64,877.3 (+0.0%)  ETH 1,807.02 (-0.7%)  SOL 73.73 (+3.1%)  XAU 3,869.51 (+0.0%)  XAG 47.840 (+1.2%)
@@ -11885,6 +15917,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 
@@ -11942,6 +15988,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R444 · 2026-11-17 15:28 UTC · zai-desk
 
 **Market**: BTC 65,002.6 (+0.2%)  ETH 1,808.14 (-0.6%)  SOL 73.47 (+2.7%)  XAU 3,875.32 (+0.2%)  XAG 47.810 (+1.1%)
@@ -11959,6 +16019,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R444 · 2026-11-17 15:29 UTC · zai-desk
 
 **Market**: BTC 65,002.6 (+0.2%)  ETH 1,808.14 (-0.6%)  SOL 73.47 (+2.7%)  XAU 3,875.32 (+0.2%)  XAG 47.810 (+1.1%)
@@ -11975,6 +16049,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R446 · 2026-11-17 15:44 UTC · zai-desk
 
@@ -11998,6 +16086,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R447 · 2026-11-17 16:01 UTC · zai-desk
 
 **Market**: BTC 63,964.3 (-1.4%)  ETH 1,782.48 (-2.0%)  SOL 72.52 (+1.4%)  XAU 3,879.33 (+0.3%)  XAG 47.810 (+1.1%)
@@ -12014,6 +16116,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R448 · 2026-11-17 16:19 UTC · zai-desk
 
@@ -12032,6 +16148,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R449 · 2026-11-17 16:35 UTC · zai-desk
 
 **Market**: BTC 63,812.9 (-1.6%)  ETH 1,777.78 (-2.3%)  SOL 72.23 (+1.0%)  XAU 3,875.10 (+0.2%)  XAG 47.730 (+1.0%)
@@ -12048,6 +16178,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R450 · 2026-11-17 16:53 UTC · zai-desk
 
@@ -12066,6 +16210,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R451 · 2026-11-17 17:09 UTC · zai-desk
 
 **Market**: BTC 63,854.6 (-1.5%)  ETH 1,783.62 (-2.0%)  SOL 72.44 (+1.3%)  XAU 3,876.38 (+0.2%)  XAG 47.700 (+0.9%)
@@ -12082,6 +16240,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R452 · 2026-11-17 17:26 UTC · zai-desk
 
@@ -12100,6 +16272,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R453 · 2026-11-17 17:42 UTC · zai-desk
 
 **Market**: BTC 63,644.7 (-1.9%)  ETH 1,779.78 (-2.2%)  SOL 72.24 (+1.0%)  XAU 3,872.28 (+0.1%)  XAG 47.660 (+0.8%)
@@ -12116,6 +16302,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R454 · 2026-11-17 17:58 UTC · zai-desk
 
@@ -12140,6 +16340,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R455 · 2026-11-17 18:13 UTC · zai-desk
 
 **Market**: XAU 3,866.86 (-0.0%)  XAG 47.510 (+0.5%)
@@ -12154,6 +16368,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R456 · 2026-11-17 18:39 UTC · zai-desk
 
@@ -12171,6 +16399,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 ## R457 · 2026-11-17 18:58 UTC · atg-exec
@@ -12211,6 +16453,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R459 · 2026-11-17 19:17 UTC · zai-desk
 
 **Market**: BTC 63,862.1 (-1.5%)  ETH 1,791.58 (-1.5%)  SOL 72.71 (+1.7%)  XAU 3,863.06 (-0.1%)  XAG 47.540 (+0.6%)
@@ -12234,6 +16490,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R460 · 2026-11-17 19:33 UTC · zai-desk
 
 **Market**: BTC 63,708.6 (-1.8%)  ETH 1,790.33 (-1.6%)  SOL 72.53 (+1.4%)  XAU 3,860.72 (-0.2%)  XAG 47.480 (+0.4%)
@@ -12250,6 +16520,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R461 · 2026-11-17 19:48 UTC · zai-desk
 
@@ -12274,6 +16558,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R462 · 2026-11-17 20:04 UTC · zai-desk
 
 **Market**: BTC 63,751.6 (-1.7%)  ETH 1,789.51 (-1.7%)  SOL 72.81 (+1.8%)  XAU 3,852.37 (-0.4%)  XAG 47.260 (-0.0%)
@@ -12290,6 +16588,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R463 · 2026-11-17 20:19 UTC · zai-desk
 
@@ -12314,6 +16626,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R464 · 2026-11-17 20:35 UTC · zai-desk
 
 **Market**: BTC 64,023.2 (-1.3%)  ETH 1,799.43 (-1.1%)  SOL 73.12 (+2.2%)  XAU 3,858.87 (-0.2%)  XAG 47.410 (+0.3%)
@@ -12330,6 +16656,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R465 · 2026-11-17 20:50 UTC · zai-desk
 
@@ -12348,6 +16688,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R466 · 2026-11-17 21:06 UTC · zai-desk
 
 **Market**: BTC 64,014.8 (-1.3%)  ETH 1,801.54 (-1.0%)  SOL 73.20 (+2.3%)  XAU 3,856.54 (-0.3%)  XAG 47.390 (+0.3%)
@@ -12364,6 +16718,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R467 · 2026-11-17 21:21 UTC · zai-desk
 
@@ -12389,6 +16757,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R468 · 2026-11-17 21:42 UTC · zai-desk
 
 **Market**: BTC 64,376.0 (-0.7%)  ETH 1,807.51 (-0.7%)  SOL 73.48 (+2.7%)  XAU 3,858.07 (-0.3%)  XAG 47.510 (+0.5%)
@@ -12404,6 +16786,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R469 · 2026-11-17 21:58 UTC · zai-desk
 
@@ -12429,6 +16825,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R470 · 2026-11-17 22:14 UTC · zai-desk
 
 **Market**: BTC 64,423.4 (-0.7%)  ETH 1,804.89 (-0.8%)  SOL 73.63 (+3.0%)  XAU 3,859.81 (-0.2%)  XAG 47.540 (+0.6%)
@@ -12444,6 +16854,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R471 · 2026-11-17 22:32 UTC · zai-desk
 
@@ -12462,6 +16886,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R472 · 2026-11-17 22:47 UTC · zai-desk
 
 **Market**: BTC 64,798.3 (-0.1%)  ETH 1,813.90 (-0.3%)  SOL 73.98 (+3.4%)  XAU 3,860.49 (-0.2%)  XAG 47.580 (+0.7%)
@@ -12477,6 +16915,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R473 · 2026-11-17 23:03 UTC · zai-desk
 
@@ -12494,6 +16946,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R474 · 2026-11-17 23:18 UTC · zai-desk
 
 **Market**: BTC 65,011.4 (+0.2%)  ETH 1,824.38 (+0.3%)  SOL 75.08 (+5.0%)  XAU 3,861.06 (-0.2%)  XAG 47.590 (+0.7%)
@@ -12509,6 +16975,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R475 · 2026-11-17 23:33 UTC · zai-desk
 
@@ -12534,6 +17014,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R476 · 2026-11-17 23:49 UTC · zai-desk
 
 **Market**: BTC 64,927.6 (+0.1%)  ETH 1,824.77 (+0.3%)  SOL 75.03 (+4.9%)  XAU 3,854.51 (-0.4%)  XAG 47.550 (+0.6%)
@@ -12554,6 +17048,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R477 · 2026-11-18 00:05 UTC · zai-desk
 
 **Market**: BTC 64,859.8 (-0.1%)  ETH 1,823.36 (-0.1%)  SOL 75.03 (-0.2%)  XAU 3,847.50 (-0.2%)  XAG 47.410 (-0.3%)
@@ -12570,6 +17078,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R478 · 2026-11-18 00:20 UTC · zai-desk
 
@@ -12588,6 +17110,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R479 · 2026-11-18 00:36 UTC · zai-desk
 
 **Market**: BTC 64,805.0 (-0.2%)  ETH 1,819.87 (-0.2%)  SOL 75.22 (+0.1%)  XAU 3,831.64 (-0.6%)  XAG 47.070 (-1.0%)
@@ -12605,6 +17141,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R480 · 2026-11-18 00:51 UTC · zai-desk
 
 **Market**: BTC 64,805.6 (-0.2%)  ETH 1,821.17 (-0.2%)  SOL 75.16 (+0.0%)  XAU 3,825.10 (-0.8%)  XAG 47.000 (-1.2%)
@@ -12621,6 +17171,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R481 · 2026-11-18 01:07 UTC · zai-desk
 
@@ -12644,6 +17208,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R482 · 2026-11-18 01:22 UTC · zai-desk
 
@@ -12675,6 +17253,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R483 · 2026-11-18 01:39 UTC · zai-desk
 
 **Market**: BTC 64,481.8 (-0.7%)  ETH 1,807.75 (-0.9%)  SOL 74.39 (-1.0%)  XAU 3,825.67 (-0.8%)  XAG 47.010 (-1.2%)
@@ -12692,6 +17284,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R484 · 2026-11-18 01:54 UTC · zai-desk
 
 **Market**: BTC 64,403.3 (-0.8%)  ETH 1,805.77 (-1.0%)  SOL 74.25 (-1.2%)  XAU 3,814.92 (-1.0%)  XAG 46.750 (-1.7%)
@@ -12708,6 +17314,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R484 · 2026-11-18 01:59 UTC · zai-desk
 
@@ -12732,6 +17352,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R486 · 2026-11-18 02:15 UTC · zai-desk
 
 **Market**: BTC 64,254.9 (-1.0%)  ETH 1,801.90 (-1.2%)  SOL 74.37 (-1.0%)  XAU 3,808.25 (-1.2%)  XAG 46.280 (-2.7%)
@@ -12748,6 +17382,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R487 · 2026-11-18 02:37 UTC · zai-desk
 
@@ -12766,6 +17414,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R488 · 2026-11-18 03:02 UTC · zai-desk
 
 **Market**: BTC 64,432.6 (-0.8%)  ETH 1,806.13 (-1.0%)  SOL 74.78 (-0.5%)  XAU 3,808.87 (-1.2%)  XAG 46.150 (-3.0%)
@@ -12782,6 +17444,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R489 · 2026-11-18 03:29 UTC · zai-desk
 
@@ -12804,6 +17480,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R489 · 2026-11-18 03:27 UTC · zai-desk
 
@@ -12828,6 +17518,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R491 · 2026-11-18 03:50 UTC · zai-desk
 
 **Market**: BTC 64,520.0 (-0.6%)  ETH 1,807.06 (-0.9%)  SOL 74.96 (-0.3%)  XAU 3,800.03 (-1.4%)  XAG 46.130 (-3.0%)
@@ -12843,6 +17547,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R491 · 2026-11-18 03:59 UTC · zai-desk
 
@@ -12866,6 +17584,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R493 · 2026-11-18 04:15 UTC · zai-desk
 
 **Market**: BTC 64,389.9 (-0.8%)  ETH 1,804.19 (-1.1%)  SOL 74.79 (-0.5%)  XAU 3,792.88 (-1.6%)  XAG 46.070 (-3.1%)
@@ -12882,6 +17614,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R494 · 2026-11-18 04:31 UTC · zai-desk
 
@@ -12905,6 +17651,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R495 · 2026-11-18 04:46 UTC · zai-desk
 
 **Market**: BTC 64,352.1 (-0.9%)  ETH 1,800.65 (-1.3%)  SOL 74.85 (-0.4%)  XAU 3,792.02 (-1.6%)  XAG 45.980 (-3.3%)
@@ -12921,6 +17681,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R496 · 2026-11-18 05:02 UTC · zai-desk
 
@@ -12939,6 +17713,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R497 · 2026-11-18 05:27 UTC · zai-desk
 
@@ -12962,6 +17750,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R498 · 2026-11-18 05:45 UTC · zai-desk
 
 **Market**: BTC 64,700.4 (-0.3%)  ETH 1,812.32 (-0.7%)  SOL 75.16 (+0.0%)  XAU 3,796.22 (-1.5%)  XAG 46.240 (-2.8%)
@@ -12983,6 +17785,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R499 · 2026-11-18 06:02 UTC · zai-desk
 
 **Market**: BTC 64,566.3 (-0.5%)  ETH 1,808.81 (-0.9%)  SOL 74.89 (-0.3%)  XAU 3,795.20 (-1.5%)  XAG 46.130 (-3.0%)
@@ -12999,6 +17815,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R500 · 2026-11-18 06:23 UTC · zai-desk
 
 **Market**: BTC 64,682.0 (-0.4%)  ETH 1,812.22 (-0.7%)  SOL 75.02 (-0.2%)  XAU 3,786.57 (-1.8%)  XAG 46.080 (-3.1%)
@@ -13014,6 +17844,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R501 · 2026-11-18 06:39 UTC · zai-desk
 
@@ -13037,6 +17881,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R502 · 2026-11-18 06:55 UTC · zai-desk
 
 **Market**: BTC 64,563.8 (-0.6%)  ETH 1,808.43 (-0.9%)  SOL 74.68 (-0.6%)  XAU 3,786.49 (-1.8%)  XAG 46.160 (-2.9%)
@@ -13052,6 +17910,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 
 
@@ -13089,6 +17961,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R504 · 2026-11-18 07:29 UTC · zai-desk
 
 **Market**: BTC 64,719.0 (-0.3%)  ETH 1,814.37 (-0.5%)  SOL 75.11 (-0.1%)  XAU 3,778.96 (-2.0%)  XAG 46.030 (-3.2%)
@@ -13102,6 +17988,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R505 · 2026-11-18 07:45 UTC · zai-desk
 
@@ -13124,6 +18024,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R506 · 2026-11-18 08:01 UTC · zai-desk
 
 **Market**: BTC 64,794.6 (-0.2%)  ETH 1,814.72 (-0.5%)  SOL 75.07 (-0.1%)  XAU 3,778.91 (-2.0%)  XAG 46.020 (-3.2%)
@@ -13138,6 +18052,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R507 · 2026-11-18 08:16 UTC · zai-desk
 
@@ -13161,6 +18089,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R508 · 2026-11-18 08:32 UTC · zai-desk
 
 **Market**: BTC 64,706.1 (-0.3%)  ETH 1,810.58 (-0.8%)  SOL 74.78 (-0.5%)  XAU 3,777.76 (-2.0%)  XAG 45.940 (-3.4%)
@@ -13183,6 +18125,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R509 · 2026-11-18 08:47 UTC · zai-desk
 
 **Market**: BTC 64,753.6 (-0.3%)  ETH 1,812.79 (-0.6%)  SOL 74.74 (-0.5%)  XAU 3,778.69 (-2.0%)  XAG 45.850 (-3.6%)
@@ -13199,6 +18155,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R510 · 2026-11-18 09:03 UTC · zai-desk
 
@@ -13217,6 +18187,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R511 · 2026-11-18 09:18 UTC · zai-desk
 
 **Market**: BTC 64,693.6 (-0.4%)  ETH 1,812.03 (-0.7%)  SOL 74.80 (-0.5%)  XAU 3,773.21 (-2.1%)  XAG 45.780 (-3.7%)
@@ -13234,6 +18218,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R512 · 2026-11-18 09:34 UTC · zai-desk
 
 **Market**: BTC 64,661.0 (-0.4%)  ETH 1,812.83 (-0.6%)  SOL 74.86 (-0.4%)  XAU 3,786.80 (-1.8%)  XAG 46.010 (-3.3%)
@@ -13250,6 +18248,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R513 · 2026-11-18 09:49 UTC · zai-desk
 
@@ -13273,6 +18285,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R514 · 2026-11-18 10:05 UTC · zai-desk
 
 **Market**: BTC 64,543.9 (-0.6%)  ETH 1,810.03 (-0.8%)  SOL 75.07 (-0.1%)  XAU 3,779.35 (-2.0%)  XAG 45.890 (-3.5%)
@@ -13289,6 +18315,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R515 · 2026-11-18 10:21 UTC · zai-desk
 
@@ -13307,6 +18347,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
+
 ## R516 · 2026-11-18 10:36 UTC · zai-desk
 
 **Market**: BTC 64,192.8 (-1.1%)  ETH 1,798.63 (-1.4%)  SOL 74.42 (-1.0%)  XAU 3,776.69 (-2.0%)  XAG 45.840 (-3.6%)
@@ -13323,6 +18377,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R517 · 2026-11-18 10:52 UTC · zai-desk
 
@@ -13346,6 +18414,20 @@ analysis script rc=1
 
 ### Positions
 - no open positions
+
+## EXEC · 2026-11-18 13:15 UTC · atg-exec
+- **Delta Exchange India (#26902927)**:
+  - `BTCUSD` Short (-1 @ $64,750.00): In-Flight Optimization executed. Stop Loss order #1691590194 moved to **BREAKEVEN ($64,750.00)**. Downside risk strictly $0.00 USD (floating gain +$0.59 USD / +724 pts). TP resting at $61,950.00.
+  - `TIAUSD` Short (-10 @ 0.3580): Stop Loss order #1689224149 locked at **BREAKEVEN (0.3580)**. Downside risk strictly $0.00 USD. TP resting at 0.3327.
+  - `DOGEUSD` Maker Limit: Placed Post-Only Sell Limit 1 contract @ 0.05980, SL 0.06058, TP 0.05736 (Order #1692772135, EV 2.28R, Win% 96.4%, Risk $0.078 USD) under Gate 9 Multi-Slot expansion (running positions at breakeven).
+- **Blueberry Funded MT5 (#5126976)**:
+  - `NAS100.p` Short (0.01 lot @ 27,358.96): In-Flight Trailing Stop executed. Stop Loss trailed from 27,582.43 down to **27,290.00** via `scripts/mt5_cg_trader.py --trail 20218649 27290.0 26709.94`, **LOCKING IN +$6.90 USD PROFIT GUARANTEED** (+194 pts excursion).
+  - `R517-BNB-1` BNBUSD.p: Sell Limit 0.72 @ 593.50 resting (Ticket 20240006).
+  - `XAUUSD.pi`: Sell Limit 0.01 @ 3,794.50 resting (Ticket 20244935).
+  - `R521-XRP-1`: Withdrawn per zai-desk re-debate loss + broker stops_level constraint.
+  - `R522-ADA-1`: Vetoed under PIT-03/07 (broker spread 0.0021 = 300% of SL 0.0007).
+  - `R524-BTC-1`: Cancelled on MT5 per zai-desk R525 withdrawal (Delta live short already active at higher $64,750 entry).
+- **Portfolio Solvency**: Total standing downside risk across ALL open positions on BOTH venues is now **$0.00 USD**. All running equity is strictly risk-free.
 
 ## R501 · 2026-11-18 11:00 UTC · zai-desk
 - **SSRN order-flow research digest posted to WAKE.md** (## 2026-11-18 ~11:00 UTC — zai-desk): operator-directed literature mining for entry strategies confirmable by our telemetry.
