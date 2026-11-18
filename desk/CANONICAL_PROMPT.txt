@@ -100,11 +100,12 @@ Output: per-trade table (venue, symbol, SL action, TP action, time-stop status).
 - Audit margin usage and available liquidity on both venues.
 - Confirm new orders fit within limits.
 
-## STEP 11: RECURSION & 20-MINUTE TIMER EXECUTION
-11.1 Execute `python scripts/auto_punch_engine.py` to verify all pending orders and newly confirmed signals.
-11.2 Call `schedule(DurationSeconds=1200, Prompt=...)` to arm the dynamic 20-minute timer for the next round.
-11.3 Keep this exact prompt copied in Windows Clipboard so `scripts/auto_prompt_paster.ps1` can paste it into Antigravity continuously.
-11.4 Carry forward this round's lessons and active order tickets to Step 0 of the next round.
+## STEP 11: RECURSION & AUTONOMOUS TIMER EXECUTION
+11.1 Run Runtime Environment & Health Sentry: `python scripts/verify_runtime_environment.py`.
+11.2 Execute `python scripts/auto_punch_engine.py` to evaluate and punch any newly confirmed A+ signals (strictly >= 2.0R hurdle).
+11.3 Call `schedule(DurationSeconds=5400, Prompt=...)` for 90-minute autonomous sleep sentry mode (or `DurationSeconds=1200` for 20-minute active day trading).
+11.4 Keep this canonical prompt copied in Windows Clipboard so `scripts/auto_prompt_paster.ps1` can paste it into Antigravity as needed.
+11.5 Carry forward this round's lessons, active order tickets, and health checks to Step 0 of the next round.
 
 ---
 
@@ -124,4 +125,4 @@ End the response with this table, every row marked DONE / FAILED / N/A:
 | 8 | Running-trade audit + SL cold-zone check | |
 | 9 | A+ hunt + execution cards + orders | |
 | 10 | Margin & liquidity | |
-| 11 | 1200s recursion re-armed | |
+| 11 | Dynamic timer recursion re-armed | |
