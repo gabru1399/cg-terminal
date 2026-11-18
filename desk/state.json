@@ -28,20 +28,20 @@
   },
   "analysis": {
     "last_round": "R547",
-    "last_round_ts": 1795026426697,
+    "last_round_ts": 1795026548353,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
         "price": 63153.7,
         "chgDayPct": -2.722231635372226,
-        "score": -3.78,
+        "score": -2.63,
         "parts": {
           "notif": -0.66,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
           "rsi": 0,
-          "cvd": -1.12
+          "cvd": 0.03
         },
         "error": null
       },
@@ -74,20 +74,20 @@
       "BNB": {
         "price": 584.28,
         "chgDayPct": -2.2747039539707004,
-        "score": -2.69,
+        "score": -4.62,
         "parts": {
           "notif": 0.33,
           "signals": -1,
           "trend": -2.0,
           "vwap": -1,
           "rsi": 0,
-          "cvd": 0.97
+          "cvd": -0.95
         },
         "error": null
       },
       "XRP": {
-        "price": 0.9798,
-        "chgDayPct": -0.36607687614399503,
+        "price": 0.9773,
+        "chgDayPct": -0.6202969290217719,
         "score": -3.97,
         "parts": {
           "notif": 0.0,
@@ -100,8 +100,8 @@
         "error": null
       },
       "ADA": {
-        "price": 0.1519,
-        "chgDayPct": -2.252252252252254,
+        "price": 0.1516,
+        "chgDayPct": -2.4453024453024437,
         "score": -5.86,
         "parts": {
           "notif": -0.66,
@@ -114,8 +114,8 @@
         "error": null
       },
       "AVAX": {
-        "price": 6.993,
-        "chgDayPct": -4.139821795750509,
+        "price": 6.969,
+        "chgDayPct": -4.468814256339954,
         "score": -1.02,
         "parts": {
           "notif": 0.98,
@@ -127,22 +127,22 @@
         "error": null
       },
       "DOGE": {
-        "price": 0.05895,
-        "chgDayPct": -1.9297953751455572,
-        "score": -2.6,
+        "price": 0.05879,
+        "chgDayPct": -2.195974047579429,
+        "score": -4.65,
         "parts": {
           "notif": 0.33,
           "signals": -1,
           "trend": -2.0,
           "vwap": -1,
           "rsi": 0,
-          "cvd": 1.07
+          "cvd": -0.97
         },
         "error": null
       },
       "LINK": {
-        "price": 9.077,
-        "chgDayPct": -2.6490776490776478,
+        "price": 9.061,
+        "chgDayPct": -2.82067782067782,
         "score": -2.0,
         "parts": {
           "notif": 0.0,
@@ -154,8 +154,8 @@
         "error": null
       },
       "LTC": {
-        "price": 43.89,
-        "chgDayPct": -3.1980591089545714,
+        "price": 43.84,
+        "chgDayPct": -3.3083370092633437,
         "score": -2.0,
         "parts": {
           "notif": 0.0,
@@ -167,16 +167,16 @@
         "error": null
       },
       "XAU": {
-        "price": 3746.32,
-        "chgDayPct": -2.8136495467964457,
-        "score": -3.81,
+        "price": 3745.16,
+        "chgDayPct": -2.8437420553183412,
+        "score": -3.89,
         "parts": {
           "notif": 0.66,
           "signals": -1,
           "trend": -2.0,
           "vwap": -1,
           "rsi": 0.5,
-          "cvd": -0.97
+          "cvd": -1.05
         },
         "error": null
       },
@@ -205,19 +205,19 @@
       },
       {
         "sym": "BNB",
-        "score": -2.69
+        "score": -4.62
       },
       {
         "sym": "DOGE",
-        "score": -2.6
+        "score": -4.65
       },
       {
         "sym": "XAU",
-        "score": -3.81
+        "score": -3.89
       },
       {
         "sym": "BTC",
-        "score": -3.78
+        "score": -2.63
       }
     ]
   },
@@ -424,6 +424,23 @@
       "ticket": 20271811,
       "risk_usd": 6.0,
       "r_multiple": 2.46,
+      "confluence": 7.5
+    },
+    {
+      "id": "R547-NAS-1",
+      "symbol": "NAS100",
+      "mt5_symbol": "NAS100.p",
+      "venue": "Blueberry-MT5",
+      "side": "short",
+      "type": "SELL_LIMIT",
+      "volume": 0.01,
+      "entry": 27240.0,
+      "sl": 27330.0,
+      "tp": 26850.0,
+      "status": "placed",
+      "ticket": 20275354,
+      "risk_usd": 9.0,
+      "r_multiple": 4.33,
       "confluence": 7.5
     }
   ],

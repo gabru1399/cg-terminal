@@ -13845,3 +13845,16 @@ analysis script rc=1
   - TP: 26,850.0 (390 pts, 4.33R asymmetric payoff).
   - Risk: $9.00 USD (0.34% of funded equity). Confluence: 7.5 pts Grade A+.
   - Portfolio status: 4 staged pending orders across 4 asset classes (SOLUSD.p, BNBUSD.p, XAUUSD.pi, NAS100.p).
+## R547 · 2026-11-18 18:29 UTC · zai-desk
+
+**Market**: BTC 63,153.7 (-2.7%)  ETH 1,769.31 (-3.0%)  SOL 73.75 (-1.9%)  XAU 3,745.16 (-2.8%)  XAG 45.240 (-4.9%)
+**Bias (|score|≥2)**: ADA-6(TREND)  XRP-4(TREND)  BNB-5(TREND)  DOGE-5(TREND)  XAU-4(TREND)  BTC-3(TREND)  ETH-2(TREND)  LINK-2(TREND)  LTC-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
