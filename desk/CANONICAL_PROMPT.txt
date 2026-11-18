@@ -1,9 +1,8 @@
 # INVOCATION (load first, uncached)
 @[plugin:persistent-memory]  @[plugin:coderabbit]  @[plugin:superpowers]  @[plugin:trading-skills] 
-/gravitas  /goal  /executing-plans  /plan  /brainstorming  /karpathy-guidelines  /thinking-model-router 
-@[plugin:trading-skills] 
+/gravitas   /goal   /executing-plans   /plan   /brainstorming   /karpathy-guidelines   /thinking-model-router  
+
 # ENGINE: Autonomous Dual-Venue Trade Execution & Recursive Self-Improving Engine
-# ROUND: R559
 
 ## RULES OF ENGAGEMENT
 - Every numbered step below is MANDATORY and must be executed in order.
@@ -34,8 +33,7 @@ Question: "What are potential high confluence A+ setups for Delta and MT5 that c
 Output: explicit answer, per venue.
 
 ## STEP 3: SPECIFICATION AUDIT
-- Audit BOTH venues strictly against:
-  @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]
+- Audit BOTH venues strictly against: @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md] 
 - Report any deviation found.
 
 ## STEP 4: 4-VOICE QUANTITATIVE DESK DEBATE
@@ -86,6 +84,7 @@ Output: per-trade table (venue, symbol, SL action, TP action, time-stop status).
 
 ## STEP 9: NEW OPPORTUNITY HUNT & EXECUTION (CORE GOAL)
 - Hunt across the entire universe (234 Delta + 156 MT5).
+- Run `python scripts/auto_punch_engine.py` to evaluate all candidate cards and execute qualifying A+ setups.
 - Qualify only A+ Grade setups: score >= 7.0 pts AND EV >= 2.0R, with high confluence and high potential.
 - For each qualifying setup, produce a pristine execution card:
   - Venue, symbol, direction
@@ -101,10 +100,11 @@ Output: per-trade table (venue, symbol, SL action, TP action, time-stop status).
 - Audit margin usage and available liquidity on both venues.
 - Confirm new orders fit within limits.
 
-## STEP 11: RECURSION
-- Update desk/CANONICAL_PROMPT.txt with Round R560.
-- Re-arm the dynamic 1200s recursion for the next round.
-- Carry forward this round's lessons to Step 0 of the next round.
+## STEP 11: RECURSION & 20-MINUTE TIMER EXECUTION
+11.1 Execute `python scripts/auto_punch_engine.py` to verify all pending orders and newly confirmed signals.
+11.2 Call `schedule(DurationSeconds=1200, Prompt=...)` to arm the dynamic 20-minute timer for the next round.
+11.3 Keep this exact prompt copied in Windows Clipboard so `scripts/auto_prompt_paster.ps1` can paste it into Antigravity continuously.
+11.4 Carry forward this round's lessons and active order tickets to Step 0 of the next round.
 
 ---
 
