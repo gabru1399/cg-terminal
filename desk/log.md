@@ -12905,3 +12905,20 @@ analysis script rc=1
 ### Positions
 - no open positions
 
+## R495 · 2026-11-18 04:46 UTC · zai-desk
+
+**Market**: BTC 64,352.1 (-0.9%)  ETH 1,800.65 (-1.3%)  SOL 74.85 (-0.4%)  XAU 3,792.02 (-1.6%)  XAG 45.980 (-3.3%)
+**Bias (|score|≥2)**: AVAX-5(TREND)  XAU-3(TREND)  ADA-3(TREND)  DOGE-5(TREND)  LINK-4(TREND)  SOL-2(TREND)  ETH-2(TREND)  LTC-2(TREND)  XAG-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R482-ADA-1 re-debated: FOR 5/AGAINST 0 — stands
+- R482-SOL-2 re-debated: FOR 5/AGAINST 1 — stands
+- R491-AVAX-1 re-debated: FOR 6/AGAINST 0 — stands
+- R494-DOGE-1 re-debated: FOR 4/AGAINST 1 — stands
+
+### Positions
+- no open positions
+
