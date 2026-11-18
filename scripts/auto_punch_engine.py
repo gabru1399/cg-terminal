@@ -91,10 +91,20 @@ def punch_mt5_order(card, risk_usd=5.50):
         if t > 0 and abs(entry - float(t)) >= 1.95 * stop_dist:
             chosen_tp = float(t)
             break
-    if chosen_tp == 0.0 and len(targets) > 1:
-        chosen_tp = float(targets[1])
-    elif chosen_tp == 0.0 and len(targets) > 0:
-        chosen_tp = float(targets[0])
+            
+    # If no card target meets 1.95R, synthesize 2.5R target if rPlanned >= 2.0
+    if chosen_tp == 0.0:
+        if card.get("rPlanned", 0.0) >= 2.0:
+            if side == "long":
+                chosen_tp = entry + 2.5 * stop_dist
+            else:
+                chosen_tp = entry - 2.5 * stop_dist
+        else:
+            return {"ok": False, "error": f"Rejected by 2.0R hurdle: no targets deliver >= 2.0R (entry {entry}, stop {stop}, targets {targets})"}
+            
+    realized_r = abs(entry - chosen_tp) / stop_dist if stop_dist > 0 else 0
+    if realized_r < 1.95:
+        return {"ok": False, "error": f"Rejected by 2.0R hurdle: realized R {realized_r:.2f} < 1.95R hard floor"}
         
     side = card["side"].lower()
     

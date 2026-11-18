@@ -120,6 +120,17 @@ def main():
             print(json.dumps({"ok": False, "error": "stop distance must be positive"}))
             sys.exit(1)
 
+        # ---- Gravitas R-multiple hard invariant (>= 2.00R floor) ----
+        if tp > 0:
+            reward_dist = abs(entry - tp)
+            r_multiple = reward_dist / stop_dist
+            if r_multiple < 1.95:
+                print(json.dumps({
+                    "ok": False,
+                    "error": f"Rejected by Gravitas R-multiple invariant: Planned TP {tp} yields only {r_multiple:.2f}R (< 1.95R hard floor; entry {entry}, stop {stop}, stop_dist {stop_dist:.4f}, reward_dist {reward_dist:.4f}). Ensure trade has >= 2.00R!"
+                }))
+                sys.exit(1)
+
         # ---- sizing (risk_usd can only lower the prop cap) ----
         cap = MAX_RISK_USD
         if req.get("risk_usd"):

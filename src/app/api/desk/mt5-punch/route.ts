@@ -200,7 +200,18 @@ export async function POST(req: NextRequest) {
       }
     }
     if (targetLevel === 0) {
-      targetLevel = card.targets[1] ?? card.targets[card.targets.length - 1] ?? 0;
+      if (card.side === "long") {
+        targetLevel = card.entry + 2.5 * stopDist;
+      } else {
+        targetLevel = card.entry - 2.5 * stopDist;
+      }
+    }
+    const rMult = Math.abs(card.entry - targetLevel) / (stopDist || 1);
+    if (rMult < 1.95) {
+      return NextResponse.json(
+        { ok: false, error: `Trade rejected by Gravitas hurdle: target delivers only ${rMult.toFixed(2)}R (< 1.95R hard floor; entry ${card.entry}, stop ${card.stop}).` },
+        { status: 400 }
+      );
     }
   }
   const tp = targetLevel > 0 ? tr(targetLevel) : 0;
