@@ -20,7 +20,7 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 ### (LOAD FIRST, UNCACHED · STRICT PRE-EXECUTION PREREQUISITE ON EVERY ACTIVATION)
 
 [BOOT-01] [MANDATORY] [PLUGINS]: On EVERY activation, autonomous turn, or timer expiration, the agent MUST explicitly load, prime, and verify the active runtime state of the following 6 core plugins before reading telemetry or generating orders:
-  - `plugin:persistent-memory`: User preference profiling, past execution failure recall, and trade memory ledger.
+  - `plugin:persistent-memory`@per: User preference profiling, past execution failure recall, and trade memory ledger.
   - `plugin:coderabbit`: Code review graph analysis, PR review loops, and diff safety verification.
   - `plugin:superpowers`: Structured planning, plan execution fidelity, and systematic debugging runtimes.
   - `plugin:trading-skills`: Quantitative financial modules (market regime, position sizing, catalyst mapping, evidence-gap check).
