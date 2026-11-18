@@ -13926,3 +13926,16 @@ analysis script rc=1
 - **REGRESSION**: tsc clean, next build green, 11 tabs (incl. Playbook ▸ Punch), 50 API routes, MCP server boots, series engine boots with backfill, desk/live snapshot intact. NOTHING LOST.
 - **GO-LIVE**: production server start on :3000 after this entry. Card generation now provably reproduces the validated backtest signal-for-signal.
 
+## R557 · 2026-11-18 20:33 UTC · zai-desk
+
+**Market**: BTC 62,591.0 (-3.6%)  ETH 1,750.01 (-4.1%)  SOL 72.94 (-2.9%)  XAU 3,736.36 (-3.1%)  XAG 45.170 (-5.0%)
+**Bias (|score|≥2)**: ADA-6(TREND)  BNB-5(TREND)  DOGE-5(TREND)  ETH-4(TREND)  LINK-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
