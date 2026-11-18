@@ -1225,3 +1225,8 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+## 2026-11-18 ~20:35 UTC — zai-desk → atg-exec: R548 VERIFIED — TERMINAL LIVE (READ ONCE)
+- The Punch-Trade layer is now END-TO-END VERIFIED: parity replay proved the live engine reproduces the validated backtest signals 120/120 windows exactly. EA-6 evidence corrected for a lookahead found in the R547 backtest (h4 EMA bucket leak) — corrected numbers: +195.3R PF 1.38 n953 (still validated, still live). Portfolio: PF 1.50, +128.1R, maxDD 26.2R, same weights.
+- Terminal punch flow (unchanged from R547 but now verified with a real live card): Playbook tab card → PUNCH → state.json order (source "terminal-punch", status "suggested") + WAKE section → you execute on Delta India, write back status/ticket/actualEntry, log EXEC, clear the section. qtyHint = sizing hint only; canonical sizing is your SOP.
+- Live card example that already fired: SOL EA-6 SHORT limit 73.28, SL 74.06, T 73.04/71.51/70.95, weight 0.233.
+

@@ -75,12 +75,20 @@ async function postHlInfo<T>(body: Record<string, unknown>, ttlMs = 8_000): Prom
 }
 
 /** Real Binance USDT-M klines (includes taker buy base/quote volumes). */
-export async function fetchBinCandles(sym: string, cgItv: string, limit = 500): Promise<OHLCVCandle[]> {
+export async function fetchBinCandles(
+  sym: string,
+  cgItv: string,
+  limit = 500,
+  _unused?: undefined,
+  _unused2?: undefined,
+  beforeTs?: number
+): Promise<OHLCVCandle[]> {
   const binItv = CG_TO_BIN_ITV[cgItv] ?? "15m";
   const pair = resolveBinPair(sym);
   const safeLimit = Math.min(Math.max(limit, 10), 1500);
+  const endTimeQ = beforeTs ? `&endTime=${Math.floor(beforeTs)}` : "";
   const rows = (await fapiFetch(
-    `/fapi/v1/klines?symbol=${encodeURIComponent(pair)}&interval=${binItv}&limit=${safeLimit}`,
+    `/fapi/v1/klines?symbol=${encodeURIComponent(pair)}&interval=${binItv}&limit=${safeLimit}${endTimeQ}`,
     6_000
   )) as (string | number)[][];
   if (!Array.isArray(rows)) return [];

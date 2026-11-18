@@ -7,7 +7,10 @@ import pandas as pd
 OUT = "/home/z/my-project/data/backtest"
 r1 = pd.read_csv(f"{OUT}/trades.csv", parse_dates=["entry_dt", "exit_dt"]).dropna(subset=["exit_dt"])
 r2 = pd.read_csv(f"{OUT}/trades_v2.csv", parse_dates=["entry_dt", "exit_dt"]).dropna(subset=["exit_dt"])
-res = pd.concat([r1, r2], ignore_index=True)
+# EA-6 corrected: no-lookahead h4 bias re-validation (R548) supersedes the v2 EA-6 rows
+ea6nl = pd.read_csv(f"{OUT}/trades_ea6_nolookahead.csv", parse_dates=["entry_dt", "exit_dt"]).dropna(subset=["exit_dt"])
+ea6nl["ea"] = "EA6"
+res = pd.concat([r1, r2[r2.ea != "EA6"], ea6nl], ignore_index=True)
 res["day"] = pd.to_datetime(res.exit_dt).dt.date
 
 # engines: EA-2 (all), EA-5 (ETH/SOL), EA-6 (all)

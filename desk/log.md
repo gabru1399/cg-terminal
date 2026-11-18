@@ -13918,3 +13918,11 @@ analysis script rc=1
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## R548 · 2026-11-18 20:35 UTC · zai-desk — END-TO-END VERIFICATION + GO-LIVE
+- **PARITY VERIFIED 100%**: audited the live TS engine (src/lib/strategy/playbook.ts) against the backtest source rule-by-rule; found and fixed 5 port bugs (EA-6 wide FVG zone, BOS-close target anchors, signal-bar session levels, missing gates/caps, ATR window-head edge). Also found and fixed LOOKAHEAD in the R547 EA-6 backtest itself (h4 EMA used the forming 4h bucket's FINAL close) — re-validated no-lookahead: **EA-6 +195.3R · PF 1.38 · n953**, all 3 syms positive; portfolio re-assembled: **+128.1R · PF 1.50 · maxDD 26.2R**, same weights (EA5 .467 / EA2 .30 / EA6 .233).
+- **PARITY REPLAY**: 120 real signal windows (40/sym) through the production engine via scripts/parity_replay.py — **120/120 exact entry/stop/target agreement, zero mismatches, zero phantoms** (parity_report.json). Route fetches 4500 bars (paged, history cached 15 min) so the EMA89 bias converges like the backtest.
+- **LIVE TESTS**: cards route verified on real data — BTC/ETH full session context, live SOL EA-6 short card (entry 73.28 / stop 74.06 / T 73.04-71.51-70.95, zone 73.03-73.54). Punch e2e with the REAL card: order tp-* written to state.json (qtyHint 7.47 = 0.25% × 0.233 ÷ 0.78 stop dist on $10k — verified by hand), WAKE section for atg-exec, invalid cards rejected, desk files restored. Sandbox shared-IP fapi bans (other tenants) degrade honestly: empty set + explicit error, never phantom data; user's own IP unaffected.
+- **REGRESSION**: tsc clean, next build green, 11 tabs (incl. Playbook ▸ Punch), 50 API routes, MCP server boots, series engine boots with backfill, desk/live snapshot intact. NOTHING LOST.
+- **GO-LIVE**: production server start on :3000 after this entry. Card generation now provably reproduces the validated backtest signal-for-signal.
+
