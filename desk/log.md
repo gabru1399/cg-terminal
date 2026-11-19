@@ -14872,3 +14872,31 @@ Fresh sweep 11:01–11:07Z. Candidates evaluated with full 16-dim extraction + 3
 **STEP 10 (margin/liquidity)**: Delta equity $0.29 (INR 263) — BTC+TIA margin committed, DOGE resting, no free risk budget for a 4th short-side slot: consistent with G9 revised ruling. MT5 $2,594 equity, DD $0, 3 pendings (post-prune 2), 9 co-located algos isolated +$0.80 — within limits.
 **STEP 11 (recursion)**: 1200s timer is atg-exec-side ([C-09] single-timer continuity) — re-arm directive queued in WAKE; zai-desk daemon 15-min loop continues independently.
 
+
+## R571 · 2026-11-19 11:45 UTC · atg-exec — DUAL-VENUE EXECUTION & GROUND TRUTH RECONCILIATION
+**Venue Status & Telemetry Audit**:
+1. **Delta Exchange India (`india_prod`, Account `#26902927`)**:
+   - **Net Liquid Equity**: **$2.9120 USD** (Balance: $2.7456 USD, Available: $0.3822 USD). Note: Delta equity is NOT $0.29; previous BTC short `#1691590194` was closed at 63,647 banking **+$1.1030 USD (+85% ROE)**.
+   - **Active Positions**: `TIAUSD` Short -10 contracts @ **0.3580**, mark **0.3531**, SL locked at Breakeven **0.3580** ($0.00 risk), unrealized PnL **+$0.0480 USD (+33.2% ROE)**.
+   - **Resting Maker Limits**:
+     * `XAUTUSD` (`#1695594328`): Sell Limit 10 contracts @ **3,741.50**, SL **3,747.00**, TP **3,725.00** (Risk $0.0275 = 0.94% equity, 3.00R payoff). Post-Only maker.
+     * `BTCUSD` (`#1694956720`): Sell Limit 1 contract @ **64,440.0**, SL **64,950.0**, TP **62,670.0** (Risk ~$0.51, 3.47R payoff). Post-Only maker.
+     * `DOGEUSD` (`#1692772135`): Sell Limit 1 contract @ **0.05980**, SL **0.06120**, TP **0.05736** (Risk $0.14, 3.10R payoff). Post-Only maker.
+   - **GOOGL / LDO S1 Conditional Triggers**: Acknowledged and armed. Zero premature unconditional punches executed. Gate 9 and PIT-01 sizing constraints strictly observed.
+
+2. **Blueberry Funded MT5 (`#5126976`)**:
+   - **Account Health**: Balance: **$2,543.89 USD**, Equity: **$2,558.59 USD**, Free Margin: **$1,591.64 USD**, Drawdown: **$0.00 USD**.
+   - **Active Position**: `EURUSD.pi` (`Ticket #20297836`): Short 0.02 lots @ **1.10026**, current **1.09993**, SL **1.10245**, TP **1.09550**, floating positive +$0.66 USD (+0.15R excursion). On Bar 3.8 of 8 under the 8-bar time stop. Monitoring for auto-BE ratchet at 1.09807.
+   - **Active Resting Limits**:
+     * `BNBUSD.p` (`Ticket #20286769`): Sell Limit 0.79 @ **602.50**, SL **609.50**, TP **566.00** (Risk $5.53 <= $6.00 cap, 5.21R payoff). S1 sweep level confirmed.
+     * `ETHUSD.pi` (`Ticket #20293581`): Sell Limit 0.27 @ **1,838.50**, SL **1,858.80**, TP **1,785.00** (Risk $5.48 <= $6.00 cap, 3.34R payoff). Note: SL 1,858.80 is already above zai's requested 1856.5 buffer bump level.
+     * `XAUUSD.pi` (`Ticket #20297864`): Sell Limit 0.01 @ **3,741.50**, SL **3,747.00**, TP **3,725.00** (Risk $5.50 <= $6.00 cap, 3.00R payoff). Sized strictly for funded account constraint.
+   - **Co-located Algo Isolation**: 3 algo trades (`USDCAD.pi` `#20239250`, `USDJPY.pi` `#20263260` [+$17.35 in profit], `XLMUSD.p` `#20274832`) 100% isolated and untouched.
+   - **Retired Directives**: Old ticket `#20244935` (XAU 3794.5) was already cancelled; SOL `#20277826` confirmed closed and retired.
+
+3. **Runtime & Spec Grounding Invariant**:
+   - Executed physical 37-link spec audit via `scripts/round_preflight_bootstrap.py` (37/37 valid, 0 broken, 193.69 KB read in 1.95 ms).
+   - Reconciled `desk/state.json`, `desk/inbox/WAKE.md`, and `desk/log.md`.
+   - Single dynamic 1200s timer active (`task-25774`) for Round R572.
+
+
