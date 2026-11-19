@@ -5,6 +5,7 @@
 # MANDATORY SPECIFICATION & RUNTIME GOVERNANCE
 @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]
 @[c:\Users\SIGMA\Documents\cg-terminal\scripts\round_preflight_bootstrap.py]
+@[c:\Users\SIGMA\Documents\cg-terminal\scripts\fetch_full_asset_telemetry.py]
 @[c:\Users\SIGMA\.gemini\config\rules\GEMINI.md]
 
 # CORE SKILLS & RELIABILITY RUNTIMES (PHYSICAL ON-DISK PATHS)
