@@ -16849,3 +16849,16 @@ ead_file validation.
   - DOGEUSD (Delta #14745): Mark price touched low of 0.05772 (exceeding the +1.0R Breakeven threshold of 0.05840; currently +1.48R excursion).
   - Executed edit_order for Order #1692772139: Stop Price updated to **0.05980 (Breakeven Locked)**. Downside risk eliminated (.00 risk).
   - All 3 running positions (EURUSD MT5, TIA Delta, DOGE Delta) are now **100% Breakeven-Locked** with aggregate portfolio downside risk = **.00 USD**.
+## R651 · 2026-11-19 19:57 UTC · zai-desk
+
+**Market**: BTC 62,328.4 (-1.1%)  ETH 1,770.96 (-0.3%)  XAU 3,668.40 (-2.0%)  XAG 44.169 (-3.0%)
+**Bias (|score|≥2)**: ETH-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
