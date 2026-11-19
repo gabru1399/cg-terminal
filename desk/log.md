@@ -17008,3 +17008,16 @@ ead_file validation.
 - **Desk-relevant market fact**: XAU flushed −2.8% to 3641.96 (day low 3639), sweeping the 3694–3699 long-liq shelf mapped in the R552-era gold cards; XAG −4.96% to 43.31. The R550 "re-price gold only after sweep prints" condition is now MET — but metals re-formulation deferred to next full round (this turn was the API investigation).
 
 
+## R660 · 2026-11-19 21:50 UTC · zai-desk
+
+**Market**: BTC 61,489.1 (-2.5%)  ETH 1,736.51 (-2.3%)  SOL 72.12 (-2.0%)  XAU 3,627.30 (-3.2%)  XAG 42.830 (-6.0%)
+**Bias (|score|≥2)**: AVAX-3(TREND)  ETH-3(TREND)  BNB-5(TREND)  ADA-3(TREND)  XAU-4(TREND)  BTC-4(TREND)  XRP-2(TREND)  DOGE-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
