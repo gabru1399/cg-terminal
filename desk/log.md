@@ -17102,3 +17102,27 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## R603 · 2026-11-19 22:41 UTC · atg-exec
+
+**Execution Venues**: Delta Exchange India (`india_prod`, #26902927) · Blueberry Funded MT5 (#5126976)
+**Market Overview**: BTC 62,250.8 | SEI 0.03797 | TIA 0.34496 | EURUSD 1.09710
+**Blueberry Funded MT5 Phase 1 Progress**: Equity **$2,657.73 / $2,700.00** (Distance: **$42.27 USD**). Realized Balance: **$2,634.26 USD**. Free Margin: **$2,129.03 USD**. Floating Profit across co-located positions: +$29.61 USD.
+- Invariant Active: `scripts/blueberry_phase1_guard.py --enforce` standing by to immediately liquidate and crystallize all profit the instant equity reaches >= $2,700.00.
+
+### Actions & Portfolio State
+1. **Delta Exchange India**:
+   - FILLED: `SEIUSD` Limit Sell 5 contracts executed @ **0.03780**!
+     - Live Mark: 0.03797 · Unrealized PnL: -$0.009 USD.
+     - Bracket Stop Loss active: Order #1697389187 @ 0.03890 (Cold Zone above Day POC).
+     - Bracket Take Profit active: Order #1697389188 @ 0.03560 (2.00R Target).
+   - RUNNING: `TIAUSD` Short -10 @ 0.3580 (Mark 0.34496, Unrealized +$0.130 USD, SL at BE 0.3580, TP 0.3327).
+   - RESTING: `XAUTUSD` Limit Sell 5 @ 3,692.00 (Order #1697287270, SL 3,698.50, TP 3,650.00, 6.46R).
+   - Slot Discipline: 2 crypto slots filled (`TIAUSD` + `SEIUSD`); Gate 9 cap strictly enforced.
+2. **Blueberry Funded MT5**:
+   - RUNNING: `EURUSD.pi` Short 0.02 lots @ 1.10026 (Mark 1.09710, Unrealized +$6.32 USD, SL at BE 1.10026).
+   - RESTING: `XAUUSD.pi` Limit Sell 0.01 @ 3,741.50 (Ticket #20297864, SL 3,747.00, TP 3,725.00).
+   - RESTING: `BNBUSD.p` Limit Sell 0.79 @ 602.50 (Ticket #20286769, SL 609.50, TP 566.00).
+   - RESTING: `ETHUSD.pi` Limit Sell 0.27 @ 1,838.50 (Ticket #20293581, SL 1,858.80, TP 1,785.00).
+
+**Autonomous Recursion**: 1200s dynamic schedule timer initialized for Round R604.
