@@ -34,6 +34,14 @@ Every setup and candidate evaluation must route through the 4-voice desk debate 
 3. **Microstructure Quant (Empiricist)**: Computes exact Expected Value ($EV$), R-multiple hurdle ($\ge 1.50\text{R}$), notional sizing, and spread/fee drag.
 4. **Committee Arbiter (Synthesizer)**: Reconciles edge vs risk, identifies positive-EV maker limit levels, and authorizes execution.
 
+### 1.3 Institutional Pre-Trade Clearance Protocol (`@[plugin:trading-skills]`)
+Every trade formulation MUST pass the 5-point Institutional Clearance Gate before submission:
+1. **Evidence Gap Check (`evidence-gap-check`)**: Separate known empirical data from assumptions. State the single blocking issue.
+2. **Regime & Catalyst Analysis (`market-regime-analysis`, `catalyst-map`)**: Confirm alignment with macro trend and verify no high-impact event collisions.
+3. **Asymmetry & Target Sanity (`risk-reward-sanity-check`)**: Reject cosmetic math. Every target must be anchored to a verified high-density opposite liquidation cluster or Value Area POC.
+4. **Execution & Spread Risk (`execution-plan-check`)**: Enforce `PIT-18` (stop distance $\ge 2.0\times$ broker spread). Reject high-spread micro-alts on CFD venues; route to Delta CLOB.
+5. **Portfolio Concentration & Risk Heat (`portfolio-concentration`, `position-sizing`)**: Max 2 concurrent same-direction crypto positions. Total risk heat $\le 1.0\%$ of equity.
+
 ---
 
 ## 2. KARPATHY GUIDELINES FOR CODE & EXECUTION (`/karpathy-guidelines`)
@@ -80,7 +88,7 @@ Every execution round, autonomous turn, or trading response **MUST OPEN** with t
 [x] Gate 7 High-Potential Conviction Protocol & Gate 9 Dynamic Multi-Slot Expansion armed (High isolated leverage permitted on high-potential setups with verified structural stops; slight risk expansion authorized to capture high-confluence setups).
 [x] Operational Invariants armed (Gate 10 BTC Macro Filter, +1.0R Breakeven Invariant, 8-Bar Time Stop, Post-Only Maker Execution, Mark-Price Brackets, Shared Account Isolation).
 [x] Running Trades Liquidation Heatmap & Cold Zone SL Audit completed (Directive 2026-11-18: audit all running trades including co-located algos; ensure SLs are in structural cold zones away from sweep clusters even if risk increases slightly).
-[x] Section 19 Pitfalls Ledger enforced (PIT-01 L2 Deep-Edge Filter, PIT-03 Beta Buffer, PIT-04 Mechanical SOL Ban, PIT-09 Auto-Breakeven, PIT-14 MT5 Comment Isolation, PIT-15 Tab Omission, PIT-16 Cold Zone SL, PIT-17 Macro EMA Spine & S9 Rejection).
+[x] Section 19 Pitfalls Ledger enforced (PIT-01 L2 Deep-Edge Filter, PIT-03 Beta Buffer, PIT-04 Mechanical SOL Ban, PIT-09 Auto-Breakeven, PIT-14 MT5 Comment Isolation, PIT-15 Tab Omission, PIT-16 Cold Zone SL, PIT-17 Macro EMA Spine, PIT-18 Microstructure Spread-to-Stop Gate, PIT-19 Correlated Crypto Cap, PIT-20 Institutional Pre-Trade Clearance).
 [x] Single Dynamic 1200s Timer verified (Zero duplicate timers, zero cron overlap).
 ```
 
