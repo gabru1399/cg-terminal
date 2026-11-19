@@ -7,6 +7,7 @@ unforgeable pre-flight audit executed at the start of every autonomous round.
 
 import os
 import sys
+import re
 import json
 import time
 import hashlib
@@ -87,6 +88,35 @@ def audit_slash_command_skills():
         }
     return status
 
+def audit_all_spec_links():
+    if not SPEC_PATH.exists():
+        return {"ok": False, "error": "Spec not found"}
+    with open(SPEC_PATH, "r", encoding="utf-8") as f:
+        content = f.read()
+    links = re.findall(r'\[([^\]]+)\]\((file:///[^)]+)\)', content)
+    
+    t0 = time.perf_counter()
+    broken = []
+    total_bytes = 0
+    for label, url in links:
+        raw_path = url.replace("file:///", "")
+        p = Path(raw_path)
+        if not p.exists():
+            broken.append({"label": label, "url": url, "path": str(p)})
+        elif p.is_file():
+            total_bytes += p.stat().st_size
+            
+    elapsed_ms = round((time.perf_counter() - t0) * 1000.0, 2)
+    return {
+        "ok": len(broken) == 0,
+        "total_links": len(links),
+        "valid_links": len(links) - len(broken),
+        "broken_count": len(broken),
+        "broken_links": broken,
+        "total_kb_read": round(total_bytes / 1024.0, 2),
+        "load_time_ms": elapsed_ms
+    }
+
 def audit_spec():
     if not SPEC_PATH.exists():
         return {"ok": False, "error": "CANONICAL_MASTER_SPECIFICATION.md not found"}
@@ -102,7 +132,7 @@ def audit_terminal():
     try:
         url = "http://127.0.0.1:3000/api/cg/market?sym=BTC"
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=3) as resp:
+        with urllib.request.urlopen(req, timeout=6) as resp:
             data = json.loads(resp.read().decode("utf-8"))
             return {
                 "ok": True,
@@ -180,6 +210,7 @@ def main():
     report = {
         "timestamp_utc": time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime()),
         "spec": audit_spec(),
+        "spec_links_audit": audit_all_spec_links(),
         "plugins": audit_plugins(),
         "skills": audit_skills(),
         "mcp_servers": audit_mcp_servers(),
