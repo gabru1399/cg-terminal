@@ -14307,3 +14307,16 @@ analysis script rc=1
   - `TIAUSD` Short: -10 lots @ $0.3580, mark $0.3469, unrealized PnL +$0.1090 USD (+63% ROE). Breakeven SL locked at $0.3580, TP $0.3327.
   - `DOGEUSD` Maker Limit: Order #1692772135, Sell Limit @ 0.0598, SL 0.06058, TP 0.05736 (3.10R). Open & waiting.
 - **Desk Daemon & Next.js Engine**: Both operational without errors.
+## R582 · 2026-11-19 02:56 UTC · zai-desk
+
+**Market**: BTC 62,665.0 (-0.6%)  ETH 1,772.61 (-0.2%)  SOL 73.33 (-0.4%)  XAU 3,726.05 (-0.6%)  XAG 45.140 (-0.9%)
+**Bias (|score|≥2)**: ETH-6(TREND)  ADA-5(TREND)  XRP-5(TREND)  BNB-3(TREND)  AVAX-5(TREND)  XAU-5(TREND)  DOGE-3(TREND)  LTC-2(TREND)  LINK-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
