@@ -513,6 +513,12 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
   - Telemetry Checklist: Tab 5 Confirmed wall was pulled (`wallPullEvent`) + Tab 1/4 Breakout volume >= 1.5x 10-bar avg + expanding OI + Tab 13 Negative Gamma confirmed.
   - Data-Driven Entry: Limit order placed on retest of broken range boundary; stop inside broken boundary (S4).
 
+[RET-R09] [SETUP] [BEAR_BULL_FLAG_SHELF_BREAKDOWN_AND_RETEST]:
+  - Retail Concept: "Bear flag / shelf breakdown; enter market immediately on red breakdown candle."
+  - Microstructure Reality: Entering market on breakdown bars causes extreme slippage and chasing right into local short-covering bounces; retail traders get stopped out when price wicks back to the broken shelf floor.
+  - Telemetry Checklist: Tab 1 Tight 4-12 bar consolidation shelf ($|z| \ge 1.0\sigma$) + Tab 2 Volume breakdown followed by low-volume pullback + Tab 6 CVD persistent lower highs (bearish) / higher lows (bullish) + Tab 4 Untapped liquidation magnet pool below.
+  - Data-Driven Entry: Post-only maker limit order placed strictly at the broken shelf floor (prior support turned into new resistance) during Phase 4 retest; stop placed 0.15% beyond Phase 2 trap wick in the structural cold zone; target prior flush low (T1) and downstream liquidation pool (T2) (S10).
+
 [RET-MATRIX] [MANDATORY] [MASTER_DECISION_MATRIX]:
 
 | Retail Setup Name | Primary Retail Indicator | Fatal Retail Failure Mode | Terminal Order-Flow Confirmation Telemetry | Institutional Setup Code | Minimum Required Confluence |
@@ -525,6 +531,7 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 | **MA Crossover** | 9 EMA crosses 21 EMA | Lagging indicator; buying top of chop | Tab 7 `TREND_UP` regime + Tab 1 Pullback to VWAP ($|z| < 1.0$) | **S7** | $\ge 5.0\text{ pts}$ (Grade B) |
 | **SMC Liquidity Sweep**| 1m CHoCH structure | 1m noise; swept level had zero liquidity | Tab 4 Cluster swept + 15m close back in value + Delta flip | **S1** | $\ge 7.5\text{ pts}$ (Grade A+) |
 | **Range Breakout (ORB)**| Session high/low break | Whipsaw false breakout in positive GEX | Tab 5 Wall-Pull + Tab 13 Negative GEX + Retest of boundary | **S4** | $\ge 6.0\text{ pts}$ (Grade A) |
+| **Bear/Bull Flag Shelf**| Diagonal/horizontal flag break | Chasing breakdown into local bounce | Tab 1 Shelf base retest + Tab 2 Vol breakdown + Tab 6 CVD trend | **S10** | $\ge 6.5\text{ pts}$ (Grade A) |
 
 ---
 

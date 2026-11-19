@@ -294,22 +294,6 @@
       "expectedRiskUsd": 0.0275,
       "status": "placed",
       "note": "Delta Gold perpetual limit, 0.94% equity risk"
-    },
-    {
-      "id": "DELTA-BTC-1694956720",
-      "sym": "BTC",
-      "venue": "Delta_India",
-      "productSymbol": "BTCUSD",
-      "orderId": 1694956720,
-      "side": "SELL_LIMIT",
-      "size": 1,
-      "actualEntry": 64440.0,
-      "actualSL": 64950.0,
-      "actualTP": 62670.0,
-      "riskR": 3.47,
-      "expectedRiskUsd": 0.51,
-      "status": "placed",
-      "note": "Week/Month POC retest limit"
     }
   ],
   "positions": [
