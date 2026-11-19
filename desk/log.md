@@ -15435,3 +15435,16 @@ ead_file validation.
   - [DELTA] XAUTUSD #1695594328: SELL LIMIT 10 lots @ 3,741.50, SL 3,747.00, TP 3,725.00 (3.00R).
   - [DELTA] BTCUSD #1694956720: SELL LIMIT 1 lot @ 64,440.0, SL 64,950.0, TP 62,670.0 (3.47R) (Dynamic S10 capital re-allocation invariant armed).
 - **Single 1200s Recursion Timer Initialized**: Task `task-27637` active for Round R590.
+## R646 · 2026-11-19 18:36 UTC · zai-desk
+
+**Market**: BTC 63,269.4 (+0.4%)  ETH 1,789.65 (+0.7%)  SOL 74.50 (+1.2%)  XAU 3,690.17 (-1.5%)  XAG 44.620 (-2.1%)
+**Bias (|score|≥2)**: LTC-4(TREND)  XAU-2(TREND)  DOGE-3(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
