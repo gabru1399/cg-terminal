@@ -17244,3 +17244,16 @@ ead_file validation.
    - Zero redundant background curl/python scrapers.
 
 **Autonomous Recursion**: Single 1200s dynamic schedule timer armed for Round R607.
+## R673 · 2026-11-19 23:38 UTC · zai-desk
+
+**Market**: ETH 1,749.15 (-1.5%)  XAU 3,611.91 (-3.6%)  XAG 42.720 (-6.3%)
+**Bias (|score|≥2)**: ETH-3(TREND)  ADA-3(TREND)  DOGE-3(TREND)  AVAX-2(TREND)  XAU-3(TREND)  LINK-2(TREND)  LTC-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
