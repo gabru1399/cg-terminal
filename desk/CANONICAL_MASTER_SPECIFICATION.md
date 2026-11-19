@@ -912,11 +912,30 @@ flowchart LR
 
 ---
 
-## SECTION 17. FRESH 234/156-ASSET AUDIT & TERMINAL GRADE A SIGNAL EVALUATION
+## SECTION 17. MULTI-FUNNEL HIGH-POTENTIAL CANDIDATE DISCOVERY ENGINE (ROOT-CAUSE DEFECT ELIMINATION)
 
 [UNIV-01] [AUDIT] [PARALLEL_SCREENING_ENGINE]:
-  - Stage 1 (Parallel Screening across all 234 mutual assets): Direct endpoint queries (`/api/cg/narrative`, `/api/cg/market`, `/api/cg/signals`) audit every asset from scratch in ~15-30s.
-  - Stage 2 (Deep Telemetry Extraction on Candidates): For candidates meeting Grade A/A+ with Best R >= 2.00R, query deep telemetry (`/api/cg/oracle`, `/api/cg/liqlevels`, book walls).
+  - Defect Remediation: Pre-packaged narrative endpoints (`/api/cg/narrative`) often miss nascent order-flow turning points, massive liquidation clusters, or tight consolidation shelves. Candidate discovery MUST evaluate the complete 231-asset multi-venue universe across FIVE PARALLEL DISCOVERY FUNNELS:
+
+[FUNNEL-01] [DISCOVERY] [LIQUIDATION_MAGNET_SWEEP_FUNNEL]:
+  - Action: Scans 3D/7D/30D liquidation clusters from `/api/cg/liqlevels` and 24h stopmap exposures (`/api/cg/stopmap`).
+  - Candidate Trigger: Any asset with a concentrated liquidation cluster $\ge \$10\text{M}$ (Tier 1/2) or $\ge \$500\text{k}$ (Tier 3/4) within $\le 3.5\%$ of current price, or Liquidation Skew Ratio $\text{LSR} \ge 2.0:1$, is automatically promoted to candidate evaluation (S1 Sweep Reversal or S8 Breakout Continuation).
+
+[FUNNEL-02] [DISCOVERY] [FOOTPRINT_TAPE_ABSORPTION_FUNNEL]:
+  - Action: Scans `/api/cg/signals` directly across all active perps on 15m time bars, dynamic volume bars, and range bars.
+  - Candidate Trigger: Any asset printing `Absorption` (`abs`), `Trapped Traders` (`trap`), `Strong Divergence` (`sdiv`), or `Exhaustion` (`exh`) at key swing boundaries within trailing $\le 4\text{h}$ is automatically promoted.
+
+[FUNNEL-03] [DISCOVERY] [WHALE_ORDER_WALL_FUNNEL]:
+  - Action: Scans `/api/cg/bookwalls` and `/api/cg/lto` across multi-exchange depth.
+  - Candidate Trigger: Any asset with a confirmed resting whale wall ($\ge \$1.0\text{M}$ on alts, $\ge \$5.0\text{M}$ on BTC/ETH) defending support/resistance, or 5m depth imbalance delta $> \pm 15\%$, is automatically promoted for S3 Wall Defense or S4 Wall-Pull Breakout.
+
+[FUNNEL-04] [DISCOVERY] [TREND_SHELF_EXTREME_VWAP_FUNNEL]:
+  - Action: Scans `/api/cg/market` and `/api/cg/narrative` for statistical extensions and trend shelves.
+  - Candidate Trigger: Extreme extension $|z| \ge 2.0\sigma$ promotes S5 VWAP Mean Reversion; strong runaway trends ($|z| \ge 1.0\sigma$, Fib EMA 13 < 89 < 233) with a 4-to-12 bar consolidation shelf promote S10 In-Trend Shelf Breakdown.
+
+[FUNNEL-05] [DISCOVERY] [TRADIFI_METALS_INDICES_FUNNEL]:
+  - Action: Dedicated multi-asset scan for Gold (`XAUUSD.pi`/`XAUTUSD`), Silver (`XAGUSD.pi`), US Tech 100 (`NAS100.p`/`SPX500`), Oil (`UKOUSD.p`), and TradFi equity perps (`NVDA`, `TSLA`, `MSFT`, `CRCL`).
+  - Candidate Trigger: Unlocks non-correlated Slot 2 allocations on Blueberry MT5 and Delta Exchange India, isolating capital from crypto-wide beta cascades.
 
 [UNIV-02] [AUDIT] [TERMINAL_SIGNALS_VS_GATES]:
   - 1. Gate 7 (Two-Tier Conviction Protocol): Tier 1 assets (`BTC`, `SOL`, `BNB`, `ETH`) 100% UNBANNED for Grade A/A+ setups using high leverage with tight structural stops (<= 0.8%).
@@ -1107,6 +1126,33 @@ flowchart LR
   - Every EA enters desk state as an empirical hypothesis; parameters calibrated against actual exchange fills via Bayesian Likelihood Ratio overlay.
   - Minimum 20 verified trade outcomes per archetype before adjusting risk weights.
   - Strict pre-registration discipline: Entry rule, stop geometry, and target logged before submission, audited after fill/stop, and never modified mid-flight.
+
+---
+
+## SECTION 23. ROOT-CAUSE AUDIT DEFECT REMEDIATION & 360° EXPLORATION MANDATE
+
+[ROOT-00] [MANDATORY] [CORE_PROBLEM_STATEMENT]:
+Historical desk rounds suffered from cognitive bottlenecks: 95% of assets were vetoed without reading their liquidation levels or footprint signals, resulting in "0 A+ / 1 Grade B" stagnation while major trending and sweep setups unfolded. This section codifies the root-cause triage and mandates permanent operational remedies:
+
+[ROOT-01] [DEFECT] [SINGLE_PROXY_SCANNER_DEFECT]:
+  - Root Cause: Scanner relied solely on `/api/cg/narrative`. If narrative labeled an asset `CHOP` or `SKIP`, all other order-flow data was bypassed, blinding the desk to active liquidation magnets and footprint absorptions.
+  - Mandatory Remediation: Every scan pass MUST route candidates through the 5 Parallel Discovery Funnels (Section 17). Liquidation clusters $\ge \$10\text{M}$ or fresh footprint absorptions promote any asset to candidate evaluation regardless of narrative labels.
+
+[ROOT-02] [DEFECT] [PASSIVE_MACRO_POC_TUNNEL_VISION]:
+  - Root Cause: Resting limit orders were placed exclusively at distant Day/Month POCs (e.g. `sell @ 64,440.0`), tying up margin during runaway trends where price broke down without retracing to macro POCs.
+  - Mandatory Remediation: Universal enforcement of `[ARCH-S10]` and `[EA-07]`. The desk is authorized and mandated to cancel dormant macro POC orders to deploy capital into high-asymmetry S10 in-trend consolidation shelves ($R \ge 3.0\text{R}-6.0\text{R}$) testing Fast EMA 13/21.
+
+[ROOT-03] [DEFECT] [UNDER_EXPLORATION_OF_TRADFI_METALS]:
+  - Root Cause: Crypto assets with high correlation caused portfolio heat violations (Gate 9), while prime TradFi opportunities on Gold (`XAU`/`XAUT`), Silver (`XAG`), US Indices (`NAS100`), and TradFi equity perps (`NVDA`, `CRCL`) were neglected.
+  - Mandatory Remediation: `[VOICE-07] [TRADIFI_MACRO_ARBITER]` mandates dedicated per-round audit of Gold, Silver, Indices, and TradFi equity perps, unlocking Slot 2 allocations with zero crypto correlation drag.
+
+[ROOT-04] [DEFECT] [STATIC_TP_SL_BLINDNESS]:
+  - Root Cause: Open orders remained static while market liquidation heatmap clusters shifted, leaving SLs vulnerable to sweep hunts or TPs misaligned from newly formed clusters.
+  - Mandatory Remediation: Universal enforcement of `[P5-11]`. Every round pulls 360° telemetry (`liqlevels`, `stopmap`, `bookwalls`) for all running positions, verifying SLs in cold zones and adapting TPs directly into dominant opposite liquidation magnets.
+
+[ROOT-05] [DEFECT] [COGNITIVE_PERSONA_EXPANSION]:
+  - Root Cause: The previous 4-voice debate was overly conservative, with Risk Officer vetoes blocking valid setups without specialized order-flow counter-arguments.
+  - Mandatory Remediation: Section 3 is formally expanded to the 8-Voice Council, adding specialized champions for Liquidation Sweeps (`[VOICE-04]`), Footprint Tape (`[VOICE-05]`), Momentum Shelves (`[VOICE-06]`), and TradFi Macro (`[VOICE-07]`) to actively surface and advocate for high-potential setups.
 
 ---
 
