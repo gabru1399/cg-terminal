@@ -72,10 +72,11 @@ Every execution round, autonomous turn, or trading response **MUST OPEN** with t
 [x] Pre-Flight Verification Checklist COMPLETED in full.
 [x] Canonical Master Specification (@[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]) READ (Empirical read_file executed on wake-up), ANALYZED & STRICTLY FOLLOWED (SOP v2.0.0 mandatory invariant).
 [x] Meta-Cognitive Review of Previous Thinking Chain executed: audited what was missed, latency, blind spots, and applied continuous self-improvement lessons.
-[x] Fresh uncached loading of Plugins, Skills & MCP Server Architecture verified LOADED & OPERATIONAL (zero cached echoes):
-    - Plugins: coderabbit, superpowers, trading-skills, chrome-devtools-plugin, harness-antigravity. (persistent-memory disabled per user directive).
-    - MCP Servers: delta-exchange-mcp, agent-memory, chrome-devtools, godkiller-verification, code-review-graph, link-extension, sqlite.
-    - Skills: trading-skills suite, superpowers suite, karpathy-guidelines, ponytail, quant-analyst, backtesting-frameworks.
+[x] Fresh uncached loading of Plugins, Skills & MCP Server Architecture verified LOADED & OPERATIONAL via bootstrap runner (zero cached echoes):
+    - Plugins (verified on disk): coderabbit, superpowers, trading-skills, chrome-devtools-plugin, harness-antigravity, gravitas-native. (persistent-memory disabled per user directive).
+    - MCP Server Schemas (verified on disk): delta-exchange-mcp, agent-memory, chrome-devtools, godkiller-verification, code-review-graph, link-extension, sqlite.
+    - Skills & Slash Directive Markdown (verified on disk): gravitas, karpathy-guidelines, ponytail, quant-analyst, backtesting-frameworks, writing-plans (/plan), brainstorming (/brainstorming), executing-plans (/executing-plans), thinking-model-router (/thinking-model-router).
+    - Underlying physical check: python scripts/round_preflight_bootstrap.py executed as Step 1.
 [x] 10-Model Cognitive Thinking Chain Lattice verified (/thinking-model-router):
     - First Principles, Pre-Mortem Analysis, Probabilistic Reasoning (EV hurdle >= 2.0R), Second-Order Effects, Red Team / Steel-Manning, Margin of Safety, Via Negativa, Map vs Territory, Theory of Constraints, Lindy Effect.
 [x] 4-Voice Quantitative Desk Debate executed (Alpha Strategist Hunter, Adversarial Risk Officer Red Team, Microstructure Quant Empiricist, Committee Arbiter Synthesizer).
@@ -148,8 +149,10 @@ Output: list of misses + lessons applied.
 - MUST execute: read_file("desk/CANONICAL_MASTER_SPECIFICATION.md", StartLine=1, EndLine=50)
 - If candidate trade evaluated: read_file("C:/Users/SIGMA/.gemini/config/plugins/trading-skills/skills/risk-reward-sanity-check/SKILL.md")
 - Confirm each item explicitly from raw bootstrap output:
-  - [ ] Physical presence of plugins confirmed on disk (trading-skills, superpowers, coderabbit, gravitas-native)
-  - [ ] Physical presence of skills confirmed on disk (gravitas, karpathy-guidelines, ponytail, quant-analyst)
+  - [ ] Physical presence of plugins confirmed on disk (trading-skills, superpowers, coderabbit, gravitas-native, chrome-devtools-plugin)
+  - [ ] Physical presence of skills confirmed on disk (gravitas, karpathy-guidelines, ponytail, quant-analyst, backtesting-frameworks)
+  - [ ] Physical presence of MCP server schemas confirmed on disk (delta-exchange-mcp, agent-memory, chrome-devtools, godkiller-verification, code-review-graph, link-extension, sqlite)
+  - [ ] Physical presence of slash command backing skills confirmed on disk (/plan, /brainstorming, /executing-plans, /karpathy-guidelines, /thinking-model-router, /gravitas)
   - [ ] Canonical Master Spec size & timestamp verified
   - [ ] Terminal Engine online (BTC price, POC, VWAP)
   - [ ] MT5 IPC online (Balance, Equity, Margin, Positions, Orders audited)

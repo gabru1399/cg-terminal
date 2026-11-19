@@ -16,6 +16,7 @@ from pathlib import Path
 WORKSPACE = Path(os.path.abspath(__file__)).parent.parent
 PLUGINS_DIR = Path(os.path.expanduser("~/.gemini/config/plugins"))
 SKILLS_DIR = Path(os.path.expanduser("~/.gemini/config/skills"))
+MCP_DIR = Path(os.path.expanduser("~/.gemini/antigravity/mcp"))
 SPEC_PATH = WORKSPACE / "desk" / "CANONICAL_MASTER_SPECIFICATION.md"
 
 def audit_plugins():
@@ -43,6 +44,46 @@ def audit_skills():
         status[s] = {
             "installed": s_path.exists(),
             "size_bytes": s_path.stat().st_size if s_path.exists() else 0
+        }
+    return status
+
+def audit_mcp_servers():
+    required_mcp = [
+        "delta-exchange-mcp",
+        "agent-memory",
+        "chrome-devtools",
+        "godkiller-verification",
+        "code-review-graph",
+        "link-extension",
+        "sqlite"
+    ]
+    status = {}
+    for m in required_mcp:
+        m_path = MCP_DIR / m
+        exists = m_path.exists()
+        schemas = list(m_path.glob("*.json")) if exists else []
+        status[m] = {
+            "installed": exists,
+            "tool_schemas_count": len(schemas),
+            "path": str(m_path) if exists else None
+        }
+    return status
+
+def audit_slash_command_skills():
+    slash_skills = {
+        "/plan": PLUGINS_DIR / "superpowers" / "skills" / "writing-plans" / "SKILL.md",
+        "/brainstorming": PLUGINS_DIR / "superpowers" / "skills" / "brainstorming" / "SKILL.md",
+        "/executing-plans": PLUGINS_DIR / "superpowers" / "skills" / "executing-plans" / "SKILL.md",
+        "/karpathy-guidelines": SKILLS_DIR / "karpathy-guidelines" / "SKILL.md",
+        "/thinking-model-router": SKILLS_DIR / "thinking-model-router" / "SKILL.md",
+        "/gravitas": SKILLS_DIR / "gravitas" / "SKILL.md",
+    }
+    status = {}
+    for cmd, p in slash_skills.items():
+        status[cmd] = {
+            "installed": p.exists(),
+            "size_bytes": p.stat().st_size if p.exists() else 0,
+            "path": str(p) if p.exists() else None
         }
     return status
 
@@ -141,6 +182,8 @@ def main():
         "spec": audit_spec(),
         "plugins": audit_plugins(),
         "skills": audit_skills(),
+        "mcp_servers": audit_mcp_servers(),
+        "slash_command_skills": audit_slash_command_skills(),
         "terminal_engine": audit_terminal(),
         "mt5_status": audit_mt5()
     }
