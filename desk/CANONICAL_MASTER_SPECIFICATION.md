@@ -598,6 +598,16 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 [P5-06] [INVARIANT] [FIRST_TWO_FILLS]: When resting maker orders are standing for multiple assets, the moment ANY 2 fill into active positions, immediately cancel all remaining open candidate orders.
 [P5-07] [INVARIANT] [VACANT_SLOT_HUNTER]: Maintain high-confluence standing maker orders at key structural nodes only when portfolio slots are vacant; respect Gate 7 micro-asset constraint.
 [P5-08] [INVARIANT] [PRUNING_DISCIPLINE]: Instantly cancel any order that falls below 5.0 confluence points, becomes overextended ($|z| \ge 2.0\sigma$), or violates margin solvency.
+[P5-11] [MANDATORY] [RUNNING_TRADE_360_TELEMETRY_TP_SL_OPTIMIZER]:
+On EVERY activation and autonomous turn, for all active running positions on Delta Exchange India (`india_prod`, Account `#26902927`) and Blueberry Funded MT5 (`#5126976`):
+1. 360° Telemetry Ingestion: The desk MUST dynamically query multi-tab telemetry (`/api/cg/liqlevels`, `/api/cg/stopmap`, `/api/cg/bookwalls`, `/api/cg/market`, `/api/cg/cvd`, `/api/cg/fp`) for every running position asset, saving forensic artifacts to `desk/deepscan/`.
+2. Stop-Loss Cold-Zone Audit & Liquidity Trap Evasion: Cross-examine current on-exchange Stop Loss against evolving 3D/7D/30D liquidation clusters and the 24h stopmap. If an opposing high-density liquidation sweep cluster (≥ 40% strength) has emerged adjacent to or in front of the SL, the stop is classified as a "Liquidity Trap Hazard" (PIT-21). The agent MUST immediately edit/modify the on-exchange stop loss into the structural cold zone beyond the cluster (+0.15% to +0.25% buffer, outside Value Area / beyond ±2.5σ VWAP), even if risk expands slightly, preventing predatory sweep hunts.
+3. Take-Profit Liquidity Magnet Adaptation: Cross-examine current on-exchange Take Profit against dominant opposite liquidation pools revealed by the Liquidation Skew Ratio (LSR) and confirmed resting whale walls. The desk MUST dynamically advance or adapt TP orders directly into the apex of the primary opposite liquidation cluster (T2: 40%) or terminal macro pool (T3: 20%). Taker liquidation cascades will aggressively sweep resting maker limit exit orders, securing maximum execution fill rate before mean-reversion reversals occur.
+4. Breakeven & Trailing Invariant Governance:
+   - At ≥ +1.0R excursion: Automatically move SL to exact entry price (risk strictly $0.00 USD).
+   - At ≥ +1.5R excursion: Trail SL behind 15m structural swing pivots or 15m EMA 20 baseline with 1.5x ATR(14) buffer.
+   - At 8 bars (2 hours) without reaching +0.5R: Enforce 8-bar time stop (P5-05).
+5. Live CLOB & MT5 Execution Bridge: Dispatch bracket modifications immediately via `edit_order` on Delta Exchange India CLOB (maker bracket update) and `mt5_cg_trader.py` on Blueberry MT5. Output a dedicated [Running Trades 360° TP/SL Forensic Audit Table] on every round.
 [P5-09] [INVARIANT] [CANONICAL_TIMER_PROTOCOL]: Re-arm dynamic recursion using `schedule(DurationSeconds=1200)` with the canonical prompt string. Strictly 1 background timer; zero duplicate timers, zero cron.
 
 ```text
@@ -675,18 +685,18 @@ For every resting limit order on both venues:
 ## STEP 8: AUDIT OF ALL RUNNING TRADES (BOTH VENUES)
 Scope: ALL running trades on Delta and MT5, including co-located algo trades on MT5.
 
-8.1 Liquidity trap check (Directive 2026-11-18)
-- Use rich orderflow, stopmap, and liquidation data.
-- Verify no SL sits inside a liquidity sweep or heatmap cluster.
-- If trapped, move the SL into a structural cold zone, even if risk increases slightly.
+8.1 360° Telemetry Ingestion & Liquidity Trap Check (Directive 2026-11-20 · [P5-11])
+- Pull live /api/cg/liqlevels, /api/cg/stopmap, /api/cg/bookwalls, /api/cg/cvd, /api/cg/market for every running trade symbol.
+- Verify no SL sits inside an opposing high-density liquidation sweep or heatmap cluster (>= 40% strength).
+- If trapped, immediately move/edit the SL into a structural cold zone beyond the cluster (PIT-21), even if risk expands slightly.
 
-8.2 Optimization
-- SL breakeven ratchet at +1.0R
-- Structure-based trailing stops
-- Dynamically adapt TP targets into high-density liquidity clusters
-- Enforce the 8-bar time stop
+8.2 Dynamic TP & SL Optimization
+- SL breakeven ratchet at +1.0R excursion (downside risk = $0.00 USD).
+- Structure-based trailing stops at +1.5R behind 15m swing pivots / EMA 20 baseline.
+- Dynamically adapt and advance TP targets directly into emerging high-density opposite liquidation clusters and whale walls (P5-11).
+- Enforce the 8-bar time stop (P5-05).
 
-Output: per-trade table (venue, symbol, SL action, TP action, time-stop status).
+Output: per-trade forensic table (venue, symbol, entry, current, R-excursion, live SL, SL cold-zone status, SL action, live TP, nearest liquidation magnet, TP action, time-stop status).
 
 ## STEP 9: NEW OPPORTUNITY HUNT & EXECUTION (CORE GOAL)
 - Hunt across the entire universe (234 Delta + 156 MT5).
