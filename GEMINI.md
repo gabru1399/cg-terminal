@@ -94,7 +94,7 @@ Every execution round, autonomous turn, or trading response **MUST OPEN** with t
 
 ### Pre-Flight Verification Gates:
 - **Gate C-01 (Single Master Specification Invariant & Mandatory read_file Call)**: Bound strictly to `desk/CANONICAL_MASTER_SPECIFICATION.md` (SOP v2.0.0). Antigravity MUST execute `read_file` on `desk/CANONICAL_MASTER_SPECIFICATION.md` on every wake-up as an ingrained raw habit before analyzing markets or placing orders. Multi-file divergences are purged.
-- **Gate C-02 (Plugins, Skills & MCP Infrastructure Gate)**: Verify active availability of essential MCP servers (`delta-exchange-mcp`, `agent-memory`, etc.), plugins, and analytical skills before formulation. (persistent-memory disabled).
+- **Gate C-02 (Plugins, Skills & MCP Infrastructure Gate)**: Verify physical presence of all essential plugins and skills on disk, and verify MCP/MT5 connectivity via `python scripts/round_preflight_bootstrap.py` before formulation. Zero cosmetic claims permitted.
 - **Gate C-03 (Cognitive Thinking Chain & 4-Voice Debate)**: Ensure no trade or code is generated without Socratic stress-testing across the 10 mental models and 4-voice desk debate.
 - **Gate C-04 (Purge Scanner / Mandatory Individual Asset Audit)**: Scanners and pre-aggregated screener tables are STRICTLY PURGED. On every wake-up, execute direct individual endpoint-by-endpoint analysis across both venues for each and every one of the 234 Expanded Universe Assets (30 Crypto + 28 TradFi + 173 Mutual Delta/Binance + 3 Classic) and 156 MT5 Blueberry Assets individually using `scripts/individual_asset_evaluator.py` and `scripts/mt5_cg_trader.py`. Zero reliance on pre-filtered scanner tables.
 - **Gate C-05 (CLOB & Margin Solvency)**: Audit live Delta Exchange India balances, positions, and orders (`get_wallet_balances`, `get_margined_positions`, `get_open_orders`).
@@ -133,14 +133,17 @@ Dynamic recursion is driven by a single 1200-second timer (`schedule(DurationSec
 0.4 Apply continuous self-improvement lessons to this round.
 Output: list of misses + lessons applied.
 
-## STEP 1: PRE-FLIGHT VERIFICATION CHECKLIST (RESPONSE MUST OPEN WITH THIS)
-Confirm each item explicitly:
-- [ ] Fresh, individual audit of ALL assets from scratch (no cached results)
-- [ ] Audit covers all 10 modules
-- [ ] Universe covered: 234 Delta Exchange India + 156 MT5 Blueberry assets
-- [ ] All skills loaded fresh/uncached
-- [ ] All plugins loaded fresh/uncached
-- [ ] All MCPs loaded fresh/uncached
+## STEP 1: DETERMINISTIC PRE-FLIGHT BOOTSTRAP (MANDATORY FIRST TOOL CALL)
+- MUST execute: run_command("python scripts/round_preflight_bootstrap.py")
+- MUST execute: read_file("desk/CANONICAL_MASTER_SPECIFICATION.md", StartLine=1, EndLine=50)
+- If candidate trade evaluated: read_file("C:/Users/SIGMA/.gemini/config/plugins/trading-skills/skills/risk-reward-sanity-check/SKILL.md")
+- Confirm each item explicitly from raw bootstrap output:
+  - [ ] Physical presence of plugins confirmed on disk (trading-skills, superpowers, coderabbit, gravitas-native)
+  - [ ] Physical presence of skills confirmed on disk (gravitas, karpathy-guidelines, ponytail, quant-analyst)
+  - [ ] Canonical Master Spec size & timestamp verified
+  - [ ] Terminal Engine online (BTC price, POC, VWAP)
+  - [ ] MT5 IPC online (Balance, Equity, Margin, Positions, Orders audited)
+  - [ ] Delta Exchange India CLOB audited via MCP tools
 
 ## STEP 2: OPERATOR INQUEST (ASK AND ANSWER EVERY ROUND)
 Question: "What are potential high confluence A+ setups for Delta and MT5 that can be punched right away?"
