@@ -1047,6 +1047,20 @@ Table 7 Score : <pts> / 11.5 | Grade: <A/B/NO_TRADE> | Action: <EXECUTE / REJECT
     - Step 5 (Asymmetry & Sizing): Required asymmetry $R \ge 3.0\text{R}$ (typically $5.0\text{R}–9.0\text{R}$). Calculate exact position size to cap Dollar Risk at $\le 1.0\%$ of net liquid equity.
     - Step 6 (Maker Limit Execution): Punch post-only maker limit order (`post_only: true`) at $P_{HVN\_floor}$. Attach on-exchange bracket SL and TP at dispatch.
 
+[AUC-PULL-01] [INVARIANT] [DUAL_TIMEFRAME_OVERVIEW_PULLBACK_CONFLUENCE]:
+  - Microstructure Axiom (Dual 15m Execution & 4H HTF Overview):
+    As displayed on the terminal Overview tab (`/?sym=<SYM>&view=terminal&tab=overview`), the 15m Execution chart and 4H HTF Context chart provide simultaneous micro and macro auction anchors:
+    1. 4H HTF Context Anchors:
+       - 4H VWAP & ±2.0σ Envelopes: Defines the macro regime. Price below 4H VWAP confirms a macroscopic discount/bearish regime.
+       - 4H Value Area POC: Represents the macro high-volume node. In a downtrend, pullbacks that retest the 4H POC or 4H VWAP from below are prime institutional reload zones.
+    2. 15m Execution Anchors:
+       - 15m VWAP & ±1.0σ / ±2.0σ / ±3.0σ Envelopes: Dynamic execution bands.
+       - 15m Value Area POC / Session VAL/VAH: Local auction boundaries.
+    3. Institutional Pullback Confluence Rule:
+       - In a downtrend (Price < 4H VWAP and H4 EMA 13 < EMA 89), wait for price to retrace toward the 15m VWAP / -1.0σ band or the underside of the broken volume shelf ($P_{HVN\_floor}$).
+       - Rejection Confirmation: Pullback must reject with negative footprint delta, footprint exhaustion wick (`exh`), or resting whale ask walls.
+       - Anti-Chasing Constraint: Never short when price is stretched at or beyond the 15m -2.0σ or -3.0σ VWAP band while long liquidations are actively cascading (e.g. 80%+ long liquidation skew). Wait for the mean-reverting bounce back into structural resistance before punching limit orders.
+
 ---
 
 ## SECTION 7. RETAIL SETUP ⟷ ORDER-FLOW CONFIRMATION ENGINE
