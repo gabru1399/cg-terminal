@@ -39,7 +39,7 @@ DEEPSCAN_DIR.mkdir(parents=True, exist_ok=True)
 
 BASE_URL = os.environ.get("TERMINAL_URL", "http://localhost:3000")
 
-def fetch_endpoint(url, timeout=14.0):
+def fetch_endpoint(url, timeout=25.0):
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"})
         with urllib.request.urlopen(req, timeout=timeout) as resp:
@@ -161,7 +161,7 @@ def fetch_asset_all_tabs(sym):
     results = {}
     errors = {}
     
-    with concurrent.futures.ThreadPoolExecutor(max_workers=15) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
         future_map = {executor.submit(fetch_endpoint, url): name for name, url in endpoints.items()}
         for future in concurrent.futures.as_completed(future_map):
             name = future_map[future]
@@ -237,13 +237,36 @@ def print_telemetry_report(report):
         print(f"    - VWAP: {cur_vwap:.2f} │ +1σ: {cur_vwap+sd1:.2f} │ +2σ: {cur_vwap+sd2:.2f} │ +3σ: {cur_vwap+sd3:.2f}")
         print(f"                       │ -1σ: {cur_vwap-sd1:.2f} │ -2σ: {cur_vwap-sd2:.2f} │ -3σ: {cur_vwap-sd3:.2f}")
         
+    ema_top = mkt.get("ema") or {}
+    rsi_top = mkt.get("rsi") or {}
+    m15_ema = ema_top.get("m15") or {}
+    h1_ema = ema_top.get("h1") or {}
+    h4_ema = ema_top.get("h4") or {}
     m15_ind = indicators.get("m15") or {}
     h1_ind = indicators.get("h1") or {}
     h4_ind = indicators.get("h4") or {}
+    
+    rsi_m15 = rsi_top.get("m15") or m15_ind.get("rsi")
+    rsi_h1 = rsi_top.get("h1") or h1_ind.get("rsi")
+    rsi_h4 = rsi_top.get("h4") or h4_ind.get("rsi")
+    
+    e13_m15 = m15_ema.get("e13") or m15_ind.get("ema13")
+    e89_m15 = m15_ema.get("e89") or m15_ind.get("ema89")
+    e233_m15 = m15_ema.get("e233") or m15_ind.get("ema233")
+    
+    e13_h1 = h1_ema.get("e13") or h1_ind.get("ema13")
+    e89_h1 = h1_ema.get("e89") or h1_ind.get("ema89")
+    
+    e13_h4 = h4_ema.get("e13") or h4_ind.get("ema13")
+    e89_h4 = h4_ema.get("e89") or h4_ind.get("ema89")
+    
+    def _fmt(val):
+        return f"{val:.2f}" if isinstance(val, (int, float)) else str(val)
+
     print(f"  • Indicators (Fib-Prime EMAs & RSI):")
-    print(f"    - M15: RSI {m15_ind.get('rsi')} │ EMA13 {m15_ind.get('ema13')} │ EMA89 {m15_ind.get('ema89')} │ EMA233 {m15_ind.get('ema233')}")
-    print(f"    - H1 : RSI {h1_ind.get('rsi')} │ EMA13 {h1_ind.get('ema13')} │ EMA89 {h1_ind.get('ema89')}")
-    print(f"    - H4 : RSI {h4_ind.get('rsi')} │ EMA13 {h4_ind.get('ema13')} │ EMA89 {h4_ind.get('ema89')}")
+    print(f"    - M15: RSI {_fmt(rsi_m15)} │ EMA13 {_fmt(e13_m15)} │ EMA89 {_fmt(e89_m15)} │ EMA233 {_fmt(e233_m15)}")
+    print(f"    - H1 : RSI {_fmt(rsi_h1)} │ EMA13 {_fmt(e13_h1)} │ EMA89 {_fmt(e89_h1)}")
+    print(f"    - H4 : RSI {_fmt(rsi_h4)} │ EMA13 {_fmt(e13_h4)} │ EMA89 {_fmt(e89_h4)}")
 
     # ─── TAB 2: FOOTPRINT & 48-HOUR ORDER-FLOW BEHAVIOR ───────────────────────
     sigs = data.get("signals") or {}
@@ -319,6 +342,23 @@ def print_telemetry_report(report):
     below_lvls = [f"{l.get('price')} (-{l.get('distPct'):.2f}%, str {l.get('strength', 0):.0f})" for l in key_levels.get("below") or []][:3]
     print(f"  • Sweep Magnets Above : { ' | '.join(above_lvls) if above_lvls else 'None' }")
     print(f"  • Sweep Magnets Below : { ' | '.join(below_lvls) if below_lvls else 'None' }")
+
+    # ─── TAB 4.5: LIVE LIQUIDATIONS TAPE & SKEW (BINANCE + BYBIT + OKX) ────────
+    liq_live_raw = data.get("liq_live") or {}
+    asset_liq = liq_live_raw.get("asset") or {}
+    stats1h = asset_liq.get("stats1h") or {}
+    stats24h = asset_liq.get("stats24h") or {}
+    venues = asset_liq.get("venuesSeen") or []
+    events = asset_liq.get("events") or []
+    
+    print(f"\n[TAB 4.5: LIVE LIQUIDATIONS TAPE & SKEW (BINANCE + BYBIT + OKX)]")
+    print(f"  • Venues Active    : {', '.join(venues) if venues else 'None'}")
+    print(f"  • 1h Liquidation   : {stats1h.get('count', 0)} prints │ ${(stats1h.get('usd', 0) or 0)/1e3:.1f}k │ {stats1h.get('longs', 0)}L / {stats1h.get('shorts', 0)}S")
+    max_usd = (stats24h.get('largestUsd', 0) or 0) / 1e6
+    tot_usd = (stats24h.get('usd', 0) or 0) / 1e6
+    print(f"  • 24h Liquidation  : {stats24h.get('count', 0)} prints │ ${tot_usd:.2f}M │ {stats24h.get('longs', 0)}L / {stats24h.get('shorts', 0)}S (Max: ${max_usd:.2f}M)")
+    recent_prints = [f"{e.get('side', '').upper()} {(e.get('qtyBase') or 0):.3f} @ {e.get('price')} (${(e.get('usd') or 0):.0f} on {e.get('venue')})" for e in events[:4]]
+    print(f"  • Recent Prints    : {' | '.join(recent_prints) if recent_prints else 'Quiet tape (no prints)'}")
 
     # ─── TAB 5: ORDER BOOK WALLS & DEPTH IMBALANCE ────────────────────────────
     bw = data.get("bookwalls") or {}
