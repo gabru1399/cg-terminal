@@ -111,10 +111,20 @@ Every execution round, autonomous turn, or trading response **MUST OPEN** with t
 Dynamic recursion is driven by a single 1200-second timer (`schedule(DurationSeconds=1200)`). The timer instruction and prompt MUST strictly follow this canonical structured protocol:
 
 ```text
-# INVOCATION (load first, uncached)
-@[plugin:coderabbit]  @[plugin:superpowers]  @[plugin:trading-skills] 
-/gravitas  /goal  /executing-plans  /plan  /brainstorming  /karpathy-guidelines  /thinking-model-router 
-@[plugin:trading-skills] 
+# MANDATORY SPECIFICATION & RUNTIME GOVERNANCE
+@[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]
+@[c:\Users\SIGMA\Documents\cg-terminal\scripts\round_preflight_bootstrap.py]
+
+# CORE SKILLS & RELIABILITY RUNTIMES (PHYSICAL ON-DISK PATHS)
+@[C:\Users\SIGMA\.gemini\config\skills\gravitas\SKILL.md]
+@[C:\Users\SIGMA\.gemini\config\skills\karpathy-guidelines\SKILL.md]
+@[C:\Users\SIGMA\.gemini\config\skills\thinking-model-router\SKILL.md]
+@[C:\Users\SIGMA\.gemini\config\plugins\superpowers\skills\executing-plans\SKILL.md]
+@[C:\Users\SIGMA\.gemini\config\plugins\superpowers\skills\brainstorming\SKILL.md]
+@[C:\Users\SIGMA\.gemini\config\plugins\trading-skills\skills\risk-reward-sanity-check\SKILL.md]
+
+# INVOCATION DIRECTIVE
+/goal /gravitas /karpathy-guidelines /thinking-model-router
 # ENGINE: Autonomous Dual-Venue Trade Execution & Recursive Self-Improving Engine
 # ROUND: R<n>
 
