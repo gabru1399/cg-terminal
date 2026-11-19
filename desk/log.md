@@ -15102,3 +15102,19 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## EXEC · 2026-11-19 14:45 UTC · atg-exec (Round R580 Execution & Breakeven Ratchet)
+- **Breakeven Ratchet Enforcement (Gate 6 / P5-04 Invariant)**:
+  - EURUSD.pi (Blueberry MT5 Ticket #20297836): Price reached 1.09968 (+1.07R on active risk). Non-discretionary Breakeven Ratchet executed: modified SL from 1.10080 down to exact entry **1.10026** (Result 10009: Request executed). Downside risk on EURUSD.pi is now strictly **.00 USD**. Position is a 100% risk-free runner targeting 1.09550 (+8.8R).
+- **Running Positions Surveillance**:
+  - DOGEUSD (Delta India #14745): SHORT -1 lot @ 0.05980, Mark 0.05967 (+0.28R, +.011 USD). SL at 0.06120, TP at 0.05736 (3.10R).
+  - TIAUSD (Delta India #17330): SHORT -10 lots @ 0.35800, Mark 0.35120 (+1.91R, +.066 USD, +38.6% ROE). SL locked at Breakeven 0.35800. Downside risk strictly .00 USD.
+- **Curated 61 Market Scan & Watchlist Inquest**:
+  - 0 Grade A+ setups, 2 Grade B setups (TRX 5.0 pts, LTC 5.0 pts), 59 Vetoed.
+  - LTC Vetoed on MT5: Gate 4 / PIT-22 Spread Drag (Spread 300 pts = .30 on .30 coin consumes 45.5% of SL distance; fails <20% hurdle).
+  - TRX & LTC Vetoed on Delta: Portfolio Heat Invariant (Max 2 same-direction crypto positions already occupied by DOGE and TIA). Placed on GRADE B WATCH.
+- **Resting Maker Limit Orders Re-Validated (PIT-06)**:
+  - XAUUSD.pi (MT5 #20297864) & XAUTUSD (Delta #1695594328): SELL LIMIT @ 3741.50, SL 3747.00, TP 3725.00 (3.00R).
+  - BNBUSD.p (MT5 #20286769): SELL LIMIT @ 602.50, SL 609.50, TP 566.00 (5.21R).
+  - ETHUSD.pi (MT5 #20293581): SELL LIMIT @ 1838.50, SL 1858.80, TP 1785.00 (2.64R).
+  - BTCUSD (Delta #1694956720): SELL LIMIT @ 64,440.0, SL 64,950.0, TP 62,670.0 (3.47R).
