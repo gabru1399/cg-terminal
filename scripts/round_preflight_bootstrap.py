@@ -134,7 +134,7 @@ def audit_terminal():
         try:
             url = f"{base}/api/cg/market?sym=BTC"
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=10) as resp:
+            with urllib.request.urlopen(req, timeout=35) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
                 return {
                     "ok": True,
@@ -143,7 +143,19 @@ def audit_terminal():
                     "vwap_day": data.get("vwap", {}).get("vwap")
                 }
         except Exception:
-            continue
+            try:
+                url_live = f"{base}/api/cg/live?sym=BTC"
+                req_live = urllib.request.Request(url_live, headers={"User-Agent": "Mozilla/5.0"})
+                with urllib.request.urlopen(req_live, timeout=10) as resp:
+                    data = json.loads(resp.read().decode("utf-8"))
+                    return {
+                        "ok": True,
+                        "btc_price": data.get("price"),
+                        "poc_day": None,
+                        "vwap_day": None
+                    }
+            except Exception:
+                continue
     return {"ok": False, "error": "terminal unreachable"}
 
 def audit_mt5():

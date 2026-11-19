@@ -15285,3 +15285,19 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+
+## EXEC · 2026-11-19 17:12 UTC · atg-exec (Round R585 Execution & Runner Surveillance)
+- **Active Runner Expansion (Gate 6 Breakeven Invariant Enforced)**:
+  - EURUSD.pi (Blueberry MT5 Ticket #20297836): Current price **1.09821** (+20.5 pips excursion, +$4.10 USD profit, +1.89R excursion). SL remains locked at Breakeven **1.10026**. Downside risk strictly **$0.00 USD**. Target: 1.09550 (+8.8R / +$9.52 USD).
+  - TIAUSD (Delta India Position #17330): Protected by exchange-side bracket SL locked at Breakeven **0.35800**. Downside risk strictly **$0.00 USD**. Target: 0.33270.
+  - DOGEUSD (Delta India Position #14745): Protected by exchange-side bracket SL at 0.06120, TP at 0.05736 (3.10R). Downside risk: $0.14 USD.
+- **Curated 61 Scan (SOP v2.1.0 Gate Enforcement)**:
+  - 0 Grade A+ setups, 0 Grade B setups, 61 Vetoed. Macro trend continuation down; all gates held.
+- **Standing Maker Limit Orders Re-Validated (PIT-06)**:
+  - XAUUSD.pi (MT5 #20297864) & XAUTUSD (Delta #1695594328): SELL LIMIT @ 3741.50, SL 3747.00, TP 3725.00 (3.00R).
+  - BNBUSD.p (MT5 #20286769): SELL LIMIT @ 602.50, SL 609.50, TP 566.00 (5.21R).
+  - ETHUSD.pi (MT5 #20293581): SELL LIMIT @ 1838.50, SL 1858.80, TP 1785.00 (3.34R).
+  - BTCUSD (Delta #1694956720): SELL LIMIT @ 64,440.0, SL 64,950.0, TP 62,670.0 (3.47R).
+- **Runtime Optimization Hardened**:
+  - `round_preflight_bootstrap.py` upgraded with 35s timeout and fast live fallback for terminal volume profile aggregation bursts.
