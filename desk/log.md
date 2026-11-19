@@ -14501,3 +14501,16 @@ analysis script rc=1
   - BTCUSD Short: -1 lot @ ,750, mark ,346.2, unrealized PnL +.4037 USD (+108% ROE). Cold zone SL locked at ,650, TP ,950.
   - TIAUSD Short: -10 lots @ .3580, mark .3507, unrealized PnL +.0730 USD (+42% ROE). Breakeven SL locked at .3580, TP .3327.
   - DOGEUSD Maker Limit: Order #1692772135, Sell Limit 1 lot @ 0.0598, SL updated to 0.06120 (cold zone), TP 0.05736 (3.10R).
+## R590 · 2026-11-19 04:30 UTC · zai-desk
+
+**Market**: BTC 63,322.0 (+0.5%)  ETH 1,796.00 (+1.1%)  SOL 74.48 (+1.2%)  XAU 3,733.23 (-0.4%)  XAG 45.320 (-0.5%)
+**Bias (|score|≥2)**: XAU-5(TRANS)  ADA-4(TREND)  DOGE-2(TREND)  AVAX-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
