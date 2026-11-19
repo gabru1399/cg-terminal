@@ -84,7 +84,20 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
   - `/verification-before-completion`: [`C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/verification-before-completion/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/verification-before-completion/SKILL.md) — The Iron Law: No completion claims without fresh verification evidence.
   - `/compact`: Built-in chat context window compaction directive — Summarize and compact conversation history when context budget expands.
 
-[BOOT-05] [INVARIANT] [DETERMINISTIC_PREFLIGHT_BOOTSTRAP]: Verbal recitation of dependency names without physical runtime tool execution is STRICTLY FORBIDDEN. On EVERY activation, round, or timer expiration, the agent MUST execute `python scripts/round_preflight_bootstrap.py` as the mandatory first tool call to physically verify on-disk plugins, skills, MT5 status, and spec timestamps before emitting analysis. Active runtime tools (`read_file`, MCP queries, terminal commands) MUST be executed empirically on every turn.
+[BOOT-05] [INVARIANT] [DETERMINISTIC_PREFLIGHT_BOOTSTRAP]: Verbal recitation of dependency names without physical runtime tool execution is STRICTLY FORBIDDEN. On EVERY activation, round, or timer expiration, the agent MUST execute the following as the MANDATORY FIRST tool call — no exceptions:
+
+  ```
+  run_command("python c:/Users/SIGMA/Documents/cg-terminal/scripts/agent_wake_verification.py --round <N>")
+  ```
+
+  This single atomic call simultaneously:
+    (a) Reads and prints lines 1-165 of `c:/Users/SIGMA/Documents/cg-terminal/desk/CANONICAL_MASTER_SPECIFICATION.md`
+    (b) Runs `scripts/round_preflight_bootstrap.py` — verifies all plugins, skills, MCP servers, MT5 IPC
+    (c) Verifies all 12 critical physical file paths on disk
+    (d) Outputs a structured JSON manifest with live BTC price, POC, VWAP, MT5 equity/positions
+    (e) Exits code 0 (PROCEED) or code 1 (BLOCKED — fix before analyzing markets)
+
+  If `agent_wake_verification.py` exits non-zero: DO NOT analyze markets or place orders. Fix the missing components first. Active runtime tools (`read_file`, MCP queries, terminal commands) MUST be executed empirically on every turn. Zero cached echoes permitted.
 
 ---
 
