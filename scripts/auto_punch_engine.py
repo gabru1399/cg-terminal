@@ -80,6 +80,7 @@ def punch_mt5_order(card, risk_usd=5.50):
     Executes an MT5 order via scripts/mt5_punch.py with strict prop-firm guards.
     """
     sym = card["sym"].replace("USDT", "").replace("USDT-M", "")
+    side = card["side"].lower()
     entry = float(card["entry"])
     stop = float(card["stop"])
     stop_dist = abs(entry - stop)
@@ -105,8 +106,6 @@ def punch_mt5_order(card, risk_usd=5.50):
     realized_r = abs(entry - chosen_tp) / stop_dist if stop_dist > 0 else 0
     if realized_r < 1.95:
         return {"ok": False, "error": f"Rejected by 2.0R hurdle: realized R {realized_r:.2f} < 1.95R hard floor"}
-        
-    side = card["side"].lower()
     
     payload = {
         "symbol": sym,
