@@ -525,6 +525,34 @@
       "mt5RiskUsd": 5.55,
       "ticket": 20284145,
       "createdTs": 1795056798874
+    },
+    {
+      "id": "auto-mt5-1795058892865",
+      "round": "R558",
+      "sym": "LINKUSDT",
+      "side": "short",
+      "action": "short",
+      "type": "limit",
+      "status": "placed-mt5",
+      "source": "autonomous-punch-engine",
+      "engine": "EA6",
+      "entry": 9.065999999999999,
+      "stop": 9.127675,
+      "targets": [
+        8.99925,
+        8.899649999999998,
+        8.880974999999996
+      ],
+      "riskR": 3,
+      "riskPct": null,
+      "regime": "playbook:EA6",
+      "mode": "autonomous-mt5-punch",
+      "rationale": "bearish BOS \u2192 FVG retest limit @ mid (zone 9.01\u20139.13)",
+      "mt5Symbol": "LNKUSD.p",
+      "mt5Lots": 0.9,
+      "mt5RiskUsd": 5.55,
+      "ticket": 20285490,
+      "createdTs": 1795058892865
     }
   ],
   "positions": [

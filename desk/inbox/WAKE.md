@@ -1508,3 +1508,8 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-19 03:28:12 UTC — autonomous-mt5-punch: LINKUSDT SHORT (EA6)
+- Automatically punched by auto_punch_engine: LNKUSD.p 0.9 lots, ticket 20285490, risk $5.55.
+- Entry 9.065999999999999 · SL 9.127675 · T1 8.99925 (planned 3R).
+
