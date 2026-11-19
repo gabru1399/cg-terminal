@@ -299,42 +299,33 @@
   "positions": [
     {
       "symbol": "EURUSD.pi",
-      "venue": "Blueberry-MT5",
-      "ticket": 20297836,
+      "venue": "mt5",
       "side": "short",
       "size": 0.02,
-      "entry": 1.10026,
+      "entryPrice": 1.10026,
       "sl": 1.10026,
-      "tp": 1.0955,
-      "status": "active",
-      "locked_profit_usd": 0.0,
-      "note": "EURUSD short, SL locked at Breakeven 1.10026 (+2.02R excursion), target 1.09550"
+      "tp": 1.094,
+      "status": "be_locked"
     },
     {
       "symbol": "TIAUSD",
-      "venue": "Delta-India",
-      "ticket": 1689224149,
+      "venue": "delta",
       "side": "short",
       "size": -10,
-      "entry": 0.358,
+      "entryPrice": 0.358,
       "sl": 0.358,
       "tp": 0.3327,
-      "status": "active",
-      "locked_profit_usd": 0.0,
-      "note": "SL locked at Breakeven 0.3580, risk-free runner"
+      "status": "be_locked"
     },
     {
-      "symbol": "DOGEUSD",
-      "venue": "Delta-India",
-      "ticket": 1692772139,
+      "symbol": "SEIUSD",
+      "venue": "delta",
       "side": "short",
-      "size": -1,
-      "entry": 0.0598,
-      "sl": 0.0598,
-      "tp": 0.05736,
-      "status": "active",
-      "locked_profit_usd": 0.0,
-      "note": "SL locked at Breakeven 0.05980 (+1.48R excursion), risk-free runner into 0.05736 TP"
+      "size": -5,
+      "entryPrice": 0.0378,
+      "sl": 0.0389,
+      "tp": 0.0356,
+      "status": "active"
     }
   ],
   "closed": [
