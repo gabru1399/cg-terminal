@@ -65,8 +65,8 @@ Every execution round, autonomous turn, or trading response **MUST OPEN** with t
 [x] Canonical Master Specification (@[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]) READ (Empirical read_file executed on wake-up), ANALYZED & STRICTLY FOLLOWED (SOP v2.0.0 mandatory invariant).
 [x] Meta-Cognitive Review of Previous Thinking Chain executed: audited what was missed, latency, blind spots, and applied continuous self-improvement lessons.
 [x] Fresh uncached loading of Plugins, Skills & MCP Server Architecture verified LOADED & OPERATIONAL (zero cached echoes):
-    - Plugins: persistent-memory, coderabbit, superpowers, trading-skills, chrome-devtools-plugin, harness-antigravity.
-    - MCP Servers: delta-exchange-mcp, persistent-memory, agent-memory, chrome-devtools, godkiller-verification, code-review-graph, link-extension, sqlite.
+    - Plugins: coderabbit, superpowers, trading-skills, chrome-devtools-plugin, harness-antigravity. (persistent-memory disabled per user directive).
+    - MCP Servers: delta-exchange-mcp, agent-memory, chrome-devtools, godkiller-verification, code-review-graph, link-extension, sqlite.
     - Skills: trading-skills suite, superpowers suite, karpathy-guidelines, ponytail, quant-analyst, backtesting-frameworks.
 [x] 10-Model Cognitive Thinking Chain Lattice verified (/thinking-model-router):
     - First Principles, Pre-Mortem Analysis, Probabilistic Reasoning (EV hurdle >= 2.0R), Second-Order Effects, Red Team / Steel-Manning, Margin of Safety, Via Negativa, Map vs Territory, Theory of Constraints, Lindy Effect.
@@ -86,7 +86,7 @@ Every execution round, autonomous turn, or trading response **MUST OPEN** with t
 
 ### Pre-Flight Verification Gates:
 - **Gate C-01 (Single Master Specification Invariant & Mandatory read_file Call)**: Bound strictly to `desk/CANONICAL_MASTER_SPECIFICATION.md` (SOP v2.0.0). Antigravity MUST execute `read_file` on `desk/CANONICAL_MASTER_SPECIFICATION.md` on every wake-up as an ingrained raw habit before analyzing markets or placing orders. Multi-file divergences are purged.
-- **Gate C-02 (Plugins, Skills & MCP Infrastructure Gate)**: Verify active availability of essential MCP servers (`delta-exchange-mcp`, `persistent-memory`, etc.), plugins, and analytical skills before formulation.
+- **Gate C-02 (Plugins, Skills & MCP Infrastructure Gate)**: Verify active availability of essential MCP servers (`delta-exchange-mcp`, `agent-memory`, etc.), plugins, and analytical skills before formulation. (persistent-memory disabled).
 - **Gate C-03 (Cognitive Thinking Chain & 4-Voice Debate)**: Ensure no trade or code is generated without Socratic stress-testing across the 10 mental models and 4-voice desk debate.
 - **Gate C-04 (Purge Scanner / Mandatory Individual Asset Audit)**: Scanners and pre-aggregated screener tables are STRICTLY PURGED. On every wake-up, execute direct individual endpoint-by-endpoint analysis across both venues for each and every one of the 234 Expanded Universe Assets (30 Crypto + 28 TradFi + 173 Mutual Delta/Binance + 3 Classic) and 156 MT5 Blueberry Assets individually using `scripts/individual_asset_evaluator.py` and `scripts/mt5_cg_trader.py`. Zero reliance on pre-filtered scanner tables.
 - **Gate C-05 (CLOB & Margin Solvency)**: Audit live Delta Exchange India balances, positions, and orders (`get_wallet_balances`, `get_margined_positions`, `get_open_orders`).
@@ -104,7 +104,7 @@ Dynamic recursion is driven by a single 1200-second timer (`schedule(DurationSec
 
 ```text
 # INVOCATION (load first, uncached)
-@[plugin:persistent-memory]  @[plugin:coderabbit]  @[plugin:superpowers]  @[plugin:trading-skills] 
+@[plugin:coderabbit]  @[plugin:superpowers]  @[plugin:trading-skills] 
 /gravitas  /goal  /executing-plans  /plan  /brainstorming  /karpathy-guidelines  /thinking-model-router 
 @[plugin:trading-skills] 
 # ENGINE: Autonomous Dual-Venue Trade Execution & Recursive Self-Improving Engine
