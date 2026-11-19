@@ -15170,3 +15170,20 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+
+## EXEC · 2026-11-19 15:42 UTC · atg-exec (Round R582 Execution & Runner Surveillance)
+- **Active Runner Expansion (Gate 6 Breakeven Invariant Enforced)**:
+  - EURUSD.pi (Blueberry MT5 Ticket #20297836): Price collapsed further to **1.09807** (+21.9 pips excursion, +$4.38 USD profit, +2.02R excursion). SL remains locked at Breakeven **1.10026**. Downside risk strictly **$0.00 USD**. Target: 1.09550 (+8.8R / +$9.52 USD).
+  - TIAUSD (Delta India Position #17330): Mark price dropped to **0.34096** (+4.86R excursion, +$0.170 USD profit, +100% ROE). SL locked at Breakeven **0.35800**. Downside risk strictly **$0.00 USD**. Target: 0.33270.
+  - DOGEUSD (Delta India Position #14745): Mark price dropped to **0.058649** (+0.82R excursion, +$0.115 USD profit, +192% ROE). SL at 0.06120, TP at 0.05736 (3.10R). Approaching +1.0R ratchet threshold (0.05840). Downside risk: $0.14 USD.
+- **Curated 61 Scan (SOP v2.1.0 Gate Enforcement)**:
+  - 0 Grade A+ setups, 0 Grade B setups, 61 Vetoed. Market in chop/consolidation; all gates held.
+- **Standing Maker Limit Orders Re-Validated (PIT-06)**:
+  - XAUUSD.pi (MT5 #20297864) & XAUTUSD (Delta #1695594328): SELL LIMIT @ 3741.50, SL 3747.00, TP 3725.00 (3.00R).
+  - BNBUSD.p (MT5 #20286769): SELL LIMIT @ 602.50, SL 609.50, TP 566.00 (5.21R).
+  - ETHUSD.pi (MT5 #20293581): SELL LIMIT @ 1838.50, SL 1858.80, TP 1785.00 (3.34R).
+  - BTCUSD (Delta #1694956720): SELL LIMIT @ 64,440.0, SL 64,950.0, TP 62,670.0 (3.47R).
+- **Mandatory Telemetry Persistence**:
+  - `fetch_full_asset_telemetry.py` completed across BTC, XAU, ETH, SOL.
+  - Artifacts: `TELEMETRY-BTC-1795102810178.json`, `TELEMETRY-XAU-1795102730167.json`, `TELEMETRY-ETH-1795102834474.json`, `TELEMETRY-SOL-1795102846630.json`.
