@@ -15230,3 +15230,16 @@ ead_file validation.
 - **Mandatory Telemetry Persistence**:
   - `fetch_full_asset_telemetry.py` completed across BTC and XAU.
   - Artifacts: `TELEMETRY-BTC-1795104627886.json`, `TELEMETRY-XAU-1795104640279.json`.
+## R638 · 2026-11-19 16:22 UTC · zai-desk
+
+**Market**: BTC 63,113.9 (+0.1%)  ETH 1,776.69 (+0.0%)  SOL 73.54 (-0.1%)  XAU 3,684.29 (-1.7%)  XAG 44.740 (-1.8%)
+**Bias (|score|≥2)**: ETH-6(TREND)  AVAX-5(TREND)  DOGE-5(TREND)  BTC-4(TREND)  ADA-4(TREND)  XRP-4(TREND)  LTC-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
