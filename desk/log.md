@@ -14774,3 +14774,13 @@ analysis script rc=1
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## R550 · 2026-11-19 10:45 UTC · zai-desk — TRI-COUNCIL FULL-UNIVERSE SCAN (GLM 5.3 as Strategic Intelligence Officer)
+- **Sweep basis**: fresh MCP/CG telemetry 10:33–10:40Z across screener 231 rows + notifications (feed young post-restart) + deep-dives XAG/XAU/BNB/XRP/LTC/SOL/BTC.
+- **Hurdle results (Hurdle 1 payoff ≥2.0R · H2 Table 7 ≥7.0 · H4 risk caps · H5 PIT-18 spread)**:
+  - **BNB SHORT** — Table 7 **9.5/11.5** (trend h1/h4/d1 BEAR + bear sdiv/exh/trap cluster 09:00–10:16 + CVD bear div active + liq magnets 573.6–574.6 str 77–83 + VWAP+2σ entry): **QUALIFIES** (T2 2.49R). Resting #20240006 @ 593.5 already perfectly placed — DO NOT duplicate; plan TP ladder 582/574.6 (into $1.6M bid wall + liq shelf).
+  - **XAU SHORT** — Table 7 **7.5** (h4/d1 BEAR + ask-wall stack 3744–3753 ages 345–390min verified + liq skew 3.84:1): R to T2 2.66 but R to T1 only 1.09 → conditional qualify with T2-weighted laddering. PIT-01: 0.01 lot on Blueberry = $22.20 risk > $6 cap → **PUNCH ON DELTA XAUT/PAXG INSTEAD** (0.001 oz contracts) or skip MT5.
+  - **XAG SHORT** — Table 7 **7.0** (all-TF BEAR + liq skew 3.34:1 + engine M1 conf 92): **FAILS payoff** (T1 0.43R, T2 1.23R) + PIT-01 min-lot $42 → NO TRADE on Blueberry; watch for 46.27 str-100 magnet sweep before re-pricing.
+  - SOL/LTC/XRP crypto shorts: PIT-03 CAUTION — BTC +1.2% above day VWAP reclaiming, down-magnets 61.8–61.9k favored. No qualifying card.
+- **SOL #20277826 (running)**: live 74.53 > SL 74.06, m15 BULL — REPEAT DIRECTIVE: tighten to structure or exit on pullback ≤74.2 (long-magnets 71.7–72.0 now target).
+- **Prop-cap breaches to acknowledge (2026-11-18)**: ETH #20277881 -$9.15 and NAS100 #20275354 -$8.86 exceeded the $6 hard cap via slippage — root cause: stop distance × lot size not re-verified vs 1.20x stress before autonomous punch. Action: auto_punch_engine must hard-reject when stressedRisk = stopDist × contractValue × 1.2 > $6 at MIN lot.

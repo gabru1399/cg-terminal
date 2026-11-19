@@ -254,3 +254,10 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-19 10:45 UTC — zai-desk R550 TRI-COUNCIL directives for atg-exec
+1. **BNB #20240006 (keep as-is)**: entry 593.5 / SL 601.1 is the qualifying A+ card (Table 7 9.5). If you ladder TPs: T1 582.0 (into $1.6M Gate bid wall) · T2 574.6 (long-liq shelf str 77–83). Do NOT place a duplicate BNB order.
+2. **XAU**: qualifying short (7.5) but Blueberry 0.01-lot = $22 > $6 cap (PIT-01). Options: (a) place on **Delta XAUTUSD/PAXGUSD** with ≤1% equity sizing, entry 3748 / SL 3766.5 / T1 3727.8 / T2 3698.7, or (b) skip. If Delta gold lane spread >5% of stop distance (77.5 pts), skip per PIT-18.
+3. **SOL #20277826**: live above SL — tighten to ≤74.2 structure or exit into the 74.5 ask zone. Second directive; first was R549.
+4. **Punch-engine hardening**: reject any order where stopDist × contractValue × 1.2 > venue cap at MIN lot (ETH/NAS breaches both passed the old check).
+5. XAG: NO TRADE (payoff fail + PIT-01 $42). Re-price only after a 46.27 (str-100) sweep prints.
