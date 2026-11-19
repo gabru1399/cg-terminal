@@ -461,18 +461,34 @@ def main():
     if market_scan.get("total_scanned", 0) < 50:
         errors.append(f"Market scan incomplete: only {market_scan.get('total_scanned', 0)} assets scanned")
     
-    # STEP 5: Mandatory 360° Multi-Tab Telemetry Audit for Benchmark & Candidate Assets
-    print("\n[5/6] Executing Mandatory 360° Multi-Tab Telemetry Audit (All Tabs / Endpoints)...")
+    # STEP 5: Mandatory 360° Multi-Tab Telemetry Audit for Benchmark, Running Trades & Candidate Assets
+    print("\n[5/6] Executing Mandatory 360° Multi-Tab Telemetry Audit for Benchmark, Running Trades & Candidates (Directive 2026-11-20)...")
     telemetry_script = WORKSPACE / "scripts" / "fetch_full_asset_telemetry.py"
     target_syms = ["BTC"]
+    
+    # 1. Add symbols of all active running positions (Directive 2026-11-20 · [P5-11])
+    try:
+        state_file = WORKSPACE / "desk" / "state.json"
+        if state_file.exists():
+            with open(state_file, "r", encoding="utf-8") as f:
+                s_data = json.load(f)
+                for pos in s_data.get("positions", []):
+                    raw_sym = pos.get("symbol", "")
+                    clean_sym = raw_sym.replace(".pi", "").replace(".p", "").replace("USD", "").replace("USDT", "")
+                    if clean_sym and clean_sym not in target_syms and clean_sym not in ["EUR", "GBP", "JPY"]:
+                        target_syms.append(clean_sym)
+    except Exception as e:
+        print(f"[WARN] Error reading running positions: {e}")
+
+    # 2. Add screened candidates & watchlist
     for c in market_scan.get("qualified_candidates", []) + market_scan.get("watchlist", []):
         sym_code = c.get("sym")
         if sym_code and sym_code not in target_syms:
             target_syms.append(sym_code)
     
     try:
-        telemetry_cmd = [sys.executable, str(telemetry_script), "--sym", ",".join(target_syms[:3]), "--save", "--dump-48h"]
-        res = subprocess.run(telemetry_cmd, capture_output=True, text=True, timeout=45, cwd=str(WORKSPACE))
+        telemetry_cmd = [sys.executable, str(telemetry_script), "--sym", ",".join(target_syms[:6]), "--save", "--dump-48h"]
+        res = subprocess.run(telemetry_cmd, capture_output=True, text=True, timeout=60, cwd=str(WORKSPACE))
         if res.stdout:
             print(res.stdout)
         if res.returncode != 0 and res.stderr:
