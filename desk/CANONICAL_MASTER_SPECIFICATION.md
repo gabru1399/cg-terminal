@@ -81,6 +81,8 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
   - `/thinking-model-router`: [`C:/Users/SIGMA/.gemini/config/skills/thinking-model-router/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/skills/thinking-model-router/SKILL.md) — Socratic multi-model cognitive chain routing.
   - `/gravitas`: [`C:/Users/SIGMA/.gemini/config/skills/gravitas/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/skills/gravitas/SKILL.md) — Strict ground-before-mutating and evidence-gated completion verification.
   - `/executing-plans`: [`C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/executing-plans/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/executing-plans/SKILL.md) — Execution fidelity to pre-declared implementation blueprints.
+  - `/verification-before-completion`: [`C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/verification-before-completion/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/verification-before-completion/SKILL.md) — The Iron Law: No completion claims without fresh verification evidence.
+  - `/compact`: Built-in chat context window compaction directive — Summarize and compact conversation history when context budget expands.
 
 [BOOT-05] [INVARIANT] [DETERMINISTIC_PREFLIGHT_BOOTSTRAP]: Verbal recitation of dependency names without physical runtime tool execution is STRICTLY FORBIDDEN. On EVERY activation, round, or timer expiration, the agent MUST execute `python scripts/round_preflight_bootstrap.py` as the mandatory first tool call to physically verify on-disk plugins, skills, MT5 status, and spec timestamps before emitting analysis. Active runtime tools (`read_file`, MCP queries, terminal commands) MUST be executed empirically on every turn.
 
