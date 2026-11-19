@@ -16862,3 +16862,16 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## EXEC · 2026-11-19 20:05 UTC · atg-exec (VPVR High Volume Node Architecture Codification & Gold Short Formulation)
+- **CoinGlass Legend XAUUSDT VPVR Visual Audit**:
+  - Dominant VPVR High Volume Node (HVN) / Profile POC confirmed at 3,693.93 with multiple prior rejection wicks.
+  - Current mark (3,665-3,670) is at the lower boundary of the descending channel and directly above a swept purple liquidation shelf (3,668.23).
+  - Massive high-density liquidation magnet identified downstream at 3,650.00 - 3,645.00.
+- **Microstructure Ruling: Anti-Chasing Mandate**:
+  - Selling market at 3,665-3,670 is rejected: selling the bottom of the channel into a completed sweep exposes capital to mean-reversion drawdowns back to the VPVR POC.
+  - Authorized Trade Plan: Post-only maker limit short at the VPVR POC / HVN shelf (3,691.00 - 3,694.00).
+  - Formulation: Entry 3,692.00, SL 3,698.50 (.50 risk), TP 3,650.00 (+.00 drive into liq magnet, 6.46R).
+  - Sizing on Delta (XAUTUSD): 5 lots = .0325 USD dollar risk (strictly 1.05% equity risk on .08 USD net equity, requires .37 USD margin out of .51 USD available).
+- **Master Specification Codification**:
+  - Enacted [VPVR-01] (Visible Range Volume Profile HVN/LVN Architecture) in CANONICAL_MASTER_SPECIFICATION.md Section 6.
