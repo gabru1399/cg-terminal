@@ -320,11 +320,11 @@
       "side": "short",
       "size": 0.02,
       "entry": 1.10026,
-      "sl": 1.10245,
+      "sl": 1.10026,
       "tp": 1.0955,
       "status": "active",
       "locked_profit_usd": 0.0,
-      "note": "EURUSD 1.1000 resistance sweep short, target 1.09550"
+      "note": "EURUSD short, SL locked at Breakeven 1.10026 (+2.02R excursion), target 1.09550"
     },
     {
       "symbol": "TIAUSD",
