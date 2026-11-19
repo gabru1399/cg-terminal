@@ -45,6 +45,10 @@ def init_mt5():
         raise RuntimeError(f"MT5 account_info failed: {err}")
     return acc
 
+def is_cg_terminal(item) -> bool:
+    """Enforces dual-key ownership: BOTH comment=='cg_terminal' and magic==42001 required."""
+    return getattr(item, 'comment', '') == CG_COMMENT and getattr(item, 'magic', 0) == MAGIC_NUMBER
+
 def get_account_audit():
     acc = init_mt5()
     equity = acc.equity
@@ -55,14 +59,14 @@ def get_account_audit():
     overall_drawdown_usd = max(0.0, INITIAL_ACCOUNT_BALANCE - equity)
     overall_drawdown_pct = (overall_drawdown_usd / INITIAL_ACCOUNT_BALANCE) * 100.0
     
-    # Audit positions
+    # Audit positions (Strict Ownership: require BOTH comment == CG_COMMENT and magic == MAGIC_NUMBER)
     all_positions = mt5.positions_get() or ()
-    cg_positions = [p for p in all_positions if p.comment == CG_COMMENT or p.magic == MAGIC_NUMBER]
-    other_positions = [p for p in all_positions if p.comment != CG_COMMENT and p.magic != MAGIC_NUMBER]
+    cg_positions = [p for p in all_positions if is_cg_terminal(p)]
+    other_positions = [p for p in all_positions if not is_cg_terminal(p)]
     
     all_orders = mt5.orders_get() or ()
-    cg_orders = [o for o in all_orders if o.comment == CG_COMMENT or o.magic == MAGIC_NUMBER]
-    other_orders = [o for o in all_orders if o.comment != CG_COMMENT and o.magic != MAGIC_NUMBER]
+    cg_orders = [o for o in all_orders if is_cg_terminal(o)]
+    other_orders = [o for o in all_orders if not is_cg_terminal(o)]
     
     audit = {
         "account": {
@@ -287,8 +291,8 @@ def move_sl_to_breakeven(ticket: int):
     if not positions:
         raise ValueError(f"Position ticket {ticket} not found")
     pos = positions[0]
-    if pos.comment != CG_COMMENT and pos.magic != MAGIC_NUMBER:
-        raise PermissionError(f"DENIED: Position {ticket} does not belong to cg_terminal (comment='{pos.comment}').")
+    if not is_cg_terminal(pos):
+        raise PermissionError(f"DENIED: Position {ticket} does not belong to cg_terminal (comment='{pos.comment}', magic={pos.magic}).")
         
     entry_price = pos.price_open
     current_sl = pos.sl
@@ -326,8 +330,8 @@ def modify_position_sltp(ticket: int, sl: float, tp: float = None):
     if not positions:
         raise ValueError(f"Position ticket {ticket} not found")
     pos = positions[0]
-    if pos.comment != CG_COMMENT and pos.magic != MAGIC_NUMBER:
-        raise PermissionError(f"DENIED: Position {ticket} does not belong to cg_terminal (comment='{pos.comment}').")
+    if not is_cg_terminal(pos):
+        raise PermissionError(f"DENIED: Position {ticket} does not belong to cg_terminal (comment='{pos.comment}', magic={pos.magic}).")
         
     info = mt5.symbol_info(pos.symbol)
     digits = info.digits if info else 2
@@ -364,7 +368,7 @@ def auto_ratchet_breakeven(verbose=True):
     positions = mt5.positions_get() or ()
     results = []
     for p in positions:
-        if p.comment == CG_COMMENT or p.magic == MAGIC_NUMBER:
+        if is_cg_terminal(p):
             risk_pts = abs(p.price_open - p.sl)
             if risk_pts <= 0:
                 continue
@@ -409,7 +413,7 @@ def cancel_order(ticket: int):
     if not orders:
         raise ValueError(f"Order ticket {ticket} not found")
     o = orders[0]
-    if o.comment != CG_COMMENT and o.magic != MAGIC_NUMBER:
+    if not is_cg_terminal(o):
         raise ValueError(f"Order ticket {ticket} does not belong to cg_terminal (magic={o.magic}, comment={o.comment})! VETOED by isolation gate.")
     request = {
         "action": mt5.TRADE_ACTION_REMOVE,
@@ -432,7 +436,7 @@ def modify_pending_order(ticket: int, price: float = None, sl: float = None, tp:
     if not orders:
         raise ValueError(f"Order ticket {ticket} not found")
     o = orders[0]
-    if o.comment != CG_COMMENT and o.magic != MAGIC_NUMBER:
+    if not is_cg_terminal(o):
         raise ValueError(f"Order ticket {ticket} does not belong to cg_terminal (magic={o.magic}, comment={o.comment})! VETOED by isolation gate.")
     request = {
         "action": mt5.TRADE_ACTION_MODIFY,
