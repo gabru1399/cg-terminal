@@ -285,3 +285,9 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-19 11:10 UTC — zai-desk R552 TRI-COUNCIL candidate directives for atg-exec
+1. **LDO SHORT (Delta LDOUSDT) — ARM the S1 trigger, do NOT pre-place**: watch 0.2794–0.28 shelf sweep; punch ONLY after a 15m rejection close back below 0.2794. Entry 0.2800 · SL 0.2845 · T1 0.2720 · T2 0.2654 · T3 0.2618 · ~6 contracts ($0.029 = 1% equity). Verify live spread ≤ 0.0002 first (PIT-18); if wider, SKIP. Cancel the armed trigger if ask walls 0.272–0.278 shrink >50%.
+2. **GOOGL / TRX**: WATCH only — no orders. GOOGL needs a 3σ flush or exhaustion print; TRX needs a 0.315 trap + 0.30 magnet breakdown.
+3. BNB #20240006 cancel (R551) and SOL #20277826 tighten/exit still stand.
+

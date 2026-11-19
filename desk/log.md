@@ -14821,3 +14821,12 @@ User challenged strict compliance vs CANONICAL_MASTER_SPECIFICATION.md. Verdict:
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## R552 · 2026-11-19 11:10 UTC · zai-desk — TRI-COUNCIL CANDIDATE LIST (strict SOP pass)
+Fresh sweep 11:01–11:07Z. Candidates evaluated with full 16-dim extraction + 3D/7D/30D shelf math + corrected factor-6 logic:
+- **LDO SHORT (Delta LDOUSDT) — S1 ARMED, the only qualifying card**: 4-TF BEAR stack, engine A+ conf 92, BEAR abs cluster @ 0.2701/0.2723/0.2740 (fresh, in-zone), ask-wall ladder 0.272–0.278 (ages 420–1980min). 7D LSR 2.56:1 / 30D 9.05:1 short-dominance above → D12 BANS passive entry below shelf; conform play = S1 sweep-fade: trigger 0.2794–0.28 sweep + 15m rejection close, entry 0.2800, SL 0.2845 (cold: beyond 3D/7D/30D shelf max 0.2794 + 0.3% buffer + wick), T1 0.2720 (1.78R) · T2 0.2654 (3.24R, str-87 long-liq) · T3 0.2618 (4.04R, str-98). Table 7 strict 7.5. Sizing ~6 contracts = $0.029 (1.0% equity). PIT-18: verify spread ≤ 0.0002 at punch.
+- **GOOGL LONG — WATCH only**: BULL abs 10:50 @ 294.75 + day-VAH break, but anti-chase gate unsatisfied (RSI m15 90 / h1 78.8, 1.70σ stretch, conf 35) + h4/d1 BEAR. Conform trigger: ±3σ flush ≥ 297.98 or exhaustion print at 295–298 WITH defending bid wall.
+- **XAU SHORT — VETOED (3rd pass)**: fresh BEAR vol-bar div 10:48 improves factor 3, but cold-zone SL 3784 caps payoff at 1.75R best case (floor 2.00R). No card.
+- **TRX SHORT breakdown — WATCH only**: engine NO_TRADE SKIP (conf 20), TF stack 2-2 split, no in-zone signal. Long-dominant below-shelf $195M (str-100 @ 0.30) is the magnet; needs a trap at 0.315 + breakdown confirmation.
+- Standing from R551: BNB S1 watch 602.5–607 squeeze-fade (SL ≥ 603.8, Grade B half-risk); SOL #20277826 tighten/exit (3rd notice); XAG vetoed.
+
