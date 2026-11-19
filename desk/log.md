@@ -15144,3 +15144,16 @@ ead_file validation.
   - BNBUSD.p (MT5 #20286769): SELL LIMIT @ 602.50, SL 609.50, TP 566.00 (5.21R).
   - ETHUSD.pi (MT5 #20293581): SELL LIMIT @ 1838.50, SL 1858.80, TP 1785.00 (2.64R).
   - BTCUSD (Delta #1694956720): SELL LIMIT @ 64,440.0, SL 64,950.0, TP 62,670.0 (3.47R).
+## R634 · 2026-11-19 15:18 UTC · zai-desk
+
+**Market**: BTC 63,331.0 (+0.5%)  ETH 1,796.80 (+1.1%)  SOL 74.68 (+1.5%)  XAU 3,705.76 (-1.1%)  XAG 45.130 (-1.0%)
+**Bias (|score|≥2)**: ETH-6(TRANS)  AVAX-5(TRANS)  DOGE-5(TRANS)  LTC-5(TREND)  BTC-5(TRANS)  XAU-3(TREND)  ADA-3(TRANS)  XAG-2(TREND)  BNB-2(TRANS)  LINK-2(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
