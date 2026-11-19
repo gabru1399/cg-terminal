@@ -15063,3 +15063,29 @@ ead_file validation.
   - BTCUSD (Delta #1694956720): SELL LIMIT @ 64,440.0, SL 64,950.0, TP 62,670.0 (3.47R).
 - **Market Scan (Curated 61)**:
   - 0 A+ setups, 0 Grade B setups, 61 Vetoed. Market trading inside mid-range chop; capital preserved.
+## R630 · 2026-11-19 14:29 UTC · zai-desk
+
+**Market**: BTC 63,925.9 (+1.4%)  ETH 1,808.91 (+1.8%)  SOL 75.11 (+2.1%)  XAU 3,714.48 (-0.9%)  XAG 45.310 (-0.6%)
+**Bias (|score|≥2)**: XAU-5(TREND)  AVAX-4(TREND)  BNB-4(TREND)  BTC-3(TREND)  DOGE-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
+## R630 · 2026-11-19 14:29 UTC · zai-desk
+
+**Market**: BTC 63,925.9 (+1.4%)  ETH 1,808.91 (+1.8%)  SOL 75.11 (+2.1%)  XAU 3,714.48 (-0.9%)  XAG 45.310 (-0.6%)
+**Bias (|score|≥2)**: XAU-5(TREND)  AVAX-4(TREND)  BNB-4(TREND)  BTC-3(TREND)  DOGE-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
