@@ -164,7 +164,7 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 [C-07] [GATE] [16_DIMENSION_AUDIT]: Extract all 16 live dimensions for any proposed candidate setup before submitting orders.
 [C-08] [GATE] [TWO_TIER_CONVICTION]: Tier 1 majors (`BTC`, `BNB`, `ETH`) authorized up to $1.50 USD margin with tight structural stops (<= 0.8%); Grade B micro-assets permitted <= 1.0% - 2.5% dollar risk.
 [C-09] [GATE] [SINGLE_TIMER_CONTINUITY]: Verify via `manage_task(Action="list")` that strictly ONE dynamic timer is active.
-[C-10] [GATE] [PITFALLS_LEDGER]: Enforce all 17 empirical invariants codified in Section 19 before any order reaches the CLOB.
+[C-10] [GATE] [PITFALLS_LEDGER]: Enforce all 22 empirical invariants codified in Section 19 (including PIT-21 sweep-hunt cold-zone invariant and PIT-22 CFD spread gate) before any order reaches the CLOB.
 
 ---
 
