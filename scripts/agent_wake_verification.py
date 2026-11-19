@@ -221,7 +221,7 @@ def audit_symbol(sym):
     score = 0.0
     if regime in ['TREND_UP', 'TREND_DOWN']:
         score += 1.5
-    if model in ['S1', 'S2', 'S5', 'S7', 'S9']:
+    if model in ['S1', 'S2', 'S5', 'S7', 'S9', 'S10']:
         score += 1.5
     if "Absorption" in top_sig or "StrongDiv" in top_sig:
         score += 2.0

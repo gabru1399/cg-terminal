@@ -419,6 +419,7 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 [ARCH-S8] [INVARIANT] [S8_DETAIL]: Continuation through broken liquidation shelf; stop at inside edge of shelf.
 [ARCH-S9] [INVARIANT] [S9_DETAIL]: Spikes into declining EMA 89 or 233 with rejection wick >= 2.0x body on heavy volume (>= 1.5x 20-MA) with footprint exhaustion/trap; enter on 50% wick retest or candle close; stop tightly beyond rejection wick in cold zone. Grade A+ eligible.
 [ARCH-S10] [INVARIANT] [S10_DETAIL]: In-trend shelf / micro-pullback setup. When market is in a strong runaway trend ($|z| \ge 1.0\sigma$, Fib EMA 13 < 89 < 233 on 15m/1h/4h), deep pullbacks to Day/Month POC rarely occur. Price instead pauses in a 4-to-12 bar consolidation shelf (bear flag / bull flag). Invalidation is strictly defined by the shelf boundary:
+  - Universal Multi-Asset & Dual-Venue Mandate: This archetype is NOT restricted to BTC; it applies equally to ALL 61 Curated assets across BOTH operating venues: Delta Exchange India (crypto perps/synthetics via maker limit `post_only: true`) and Blueberry MT5 (TradFi metals, forex, indices, and CFD perps). Whenever ANY asset on either venue exhibits an aggressive impulse break followed by an in-trend consolidation shelf, the desk must formulate and monitor an S10 entry rather than waiting solely for distant macro POC retracements.
   - Entry: Limit order at the top of the shelf (50%-75% retest) or Fast EMA 13/21 touch upon footprint absorption/trap (`abs`, `trap`, `exh`), or on verified breakdown retest.
   - Stop: Placed tightly beyond the opposite edge of the shelf (+ 0.15% or $0.20\times\text{ATR}$ buffer). Stop distance must be $< 0.40\times$ standard POC stop, producing massive asymmetry ($R \ge 3.0\text{R}$ to $6.0\text{R}$).
   - Volume Signature: Taker volume during the shelf must decay $> 40\%$ vs impulse leg; CVD flat or forming lower highs (bearish) / higher lows (bullish).
@@ -1047,6 +1048,7 @@ flowchart LR
   - First-30m Return: If first 30 minutes following UTC daily anchor moves > 0.40σ of developing VWAP band, restrict candidate selection for that asset to the SAME direction until day rolls over (Bayesian prior update for Table 7).
 
 [EA-07] [ARCHETYPE] [IN_TREND_SHELF_BREAKDOWN] [SLEEVE_T_SHELF]:
+  - Universal Multi-Venue Scope: Operates across all 61 Curated assets on both venues (Delta Exchange India & Blueberry MT5).
   - Setup Definition: Following an aggressive impulse drive ($|z| \ge 1.0\sigma$ or breakdown of session VAL/VAH), price forms a 4-to-12 bar horizontal consolidation shelf (bear flag / bull flag) where taker volume decays by $\ge 40\%$ vs impulse leg.
   - Microstructure Trigger: Price retests shelf resistance / declining Fast EMA 13/21 on 5m/15m with footprint absorption (`abs`) or trapped counter-trend orders (`trap`). Enter via maker limit order at top of shelf or on 15m candle close breaking down from shelf.
   - Quarter-Shelf Stop Geometry: Stop Loss placed beyond the shelf high (short) / shelf low (long) by $0.25\times$ shelf height:
