@@ -16989,3 +16989,16 @@ ead_file validation.
    - VETOED: `ADAUSD.p` short order vetoed by PIT-18 spread protection (spread exceeded 20% of stop distance). Crypto preserved for Delta CLOB.
 
 **Autonomous Recursion**: 1200s dynamic schedule timer initialized for Round R601.
+## R659 · 2026-11-19 21:34 UTC · zai-desk
+
+**Market**: BTC 61,495.1 (-2.4%)  ETH 1,740.37 (-2.0%)  SOL 72.20 (-1.9%)  XAU 3,632.70 (-3.0%)  XAG 43.090 (-5.4%)
+**Bias (|score|≥2)**: ETH-5(TREND)  DOGE-5(TREND)  ADA-4(TREND)  BNB-4(TREND)  AVAX-4(TREND)  BTC-4(TREND)  XAU-4(TREND)  XAG-2(TREND)  SOL-2(TREND)  XRP-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
