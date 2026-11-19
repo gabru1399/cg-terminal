@@ -220,11 +220,9 @@ def audit_symbol(sym):
                 top_sig = str(chk.get('value', 'PASS'))[:16]
                 break
 
-    if grade in ['A', 'A+', 'B'] or best_r >= 1.5:
-        liq = fetch_json(f"{base}/liqlevels?sym={sym}")
-        if liq and liq.get('ok'):
-            lsr = liq.get('lsr', 1.0)
-            
+    # Multi-Funnel Order-Flow Discovery (Directive 2026-11-20 · Section 17 & Section 23)
+    # Check signals and liqlevels for trending assets, active setups, and major instruments
+    if grade in ['A', 'A+', 'B'] or best_r >= 1.2 or regime in ['TREND_UP', 'TREND_DOWN'] or sym in ['BTC', 'ETH', 'SOL', 'BNB', 'XAU', 'XAG', 'DOGE', 'TIA']:
         sigs = fetch_json(f"{base}/signals?sym={sym}")
         if sigs and sigs.get('sets'):
             for s_set in sigs['sets']:
@@ -237,6 +235,10 @@ def audit_symbol(sym):
                 if top_sig != "NONE":
                     break
 
+        liq = fetch_json(f"{base}/liqlevels?sym={sym}")
+        if liq and liq.get('ok'):
+            lsr = liq.get('lsr', 1.0)
+
     score = 0.0
     if regime in ['TREND_UP', 'TREND_DOWN']:
         score += 1.5
@@ -248,6 +250,8 @@ def audit_symbol(sym):
         score += 1.0
     if best_r >= 2.0:
         score += 1.5
+    elif best_r >= 1.5:
+        score += 1.0
     if lsr >= 2.5:
         score += 1.5 if model == 'S1' else -1.0
     elif lsr < 2.0:
@@ -255,9 +259,12 @@ def audit_symbol(sym):
         
     score = min(max(score, 0.0), 10.0)
 
-    if score >= 7.0 and best_r >= 2.0 and grade in ['A', 'A+']:
+    # Dynamic Grade Assignment based on Confluence Score & Order-Flow Edge
+    if score >= 7.0 and (best_r >= 2.0 or "Absorption" in top_sig):
+        grade = "A"
         status = "A+ QUALIFIED"
-    elif score >= 5.0 and best_r >= 1.5 and grade in ['A', 'B']:
+    elif score >= 5.0 and (best_r >= 1.4 or top_sig != "NONE"):
+        grade = "B" if grade not in ['A', 'A+'] else grade
         status = "GRADE B WATCH"
     else:
         status = "NO TRADE (VETO)"
