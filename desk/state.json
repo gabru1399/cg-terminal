@@ -546,6 +546,33 @@
       "mt5RiskUsd": 5.55,
       "ticket": 20285490,
       "createdTs": 1795058892865
+    },
+    {
+      "id": "auto-mt5-eth-1795061569402",
+      "round": "R580",
+      "sym": "ETHUSDT",
+      "side": "short",
+      "action": "short",
+      "type": "limit",
+      "status": "placed-mt5",
+      "source": "atg-exec-hunt",
+      "engine": "EA6-Macro-Supply",
+      "entry": 1812.5,
+      "stop": 1822.5,
+      "targets": [
+        1785.0,
+        1765.0
+      ],
+      "riskR": 2.75,
+      "riskPct": null,
+      "regime": "playbook:EA6",
+      "mode": "autonomous-mt5-punch",
+      "rationale": "4H Bearish EMA spine + Daily Value Area High rejection sweep into 4H supply block. R=2.75, risk .50.",
+      "mt5Symbol": "ETHUSD.pi",
+      "mt5Lots": 0.55,
+      "mt5RiskUsd": 5.5,
+      "ticket": 20286694,
+      "createdTs": 1795061569402
     }
   ],
   "positions": [
