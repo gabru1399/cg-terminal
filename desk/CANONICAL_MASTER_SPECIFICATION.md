@@ -870,6 +870,9 @@ flowchart LR
 [PIT-15] [INVARIANT] [ZERO_TAB_OMISSION]: Systematically audit trailing 48h Footprint across all toggle combinations (time, volume, range bars, diagonal imbalances, profile nodes), Large Orders intensity, 3D/7D/30D liquidation levels, and CVD before placing an order.
 [PIT-16] [INVARIANT] [COLD_ZONE_SL]: Stop losses MUST NEVER be placed inside or in front of high-density liquidation clusters (>= 40% strength); SL MUST be placed strictly in Cold Zone beyond entire multi-exchange liquidation shelf across 3D, 7D, 30D lookbacks.
 [PIT-17] [INVARIANT] [MACRO_EMA_SPINE]: Discard EMA 13 for macro bias; ground narrative formulation in 4-quadrant EMA 89 <-> EMA 233 matrix across 15m and 1H; exploit Direct 1H EMA 89 Resistance, Trap Zone (Above 89, Below 233) rejections, and coinciding static anchor confluence.
+[PIT-18] [INVARIANT] [MICROSTRUCTURE_SPREAD_TO_STOP_GATE]: On CFD venues (Blueberry MT5), planned stop distance MUST be >= 2.0x broker bid-ask spread (stop_dist >= 2.0 * spread). High-spread instruments (where spread > 20% of stop distance) are strictly barred from MT5 execution; micro-alts route to Delta Exchange India CLOB (maker post-only, zero spread markup).
+[PIT-19] [INVARIANT] [CORRELATED_CRYPTO_CAP]: Maximum 2 concurrent same-direction crypto positions permitted at any time. Slot 3 is reserved exclusively for non-correlated macro commodities/metals (XAU/UKO/USO). Total portfolio risk heat (Active + Pending) MUST NOT exceed 1.0% of equity.
+[PIT-20] [INVARIANT] [INSTITUTIONAL_PRE_TRADE_CLEARANCE]: Every setup MUST pass the 5-Point Institutional Clearance Gate (evidence-gap-check, market-regime-analysis, risk-reward-sanity-check, execution-plan-check, portfolio-concentration) before placing an order. Cosmetic R-multiples lacking real liquidation cluster anchors are strictly vetoed.
 
 ---
 
