@@ -17076,3 +17076,16 @@ ead_file validation.
    - RESTING: `ETHUSD.pi` Limit Sell 0.27 @ 1,838.50 (Ticket #20293581, SL 1,858.80, TP 1,785.00).
 
 **Autonomous Recursion**: 1200s dynamic schedule timer initialized for Round R603.
+## R664 · 2026-11-19 22:21 UTC · zai-desk
+
+**Market**: BTC 61,856.3 (-1.9%)  ETH 1,750.51 (-1.5%)  XAU 3,640.58 (-2.8%)  XAG 43.170 (-5.3%)
+**Bias (|score|≥2)**: ETH-4(TREND)  ADA-3(TREND)  DOGE-4(TREND)  BTC-4(TREND)  XAU-3(TREND)  LINK-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
