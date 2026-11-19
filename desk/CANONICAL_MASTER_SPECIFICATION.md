@@ -164,7 +164,7 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 [x] Blueberry Funded MT5 Terminal & Shared Account Isolation audited (Login #5126976; Equity from manifest, Balance, Risk Cap $10-$15 for A+ High-Confluence min-lot setups / $5-$6 standard, comment='cg_terminal' invariant).
 [x] Gate 7 High-Potential Conviction Protocol & Gate 9 Dynamic Multi-Slot Expansion armed (High isolated leverage permitted on high-potential setups with verified structural stops; slight risk expansion authorized to capture high-confluence setups).
 [x] Operational Invariants armed (Gate 10 BTC Macro Filter, +1.0R Breakeven Invariant, 8-Bar Time Stop, Post-Only Maker Execution, Mark-Price Brackets, Shared Account Isolation).
-[x] Running Trades Liquidation Heatmap & Cold Zone SL Audit completed (Directive 2026-11-18: audit all running trades including co-located algos; ensure SLs are in structural cold zones away from sweep clusters even if risk increases slightly — PIT-21).
+[x] Running Trades 360° Telemetry & Dynamic TP/SL Optimization Audit completed (Directive 2026-11-20: for all running trades, pull 360° telemetry from /api/cg/ endpoints; cross-examine SL against liquidation sweep clusters [PIT-21]; dynamically adapt TP into opposite liquidation cluster magnets [P5-11]).
 [x] Section 19 Pitfalls Ledger enforced (PIT-01 through PIT-22 — all 22 empirical invariants including PIT-21 Cold Zone SL, PIT-22 CFD Spread Gate).
 [x] Single Dynamic 1200s Timer verified (Zero duplicate timers, zero cron overlap).
 ```
