@@ -494,8 +494,8 @@ def main():
             target_syms.append(sym_code)
     
     try:
-        telemetry_cmd = [sys.executable, str(telemetry_script), "--sym", ",".join(target_syms[:6]), "--save", "--dump-48h"]
-        res = subprocess.run(telemetry_cmd, capture_output=True, text=True, timeout=60, cwd=str(WORKSPACE))
+        telemetry_cmd = [sys.executable, str(telemetry_script), "--sym", ",".join(target_syms[:3]), "--save", "--dump-48h"]
+        res = subprocess.run(telemetry_cmd, capture_output=True, text=True, timeout=90, cwd=str(WORKSPACE))
         if res.stdout:
             print(res.stdout)
         if res.returncode != 0 and res.stderr:
