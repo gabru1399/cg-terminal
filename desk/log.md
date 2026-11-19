@@ -14419,3 +14419,23 @@ analysis script rc=1
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+## EXEC · 2026-11-19 04:02 UTC · atg-exec (Autonomous Execution Round R580)
+- **Goal Killed**: Timer task-24137 cancelled per user directive. Zero active background cron/timer tasks.
+- **Forensic Discovery & Fix (PIT-18 Spread Gate)**:
+  - LNKUSD.p (#20284145) filled @ 9.066 and stopped out @ 9.152 (-.74). Root cause: broker spread was 0.085 vs stop distance 0.062 (stop_dist < spread).
+  - Deployed PIT-18 Microstructure Spread-to-Stop Gate in scripts/mt5_punch.py: orders with stop_dist < 2.0 * spread are rejected. Micro-alts with wide spreads are redirected to Delta Exchange India CLOB (maker post-only).
+- **Price Displacement Check**:
+  - Added pre-flight tick validation in mt5_punch.py and auto_punch_engine.py. Awaits pullback if price already crossed limit.
+- **WAKE.md Token Optimization**:
+  - Archived 1,534 historical lines to desk/inbox/WAKE_ARCHIVE_20261119.md. Reduced WAKE.md to 19 lines, saving ~1,500 tokens per turn.
+- **Blueberry Funded MT5 (#5126976)**:
+  - Account: Balance ,551.92 | Equity ,607.56 (+.56 surplus; Drawdown = .00).
+  - Open CG Orders:
+    - BNBUSD.p (#20240006): Sell Limit 0.72 lots @ 593.5, SL 601.1, TP 566.0 (3.62R).
+    - XAUUSD.pi (#20244935): Sell Limit 0.01 lots @ 3794.5, SL 3800.5, TP 3776.0 (3.08R).
+  - Co-located Algo Isolation: 9 algorithmic trades (EURUSD, USDJPY, USDCHF, NZDSGD, USDCAD, XLMUSD) 100% untouched and floating in profit (+.67).
+- **Delta Exchange India (#26902927)**:
+  - Net Liquid Equity: .4352 USD (INR 292.00).
+  - BTCUSD Short: -1 lot @ ,750, mark ,195.4, unrealized PnL +.5546 USD (+119% ROE). Cold zone SL locked at ,650, TP ,950.
+  - TIAUSD Short: -10 lots @ .3580, mark .3507, unrealized PnL +.0730 USD (+42% ROE). Breakeven SL locked at .3580, TP .3327.
+  - DOGEUSD Maker Limit: Order #1692772135, Sell Limit 1 lot @ 0.0598, SL 0.06058, TP 0.05736 (3.10R). Open & waiting.
