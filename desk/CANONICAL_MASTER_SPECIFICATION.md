@@ -2,7 +2,7 @@
 ## Unified Autonomous Dual-Venue Order-Flow Formulation, Multi-Agent Swarm Coordination & Recursive Execution Bible
 
 ```text
-@[plugin:persistent-memory] @[plugin:coderabbit] @[plugin:superpowers] @[plugin:trading-skills]
+@[plugin:coderabbit] @[plugin:superpowers] @[plugin:trading-skills]
 /goal /executing-plans /plan /brainstorming /karpathy-guidelines /thinking-model-router /gravitas
 AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 (CANONICAL SOP v2.1.0 · STRICT LINE-BY-LINE ENFORCEABLE MASTER SPECIFICATION)
@@ -19,8 +19,7 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 ## MANDATORY BOOTSTRAP: DEPENDENCY INITIALIZATION & ARCHITECTURAL LOADING PROTOCOL
 ### (LOAD FIRST, UNCACHED · STRICT PRE-EXECUTION PREREQUISITE ON EVERY ACTIVATION)
 
-[BOOT-01] [MANDATORY] [PLUGINS]: On EVERY activation, autonomous turn, or timer expiration, the agent MUST explicitly load, prime, and verify the active runtime state of the following 6 core plugins before reading telemetry or generating orders:
-  - `plugin:persistent-memory`@per: User preference profiling, past execution failure recall, and trade memory ledger.
+[BOOT-01] [MANDATORY] [PLUGINS]: On EVERY activation, autonomous turn, or timer expiration, the agent MUST explicitly load, prime, and verify the active runtime state of the following core plugins before reading telemetry or generating orders (persistent-memory is DISABLED per user directive to ensure fresh execution):
   - `plugin:coderabbit`: Code review graph analysis, PR review loops, and diff safety verification.
   - `plugin:superpowers`: Structured planning, plan execution fidelity, and systematic debugging runtimes.
   - `plugin:trading-skills`: Quantitative financial modules (market regime, position sizing, catalyst mapping, evidence-gap check).
@@ -41,9 +40,8 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
   - `systematic-debugging` / `debugging-strategies`: Four-phase root-cause triage, evidence logging, and hypothesis verification.
   - `windows-shell-reliability`: Safe PowerShell command execution, token separation, and terminal process control.
 
-[BOOT-03] [MANDATORY] [MCP_SERVERS]: The agent MUST verify active operational connectivity to the following 8 MCP server endpoints before evaluating telemetry or dispatching orders:
+[BOOT-03] [MANDATORY] [MCP_SERVERS]: The agent MUST verify active operational connectivity to the following MCP server endpoints before evaluating telemetry or dispatching orders:
   - `delta-exchange-mcp`: Live CLOB, wallet balances, margined positions, open orders, and bracket placement on Delta Exchange India.
-  - `persistent-memory`: Cross-session memory search (`search_past_memory`) and operator profile retrieval (`get_user_profile`).
   - `agent-memory`: Fast structured agent memory, project initialization, and memory update primitives.
   - `chrome-devtools`: Web automation, console message inspection, and live terminal UI auditing.
   - `godkiller-verification`: Formal task routing, verification phases, evidence tracking, and handoff guards.
@@ -95,7 +93,7 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 [AGI-01] [AXIOM] [ANTIFRAGILE_REFLECTION]: The engine measures the delta between expected outcome and live market realization; every filled, stopped, or cancelled order produces structured empirical data that updates internal risk weights.
 [AGI-02] [AXIOM] [ERROR_TRANSMUTATION]: When a friction point or structural pitfall is encountered, the formulation engine MUST formulate an immutable mathematical invariant to permanently eliminate the risk.
 [AGI-03] [AXIOM] [ZERO_REPEATED_MISTAKES]: A mistake made once is an experimental data point; a mistake made twice is a catastrophic failure; all documented pitfalls are verified before any order reaches the exchange CLOB.
-[AGI-04] [AXIOM] [KNOWLEDGE_ASSIMILATION]: On every wakeup, verify Persistent Memory (`get_user_profile`, `search_past_memory`) and trade log forensics (`desk/log.md`, `desk/state.json`) to incorporate past lessons into current execution chains.
+[AGI-04] [AXIOM] [KNOWLEDGE_ASSIMILATION]: On every wakeup, verify trade log forensics (`desk/log.md`, `desk/state.json`) to incorporate past lessons into current execution chains. External persistent memory is bypassed for unpolluted execution.
 [AGI-05] [AXIOM] [IMMUTABLE_CORE_SAFETY]: Max 1.0%–2.5% risk per trade, Post-Only maker limit execution, +1.0R Breakeven invariant, and `mark_price` stop-loss triggers remain strictly immutable.
 
 ---
