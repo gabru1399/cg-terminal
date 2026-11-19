@@ -5,17 +5,21 @@
 # MANDATORY SPECIFICATION & RUNTIME GOVERNANCE
 @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]
 @[c:\Users\SIGMA\Documents\cg-terminal\scripts\round_preflight_bootstrap.py]
+@[c:\Users\SIGMA\.gemini\config\rules\GEMINI.md]
 
 # CORE SKILLS & RELIABILITY RUNTIMES (PHYSICAL ON-DISK PATHS)
 @[C:\Users\SIGMA\.gemini\config\skills\gravitas\SKILL.md]
 @[C:\Users\SIGMA\.gemini\config\skills\karpathy-guidelines\SKILL.md]
+@[C:\Users\SIGMA\.gemini\config\skills\ponytail\SKILL.md]
 @[C:\Users\SIGMA\.gemini\config\skills\thinking-model-router\SKILL.md]
 @[C:\Users\SIGMA\.gemini\config\plugins\superpowers\skills\executing-plans\SKILL.md]
+@[C:\Users\SIGMA\.gemini\config\plugins\superpowers\skills\writing-plans\SKILL.md]
 @[C:\Users\SIGMA\.gemini\config\plugins\superpowers\skills\brainstorming\SKILL.md]
+@[C:\Users\SIGMA\.gemini\config\plugins\superpowers\skills\verification-before-completion\SKILL.md]
 @[C:\Users\SIGMA\.gemini\config\plugins\trading-skills\skills\risk-reward-sanity-check\SKILL.md]
 
 # INVOCATION DIRECTIVE
-/goal /gravitas /karpathy-guidelines /thinking-model-router
+/goal /gravitas /karpathy-guidelines /thinking-model-router /verification-before-completion /compact
 AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 (CANONICAL SOP v2.1.0 · STRICT LINE-BY-LINE ENFORCEABLE MASTER SPECIFICATION)
 ```
