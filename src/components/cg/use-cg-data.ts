@@ -33,7 +33,10 @@ export function usePolling<T>(url: string | null, intervalMs: number) {
     const timeout = setTimeout(() => controller.abort(), 30_000);
     const fail = (error: string) => {
       setResult((prior) => ({
-        url, data: null, error, updatedAt: prior?.url === url ? prior.updatedAt : 0,
+        url,
+        data: prior?.url === url ? prior.data : null,
+        error,
+        updatedAt: prior?.url === url ? prior.updatedAt : 0,
       }));
     };
     try {

@@ -60,7 +60,7 @@ async function withCgSlot<T>(fn: () => Promise<T>): Promise<T> {
         const index = hostSem.queue.indexOf(resume);
         if (index !== -1) hostSem.queue.splice(index, 1);
         reject(new Error("Coinglass request queue timed out"));
-      }, 8_000);
+      }, 20_000);
       hostSem.queue.push(resume);
     });
     // The slot was HANDED to us by the releaser — `active` already counts
@@ -170,7 +170,7 @@ async function cgGetInner(pathAndQuery: string, ttlMs: number, host: string): Pr
 
   const staleDuringCooldown = () => {
     const stale = cache.get(url);
-    return stale && ttlMs > 0 && Date.now() - stale.at < Math.max(20 * ttlMs, 300_000) ? stale : null;
+    return stale && ttlMs > 0 && Date.now() - stale.at < Math.max(20 * ttlMs, 600_000) ? stale : null;
   };
   const cooling = () => Date.now() < (hostCooldown.get(host) ?? 0);
   const duringCooldown = () => {
@@ -189,7 +189,7 @@ async function cgGetInner(pathAndQuery: string, ttlMs: number, host: string): Pr
       const header = resp.headers["retry-after"];
       const seconds = header ? Number(header) : NaN;
       const time = Number.isFinite(seconds) ? seconds * 1000 : Date.parse(header) - Date.now();
-      const until = Date.now() + (Number.isFinite(time) ? Math.max(2_000, time) : 5_000);
+      const until = Date.now() + (Number.isFinite(time) ? Math.max(10_000, time) : 30_000);
       hostCooldown.set(host, Math.max(hostCooldown.get(host) ?? 0, until));
     }
     return { resp, cacheTs };

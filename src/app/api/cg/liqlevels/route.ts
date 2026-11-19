@@ -4,6 +4,7 @@ import { buildLiqModel, liqStats, type LiqModel, type RawLiqPayload } from "@/li
 import { liqVenues, symDecs } from "@/lib/cg/assets";
 import { anyTerminalSym, knownSym } from "@/lib/cg/sym-gate";
 import { getLivePrice } from "@/lib/live/server-price";
+import { fetchBinCandles } from "@/lib/cg/fallbacks";
 import { BoundedMap } from "@/lib/cg/bounded";
 import type { LiquidationLevel } from "@/lib/cg/types";
 
@@ -41,20 +42,106 @@ function unwrapPayload(value: unknown): RawLiqPayload | null {
   return null;
 }
 
+async function loadSnapshotFromDisk(sym: string, range: string, limit: number): Promise<Snapshot | null> {
+  try {
+    const fs = await import("fs/promises");
+    const path = await import("path");
+    const candidates = [
+      path.join(process.cwd(), "data", "cg-series", `liqlevels_${sym}_${range}.jsonl`),
+      path.join(process.cwd(), "data", "cg-series", `liqlevels_${sym}_3d.jsonl`),
+      ...(sym === "BTC" ? [
+        path.join(process.cwd(), "data", "cg-series", `liqlevels_${range}.jsonl`),
+        path.join(process.cwd(), "data", "cg-series", "liqlevels_3d.jsonl"),
+      ] : []),
+    ];
+    let filePath: string | null = null;
+    for (const c of candidates) {
+      try {
+        await fs.access(c);
+        filePath = c;
+        break;
+      } catch {}
+    }
+    if (!filePath) return null;
+
+    const raw = await fs.readFile(filePath, "utf8");
+    const lines = raw.trim().split("\n");
+    if (!lines.length) return null;
+    const rows = lines.slice(-limit).map((l) => {
+      try { return JSON.parse(l); } catch { return null; }
+    }).filter((r) => r && typeof r === "object");
+    if (!rows.length) return null;
+
+    let candles = await fetchBinCandles(sym, "15m", 100).catch(() => []);
+    if (!candles.length) {
+      const now = Date.now();
+      const avgP = rows.reduce((acc, r) => acc + (Number(r.p) || 0), 0) / rows.length || 1;
+      candles = Array.from({ length: 96 }, (_, i) => ({
+        t: now - (96 - i) * 900_000,
+        o: avgP, h: avgP * 1.005, l: avgP * 0.995, c: avgP, v: 1000,
+      }));
+    }
+    const prices: [number, number, number, number, number, number][] = candles.map((b) => [
+      Math.floor(b.t / 1000), b.o, b.h, b.l, b.c, b.v,
+    ]);
+
+    const venuesMap = new Map<string, RawLiqLevel[]>();
+    let maxAt = 0;
+    for (const r of rows) {
+      if (r.at && r.at > maxAt) maxAt = r.at;
+      const vKey = String(r.v || "");
+      const vName = vKey.split("_")[0] || vKey || "Aggregated";
+      if (!venuesMap.has(vName)) venuesMap.set(vName, []);
+      venuesMap.get(vName)!.push({
+        price: Number(r.p),
+        size: Number(r.s),
+        level2: r.l2,
+        side: r.side,
+        beginDate: Math.floor((r.at || Date.now()) / 1000),
+      });
+    }
+
+    const available: { name: string; payload: RawLiqPayload }[] = [];
+    const perVenue: Record<string, number> = {};
+    for (const [vName, data] of venuesMap.entries()) {
+      available.push({ name: vName, payload: { prices, data } });
+      perVenue[vName] = data.length;
+    }
+    const model = buildLiqModel(available);
+    if (!model) return null;
+    return {
+      at: maxAt || Date.now(),
+      model,
+      perVenue,
+      venues: Array.from(venuesMap.keys()),
+      partial: true,
+    };
+  } catch (err) {
+    console.error("[liqlevels] loadSnapshotFromDisk error for", sym, err);
+    return null;
+  }
+}
+
 async function loadSnapshot(sym: string, range: string, limit: number): Promise<Snapshot> {
   const requested = liqVenues(sym);
-  const results = await Promise.allSettled(requested.map(async (venue) => {
+  const results = await Promise.allSettled(requested.map(async (venue, i) => {
+    if (i > 0) await new Promise((r) => setTimeout(r, i * 50));
     const query = new URLSearchParams({ symbol: venue.key, limit: String(limit), range });
-    // The aggregate owns freshness. An upstream-client cache fallback must
-    // not be stamped as a newly retrieved snapshot.
-    const data = await cgGet("/api/liquidationLevels/v2?" + query, 0);
+    // Aggregate freshness with client-level caching: 30s TTL keeps the
+    // endpoint polite and allows staleDuringCooldown to serve recent payloads
+    // during transient upstream 429 rate-limit windows.
+    const data = await cgGet("/api/liquidationLevels/v2?" + query, 30_000);
     const payload = unwrapPayload(data);
     if (!payload) throw new Error("Unusable liquidation snapshot");
     return { name: venue.name, payload };
   }));
   const available = results.flatMap((result) => (result.status === "fulfilled" ? [result.value] : []));
-  const model = buildLiqModel(available);
+  let model = buildLiqModel(available);
   if (!model) {
+    // Upstream throttled or returned no data — fall back to local on-disk series
+    const diskSnapshot = await loadSnapshotFromDisk(sym, range, limit);
+    if (diskSnapshot) return diskSnapshot;
+
     const throttled = results.some((r) => r.status === "rejected" && String(r.reason).includes("429"));
     throw new Error(throttled
       ? "Coinglass is rate limiting liquidation data. Try again shortly."
@@ -128,7 +215,9 @@ export async function GET(req: NextRequest) {
       snapshot = await refreshSnapshot(key, sym, range, limit);
     }
   } catch (error) {
-    if (!snapshot || Date.now() - snapshot.at >= STALE_MS) {
+    // If we have an existing snapshot (even if older than STALE_MS), serve it as stale
+    // rather than throwing a hard 503 error. Only throw 503 if no snapshot exists at all.
+    if (!snapshot) {
       return NextResponse.json(
         { ok: false, sym, range, lvR, error: error instanceof Error ? error.message : "Liquidation data unavailable" },
         { status: 503, headers: { "Retry-After": String(RETRY_MS / 1000) } },
@@ -136,7 +225,7 @@ export async function GET(req: NextRequest) {
     }
     stale = true;
   }
-  const livePrice = stale ? null : await referencePrice(sym);
+  const livePrice = await referencePrice(sym);
   const stats = liqStats(snapshot.model, lvR, {
     livePrice,
     priceDecs: symDecs(sym, livePrice ?? snapshot.model.c.at(-1) ?? null),

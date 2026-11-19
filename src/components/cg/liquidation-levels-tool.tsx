@@ -169,17 +169,18 @@ export default function LiquidationLevelsTool({ sym = "BTC" }: { sym?: string })
         <StopmapSection sym={sym} />
       ) : (
         <>
-      {err && (
+      {err && !stats && (
         <div role="alert" className="rounded border border-red-900/60 bg-red-950/40 px-3 py-2 text-xs text-red-300">
           {err} Retrying automatically.
         </div>
       )}
-      {stats && (liqQ.data?.stale || liqQ.data?.partial) && (
+      {stats && (err || liqQ.data?.stale || liqQ.data?.partial) && (
         <div className="rounded border border-amber-900/60 bg-amber-950/40 px-3 py-2 text-xs text-amber-300">
-          {liqQ.data.stale
+          {err ? "Upstream rate limited — displaying cached snapshot while retrying. " : ""}
+          {liqQ.data?.stale
             ? `Showing the snapshot retrieved at ${new Date(liqQ.data.updatedAt).toLocaleTimeString()}. `
             : ""}
-          {liqQ.data.partial ? "Some configured venues did not return usable data." : ""}
+          {liqQ.data?.partial ? "Some configured venues did not return usable data." : ""}
         </div>
       )}
 

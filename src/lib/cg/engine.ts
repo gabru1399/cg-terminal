@@ -31,6 +31,7 @@ import { ensurePaperBook } from "./paperbook";
 import { ensureLiqCollector } from "./liq-live";
 import { ensureNarrativeRadar } from "./narrative";
 import { parseLiqLevelsPayload, type RawLiqLevel } from "./liq-model";
+import { fetchBinCandles } from "./fallbacks";
 
 const STEP_MS = 900_000; // m15 master step
 const POLL_KLINE = 60_000;
@@ -69,8 +70,27 @@ const keyLiq = (r: any) => `${r.at}|${r.v}|${r.side}|${r.p}|${r.l2}`;
 
 async function fetchKlines(symbol: string, itv: string, limit: number, endTime?: number): Promise<KlineRow[]> {
   const q = `/api/v2/kline?symbol=${encodeURIComponent(symbol + "#kline")}&interval=${itv}&limit=${limit}&minLimit=false${endTime ? `&endTime=${endTime}` : ""}`;
-  const r = (await cgGet(q, 0)) as { data?: KlineRow[] } | KlineRow[];
-  const rows = Array.isArray(r) ? r : (r.data ?? []);
+  let r: unknown = null;
+  try {
+    r = (await cgGet(q, 30_000)) as { data?: KlineRow[] } | KlineRow[];
+  } catch (e) {
+    if (symbol.startsWith("Binance_")) {
+      const rawBase = symbol.replace(/^Binance_/, "").replace(/USDT$/, "");
+      const bin = await fetchBinCandles(rawBase, itv, limit).catch(() => []);
+      if (bin.length) {
+        return bin.map((b) => [Math.floor(b.t / 1000), b.o, b.h, b.l, b.c, b.v] as unknown as KlineRow);
+      }
+    }
+    throw e;
+  }
+  const rows = Array.isArray(r) ? r : ((r as { data?: KlineRow[] })?.data ?? []);
+  if (!rows.length && symbol.startsWith("Binance_")) {
+    const rawBase = symbol.replace(/^Binance_/, "").replace(/USDT$/, "");
+    const bin = await fetchBinCandles(rawBase, itv, limit).catch(() => []);
+    if (bin.length) {
+      return bin.map((b) => [Math.floor(b.t / 1000), b.o, b.h, b.l, b.c, b.v] as unknown as KlineRow);
+    }
+  }
   return rows.filter((x) => x && Number.isFinite(+x[4]));
 }
 
@@ -313,6 +333,9 @@ async function pollLto() {
  *  hot-reload keeps the rotation position) */
 const gLiqRot = globalThis as unknown as { __cgLiqRotIdx?: number };
 
+const gLiqDeadVenues = globalThis as unknown as { __cgDeadLiqVenues?: Set<string> };
+const deadLiqVenues = (gLiqDeadVenues.__cgDeadLiqVenues ??= new Set<string>());
+
 /** archive liqlevels for the next `n` curated assets into their own series
  *  (liqlevels:<SYM>:3d) — the stopmap rolling heatmap reads these back, so
  *  the whole universe keeps true time x price liquidation history. */
@@ -323,7 +346,8 @@ async function pollLiqLevelsAssets(n: number) {
   for (let k = 0; k < Math.min(n, syms.length); k++) {
     const sym = syms[(idx + k) % syms.length];
     const name = `liqlevels:${sym}:3d`;
-    const venues = liqVenues(sym).map((v) => v.key);
+    const venues = liqVenues(sym).map((v) => v.key).filter((k) => !deadLiqVenues.has(k));
+    if (!venues.length) continue;
     try {
       const at = Date.now();
       const rows: { at: number; v: string; side: number; p: number; s: number; l2: string }[] = [];
@@ -331,12 +355,26 @@ async function pollLiqLevelsAssets(n: number) {
         // shape-proof parse (2026-11-12 fix): the decrypted payload arrives
         // bare OR wrapped — the old `for (const lv of r.data ?? [])` threw
         // "not iterable" on the wrapped shape and silently archived nothing.
-        const val = await cgGet(`/api/liquidationLevels/v2?symbol=${encodeURIComponent(v)}&limit=4000&range=3d`, 0);
-        for (const lv of parseLiqLevelsPayload(val) as RawLiqLevel[]) {
-          const size = Number(lv.size);
-          if (!(size > 0)) continue;
-          rows.push({ at, v, side: Number(lv.side), p: Number(lv.price), s: size, l2: lv.level2 ?? "" });
+        // Use 60s cache TTL to respect upstream rate limits.
+        try {
+          const val = await cgGet(`/api/liquidationLevels/v2?symbol=${encodeURIComponent(v)}&limit=4000&range=3d`, 60_000);
+          for (const lv of parseLiqLevelsPayload(val) as RawLiqLevel[]) {
+            const size = Number(lv.size);
+            if (!(size > 0)) continue;
+            rows.push({ at, v, side: Number(lv.side), p: Number(lv.price), s: size, l2: lv.level2 ?? "" });
+          }
+        } catch (ve) {
+          const msg = ve instanceof Error ? ve.message : String(ve);
+          if (msg.includes("40001") || msg.includes("unavailable")) {
+            deadLiqVenues.add(v);
+          }
+          if (msg.includes("429")) {
+            markPoll(name, keyLiq, "upstream rate limited (HTTP 429)");
+            return;
+          }
         }
+        // Brief pacing delay between venues to prevent concurrent rate limits
+        await new Promise((r) => setTimeout(r, 100));
       }
       if (rows.length) append(name, rows, keyLiq);
       markPoll(name, keyLiq);
@@ -355,7 +393,8 @@ async function pollLiqLevels() {
     const rows: { at: number; v: string; side: number; p: number; s: number; l2: string }[] = [];
     for (const v of venues) {
       // shape-proof parse (2026-11-12 fix) — see pollLiqLevelsAssets
-      const val = await cgGet(`/api/liquidationLevels/v2?symbol=${encodeURIComponent(v)}&limit=4000&range=3d`, 0);
+      // Use 60s cache TTL to respect upstream rate limits.
+      const val = await cgGet(`/api/liquidationLevels/v2?symbol=${encodeURIComponent(v)}&limit=4000&range=3d`, 60_000);
       for (const lv of parseLiqLevelsPayload(val) as RawLiqLevel[]) {
         const size = Number(lv.size);
         if (!(size > 0)) continue;
@@ -597,10 +636,9 @@ export function ensureEngine(): { started: boolean; startedAt: number; bootDone:
   t(POLL_LTO, 30_000, pollLto);
   t(POLL_STOPMAP, 60_000, pollStopmap);
   t(POLL_BOOKWALLS, 90_000, pollBookwalls);
-  t(POLL_LIQLEVELS, 45_000, pollLiqLevels);
-  // per-asset liqlevels archive: 4 curated assets per 3-min tick (a full
-  // 57-asset pass ≈ 45 min) — the rolling Liq-Snapshot heatmap source.
-  t(3 * 60_000, 60_000, () => pollLiqLevelsAssets(4));
+  t(300_000, 120_000, pollLiqLevels);
+  // per-asset liqlevels archive: 2 curated assets per 10-min tick (preserves rate limit budget)
+  t(10 * 60_000, 180_000, () => pollLiqLevelsAssets(2));
   // live notification scanner (all assets, all tabs)
   startScanner();
   // virtual book — paper-trade outcome tracker for the agent setups
@@ -674,10 +712,8 @@ export async function forceBackfill() {
     backfillBookwalls(Math.min(days, 2)),
     pollLto(),
     pollLiqLevels(),
-    // warm the per-asset liqlevels archive faster than the 45-min rotation:
-    // the first 12 majors (ETH, BNB, SOL, …) get an immediate snapshot; the
-    // rotation covers the rest. Best-effort, additive, cursor untouched.
-    pollLiqLevelsAssets(12),
+    // warm the per-asset liqlevels archive gently:
+    pollLiqLevelsAssets(2),
   ]);
   return engineStatus();
 }
