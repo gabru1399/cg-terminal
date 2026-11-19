@@ -130,19 +130,21 @@ def audit_spec():
     }
 
 def audit_terminal():
-    try:
-        url = "http://127.0.0.1:3000/api/cg/market?sym=BTC"
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=6) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
-            return {
-                "ok": True,
-                "btc_price": data.get("price", {}).get("last"),
-                "poc_day": data.get("auction", {}).get("day", {}).get("poc"),
-                "vwap_day": data.get("vwap", {}).get("vwap")
-            }
-    except Exception as e:
-        return {"ok": False, "error": str(e)}
+    for base in ["http://localhost:3000", "http://127.0.0.1:3000"]:
+        try:
+            url = f"{base}/api/cg/market?sym=BTC"
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=3) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+                return {
+                    "ok": True,
+                    "btc_price": data.get("price", {}).get("last"),
+                    "poc_day": data.get("auction", {}).get("day", {}).get("poc"),
+                    "vwap_day": data.get("vwap", {}).get("vwap")
+                }
+        except Exception:
+            continue
+    return {"ok": False, "error": "terminal unreachable"}
 
 def audit_mt5():
     try:

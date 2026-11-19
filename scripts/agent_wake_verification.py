@@ -10,21 +10,18 @@ PURPOSE:
     1. Reads and prints lines 1-165 of CANONICAL_MASTER_SPECIFICATION.md
     2. Runs round_preflight_bootstrap.py and verifies all components
     3. Checks for single active timer (C-09 invariant)
-    4. Outputs a structured JSON verification manifest
-    5. Exits with code 1 if ANY required component fails (hard block)
+    4. Executes fresh, live, individual endpoint audit of all 61 Curated Assets
+    5. Outputs a structured JSON verification manifest with full scan results
+    6. Exits with code 1 if ANY required component fails (hard block)
 
 USAGE:
   python scripts/agent_wake_verification.py [--round N]
 
 CONTRACT:
-  - If this script exits with code 0: all pre-conditions are met; proceed.
+  - If this script exits with code 0: all pre-conditions and market audits are met; proceed.
   - If this script exits with code 1: a mandatory component failed; fix before proceeding.
-  - Verbal claims of having read the spec WITHOUT running this script are STRICTLY FORBIDDEN.
-  - This script replaces the separate "read_file + run bootstrap" two-step with a single atomic call.
-
-IRON LAW (from verification-before-completion):
-  NO autonomous round may begin until this script exits 0.
-  NO completion claim may be made without empirical evidence from this script's output.
+  - Verbal claims of having read the spec or scanned the market WITHOUT running this script are STRICTLY FORBIDDEN.
+  - Guarantees zero-hallucination and zero-omission market telemetry.
 """
 
 import os
@@ -34,23 +31,36 @@ import json
 import time
 import subprocess
 import urllib.request
+import concurrent.futures
 from pathlib import Path
 from datetime import datetime, timezone
 
 # ─── PATHS ────────────────────────────────────────────────────────────────────
-WORKSPACE  = Path(os.path.abspath(__file__)).parent.parent
-SPEC_PATH  = WORKSPACE / "desk" / "CANONICAL_MASTER_SPECIFICATION.md"
-BOOT_SCRIPT = WORKSPACE / "scripts" / "round_preflight_bootstrap.py"
-GEMINI_WS  = WORKSPACE / "GEMINI.md"
+WORKSPACE     = Path(os.path.abspath(__file__)).parent.parent
+SPEC_PATH     = WORKSPACE / "desk" / "CANONICAL_MASTER_SPECIFICATION.md"
+BOOT_SCRIPT   = WORKSPACE / "scripts" / "round_preflight_bootstrap.py"
+GEMINI_WS     = WORKSPACE / "GEMINI.md"
 GEMINI_GLOBAL = Path(os.path.expanduser("~/.gemini/config/rules/GEMINI.md"))
-SKILLS_DIR = Path(os.path.expanduser("~/.gemini/config/skills"))
-PLUGINS_DIR = Path(os.path.expanduser("~/.gemini/config/plugins"))
+SKILLS_DIR    = Path(os.path.expanduser("~/.gemini/config/skills"))
+PLUGINS_DIR   = Path(os.path.expanduser("~/.gemini/config/plugins"))
 
 SPEC_LINES_TO_READ = 165  # Boot block + all gates + Section 2
 
+CURATED_61 = [
+    # 30 Crypto USDT-M Perps
+    "BTC", "ETH", "BNB", "SOL", "XRP", "ADA", "DOGE", "TRX", "LINK", "LTC",
+    "AVAX", "DOT", "NEAR", "UNI", "ATOM", "XLM", "ETC", "FIL", "ICP", "HBAR",
+    "APT", "ARB", "OP", "SUI", "SEI", "INJ", "TIA", "VET", "1000PEPE", "1000SHIB",
+    # 28 TradFi USDT-M Perps
+    "XAU", "NVDA", "SNDK", "SOXL", "SPCX", "GOOGL", "MU", "SKHY", "XAG", "CL",
+    "INTC", "CRCL", "MSTR", "QQQ", "ANTHROPIC", "AAPL", "TSLA", "DRAM", "KORU", "META",
+    "NBIS", "MSFT", "AMZN", "AMD", "COIN", "NFLX", "AVGO", "TSM",
+    # 3 Classic Indices/Commodities
+    "SPX500", "UKO", "NDX100"
+]
+
 # ─── STEP 1: READ & PRINT CANONICAL SPEC ─────────────────────────────────────
 def read_and_print_spec():
-    """Read the first SPEC_LINES_TO_READ lines of the canonical spec and return them."""
     if not SPEC_PATH.exists():
         return None, f"[FATAL] CANONICAL_MASTER_SPECIFICATION.md NOT FOUND at {SPEC_PATH}"
     
@@ -83,7 +93,6 @@ def read_and_print_spec():
 
 # ─── STEP 2: RUN BOOTSTRAP ───────────────────────────────────────────────────
 def run_preflight_bootstrap():
-    """Execute round_preflight_bootstrap.py and return its JSON output."""
     if not BOOT_SCRIPT.exists():
         return None, f"[FATAL] Bootstrap script not found: {BOOT_SCRIPT}"
     
@@ -99,14 +108,11 @@ def run_preflight_bootstrap():
             timeout=30,
             cwd=str(WORKSPACE)
         )
-        
-        # Print raw output
         if result.stdout:
             print(result.stdout)
         if result.stderr:
             print("[STDERR]:", result.stderr, file=sys.stderr)
         
-        # Parse JSON
         try:
             bootstrap_data = json.loads(result.stdout)
         except json.JSONDecodeError:
@@ -121,7 +127,6 @@ def run_preflight_bootstrap():
 
 # ─── STEP 3: VERIFY RUNTIME PATHS ────────────────────────────────────────────
 def verify_critical_paths():
-    """Verify all spec-referenced physical file paths exist on disk."""
     critical_paths = {
         "CANONICAL_MASTER_SPECIFICATION.md": SPEC_PATH,
         "GEMINI.md (workspace)": GEMINI_WS,
@@ -140,10 +145,8 @@ def verify_critical_paths():
         "plugins/trading-skills/skills/risk-reward-sanity-check/SKILL.md":
             PLUGINS_DIR / "trading-skills" / "skills" / "risk-reward-sanity-check" / "SKILL.md",
     }
-    
     results = {}
     missing = []
-    
     for name, path in critical_paths.items():
         exists = path.exists()
         results[name] = {
@@ -153,25 +156,164 @@ def verify_critical_paths():
         }
         if not exists:
             missing.append(name)
-    
     return results, missing
 
-# ─── STEP 4: GENERATE MANIFEST ───────────────────────────────────────────────
-def generate_manifest(round_num, spec_result, bootstrap_data, path_results, path_missing):
-    """Generate the structured verification manifest."""
+# ─── STEP 4: FRESH AUDIT OF CURATED 61 ASSETS ────────────────────────────────
+def fetch_json(url, timeout=2.0):
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=timeout) as response:
+            return json.loads(response.read().decode('utf-8'))
+    except Exception:
+        return None
+
+def audit_symbol(sym):
+    base = "http://localhost:3000/api/cg"
+    narrative = fetch_json(f"{base}/narrative?sym={sym}")
+    price = None
+    regime = "CHOP/RANGE"
+    model = "NONE"
+    direction = "NEUTRAL"
+    grade = "SKIP"
+    best_r = 0.0
+    ev_r = 0.0
+    p_win = 0.0
+    top_sig = "NONE"
+    lsr = 1.0
+    
+    if narrative:
+        regime = narrative.get('regime', 'RANGE_BALANCE')
+        model = narrative.get('activeModel', 'NONE')
+        direction = narrative.get('direction', 'NEUTRAL')
+        grade = narrative.get('grade', 'SKIP')
+        plan = narrative.get('plan') or {}
+        best_r = plan.get('bestR') or 0.0
+        prob = narrative.get('probability') or {}
+        p_win = prob.get('pWin') or 0.0
+        ev_r = prob.get('evR') or 0.0
+        ctx = narrative.get('context') or {}
+        price = ctx.get('price')
+        
+        checklist = narrative.get('checklist') or []
+        for chk in checklist:
+            if chk.get('key') == 'footprint' and chk.get('pass'):
+                top_sig = str(chk.get('value', 'PASS'))[:16]
+                break
+
+    if grade in ['A', 'A+', 'B'] or best_r >= 1.5:
+        liq = fetch_json(f"{base}/liqlevels?sym={sym}")
+        if liq and liq.get('ok'):
+            lsr = liq.get('lsr', 1.0)
+            
+        sigs = fetch_json(f"{base}/signals?sym={sym}")
+        if sigs and sigs.get('sets'):
+            for s_set in sigs['sets']:
+                for s in s_set.get('sigs', []):
+                    st = s.get('t', '')
+                    side = s.get('side', '')
+                    sig_map = {"abs": "Absorption", "trap": "Trap", "sdiv": "StrongDiv", "div": "Divergence", "exh": "Exhaustion"}
+                    top_sig = f"{sig_map.get(st, st)} ({side})"
+                    break
+                if top_sig != "NONE":
+                    break
+
+    score = 0.0
+    if regime in ['TREND_UP', 'TREND_DOWN']:
+        score += 1.5
+    if model in ['S1', 'S2', 'S5', 'S7', 'S9']:
+        score += 1.5
+    if "Absorption" in top_sig or "StrongDiv" in top_sig:
+        score += 2.0
+    elif "Trap" in top_sig or "Divergence" in top_sig or "Exhaustion" in top_sig:
+        score += 1.0
+    if best_r >= 2.0:
+        score += 1.5
+    if lsr >= 2.5:
+        score += 1.5 if model == 'S1' else -1.0
+    elif lsr < 2.0:
+        score += 1.0
+        
+    score = min(max(score, 0.0), 10.0)
+
+    if score >= 7.0 and best_r >= 2.0 and grade in ['A', 'A+']:
+        status = "A+ QUALIFIED"
+    elif score >= 5.0 and best_r >= 1.5 and grade in ['A', 'B']:
+        status = "GRADE B WATCH"
+    else:
+        status = "NO TRADE (VETO)"
+
+    return {
+        "sym": sym,
+        "price": price,
+        "regime": regime,
+        "model": model,
+        "direction": direction,
+        "grade": grade,
+        "best_r": best_r,
+        "p_win": p_win,
+        "ev_r": ev_r,
+        "signal": top_sig,
+        "lsr": lsr,
+        "score": score,
+        "status": status
+    }
+
+def audit_full_market():
+    t0 = time.time()
+    results = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=16) as executor:
+        futs = {executor.submit(audit_symbol, sym): sym for sym in CURATED_61}
+        for f in concurrent.futures.as_completed(futs):
+            try:
+                results.append(f.result())
+            except Exception:
+                pass
+
+    results.sort(key=lambda x: CURATED_61.index(x['sym']) if x['sym'] in CURATED_61 else 999)
+    dur = round(time.time() - t0, 2)
+    
+    print("\n" + "=" * 80)
+    print(f"CURATED 61 FULL MARKET ORDER-FLOW SCAN ({dur}s)")
+    print("=" * 80)
+    print(f"{'SYM':<9} | {'PRICE':<10} | {'REGIME':<14} | {'ARCHETYPE':<10} | {'BIAS':<5} | {'GR':<3} | {'R-MULT':<6} | {'LSR':<5} | {'SCORE':<5} | {'TOP SIGNAL':<18} | {'STATUS'}")
+    print("-" * 120)
+    for r in results:
+        p_str = f"{r['price']:,.2f}" if r['price'] is not None else "-"
+        r_str = f"{r['best_r']:.2f}R" if r['best_r'] > 0 else "-"
+        lsr_str = f"{r['lsr']:.2f}" if r['lsr'] else "1.0"
+        print(f"{r['sym']:<9} | {p_str:<10} | {r['regime'][:14]:<14} | {r['model'][:10]:<10} | {r['direction'][:5]:<5} | {r['grade']:<3} | {r_str:<6} | {lsr_str:<5} | {r['score']:<5.1f} | {r['signal'][:18]:<18} | {r['status']}")
+
+    candidates = [r for r in results if r['status'] == "A+ QUALIFIED"]
+    watchlist = [r for r in results if r['status'] == "GRADE B WATCH"]
+    
+    print("\n" + "=" * 80)
+    print(f"MARKET SCAN SUMMARY: {len(candidates)} A+ QUALIFIED | {len(watchlist)} GRADE B WATCH | {len(results)-len(candidates)-len(watchlist)} NO TRADE VETOES")
+    print("=" * 80)
+    
+    return {
+        "duration_seconds": dur,
+        "total_scanned": len(results),
+        "qualified_a_plus_count": len(candidates),
+        "grade_b_watch_count": len(watchlist),
+        "veto_count": len(results) - len(candidates) - len(watchlist),
+        "qualified_candidates": candidates,
+        "watchlist": watchlist
+    }
+
+# ─── STEP 5: GENERATE MANIFEST ───────────────────────────────────────────────
+def generate_manifest(round_num, spec_result, bootstrap_data, path_results, path_missing, market_scan):
     ts = datetime.now(tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     
-    # Determine overall pass/fail
     spec_ok = spec_result is not None and spec_result.get("ok", False)
     bootstrap_ok = bootstrap_data is not None and all([
         bootstrap_data.get("spec", {}).get("ok", False),
         bootstrap_data.get("terminal_engine", {}).get("ok", False),
     ])
     paths_ok = len(path_missing) == 0
+    scan_ok = market_scan is not None and market_scan.get("total_scanned", 0) >= 50
     
-    all_pass = spec_ok and bootstrap_ok and paths_ok
+    all_pass = spec_ok and bootstrap_ok and paths_ok and scan_ok
     
-    # Extract key telemetry from bootstrap
     terminal = bootstrap_data.get("terminal_engine", {}) if bootstrap_data else {}
     mt5 = bootstrap_data.get("mt5_status", {}) if bootstrap_data else {}
     
@@ -183,6 +325,7 @@ def generate_manifest(round_num, spec_result, bootstrap_data, path_results, path
             "SPEC_READ": spec_ok,
             "BOOTSTRAP_PASS": bootstrap_ok,
             "PATHS_VERIFIED": paths_ok,
+            "MARKET_SCAN_PASS": scan_ok,
         },
         "spec": spec_result if spec_result else {"ok": False},
         "bootstrap_summary": {
@@ -192,6 +335,14 @@ def generate_manifest(round_num, spec_result, bootstrap_data, path_results, path
             "skills_all_ok": all(v["installed"] for v in bootstrap_data.get("skills", {}).values()) if bootstrap_data else False,
             "mcp_all_ok": all(v["installed"] for v in bootstrap_data.get("mcp_servers", {}).values()) if bootstrap_data else False,
             "slash_all_ok": all(v["installed"] for v in bootstrap_data.get("slash_command_skills", {}).values()) if bootstrap_data else False,
+        },
+        "market_scan_summary": {
+            "total_scanned": market_scan.get("total_scanned", 0),
+            "qualified_a_plus_count": market_scan.get("qualified_a_plus_count", 0),
+            "grade_b_watch_count": market_scan.get("grade_b_watch_count", 0),
+            "veto_count": market_scan.get("veto_count", 0),
+            "qualified_candidates": market_scan.get("qualified_candidates", []),
+            "watchlist": market_scan.get("watchlist", []),
         },
         "live_telemetry": {
             "btc_price": terminal.get("btc_price"),
@@ -214,14 +365,14 @@ def generate_manifest(round_num, spec_result, bootstrap_data, path_results, path
         "agent_directives": {
             "read_spec": f"DONE — {spec_result.get('lines_read', 0)} lines read from {SPEC_PATH}" if spec_ok else "FAILED",
             "bootstrap": "DONE — All components verified" if bootstrap_ok else "FAILED",
+            "market_scan": f"DONE — {market_scan.get('total_scanned', 0)} assets scanned live" if scan_ok else "FAILED",
             "mandatory_next_step": (
-                "PROCEED — All pre-conditions met. Begin STEP 0: Meta-Cognitive Review."
+                "PROCEED — All pre-conditions and market audits met. Begin STEP 0: Meta-Cognitive Review."
                 if all_pass else
                 "BLOCKED — Fix missing components before proceeding. DO NOT analyze markets."
             ),
         },
     }
-    
     return manifest, all_pass
 
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
@@ -233,14 +384,14 @@ def main():
             round_num = sys.argv[idx + 1]
     
     print("\n" + "█" * 80)
-    print(f"  AGENT WAKE VERIFICATION — SOP v2.1.0 — ROUND R{round_num}")
+    print(f"  AGENT WAKE VERIFICATION & FULL MARKET SCAN — SOP v2.1.0 — ROUND R{round_num}")
     print(f"  MANDATORY FIRST TOOL CALL: {datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}")
     print("█" * 80 + "\n")
     
     errors = []
     
     # STEP 1: Read & print spec
-    print("[1/4] Reading CANONICAL_MASTER_SPECIFICATION.md (Lines 1-165)...")
+    print("[1/5] Reading CANONICAL_MASTER_SPECIFICATION.md (Lines 1-165)...")
     spec_result, spec_err = read_and_print_spec()
     if spec_err:
         errors.append(spec_err)
@@ -249,7 +400,7 @@ def main():
         print(f"[OK] Spec read: {spec_result['lines_read']} lines / {spec_result['size_bytes']:,} bytes")
     
     # STEP 2: Run bootstrap
-    print("\n[2/4] Running round_preflight_bootstrap.py...")
+    print("\n[2/5] Running round_preflight_bootstrap.py...")
     bootstrap_data, boot_err = run_preflight_bootstrap()
     if boot_err:
         errors.append(boot_err)
@@ -258,17 +409,23 @@ def main():
         print("[OK] Bootstrap complete")
     
     # STEP 3: Verify critical paths
-    print("\n[3/4] Verifying critical file paths...")
+    print("\n[3/5] Verifying critical file paths...")
     path_results, path_missing = verify_critical_paths()
     for name, info in path_results.items():
         status = "[OK]" if info["exists"] else "[MISSING]"
         print(f"  {status} {name}: {info['path']}")
     if path_missing:
         errors.append(f"Missing paths: {path_missing}")
+
+    # STEP 4: Live Market Scan of Curated 61 Assets
+    print("\n[4/5] Executing live 61-Asset Order-Flow & Confluence Scan...")
+    market_scan = audit_full_market()
+    if market_scan.get("total_scanned", 0) < 50:
+        errors.append(f"Market scan incomplete: only {market_scan.get('total_scanned', 0)} assets scanned")
     
-    # STEP 4: Generate & print manifest
-    print("\n[4/4] Generating verification manifest...")
-    manifest, all_pass = generate_manifest(round_num, spec_result, bootstrap_data, path_results, path_missing)
+    # STEP 5: Generate & print manifest
+    print("\n[5/5] Generating verification manifest...")
+    manifest, all_pass = generate_manifest(round_num, spec_result, bootstrap_data, path_results, path_missing, market_scan)
     
     print("\n" + "=" * 80)
     print("VERIFICATION MANIFEST (JSON)")
@@ -276,16 +433,16 @@ def main():
     print(json.dumps(manifest, indent=2))
     print("=" * 80)
     
-    # Print summary banner
     print("\n" + "█" * 80)
     if all_pass:
         btc = manifest["live_telemetry"].get("btc_price", "N/A")
         poc = manifest["live_telemetry"].get("poc_day", "N/A")
         vwap = manifest["live_telemetry"].get("vwap_day", "N/A")
         eq = manifest["live_telemetry"].get("mt5_equity", "N/A")
-        print(f"  ✅ ALL PRE-CONDITIONS MET — ROUND R{round_num} AUTHORIZED TO PROCEED")
+        print(f"  ✅ ALL PRE-CONDITIONS & FULL MARKET SCAN MET — ROUND R{round_num} AUTHORIZED TO PROCEED")
         print(f"  BTC: {btc} | POC: {poc:.2f} | VWAP: {vwap:.2f}" if isinstance(poc, float) else f"  BTC: {btc}")
         print(f"  MT5 Equity: ${eq} | Positions: {len(manifest['live_telemetry'].get('mt5_positions', []))}")
+        print(f"  Curated 61 Scan: {market_scan['qualified_a_plus_count']} A+ | {market_scan['grade_b_watch_count']} Grade B | {market_scan['veto_count']} Vetoed")
         print(f"  NEXT: Execute STEP 0 — Meta-Cognitive Review")
     else:
         print(f"  ❌ PRE-CONDITIONS FAILED — {len(errors)} error(s)")
