@@ -1,0 +1,43 @@
+{
+  "sym": "DOGE",
+  "timestamp_utc": "2026-11-19 20:55:03 UTC",
+  "timestamp_ts": 1795121703144,
+  "data": {},
+  "errors": {
+    "liq_live": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "market": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "fp": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "liqlevels_30d": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "signals": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "liqlevels_3d": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "narrative": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "bookwalls": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "oi": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "cvd": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "funding": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "lto": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "notifications": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "quant": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "livebook": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+  },
+  "analysis_48h": {
+    "sym": "DOGE",
+    "hours_covered": 0.0,
+    "bars_count": 0,
+    "price_start": 0.0,
+    "price_end": 0.0,
+    "price_high": 0.0,
+    "price_low": 0.0,
+    "price_change": 0.0,
+    "price_change_pct": 0.0,
+    "net_delta_48h": 0.0,
+    "avg_buy_ratio_48h": 50.0,
+    "first_24h_delta": 0.0,
+    "second_24h_delta": 0.0,
+    "delta_trajectory": "BUYER_EXHAUSTION_DISTRIBUTION (Bearish Reversal)",
+    "cvd_quadrant": "neutral",
+    "cvd_divergences_48h_count": 0,
+    "cvd_latest_div": null,
+    "history_48h": []
+  }
+}

@@ -308,11 +308,12 @@ Mark every row `DONE` / `FAILED` / `N/A + reason`, and cite the evidence (the `r
   ```
 
   This single atomic call simultaneously:
-    (a) Reads and prints lines 1-428 of `c:/Users/SIGMA/Documents/cg-terminal/desk/CANONICAL_MASTER_SPECIFICATION.md`
-    (b) Runs `scripts/round_preflight_bootstrap.py` — verifies all plugins, skills, MCP servers, MT5 IPC
-    (c) Verifies all 12 critical physical file paths on disk
-    (d) Outputs a structured JSON manifest with live BTC price, POC, VWAP, MT5 equity/positions
-    (e) Exits code 0 (PROCEED) or code 1 (BLOCKED — fix before analyzing markets)
+    (a) Automatically purges workspace cache and trims RAM working sets (`scripts/clear_cache_memory.py` - Mandatory Pre-Wake Action)
+    (b) Reads and prints lines 1-428 of `c:/Users/SIGMA/Documents/cg-terminal/desk/CANONICAL_MASTER_SPECIFICATION.md`
+    (c) Runs `scripts/round_preflight_bootstrap.py` — verifies all plugins, skills, MCP servers, MT5 IPC
+    (d) Verifies all 12 critical physical file paths on disk
+    (e) Outputs a structured JSON manifest with live BTC price, POC, VWAP, MT5 equity/positions
+    (f) Exits code 0 (PROCEED) or code 1 (BLOCKED — fix before analyzing markets)
 
   If `agent_wake_verification.py` exits non-zero: DO NOT analyze markets or place orders. Fix the missing components first. Active runtime tools (`read_file`, MCP queries, terminal commands) MUST be executed empirically on every turn. Zero cached echoes permitted.
 

@@ -1,0 +1,37 @@
+{
+  "sym": "TIA",
+  "timestamp_utc": "2026-11-19 20:54:50 UTC",
+  "timestamp_ts": 1795121690877,
+  "forensic_48h_behavior": {
+    "sym": "TIA",
+    "hours_covered": 0.0,
+    "bars_count": 0,
+    "price_start": 0.0,
+    "price_end": 0.0,
+    "price_high": 0.0,
+    "price_low": 0.0,
+    "price_change": 0.0,
+    "price_change_pct": 0.0,
+    "net_delta_48h": 0.0,
+    "avg_buy_ratio_48h": 50.0,
+    "first_24h_delta": 0.0,
+    "second_24h_delta": 0.0,
+    "delta_trajectory": "BUYER_EXHAUSTION_DISTRIBUTION (Bearish Reversal)",
+    "cvd_quadrant": "neutral",
+    "cvd_divergences_48h_count": 0,
+    "cvd_latest_div": null,
+    "history_48h": []
+  },
+  "section_4_tabs": {
+    "tab1_overview_amt": null,
+    "tab2_footprint_signals": null,
+    "tab3_large_orders_whale": null,
+    "tab4_liq_clusters_3d": null,
+    "tab4_liq_clusters_30d": null,
+    "tab5_bookwalls_depth": null,
+    "tab6_cvd_trajectory": null,
+    "tab7_narrative_quant": null,
+    "tab8_notifications_queue": null,
+    "tab9_live_l2_depth": null
+  }
+}
