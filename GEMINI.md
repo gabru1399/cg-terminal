@@ -115,6 +115,13 @@ Every trade formulation MUST pass the 5-point Institutional Clearance Gate befor
 5. **Portfolio Concentration & Risk Heat**:
    - `portfolio-concentration`: [`C:/Users/SIGMA/.gemini/config/plugins/trading-skills/skills/portfolio-concentration/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/trading-skills/skills/portfolio-concentration/SKILL.md)
    - `position-sizing`: [`C:/Users/SIGMA/.gemini/config/plugins/trading-skills/skills/position-sizing/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/trading-skills/skills/position-sizing/SKILL.md)
+### 1.3 Institutional Pre-Trade Clearance Protocol (`@[plugin:trading-skills]`)
+Every trade formulation MUST pass the 5-point Institutional Clearance Gate before submission:
+1. **Evidence Gap Check (`evidence-gap-check`)**: Separate known empirical data from assumptions. State the single blocking issue.
+2. **Regime & Catalyst Analysis (`market-regime-analysis`, `catalyst-map`)**: Confirm alignment with macro trend and verify no high-impact event collisions.
+3. **Asymmetry & Target Sanity (`risk-reward-sanity-check`)**: Reject cosmetic math. Every target must be anchored to a verified high-density opposite liquidation cluster or Value Area POC.
+4. **Execution & Spread Risk (`execution-plan-check`)**: Enforce `PIT-18` (stop distance $\ge 2.0\times$ broker spread). Reject high-spread micro-alts on CFD venues; route to Delta CLOB.
+5. **Portfolio Concentration & Risk Heat (`portfolio-concentration`, `position-sizing`)**: Max 2 concurrent same-direction crypto positions. Total risk heat $\le 1.0\%$ of equity.
 
 ---
 
@@ -172,6 +179,9 @@ Every execution round, autonomous turn, or trading response **MUST OPEN** with t
       * `/plan` (`writing-plans`): [C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/writing-plans/SKILL.md](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/writing-plans/SKILL.md)
       * `/brainstorming` (`brainstorming`): [C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/brainstorming/SKILL.md](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/brainstorming/SKILL.md)
       * `/executing-plans` (`executing-plans`): [C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/executing-plans/SKILL.md](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/executing-plans/SKILL.md)
+    - Plugins (verified on disk): coderabbit, superpowers, trading-skills, chrome-devtools-plugin, harness-antigravity, gravitas-native. (persistent-memory disabled per user directive).
+    - MCP Server Schemas (verified on disk): delta-exchange-mcp, agent-memory, chrome-devtools, godkiller-verification, code-review-graph, link-extension, sqlite.
+    - Skills & Slash Directive Markdown (verified on disk): gravitas, karpathy-guidelines, ponytail, quant-analyst, backtesting-frameworks, writing-plans (/plan), brainstorming (/brainstorming), executing-plans (/executing-plans), thinking-model-router (/thinking-model-router).
     - Underlying physical check: python scripts/round_preflight_bootstrap.py executed as Step 1.
 [x] 10-Model Cognitive Thinking Chain Lattice verified (/thinking-model-router):
     - First Principles, Pre-Mortem Analysis, Probabilistic Reasoning (EV hurdle >= 2.0R), Second-Order Effects, Red Team / Steel-Manning, Margin of Safety, Via Negativa, Map vs Territory, Theory of Constraints, Lindy Effect.
@@ -227,6 +237,13 @@ Dynamic recursion is driven by a single 1200-second timer (`schedule(DurationSec
 
 # INVOCATION DIRECTIVE
 /goal /gravitas /karpathy-guidelines /thinking-model-router /verification-before-completion /compact
+@[C:\Users\SIGMA\.gemini\config\skills\thinking-model-router\SKILL.md]
+@[C:\Users\SIGMA\.gemini\config\plugins\superpowers\skills\executing-plans\SKILL.md]
+@[C:\Users\SIGMA\.gemini\config\plugins\superpowers\skills\brainstorming\SKILL.md]
+@[C:\Users\SIGMA\.gemini\config\plugins\trading-skills\skills\risk-reward-sanity-check\SKILL.md]
+
+# INVOCATION DIRECTIVE
+/goal /gravitas /karpathy-guidelines /thinking-model-router
 # ENGINE: Autonomous Dual-Venue Trade Execution & Recursive Self-Improving Engine
 # ROUND: R<n>
 
@@ -260,6 +277,18 @@ Output: list of misses + lessons applied.
   - [ ] Terminal Engine: BTC price, POC, VWAP from manifest live_telemetry
   - [ ] MT5: Balance, Equity, Margin, Positions, Orders from manifest live_telemetry
   - [ ] Delta CLOB audited via MCP get_margined_positions + get_open_orders
+- MUST execute: run_command("python scripts/round_preflight_bootstrap.py")
+- MUST execute: read_file("desk/CANONICAL_MASTER_SPECIFICATION.md", StartLine=1, EndLine=50)
+- If candidate trade evaluated: read_file("C:/Users/SIGMA/.gemini/config/plugins/trading-skills/skills/risk-reward-sanity-check/SKILL.md")
+- Confirm each item explicitly from raw bootstrap output:
+  - [ ] Physical presence of plugins confirmed on disk (trading-skills, superpowers, coderabbit, gravitas-native, chrome-devtools-plugin)
+  - [ ] Physical presence of skills confirmed on disk (gravitas, karpathy-guidelines, ponytail, quant-analyst, backtesting-frameworks)
+  - [ ] Physical presence of MCP server schemas confirmed on disk (delta-exchange-mcp, agent-memory, chrome-devtools, godkiller-verification, code-review-graph, link-extension, sqlite)
+  - [ ] Physical presence of slash command backing skills confirmed on disk (/plan, /brainstorming, /executing-plans, /karpathy-guidelines, /thinking-model-router, /gravitas)
+  - [ ] Canonical Master Spec size & timestamp verified
+  - [ ] Terminal Engine online (BTC price, POC, VWAP)
+  - [ ] MT5 IPC online (Balance, Equity, Margin, Positions, Orders audited)
+  - [ ] Delta Exchange India CLOB audited via MCP tools
 
 ## STEP 2: OPERATOR INQUEST (ASK AND ANSWER EVERY ROUND)
 Question: "What are potential high confluence A+ setups for Delta and MT5 that can be punched right away?"
@@ -394,3 +423,4 @@ End the response with this table, every row marked DONE / FAILED / N/A:
 ## 7. CHAT CONTEXT COMPACTION PROTOCOL (/compact)
 
 > **CORE AXIOM**: When the conversation context grows or turns multiply, proactively recommend `/compact` to summarize and compact conversation history to preserve context fidelity and eliminate stale conversational noise.
+
