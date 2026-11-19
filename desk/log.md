@@ -14447,3 +14447,24 @@ analysis script rc=1
 - **Step 8 running trades**: Delta BTC short +1.23R unrealized — SL 63,650 cold-zone PASS (2.4% above the 62.0k long-liq shelf; TP 61,950 INTO the sweep, textbook) · TIA BE-locked, no CG lane quote this round (lane gap, not stale by rule) · NAS100 trailed +0.90 locked (co-located algo, untouched per isolation rule).
 - **Step 10 margin**: Delta net liquid $3.67, 0 order margin, 2 slots free — capacity exists, no A+ setup to use it. MT5 equity $2,610.65, DD $0.00.
 
+## EXEC · 2026-11-19 04:15 UTC · atg-exec (Autonomous Execution Round R581)
+- **A+ Opportunity Hunt & Execution**:
+  - Scanned Curated Universe across 234 Delta + 156 MT5 assets.
+  - Formulated & Executed A+ setup on ETHUSD.pi (Ticket #20286694):
+    - Type: Sell Limit 0.55 lots @ 1812.50, SL 1822.50, TP 1785.00 (**2.75R**).
+    - Risk: .50 USD (strictly under .00 Blueberry prop risk cap).
+    - Confluence: 4H EMA13 x EMA89 bearish spine + Daily VAH rejection into 4H supply block.
+    - PIT-18 Spread Gate: Stop distance 10.0 pts / Spread 3.10 pts = 3.23x (immune to spread stop-outs).
+    - Comments: comment='cg_terminal', magic=42001 (100% isolated).
+- **Blueberry Funded MT5 (#5126976)**:
+  - Account: Balance ,544.18 | Equity ,594.17 (+.17 surplus over ,500 base; Drawdown = .00).
+  - Active Pending Limits:
+    - BNBUSD.p (#20240006): Sell Limit 0.72 lots @ 593.5, SL 601.1, TP 566.0 (3.62R).
+    - XAUUSD.pi (#20244935): Sell Limit 0.01 lots @ 3794.5, SL 3800.5, TP 3776.0 (3.08R).
+    - ETHUSD.pi (#20286694): Sell Limit 0.55 lots @ 1812.5, SL 1822.5, TP 1785.0 (2.75R).
+  - Co-located Algo Isolation: 9 algorithmic trades (EURUSD, USDJPY, USDCHF, NZDSGD, USDCAD, XLMUSD) 100% untouched and floating in profit (+.80).
+- **Delta Exchange India (#26902927)**:
+  - Net Liquid Equity: .0976 USD (INR 263.30).
+  - BTCUSD Short: -1 lot @ ,750, mark ,346.2, unrealized PnL +.4037 USD (+108% ROE). Cold zone SL locked at ,650, TP ,950.
+  - TIAUSD Short: -10 lots @ .3580, mark .3507, unrealized PnL +.0730 USD (+42% ROE). Breakeven SL locked at .3580, TP .3327.
+  - DOGEUSD Maker Limit: Order #1692772135, Sell Limit 1 lot @ 0.0598, SL 0.06058, TP 0.05736 (3.10R). Open & waiting.
