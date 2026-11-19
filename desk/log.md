@@ -15327,3 +15327,22 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## EXEC · 2026-11-19 17:35 UTC · atg-exec (Round R586 Execution, Section 4 Telemetry & 48H Forensic Dumps)
+- **Section 4 & 48-Hour Order-Flow Forensic Module Deployed**:
+  - `scripts/fetch_full_asset_telemetry.py` enhanced with 15-endpoint concurrent pipeline matching Section 4.0 (3-Tier Perception Hierarchy) and Section 4.1 (Tabs 1 to 9).
+  - 48-hour continuous order-flow behavioral engine implemented: slices 192 15m bars, computes net delta, buy ratio, cumulative delta momentum shift (24h#1 vs 24h#2), and active CVD divergences.
+  - Successfully generated 48H Forensic Dumps: `desk/deepscan/48H_TELEMETRY-BTC-1795109659441.json` (3.14 MB), `48H_TELEMETRY-ETH-1795109693146.json`, and `48H_TELEMETRY-XAU-1795109705121.json`.
+  - Upgraded `scripts/agent_wake_verification.py` to auto-trigger 48h deepscan dumps on every activation round.
+- **In-Flight Position Surveillance**:
+  - `EURUSD.pi` (Blueberry MT5 Ticket #20297836): Current price 1.09801 (+22.5 pips excursion, +$4.50 USD profit, +2.08R excursion). SL remains locked at Breakeven 1.10026. Downside risk: strictly $0.00 USD. Target: 1.09550 (+8.8R / +$9.52 USD).
+  - `TIAUSD` (Delta India Position #17330): Mark price 0.34195 (+4.59R excursion, +$0.161 USD profit, +95% ROE). SL locked at Breakeven 0.35800. Downside risk: strictly $0.00 USD. Target: 0.33270.
+  - `DOGEUSD` (Delta India Position #14745): Mark price 0.05878 (+0.73R excursion, +$0.101 USD profit, +167% ROE). SL: 0.06120, TP: 0.05736 (3.10R). Downside risk: $0.14 USD.
+- **Standing Maker Limits Validated & Held Active**:
+  - [MT5] BNBUSD.p #20286769: SELL LIMIT 0.79 lots @ 602.50, SL 609.50, TP 566.00 (5.21R).
+  - [MT5] ETHUSD.pi #20293581: SELL LIMIT 0.27 lots @ 1,838.50, SL 1,858.80, TP 1,785.00 (3.34R).
+  - [MT5] XAUUSD.pi #20297864: SELL LIMIT 0.01 lots @ 3,741.50, SL 3,747.00, TP 3,725.00 (3.00R).
+  - [DELTA] XAUTUSD #1695594328: SELL LIMIT 10 lots @ 3,741.50, SL 3,747.00, TP 3,725.00 (3.00R).
+  - [DELTA] BTCUSD #1694956720: SELL LIMIT 1 lot @ 64,440.0, SL 64,950.0, TP 62,670.0 (3.47R).
+- **Curated 61 Market Audit & Gate Enforcement**:
+  - 0 Grade A+ setups, 5 Grade B setups, 56 Vetoed. Macro trend continuation down; all gates held.
