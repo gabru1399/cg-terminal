@@ -15259,3 +15259,16 @@ ead_file validation.
   - BTCUSD (Delta #1694956720): SELL LIMIT @ 64,440.0, SL 64,950.0, TP 62,670.0 (3.47R).
 - **Delta API Infrastructure Notice**:
   - Outbound client IP rotated by ISP to `152.58.47.25` (IPv6 `2409:40c0:1024:c316:8807:7039:6a9f:dc71`). All positions and resting orders remain active and autonomously protected on Delta CLOB.
+## R639 · 2026-11-19 16:40 UTC · zai-desk
+
+**Market**: BTC 63,328.6 (+0.5%)  ETH 1,782.14 (+0.3%)  SOL 74.02 (+0.6%)  XAU 3,693.66 (-1.4%)  XAG 44.900 (-1.5%)
+**Bias (|score|≥2)**: AVAX-5(TRANS)  DOGE-5(TRANS)  LTC-4(TREND)  BTC-4(TRANS)  ETH-4(TREND)  SOL-3(TREND)  XAG-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
