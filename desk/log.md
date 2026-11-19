@@ -16888,3 +16888,16 @@ ead_file validation.
 - **In-Flight Portfolio Risk Surveillance**:
   - All 3 running positions (EURUSD MT5, TIA Delta, DOGE Delta) remain 100% Breakeven-Locked with aggregate downside risk = .00 USD.
   - Resting maker limit order #1697287270 on Delta India for XAUTUSD remains open at 3,692.00 (SL 3,698.50, TP 3,650.00, 6.46R, .0325 USD risk).
+## R652 · 2026-11-19 20:12 UTC · zai-desk
+
+**Market**: BTC 62,093.2 (-1.5%)  ETH 1,759.29 (-1.0%)  SOL 73.20 (-0.5%)  XAU 3,675.91 (-1.9%)  XAG 44.210 (-3.0%)
+**Bias (|score|≥2)**: ADA-4(TREND)  BTC-3(TREND)  BNB-3(TREND)  DOGE-3(TREND)  AVAX-3(TREND)  LTC-3(TREND)  XAU-3(TREND)  XRP-3(TREND)  ETH-2(TREND)  SOL-2(TREND)  LINK-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
