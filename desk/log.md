@@ -15366,3 +15366,16 @@ ead_file validation.
   - Updated `scripts/agent_wake_verification.py` to recognize `S10` model scores in candidate qualification.
   - Active runner surveillance: `EURUSD.pi` (MT5 #20297836) SHORT sits at 1.09801 (+2.08R excursion, +$4.50 USD profit, SL at BE 1.10026); `TIAUSD` (Delta #17330) SHORT sits at 0.34195 (+4.59R excursion, +95% ROE, SL at BE 0.35800); `DOGEUSD` (Delta #14745) SHORT sits at 0.05878 (+0.73R excursion, +167% ROE, risk strictly $0.14 USD).
   - Standing maker limits validated on MT5 and Delta CLOB; total portfolio downside risk strictly $0.14 USD (< 0.005% of capital). Single 1200s timer armed for R588.
+## R644 · 2026-11-19 18:04 UTC · zai-desk
+
+**Market**: BTC 62,852.7 (-0.3%)  ETH 1,773.03 (-0.2%)  SOL 73.91 (+0.4%)  XAU 3,686.49 (-1.6%)  XAG 44.580 (-2.2%)
+**Bias (|score|≥2)**: BNB-6(TREND)  ADA-4(TRANS)  DOGE-5(TREND)  AVAX-4(TREND)  LINK-4(TREND)  BTC-2(TREND)  ETH-2(TREND)  SOL-2(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
