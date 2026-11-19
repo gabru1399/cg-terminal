@@ -59,23 +59,23 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
     * `execution-plan-check`: [`C:/Users/SIGMA/.gemini/config/plugins/trading-skills/skills/execution-plan-check/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/trading-skills/skills/execution-plan-check/SKILL.md)
     * `catalyst-map`: [`C:/Users/SIGMA/.gemini/config/plugins/trading-skills/skills/catalyst-map/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/trading-skills/skills/catalyst-map/SKILL.md)
 
-[BOOT-03] [MANDATORY] [MCP_SERVERS]: The agent MUST verify active operational connectivity to the following MCP server endpoints before evaluating telemetry or dispatching orders:
-  - `delta-exchange-mcp`: Live CLOB, wallet balances, margined positions, open orders, and bracket placement on Delta Exchange India.
-  - `agent-memory`: Fast structured agent memory, project initialization, and memory update primitives.
-  - `chrome-devtools`: Web automation, console message inspection, and live terminal UI auditing.
-  - `godkiller-verification`: Formal task routing, verification phases, evidence tracking, and handoff guards.
-  - `code-review-graph`: Multi-repo dependency graphs, architectural overview, and flow impact analysis.
-  - `link-extension`: Instance management, live walkthroughs, and subagent state inspection.
-  - `sqlite`: Local SQLite database queries for trade journals, execution logs, and historical performance metrics.
+[BOOT-03] [MANDATORY] [MCP_SERVERS_PHYSICAL_GROUNDING]: The agent MUST verify active operational connectivity to the following physical MCP server schemas and endpoints before evaluating telemetry or dispatching orders:
+  - `delta-exchange-mcp`: [`C:/Users/SIGMA/.gemini/antigravity/mcp/delta-exchange-mcp`](file:///C:/Users/SIGMA/.gemini/antigravity/mcp/delta-exchange-mcp) — Live CLOB, wallet balances, margined positions, open orders, and bracket placement on Delta Exchange India.
+  - `agent-memory`: [`C:/Users/SIGMA/.gemini/antigravity/mcp/agent-memory`](file:///C:/Users/SIGMA/.gemini/antigravity/mcp/agent-memory) — Fast structured agent memory, project initialization, and memory update primitives.
+  - `chrome-devtools`: [`C:/Users/SIGMA/.gemini/antigravity/mcp/chrome-devtools`](file:///C:/Users/SIGMA/.gemini/antigravity/mcp/chrome-devtools) — Web automation, console message inspection, and live terminal UI auditing.
+  - `godkiller-verification`: [`C:/Users/SIGMA/.gemini/antigravity/mcp/godkiller-verification`](file:///C:/Users/SIGMA/.gemini/antigravity/mcp/godkiller-verification) — Formal task routing, verification phases, evidence tracking, and handoff guards.
+  - `code-review-graph`: [`C:/Users/SIGMA/.gemini/antigravity/mcp/code-review-graph`](file:///C:/Users/SIGMA/.gemini/antigravity/mcp/code-review-graph) — Multi-repo dependency graphs, architectural overview, and flow impact analysis.
+  - `link-extension`: [`C:/Users/SIGMA/.gemini/antigravity/mcp/link-extension`](file:///C:/Users/SIGMA/.gemini/antigravity/mcp/link-extension) — Instance management, live walkthroughs, and subagent state inspection.
+  - `sqlite`: [`C:/Users/SIGMA/.gemini/antigravity/mcp/sqlite`](file:///C:/Users/SIGMA/.gemini/antigravity/mcp/sqlite) — Local SQLite database queries for trade journals, execution logs, and historical performance metrics.
 
-[BOOT-04] [MANDATORY] [SLASH_COMMANDS]: The agent MUST prime and acknowledge the active slash command router tokens:
-  - `/goal`: Long-running autonomous execution mode (extra thorough, unbroken execution loop until verified goal achievement).
-  - `/plan`: Pre-execution architectural and operational planning artifact generation.
-  - `/brainstorming`: Multi-scenario hypothesis generation and red-team evaluation.
-  - `/karpathy-guidelines`: Strict enforcement of surgical simplicity and empirical proof.
-  - `/thinking-model-router`: Socratic multi-model cognitive chain routing.
-  - `/gravitas`: Strict ground-before-mutating and evidence-gated completion verification.
-  - `/executing-plans`: Execution fidelity to pre-declared implementation blueprints.
+[BOOT-04] [MANDATORY] [SLASH_COMMANDS_PHYSICAL_GROUNDING]: The agent MUST prime and enforce the underlying skill directives for each active slash command router token:
+  - `/goal`: Core Autonomous Goal Protocol — Long-running execution mode (extra thorough, unbroken execution loop until verified goal achievement).
+  - `/plan`: [`C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/writing-plans/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/writing-plans/SKILL.md) — Pre-execution architectural and operational planning artifact generation.
+  - `/brainstorming`: [`C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/brainstorming/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/brainstorming/SKILL.md) — Multi-scenario hypothesis generation and red-team evaluation.
+  - `/karpathy-guidelines`: [`C:/Users/SIGMA/.gemini/config/skills/karpathy-guidelines/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/skills/karpathy-guidelines/SKILL.md) — Strict enforcement of surgical simplicity and empirical proof.
+  - `/thinking-model-router`: [`C:/Users/SIGMA/.gemini/config/skills/thinking-model-router/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/skills/thinking-model-router/SKILL.md) — Socratic multi-model cognitive chain routing.
+  - `/gravitas`: [`C:/Users/SIGMA/.gemini/config/skills/gravitas/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/skills/gravitas/SKILL.md) — Strict ground-before-mutating and evidence-gated completion verification.
+  - `/executing-plans`: [`C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/executing-plans/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/executing-plans/SKILL.md) — Execution fidelity to pre-declared implementation blueprints.
 
 [BOOT-05] [INVARIANT] [DETERMINISTIC_PREFLIGHT_BOOTSTRAP]: Verbal recitation of dependency names without physical runtime tool execution is STRICTLY FORBIDDEN. On EVERY activation, round, or timer expiration, the agent MUST execute `python scripts/round_preflight_bootstrap.py` as the mandatory first tool call to physically verify on-disk plugins, skills, MT5 status, and spec timestamps before emitting analysis. Active runtime tools (`read_file`, MCP queries, terminal commands) MUST be executed empirically on every turn.
 
