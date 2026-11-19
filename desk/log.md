@@ -14912,3 +14912,16 @@ Fresh sweep 11:01–11:07Z. Candidates evaluated with full 16-dim extraction + 3
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+## R621 · 2026-11-19 12:05 UTC · zai-desk
+
+**Market**: BTC 63,750.0 (+1.1%)  ETH 1,803.97 (+1.5%)  SOL 74.71 (+1.5%)  XAU 3,726.70 (-0.5%)  XAG 45.140 (-0.9%)
+**Bias (|score|≥2)**: BTC-5(TREND)  XAU-5(TREND)  BNB-4(TREND)  ETH-4(TREND)  DOGE-3(TREND)  LTC-3(TREND)  XAG-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
