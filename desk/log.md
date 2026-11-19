@@ -14900,3 +14900,15 @@ Fresh sweep 11:01–11:07Z. Candidates evaluated with full 16-dim extraction + 3
    - Single dynamic 1200s timer active (`task-25774`) for Round R572.
 
 
+## R620 · 2026-11-19 11:50 UTC · zai-desk
+
+**Market**: BTC 64,025.7 (+1.6%)  ETH 1,810.56 (+1.9%)  SOL 74.93 (+1.8%)  XAU 3,733.19 (-0.4%)  XAG 45.250 (-0.7%)
+**Bias (|score|≥2)**: XAU-5(TRANS)  ETH-4(TREND)  BTC-3(TREND)  BNB-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
