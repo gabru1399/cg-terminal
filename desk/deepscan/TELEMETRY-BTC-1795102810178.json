@@ -1,0 +1,1680 @@
+{
+  "sym": "BTC",
+  "timestamp_utc": "2026-11-19 15:40:10 UTC",
+  "timestamp_ts": 1795102810178,
+  "data": {
+    "signals": {
+      "ok": true,
+      "supported": true,
+      "sym": "BTC",
+      "bt": "all",
+      "computed": false,
+      "counts": {
+        "all": 39,
+        "bullish": 18,
+        "bearish": 21
+      },
+      "thresholds": {
+        "vol": 5000,
+        "range": 200
+      },
+      "sets": [
+        {
+          "bt": "time",
+          "label": "15m",
+          "sigs": [
+            {
+              "i": 11,
+              "t": "abs",
+              "side": "buy",
+              "p": 64081.1,
+              "q": 1393.76681,
+              "u": 89607080.111753,
+              "lo": 64065,
+              "hi": 64155,
+              "ts": 1794843000,
+              "bt": "time"
+            },
+            {
+              "i": 32,
+              "t": "div",
+              "side": "sell",
+              "p": 65057.3,
+              "r": -0.16712499626369834,
+              "ts": 1794861900,
+              "bt": "time"
+            },
+            {
+              "i": 36,
+              "t": "div",
+              "side": "buy",
+              "p": 65213.4,
+              "r": 0.3029597535968973,
+              "ts": 1794865500,
+              "bt": "time"
+            },
+            {
+              "i": 55,
+              "t": "trap",
+              "side": "buy",
+              "p": 64351,
+              "j": 57,
+              "q": 603.28671,
+              "u": 38897272.599276,
+              "lo": 64350,
+              "hi": 64400,
+              "ts": 1794882600,
+              "bt": "time"
+            },
+            {
+              "i": 81,
+              "t": "sdiv",
+              "side": "buy",
+              "p": 64146,
+              "i0": 71,
+              "p0": 64257.6,
+              "dc": 1374.9860300000003,
+              "ts": 1794906000,
+              "bt": "time"
+            },
+            {
+              "i": 82,
+              "t": "abs",
+              "side": "buy",
+              "p": 64161.3,
+              "q": 394.12633999999997,
+              "u": 25327327.154763,
+              "lo": 64150,
+              "hi": 64195,
+              "ts": 1794906900,
+              "bt": "time"
+            },
+            {
+              "i": 90,
+              "t": "div",
+              "side": "sell",
+              "p": 64464.9,
+              "r": -0.18606588150591089,
+              "ts": 1794914100,
+              "bt": "time"
+            },
+            {
+              "i": 163,
+              "t": "exh",
+              "side": "sell",
+              "p": 64833.6,
+              "ts": 1794979800,
+              "bt": "time"
+            },
+            {
+              "i": 163,
+              "t": "sdiv",
+              "side": "sell",
+              "p": 64833.6,
+              "i0": 158,
+              "p0": 64664,
+              "dc": -1044.4078999999979,
+              "ts": 1794979800,
+              "bt": "time"
+            },
+            {
+              "i": 232,
+              "t": "trap",
+              "side": "buy",
+              "p": 62030.8,
+              "j": 233,
+              "q": 2181.56819,
+              "u": 135825308.136676,
+              "lo": 62005,
+              "hi": 62105,
+              "ts": 1795041900,
+              "bt": "time"
+            },
+            {
+              "i": 236,
+              "t": "sdiv",
+              "side": "sell",
+              "p": 63266,
+              "i0": 215,
+              "p0": 63264.2,
+              "dc": -5267.5901699999895,
+              "ts": 1795045500,
+              "bt": "time"
+            },
+            {
+              "i": 238,
+              "t": "abs",
+              "side": "buy",
+              "p": 62621.7,
+              "q": 710.45658,
+              "u": 44583459.378885,
+              "lo": 62600,
+              "hi": 62660,
+              "ts": 1795047300,
+              "bt": "time"
+            },
+            {
+              "i": 243,
+              "t": "abs",
+              "side": "buy",
+              "p": 62385.1,
+              "q": 1243.57328,
+              "u": 77853843.015736,
+              "lo": 62375,
+              "hi": 62470,
+              "ts": 1795051800,
+              "bt": "time"
+            },
+            {
+              "i": 253,
+              "t": "exh",
+              "side": "sell",
+              "p": 63550,
+              "ts": 1795060800,
+              "bt": "time"
+            },
+            {
+              "i": 261,
+              "t": "div",
+              "side": "sell",
+              "p": 63513.3,
+              "r": -0.20367018395489817,
+              "ts": 1795068000,
+              "bt": "time"
+            },
+            {
+              "i": 265,
+              "t": "sdiv",
+              "side": "sell",
+              "p": 63851.3,
+              "i0": 256,
+              "p0": 63731.1,
+              "dc": -1989.9615499999954,
+              "ts": 1795071600,
+              "bt": "time"
+            },
+            {
+              "i": 283,
+              "t": "exh",
+              "side": "sell",
+              "p": 64054.7,
+              "ts": 1795087800,
+              "bt": "time"
+            },
+            {
+              "i": 296,
+              "t": "abs",
+              "side": "sell",
+              "p": 64026,
+              "q": 1509.3660699999998,
+              "u": 96191295.89467199,
+              "lo": 63910,
+              "hi": 64030,
+              "ts": 1795099500,
+              "bt": "time"
+            }
+          ]
+        },
+        {
+          "bt": "vol",
+          "label": "Volume 5,000 BTC",
+          "sigs": [
+            {
+              "i": 6,
+              "t": "abs",
+              "side": "buy",
+              "p": 62621.7,
+              "q": 1061.96112,
+              "u": 66672680.212511994,
+              "lo": 62610,
+              "hi": 62680,
+              "ts": 1795047240,
+              "bt": "vol"
+            },
+            {
+              "i": 19,
+              "t": "exh",
+              "side": "sell",
+              "p": 63550,
+              "ts": 1795060920,
+              "bt": "vol"
+            },
+            {
+              "i": 24,
+              "t": "abs",
+              "side": "buy",
+              "p": 63269.7,
+              "q": 1173.46106,
+              "u": 74387456.78499001,
+              "lo": 63260,
+              "hi": 63315,
+              "ts": 1795066800,
+              "bt": "vol"
+            },
+            {
+              "i": 25,
+              "t": "div",
+              "side": "sell",
+              "p": 63609.8,
+              "r": -0.1990271441720013,
+              "ts": 1795068240,
+              "bt": "vol"
+            },
+            {
+              "i": 34,
+              "t": "exh",
+              "side": "sell",
+              "p": 63915.4,
+              "ts": 1795081800,
+              "bt": "vol"
+            },
+            {
+              "i": 37,
+              "t": "sdiv",
+              "side": "sell",
+              "p": 64056,
+              "i0": 27,
+              "p0": 63851.3,
+              "dc": -3355.0817499999944,
+              "ts": 1795088700,
+              "bt": "vol"
+            },
+            {
+              "i": 41,
+              "t": "abs",
+              "side": "buy",
+              "p": 63648.3,
+              "q": 1354.1142599999998,
+              "u": 86442524.30990699,
+              "lo": 63640,
+              "hi": 63720,
+              "ts": 1795094640,
+              "bt": "vol"
+            },
+            {
+              "i": 46,
+              "t": "abs",
+              "side": "buy",
+              "p": 63433.2,
+              "q": 829.1163600000001,
+              "u": 52782169.31487001,
+              "lo": 63420,
+              "hi": 63520,
+              "ts": 1795100280,
+              "bt": "vol"
+            }
+          ]
+        },
+        {
+          "bt": "range",
+          "label": "Range 200",
+          "sigs": [
+            {
+              "i": 6,
+              "t": "exh",
+              "side": "sell",
+              "p": 63266,
+              "ts": 1795045680,
+              "bt": "range"
+            },
+            {
+              "i": 12,
+              "t": "div",
+              "side": "buy",
+              "p": 63060,
+              "r": 0.16749613756952741,
+              "ts": 1795049040,
+              "bt": "range"
+            },
+            {
+              "i": 12,
+              "t": "exh",
+              "side": "sell",
+              "p": 63274.2,
+              "ts": 1795049040,
+              "bt": "range"
+            },
+            {
+              "i": 18,
+              "t": "abs",
+              "side": "buy",
+              "p": 62385.1,
+              "q": 562.86705,
+              "u": 35176432.576455,
+              "lo": 62380,
+              "hi": 62430,
+              "ts": 1795052040,
+              "bt": "range"
+            },
+            {
+              "i": 18,
+              "t": "trap",
+              "side": "buy",
+              "p": 62385.1,
+              "j": 19,
+              "q": 562.86705,
+              "u": 35176432.576455,
+              "lo": 62380,
+              "hi": 62430,
+              "ts": 1795052040,
+              "bt": "range"
+            },
+            {
+              "i": 34,
+              "t": "abs",
+              "side": "buy",
+              "p": 63433,
+              "q": 745.15717,
+              "u": 47378620.4407985,
+              "lo": 63425,
+              "hi": 63490,
+              "ts": 1795063140,
+              "bt": "range"
+            },
+            {
+              "i": 38,
+              "t": "div",
+              "side": "sell",
+              "p": 63540.5,
+              "r": -0.30134013019231115,
+              "ts": 1795068180,
+              "bt": "range"
+            },
+            {
+              "i": 49,
+              "t": "exh",
+              "side": "sell",
+              "p": 63949.9,
+              "ts": 1795081020,
+              "bt": "range"
+            },
+            {
+              "i": 51,
+              "t": "exh",
+              "side": "sell",
+              "p": 64054.7,
+              "ts": 1795087740,
+              "bt": "range"
+            },
+            {
+              "i": 52,
+              "t": "sdiv",
+              "side": "sell",
+              "p": 64056,
+              "i0": 40,
+              "p0": 63851.3,
+              "dc": -3307.605870000003,
+              "ts": 1795088580,
+              "bt": "range"
+            },
+            {
+              "i": 56,
+              "t": "abs",
+              "side": "sell",
+              "p": 63937,
+              "q": 539.4616799999999,
+              "u": 34430332.533479996,
+              "lo": 63895,
+              "hi": 63945,
+              "ts": 1795092480,
+              "bt": "range"
+            },
+            {
+              "i": 70,
+              "t": "abs",
+              "side": "buy",
+              "p": 63175,
+              "q": 1068.3734399999998,
+              "u": 67609342.21679999,
+              "lo": 63160,
+              "hi": 63205,
+              "ts": 1795101600,
+              "bt": "range"
+            },
+            {
+              "i": 70,
+              "t": "trap",
+              "side": "buy",
+              "p": 63175,
+              "j": 71,
+              "q": 1068.3734399999998,
+              "u": 67609342.21679999,
+              "lo": 63160,
+              "hi": 63205,
+              "ts": 1795101600,
+              "bt": "range"
+            }
+          ]
+        }
+      ],
+      "updatedAt": 1795102753463
+    },
+    "liq_live": {
+      "ok": true,
+      "bootAt": 1795069178705,
+      "universeEventsStored": 8517,
+      "otherVenueEventsSeen": 0,
+      "bybitSymbolsResolved": 211,
+      "okxCtValLoaded": 547,
+      "venues": [
+        {
+          "venue": "binance",
+          "status": "open",
+          "connectedAt": 1795092769211,
+          "lastFrameAt": 1795102798099,
+          "lastEventAt": null,
+          "frames": 18130646,
+          "events": 0,
+          "reconnects": 3,
+          "lastError": "connection closed",
+          "subsOk": 0,
+          "subsFailed": 0
+        },
+        {
+          "venue": "bybit",
+          "status": "open",
+          "connectedAt": 1795101236091,
+          "lastFrameAt": 1795102774711,
+          "lastEventAt": 1795102774755,
+          "frames": 5742,
+          "events": 4054,
+          "reconnects": 210,
+          "lastError": "connection closed",
+          "subsOk": 11,
+          "subsFailed": 0
+        },
+        {
+          "venue": "okx",
+          "status": "open",
+          "connectedAt": 1795092767508,
+          "lastFrameAt": 1795102797245,
+          "lastEventAt": 1795102795494,
+          "frames": 6853,
+          "events": 4463,
+          "reconnects": 2,
+          "lastError": "connection closed",
+          "subsOk": 0,
+          "subsFailed": 0
+        }
+      ],
+      "dataAt": 1795102795494,
+      "ageMs": 2618,
+      "stale": false,
+      "quiet": false,
+      "source": "live WS binance+bybit+okx \u00b7 per-asset journal data/cg-liq",
+      "hydrated": true,
+      "asset": {
+        "sym": "BTC",
+        "supported": true,
+        "events": [
+          {
+            "t": 1795102753836,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62587.1,
+            "qtyBase": 0.356,
+            "usd": 22281.007599999997
+          },
+          {
+            "t": 1795102753642,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62595.5,
+            "qtyBase": 0.002,
+            "usd": 125.191
+          },
+          {
+            "t": 1795102753517,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62587.6,
+            "qtyBase": 0.014,
+            "usd": 876.2264
+          },
+          {
+            "t": 1795102753515,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62590.4,
+            "qtyBase": 0.005,
+            "usd": 312.952
+          },
+          {
+            "t": 1795102753306,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62625.8,
+            "qtyBase": 0.026,
+            "usd": 1628.2708
+          },
+          {
+            "t": 1795102753268,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62606.4,
+            "qtyBase": 0.047,
+            "usd": 2942.5008000000003
+          },
+          {
+            "t": 1795102752178,
+            "venue": "okx",
+            "asset": "BTC",
+            "pair": "BTC-USDT-SWAP",
+            "side": "long",
+            "price": 62813,
+            "qtyBase": 0.03,
+            "usd": 1884.3899999999999
+          },
+          {
+            "t": 1795102753141,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62598.8,
+            "qtyBase": 0.33,
+            "usd": 20657.604000000003
+          },
+          {
+            "t": 1795102753130,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62621.2,
+            "qtyBase": 0.1,
+            "usd": 6262.12
+          },
+          {
+            "t": 1795102753009,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62622,
+            "qtyBase": 0.031,
+            "usd": 1941.282
+          },
+          {
+            "t": 1795102752903,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62622,
+            "qtyBase": 0.09,
+            "usd": 5635.98
+          },
+          {
+            "t": 1795102752762,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62612.9,
+            "qtyBase": 0.169,
+            "usd": 10581.580100000001
+          },
+          {
+            "t": 1795102752762,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62627.4,
+            "qtyBase": 0.016,
+            "usd": 1002.0384
+          },
+          {
+            "t": 1795102751676,
+            "venue": "okx",
+            "asset": "BTC",
+            "pair": "BTC-USDT-SWAP",
+            "side": "long",
+            "price": 62832.8,
+            "qtyBase": 0.0006,
+            "usd": 37.69968
+          },
+          {
+            "t": 1795102752751,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62632.4,
+            "qtyBase": 0.047,
+            "usd": 2943.7228
+          },
+          {
+            "t": 1795102752749,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62627.7,
+            "qtyBase": 0.01,
+            "usd": 626.2769999999999
+          },
+          {
+            "t": 1795102752446,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62610.3,
+            "qtyBase": 0.014,
+            "usd": 876.5442
+          },
+          {
+            "t": 1795102752347,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62609.7,
+            "qtyBase": 0.201,
+            "usd": 12584.5497
+          },
+          {
+            "t": 1795102752331,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62645.9,
+            "qtyBase": 0.01,
+            "usd": 626.4590000000001
+          },
+          {
+            "t": 1795102747976,
+            "venue": "okx",
+            "asset": "BTC",
+            "pair": "BTC-USDT-SWAP",
+            "side": "long",
+            "price": 62868.8,
+            "qtyBase": 0.0054,
+            "usd": 339.49152000000004
+          },
+          {
+            "t": 1795102748366,
+            "venue": "okx",
+            "asset": "BTC",
+            "pair": "BTC-USDT-SWAP",
+            "side": "long",
+            "price": 62867.9,
+            "qtyBase": 0.0211,
+            "usd": 1326.51269
+          },
+          {
+            "t": 1795102742306,
+            "venue": "okx",
+            "asset": "BTC",
+            "pair": "BTC-USDT-SWAP",
+            "side": "long",
+            "price": 62899,
+            "qtyBase": 0.0015,
+            "usd": 94.3485
+          },
+          {
+            "t": 1795102746089,
+            "venue": "okx",
+            "asset": "BTC",
+            "pair": "BTC-USDT-SWAP",
+            "side": "long",
+            "price": 62882.9,
+            "qtyBase": 0.0001,
+            "usd": 6.288290000000001
+          },
+          {
+            "t": 1795102747581,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62661.5,
+            "qtyBase": 0.267,
+            "usd": 16730.6205
+          },
+          {
+            "t": 1795102747502,
+            "venue": "bybit",
+            "asset": "BTC",
+            "pair": "BTCUSDT",
+            "side": "long",
+            "price": 62661.5,
+            "qtyBase": 0.004,
+            "usd": 250.64600000000002
+          }
+        ],
+        "stats1h": {
+          "count": 106,
+          "longs": 104,
+          "shorts": 2,
+          "usd": 527350.15814,
+          "largestUsd": 139240.66217999998,
+          "lastAt": 1795102753836
+        },
+        "stats24h": {
+          "count": 3000,
+          "longs": 2118,
+          "shorts": 882,
+          "usd": 22382587.665819988,
+          "largestUsd": 1050523.82764,
+          "lastAt": 1795102753836
+        },
+        "venuesSeen": [
+          "bybit",
+          "okx"
+        ]
+      }
+    },
+    "lto": {
+      "ok": true,
+      "supported": true,
+      "symbol": "BTC",
+      "minVolUsd": 100000,
+      "support": {
+        "spot": [],
+        "futures": []
+      },
+      "perExchange": {},
+      "groups": [],
+      "hlFallback": null,
+      "updatedAt": 1795102738400
+    },
+    "market": {
+      "ok": true,
+      "sym": "BTC",
+      "name": "Bitcoin",
+      "kind": "crypto",
+      "source": "binance-fapi",
+      "priceDecs": 1,
+      "price": {
+        "last": 62930.1,
+        "prevDayClose": 63036.8,
+        "chgDayPct": -0.16926620640642348,
+        "dayHigh": 64056,
+        "dayLow": 62360,
+        "dayVolBase": 113988.68400000002
+      },
+      "auction": {
+        "session": {
+          "poc": 63789.291666666664,
+          "vah": 64023.995,
+          "val": 63597.261666666665,
+          "high": 64056,
+          "low": 62775.8,
+          "volume": 52953.799999999996,
+          "bins": 60
+        },
+        "day": {
+          "poc": 63787.46666666667,
+          "vah": 64013.6,
+          "val": 63137.333333333336,
+          "high": 64056,
+          "low": 62360,
+          "volume": 113988.68400000002,
+          "bins": 60
+        },
+        "week": {
+          "poc": 64442.79777777778,
+          "vah": 65091.40222222222,
+          "val": 63510.42888888889,
+          "high": 65679.2,
+          "low": 62030.8,
+          "volume": 718111.0879999998,
+          "bins": 90
+        },
+        "month": {
+          "poc": 64440.394583333335,
+          "vah": 75498.62208333334,
+          "val": 62036.43208333333,
+          "high": 81188,
+          "low": 61956.3,
+          "volume": 3224612.128,
+          "bins": 120
+        }
+      },
+      "ema": {
+        "m15": {
+          "e13": 63588.56999407134,
+          "e89": 63533.40435829206,
+          "e233": 63892.06863083656
+        },
+        "h1": {
+          "e13": 63522.747018294205,
+          "e89": 64390.38916382217,
+          "e233": 67428.16184169058
+        },
+        "h4": {
+          "e13": 63760.31878755865,
+          "e89": 69528.75920507504,
+          "e233": 74693.91688022924
+        },
+        "d1": {
+          "e13": 68214.49403656655,
+          "e89": 75776.51226417856,
+          "e233": 76816.38582569761
+        }
+      },
+      "rsi": {
+        "m15": 28.280810762764744,
+        "h1": 40.91613044615693,
+        "h4": 36.89106251576899,
+        "d1": 21.406373397533315
+      },
+      "vwap": {
+        "anchorTs": 1795046400000,
+        "vwap": 63369.56121896978,
+        "bands": {
+          "sd1": 411.9236258281566,
+          "sd2": 823.8472516563132,
+          "sd3": 1235.7708774844698
+        },
+        "open": 63036.9,
+        "high": 64056,
+        "low": 62360,
+        "bars": 63
+      },
+      "levels": {
+        "pdh": 64976.3,
+        "pdl": 62030.8,
+        "pwh": 66093.2,
+        "pwl": 61956.3,
+        "sessionVwaps": {
+          "asia": 63183.02387786165,
+          "london": 63613.75986690392,
+          "ny": 62761.12261512952
+        }
+      },
+      "vol": {
+        "rv7dPct": 60.07385241944232,
+        "rv30dPct": 43.041275267619724,
+        "atr14H1": 523.7348255588286,
+        "atr14PctRank": 45.45454545454545,
+        "atrState": "normal",
+        "rvolHour": 2.0695273785993225,
+        "rvolBar15m": 4.781182862731028
+      },
+      "anchorInfo": {
+        "dayStart": 1795046400000,
+        "monthStart": 1793491200000
+      },
+      "candleAt": 1795102200000,
+      "dataAt": 1795102805885,
+      "ageMs": 605885,
+      "stale": false,
+      "updatedAt": 1795102805885
+    },
+    "liqlevels_3d": {
+      "ok": true,
+      "supported": true,
+      "sym": "BTC",
+      "range": "3d",
+      "lvR": 4,
+      "venues": [
+        "Bitget"
+      ],
+      "perVenue": {
+        "Binance": 0,
+        "OKX": 0,
+        "Bybit": 0,
+        "Bitget": 2207,
+        "Hyperliquid": 0
+      },
+      "stats": {
+        "last": 62893.2,
+        "keyLevels": {
+          "above": [
+            {
+              "side": "short",
+              "price": 65296.7,
+              "distPct": 3.82,
+              "lev": "Low",
+              "strength": 82.1,
+              "usd": 696.9,
+              "venues": [
+                "Bitget"
+              ]
+            },
+            {
+              "side": "short",
+              "price": 64863.2,
+              "distPct": 3.13,
+              "lev": "Mid",
+              "strength": 67,
+              "usd": 568.56,
+              "venues": [
+                "Bitget"
+              ]
+            },
+            {
+              "side": "short",
+              "price": 64502,
+              "distPct": 2.56,
+              "lev": "Mid",
+              "strength": 73.7,
+              "usd": 626.17,
+              "venues": [
+                "Bitget"
+              ]
+            },
+            {
+              "side": "short",
+              "price": 64429.8,
+              "distPct": 2.44,
+              "lev": "Mid",
+              "strength": 87.3,
+              "usd": 741.4699999999999,
+              "venues": [
+                "Bitget"
+              ]
+            },
+            {
+              "side": "short",
+              "price": 64249.2,
+              "distPct": 2.16,
+              "lev": "High",
+              "strength": 77,
+              "usd": 653.84,
+              "venues": [
+                "Bitget"
+              ]
+            }
+          ],
+          "below": [
+            {
+              "side": "long",
+              "price": 61973.4,
+              "distPct": -1.46,
+              "lev": "Mid",
+              "strength": 100,
+              "usd": 849.2299999999999,
+              "venues": [
+                "Bitget"
+              ]
+            },
+            {
+              "side": "long",
+              "price": 61937.3,
+              "distPct": -1.52,
+              "lev": "Mid",
+              "strength": 67.3,
+              "usd": 571.12,
+              "venues": [
+                "Bitget"
+              ]
+            },
+            {
+              "side": "long",
+              "price": 61901.2,
+              "distPct": -1.58,
+              "lev": "Mid",
+              "strength": 58,
+              "usd": 492.18,
+              "venues": [
+                "Bitget"
+              ]
+            },
+            {
+              "side": "long",
+              "price": 61829,
+              "distPct": -1.69,
+              "lev": "High",
+              "strength": 48.6,
+              "usd": 412.49000000000007,
+              "venues": [
+                "Bitget"
+              ]
+            },
+            {
+              "side": "long",
+              "price": 61792.8,
+              "distPct": -1.75,
+              "lev": "High",
+              "strength": 64,
+              "usd": 543.42,
+              "venues": [
+                "Bitget"
+              ]
+            }
+          ]
+        },
+        "totals": {
+          "shorts": 29163.08,
+          "longs": 10486.999999999998,
+          "rows": 156
+        },
+        "bands": [
+          {
+            "a": 0,
+            "b": 1,
+            "up": 0,
+            "down": 1681.28
+          },
+          {
+            "a": 1,
+            "b": 2,
+            "up": 1656.58,
+            "down": 4884.77
+          },
+          {
+            "a": 2,
+            "b": 3,
+            "up": 6859.609999999999,
+            "down": 3175.8399999999997
+          },
+          {
+            "a": 3,
+            "b": 5,
+            "up": 14669.449999999999,
+            "down": 969.2299999999999
+          },
+          {
+            "a": 5,
+            "b": 10,
+            "up": 5977.440000000002,
+            "down": 0
+          }
+        ],
+        "levTiers": {
+          "shorts": [
+            9276.530000000004,
+            15729.740000000005,
+            4156.810000000001
+          ],
+          "longs": [
+            2276.5199999999995,
+            5338.869999999996,
+            2959.140000000001
+          ]
+        },
+        "counts": {
+          "hit": 1084,
+          "open": 1123,
+          "venues": [
+            "Bitget"
+          ]
+        }
+      },
+      "livePrice": null,
+      "stale": true,
+      "partial": true,
+      "updatedAt": 1795102729538
+    },
+    "narrative": {
+      "ok": true,
+      "supported": true,
+      "sym": "BTC",
+      "name": "Bitcoin",
+      "kind": "crypto",
+      "regime": "TREND_DOWN",
+      "regimeNote": "H4 stack down \u00b7 D1 stack down \u00b7 EMA spread -11.01 ATR \u00b7 price holds below Day VWAP",
+      "activeModel": "M1_TREND_PULLBACK",
+      "direction": "SHORT",
+      "grade": "A+",
+      "confidence": 92,
+      "thesis": "trend down context (H4 stack down \u00b7 D1 stack down \u00b7 EMA spread -11.01 ATR \u00b7 price holds below Day VWAP) set the SHORT bias. Price pulled back into the confluence zone 63088.9-64309.5 (VWAP band \u00b7 POC \u00b7 EMA pocket \u00b7 PDH/PDL flip), where the footprint printed its confirmation. Risk is defined beyond 64571.3; the first objective pays 1.47R at 62752.1.",
+      "plan": {
+        "entryZone": [
+          63088.91998789625,
+          64309.46087694363
+        ],
+        "ladder": [
+          {
+            "level": 63781.425460820574,
+            "weightPct": 40,
+            "label": "L1 \u00b7 40% at POC"
+          },
+          {
+            "level": 63787.46666666667,
+            "weightPct": 40,
+            "label": "L2 \u00b7 40% at +1\u03c3 VWAP band"
+          },
+          {
+            "level": 64030,
+            "weightPct": 20,
+            "label": "L3 \u00b7 20% at absorption high"
+          }
+        ],
+        "compositeEntry": 63833.55685099489,
+        "triggerRule": "footprint exh fired sell in short direction at the zone (absorption inside the zone)",
+        "stop": 64571.328289723046,
+        "invalidation": "structure beyond 64571.3 (signal zone / \u00b12\u03c3 VWAP / 0.5 ATR buffer)",
+        "targets": [
+          {
+            "level": 62752.12648667805,
+            "label": "T1 \u00b7 Day VAH/VAL or \u00b11.5\u03c3",
+            "rMultiple": 1.4658067628385414
+          },
+          {
+            "level": 62036.43208333333,
+            "label": "T2 \u00b7 same-direction liquidation cluster",
+            "rMultiple": 2.43588281319162
+          },
+          {
+            "level": 62888.29526575591,
+            "label": "T3 \u00b7 whale wall / PWH-PWL",
+            "rMultiple": 1.2812390607971047
+          }
+        ],
+        "bestR": 2.43588281319162,
+        "vetoes": [
+          "opposing $1M+ wall at 62888.3 blocks T1"
+        ]
+      },
+      "checklist": [
+        {
+          "key": "htf-emas",
+          "label": "HTF EMAs (H4/D1 13\u00d789\u00d7233)",
+          "pass": true,
+          "value": "H4 down \u00b7 D1 down \u00b7 spread -11.01 ATR"
+        },
+        {
+          "key": "vwap-z",
+          "label": "VWAP Z-Score",
+          "pass": false,
+          "value": "-1.03\u03c3"
+        },
+        {
+          "key": "footprint",
+          "label": "Footprint Signal",
+          "pass": true,
+          "value": "12 confirmation signals (8h window) \u00b7 latest abs@63648.3"
+        },
+        {
+          "key": "cvd",
+          "label": "CVD / Spot Lead",
+          "pass": true,
+          "value": "24h \u0394 $-700.4M \u00b7 latest div bearish"
+        },
+        {
+          "key": "walls",
+          "label": "Walls / Whale",
+          "pass": true,
+          "value": "bid $106.0M@62888.3 \u00b7 ask $82.2M@63392.9"
+        },
+        {
+          "key": "liq",
+          "label": "Liq Magnet",
+          "pass": true,
+          "value": "above 65660.4 \u00b7 below 61932.8"
+        },
+        {
+          "key": "funding-ls",
+          "label": "Funding / L-S",
+          "pass": null,
+          "value": "n/a"
+        },
+        {
+          "key": "gex",
+          "label": "GEX / Skew (Deribit)",
+          "pass": null,
+          "value": "BTC/ETH only"
+        },
+        {
+          "key": "r",
+          "label": "R \u2265 1.5",
+          "pass": true,
+          "value": "bestR 2.44"
+        },
+        {
+          "key": "freshness",
+          "label": "Freshness",
+          "pass": true,
+          "value": "worst age 330s"
+        },
+        {
+          "key": "exec-cost",
+          "label": "Execution cost (MT5 spread)",
+          "pass": null,
+          "value": "no MT5 spread feed (gate off)"
+        }
+      ],
+      "m1": {
+        "status": "TRIGGERED",
+        "note": "TREND_DOWN with pullback into 63088.9-64309.5 \u00b7 3-TF: H4 13\u00d789 trend \u00b7 H1 structure aligned \u00b7 m15 bar holds EMA89"
+      },
+      "m2": {
+        "status": "OFF",
+        "note": "price -1.03\u03c3 from Day VWAP \u2014 M2 needs |z| \u2265 2.0"
+      },
+      "freshness": {
+        "worstAgeMs": 330463,
+        "staleFields": [],
+        "dataAt": 1795102805927,
+        "ageMs": 605927,
+        "stale": false,
+        "source": "market:binance-fapi+fp+cvd+walls+liq"
+      },
+      "beta": [],
+      "probability": {
+        "model": "M1_TREND_PULLBACK",
+        "direction": "SHORT",
+        "pFill": 0.949,
+        "pT1": 0.942,
+        "pWin": 0.894,
+        "evR": 1.26,
+        "pMeanRevert": null,
+        "horizonH": 48,
+        "sigmaBar": 328.2021305386736,
+        "factors": [
+          {
+            "key": "htf-emas",
+            "label": "HTF EMAs (H4/D1 13\u00d789\u00d7233)",
+            "weight": 0.35,
+            "dir": 1,
+            "value": "H4 down \u00b7 D1 down \u00b7 spread -11.01 ATR"
+          },
+          {
+            "key": "footprint",
+            "label": "Footprint Signal",
+            "weight": 0.3,
+            "dir": 1,
+            "value": "12 confirmation signals (8h window) \u00b7 latest abs@63648.3"
+          },
+          {
+            "key": "cvd",
+            "label": "CVD / Spot Lead",
+            "weight": 0.2,
+            "dir": 1,
+            "value": "24h \u0394 $-700.4M \u00b7 latest div bearish"
+          },
+          {
+            "key": "walls",
+            "label": "Walls / Whale",
+            "weight": 0.15,
+            "dir": 1,
+            "value": "bid $106.0M@62888.3 \u00b7 ask $82.2M@63392.9"
+          },
+          {
+            "key": "liq",
+            "label": "Liq Magnet",
+            "weight": 0.1,
+            "dir": 1,
+            "value": "above 65660.4 \u00b7 below 61932.8"
+          },
+          {
+            "key": "funding-ls",
+            "label": "Funding / L-S",
+            "weight": 0.15,
+            "dir": 0,
+            "value": "n/a"
+          },
+          {
+            "key": "gex",
+            "label": "GEX / Skew (Deribit)",
+            "weight": 0.1,
+            "dir": 0,
+            "value": "BTC/ETH only"
+          },
+          {
+            "key": "r",
+            "label": "R \u2265 1.5",
+            "weight": 0.2,
+            "dir": 1,
+            "value": "bestR 2.44"
+          }
+        ],
+        "empirical": {
+          "bucket": "M1_TREND_PULLBACK",
+          "closed": 228,
+          "fillRatePct": 85.5,
+          "winRatePct": 65.4,
+          "avgR": -0.36
+        },
+        "views": {
+          "structuralPrior": {
+            "pT1": 0.942,
+            "pMeanRevert": null
+          },
+          "backtestCalibrated": null,
+          "method": "structural prior (reflection-principle + gambler's ruin + checklist log-odds)"
+        },
+        "method": "reflection-principle first passage + gambler's ruin + checklist log-odds edge",
+        "caveats": [
+          "zone-edge sensitivity: EV up to 1.57R on a far-edge fill (64309.5)"
+        ]
+      },
+      "context": {
+        "vwapZ": -1.0342132894825007,
+        "rvol": 2.0695273785993225,
+        "atrH1": 523.7348255588286,
+        "price": 62943.9
+      },
+      "quant": null,
+      "generatedAt": 1795102805935
+    },
+    "quant": {
+      "ok": true,
+      "supported": true,
+      "sym": "BTC",
+      "cgSym": "BTC",
+      "pair": "BTCUSDT",
+      "lsRatios": {
+        "15m": {
+          "global": {
+            "ratio": 2.4831,
+            "longPct": 71.29,
+            "shortPct": 28.71,
+            "chgPct": 1.28
+          },
+          "topAccounts": {
+            "ratio": 2.7594,
+            "longPct": 73.4,
+            "shortPct": 26.6,
+            "chgPct": 1.44
+          },
+          "topPositions": {
+            "ratio": 1.9155,
+            "longPct": 65.7,
+            "shortPct": 34.3,
+            "chgPct": 0.77
+          },
+          "taker": {
+            "buySellRatio": 0.8718,
+            "buyVolUsd": 162346545,
+            "sellVolUsd": 186227094
+          }
+        },
+        "1h": {
+          "global": {
+            "ratio": 2.4447,
+            "longPct": 70.97,
+            "shortPct": 29.03,
+            "chgPct": -1.74
+          },
+          "topAccounts": {
+            "ratio": 2.7175,
+            "longPct": 73.1,
+            "shortPct": 26.9,
+            "chgPct": -1.21
+          },
+          "topPositions": {
+            "ratio": 1.8974,
+            "longPct": 65.49,
+            "shortPct": 34.51,
+            "chgPct": 0.28
+          },
+          "taker": {
+            "buySellRatio": 0.8818,
+            "buyVolUsd": 275790647,
+            "sellVolUsd": 312765609
+          }
+        },
+        "4h": {
+          "global": {
+            "ratio": 2.6232,
+            "longPct": 72.4,
+            "shortPct": 27.6,
+            "chgPct": -6.24
+          },
+          "topAccounts": {
+            "ratio": 2.8775,
+            "longPct": 74.21,
+            "shortPct": 25.79,
+            "chgPct": -6.12
+          },
+          "topPositions": {
+            "ratio": 1.886,
+            "longPct": 65.35,
+            "shortPct": 34.65,
+            "chgPct": -0.75
+          },
+          "taker": {
+            "buySellRatio": 0.9653,
+            "buyVolUsd": 485694204,
+            "sellVolUsd": 503144555
+          }
+        }
+      },
+      "funding": {
+        "venues": [],
+        "oiWeightedRate8h": null,
+        "annualizedAprPct": null,
+        "fundingSpreadBps": null,
+        "spreadVenues": null,
+        "reason": "coinglass fundingRate home unavailable"
+      },
+      "oiQuadrant": {
+        "1h": null,
+        "4h": null,
+        "24h": null,
+        "oiToVolRatio": null,
+        "reason": "coinglass open-interest chart unavailable"
+      },
+      "basis": {
+        "spotPair": "BTCUSDT",
+        "spotPrice": 62938.79,
+        "perpPrice": 62873.5,
+        "basisPct": -0.1037,
+        "fundingImpliedAprPct": null,
+        "coinbasePremiumBps": -13.96
+      },
+      "notes": [
+        "taker buyVolUsd/sellVolUsd = Binance base-asset taker volume converted at the perp last price",
+        "funding rates are percent per interval; annualizedAprPct = oiWeightedRate8h(%) x 3 x 365",
+        "fundingImpliedAprPct is the funding-implied carry (oiWeightedRate8h annualized) \u2014 NOT a basis APR",
+        "coinbasePremiumBps = (Coinbase BTC-USD \u2212 Binance BTCUSDT) / Binance \u00d7 10\u2074 = -13.96 bps \u2014 positive = Coinbase leading higher (US institutional bid)"
+      ],
+      "dataAt": 1795102798266,
+      "ageMs": 8000,
+      "stale": false,
+      "fastDataAt": 1795102798266,
+      "fastAgeMs": 8000,
+      "slowDataAt": 1795089600000,
+      "slowAgeMs": 13206266,
+      "source": "binance-fapi/ls-ratios+binance-fapi/ticker24h+binance-spot+coinbase"
+    },
+    "oi": {
+      "ok": true,
+      "supported": true,
+      "source": "binance-fapi",
+      "sym": "BTC",
+      "venues": [
+        {
+          "name": "Binance",
+          "oiUsd": 6025444259,
+          "sharePct": 100
+        }
+      ],
+      "aggregate": {
+        "oiUsd": 6025444259,
+        "oiDelta1hPct": -0.65,
+        "oiDelta4hPct": -0.47,
+        "oiDelta24hPct": 0.51
+      },
+      "series": [
+        {
+          "ts": 1794996000000,
+          "oiUsd": 5945884257,
+          "price": null
+        },
+        {
+          "ts": 1794999600000,
+          "oiUsd": 5919969221,
+          "price": null
+        },
+        {
+          "ts": 1795003200000,
+          "oiUsd": 5911298556,
+          "price": null
+        },
+        {
+          "ts": 1795006800000,
+          "oiUsd": 5908939932,
+          "price": null
+        },
+        {
+          "ts": 1795010400000,
+          "oiUsd": 5929055036,
+          "price": null
+        },
+        {
+          "ts": 1795014000000,
+          "oiUsd": 5994691838,
+          "price": null
+        },
+        {
+          "ts": 1795017600000,
+          "oiUsd": 5957478575,
+          "price": null
+        },
+        {
+          "ts": 1795021200000,
+          "oiUsd": 6003614646,
+          "price": null
+        },
+        {
+          "ts": 1795024800000,
+          "oiUsd": 6050034503,
+          "price": null
+        },
+        {
+          "ts": 1795028400000,
+          "oiUsd": 6031803948,
+          "price": null
+        },
+        {
+          "ts": 1795032000000,
+          "oiUsd": 5995095753,
+          "price": null
+        },
+        {
+          "ts": 1795035600000,
+          "oiUsd": 6035920767,
+          "price": null
+        },
+        {
+          "ts": 1795039200000,
+          "oiUsd": 6037054147,
+          "price": null
+        },
+        {
+          "ts": 1795042800000,
+          "oiUsd": 6017548976,
+          "price": null
+        },
+        {
+          "ts": 1795046400000,
+          "oiUsd": 6070298162,
+          "price": null
+        },
+        {
+          "ts": 1795050000000,
+          "oiUsd": 6074861734,
+          "price": null
+        },
+        {
+          "ts": 1795053600000,
+          "oiUsd": 6067482789,
+          "price": null
+        },
+        {
+          "ts": 1795057200000,
+          "oiUsd": 6074212050,
+          "price": null
+        },
+        {
+          "ts": 1795060800000,
+          "oiUsd": 6111690631,
+          "price": null
+        },
+        {
+          "ts": 1795064400000,
+          "oiUsd": 6090793657,
+          "price": null
+        },
+        {
+          "ts": 1795068000000,
+          "oiUsd": 6066124089,
+          "price": null
+        },
+        {
+          "ts": 1795071600000,
+          "oiUsd": 6105669156,
+          "price": null
+        },
+        {
+          "ts": 1795075200000,
+          "oiUsd": 6070159131,
+          "price": null
+        },
+        {
+          "ts": 1795078800000,
+          "oiUsd": 6053992604,
+          "price": null
+        },
+        {
+          "ts": 1795082400000,
+          "oiUsd": 6053908890,
+          "price": null
+        },
+        {
+          "ts": 1795086000000,
+          "oiUsd": 6053617557,
+          "price": null
+        },
+        {
+          "ts": 1795089600000,
+          "oiUsd": 6057953267,
+          "price": null
+        },
+        {
+          "ts": 1795093200000,
+          "oiUsd": 6033344214,
+          "price": null
+        },
+        {
+          "ts": 1795096800000,
+          "oiUsd": 6064937770,
+          "price": null
+        },
+        {
+          "ts": 1795100400000,
+          "oiUsd": 6063491665,
+          "price": null
+        }
+      ],
+      "updatedAt": 1795102806280
+    },
+    "funding": {
+      "ok": true,
+      "supported": true,
+      "source": "binance-fapi",
+      "sym": "BTC",
+      "venues": [
+        {
+          "name": "Binance",
+          "rate": 0.001006,
+          "rate8h": 0.001006,
+          "fundingIntervalHours": 8,
+          "nextFundingTime": 1795104000000,
+          "status": 1
+        }
+      ],
+      "aggregate": {
+        "fundingPct8h": 0.001006
+      },
+      "series": [],
+      "updatedAt": 1795102806286
+    }
+  },
+  "errors": {
+    "liqlevels_30d": "HTTP Error 503: Service Unavailable",
+    "bookwalls": "timed out",
+    "cvd": "timed out"
+  }
+}
