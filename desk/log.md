@@ -14346,3 +14346,21 @@ analysis script rc=1
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+
+## EXEC · 2026-11-19 03:30 UTC · atg-exec (Autonomous Execution Round R577)
+- **Runtime Environment**: `scripts/verify_runtime_environment.py` [PASS] — All 9 skills verified, port 3000 live, MT5 connected.
+- **Blueberry Funded MT5 (#5126976)**:
+  - Account: Balance $2,551.92 | Equity $2,606.77 (+$106.77 buffer over $2,500 base; Drawdown = $0.00).
+  - Open CG Orders:
+    - `LNKUSD.p` (Ticket #20284145): Sell Limit 0.9 lots @ 9.066, SL 9.128, TP 8.900 (2.68R). Risk $5.55 USD (strictly under $6.00 prop cap; EA-6 SMC BOS + FVG retest). Duplicate order #20285490 purged.
+    - `BNBUSD.p` (#20240006): Sell Limit @ 593.5, SL 601.1, TP 566.0 (3.62R).
+    - `XAUUSD.pi` (#20244935): Sell Limit @ 3794.5, SL 3800.5, TP 3776.0 (3.08R).
+  - Co-located Algo Isolation: 9 algorithmic trades (EURUSD, USDJPY, USDCHF, NZDSGD, USDCAD, XLMUSD) 100% untouched and in profit.
+- **Delta Exchange India (#26902927)**:
+  - Net Liquid Equity: $3.8227 USD (INR 324.93).
+  - `BTCUSD` Short: -1 lot @ $64,750, mark $62,801.6, unrealized PnL +$1.9445 USD (+149% ROE). Cold zone SL locked at $63,650, TP $61,950.
+  - `TIAUSD` Short: -10 lots @ $0.3580, mark $0.3488, unrealized PnL +$0.0910 USD (+53% ROE). Breakeven SL locked at $0.3580, TP $0.3327.
+  - `DOGEUSD` Maker Limit: Order #1692772135, Sell Limit @ 0.0598, SL 0.06058, TP 0.05736 (3.10R). Open & waiting.
+- **Deduplication Invariant Deployed**: Normalized broker aliases in `auto_punch_engine.py` (LNK->LINK, DOG->DOGE, AVX->AVAX).
+- **Desk Daemon & Next.js Engine**: Both operational without errors.
