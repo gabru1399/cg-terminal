@@ -14481,3 +14481,23 @@ analysis script rc=1
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+## EXEC · 2026-11-19 04:20 UTC · atg-exec (Liquidation Heatmap & Cold Zone SL Audit)
+- **Directive 2026-11-18 & PIT-16 Compliance Audit**:
+  - Polled Coinglass live liquidation heatmap clusters for all active assets (BNB, ETH, DOGE, BTC).
+  - Detected 3 critical liquidity traps where naive stops sat inside peak clusters:
+    1. ETH: Short liquidation cluster sat at 1838.27 - 1852.45 (Strength: 97 - 100). Entry repositioned to the sweep zone at 1838.50, SL placed in the cold zone at 1854.50 (Ticket #20286759, 0.34 lots, Risk .44, 3.34R).
+    2. BNB: 100-strength liquidation cluster sat at 600.14 - 602.38. Previous SL at 601.1 was directly inside the trap. Repositioned entry to 602.50, SL placed in cold zone at 609.50 (Ticket #20286769, 0.79 lots, Risk .53, 5.21R).
+    3. DOGE: 100-strength cluster sat at 0.0605 - 0.0608. Modified Delta bracket SL via MCP edit_bracket_order from 0.06058 to 0.06120 (Order #1692772135, cold zone beyond cluster).
+    4. BTC: Confirmed current SL at 63,650 is a genuine cold zone (nearest short liq cluster is far above at 65,548; TP at 61,950 directly targets the 61,931 long liq pool).
+- **Blueberry Funded MT5 (#5126976)**:
+  - Balance ,544.18 | Equity ,594.17 (+.17 surplus; Drawdown = .00).
+  - Active Pending Orders (100% Cold-Zone Protected):
+    - BNBUSD.p (#20286769): Sell Limit 0.79 lots @ 602.50, SL 609.50, TP 566.00 (5.21R).
+    - ETHUSD.pi (#20286759): Sell Limit 0.34 lots @ 1838.50, SL 1854.50, TP 1785.00 (3.34R).
+    - XAUUSD.pi (#20244935): Sell Limit 0.01 lots @ 3794.50, SL 3800.50, TP 3776.00 (3.08R).
+  - Co-located Algo Isolation: 9 algorithmic trades (EURUSD, USDJPY, USDCHF, NZDSGD, USDCAD, XLMUSD) 100% untouched and floating in profit (+.80).
+- **Delta Exchange India (#26902927)**:
+  - Net Liquid Equity: .0976 USD (INR 263.30).
+  - BTCUSD Short: -1 lot @ ,750, mark ,346.2, unrealized PnL +.4037 USD (+108% ROE). Cold zone SL locked at ,650, TP ,950.
+  - TIAUSD Short: -10 lots @ .3580, mark .3507, unrealized PnL +.0730 USD (+42% ROE). Breakeven SL locked at .3580, TP .3327.
+  - DOGEUSD Maker Limit: Order #1692772135, Sell Limit 1 lot @ 0.0598, SL updated to 0.06120 (cold zone), TP 0.05736 (3.10R).

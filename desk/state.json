@@ -207,86 +207,6 @@
   },
   "orders": [
     {
-      "id": "R517-BNB-1",
-      "createdTs": 1794999132651,
-      "round": "R517",
-      "sym": "BNB",
-      "mt5Symbol": "BNBUSD",
-      "side": "short",
-      "type": "limit",
-      "entry": 592.95,
-      "stop": 595.31,
-      "targets": [
-        587.03,
-        578.97
-      ],
-      "targetSources": [
-        "long-liq cluster str 69 (~$9M est)",
-        "long-liq cluster str 100 (~$13M est)"
-      ],
-      "riskR": 2.5,
-      "expiresTs": 1795013532651,
-      "status": "placed",
-      "statusTs": 1794999132651,
-      "perpRefPrice": 589.79,
-      "regime": "TREND-DOWN",
-      "mode": "trend-pullback",
-      "debate": [
-        {
-          "source": "overview",
-          "verdict": "FOR",
-          "evidence": "h4 \u2193/d1 \u2193 EMA, price below day VWAP (589.79 vs 592.54), h4 RSI 39.4, day -1.4%"
-        },
-        {
-          "source": "footprint",
-          "verdict": "FOR",
-          "evidence": "bull 31 / bear 48; recent: Exhaustion/buy[time], Absorption/sell[vol], Absorption/sell[range]"
-        },
-        {
-          "source": "microFlow(abs/trap/exh)",
-          "verdict": "FOR",
-          "evidence": "6h micro-events: abs:sell\u00d76, div:buy\u00d71, exh:buy\u00d71, sdiv:sell\u00d73, trap:buy\u00d71, trap:sell\u00d73 \u2014 net 3 buy-side vs 12 sell-side"
-        },
-        {
-          "source": "largeOrders",
-          "verdict": "NEUTRAL",
-          "evidence": "0 walls \u2265$5M, none within 2% of price"
-        },
-        {
-          "source": "liquidation",
-          "verdict": "FOR",
-          "evidence": "long-liq magnet 587.03 (str 70, ~$9M est, -0.34%) as target"
-        },
-        {
-          "source": "stops(BTC heatmap)",
-          "verdict": "NEUTRAL",
-          "evidence": "n/a (upstream: BTC-only)"
-        },
-        {
-          "source": "bookWalls",
-          "verdict": "NEUTRAL",
-          "evidence": "\u00b15% depth imbalance +0.028 (5m ago +0.030, falling bids); bid $0.02B vs ask $0.02B"
-        },
-        {
-          "source": "cvd",
-          "verdict": "FOR",
-          "evidence": "taker buy 50.0%, perpCvd -8, spotCvd +7, quadrant spot-bid, latestDiv bear (recent)"
-        },
-        {
-          "source": "notifications",
-          "verdict": "AGAINST",
-          "evidence": "6h weighted bias +4.0 (2 events)"
-        }
-      ],
-      "rationale": "recent signals: Trapped longs/sell (time), Absorption/sell (vol), Absorption/sell (range); confluence -5.6 [notif -0.7 \u00b7 signals -1.0 \u00b7 trend -2 \u00b7 vwap -1 \u00b7 rsi +0.0 \u00b7 cvd -0.9] \u00b7 debate FOR 6/AGAINST 0; entry VWAP+1\u03c3/day-POC 592.95 [trend-pullback \u00b7 TREND-DOWN]; stop beyond 2\u03c3 zone; T1 long-liq cluster str 69 (~$9M est) \u00b7 T2 long-liq cluster str 100 (~$13M est) \u00b7 T3 \u2014; levels are PERP prices \u2014 translate to broker via live basis before MT5; liq clusters are Coinglass estimates",
-      "ticket": 20240006,
-      "actualEntry": 593.5,
-      "filledTs": null,
-      "notes": null,
-      "actualSL": 601.1,
-      "actualTP": 566
-    },
-    {
       "id": "R522-ADA-1",
       "createdTs": 1795002939563,
       "round": "R522",
@@ -366,20 +286,6 @@
       "vetoReason": "Spread (0.0021) > 25% of SL (0.0007) - PIT-03/07"
     },
     {
-      "id": "R524-BTC-1",
-      "symbol": "BTC",
-      "venue": "MT5",
-      "status": "placed",
-      "ticket": 20259518,
-      "side": "SELL_LIMIT",
-      "volume": 0.02,
-      "actualEntry": 64668,
-      "actualSL": 64924.7,
-      "actualTP": 63279.6,
-      "rMultiple": 5.4,
-      "expectedRiskUsd": 5.13
-    },
-    {
       "id": "R520-DOGE-1",
       "symbol": "DOGE",
       "venue": "Delta_India",
@@ -394,177 +300,48 @@
       "expectedRiskUsd": 0.078
     },
     {
-      "id": "R528-SOL-1",
-      "symbol": "SOL",
-      "mt5_symbol": "SOLUSD.p",
-      "venue": "Blueberry-MT5",
-      "side": "short",
-      "type": "SELL_LIMIT",
-      "volume": 0.05,
-      "entry": 74.15,
-      "sl": 75.35,
-      "tp": 71.2,
-      "status": "placed",
-      "ticket": 20271811,
-      "risk_usd": 6,
-      "r_multiple": 2.46,
-      "confluence": 7.5
-    },
-    {
-      "id": "R547-NAS-1",
-      "symbol": "NAS100",
-      "mt5_symbol": "NAS100.p",
-      "venue": "Blueberry-MT5",
-      "side": "short",
-      "type": "SELL_LIMIT",
-      "volume": 0.01,
-      "entry": 27240,
-      "sl": 27330,
-      "tp": 26850,
-      "status": "placed",
-      "ticket": 20275354,
-      "risk_usd": 9,
-      "r_multiple": 4.33,
-      "confluence": 7.5
-    },
-    {
-      "id": "mt5-1795036284481",
-      "round": "R557",
-      "sym": "SOLUSDT",
+      "id": "auto-mt5-bnb-1795061859012",
+      "round": "R582",
+      "sym": "BNBUSDT",
       "side": "short",
       "action": "short",
       "type": "limit",
       "status": "placed-mt5",
-      "source": "terminal-mt5-punch",
-      "engine": "EA6",
-      "entry": 73.285,
-      "stop": 74.065,
+      "source": "atg-cold-zone-optimizer",
+      "engine": "EA6-ColdZone-Sweep",
+      "entry": 602.5,
+      "stop": 609.5,
       "targets": [
-        73.04,
-        71.51,
-        70.95
+        566.0
       ],
-      "riskR": 3.0,
-      "riskPct": null,
-      "regime": "playbook:EA6",
-      "mode": "terminal-mt5-punch",
-      "rationale": "bearish BOS -> FVG retest limit @ mid (zone 73.03-73.54)",
-      "mt5Symbol": "SOLUSD.p",
-      "mt5Lots": 0.07,
-      "mt5RiskUsd": 5.46,
-      "ticket": 20277826,
-      "createdTs": 1795036284481
+      "riskR": 5.21,
+      "mt5Symbol": "BNBUSD.p",
+      "mt5Lots": 0.79,
+      "mt5RiskUsd": 5.53,
+      "ticket": 20286769,
+      "createdTs": 1795061859012
     },
     {
-      "id": "auto-mt5-1795036701059",
-      "round": "R558",
+      "id": "auto-mt5-eth-1795061859012",
+      "round": "R582",
       "sym": "ETHUSDT",
       "side": "short",
       "action": "short",
       "type": "limit",
       "status": "placed-mt5",
-      "source": "autonomous-punch-engine",
-      "engine": "EA6",
-      "entry": 1757.865,
-      "stop": 1774.3816785714287,
+      "source": "atg-cold-zone-optimizer",
+      "engine": "EA6-ColdZone-Sweep",
+      "entry": 1838.5,
+      "stop": 1854.5,
       "targets": [
-        1747.4032142857143,
-        1716.5666428571426,
-        1708.314964285714
+        1785.0
       ],
-      "riskR": 3,
-      "riskPct": null,
-      "regime": "playbook:EA6",
-      "mode": "autonomous-mt5-punch",
-      "rationale": "bearish BOS \u2192 FVG retest limit @ mid (zone 1752.97\u20131762.76)",
+      "riskR": 3.34,
       "mt5Symbol": "ETHUSD.pi",
-      "mt5Lots": 0.33,
-      "mt5RiskUsd": 5.45,
-      "ticket": 20277881,
-      "createdTs": 1795036701059
-    },
-    {
-      "id": "auto-mt5-1795056798874",
-      "round": "R558",
-      "sym": "LINKUSDT",
-      "side": "short",
-      "action": "short",
-      "type": "limit",
-      "status": "placed-mt5",
-      "source": "autonomous-punch-engine",
-      "engine": "EA6",
-      "entry": 9.065999999999999,
-      "stop": 9.127675,
-      "targets": [
-        8.99925,
-        8.899649999999998,
-        8.880974999999996
-      ],
-      "riskR": 3,
-      "riskPct": null,
-      "regime": "playbook:EA6",
-      "mode": "autonomous-mt5-punch",
-      "rationale": "bearish BOS \u2192 FVG retest limit @ mid (zone 9.01\u20139.13)",
-      "mt5Symbol": "LNKUSD.p",
-      "mt5Lots": 0.9,
-      "mt5RiskUsd": 5.55,
-      "ticket": 20284145,
-      "createdTs": 1795056798874
-    },
-    {
-      "id": "auto-mt5-1795058892865",
-      "round": "R558",
-      "sym": "LINKUSDT",
-      "side": "short",
-      "action": "short",
-      "type": "limit",
-      "status": "placed-mt5",
-      "source": "autonomous-punch-engine",
-      "engine": "EA6",
-      "entry": 9.065999999999999,
-      "stop": 9.127675,
-      "targets": [
-        8.99925,
-        8.899649999999998,
-        8.880974999999996
-      ],
-      "riskR": 3,
-      "riskPct": null,
-      "regime": "playbook:EA6",
-      "mode": "autonomous-mt5-punch",
-      "rationale": "bearish BOS \u2192 FVG retest limit @ mid (zone 9.01\u20139.13)",
-      "mt5Symbol": "LNKUSD.p",
-      "mt5Lots": 0.9,
-      "mt5RiskUsd": 5.55,
-      "ticket": 20285490,
-      "createdTs": 1795058892865
-    },
-    {
-      "id": "auto-mt5-eth-1795061569402",
-      "round": "R580",
-      "sym": "ETHUSDT",
-      "side": "short",
-      "action": "short",
-      "type": "limit",
-      "status": "placed-mt5",
-      "source": "atg-exec-hunt",
-      "engine": "EA6-Macro-Supply",
-      "entry": 1812.5,
-      "stop": 1822.5,
-      "targets": [
-        1785.0,
-        1765.0
-      ],
-      "riskR": 2.75,
-      "riskPct": null,
-      "regime": "playbook:EA6",
-      "mode": "autonomous-mt5-punch",
-      "rationale": "4H Bearish EMA spine + Daily Value Area High rejection sweep into 4H supply block. R=2.75, risk .50.",
-      "mt5Symbol": "ETHUSD.pi",
-      "mt5Lots": 0.55,
-      "mt5RiskUsd": 5.5,
-      "ticket": 20286694,
-      "createdTs": 1795061569402
+      "mt5Lots": 0.34,
+      "mt5RiskUsd": 5.44,
+      "ticket": 20286759,
+      "createdTs": 1795061859012
     }
   ],
   "positions": [
