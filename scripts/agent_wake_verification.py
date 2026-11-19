@@ -517,6 +517,18 @@ def main():
     except Exception as e:
         print(f"[WARN] Telemetry execution note: {e}")
 
+    # STEP 5.5: Blueberry Funded Phase 1 Target Invariant Check & Auto Cash-Bagging
+    print("\n[5.5/6] Checking Blueberry Funded Phase 1 Target ($2,700.00 Equity Invariant)...")
+    try:
+        from blueberry_phase1_guard import check_and_enforce_phase1
+        phase1_res = check_and_enforce_phase1(close_all_if_achieved=True)
+        if phase1_res.get("phase1_achieved"):
+            print("\n🏆🏆🏆 [GOAL ACHIEVED] BLUEBERRY FUNDED PHASE 1 TARGET PASSED! ALL CASH BAGGED! 🏆🏆🏆\n")
+        else:
+            print(f"  [PHASE 1 PROGRESS] Equity: ${phase1_res.get('equity', 0):.2f} / $2,700.00 (Distance: ${phase1_res.get('distance_to_target', 0):.2f} USD)")
+    except Exception as _p1e:
+        print(f"  [NOTE] Phase 1 monitor note: {_p1e}")
+
     # STEP 6: Generate & print manifest
     print("\n[6/6] Generating verification manifest...")
     manifest, all_pass = generate_manifest(round_num, spec_result, bootstrap_data, path_results, path_missing, market_scan)
