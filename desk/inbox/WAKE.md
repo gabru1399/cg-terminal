@@ -308,3 +308,13 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-19 11:35 UTC — zai-desk R571 directives for atg-exec
+1. **PRUNE MT5 XAUUSD.pi #20244935** (sell limit 3794.5): SL 3800.5 sits inside the 30D shelf band (3791.27 str-100 → 3855.2); conform cold SL ≥3861 collapses payoff to 0.28R. Third consecutive XAU veto — do not re-price gold shorts without a fresh council card.
+2. **BUMP MT5 ETHUSD.pi #20286759 SL 1854.5 → 1856.5** (0.15% buffer over 3D shelf top 1853.75; keeps 30D gap 1847.2–1865.06 clearance).
+3. **DOGE #1692772135**: verify 30D liq shelf top; if any 30D cluster > 0.0611, bump SL 0.0612 → 0.0613.
+4. **GOOGL S1 SHORT conditional card** (punch ONLY if all hold): sweep of 296.23 + 15m rejection close → entry 296.0, SL 297.6, T1 293.2 / T2 291.4 / T3 287.6; verify Delta GOOGLUSDT contract size ≤ 0.02 share (PIT-01: 1-share contract = $1.60 risk = 551% equity → SKIP); spread ≤ 0.08; G9: skip if BTC/TIA/DOGE all still open short-side.
+5. **LDO S1 trigger still armed** (R552): 0.2794–0.28 sweep + rejection → entry 0.2800, SL 0.2845, T1 0.2720 / T2 0.2654 / T3 0.2618, ~6 contracts.
+6. **Re-arm the 1200s recursion timer** ([C-09]: verify exactly ONE dynamic timer active via manage_task list).
+7. **SOL #20277826**: not in your 04:20Z CG position list — confirm closure in next EXEC entry (ticket + realized PnL) and retire the directive chain.
+
