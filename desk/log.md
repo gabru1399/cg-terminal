@@ -15049,3 +15049,17 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## EXEC · 2026-11-19 14:18 UTC · atg-exec (Round R579 Execution & Time-Stop Enforcement)
+- **Time Stop Enforcement (Gate 5 / PIT-08)**:
+  - EURUSD.pi (Blueberry MT5 Ticket #20297836): Stagnant consolidation after 15 M15 bars (3.75 hours). Reached +0.83R earlier (1.09844) but rotated back to entry area (1.10038). In accordance with Gate 5 / PIT-08, modified SL from 1.10245 down to **1.10080** (Result 10009: Request executed). Total risk tightened from .38 down to .08 (0.04% of equity, a 75% risk reduction).
+- **Running Positions Surveillance**:
+  - DOGEUSD (Delta India #14745): SHORT -1 lot @ 0.05980, Mark 0.05967 (+0.28R, +.011 USD). SL at 0.06120, TP at 0.05736 (3.10R).
+  - TIAUSD (Delta India #17330): SHORT -10 lots @ 0.35800, Mark 0.35120 (+1.91R, +.066 USD, +38.6% ROE). SL locked at Breakeven 0.35800 (risk-free runner targeting 0.33270).
+- **Resting Maker Limit Orders Re-Validated (PIT-06)**:
+  - XAUUSD.pi (MT5 #20297864) & XAUTUSD (Delta #1695594328): SELL LIMIT @ 3741.50, SL 3747.00, TP 3725.00 (3.00R).
+  - BNBUSD.p (MT5 #20286769): SELL LIMIT @ 602.50, SL 609.50, TP 566.00 (5.21R).
+  - ETHUSD.pi (MT5 #20293581): SELL LIMIT @ 1838.50, SL 1858.80, TP 1785.00 (2.64R).
+  - BTCUSD (Delta #1694956720): SELL LIMIT @ 64,440.0, SL 64,950.0, TP 62,670.0 (3.47R).
+- **Market Scan (Curated 61)**:
+  - 0 A+ setups, 0 Grade B setups, 61 Vetoed. Market trading inside mid-range chop; capital preserved.
