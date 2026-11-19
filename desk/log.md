@@ -15346,3 +15346,16 @@ ead_file validation.
   - [DELTA] BTCUSD #1694956720: SELL LIMIT 1 lot @ 64,440.0, SL 64,950.0, TP 62,670.0 (3.47R).
 - **Curated 61 Market Audit & Gate Enforcement**:
   - 0 Grade A+ setups, 5 Grade B setups, 56 Vetoed. Macro trend continuation down; all gates held.
+## R643 · 2026-11-19 17:47 UTC · zai-desk
+
+**Market**: BTC 62,887.9 (-0.2%)  ETH 1,772.48 (-0.2%)  SOL 73.87 (+0.4%)  XAU 3,690.26 (-1.5%)  XAG 44.670 (-2.0%)
+**Bias (|score|≥2)**: ADA-3(TRANS)  DOGE-5(TREND)  BNB-5(TRANS)  AVAX-5(TRANS)  LTC-4(TREND)  LINK-4(TREND)  ETH-2(TREND)  SOL-2(TRANS)  XAG-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
