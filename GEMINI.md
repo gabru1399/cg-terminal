@@ -1,5 +1,5 @@
 ---
-description: Cognitive Kernel & Autonomous Execution Rules — Enforces Thinking Mental Models, Karpathy Guidelines, Pre-Flight Checklist, and SOP v2.0.0.
+description: Cognitive Kernel & Autonomous Execution Rules — Enforces Thinking Mental Models, Karpathy Guidelines, Pre-Flight Checklist, and SOP v2.1.0. agent_wake_verification.py is the mandatory first tool call on every activation.
 trigger: always_on
 ---
 
@@ -62,7 +62,20 @@ trigger: always_on
   - `/verification-before-completion`: [`C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/verification-before-completion/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/verification-before-completion/SKILL.md) — The Iron Law: No completion claims without fresh verification evidence.
   - `/compact`: Built-in chat context window compaction directive — Summarize and compact conversation history when context budget expands.
 
-[BOOT-05] [INVARIANT] [DETERMINISTIC_PREFLIGHT_BOOTSTRAP]: Verbal recitation of dependency names without physical runtime tool execution is STRICTLY FORBIDDEN. On EVERY activation, round, or timer expiration, the agent MUST execute `python scripts/round_preflight_bootstrap.py` as the mandatory first tool call to physically verify on-disk plugins, skills, MT5 status, and spec timestamps before emitting analysis. Active runtime tools (`read_file`, MCP queries, terminal commands) MUST be executed empirically on every turn.
+[BOOT-05] [INVARIANT] [DETERMINISTIC_PREFLIGHT_BOOTSTRAP]: Verbal recitation of dependency names without physical runtime tool execution is STRICTLY FORBIDDEN. On EVERY activation, round, or timer expiration, the agent MUST execute the following as the FIRST tool call — no exceptions:
+
+```
+run_command("python c:/Users/SIGMA/Documents/cg-terminal/scripts/agent_wake_verification.py --round <N>")
+```
+
+This single atomic call:
+  (a) Reads and prints lines 1-165 of `c:/Users/SIGMA/Documents/cg-terminal/desk/CANONICAL_MASTER_SPECIFICATION.md`
+  (b) Runs `round_preflight_bootstrap.py` and verifies all plugins/skills/MCP/MT5
+  (c) Verifies all 12 critical physical file paths on disk
+  (d) Outputs a structured JSON manifest with live BTC, POC, VWAP, MT5 equity/positions
+  (e) Exits code 0 (proceed) or code 1 (blocked — fix before proceeding)
+
+If `agent_wake_verification.py` exits non-zero, the agent is BLOCKED from analyzing markets or placing orders. Active runtime tools (`read_file`, MCP queries, terminal commands) MUST be executed empirically on every turn. Zero cached echoes permitted.
 
 ---
 
@@ -232,18 +245,20 @@ Dynamic recursion is driven by a single 1200-second timer (`schedule(DurationSec
 Output: list of misses + lessons applied.
 
 ## STEP 1: DETERMINISTIC PRE-FLIGHT BOOTSTRAP (MANDATORY FIRST TOOL CALL)
-- MUST execute: run_command("python scripts/round_preflight_bootstrap.py")
-- MUST execute: read_file("c:/Users/SIGMA/Documents/cg-terminal/desk/CANONICAL_MASTER_SPECIFICATION.md", StartLine=1, EndLine=165)
-- If candidate trade evaluated: read_file("C:/Users/SIGMA/.gemini/config/plugins/trading-skills/skills/risk-reward-sanity-check/SKILL.md")
-- Confirm each item explicitly from raw bootstrap output:
-  - [ ] Physical presence of plugins confirmed on disk (trading-skills, superpowers, coderabbit, gravitas-native, chrome-devtools-plugin)
-  - [ ] Physical presence of skills confirmed on disk (gravitas, karpathy-guidelines, ponytail, quant-analyst, backtesting-frameworks, verification-before-completion)
-  - [ ] Physical presence of MCP server schemas confirmed on disk (delta-exchange-mcp, agent-memory, chrome-devtools, godkiller-verification, code-review-graph, link-extension, sqlite)
-  - [ ] Physical presence of slash command backing skills confirmed on disk (/plan, /brainstorming, /executing-plans, /karpathy-guidelines, /thinking-model-router, /gravitas, /verification-before-completion)
-  - [ ] Canonical Master Spec size & timestamp verified
-  - [ ] Terminal Engine online (BTC price, POC, VWAP)
-  - [ ] MT5 IPC online (Balance, Equity, Margin, Positions, Orders audited)
-  - [ ] Delta Exchange India CLOB audited via MCP tools
+- MUST execute as FIRST tool call:
+  `run_command("python c:/Users/SIGMA/Documents/cg-terminal/scripts/agent_wake_verification.py --round <n>")`
+- Single atomic call: reads spec L1-165, runs bootstrap, verifies 12 paths, outputs JSON manifest with live BTC/MT5.
+- Script exit code 0 = PROCEED | exit code 1 = BLOCKED (fix before proceeding)
+- If candidate trade evaluated: also run_command(read_file `C:/Users/SIGMA/.gemini/config/plugins/trading-skills/skills/risk-reward-sanity-check/SKILL.md`)
+- Confirm each item from manifest JSON:
+  - [ ] Plugins verified (trading-skills, superpowers, coderabbit, gravitas-native, chrome-devtools-plugin)
+  - [ ] Skills verified (gravitas, karpathy-guidelines, ponytail, quant-analyst, backtesting-frameworks, verification-before-completion)
+  - [ ] MCP servers verified (delta-exchange-mcp, agent-memory, chrome-devtools, godkiller-verification, code-review-graph, link-extension, sqlite)
+  - [ ] Slash skills verified (/plan, /brainstorming, /executing-plans, /karpathy-guidelines, /thinking-model-router, /gravitas, /verification-before-completion)
+  - [ ] Spec size & timestamp from manifest
+  - [ ] Terminal Engine: BTC price, POC, VWAP from manifest live_telemetry
+  - [ ] MT5: Balance, Equity, Margin, Positions, Orders from manifest live_telemetry
+  - [ ] Delta CLOB audited via MCP get_margined_positions + get_open_orders
 
 ## STEP 2: OPERATOR INQUEST (ASK AND ANSWER EVERY ROUND)
 Question: "What are potential high confluence A+ setups for Delta and MT5 that can be punched right away?"

@@ -170,8 +170,8 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 
 ### Pre-Flight Verification Gates (C-01 to C-10)
 
-[C-01] [GATE] [SPEC_GROUNDING]: `CANONICAL_MASTER_SPECIFICATION.md` is bound as sole operational manual; agent MUST execute `read_file` on this document on every wake-up before analyzing markets or staging orders.
-[C-02] [GATE] [INFRASTRUCTURE_VERIFICATION]: Active physical presence of all required plugins, skills, MT5 IPC, and MCP servers MUST be verified via `python scripts/round_preflight_bootstrap.py` before formulation. Zero cosmetic claims permitted.
+[C-01] [GATE] [SPEC_GROUNDING]: `CANONICAL_MASTER_SPECIFICATION.md` is bound as sole operational manual. Agent MUST call `python c:/Users/SIGMA/Documents/cg-terminal/scripts/agent_wake_verification.py` as the FIRST tool call on every wake-up — this reads spec lines 1-165 AND runs the bootstrap in one atomic call. Never rely on cached prompt text as a substitute for `read_file`.
+[C-02] [GATE] [INFRASTRUCTURE_VERIFICATION]: Active physical presence of all required plugins, skills, MT5 IPC, and MCP servers MUST be verified via `python c:/Users/SIGMA/Documents/cg-terminal/scripts/agent_wake_verification.py` before formulation. Zero cosmetic claims permitted — script must exit code 0.
 [C-03] [GATE] [COGNITIVE_DEBATE]: No trade or code is generated without Socratic stress-testing across the 10 mental models and 4-voice desk debate.
 [C-04] [GATE] [INDIVIDUAL_ASSET_AUDIT]: Pre-aggregated screener tables (`/api/cg/screener`) are STRICTLY PURGED; execute direct endpoint-by-endpoint queries across all 10 modules for each and every candidate across the 234 Delta and 156 MT5 assets.
 [C-05] [GATE] [CLOB_RECONCILIATION]: Query live `get_wallet_balances`, `get_margined_positions`, and `get_open_orders` on Delta Exchange India (`india_prod`, Account `#26902927`).
