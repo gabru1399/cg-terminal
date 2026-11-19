@@ -61,22 +61,28 @@ CURATED_61 = [
 
 def get_full_trading_universe():
     """Dynamically queries the complete live trading universe from Next.js terminal engine (228 Binance/Coinglass perps)
-    and falls back to CURATED_61 if endpoint is unavailable."""
+    plus TradFi perps, MT5 instruments, and Delta Exchange assets."""
+    syms = list(CURATED_61)
     try:
         req = urllib.request.Request("http://localhost:3000/api/binance/universe", headers={'User-Agent': 'Mozilla/5.0'})
-        with urllib.request.urlopen(req, timeout=3.0) as resp:
+        with urllib.request.urlopen(req, timeout=5.0) as resp:
             data = json.loads(resp.read().decode('utf-8'))
             assets = data.get('assets', [])
             if assets and len(assets) > 0:
-                syms = [a['sym'] for a in assets]
-                # Ensure classic indices are included
-                for c in ["SPX500", "UKO", "NDX100"]:
-                    if c not in syms:
-                        syms.append(c)
-                return syms
+                for a in assets:
+                    s = a.get('sym')
+                    if s and s not in syms:
+                        syms.append(s)
     except Exception:
         pass
-    return CURATED_61
+
+    # Ensure classic indices, commodities, and TradFi perps are fully represented
+    tradfi_keys = ["SPX500", "UKO", "NDX100", "XAU", "XAG", "NVDA", "TSLA", "AAPL", "MSFT", "AMZN", "GOOGL", "INTC", "CRCL", "COIN", "MSTR", "USO", "EURUSD", "GBPUSD", "USDJPY", "DJ30"]
+    for c in tradfi_keys:
+        if c not in syms:
+            syms.append(c)
+
+    return syms
 
 # ─── STEP 1: READ & PRINT CANONICAL SPEC ─────────────────────────────────────
 def read_and_print_spec():
@@ -179,7 +185,7 @@ def verify_critical_paths():
     return results, missing
 
 # ─── STEP 4: FRESH AUDIT OF CURATED 61 ASSETS ────────────────────────────────
-def fetch_json(url, timeout=4.0):
+def fetch_json(url, timeout=6.0):
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=timeout) as response:
@@ -242,7 +248,7 @@ def audit_symbol(sym):
     score = 0.0
     if regime in ['TREND_UP', 'TREND_DOWN']:
         score += 1.5
-    if model in ['S1', 'S2', 'S5', 'S7', 'S9', 'S10']:
+    if model in ['S1', 'S2', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'S10', 'M1_TREND_PULLBACK', 'M2_MEAN_REVERT', 'M3_BREAKOUT', 'WAIT_PULLBACK']:
         score += 1.5
     if "Absorption" in top_sig or "StrongDiv" in top_sig:
         score += 2.0
