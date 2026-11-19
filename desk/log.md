@@ -14439,3 +14439,11 @@ analysis script rc=1
   - BTCUSD Short: -1 lot @ ,750, mark ,195.4, unrealized PnL +.5546 USD (+119% ROE). Cold zone SL locked at ,650, TP ,950.
   - TIAUSD Short: -10 lots @ .3580, mark .3507, unrealized PnL +.0730 USD (+42% ROE). Breakeven SL locked at .3580, TP .3327.
   - DOGEUSD Maker Limit: Order #1692772135, Sell Limit 1 lot @ 0.0598, SL 0.06058, TP 0.05736 (3.10R). Open & waiting.
+
+## R549 · 2026-11-19 04:10 UTC · zai-desk — ENGINE protocol round (fresh-sweep, MCP lanes)
+- **Data honesty**: fapi lane re-banned by shared-IP aggregate traffic (418); all order-flow via CG/MCP lanes (live, ageMs <130ms on quotes). Cards route blank for the same reason — no fapi klines from this sandbox IP this round.
+- **Table 7 scoring (fresh telemetry)**: SUI short 1.0 pts · INJ long 1.0 pts · BTC short pullback 2.0 pts — ALL below 5.0 = HARD VETO, no new orders. Best near-miss: BTC h4/d1 BEAR trend (2.0) but liq skew favors UP-sweep ($128.8B short-liq above vs $77.9B long below) + no footprint confirmation at entry → PIT-03 knife-catch risk.
+- **Step 7 resting orders**: KEEP LNK #20284145 (trend intact, SL clear of 9.21 magnet by 0.90%) · KEEP BNB #20240006 (h1/h4/d1 BEAR, entry +1.23% away) · KEEP XAU #20244935 / ETH #20277881 (no fresh lane data; structure unchanged) · **PRUNE/RE-PRICE SOL #20277826** (live 74.41 traded through SL zone 74.065; m15 EMA13>89 flipped BULL; EA-6 card thesis stale) · **DOGE #1692772135: MOVE SL 0.06058 → 0.0616** (current SL sits inside the 0.060–0.061 long-liq band, str 72–89 — Directive 2026-11-18 liquidity-trap).
+- **Step 8 running trades**: Delta BTC short +1.23R unrealized — SL 63,650 cold-zone PASS (2.4% above the 62.0k long-liq shelf; TP 61,950 INTO the sweep, textbook) · TIA BE-locked, no CG lane quote this round (lane gap, not stale by rule) · NAS100 trailed +0.90 locked (co-located algo, untouched per isolation rule).
+- **Step 10 margin**: Delta net liquid $3.67, 0 order margin, 2 slots free — capacity exists, no A+ setup to use it. MT5 equity $2,610.65, DD $0.00.
+
