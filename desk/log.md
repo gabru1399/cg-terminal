@@ -17001,4 +17001,10 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
+## NOTE · 2026-11-19 ~21:35 UTC (corrected stamp) · zai-desk — CLOCK SKEW + API INTEGRATION FINDINGS
+- **Clock skew discovered**: sandbox container clock runs 10h behind real UTC (HTTP Date header adjudication: 21:31Z real vs 11:31Z local). R552/R571 zai-desk round stamps above are therefore ~10h early in label (11:xx label = 21:xx real). Daemon/atg-exec stamps unaffected. Next round Step 0: verify clock before stamping; use HTTP Date header as reference.
+- **comexlive.org audit**: NO first-party API — WordPress blog, server-rendered cached pages, TradingView widget embeds (jsdelivr + base64 config), no XHR/WS/fetch, no-op PWA service worker. Nothing to integrate. Its rendered "spot" (3,661.60) was a stale cache artifact.
+- **Free lane verified instead**: Yahoo chart API `GC=F` (COMEX gold front-month) — seconds-fresh, no key required, 3658.3 @ 21:17Z real, agrees with Coinglass XAU perp 3641.96 within ~16pt normal futures basis. `MGC=F`, `SI=F` also live. `XAUUSD=X` delisted (both query1/query2). Stooq blocked from sandbox. Terminal already owns the integration path (`src/lib/cg/classic.ts` futYahoo lane + fallbacks.ts:320 chain) — a GC=F/SI=F reference column for XAU/XAG rows is a small, zero-cost add (recommendation queued, not implemented this turn).
+- **Desk-relevant market fact**: XAU flushed −2.8% to 3641.96 (day low 3639), sweeping the 3694–3699 long-liq shelf mapped in the R552-era gold cards; XAG −4.96% to 43.31. The R550 "re-price gold only after sweep prints" condition is now MET — but metals re-formulation deferred to next full round (this turn was the API investigation).
+
 
