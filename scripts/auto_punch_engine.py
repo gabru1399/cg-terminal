@@ -241,7 +241,11 @@ def run_evaluation_and_punch():
             existing_mt5_syms.add(sym)
             punched.append(order_record)
         else:
-            print(f"[REJECTED] MT5 Punch Failed for {sym}: {res.get('error')}")
+            err = res.get('error', '')
+            if '10015' in err or 'displaced' in err:
+                print(f"[-] Awaiting pullback for {sym}: {err}")
+            else:
+                print(f"[REJECTED] MT5 Punch Failed for {sym}: {err}")
             
     print(f"\n[DONE] Autonomous evaluation round finished. Total newly punched orders: {len(punched)}")
     return punched

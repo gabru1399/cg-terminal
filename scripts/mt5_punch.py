@@ -112,12 +112,38 @@ def main():
         # ---- entry price ----
         if kind == "limit":
             entry = float(req["entry"])
+            stops_level = info.trade_stops_level or 0
+            point = info.point or 0.0001
+            min_dist = stops_level * point
+            if side == "long" and entry >= (tick.ask - min_dist):
+                print(json.dumps({
+                    "ok": False,
+                    "retcode": 10015,
+                    "error": f"Invalid limit price (retcode 10015): BUY_LIMIT entry {entry} must be below ask {tick.ask} by at least {min_dist} points. Market has displaced past entry."
+                }))
+                sys.exit(1)
+            elif side == "short" and entry <= (tick.bid + min_dist):
+                print(json.dumps({
+                    "ok": False,
+                    "retcode": 10015,
+                    "error": f"Invalid limit price (retcode 10015): SELL_LIMIT entry {entry} must be above bid {tick.bid} by at least {min_dist} points. Market has displaced past entry."
+                }))
+                sys.exit(1)
         else:
             entry = tick.ask if side == "long" else tick.bid
 
         stop_dist = abs(entry - stop)
         if stop_dist <= 0:
             print(json.dumps({"ok": False, "error": "stop distance must be positive"}))
+            sys.exit(1)
+
+        # ---- Microstructure Spread-to-Stop Gate (PIT-18) ----
+        spread = tick.ask - tick.bid
+        if spread > 0 and stop_dist < 2.0 * spread:
+            print(json.dumps({
+                "ok": False,
+                "error": f"Rejected by Microstructure Spread Gate (PIT-18): Stop distance {stop_dist:.5f} is less than 2.0x broker spread {spread:.5f} ({stop_dist/spread:.2f}x). Trade would be stopped out by spread alone! Route to Delta Exchange India or widen structural stop."
+            }))
             sys.exit(1)
 
         # ---- Gravitas R-multiple hard invariant (>= 2.00R floor) ----
