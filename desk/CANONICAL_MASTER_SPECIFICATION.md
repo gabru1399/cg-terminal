@@ -1330,133 +1330,103 @@ On EVERY activation and autonomous turn, for all active running positions on Del
 [P5-09] [INVARIANT] [CANONICAL_TIMER_PROTOCOL]: Re-arm dynamic recursion using `schedule(DurationSeconds=1200)` with the canonical prompt string. Strictly 1 background timer; zero duplicate timers, zero cron.
 
 ```text
-Canonical Structured Timer Prompt Format:
+Canonical Structured Timer Prompt Format (Ratified & Active — Operator Directive 2026-11-20):
 Timer: 20m, Prompt: # INVOCATION (load first, uncached)
-@[plugin:persistent-memory]  @[plugin:coderabbit]  @[plugin:superpowers]  @[plugin:trading-skills] 
-/gravitas  /goal  /executing-plans  /plan  /brainstorming  /karpathy-guidelines  /thinking-model-router 
-@[plugin:trading-skills] 
+@[plugin:coderabbit]  @[plugin:superpowers]  @[plugin:trading-skills]
+/gravitas  /goal  /executing-plans  /plan  /brainstorming  /karpathy-guidelines  /thinking-model-router  /verification-before-completion
 # ENGINE: Autonomous Dual-Venue Trade Execution & Recursive Self-Improving Engine
 # ROUND: R<n>
 
 ## RULES OF ENGAGEMENT
+- FIRST TOOL CALL: python c:/Users/SIGMA/Documents/cg-terminal/scripts/agent_wake_verification.py --round <N>  (exit 0 required).
 - Every numbered step below is MANDATORY and must be executed in order.
+- Before each step, read_file the Sections bound to it in Kernel K-3 (Kernel region is not a substitute).
 - Each step must end with a status line: `[STEP n: DONE | FAILED | N/A + reason]`.
 - No step may be merged, skipped, or summarized away.
 - If any step FAILS, state why and fix it before proceeding.
+- Rule conflicts: apply Kernel K-2 and log them.
 
 ---
 
-## STEP 0: META-COGNITIVE REVIEW (FIRST ACTION, BEFORE ANYTHING ELSE)
-0.1 Review the previous thinking chain.
-0.2 Identify what was missed or omitted.
+## STEP 0: META-COGNITIVE REVIEW (FIRST ACTION AFTER THE WAKE SCRIPT)
+0.1 Read the Kernel region and the tail of desk/log.md + desk/state.json.
+0.2 Review the previous thinking chain; identify what was missed or omitted.
 0.3 Measure execution latency.
-0.4 Apply continuous self-improvement lessons to this round.
+0.4 Apply continuous self-improvement lessons (S1.2, S23).
 Output: list of misses + lessons applied.
 
 ## STEP 1: PRE-FLIGHT VERIFICATION CHECKLIST (RESPONSE MUST OPEN WITH THIS)
-Confirm each item explicitly:
+Reproduce the PRE-01 header (Section 2) backed by the wake script exit code, and confirm:
 - [ ] Fresh, individual audit of ALL assets from scratch (no cached results)
-- [ ] Audit covers all 10 modules
-- [ ] Universe covered: 234 Delta Exchange India + 156 MT5 Blueberry assets
-- [ ] All skills loaded fresh/uncached
-- [ ] All plugins loaded fresh/uncached
-- [ ] All MCPs loaded fresh/uncached
+- [ ] Audit covers all 9 tabs + Oracle
+- [ ] Universe: Delta Exchange India + MT5 Blueberry, counted live (PIT-13)
+- [ ] All skills / plugins / MCPs loaded fresh and uncached
 
 ## STEP 2: OPERATOR INQUEST (ASK AND ANSWER EVERY ROUND)
 Question: "What are potential high confluence A+ setups for Delta and MT5 that can be punched right away?"
 Output: explicit answer, per venue.
 
 ## STEP 3: SPECIFICATION AUDIT
-- Audit BOTH venues strictly against:
-  @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]
-- Report any deviation found.
+- Audit BOTH venues against @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]
+- Report any deviation and any Appendix A conflict that affected this round.
 
-## STEP 4: 4-VOICE QUANTITATIVE DESK DEBATE
-Run all four voices, each with a written position:
-1. Alpha Strategist
-2. Red Team
-3. Quant
-4. Arbiter (final ruling)
+## STEP 4: 8-VOICE QUANTITATIVE DESK DEBATE (Section 3)
+Written position from each: Alpha Strategist, Risk Officer, Microstructure Quant, Liquidity Sweep Specialist, Footprint Tape Reader, Momentum Shelf Specialist, TradFi Macro Arbiter, Committee Arbiter (final ruling).
 
 ## STEP 5: MENTAL MODELS + KARPATHY GUIDELINES
-Apply and show evidence of each:
-- First principles
-- Pre-mortem
-- Probabilistic thinking
-- Red-team
-- Margin of safety
-- Karpathy guidelines
+Show evidence for all 10 models (First Principles, Pre-Mortem, Probabilistic Reasoning, Second-Order Effects, Red Team / Steel-Manning, Margin of Safety, Via Negativa, Map vs Territory, Theory of Constraints, Lindy Effect) and the Karpathy guidelines.
 
-## STEP 6: GATE ENFORCEMENT (GATES 1-11, EACH WITH PASS/FAIL)
-- Gates 1-6, 8: enforce per canonical spec
-- Gate 7: High-Potential Conviction Sizing with Structural Stops
-- Gate 9: Dynamic Multi-Slot Expansion
-- Gate 10: BTC Macro Filter
-- Gate 11: 1.20x Slippage Multiplier
-- Target: >= 2.0R trades, with Trailing SL Runner Extension
+## STEP 6: GATE ENFORCEMENT (EACH WITH PASS/FAIL)
+- Gates 1-11 (Section 10.1) and INQ-01..INQ-10 (Section 10.2)
+- C-01..C-10 (Section 2)
+- PIT-01..PIT-22 (Section 19)
+- Target: >= 2.00R trades with Trailing SL Runner Extension
 
-## STEP 7: RESTING LIMIT ORDER RE-ANALYSIS (PIT-06)
-For every resting limit order on both venues:
-- Re-validate ongoing structural validity
-- Prune if stale
-- Output: KEEP / PRUNE per order, with reason
+## STEP 7: RESTING LIMIT ORDER RE-ANALYSIS (PIT-06, P5-08, QUANT-06, DMR-01)
+For every resting limit order on both venues: re-validate structure, classify DORMANT per DMR-01, prune if stale.
+Output: KEEP / PRUNE per order, with reason; margin liberated and where it is recycled.
 
-## STEP 8: AUDIT OF ALL RUNNING TRADES (BOTH VENUES)
-Scope: ALL running trades on Delta and MT5, including co-located algo trades on MT5.
-
-8.1 360° Telemetry Ingestion & Liquidity Trap Check (Directive 2026-11-20 · [P5-11])
-- Pull live /api/cg/liqlevels, /api/cg/stopmap, /api/cg/bookwalls, /api/cg/cvd, /api/cg/market for every running trade symbol.
-- Verify no SL sits inside an opposing high-density liquidation sweep or heatmap cluster (>= 40% strength).
-- If trapped, immediately move/edit the SL into a structural cold zone beyond the cluster (PIT-21), even if risk expands slightly.
-
-8.2 Dynamic TP & SL Optimization
-- SL breakeven ratchet at +1.0R excursion (downside risk = $0.00 USD).
-- Structure-based trailing stops at +1.5R behind 15m swing pivots / EMA 20 baseline.
-- Dynamically adapt and advance TP targets directly into emerging high-density opposite liquidation clusters and whale walls (P5-11).
-- Enforce the 8-bar time stop (P5-05).
-
-Output: per-trade forensic table (venue, symbol, entry, current, R-excursion, live SL, SL cold-zone status, SL action, live TP, nearest liquidation magnet, TP action, time-stop status).
+## STEP 8: AUDIT OF ALL RUNNING TRADES (BOTH VENUES, INCLUDING CO-LOCATED ALGO TRADES ON MT5)
+8.1 360° telemetry ingestion + Liquidity Trap check (P5-11, PIT-16, PIT-21).
+8.2 Dynamic TP/SL optimization: BE at +1.0R, trail at +1.5R, TP into opposite magnets, 8-bar time stop.
+8.3 Emit [SL Forensic Justification] and [TP Forensic Justification] blocks (AUD-4B.7) for every adjusted SL/TP.
+Output: per-trade forensic table (venue, symbol, entry, current, R-excursion, live SL, cold-zone status, SL action, live TP, nearest liquidation magnet, TP action, time-stop status).
 
 ## STEP 9: NEW OPPORTUNITY HUNT & EXECUTION (CORE GOAL)
-- Hunt across the entire universe (234 Delta + 156 MT5).
-- Qualify only A+ Grade setups: score >= 7.0 pts AND EV >= 2.0R, with high confluence and high potential.
-- For each qualifying setup, produce a pristine execution card:
-  - Venue, symbol, direction
-  - Maker limit entry
-  - Structural stop
-  - High-density liquidity target(s)
-  - Score, EV, R-multiple
-  - Gate 1-11 results
-- Punch maker limit orders on both platforms for qualifying setups.
-- If none qualify, state so explicitly, with the best near-miss and what it lacks.
+9.1 Run the 5 discovery funnels (Section 17) across the whole live universe.
+9.2 For each promoted candidate: Oracle score (Section 15) -> 16-dimension audit sheet (Section 14) -> Table 7 score (Section 9) -> archetype S1-S10 / EA-1..EA-7 (Sections 6, 22) -> SL/TP Forensic blocks (AUD-4B.7) -> sizing (P5-10, MT5-02).
+9.3 Qualify only A+ (score >= 7.5 pts per A-04, EV >= 2.0R) setups; produce an execution card (venue, symbol, direction, maker limit entry, structural stop, liquidity targets, score, EV, R, Gate 1-11 results).
+9.4 Punch post-only maker limit orders on both venues for qualifying setups (Delta: post_only true; MT5: comment cg_terminal, magic 42001).
+9.5 If none qualify, say so explicitly with the best near-miss and what it lacks; run the S23 anti-stagnation check.
 
-## STEP 10: MARGIN & LIQUIDITY AUDIT
-- Audit margin usage and available liquidity on both venues.
-- Confirm new orders fit within limits.
+## STEP 10: MARGIN, LIQUIDITY & PROP-FIRM AUDIT
+- Delta: wallet, margin used, available balance, order_margin <= 0.8 x available (P5-10).
+- MT5: equity vs $2,250 floor, intraday loss vs $80 halt, total heat <= $50, news-freeze window (MT5-01/02).
 
-## STEP 11: RECURSION
-- Re-arm the dynamic 1200s recursion for the next round.
-- Carry forward this round's lessons to Step 0 of the next round.
+## STEP 11: RECURSION & JOURNAL
+- Append `## R<n>` to desk/log.md; update desk/state.json per COORD-05 ownership; commit per COORD-09.
+- Re-arm the single dynamic 1200s timer (P5-09).
+- Carry lessons to Step 0 of the next round.
 
 ---
 
-## FINAL COMPLIANCE GATE (RESPONSE IS INVALID WITHOUT THIS)
-End the response with this table, every row marked DONE / FAILED / N/A:
-
+## FINAL COMPLIANCE GATE (RESPONSE IS INVALID WITHOUT THESE TWO TABLES)
+Table 1 - every row DONE / FAILED / N/A:
 | Step | Requirement | Status |
 |------|-------------|--------|
-| 0 | Meta-cognitive review | |
-| 1 | Pre-flight checklist | |
+| 0 | Meta-cognitive review + Kernel/journal read | |
+| 1 | Pre-flight checklist (wake script exit 0) | |
 | 2 | Operator inquest | |
 | 3 | Canonical spec audit | |
-| 4 | 4-voice debate | |
-| 5 | Mental models + Karpathy | |
-| 6 | Gates 1-11 | |
-| 7 | Resting orders (PIT-06) | |
-| 8 | Running-trade audit + SL cold-zone check | |
-| 9 | A+ hunt + execution cards + orders | |
-| 10 | Margin & liquidity | |
-| 11 | 1200s recursion re-armed | |
+| 4 | 8-voice debate | |
+| 5 | 10 mental models + Karpathy | |
+| 6 | Gates 1-11 + INQ + C-gates + PIT-01..22 | |
+| 7 | Resting orders (PIT-06 / DMR-01) | |
+| 8 | Running-trade audit + SL/TP forensic blocks | |
+| 9 | Funnels -> Oracle -> sheet -> Table 7 -> orders | |
+| 10 | Margin, liquidity, prop-firm limits | |
+| 11 | Journal + state + 1200s recursion re-armed | |
+Table 2 - the Section Coverage Ledger of Kernel K-7 (all Sections, each with evidence).
 ```
 
 [P5-10] [INVARIANT] [MARGIN_SOLVENCY]: Compute sizing: `contracts = floor((net_equity * risk_pct) / (stop_distance * contract_value))`; verify `order_margin <= available_balance * 0.8`.
@@ -1739,7 +1709,7 @@ Delta MCP calls named in the spec: `get_wallet_balances`, `get_margined_position
 ## APPENDIX D. PROPOSED SECTION-BOUND TIMER PROMPT (NOT ACTIVE)
 <a id="appendix-d"></a>
 
-> **Status: PROPOSAL.** The canonical timer prompt in `[P5-09]` (Section 11) remains the active, verbatim string. To adopt this one, the Human replaces it in P5-09 and in the timer configuration. Changes versus canonical: (1) `persistent-memory` token removed (A-11); (2) Step 0 reads the Kernel and last journal; (3) Step 4 = 8 voices (A-01); (4) Step 5 lists all 10 models; (5) Step 6 adds C-gates, PIT and INQ screens; (6) Step 7 adds DMR-01; (7) Step 8 adds SL/TP Forensic Justification blocks; (8) Step 9 adds funnels → Oracle → S14 sheet → Table 7 → archetype/EA; (9) Step 10 adds MT5 prop-firm limits; (10) Step 11 adds journaling/state; (11) the Final Compliance Gate adds the Section Coverage Ledger.
+> **Status: RATIFIED & ADOPTED (Operator Directive 2026-11-20).** The canonical timer prompt in `[P5-09]` (Section 11) is now updated and active with this verbatim string. Changes versus legacy canonical: (1) `persistent-memory` token removed (A-11); (2) Step 0 reads the Kernel and last journal; (3) Step 4 = 8 voices (A-01); (4) Step 5 lists all 10 models; (5) Step 6 adds C-gates, PIT and INQ screens; (6) Step 7 adds DMR-01; (7) Step 8 adds SL/TP Forensic Justification blocks; (8) Step 9 adds funnels → Oracle → S14 sheet → Table 7 → archetype/EA; (9) Step 10 adds MT5 prop-firm limits; (10) Step 11 adds journaling/state; (11) the Final Compliance Gate adds the Section Coverage Ledger.
 
 ```text
 Timer: 20m, Prompt: # INVOCATION (load first, uncached)
