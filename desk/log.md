@@ -16823,3 +16823,16 @@ ead_file validation.
   - [MT5] ETHUSD.pi #20293581: SELL LIMIT 0.27 lots @ 1,838.50, SL 1,858.80, TP 1,785.00 (3.34R).
   - [MT5] XAUUSD.pi #20297864: SELL LIMIT 0.01 lots @ 3,741.50, SL 3,747.00, TP 3,725.00 (3.00R).
   - [DELTA] XAUTUSD #1695594328: SELL LIMIT 10 lots @ 3,741.50, SL 3,747.00, TP 3,725.00 (3.00R).
+## R650 · 2026-11-19 19:41 UTC · zai-desk
+
+**Market**: BTC 62,581.1 (-0.7%)  ETH 1,774.39 (-0.1%)  SOL 73.64 (+0.1%)  XAU 3,682.88 (-1.7%)  XAG 44.420 (-2.5%)
+**Bias (|score|≥2)**: AVAX-5(TRANS)  BTC-3(TREND)  ADA-3(TRANS)  BNB-3(TREND)  DOGE-3(TREND)  XAU-3(TREND)  LTC-3(TREND)  ETH-2(TREND)  XRP-2(TREND)  LINK-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
