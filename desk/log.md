@@ -16770,3 +16770,19 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## EXEC · 2026-11-19 19:15 UTC · atg-exec (Round R592 Execution, Directive 2026-11-20 Codification & Running Trades 360° TP/SL Optimization)
+- **Directive 2026-11-20 Codified & Enacted**:
+  - Enacted `[P5-11] [MANDATORY] [RUNNING_TRADE_360_TELEMETRY_TP_SL_OPTIMIZER]` in `CANONICAL_MASTER_SPECIFICATION.md`: Every round pulls 360° telemetry (`liqlevels`, `stopmap`, `bookwalls`, `market`, `cvd`, `fp`) for every running position across Delta and MT5 to optimize on-exchange SL and TP orders.
+  - Updated `scripts/agent_wake_verification.py` to automatically ingest full 360° telemetry for active positions.
+- **Running Trades 360° Telemetry & Dynamic TP/SL Optimization Audit**:
+  - `EURUSD.pi` (Blueberry MT5 Ticket #20297836): Short 0.02 lots @ 1.10026, current 1.09762 (+26.4 pips excursion, +$5.28 USD profit, +2.35R). SL locked at Breakeven 1.10026 ($0.00 downside risk). Hold runner into TP 1.09550 (+8.8R / +$9.52 USD).
+  - `TIAUSD` (Delta India Position #17330): Short -10 contracts @ 0.35800, mark 0.34520 (+3.74R excursion, +$0.129 USD profit, +76% ROE). 360° Telemetry confirms Session VAL at 0.3361 and Day VWAP -3σ at 0.3300. SL locked at Breakeven 0.35800 ($0.00 risk). TP at 0.33270 sits directly at the extreme expansion boundary. Hold into TP 0.33270.
+  - `DOGEUSD` (Delta India Position #14745): Short -1 lot @ 0.05980, mark 0.05868 (+0.80R excursion, +$0.112 USD profit, +185% ROE). 360° Telemetry confirms $234.7M long liquidation magnets below at 0.05743 (str 95) and 0.05720 (str 87); TP #1692772140 at 0.05736 is stationed perfectly inside the magnet apex. SL #1692772139 at 0.06120 is confirmed in the Cold Zone beyond the 0.06057-0.06104 short cluster shelf. Breakeven trigger armed at 0.05840.
+- **Standing Maker Limits Validated & Held Active**:
+  - [MT5] BNBUSD.p #20286769: SELL LIMIT 0.79 lots @ 602.50, SL 609.50, TP 566.00 (5.21R).
+  - [MT5] ETHUSD.pi #20293581: SELL LIMIT 0.27 lots @ 1,838.50, SL 1,858.80, TP 1,785.00 (3.34R).
+  - [MT5] XAUUSD.pi #20297864: SELL LIMIT 0.01 lots @ 3,741.50, SL 3,747.00, TP 3,725.00 (3.00R).
+  - [DELTA] XAUTUSD #1695594328: SELL LIMIT 10 lots @ 3,741.50, SL 3,747.00, TP 3,725.00 (3.00R).
+  - [DELTA] BTCUSD #1694956720: SELL LIMIT 1 lot @ 64,440.0, SL 64,950.0, TP 62,670.0 (3.47R) (Armed for dynamic S10 capital reallocation).
+- **Single 1200s Dynamic Timer Initialized for Round R593** (`task-27840`).
