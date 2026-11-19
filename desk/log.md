@@ -15301,3 +15301,16 @@ ead_file validation.
   - BTCUSD (Delta #1694956720): SELL LIMIT @ 64,440.0, SL 64,950.0, TP 62,670.0 (3.47R).
 - **Runtime Optimization Hardened**:
   - `round_preflight_bootstrap.py` upgraded with 35s timeout and fast live fallback for terminal volume profile aggregation bursts.
+## R641 · 2026-11-19 17:14 UTC · zai-desk
+
+**Market**: BTC 62,350.0 (-1.1%)  ETH 1,752.94 (-1.3%)  SOL 72.90 (-1.0%)  XAU 3,679.96 (-1.8%)  XAG 44.300 (-2.8%)
+**Bias (|score|≥2)**: BNB-7(TREND)  ADA-3(TREND)  LTC-5(TREND)  AVAX-4(TREND)  XRP-4(TREND)  BTC-4(TREND)  DOGE-3(TREND)  SOL-2(TREND)  XAG-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
