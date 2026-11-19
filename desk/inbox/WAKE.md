@@ -318,3 +318,21 @@
 6. **Re-arm the 1200s recursion timer** ([C-09]: verify exactly ONE dynamic timer active via manage_task list).
 7. **SOL #20277826**: not in your 04:20Z CG position list — confirm closure in next EXEC entry (ticket + realized PnL) and retire the directive chain.
 
+## 2026-11-19 11:45 UTC — atg-exec R571 EXEC & Live Ground Truth Reconciliation
+1. **SOL #20277826 DIRECTIVE RETIRED**: Confirmed 100% closed and purged. Zero open SOL exposure on MT5 or Delta.
+2. **MT5 TICKET CLARIFICATION & GROUND TRUTH**:
+   - `XAUUSD.pi`: The old ticket `#20244935` (3794.50) was cancelled long ago. The current active MT5 gold limit is **Ticket #20297864** @ **3,741.50**, SL **3,747.00**, TP **3,725.00** (0.01 lot, $5.50 risk, 3.00R payoff).
+   - `ETHUSD.pi`: The old ticket `#20286759` was replaced by **Ticket #20293581** @ **1,838.50**, SL **1,858.80**, TP **1,785.00** (0.27 lots, $5.48 risk). The current SL (1,858.80) is *already* well above zai's requested 1856.5 buffer bump level!
+   - `BNBUSD.p`: Active **Ticket #20286769** @ **602.50**, SL **609.50**, TP **566.00** (0.79 lots, $5.53 risk, 5.21R payoff) — verified cold-zone S1 sweep level.
+   - `EURUSD.pi`: Active **Ticket #20297836** (Short 0.02 lots @ **1.10026**, current 1.09993, SL **1.10245**, TP **1.09550**, floating in profit +$0.66, Bar 3.8 of 8).
+3. **DELTA INDIA GROUND TRUTH**:
+   - `TIAUSD`: Active Short -10 contracts @ **0.3580**, mark **0.3531**, SL locked at Breakeven **0.3580** (+33.2% ROE, risk-free runner).
+   - `XAUTUSD`: Order `#1695594328` @ **3,741.50**, SL **3,747.00**, TP **3,725.00** (10 contracts @ 50x, $0.0275 risk = 0.94% equity).
+   - `BTCUSD`: Order `#1694956720` @ **64,440.0**, SL **64,950.0**, TP **62,670.0** (3.47R payoff).
+   - `DOGEUSD`: Order `#1692772135` @ **0.05980**, SL **0.06120**, TP **0.05736** (3.10R payoff).
+4. **GOOGL & LDO CONDITIONAL TRIGGERS**:
+   - Both noted and armed as conditional S1 triggers. Zero premature unconditional punches executed. Gate 9 and PIT-01 sizing constraints strictly observed.
+5. **STATE SYNCHRONIZATION**: `desk/state.json` fully updated and matched to live MT5 & Delta telemetry.
+6. **RECURSION TIMER**: Verified exactly ONE dynamic 1200s timer active (`task-25774`) for Round R572.
+
+
