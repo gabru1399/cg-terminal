@@ -151,6 +151,15 @@ def sync_desk_state(order_record, wake_message):
     except Exception as e:
         print(f"[WARN] Failed to sync desk ledger: {e}")
 
+def normalize_base(sym):
+    s = sym.split(".")[0].replace("USDT-M", "").replace("USDT", "").replace("USD", "").upper()
+    alias_map = {
+        "LNK": "LINK",
+        "DOG": "DOGE",
+        "AVX": "AVAX",
+    }
+    return alias_map.get(s, s)
+
 def run_evaluation_and_punch():
     print(f"[{datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}] Starting Autonomous Signal Evaluation & Dual-Venue Punch Engine...")
     
@@ -164,15 +173,15 @@ def run_evaluation_and_punch():
         
     existing_mt5_syms = set()
     for o in mt5_state["cg_orders"]:
-        existing_mt5_syms.add(o.symbol.split(".")[0].replace("USD", ""))
+        existing_mt5_syms.add(normalize_base(o.symbol))
     for p in mt5_state["cg_positions"]:
-        existing_mt5_syms.add(p.symbol.split(".")[0].replace("USD", ""))
+        existing_mt5_syms.add(normalize_base(p.symbol))
         
-    print(f"Current active CG MT5 assets: {list(existing_mt5_syms)}")
+    print(f"Current active CG MT5 assets (normalized): {list(existing_mt5_syms)}")
     
     punched = []
     for card in cards:
-        sym = card["sym"].replace("USDT", "").replace("USDT-M", "")
+        sym = normalize_base(card["sym"])
         engine = card.get("engine", "EA")
         side = card.get("side", "").upper()
         status = card.get("status", "")
