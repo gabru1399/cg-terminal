@@ -16,49 +16,49 @@ import type {
 
 /** Generic polling fetch hook with live indicator. */
 export function usePolling<T>(url: string | null, intervalMs: number) {
-  const [data, setData] = useState<T | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(Boolean(url));
-  const [updatedAt, setUpdatedAt] = useState<number>(0);
+  const [result, setResult] = useState<{
+    url: string; data: T | null; error: string | null; updatedAt: number;
+  } | null>(null);
   const [prevUrl, setPrevUrl] = useState<string | null>(url);
   if (url !== prevUrl) {
     setPrevUrl(url);
-    setData(null);
-    setError(null);
-    setLoading(Boolean(url));
+    setResult(null);
   }
-  const alive = useRef(true);
-  // fetch generation: only the latest request may commit state, so a slow
-  // response for a previous URL (e.g. the old symbol) can never clobber it
-  const gen = useRef(0);
+  const request = useRef<AbortController | null>(null);
 
   const load = useCallback(async () => {
-    if (!url) return;
-    const myGen = ++gen.current;
+    if (!url || request.current) return;
+    const controller = new AbortController();
+    request.current = controller;
+    const timeout = setTimeout(() => controller.abort(), 30_000);
+    const fail = (error: string) => {
+      setResult((prior) => ({
+        url, data: null, error, updatedAt: prior?.url === url ? prior.updatedAt : 0,
+      }));
+    };
     try {
-      const res = await fetch(url);
-      const json = (await res.json()) as { ok: boolean; error?: string };
-      if (!alive.current || myGen !== gen.current) return; // superseded → discard
-      if (json.ok === false) {
-        setError(json.error ?? "request failed");
-        setData(null); // never keep the previous symbol's data on failure
+      const res = await fetch(url, { signal: controller.signal });
+      const json = (await res.json()) as { ok: boolean; error?: string } | null;
+      if (request.current !== controller) return;
+      if (!res.ok || !json || json.ok === false) {
+        fail(json?.error ?? (!res.ok ? `HTTP ${res.status}` : "Invalid response"));
       } else {
-        setError(null);
-        setData(json as unknown as T);
-        setUpdatedAt(Date.now());
+        setResult({ url, error: null, data: json as unknown as T, updatedAt: Date.now() });
       }
     } catch (e) {
-      if (alive.current && myGen === gen.current) {
-        setError(e instanceof Error ? e.message : "network error");
-        setData(null);
+      if (request.current === controller) {
+        fail(controller.signal.aborted ? "Request timed out" : e instanceof Error ? e.message : "Network error");
       }
     } finally {
-      if (alive.current && myGen === gen.current) setLoading(false);
+      clearTimeout(timeout);
+      if (request.current === controller) {
+        request.current = null;
+      }
     }
   }, [url]);
 
   useEffect(() => {
-    alive.current = true;
+    if (!url) return;
     const init = setTimeout(() => {
       void load();
     }, 0);
@@ -66,17 +66,9 @@ export function usePolling<T>(url: string | null, intervalMs: number) {
 
     // Auto-wake when tab is focused or returns from background in Chrome
     const onVisible = () => {
-      if (typeof document !== "undefined" && document.visibilityState === "visible") {
-        if (alive.current && url) {
-          void load();
-        }
-      }
+      if (document.visibilityState === "visible") void load();
     };
-    const onFocus = () => {
-      if (alive.current && url) {
-        void load();
-      }
-    };
+    const onFocus = () => void load();
 
     if (typeof document !== "undefined") {
       document.addEventListener("visibilitychange", onVisible);
@@ -86,7 +78,9 @@ export function usePolling<T>(url: string | null, intervalMs: number) {
     }
 
     return () => {
-      alive.current = false;
+      const pending = request.current;
+      request.current = null;
+      pending?.abort();
       clearTimeout(init);
       clearInterval(t);
       if (typeof document !== "undefined") {
@@ -98,7 +92,14 @@ export function usePolling<T>(url: string | null, intervalMs: number) {
     };
   }, [load, intervalMs, url]);
 
-  return { data, error, loading, updatedAt, refresh: load };
+  const current = result?.url === url ? result : null;
+  return {
+    data: current?.data ?? null,
+    error: current?.error ?? null,
+    loading: Boolean(url) && current === null,
+    updatedAt: current?.updatedAt ?? 0,
+    refresh: load,
+  };
 }
 
 export interface KlinePayload {

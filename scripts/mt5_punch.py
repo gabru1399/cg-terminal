@@ -26,7 +26,7 @@ or {ok: false, error}. Exit code 0 only on success.
 """
 import json
 import sys
-from pathlib import Path
+from mt5_order_risk import size_order, validate_bracket
 
 try:
     import MetaTrader5 as mt5
@@ -63,6 +63,8 @@ def main():
         raw_sym = req["symbol"]
         side = req["side"].lower()
         kind = req.get("kind", "market").lower()
+        if side not in ("long", "short") or kind not in ("limit", "market"):
+            raise ValueError("Invalid side or order kind")
         stop = float(req["stop"])
         tp = float(req["tp"]) if req.get("tp") else 0.0
 
@@ -132,56 +134,12 @@ def main():
         else:
             entry = tick.ask if side == "long" else tick.bid
 
-        stop_dist = abs(entry - stop)
-        if stop_dist <= 0:
-            print(json.dumps({"ok": False, "error": "stop distance must be positive"}))
-            sys.exit(1)
-
-        # ---- Microstructure Spread-to-Stop Gate (PIT-18) ----
-        spread = tick.ask - tick.bid
-        if spread > 0 and stop_dist < 2.0 * spread:
-            print(json.dumps({
-                "ok": False,
-                "error": f"Rejected by Microstructure Spread Gate (PIT-18): Stop distance {stop_dist:.5f} is less than 2.0x broker spread {spread:.5f} ({stop_dist/spread:.2f}x). Trade would be stopped out by spread alone! Route to Delta Exchange India or widen structural stop."
-            }))
-            sys.exit(1)
-
-        # ---- Gravitas R-multiple hard invariant (>= 2.00R floor) ----
-        if tp > 0:
-            reward_dist = abs(entry - tp)
-            r_multiple = reward_dist / stop_dist
-            if r_multiple < 1.95:
-                print(json.dumps({
-                    "ok": False,
-                    "error": f"Rejected by Gravitas R-multiple invariant: Planned TP {tp} yields only {r_multiple:.2f}R (< 1.95R hard floor; entry {entry}, stop {stop}, stop_dist {stop_dist:.4f}, reward_dist {reward_dist:.4f}). Ensure trade has >= 2.00R!"
-                }))
-                sys.exit(1)
-
-        # ---- sizing (risk_usd can only lower the prop cap) ----
-        cap = MAX_RISK_USD
-        if req.get("risk_usd"):
-            cap = min(float(req["risk_usd"]), MAX_RISK_USD)
-        tick_size = info.trade_tick_size or info.point
-        tick_value = info.trade_tick_value or 0.01
-        risk_per_lot = (stop_dist / tick_size) * tick_value if tick_size else 0.0
-        if risk_per_lot <= 0:
-            risk_per_lot = info.trade_contract_size * stop_dist
-        if risk_per_lot <= 0:
-            print(json.dumps({"ok": False, "error": "cannot compute per-lot risk for {sym}"}))
-            sys.exit(1)
-
-        raw = cap / risk_per_lot
-        steps = round(raw / info.volume_step)
-        lots = round(steps * info.volume_step, 2)
-        min_lot_risk = info.volume_min * risk_per_lot
-        if lots < info.volume_min:
-            if min_lot_risk > MAX_RISK_USD + 0.50:
-                print(json.dumps({"ok": False,
-                                  "error": f"min lot {info.volume_min} would risk ${min_lot_risk:.2f} > ${MAX_RISK_USD:.2f} prop cap — stop too wide for this account"}))
-                sys.exit(1)
-            lots = info.volume_min
-        lots = min(lots, info.volume_max)
-        actual_risk = lots * risk_per_lot
+        digits = info.digits
+        entry, stop, tp = (round(p, digits) for p in (entry, stop, tp))
+        buy = side == "long"
+        validate_bracket(entry, stop, tp, buy, tick.bid, tick.ask)
+        cap = float(req["risk_usd"]) if req.get("risk_usd") is not None else MAX_RISK_USD
+        lots, actual_risk = size_order(mt5, info, entry, stop, buy, cap, cap)
 
         # ---- order type ----
         if kind == "limit":
@@ -191,15 +149,14 @@ def main():
             otype = mt5.ORDER_TYPE_BUY if side == "long" else mt5.ORDER_TYPE_SELL
             action = mt5.TRADE_ACTION_DEAL
 
-        digits = info.digits
         request = {
             "action": action,
             "symbol": sym,
             "volume": lots,
             "type": otype,
-            "price": round(entry, digits),
-            "sl": round(stop, digits),
-            "tp": round(tp, digits) if tp else 0.0,
+            "price": entry,
+            "sl": stop,
+            "tp": tp,
             "deviation": 20,
             "magic": MAGIC_NUMBER,
             "comment": CG_COMMENT,
@@ -214,6 +171,8 @@ def main():
         if result.retcode not in (mt5.TRADE_RETCODE_DONE, mt5.TRADE_RETCODE_PLACED) and result.retcode == 10030:
             request["type_filling"] = mt5.ORDER_FILLING_FOK
             result = mt5.order_send(request)
+        if result is None:
+            raise ValueError(f"order_send fill-mode retry failed: {mt5.last_error()}")
         if result.retcode not in (mt5.TRADE_RETCODE_DONE, mt5.TRADE_RETCODE_PLACED):
             print(json.dumps({"ok": False, "error": f"order_send rejected: retcode {result.retcode} — {result.comment}"}))
             sys.exit(1)
@@ -229,6 +188,9 @@ def main():
             "symbol": sym,
             "comment": CG_COMMENT,
         }))
+    except ValueError as error:
+        print(json.dumps({"ok": False, "error": str(error)}))
+        sys.exit(1)
     finally:
         mt5.shutdown()
 

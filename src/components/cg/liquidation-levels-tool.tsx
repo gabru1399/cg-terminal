@@ -46,6 +46,8 @@ interface LiqResponse {
   perVenue: Record<string, number>;
   stats: LiqStats | null;
   updatedAt: number;
+  stale?: boolean;
+  partial?: boolean;
 }
 
 function fmtM(n: number): string {
@@ -64,16 +66,18 @@ export default function LiquidationLevelsTool({ sym = "BTC" }: { sym?: string })
   // defense-in-depth: never render stats that belong to another symbol
   const stats = liqQ.data?.sym === sym ? liqQ.data.stats ?? null : null;
   const err = liqQ.error;
+  const status = err ? "unavailable" : liqQ.loading ? "loading" : liqQ.data?.stale ? "stale"
+    : liqQ.data?.partial ? "partial coverage" : stats ? "live" : "no data";
+  const statusTone = status === "live" ? "text-emerald-400" : err ? "text-red-400"
+    : status === "loading" || status === "no data" ? "text-neutral-400" : "text-amber-400";
   const decs = symDecs(sym, stats?.last ?? liqQ.data?.livePrice ?? null);
   const fmtP = (n: number) => n.toLocaleString("en-US", { minimumFractionDigits: decs, maximumFractionDigits: decs });
   // venues that actually carry this symbol's liquidation data (response-
   // driven once loaded — Tier-2 symbols discover their venue set live)
   const venueList = (
     liqQ.data?.sym === sym
-      ? Object.entries(liqQ.data.perVenue ?? {})
-          .filter(([, n]) => n > 0)
-          .map(([v]) => v)
-      : liqVenues(sym).map((v) => v.name)
+      ? liqQ.data.venues
+      : []
   ).join(" + ");
 
   const bandMax = useMemo(
@@ -99,7 +103,8 @@ export default function LiquidationLevelsTool({ sym = "BTC" }: { sym?: string })
         <div className="flex items-center gap-1.5 pr-2">
           <span className="text-sm font-semibold text-neutral-100">{sym}</span>
           <span className="rounded bg-neutral-800 px-1.5 py-0.5 text-[10px] text-neutral-400">
-            {venueList ? `aggregated · ${venueList}` : liqQ.data?.supported === false ? "no liq map" : "scanning venues"}
+            {venueList ? `aggregated · ${venueList}` : liqQ.data?.supported === false ? "no liq map"
+              : `${liqVenues(sym).length} configured venues`}
           </span>
         </div>
         <div className="flex overflow-hidden rounded border border-neutral-700">
@@ -146,14 +151,16 @@ export default function LiquidationLevelsTool({ sym = "BTC" }: { sym?: string })
           </>
         )}
         <div className="ml-auto flex items-center gap-2">
-          <span className={`flex items-center gap-1.5 text-xs ${err ? "text-red-400" : "text-emerald-400"}`}>
-            <span className={`inline-block h-1.5 w-1.5 rounded-full ${err ? "bg-red-400" : "animate-pulse bg-emerald-400"}`} />
-            {err ? "offline" : "live"}
-          </span>
           {tab === "levels" && (
-            <Button variant="outline" size="sm" className="h-7 border-neutral-700 text-xs" onClick={() => liqQ.refresh()}>
-              Refresh
-            </Button>
+            <>
+              <span role="status" className={`flex items-center gap-1.5 text-xs ${statusTone}`}>
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-current" />
+                {status}
+              </span>
+              <Button variant="outline" size="sm" className="h-7 border-neutral-700 text-xs" onClick={() => liqQ.refresh()}>
+                Refresh
+              </Button>
+            </>
           )}
         </div>
       </div>
@@ -163,8 +170,16 @@ export default function LiquidationLevelsTool({ sym = "BTC" }: { sym?: string })
       ) : (
         <>
       {err && (
-        <div className="rounded border border-red-900/60 bg-red-950/40 px-3 py-2 text-xs text-red-300">
-          Data error: {err} — retrying automatically.
+        <div role="alert" className="rounded border border-red-900/60 bg-red-950/40 px-3 py-2 text-xs text-red-300">
+          {err} Retrying automatically.
+        </div>
+      )}
+      {stats && (liqQ.data?.stale || liqQ.data?.partial) && (
+        <div className="rounded border border-amber-900/60 bg-amber-950/40 px-3 py-2 text-xs text-amber-300">
+          {liqQ.data.stale
+            ? `Showing the snapshot retrieved at ${new Date(liqQ.data.updatedAt).toLocaleTimeString()}. `
+            : ""}
+          {liqQ.data.partial ? "Some configured venues did not return usable data." : ""}
         </div>
       )}
 
@@ -188,7 +203,8 @@ export default function LiquidationLevelsTool({ sym = "BTC" }: { sym?: string })
         <>
           {/* summary strip */}
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-6">
-            <Stat label="Last price" value={fmtP(stats.last)} sub={`range ${range.toUpperCase()} · window ±${windowPct}%`} />
+            <Stat label={liqQ.data?.livePrice == null ? "Snapshot reference" : "Live reference"}
+              value={fmtP(stats.last)} sub={`range ${range.toUpperCase()} · window ±${windowPct}%`} />
             <Stat
               label="Open levels"
               value={fmtM(stats.counts.open)}
@@ -197,18 +213,18 @@ export default function LiquidationLevelsTool({ sym = "BTC" }: { sym?: string })
             <Stat
               label="Total short strength"
               value={fmtM(stats.totals.shorts)}
-              sub="above price (longs get liquidated)"
+              sub="above price (shorts get liquidated)"
               tone="down"
             />
             <Stat
               label="Total long strength"
               value={fmtM(stats.totals.longs)}
-              sub="below price (shorts get liquidated)"
+              sub="below price (longs get liquidated)"
               tone="up"
             />
             <Stat
               label="Short / long ratio"
-              value={(stats.totals.shorts / (stats.totals.longs || 1)).toFixed(2)}
+              value={stats.totals.longs > 0 ? (stats.totals.shorts / stats.totals.longs).toFixed(2) : "—"}
               sub={`${stats.totals.rows} active price rows`}
             />
             <Stat

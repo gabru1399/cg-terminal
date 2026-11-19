@@ -51,7 +51,18 @@ const cacheBytes = (gC.__cgClientCacheBytes ??= { n: 0 });
 
 async function withCgSlot<T>(fn: () => Promise<T>): Promise<T> {
   if (hostSem.active >= MAX_CG_CONCURRENCY) {
-    await new Promise<void>((resolve) => hostSem.queue.push(resolve));
+    await new Promise<void>((resolve, reject) => {
+      const resume = () => {
+        clearTimeout(timeout);
+        resolve();
+      };
+      const timeout = setTimeout(() => {
+        const index = hostSem.queue.indexOf(resume);
+        if (index !== -1) hostSem.queue.splice(index, 1);
+        reject(new Error("Coinglass request queue timed out"));
+      }, 8_000);
+      hostSem.queue.push(resume);
+    });
     // The slot was HANDED to us by the releaser — `active` already counts
     // this continuation. Do NOT increment again.
   } else {
@@ -157,54 +168,36 @@ async function cgGetInner(pathAndQuery: string, ttlMs: number, host: string): Pr
     return hit.data;
   }
 
-  // If this host recently returned 429, serve a bounded-age stale payload
-  // immediately when available, or wait out the remaining cooldown window
-  // instead of piling another burst onto upstream. The FULL remaining window
-  // is slept (clamped at 15 s so a hostile header can't pin a caller down):
-  // skipping early-window waits let every caller poke upstream mid-ban and
-  // re-extend the window (review finding).
-  const coolUntil = hostCooldown.get(host) ?? 0;
-  if (Date.now() < coolUntil) {
+  const staleDuringCooldown = () => {
     const stale = cache.get(url);
-    if (stale && ttlMs > 0 && Date.now() - stale.at < Math.max(20 * ttlMs, 300_000)) {
-      return stale.data;
-    }
-    const rem = coolUntil - Date.now();
-    if (rem > 15_000) {
-      // R5 (external review, 2026-11-14): remaining window LONGER than the
-      // clamp used to fall through and fire the request INTO the ban (windows
-      // reach 25 s). Callers already treat a throw as "serve stale" — failing
-      // fast beats poking upstream mid-ban and re-extending it.
-      throw new Error(`cg cooldown: ${Math.round(rem / 1000)}s remaining on ${host}`);
-    }
-    if (rem > 0) {
-      await new Promise((r) => setTimeout(r, rem));
-    }
-  }
+    return stale && ttlMs > 0 && Date.now() - stale.at < Math.max(20 * ttlMs, 300_000) ? stale : null;
+  };
+  const cooling = () => Date.now() < (hostCooldown.get(host) ?? 0);
+  const duringCooldown = () => {
+    const stale = staleDuringCooldown();
+    if (stale) return stale.data;
+    throw new Error("Coinglass is rate limiting requests (HTTP 429)");
+  };
+  if (cooling()) return duringCooldown();
 
-  const cacheTs = String(Date.now());
-  let resp = await withCgSlot(() => rawGet(url, cacheTs));
-  // rate-limited: honor Retry-After (fallback 5 s), set the shared host
-  // cooldown, and retry once — a burst of 429s must back off, not hammer
-  // upstream in a hot retry loop
-  if (resp.status === 429) {
-    const ra = Number(resp.headers["retry-after"]);
-    const waitMs = Math.min(Math.max(Number.isFinite(ra) && ra > 0 ? ra * 1000 : 5_000, 2_000), 25_000);
-    // CAP EXTENSIONS: a second 429 inside an active window must never push
-    // the cooldown further out (each engine poll re-extending a hard ban
-    // kept the window alive indefinitely — review finding).
-    const prev = hostCooldown.get(host) ?? 0;
-    hostCooldown.set(host, Math.max(prev, Date.now() + waitMs));
-    const stale = cache.get(url);
-    if (stale && ttlMs > 0 && Date.now() - stale.at < Math.max(20 * ttlMs, 300_000)) {
-      return stale.data;
-    }
-    await new Promise((r) => setTimeout(r, waitMs));
-    resp = await withCgSlot(() => rawGet(url, String(Date.now())));
+  const response = await withCgSlot(async () => {
+    // A request already queued may reach the front after a 429.
+    if (cooling()) return null;
+    const cacheTs = String(Date.now());
+    const resp = await rawGet(url, cacheTs);
     if (resp.status === 429) {
-      const prev2 = hostCooldown.get(host) ?? 0;
-      hostCooldown.set(host, Math.max(prev2, Date.now() + 12_000));
+      const header = resp.headers["retry-after"];
+      const seconds = header ? Number(header) : NaN;
+      const time = Number.isFinite(seconds) ? seconds * 1000 : Date.parse(header) - Date.now();
+      const until = Date.now() + (Number.isFinite(time) ? Math.max(2_000, time) : 5_000);
+      hostCooldown.set(host, Math.max(hostCooldown.get(host) ?? 0, until));
     }
+    return { resp, cacheTs };
+  });
+  if (!response) return duringCooldown();
+  const { resp, cacheTs } = response;
+  if (resp.status === 429) {
+    return duringCooldown();
   }
   if (resp.status !== 200) {
     const stale = cache.get(url);

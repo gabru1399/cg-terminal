@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { cgGet } from "@/lib/cg/client";
-import { buildLiqModel, liqStats, type RawLiqPayload, type LiqStats } from "@/lib/cg/liq-model";
+import { buildLiqModel, liqStats, type LiqModel, type RawLiqPayload } from "@/lib/cg/liq-model";
 import { liqVenues, symDecs } from "@/lib/cg/assets";
 import { anyTerminalSym, knownSym } from "@/lib/cg/sym-gate";
 import { getLivePrice } from "@/lib/live/server-price";
@@ -9,119 +9,143 @@ import type { LiquidationLevel } from "@/lib/cg/types";
 
 export const dynamic = "force-dynamic";
 
-const cache = new BoundedMap<{ at: number; body: unknown }>(32);
+const FRESH_MS = 60_000;
+const STALE_MS = 5 * 60_000;
+const RETRY_MS = 15_000;
+
+interface Snapshot {
+  at: number;
+  model: LiqModel;
+  perVenue: Record<string, number>;
+  venues: string[];
+  partial: boolean;
+}
+
+const snapshots = new BoundedMap<Snapshot>(32);
+const failures = new BoundedMap<{ at: number; error: string }>(32);
+const pending = new Map<string, Promise<Snapshot>>();
+
+function unwrapPayload(value: unknown): RawLiqPayload | null {
+  for (let depth = 0; depth < 3; depth++) {
+    if (!value || typeof value !== "object") return null;
+    const payload = value as { prices?: unknown; data?: unknown };
+    if (Array.isArray(payload.prices) && Array.isArray(payload.data)) {
+      const valid = payload.prices.length >= 10 && payload.prices.every((row) =>
+        Array.isArray(row) && [0, 2, 3, 4].every((i) => Number.isFinite(Number(row[i])) && Number(row[i]) > 0)
+        && Number(row[2]) >= Number(row[3])
+      );
+      return valid ? (payload as RawLiqPayload) : null;
+    }
+    value = payload.data;
+  }
+  return null;
+}
+
+async function loadSnapshot(sym: string, range: string, limit: number): Promise<Snapshot> {
+  const requested = liqVenues(sym);
+  const results = await Promise.allSettled(requested.map(async (venue) => {
+    const query = new URLSearchParams({ symbol: venue.key, limit: String(limit), range });
+    // The aggregate owns freshness. An upstream-client cache fallback must
+    // not be stamped as a newly retrieved snapshot.
+    const data = await cgGet("/api/liquidationLevels/v2?" + query, 0);
+    const payload = unwrapPayload(data);
+    if (!payload) throw new Error("Unusable liquidation snapshot");
+    return { name: venue.name, payload };
+  }));
+  const available = results.flatMap((result) => (result.status === "fulfilled" ? [result.value] : []));
+  const model = buildLiqModel(available);
+  if (!model) {
+    const throttled = results.some((r) => r.status === "rejected" && String(r.reason).includes("429"));
+    throw new Error(throttled
+      ? "Coinglass is rate limiting liquidation data. Try again shortly."
+      : "Coinglass did not return a usable liquidation snapshot. Try again shortly.");
+  }
+  const perVenue = Object.fromEntries(requested.map((v) => [v.name, 0]));
+  for (const venue of available) perVenue[venue.name] = venue.payload.data.length;
+  return {
+    at: Date.now(), model, perVenue, venues: available.map((v) => v.name),
+    partial: available.length < requested.length,
+  };
+}
+
+function refreshSnapshot(key: string, sym: string, range: string, limit: number) {
+  const current = pending.get(key);
+  if (current) return current;
+  const refresh = loadSnapshot(sym, range, limit)
+    .then((snapshot) => {
+      snapshots.set(key, snapshot);
+      return snapshot;
+    })
+    .catch((error: Error) => {
+      failures.set(key, { at: Date.now(), error: error.message });
+      throw error;
+    })
+    .finally(() => pending.delete(key));
+  pending.set(key, refresh);
+  return refresh;
+}
+
+async function referencePrice(sym: string): Promise<number | null> {
+  // The snapshot has a candle close to fall back on if the quote is slow.
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  try {
+    return await Promise.race([
+      getLivePrice(sym).then((quote) => quote.price, () => null),
+      new Promise<null>((resolve) => { timer = setTimeout(() => resolve(null), 1500); }),
+    ]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
 
 export async function GET(req: NextRequest) {
   const sp = req.nextUrl.searchParams;
   const sym = (sp.get("sym") ?? "BTC").trim().toUpperCase();
   if (!(await anyTerminalSym(sym))) {
-    return NextResponse.json({ ok: false, error: `unknown asset ${sym}` }, { status: 400 });
+    return NextResponse.json({ ok: false, error: "unknown asset " + sym }, { status: 400 });
   }
-  const hasPerp = await knownSym(sym);
-  const VENUES = liqVenues(sym);
   const rangeRaw = sp.get("range") ?? "3d";
   const range = ["3d", "7d", "30d"].includes(rangeRaw) ? rangeRaw : "3d";
   const lvR = Math.min(Math.max(Number(sp.get("lvR") ?? 4) || 4, 1), 8);
-  const limit = Math.min(Number(sp.get("limit") ?? 4000) || 4000, 6000);
-
-  const cacheKey = `${sym}|${range}|${lvR}|${limit}`;
-  const hit = cache.get(cacheKey);
-  if (hit && Date.now() - hit.at < 60_000) {
-    return NextResponse.json(hit.body);
-  }
-  try {
-    const live = await getLivePrice(sym).catch(() => null);
-    if (!hasPerp) {
-      return NextResponse.json({
-        ok: true,
-        supported: false,
-        sym,
-        range,
-        lvR,
-        venues: [],
-        perVenue: {},
-        stats: null,
-        livePrice: live?.price ?? null,
-        reason: "Coinglass estimated liquidation clusters apply only to multi-venue perpetual futures",
-        updatedAt: Date.now(),
-      });
-    }
-
-    const results = await Promise.allSettled(
-      VENUES.map((v) =>
-        cgGet(`/api/liquidationLevels/v2?symbol=${encodeURIComponent(v.key)}&limit=${limit}&range=${range}`, 30_000)
-      )
-    );
-
-    const venues: { name: string; payload: RawLiqPayload | null }[] = [];
-    const perVenue: Record<string, number> = {};
-    results.forEach((r, i) => {
-      const v = VENUES[i];
-      let payload: RawLiqPayload | null = null;
-      if (r.status === "fulfilled" && r.value) {
-        const val = r.value as RawLiqPayload | { data?: RawLiqPayload };
-        payload = (Array.isArray((val as RawLiqPayload)?.prices) ? (val as RawLiqPayload) : ((val as { data?: RawLiqPayload }).data ?? null)) as RawLiqPayload | null;
-      }
-      perVenue[v.name] = payload?.data?.length ?? 0;
-      venues.push({ name: v.name, payload });
-    });
-
-    if (!venues.some((v) => v.payload)) {
-      return NextResponse.json({
-        ok: true,
-        supported: false,
-        sym,
-        range,
-        lvR,
-        venues: VENUES.map((v) => v.name),
-        perVenue,
-        stats: null,
-        livePrice: live?.price ?? null,
-        reason: "Upstream Coinglass liquidation-level heatmap does not cover this instrument yet",
-        updatedAt: Date.now(),
-      });
-    }
-
-    const model = buildLiqModel(venues);
-    if (!model) {
-      return NextResponse.json({
-        ok: true,
-        supported: false,
-        sym,
-        range,
-        lvR,
-        venues: VENUES.map((v) => v.name),
-        perVenue,
-        stats: null,
-        livePrice: live?.price ?? null,
-        reason: "No usable liquidation price grid returned by upstream",
-        updatedAt: Date.now(),
-      });
-    }
-    const stats: LiqStats = liqStats(model, lvR, {
-      livePrice: live?.price ?? null,
-      priceDecs: symDecs(sym, live?.price ?? null),
-    });
-
-    const payload = {
-      ok: true,
-      supported: true,
-      sym,
-      range,
-      lvR,
-      venues: VENUES.map((v) => v.name),
-      perVenue,
-      stats,
+  const limit = Math.max(1, Math.min(Math.floor(Number(sp.get("limit") ?? 4000) || 4000), 6000));
+  if (!(await knownSym(sym))) {
+    return NextResponse.json({
+      ok: true, supported: false, sym, range, lvR, venues: [], perVenue: {}, stats: null,
+      livePrice: await referencePrice(sym),
+      reason: "Coinglass estimated liquidation clusters apply only to multi-venue perpetual futures",
       updatedAt: Date.now(),
-    };
-    cache.set(cacheKey, { at: Date.now(), body: payload });
-    return NextResponse.json(payload);
-  } catch (e) {
-    return NextResponse.json(
-      { ok: false, error: e instanceof Error ? e.message : "fetch failed" },
-      { status: 502 }
-    );
+    });
   }
+
+  const key = [sym, range, limit].join("|");
+  let snapshot = snapshots.get(key);
+  const now = Date.now();
+  const failure = failures.get(key);
+  let stale = false;
+  try {
+    if (!snapshot || now - snapshot.at >= (snapshot.partial ? RETRY_MS : FRESH_MS)) {
+      if (failure && now - failure.at < RETRY_MS) throw new Error(failure.error);
+      snapshot = await refreshSnapshot(key, sym, range, limit);
+    }
+  } catch (error) {
+    if (!snapshot || Date.now() - snapshot.at >= STALE_MS) {
+      return NextResponse.json(
+        { ok: false, sym, range, lvR, error: error instanceof Error ? error.message : "Liquidation data unavailable" },
+        { status: 503, headers: { "Retry-After": String(RETRY_MS / 1000) } },
+      );
+    }
+    stale = true;
+  }
+  const livePrice = stale ? null : await referencePrice(sym);
+  const stats = liqStats(snapshot.model, lvR, {
+    livePrice,
+    priceDecs: symDecs(sym, livePrice ?? snapshot.model.c.at(-1) ?? null),
+  });
+  return NextResponse.json({
+    ok: true, supported: true, sym, range, lvR,
+    venues: snapshot.venues, perVenue: snapshot.perVenue, stats, livePrice,
+    stale, partial: snapshot.partial, updatedAt: snapshot.at,
+  });
 }
 
 export type { LiquidationLevel };

@@ -18,6 +18,7 @@ import os
 import argparse
 import json
 from datetime import datetime, timezone
+from mt5_order_risk import size_order, validate_bracket
 try:
     import MetaTrader5 as mt5
 except ImportError:
@@ -127,81 +128,33 @@ def get_account_audit():
     return audit
 
 def calculate_lot_size(symbol: str, entry_price: float, sl_price: float, target_risk_usd: float = TARGET_RISK_USD, max_risk_cap_usd: float = MAX_RISK_USD, allow_min_lot: bool = False):
-    """
-    Computes exact lot size for an order such that:
-    actual_risk_usd <= max_risk_cap_usd
-    target_risk_usd is typically $5.00 - $5.50 (default) or higher if user authorized.
-    """
+    """Return a broker-grid quantity sized against Gate 11 stressed loss."""
     init_mt5()
-    
-    # Ensure symbol is selected
     if not mt5.symbol_select(symbol, True):
         raise ValueError(f"Failed to select symbol {symbol} in MT5")
-    
     info = mt5.symbol_info(symbol)
-    if not info:
-        raise ValueError(f"Symbol {symbol} info not found in MT5")
-    
-    stop_distance = abs(entry_price - sl_price)
-    if stop_distance <= 0:
-        raise ValueError("Stop distance must be strictly positive")
-    
-    contract_size = info.trade_contract_size
-    tick_size = info.trade_tick_size or 0.01
-    tick_value = info.trade_tick_value or 0.01
-    vol_min = info.volume_min
-    vol_max = info.volume_max
-    vol_step = info.volume_step
-    
-    risk_per_lot = (stop_distance / tick_size) * tick_value
-    if risk_per_lot <= 0:
-        risk_per_lot = contract_size * stop_distance
-
-    raw_lots = target_risk_usd / risk_per_lot
-    
-    # Snap to volume step
-    steps = round(raw_lots / vol_step)
-    calc_lots = round(steps * vol_step, 2)
-    
-    # If calc_lots < vol_min, check if min lot risk exceeds max allowed risk
-    if calc_lots < vol_min:
-        min_lot_risk = vol_min * risk_per_lot
-        if min_lot_risk > max_risk_cap_usd:
-            raise ValueError(
-                f"Stop distance too wide for min lot ({vol_min}): "
-                f"risk would be ${min_lot_risk:.2f} USD, exceeding ${max_risk_cap_usd:.2f} max risk limit! Trade Vetoed."
-            )
-        calc_lots = vol_min
-
-    # Verify risk with calc_lots
-    actual_risk = calc_lots * risk_per_lot
-    
-    # If risk exceeds max_risk_cap_usd, step down if possible
-    if actual_risk > max_risk_cap_usd:
-        calc_lots = round(calc_lots - vol_step, 2)
-        actual_risk = calc_lots * risk_per_lot
-        if calc_lots < vol_min or actual_risk > max_risk_cap_usd:
-            raise ValueError(
-                f"Unable to size within ${max_risk_cap_usd:.2f} risk cap. "
-                f"Lot: {calc_lots}, Risk: ${actual_risk:.2f} USD. Trade Vetoed."
-            )
-            
-    calc_lots = max(vol_min, min(vol_max, calc_lots))
-    
+    if info is None:
+        raise ValueError(f"Symbol {symbol} info not found")
+    entry_price, sl_price = (round(p, info.digits) for p in (entry_price, sl_price))
+    cap = min(max_risk_cap_usd, MAX_RISK_USD)
+    lots, risk = size_order(
+        mt5, info, entry_price, sl_price, sl_price < entry_price, target_risk_usd, cap
+    )
     return {
         "symbol": symbol,
         "entry_price": entry_price,
         "sl_price": sl_price,
-        "stop_distance": round(stop_distance, info.digits),
-        "contract_size": contract_size,
-        "vol_min": vol_min,
-        "vol_max": vol_max,
-        "vol_step": vol_step,
-        "calculated_lots": calc_lots,
-        "actual_risk_usd": round(actual_risk, 2),
-        "max_risk_cap_usd": max_risk_cap_usd,
-        "is_valid": actual_risk <= max_risk_cap_usd
+        "stop_distance": round(abs(entry_price - sl_price), info.digits),
+        "contract_size": info.trade_contract_size,
+        "vol_min": info.volume_min,
+        "vol_max": info.volume_max,
+        "vol_step": info.volume_step,
+        "calculated_lots": lots,
+        "actual_risk_usd": round(risk, 2),
+        "max_risk_cap_usd": cap,
+        "is_valid": True,
     }
+
 
 def place_order(symbol: str, order_type_str: str, entry_price: float, sl_price: float, tp_price: float, lots: float = None, max_risk_cap_usd: float = MAX_RISK_USD):
     """
@@ -218,15 +171,6 @@ def place_order(symbol: str, order_type_str: str, entry_price: float, sl_price: 
     if not info:
         raise ValueError(f"Symbol {symbol} info not found")
         
-    # Sizing check
-    sizing = calculate_lot_size(symbol, entry_price, sl_price, max_risk_cap_usd=max_risk_cap_usd)
-    final_lots = lots if lots is not None else sizing["calculated_lots"]
-    
-    # Enforce maximum risk cap
-    risk_test = final_lots * (abs(entry_price - sl_price) / info.trade_tick_size * info.trade_tick_value)
-    if risk_test > max_risk_cap_usd + 0.50:
-        raise ValueError(f"Lot size {final_lots} violates ${max_risk_cap_usd:.2f} risk cap on {symbol}! (Calculated: ${risk_test:.2f})")
-
     type_map = {
         "BUY_LIMIT": mt5.ORDER_TYPE_BUY_LIMIT,
         "SELL_LIMIT": mt5.ORDER_TYPE_SELL_LIMIT,
@@ -238,10 +182,20 @@ def place_order(symbol: str, order_type_str: str, entry_price: float, sl_price: 
     if order_type is None:
         raise ValueError(f"Unknown order type: {order_type_str}")
 
+    tick = mt5.symbol_info_tick(symbol)
+    if tick is None:
+        raise ValueError(f"Live quote unavailable for {symbol}")
+    buy = order_type in (mt5.ORDER_TYPE_BUY, mt5.ORDER_TYPE_BUY_LIMIT)
+    if order_type in (mt5.ORDER_TYPE_BUY, mt5.ORDER_TYPE_SELL):
+        entry_price = tick.ask if buy else tick.bid
     digits = info.digits
     entry_price = round(entry_price, digits)
     sl_price = round(sl_price, digits)
     tp_price = round(tp_price, digits)
+    validate_bracket(entry_price, sl_price, tp_price, buy, tick.bid, tick.ask)
+    final_lots, risk = size_order(
+        mt5, info, entry_price, sl_price, buy, TARGET_RISK_USD, max_risk_cap_usd, lots
+    )
     
     request = {
         "action": mt5.TRADE_ACTION_PENDING if "LIMIT" in order_type_str.upper() else mt5.TRADE_ACTION_DEAL,
@@ -269,6 +223,8 @@ def place_order(symbol: str, order_type_str: str, entry_price: float, sl_price: 
         if result.retcode == 10030: # Unsupported filling
             request["type_filling"] = mt5.ORDER_FILLING_FOK
             result = mt5.order_send(request)
+    if result is None:
+        raise RuntimeError(f"mt5.order_send fill-mode retry failed: {mt5.last_error()}")
             
     return {
         "retcode": result.retcode,
@@ -278,7 +234,7 @@ def place_order(symbol: str, order_type_str: str, entry_price: float, sl_price: 
         "volume": result.volume,
         "price": result.price,
         "request": request,
-        "expected_risk_usd": sizing["actual_risk_usd"]
+        "expected_risk_usd": round(risk, 2)
     }
 
 def move_sl_to_breakeven(ticket: int):
@@ -438,16 +394,30 @@ def modify_pending_order(ticket: int, price: float = None, sl: float = None, tp:
     o = orders[0]
     if not is_cg_terminal(o):
         raise ValueError(f"Order ticket {ticket} does not belong to cg_terminal (magic={o.magic}, comment={o.comment})! VETOED by isolation gate.")
+    info = mt5.symbol_info(o.symbol)
+    tick = mt5.symbol_info_tick(o.symbol)
+    if info is None or tick is None:
+        raise ValueError(f"Metadata or live quote unavailable for {o.symbol}")
+    if o.type not in (mt5.ORDER_TYPE_BUY_LIMIT, mt5.ORDER_TYPE_SELL_LIMIT):
+        raise ValueError("Pending-order amendments support Buy Limit and Sell Limit orders")
+    entry = round(price if price is not None else o.price_open, info.digits)
+    stop = round(sl if sl is not None else o.sl, info.digits)
+    target = round(tp if tp is not None else o.tp, info.digits)
+    buy = o.type == mt5.ORDER_TYPE_BUY_LIMIT
+    validate_bracket(entry, stop, target, buy, tick.bid, tick.ask)
+    size_order(mt5, info, entry, stop, buy, MAX_RISK_USD, MAX_RISK_USD, o.volume_current)
     request = {
         "action": mt5.TRADE_ACTION_MODIFY,
         "order": ticket,
-        "price": price if price is not None else o.price_open,
-        "sl": sl if sl is not None else o.sl,
-        "tp": tp if tp is not None else o.tp,
+        "price": entry,
+        "sl": stop,
+        "tp": target,
         "magic": MAGIC_NUMBER,
         "comment": CG_COMMENT
     }
     res = mt5.order_send(request)
+    if res is None:
+        raise RuntimeError(f"MT5 amend failed: {mt5.last_error()}")
     return {
         "status": "MODIFIED" if res.retcode == mt5.TRADE_RETCODE_DONE else "FAILED",
         "retcode": res.retcode,

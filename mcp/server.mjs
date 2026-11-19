@@ -212,9 +212,12 @@ async function toolLiquidationLevels(args) {
   const range = ["3d", "7d", "30d"].includes(args?.range) ? args.range : "3d";
   const d = await api(`/api/cg/liqlevels?sym=${sym}&range=${range}&lvR=4`);
   if (!d.ok) throw new Error(d.error || "liquidation levels failed");
+  if (!d.stats) return { text: d.reason ?? `${sym}: liquidation data unavailable`, data: d };
   const s = d.stats;
   const lines = [
-    `${sym} liquidation clusters (${range}, ±4%, ${d.venues.join("+")}) — price ${s.last}`,
+    `${sym} liquidation clusters (${range}, ±4%, ${d.venues.join("+")}) — reference price ${s.last}`,
+    ...(d.stale ? [`STALE snapshot from ${new Date(d.updatedAt).toISOString()}`] : []),
+    ...(d.partial ? ["Partial venue coverage"] : []),
     `est. open liq: shorts(above) ${fmtP(s.totals.shorts, 0)} · longs(below) ${fmtP(s.totals.longs, 0)}`,
     `strongest above: ${s.keyLevels.above.map((l) => `${fmtP(l.price)} (+${fmtP(l.distPct)}%, str ${fmtP(l.strength, 0)}, ${l.lev} lev)`).join(" | ")}`,
     `strongest below: ${s.keyLevels.below.map((l) => `${fmtP(l.price)} (−${fmtP(l.distPct)}%, str ${fmtP(l.strength, 0)}, ${l.lev} lev)`).join(" | ")}`,

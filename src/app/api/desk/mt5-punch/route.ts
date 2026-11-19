@@ -159,11 +159,13 @@ export async function POST(req: NextRequest) {
   } catch {
     return NextResponse.json({ ok: false, error: "invalid JSON body" }, { status: 400 });
   }
-  const { card } = body;
-  if (!card || !card.engine || !card.sym || !card.side || !Number.isFinite(card.entry) || !Number.isFinite(card.stop)) {
+  const card = body?.card;
+  if (!card || !card.engine || !card.sym || !["long", "short"].includes(card.side)
+      || !Number.isFinite(card.entry) || !Number.isFinite(card.stop)
+      || card.entry <= 0 || card.stop <= 0) {
     return NextResponse.json({ ok: false, error: "card missing engine/sym/side/entry/stop" }, { status: 400 });
   }
-  if (card.status === "armed" || !(card.targets ?? []).some((t) => t > 0)) {
+  if (card.status === "armed" || !Array.isArray(card.targets) || !card.targets.some((t) => t > 0)) {
     return NextResponse.json({ ok: false, error: "armed card — punch enabled once the confirmation close prints" }, { status: 400 });
   }
 
@@ -189,32 +191,18 @@ export async function POST(req: NextRequest) {
   const tr = (lvl: number) => (fresh && Number.isFinite(basisPct) ? lvl * (1 + basisPct / 100) : lvl);
   const entry = tr(card.entry);
   const stop = tr(card.stop);
-  const stopDist = Math.abs(card.entry - card.stop);
-  let targetLevel = 0;
-  if (Array.isArray(card.targets) && card.targets.length > 0) {
-    // Enforce Canonical >= 2.0R hurdle: select target delivering >= 1.95R
-    for (const t of card.targets) {
-      if (t > 0 && Math.abs(card.entry - t) >= 1.95 * stopDist) {
-        targetLevel = t;
-        break;
-      }
-    }
-    if (targetLevel === 0) {
-      if (card.side === "long") {
-        targetLevel = card.entry + 2.5 * stopDist;
-      } else {
-        targetLevel = card.entry - 2.5 * stopDist;
-      }
-    }
-    const rMult = Math.abs(card.entry - targetLevel) / (stopDist || 1);
-    if (rMult < 1.95) {
-      return NextResponse.json(
-        { ok: false, error: `Trade rejected by Gravitas hurdle: target delivers only ${rMult.toFixed(2)}R (< 1.95R hard floor; entry ${card.entry}, stop ${card.stop}).` },
-        { status: 400 }
-      );
-    }
+  const direction = card.side === "long" ? 1 : -1;
+  const stopDist = direction * (card.entry - card.stop);
+  if (stopDist <= 0) {
+    return NextResponse.json({ ok: false, error: "Stop must be on the adverse side of entry" }, { status: 400 });
   }
-  const tp = targetLevel > 0 ? tr(targetLevel) : 0;
+  const targetLevel = card.targets.find((t) =>
+    Number.isFinite(t) && t > 0 && direction * (t - card.entry) >= 2 * stopDist
+  );
+  if (targetLevel === undefined) {
+    return NextResponse.json({ ok: false, error: "No supplied target delivers at least 2.00R" }, { status: 400 });
+  }
+  const tp = tr(targetLevel);
 
   const payload = {
     symbol: resolved.symbol,
@@ -242,6 +230,7 @@ export async function POST(req: NextRequest) {
   }
 
   // mirror into desk/state.json + WAKE so the desk files stay the ledger
+  let ledgerWarning: string | undefined;
   const order = {
     id: payload.order_id,
     round: "R548",
@@ -269,14 +258,16 @@ export async function POST(req: NextRequest) {
   };
   try {
     const statePath = path.join(ROOT, "desk", "state.json");
-    const ordersAny = (state as any).orders;
+    const latestState = readJson(statePath);
+    if (!latestState || typeof latestState !== "object") throw new Error("Desk ledger is unavailable");
+    const ordersAny = latestState.orders;
     if (Array.isArray(ordersAny)) {
       ordersAny.push(order);
     } else {
-      (state as any).orders = [order];
+      latestState.orders = [order];
     }
     mkdirSync(path.dirname(statePath), { recursive: true });
-    writeFileSync(statePath, JSON.stringify(state, null, 2) + "\n");
+    writeFileSync(statePath, JSON.stringify(latestState, null, 2) + "\n");
     const wakePath = path.join(ROOT, "desk", "inbox", "WAKE.md");
     appendFileSync(
       wakePath,
@@ -284,13 +275,15 @@ export async function POST(req: NextRequest) {
         "",
         `## ${new Date(now).toISOString()} — terminal-mt5-punch: ${card.sym} ${card.side.toUpperCase()} (${card.engine})`,
         `- Punched STRAIGHT to MT5 from the terminal Playbook panel: ${resolved.symbol} ${placed.lots} lots, ticket ${placed.ticket}, risk $${placed.risk_usd}.`,
-        `- perp levels: entry ${card.entry} · SL ${card.stop} · T1 ${t1}${fresh && Number.isFinite(basisPct) ? ` (translated to MT5 at basis ${basisPct}% )` : " (untranslated — mt5.json stale)"}`,
+        `- perp levels: entry ${card.entry} · SL ${card.stop} · TP ${targetLevel}${fresh && Number.isFinite(basisPct) ? ` (translated to MT5 at basis ${basisPct}%)` : " (untranslated — MT5 basis unavailable)"}`,
         `- on fill: mirror into positions[], manage auto-BE + scale-outs per desk SOP.`,
         "",
       ].join("\n")
     );
   } catch {
-    // order is live in MT5; ledger write failure must not read as a failed punch
+    // The broker has accepted the order. Keep the ticket in the response so
+    // a receipt failure cannot make the client resubmit it as a failed punch.
+    ledgerWarning = "MT5 accepted the order, but the desk receipt could not be fully recorded";
   }
 
   return NextResponse.json({
@@ -303,5 +296,6 @@ export async function POST(req: NextRequest) {
     mt5Symbol: resolved.symbol,
     symbolSource: resolved.source,
     basisApplied: fresh && Number.isFinite(basisPct),
+    ledgerWarning,
   });
 }
