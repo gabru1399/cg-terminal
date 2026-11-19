@@ -977,6 +977,24 @@ Table 7 Score : <pts> / 11.5 | Grade: <A/B/NO_TRADE> | Action: <EXECUTE / REJECT
     - Stop Placement: Strictly in the structural cold zone beyond the confluence high (+ 0.15% or $0.20\times\text{ATR}$ buffer). Stop distance must be $< 0.40\%$ from entry, securing $\ge 2.5\text{R}$ to $5.0\text{R}$ asymmetry.
     - Ban on Static Distant Limits: Placing resting limit orders $> 1.0\%$ away from current market price during $|z| \ge 1.0\sigma$ runaway trends is strictly PROHIBITED.
 
+[VPVR-01] [INVARIANT] [VISIBLE_RANGE_VOLUME_PROFILE_HVN_LVN_ARCHITECTURE]:
+  - Microstructure Axiom (Volume Profile Visible Range Reality):
+    Horizontal volume profiles (VPVR) represent the empirical distribution of executed transactions across the visible price domain. Unlike retail diagonal trendlines or indicators, VPVR reveals the real exchange auction structure:
+    1. High Volume Nodes (HVN) / Profile POC: Zones of peak market consensus and heavy institutional inventory turnover. When price trades below an HVN, that entire volume shelf transforms into formidable overhead supply resistance. Institutions defend these levels on pullbacks to prevent their positions from going into adverse excursion.
+    2. Low Volume Nodes (LVN) / Volume Cavities: Zones of price discovery and low participation. Price moves through LVNs with high velocity and minimal friction, acting as slippery vacuum channels between HVN shelves.
+    3. Liquidation Cluster Anchoring: Major liquidation pools typically cluster beyond HVNs and inside LVNs where market liquidity dries up.
+  - The VPVR Retest Short Formulation Protocol (e.g. Gold at $3,693.93 VPVR POC):
+    - Identification: Locate the dominant VPVR POC / HVN shelf from which price has recently broken down (e.g. Gold $3,693.93).
+    - The Anti-Chasing Mandate: Never short at the bottom of the breakdown (at the lower edge of the channel or directly above an untouched liquidation magnet). Entering market at the impulse extreme exposes capital to immediate mean-reversion drawdowns back to the VPVR POC.
+    - Maker Limit Entry Zone: Station a post-only maker limit order at the underside of the VPVR POC / HVN shelf (e.g. $3,691.00 – $3,694.00), aligning with:
+      * Descending trend channel ceiling or HTF Fib EMA 13/21.
+      * Footprint trapped buyer wicks on prior auction touches (confirmed rejection wicks).
+    - Structural Stop Invalidation: Placed strictly in the Cold Zone beyond the HVN shelf peak (+ 0.15% or $0.20\times\text{ATR}$ buffer, e.g. $3,698.50$). Stop distance is tightly bounded ($\le 0.20\%$).
+    - Target Hierarchy:
+      * T1: Retest of the lower LVN boundary / recent impulse flush low ($3,660.00 – $3,665.00).
+      * T2: The dominant downstream high-density liquidation magnet pool (e.g. the $3,650.00 – $3,645.00 high-density long liquidation shelf).
+    - Asymmetry Requirement: With tight structural risk ($4.50 to $7.00) and vast drive into the liquidation magnet ($40.00 to $45.00), this setup yields institutional asymmetry of $\ge 5.0\text{R}$ to $9.0\text{R}$. Grade A/A+ eligible upon footprint absorption proof.
+
 ---
 
 ## SECTION 7. RETAIL SETUP ⟷ ORDER-FLOW CONFIRMATION ENGINE
