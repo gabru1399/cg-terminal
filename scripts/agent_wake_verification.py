@@ -144,6 +144,7 @@ def verify_critical_paths():
             PLUGINS_DIR / "superpowers" / "skills" / "brainstorming" / "SKILL.md",
         "plugins/trading-skills/skills/risk-reward-sanity-check/SKILL.md":
             PLUGINS_DIR / "trading-skills" / "skills" / "risk-reward-sanity-check" / "SKILL.md",
+        "fetch_full_asset_telemetry.py": WORKSPACE / "scripts" / "fetch_full_asset_telemetry.py",
     }
     results = {}
     missing = []
@@ -418,13 +419,32 @@ def main():
         errors.append(f"Missing paths: {path_missing}")
 
     # STEP 4: Live Market Scan of Curated 61 Assets
-    print("\n[4/5] Executing live 61-Asset Order-Flow & Confluence Scan...")
+    print("\n[4/6] Executing live 61-Asset Order-Flow & Confluence Scan...")
     market_scan = audit_full_market()
     if market_scan.get("total_scanned", 0) < 50:
         errors.append(f"Market scan incomplete: only {market_scan.get('total_scanned', 0)} assets scanned")
     
-    # STEP 5: Generate & print manifest
-    print("\n[5/5] Generating verification manifest...")
+    # STEP 5: Mandatory 360° Multi-Tab Telemetry Audit for Benchmark & Candidate Assets
+    print("\n[5/6] Executing Mandatory 360° Multi-Tab Telemetry Audit (All Tabs / Endpoints)...")
+    telemetry_script = WORKSPACE / "scripts" / "fetch_full_asset_telemetry.py"
+    target_syms = ["BTC"]
+    for c in market_scan.get("qualified_candidates", []) + market_scan.get("watchlist", []):
+        sym_code = c.get("sym")
+        if sym_code and sym_code not in target_syms:
+            target_syms.append(sym_code)
+    
+    try:
+        telemetry_cmd = [sys.executable, str(telemetry_script), "--sym", ",".join(target_syms[:3]), "--save"]
+        res = subprocess.run(telemetry_cmd, capture_output=True, text=True, timeout=35, cwd=str(WORKSPACE))
+        if res.stdout:
+            print(res.stdout)
+        if res.returncode != 0 and res.stderr:
+            print(f"[WARN] Telemetry scraper notice: {res.stderr[:200]}")
+    except Exception as e:
+        print(f"[WARN] Telemetry execution note: {e}")
+
+    # STEP 6: Generate & print manifest
+    print("\n[6/6] Generating verification manifest...")
     manifest, all_pass = generate_manifest(round_num, spec_result, bootstrap_data, path_results, path_missing, market_scan)
     
     print("\n" + "=" * 80)
