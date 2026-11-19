@@ -948,6 +948,35 @@ Table 7 Score : <pts> / 11.5 | Grade: <A/B/NO_TRADE> | Action: <EXECUTE / REJECT
   - Mandatory Stale Pruning Rule: On every round or autonomous wake-up, if an asset's market price is $> 1.5\%$ away from a resting limit order AND Available Margin is insufficient to open a new high-confluence setup ($\le 1.5\times$ min margin), the resting order is classified as DORMANT.
   - Action Mandate: The execution engine (`atg-exec`) is MANDATED to cancel the dormant order via exchange API (`cancel_order`), liberating the blocked order margin back into Available Margin. The liberated capital is immediately recycled into active in-trend S10 pullback retests or high-scoring Grade A/B candidates located within $\le 0.5\%$ of current market mark. Dormant orders must NEVER be allowed to paralyze execution.
 
+[PULL-CONFLUENCE] [INVARIANT] [DYNAMIC_MULTI_TIER_PULLBACK_CONFLUENCE_ARCHITECTURE]:
+  - Microstructure Philosophy (The Fallacy of Deep Macro Retracements in Runaway Trends):
+    In an established trend or liquidation cascade (Stage 2 markup / Stage 4 markdown, $|z| \ge 1.0\sigma$, Fib EMAs stacked in order), aggressive market orders overwhelm resting liquidity unilaterally. Waiting for price to track back 100% to a distant Month POC or Day VAH/VAL ($> 1.0\%$ to $2.0\%$ away, e.g. Gold resting at $3,741.5$ when market is $3,671$, or BTC resting at $64,440$ when market is $62,800$) is a fatal cognitive failure mode: the order never fills, account margin/order slots are frozen, and the entire move is missed. Real institutional pullbacks in strong trends are shallow, rapid, and terminate at dynamic order-flow confluence boundaries.
+  - The 5-Tier Dynamic In-Trend Pullback Confluence Anchors:
+    1. Tier 1: Dynamic Rolling Auction Profiles (Session 8h POC & Broken Value Area Bounds):
+       - Do NOT anchor to static Month/Week POCs during intraday runaway trends.
+       - Anchor to the rolling 8-hour Session POC or the broken Session Value Area boundary (broken Session VAL for shorts; broken Session VAH for longs).
+       - When price breaks below the Session VAL, that exact level becomes the primary retest resistance for the subsequent 4 to 8 hours.
+    2. Tier 2: Higher-Timeframe (HTF) Fib EMAs (15m/1h Fib EMA 13, 21, 50 Rejection):
+       - In runaway trends, descending/ascending moving averages act as trailing dynamic resistance/support.
+       - The primary institutional reload zone is the Fast EMA 13 or EMA 21 on the 15m/1h chart (or EMA 50 on the 5m chart).
+       - Signal Confirmation: Candle wicks into the descending 15m EMA 13/21, volume contracts by $\ge 40\%$, and prints an upper rejection wick $\ge 1.5\times$ body.
+    3. Tier 3: Rolling VWAP & Dynamic Standard Deviation Bands ($\pm1.0\sigma$ / $\pm2.0\sigma$ Envelope):
+       - In a strong downtrend ($z < 0$), price rarely retraces to the VWAP mean ($z = 0$).
+       - The dynamic institutional ceiling is the VWAP $-1.0\sigma$ band (for shorts) or VWAP $+1.0\sigma$ band (for longs).
+       - When price pulls back to the VWAP $\pm1.0\sigma$ band from outside, stalls, and rejects, it marks the exact institutional discount ceiling where execution algorithms reload risk.
+    4. Tier 4: Dynamic Whale Order Walls (Tab 5 Resting Institutional Liquidity Depth):
+       - Institutional limit depth moves dynamically with the trend: descending ask walls in downtrends, ascending bid walls in uptrends.
+       - Look for confirmed whale walls ($\ge \$5\text{M}$ for BTC, $\ge \$1\text{M}$ for Gold/ETH/large caps, $\ge \$250\text{k}$ for alts) within $0.2\% - 0.6\%$ of current market price.
+       - Entry: Place maker limit order $0.05\%$ in front of the confirmed whale wall, utilizing the wall as a physical liquidity shield.
+    5. Tier 5: Footprint Tape Absorption & Trapped Counter-Trend Traders (Tab 2 Footprint):
+       - During the pullback bounce, monitor the footprint delta and volume clusters.
+       - Proof of Pullback Exhaustion: The bounce prints buyer exhaustion (`exh`) or trapped aggressive market buyers (`trap`/`abs`) with heavy volume at the top of the candle followed by a delta flip to negative.
+  - Mandatory Dynamic Entry Rule:
+    - An in-trend pullback entry is VALID only when at least TWO (2) of the 5 Dynamic Tiers align within a tight price band ($\le 0.35\%$ width).
+    - Example (Gold Short): Retest of descending 15m EMA 13 ($3,678) aligning with VWAP $-1.0\sigma$ ($3,680) and a confirmed $1.5M whale ask wall ($3,681).
+    - Stop Placement: Strictly in the structural cold zone beyond the confluence high (+ 0.15% or $0.20\times\text{ATR}$ buffer). Stop distance must be $< 0.40\%$ from entry, securing $\ge 2.5\text{R}$ to $5.0\text{R}$ asymmetry.
+    - Ban on Static Distant Limits: Placing resting limit orders $> 1.0\%$ away from current market price during $|z| \ge 1.0\sigma$ runaway trends is strictly PROHIBITED.
+
 ---
 
 ## SECTION 7. RETAIL SETUP ⟷ ORDER-FLOW CONFIRMATION ENGINE
