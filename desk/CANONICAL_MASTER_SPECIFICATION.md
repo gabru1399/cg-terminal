@@ -822,6 +822,20 @@ ATHENA ORACLE ARCHITECTURE: 6 MYTHOLOGICAL MICROSTRUCTURE GODS (0–100 SCALE)
 | **D15** | **Annualized Funding APR** | `/api/cg/market` | Negative funding when shorting = Crowded Trade / Short Squeeze Hazard. |
 | **D16** | **5m Liquidation Pace (`Liq 5m`)** | Screener `Liq 5m` | If `Liq 5m > $500k`, active cascade raging $\implies$ **BAN PASSIVE LIMIT ENTRIES**. Wait for exhaustion wick. |
 
+[LIQ-LIVE-01] [MANDATORY] [ASSET_LEVEL_LIVE_LIQUIDATION_TRACKING]:
+  - Telemetry Endpoint: `GET /api/cg/liq-live?sym=<SYM>&limit=60`
+  - Architecture & Source: Powered by the server-side multi-venue WebSocket/REST collector (`src/lib/cg/liq-live.ts`), streaming raw liquidation events from Binance (`!forceOrder@arr`), Bybit (`allLiquidation.<SYM>`), and OKX (`liquidation-orders`), persisted on disk in `data/cg-liq/<SYM>.jsonl`.
+  - Mandatory Audit Metrics per Candidate & Running Position:
+    1. 1h Liquidation Velocity: Total print count, total USD notional, and Long/Short split ($L_{1h} / S_{1h}$).
+    2. 24h Liquidation Skew & Dominance: Total 24h count, total USD volume, Long/Short ratio ($L_{24h} / S_{24h}$), and largest single liquidation print ($P_{max}$). Skew $\ge 80\%$ confirms extreme one-sided capitulation.
+    3. Live Tape Cascade Velocity: Frequency and USD notional of incoming prints in the trailing 5-15 minutes.
+  - Tactical Execution & In-Flight Invariants:
+    1. Long Cascade Depletion / S1 Sweep Confirmation: When heavy long liquidations print on the live tape into a structural support or the -2.0σ VWAP band, but intra-bar footprint delta turns positive / absorbs (taker buy volume absorbs the liquidation dump), this confirms an institutional S1 Long Sweep.
+    2. Trend Continuation / S4 Shelf Breakdown: When long liquidations cascade rapidly ($> \$100\text{k}/\text{min}$) upon breaking a volume shelf underbelly ($P_{HVN\_floor}$) without absorption, this confirms institutional short trend continuation. Do NOT buy into the cascade.
+    3. In-Flight Position Protection & Magnet Harvesting:
+       - Favorable Cascade: If liquidations cascade in the direction of our running trade (e.g. long liquidations cascading downward toward our short TP), HOLD through the cascade. Let the forced liquidation selling pull price directly into our limit TP.
+       - Adverse Cascade: If opposite liquidations ignite against our position (e.g. short liquidations cascading upward against a short position), tighten SL immediately or scale out to protect accrued profit.
+
 ---
 
 ## SECTION 14. THE MANDATORY PER-CANDIDATE 16-POINT TELEMETRY AUDIT SHEET
