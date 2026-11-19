@@ -182,21 +182,20 @@ def audit_mt5():
         # Auto-BE check
         be_results = []
         for p in cg_pos:
+            is_sell = (p.type == mt5.ORDER_TYPE_SELL)
+            current_move = (p.price_open - p.price_current) if is_sell else (p.price_current - p.price_open)
             risk_pts = abs(p.price_open - p.sl)
-            if risk_pts > 0:
-                is_sell = (p.type == mt5.ORDER_TYPE_SELL)
-                current_move = (p.price_open - p.price_current) if is_sell else (p.price_current - p.price_open)
-                r_mult = current_move / risk_pts
-                be_results.append({
-                    "ticket": p.ticket,
-                    "symbol": p.symbol,
-                    "type": "SELL" if is_sell else "BUY",
-                    "open": p.price_open,
-                    "current": p.price_current,
-                    "sl": p.sl,
-                    "r_multiple": round(r_mult, 2),
-                    "profit_usd": round(p.profit, 2)
-                })
+            r_mult = round(current_move / risk_pts, 2) if risk_pts > 0 else "BE_LOCKED"
+            be_results.append({
+                "ticket": p.ticket,
+                "symbol": p.symbol,
+                "type": "SELL" if is_sell else "BUY",
+                "open": p.price_open,
+                "current": p.price_current,
+                "sl": p.sl,
+                "r_multiple": r_mult,
+                "profit_usd": round(p.profit, 2)
+            })
         
         res = {
             "ok": True,

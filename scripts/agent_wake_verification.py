@@ -59,6 +59,25 @@ CURATED_61 = [
     "SPX500", "UKO", "NDX100"
 ]
 
+def get_full_trading_universe():
+    """Dynamically queries the complete live trading universe from Next.js terminal engine (228 Binance/Coinglass perps)
+    and falls back to CURATED_61 if endpoint is unavailable."""
+    try:
+        req = urllib.request.Request("http://localhost:3000/api/binance/universe", headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=3.0) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+            assets = data.get('assets', [])
+            if assets and len(assets) > 0:
+                syms = [a['sym'] for a in assets]
+                # Ensure classic indices are included
+                for c in ["SPX500", "UKO", "NDX100"]:
+                    if c not in syms:
+                        syms.append(c)
+                return syms
+    except Exception:
+        pass
+    return CURATED_61
+
 # ─── STEP 1: READ & PRINT CANONICAL SPEC ─────────────────────────────────────
 def read_and_print_spec():
     if not SPEC_PATH.exists():
@@ -261,34 +280,52 @@ def audit_symbol(sym):
 
 def audit_full_market():
     t0 = time.time()
+    universe = get_full_trading_universe()
     results = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
-        futs = {executor.submit(audit_symbol, sym): sym for sym in CURATED_61}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=16) as executor:
+        futs = {executor.submit(audit_symbol, sym): sym for sym in universe}
         for f in concurrent.futures.as_completed(futs):
             try:
                 results.append(f.result())
             except Exception:
                 pass
 
-    results.sort(key=lambda x: CURATED_61.index(x['sym']) if x['sym'] in CURATED_61 else 999)
+    # Sort: A+ first, then Grade B, then by score descending
+    def sort_key(r):
+        status_rank = 0 if r['status'] == "A+ QUALIFIED" else (1 if r['status'] == "GRADE B WATCH" else 2)
+        return (status_rank, -r['score'], -r['best_r'])
+
+    results.sort(key=sort_key)
     dur = round(time.time() - t0, 2)
     
+    candidates = [r for r in results if r['status'] == "A+ QUALIFIED"]
+    watchlist = [r for r in results if r['status'] == "GRADE B WATCH"]
+    vetoed = [r for r in results if r['status'] == "NO TRADE (VETO)"]
+
     print("\n" + "=" * 80)
-    print(f"CURATED 61 FULL MARKET ORDER-FLOW SCAN ({dur}s)")
+    print(f"EXPANDED UNIVERSE ORDER-FLOW SCAN: {len(universe)} ASSETS SCANNED ({dur}s)")
     print("=" * 80)
     print(f"{'SYM':<9} | {'PRICE':<10} | {'REGIME':<14} | {'ARCHETYPE':<10} | {'BIAS':<5} | {'GR':<3} | {'R-MULT':<6} | {'LSR':<5} | {'SCORE':<5} | {'TOP SIGNAL':<18} | {'STATUS'}")
     print("-" * 120)
-    for r in results:
+    
+    # Print all candidates and watchlist
+    actionable = candidates + watchlist
+    for r in actionable:
         p_str = f"{r['price']:,.2f}" if r['price'] is not None else "-"
         r_str = f"{r['best_r']:.2f}R" if r['best_r'] > 0 else "-"
         lsr_str = f"{r['lsr']:.2f}" if r['lsr'] else "1.0"
         print(f"{r['sym']:<9} | {p_str:<10} | {r['regime'][:14]:<14} | {r['model'][:10]:<10} | {r['direction'][:5]:<5} | {r['grade']:<3} | {r_str:<6} | {lsr_str:<5} | {r['score']:<5.1f} | {r['signal'][:18]:<18} | {r['status']}")
 
-    candidates = [r for r in results if r['status'] == "A+ QUALIFIED"]
-    watchlist = [r for r in results if r['status'] == "GRADE B WATCH"]
-    
+    if not actionable:
+        print("  (Tape quiet: 0 A+ and 0 Grade B active. Showing top 10 potential setups below)")
+        for r in results[:10]:
+            p_str = f"{r['price']:,.2f}" if r['price'] is not None else "-"
+            r_str = f"{r['best_r']:.2f}R" if r['best_r'] > 0 else "-"
+            lsr_str = f"{r['lsr']:.2f}" if r['lsr'] else "1.0"
+            print(f"{r['sym']:<9} | {p_str:<10} | {r['regime'][:14]:<14} | {r['model'][:10]:<10} | {r['direction'][:5]:<5} | {r['grade']:<3} | {r_str:<6} | {lsr_str:<5} | {r['score']:<5.1f} | {r['signal'][:18]:<18} | {r['status']}")
+
     print("\n" + "=" * 80)
-    print(f"MARKET SCAN SUMMARY: {len(candidates)} A+ QUALIFIED | {len(watchlist)} GRADE B WATCH | {len(results)-len(candidates)-len(watchlist)} NO TRADE VETOES")
+    print(f"EXPANDED MARKET SCAN SUMMARY: {len(candidates)} A+ QUALIFIED | {len(watchlist)} GRADE B WATCH | {len(vetoed)} NO TRADE VETOES (TOTAL: {len(results)})")
     print("=" * 80)
     
     return {
@@ -296,7 +333,7 @@ def audit_full_market():
         "total_scanned": len(results),
         "qualified_a_plus_count": len(candidates),
         "grade_b_watch_count": len(watchlist),
-        "veto_count": len(results) - len(candidates) - len(watchlist),
+        "veto_count": len(vetoed),
         "qualified_candidates": candidates,
         "watchlist": watchlist
     }
