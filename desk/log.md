@@ -15359,3 +15359,10 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## EXEC · 2026-11-19 17:58 UTC · atg-exec (Round R587 Execution, Universal Dual-Venue Mandate for S10/EA-07)
+- **Universal Multi-Asset & Dual-Venue S10 Mandate Enacted**:
+  - Formally codified in `CANONICAL_MASTER_SPECIFICATION.md`: S10 (In-Trend Consolidation Shelf / Fast EMA Pullback) and EA-07 (In-Trend Shelf Breakdown) are NOT restricted to BTC; they apply universally across ALL 61 Curated assets on BOTH operating venues (Delta Exchange India & Blueberry MT5).
+  - Updated `scripts/agent_wake_verification.py` to recognize `S10` model scores in candidate qualification.
+  - Active runner surveillance: `EURUSD.pi` (MT5 #20297836) SHORT sits at 1.09801 (+2.08R excursion, +$4.50 USD profit, SL at BE 1.10026); `TIAUSD` (Delta #17330) SHORT sits at 0.34195 (+4.59R excursion, +95% ROE, SL at BE 0.35800); `DOGEUSD` (Delta #14745) SHORT sits at 0.05878 (+0.73R excursion, +167% ROE, risk strictly $0.14 USD).
+  - Standing maker limits validated on MT5 and Delta CLOB; total portfolio downside risk strictly $0.14 USD (< 0.005% of capital). Single 1200s timer armed for R588.
