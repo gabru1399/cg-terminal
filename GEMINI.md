@@ -29,6 +29,7 @@ trigger: always_on
   - `backtesting-frameworks`: [`C:/Users/SIGMA/.gemini/config/skills/backtesting-frameworks/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/skills/backtesting-frameworks/SKILL.md) — Out-of-sample backtest validation, lookahead-free grammar, and walk-forward verification.
   - `thinking-model-router`: [`C:/Users/SIGMA/.gemini/config/skills/thinking-model-router/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/skills/thinking-model-router/SKILL.md) — Mandatory routing through the 10-model cognitive lattice (First Principles, Pre-Mortem, Probabilistic EV, etc.).
   - `executing-plans`: [`C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/executing-plans/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/executing-plans/SKILL.md) — Rigorous step-by-step plan execution without skipping mandatory verification steps.
+  - `verification-before-completion`: [`C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/verification-before-completion/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/verification-before-completion/SKILL.md) — Mandatory verification gate: Iron Law (no completion claims without fresh empirical verification evidence).
   - `writing-plans` (`/plan`): [`C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/writing-plans/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/writing-plans/SKILL.md) — Architectural decomposition and multi-step task mapping prior to system mutations.
   - `brainstorming`: [`C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/brainstorming/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/brainstorming/SKILL.md) — Socratic multi-scenario hypothesis exploration and pre-mortem edge-case formulation.
   - `systematic-debugging`: [`C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/systematic-debugging/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/systematic-debugging/SKILL.md) — Four-phase root-cause triage, evidence logging, and hypothesis verification.
@@ -58,6 +59,8 @@ trigger: always_on
   - `/thinking-model-router`: [`C:/Users/SIGMA/.gemini/config/skills/thinking-model-router/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/skills/thinking-model-router/SKILL.md) — Socratic multi-model cognitive chain routing.
   - `/gravitas`: [`C:/Users/SIGMA/.gemini/config/skills/gravitas/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/skills/gravitas/SKILL.md) — Strict ground-before-mutating and evidence-gated completion verification.
   - `/executing-plans`: [`C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/executing-plans/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/executing-plans/SKILL.md) — Execution fidelity to pre-declared implementation blueprints.
+  - `/verification-before-completion`: [`C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/verification-before-completion/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/verification-before-completion/SKILL.md) — The Iron Law: No completion claims without fresh verification evidence.
+  - `/compact`: Built-in chat context window compaction directive — Summarize and compact conversation history when context budget expands.
 
 [BOOT-05] [INVARIANT] [DETERMINISTIC_PREFLIGHT_BOOTSTRAP]: Verbal recitation of dependency names without physical runtime tool execution is STRICTLY FORBIDDEN. On EVERY activation, round, or timer expiration, the agent MUST execute `python scripts/round_preflight_bootstrap.py` as the mandatory first tool call to physically verify on-disk plugins, skills, MT5 status, and spec timestamps before emitting analysis. Active runtime tools (`read_file`, MCP queries, terminal commands) MUST be executed empirically on every turn.
 
@@ -193,18 +196,23 @@ Dynamic recursion is driven by a single 1200-second timer (`schedule(DurationSec
 ```text
 # MANDATORY SPECIFICATION & RUNTIME GOVERNANCE
 @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]
+@[c:\Users\SIGMA\Documents\cg-terminal\GEMINI.md]
+@[c:\Users\SIGMA\.gemini\config\rules\GEMINI.md]
 @[c:\Users\SIGMA\Documents\cg-terminal\scripts\round_preflight_bootstrap.py]
 
 # CORE SKILLS & RELIABILITY RUNTIMES (PHYSICAL ON-DISK PATHS)
 @[C:\Users\SIGMA\.gemini\config\skills\gravitas\SKILL.md]
 @[C:\Users\SIGMA\.gemini\config\skills\karpathy-guidelines\SKILL.md]
+@[C:\Users\SIGMA\.gemini\config\skills\ponytail\SKILL.md]
 @[C:\Users\SIGMA\.gemini\config\skills\thinking-model-router\SKILL.md]
 @[C:\Users\SIGMA\.gemini\config\plugins\superpowers\skills\executing-plans\SKILL.md]
+@[C:\Users\SIGMA\.gemini\config\plugins\superpowers\skills\writing-plans\SKILL.md]
 @[C:\Users\SIGMA\.gemini\config\plugins\superpowers\skills\brainstorming\SKILL.md]
+@[C:\Users\SIGMA\.gemini\config\plugins\superpowers\skills\verification-before-completion\SKILL.md]
 @[C:\Users\SIGMA\.gemini\config\plugins\trading-skills\skills\risk-reward-sanity-check\SKILL.md]
 
 # INVOCATION DIRECTIVE
-/goal /gravitas /karpathy-guidelines /thinking-model-router
+/goal /gravitas /karpathy-guidelines /thinking-model-router /verification-before-completion /compact
 # ENGINE: Autonomous Dual-Venue Trade Execution & Recursive Self-Improving Engine
 # ROUND: R<n>
 
@@ -225,13 +233,13 @@ Output: list of misses + lessons applied.
 
 ## STEP 1: DETERMINISTIC PRE-FLIGHT BOOTSTRAP (MANDATORY FIRST TOOL CALL)
 - MUST execute: run_command("python scripts/round_preflight_bootstrap.py")
-- MUST execute: read_file("desk/CANONICAL_MASTER_SPECIFICATION.md", StartLine=1, EndLine=165)
+- MUST execute: read_file("c:/Users/SIGMA/Documents/cg-terminal/desk/CANONICAL_MASTER_SPECIFICATION.md", StartLine=1, EndLine=165)
 - If candidate trade evaluated: read_file("C:/Users/SIGMA/.gemini/config/plugins/trading-skills/skills/risk-reward-sanity-check/SKILL.md")
 - Confirm each item explicitly from raw bootstrap output:
   - [ ] Physical presence of plugins confirmed on disk (trading-skills, superpowers, coderabbit, gravitas-native, chrome-devtools-plugin)
-  - [ ] Physical presence of skills confirmed on disk (gravitas, karpathy-guidelines, ponytail, quant-analyst, backtesting-frameworks)
+  - [ ] Physical presence of skills confirmed on disk (gravitas, karpathy-guidelines, ponytail, quant-analyst, backtesting-frameworks, verification-before-completion)
   - [ ] Physical presence of MCP server schemas confirmed on disk (delta-exchange-mcp, agent-memory, chrome-devtools, godkiller-verification, code-review-graph, link-extension, sqlite)
-  - [ ] Physical presence of slash command backing skills confirmed on disk (/plan, /brainstorming, /executing-plans, /karpathy-guidelines, /thinking-model-router, /gravitas)
+  - [ ] Physical presence of slash command backing skills confirmed on disk (/plan, /brainstorming, /executing-plans, /karpathy-guidelines, /thinking-model-router, /gravitas, /verification-before-completion)
   - [ ] Canonical Master Spec size & timestamp verified
   - [ ] Terminal Engine online (BTC price, POC, VWAP)
   - [ ] MT5 IPC online (Balance, Equity, Margin, Positions, Orders audited)
@@ -348,3 +356,18 @@ End the response with this table, every row marked DONE / FAILED / N/A:
 8. **Time Stop**: Exit or tighten stop after 8 15-minute bars (2 hours) if price has not reached $+0.5\text{R}$.
 9. **Active Cascade Climax Gate**: If `Liq 5m > $500k`, no limit orders may be placed into the cascade. Wait for the exhaustion wick.
 10. **Tranche Scale-Out & Trailing Stop Protocol**: 40% @ T1 (+1.0R, SL to Breakeven), 40% @ T2 (+2.0R, profit banked), 20% Runner @ T3 (extended with Structure-Based Trailing Stop on 15m Swing Pivots / 15m EMA 20 with $1.5\times$ ATR buffer).
+11. **Pitfalls Ledger Invariants PIT-21 & PIT-22**: Stop losses must NEVER sit within high-density liquidation shelves; stops must be located in structural cold zones strictly beyond sweep wicks (PIT-21, derived from SOL #20229047 post-SL 71.93 dump). Micro-altcoin CFD trades on MT5 require planned stop distance >= 3.0x broker spread, otherwise route exclusively to Delta CLOB (PIT-22, derived from LNK #20284145 1-second spread stop).
+
+---
+
+## 6. VERIFICATION BEFORE COMPLETION ([`C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/verification-before-completion/SKILL.md`](file:///C:/Users/SIGMA/.gemini/config/plugins/superpowers/skills/verification-before-completion/SKILL.md))
+
+> **CORE AXIOM**: NO COMPLETION CLAIMS WITHOUT FRESH VERIFICATION EVIDENCE.
+> If you haven't run the verification command in this message, you cannot claim it passes.
+> Evidence before assertions always.
+
+---
+
+## 7. CHAT CONTEXT COMPACTION PROTOCOL (/compact)
+
+> **CORE AXIOM**: When the conversation context grows or turns multiply, proactively recommend `/compact` to summarize and compact conversation history to preserve context fidelity and eliminate stale conversational noise.

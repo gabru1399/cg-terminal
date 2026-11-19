@@ -78,6 +78,7 @@ def audit_slash_command_skills():
         "/karpathy-guidelines": SKILLS_DIR / "karpathy-guidelines" / "SKILL.md",
         "/thinking-model-router": SKILLS_DIR / "thinking-model-router" / "SKILL.md",
         "/gravitas": SKILLS_DIR / "gravitas" / "SKILL.md",
+        "/verification-before-completion": PLUGINS_DIR / "superpowers" / "skills" / "verification-before-completion" / "SKILL.md",
     }
     status = {}
     for cmd, p in slash_skills.items():
