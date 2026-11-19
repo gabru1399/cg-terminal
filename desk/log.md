@@ -14128,3 +14128,16 @@ analysis script rc=1
   - `DOGEUSD` Maker Limit: Order #1692772135, Sell Limit @ 0.0598, SL 0.06058, TP 0.05736 (3.10R). Open & waiting.
 - **Signal Punch Engine**: `auto_punch_engine.py` evaluated 12 strategy cards. Zero sub-2.0R orders punched. Safety invariants 100% maintained.
 - **Desk Daemon & Next.js Engine**: Both processes operational without error.
+## R571 · 2026-11-19 00:00 UTC · zai-desk
+
+**Market**: BTC 63,045.8 (+0.0%)  ETH 1,776.25 (-0.0%)  SOL 73.58 (-0.0%)  XAU 3,745.98 (-0.0%)  XAG 45.550 (-0.0%)
+**Bias (|score|≥2)**: ETH-5(TRANS)  DOGE-5(TREND)  ADA-5(TRANS)  BNB-3(TRANS)  LTC-2(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
