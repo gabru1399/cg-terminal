@@ -100,17 +100,17 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 
 ## SECTION 2. THE MANDATORY PRE-FLIGHT VERIFICATION CHECKLIST & 10 PRE-FLIGHT GATES
 
-[PRE-01] [MANDATORY] [HEADER_PROTOCOL]: On EVERY wake-up, autonomous recursion round, or trading response, the execution MUST OPEN with the completed Pre-Flight Verification Checklist header confirming fresh, uncompressed analysis:
+[PRE-01] [MANDATORY] [HEADER_PROTOCOL]: On EVERY wake-up, autonomous recursion round, or trading response, the execution MUST OPEN with the completed Pre-Flight Verification Checklist header confirming fresh, uncompressed analysis backed by empirical execution of `python scripts/round_preflight_bootstrap.py`:
 
 ```text
 ### ✅ PRE-FLIGHT VERIFICATION CHECKLIST (ROUND R<n>)
-[x] Pre-Flight Verification Checklist COMPLETED in full.
+[x] Pre-Flight Verification Checklist COMPLETED in full (Backed by physical run of scripts/round_preflight_bootstrap.py).
 [x] Canonical Master Specification (@[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]) READ (Empirical read_file verified), ANALYZED & STRICTLY FOLLOWED (SOP v2.1.0 mandatory invariant).
 [x] Meta-Cognitive Review of Previous Thinking Chain executed: audited what was missed, latency, blind spots, and applied continuous self-improvement lessons.
-[x] Fresh uncached loading of Plugins, Skills & MCP Server Architecture verified LOADED & OPERATIONAL (zero cached echoes):
-    - Plugins: persistent-memory, coderabbit, superpowers, trading-skills, chrome-devtools-plugin, harness-antigravity.
-    - MCP Servers: delta-exchange-mcp, persistent-memory, agent-memory, chrome-devtools, godkiller-verification, code-review-graph, link-extension, sqlite.
-    - Skills: trading-skills suite, superpowers suite, karpathy-guidelines, ponytail, quant-analyst, backtesting-frameworks.
+[x] Fresh physical loading of Plugins, Skills & MCP Server Architecture verified LOADED & OPERATIONAL via bootstrap runner (zero cosmetic checkboxes):
+    - Plugins (verified on disk): coderabbit, superpowers, trading-skills, chrome-devtools-plugin, gravitas-native.
+    - Skills (verified on disk): gravitas, karpathy-guidelines, ponytail, quant-analyst, backtesting-frameworks.
+    - MCP Servers: delta-exchange-mcp, agent-memory, chrome-devtools, godkiller-verification, code-review-graph, link-extension, sqlite.
 [x] 10-Model Cognitive Thinking Chain Lattice verified (/thinking-model-router):
     - First Principles, Pre-Mortem Analysis, Probabilistic Reasoning (EV hurdle >= 2.0R), Second-Order Effects, Red Team / Steel-Manning, Margin of Safety, Via Negativa, Map vs Territory, Theory of Constraints, Lindy Effect.
 [x] 4-Voice Quantitative Desk Debate executed (Alpha Strategist Hunter, Adversarial Risk Officer Red Team, Microstructure Quant Empiricist, Committee Arbiter Synthesizer).
@@ -130,7 +130,7 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 ### Pre-Flight Verification Gates (C-01 to C-10)
 
 [C-01] [GATE] [SPEC_GROUNDING]: `CANONICAL_MASTER_SPECIFICATION.md` is bound as sole operational manual; agent MUST execute `read_file` on this document on every wake-up before analyzing markets or staging orders.
-[C-02] [GATE] [INFRASTRUCTURE_VERIFICATION]: Active connectivity of all essential MCP servers (`delta-exchange-mcp`, `persistent-memory`, etc.), plugins, and analytical skills MUST be verified before formulation.
+[C-02] [GATE] [INFRASTRUCTURE_VERIFICATION]: Active physical presence of all required plugins, skills, MT5 IPC, and MCP servers MUST be verified via `python scripts/round_preflight_bootstrap.py` before formulation. Zero cosmetic claims permitted.
 [C-03] [GATE] [COGNITIVE_DEBATE]: No trade or code is generated without Socratic stress-testing across the 10 mental models and 4-voice desk debate.
 [C-04] [GATE] [INDIVIDUAL_ASSET_AUDIT]: Pre-aggregated screener tables (`/api/cg/screener`) are STRICTLY PURGED; execute direct endpoint-by-endpoint queries across all 10 modules for each and every candidate across the 234 Delta and 156 MT5 assets.
 [C-05] [GATE] [CLOB_RECONCILIATION]: Query live `get_wallet_balances`, `get_margined_positions`, and `get_open_orders` on Delta Exchange India (`india_prod`, Account `#26902927`).
