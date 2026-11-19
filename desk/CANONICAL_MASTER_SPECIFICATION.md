@@ -983,21 +983,23 @@ Table 7 Score : <pts> / 11.5 | Grade: <A/B/NO_TRADE> | Action: <EXECUTE / REJECT
     1. High Volume Nodes (HVN) / Profile POC: Zones of peak market consensus and heavy institutional inventory turnover. When price trades below an HVN, that entire volume shelf transforms into formidable overhead supply resistance. Institutions defend these levels on pullbacks to prevent their positions from going into adverse excursion.
     2. Low Volume Nodes (LVN) / Volume Cavities: Zones of price discovery and low participation. Price moves through LVNs with high velocity and minimal friction, acting as slippery vacuum channels between HVN shelves.
     3. Liquidation Cluster Anchoring: Major liquidation pools typically cluster beyond HVNs and inside LVNs where market liquidity dries up.
-  - The VPVR Retest Short Formulation Protocol (e.g. Gold at $3,693.93 VPVR POC):
-    - Identification: Locate the dominant VPVR POC / HVN shelf from which price has recently broken down (e.g. Gold $3,693.93).
-    - The Anti-Chasing Mandate: Never short at the bottom of the breakdown (at the lower edge of the channel or directly above an untouched liquidation magnet). Entering market at the impulse extreme exposes capital to immediate mean-reversion drawdowns back to the VPVR POC.
-    - Maker Limit Entry Zone: Station a post-only maker limit order at the underside of the VPVR POC / HVN shelf (e.g. $3,691.00 – $3,694.00), aligning with:
+  - The Dynamic VPVR Retest Short Formulation Protocol:
+    - Dynamic Identification: Identify the primary High Volume Node ($P_{HVN}$) from which price has broken down using the rolling visible range profile.
+    - The Anti-Chasing Mandate: Never enter short at the bottom of an impulse breakdown (into Low Volume Nodes or directly above an unconsumed liquidation shelf). Entering market at the impulse extreme exposes capital to violent mean-reversion drawdowns back to $P_{HVN}$.
+    - Dynamic Entry Zone ($P_{entry}$): Station a post-only maker limit order at the underside of the broken $P_{HVN}$ shelf ($P_{HVN\_floor}$), aligning dynamically with:
       * Descending trend channel ceiling or HTF Fib EMA 13/21.
       * Footprint trapped buyer wicks on prior auction touches (confirmed rejection wicks).
-    - Structural Stop Invalidation: Placed strictly in the Cold Zone beyond the HVN shelf peak (+ 0.15% or $0.20\times\text{ATR}$ buffer, e.g. $3,698.50$). Stop distance is tightly bounded ($\le 0.20\%$).
-    - Target Hierarchy:
-      * T1: Retest of the lower LVN boundary / recent impulse flush low ($3,660.00 – $3,665.00).
-      * T2: The dominant downstream high-density liquidation magnet pool (e.g. the $3,650.00 – $3,645.00 high-density long liquidation shelf).
-    - Asymmetry Requirement: With tight structural risk ($4.50 to $7.00) and vast drive into the liquidation magnet ($40.00 to $45.00), this setup yields institutional asymmetry of $\ge 5.0\text{R}$ to $9.0\text{R}$. Grade A/A+ eligible upon footprint absorption proof.
+    - Structural Stop Invalidation ($P_{stop}$): Placed strictly in the Cold Zone beyond the $P_{HVN}$ shelf peak:
+      $$P_{stop} = P_{HVN\_peak} + \max(0.15\% \times P_{HVN}, 0.20 \times \text{ATR}_{15m})$$
+      Stop distance $\Delta_{stop} = |P_{entry} - P_{stop}|$ must be tightly bounded ($\le 0.40\% \times P_{entry}$).
+    - Dynamic Target Hierarchy:
+      * T1 ($P_{T1}$): Retest of the lower LVN boundary / recent impulse flush low.
+      * T2 ($P_{T2}$): The dominant downstream high-density liquidation magnet pool identified via live liquidation heatmap/telemetry.
+    - Asymmetry Requirement: With tight structural risk ($\Delta_{stop} \le 0.40\%$) and vast drive into the liquidation magnet ($\Delta_{drive}$), this setup yields institutional asymmetry of $R = \frac{\Delta_{drive}}{\Delta_{stop}} \ge 3.0\text{R}$ (typically $5.0\text{R}$ to $9.0\text{R}$). Grade A/A+ eligible upon footprint absorption proof.
 
 [VPOF-01] [INVARIANT] [MULTI_HORIZON_VOLUME_PROFILE_AND_BIG_TRADES_CONVERGENCE_ENGINE]:
   - Unified Multi-Horizon Volume Profile Hierarchy:
-    Volume profile must be evaluated simultaneously across four distinct auction horizons to determine the true institutional inventory map:
+    Volume profile must be evaluated simultaneously across four distinct auction horizons to determine the true institutional inventory map dynamically from live telemetry:
     1. Session Profile (8-Hour Rolling Auction · Asian 00-08 UTC, London 08-16 UTC, New York 16-24 UTC):
        - Primary metrics: Session POC, Session VAH, Session VAL.
        - Tactical Invariant: In an active trend, the broken boundary of the current or prior session (e.g. broken Session VAL in a downtrend) serves as the primary resistance ceiling.
@@ -1008,31 +1010,28 @@ Table 7 Score : <pts> / 11.5 | Grade: <A/B/NO_TRADE> | Action: <EXECUTE / REJECT
        - Primary metrics: Week POC, Week High-Volume Shelves.
        - Macro Structural Boundary: Major weekly HVNs mark the macro cold zones where large-scale position building occurs.
     4. Visible Range Profile (VPVR Microstructure):
-       - Isolates the current impulse leg's local High Volume Nodes (HVNs) and Low Volume Nodes (LVNs).
-       - Canonical Examples from Live Order Flow:
-         * BTC ($63,000.6 HVN · Image 1): Price broke down through $63,000.6 HVN, flushed through the 62.5k LVN cavity to $62,125.5; the $62,950–$63,000 shelf underbelly is the institutional short reload zone targeting the $61,800–$61,500 liquidation magnet.
-         * ETH ($1,772.0 HVN · Image 2): Price broke down through $1,772.0 HVN, flushed to $1,761.5; the $1,770–$1,773 shelf underbelly is the institutional short reload zone targeting the $1,740–$1,730 liquidation magnet.
-         * Gold ($3,693.93 HVN): Price broke down through $3,693.93 HVN, flushed to $3,660.4; the $3,691–$3,694 shelf underbelly is the institutional short reload zone targeting the $3,650 liquidation magnet.
+       - Isolates the current impulse leg's local High Volume Nodes ($P_{HVN}$) and Low Volume Nodes ($P_{LVN}$).
+       - Dynamic Formulation: The underbelly of the broken $P_{HVN}$ shelf serves as the institutional short reload zone, targeting downstream liquidation magnet pools across the $P_{LVN}$ vacuum channel.
   - Convergence with Order-Flow Telemetry & Big Trades:
     A volume profile level is confirmed as an institutional execution level ONLY when verified by live order-flow telemetry:
     1. Big Trades Cluster (Tab 11 Executed Taker Size):
-       - Large market executions ($\ge \$1\text{M}$ on BTC, $\ge \$250\text{k}$ on ETH/Gold/Alts).
-       - Breakdown Confirmation: Aggressive taker sell clusters executing at and below the HVN confirm institutional distribution.
-       - Pullback Rejection: On the counter-trend bounce, aggressive market buy volume stalls directly at the HVN shelf, failing to progress (buyer absorption).
+       - Large market executions tiered by instrument liquidity ($\ge \$1\text{M}$ on BTC, $\ge \$250\text{k}$ on large-cap perps/metals, $\ge \$50\text{k}$ on alts).
+       - Breakdown Confirmation: Aggressive taker sell clusters executing at and below $P_{HVN}$ confirm institutional distribution.
+       - Pullback Rejection: On the counter-trend bounce, aggressive market buy volume stalls directly at the $P_{HVN}$ shelf, failing to progress (buyer absorption).
     2. Dynamic Resting Whale Walls (Tab 5 Order-Book Depth):
-       - Confirmed resting limit ask walls stationed directly at or within $+0.05\%$ of the HVN shelf.
+       - Confirmed resting limit ask walls stationed directly at or within $+0.05\%$ of the $P_{HVN}$ shelf.
        - The resting limit depth acts as a physical barrier that caps the counter-trend bounce.
     3. Footprint Delta Divergence & Delta Flip (Tab 2 Footprint):
-       - As price wicks into the HVN shelf, the footprint bar prints positive delta that rapidly exhausts (`exh`/`trap`), followed by an immediate delta flip back to negative.
+       - As price wicks into the $P_{HVN}$ shelf, the footprint bar prints positive delta that rapidly exhausts (`exh`/`trap`), followed by an immediate delta flip back to negative.
     4. CVD Trend Alignment (Tab 6):
        - Spot CVD must confirm lower highs during the bounce, proving that the pullback is driven merely by perpetual retail short-covering rather than genuine spot accumulation.
   - The 6-Step In-Trend Pullback Execution Matrix:
-    - Step 1 (Impulse Breakdown): Price slices through a confirmed HVN shelf on expanding volume and negative delta.
-    - Step 2 (Map the Retest Ceiling): Identify the underside of the broken HVN shelf (e.g. BTC $62,950–$63,000; ETH $1,770–$1,773; Gold $3,691–$3,694).
-    - Step 3 (Map the Downstream Liquidity Magnet): Identify the dominant downstream liquidation pool beyond the LVN chute (e.g. BTC $61,800–$61,500; ETH $1,740; Gold $3,650).
-    - Step 4 (Structural Stop): Place stop strictly in the Cold Zone beyond the HVN shelf peak (+ 0.15% or $0.20\times\text{ATR}$ buffer). Stop distance must be $\le 0.40\%$ from entry.
-    - Step 5 (Asymmetry & Sizing): Required asymmetry $\ge 3.0\text{R}$ (typically $5.0\text{R}–9.0\text{R}$). Calculate exact position size to cap Dollar Risk at $\le 1.0\%$ of net liquid equity.
-    - Step 6 (Maker Limit Execution): Punch post-only maker limit order (`post_only: true`) at the HVN shelf underbelly. Attach on-exchange bracket SL and TP at dispatch.
+    - Step 1 (Impulse Breakdown): Price slices through a confirmed $P_{HVN}$ shelf on expanding volume and negative delta.
+    - Step 2 (Map the Retest Ceiling): Identify the underside of the broken $P_{HVN}$ shelf ($P_{HVN\_floor}$).
+    - Step 3 (Map the Downstream Liquidity Magnet): Identify the dominant downstream liquidation pool ($P_{target}$) beyond the LVN chute.
+    - Step 4 (Structural Stop): Place stop strictly in the Cold Zone beyond the $P_{HVN}$ shelf peak: $P_{stop} = P_{HVN\_peak} + \max(0.15\%, 0.20 \times \text{ATR})$. Stop distance must be $\le 0.40\%$ from entry.
+    - Step 5 (Asymmetry & Sizing): Required asymmetry $R \ge 3.0\text{R}$ (typically $5.0\text{R}–9.0\text{R}$). Calculate exact position size to cap Dollar Risk at $\le 1.0\%$ of net liquid equity.
+    - Step 6 (Maker Limit Execution): Punch post-only maker limit order (`post_only: true`) at $P_{HVN\_floor}$. Attach on-exchange bracket SL and TP at dispatch.
 
 ---
 
