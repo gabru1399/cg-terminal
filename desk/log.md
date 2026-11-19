@@ -14784,3 +14784,16 @@ analysis script rc=1
   - SOL/LTC/XRP crypto shorts: PIT-03 CAUTION — BTC +1.2% above day VWAP reclaiming, down-magnets 61.8–61.9k favored. No qualifying card.
 - **SOL #20277826 (running)**: live 74.53 > SL 74.06, m15 BULL — REPEAT DIRECTIVE: tighten to structure or exit on pullback ≤74.2 (long-magnets 71.7–72.0 now target).
 - **Prop-cap breaches to acknowledge (2026-11-18)**: ETH #20277881 -$9.15 and NAS100 #20275354 -$8.86 exceeded the $6 hard cap via slippage — root cause: stop distance × lot size not re-verified vs 1.20x stress before autonomous punch. Action: auto_punch_engine must hard-reject when stressedRisk = stopDist × contractValue × 1.2 > $6 at MIN lot.
+## R612 · 2026-11-19 10:47 UTC · zai-desk
+
+**Market**: BTC 63,886.9 (+1.3%)  ETH 1,807.32 (+1.7%)  SOL 74.60 (+1.4%)  XAU 3,742.73 (-0.1%)  XAG 45.360 (-0.5%)
+**Bias (|score|≥2)**: ADA-2(TREND)  BNB-4(TREND)  XRP-4(TREND)  LTC-4(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
