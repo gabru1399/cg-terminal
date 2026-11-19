@@ -16836,3 +16836,16 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## EXEC · 2026-11-19 19:53 UTC · atg-exec (Dynamic Pullback Confluence Codification, Gold Order De-bottlenecking & DOGE Breakeven Lock)
+- **Dynamic Multi-Tier Pullback Confluence Codified ([PULL-CONFLUENCE])**:
+  - Enacted [PULL-CONFLUENCE] in CANONICAL_MASTER_SPECIFICATION.md Section 6 while strictly preserving all human additions (K-0 to K-8).
+  - Explicitly established the 5 Dynamic In-Trend Pullback Confluence Anchors (Session 8h POC/broken VAL, 15m/1h Fib EMAs 13/21/50, VWAP +-1.0sigma envelope, Tab 5 Whale Walls, Tab 2 Footprint Absorption).
+  - Banned static limit orders placed > 1.0% away from market during runaway trends (|z| >= 1.0sigma).
+- **Gold Order De-bottlenecking & Capital Liberation**:
+  - Open order #1695594328 (XAUTUSD Sell Limit @ 3,741.50) was  USD (1.9%) above current mark (3,671.97).
+  - Per [DMR-01], executed cancel_order on Delta Exchange India: liberated blocked order margin. Available Margin expanded from .75 USD to **.51 USD** (Available INR: **213.11 INR**; order_margin = .00 USD).
+- **Running Trades Invariant [P5-11] & Breakeven Lock Execution**:
+  - DOGEUSD (Delta #14745): Mark price touched low of 0.05772 (exceeding the +1.0R Breakeven threshold of 0.05840; currently +1.48R excursion).
+  - Executed edit_order for Order #1692772139: Stop Price updated to **0.05980 (Breakeven Locked)**. Downside risk eliminated (.00 risk).
+  - All 3 running positions (EURUSD MT5, TIA Delta, DOGE Delta) are now **100% Breakeven-Locked** with aggregate portfolio downside risk = **.00 USD**.

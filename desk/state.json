@@ -314,11 +314,11 @@
       "side": "short",
       "size": -1,
       "entry": 0.0598,
-      "sl": 0.0612,
+      "sl": 0.0598,
       "tp": 0.05736,
       "status": "active",
       "locked_profit_usd": 0.0,
-      "note": "FILLED at 0.05980, SL 0.06120, TP 0.05736 (Risk .14)"
+      "note": "SL locked at Breakeven 0.05980 (+1.48R excursion), risk-free runner into 0.05736 TP"
     }
   ],
   "closed": [
