@@ -218,6 +218,22 @@
       "riskR": 3.0,
       "status": "placed-mt5",
       "note": "Intraday POC resistance shelf limit, 0.01 lot capped at .50"
+    },
+    {
+      "id": "DELTA-XAUT-1697287270",
+      "sym": "XAU",
+      "venue": "Delta_India",
+      "productSymbol": "XAUTUSD",
+      "orderId": 1697287270,
+      "side": "SELL_LIMIT",
+      "size": 5,
+      "actualEntry": 3692.0,
+      "actualSL": 3698.5,
+      "actualTP": 3650.0,
+      "riskR": 6.46,
+      "expectedRiskUsd": 0.0325,
+      "status": "placed",
+      "note": "VPVR High Volume Node (HVN) POC retest short limit, 1.05% equity risk, TP into 3650 liquidation magnet"
     }
   ],
   "positions": [
