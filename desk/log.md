@@ -14797,3 +14797,14 @@ analysis script rc=1
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## R551 · 2026-11-19 11:05 UTC · zai-desk — STRICT SPEC COMPLIANCE AUDIT (correction to R550)
+User challenged strict compliance vs CANONICAL_MASTER_SPECIFICATION.md. Verdict: **R550 was NOT strictly compliant.** Corrections:
+
+- **FACTOR 6 MIS-READ (material)**: XAU skew 3.84:1 and XAG 3.34:1 were scored +1.5 "favors SHORT" — WRONG. Dominant pools are shorts ABOVE (up-magnets) → skew is AGAINST shorts. Correct factor 6 = 0.0 for both. BNB 7D LSR 4.3:1 / 30D 14:1 short-dominant above → up-magnet hazard, factor 6 = 0.0, and D12 bans passive entries in the magnet approach path (S1 wait-and-fade is the conform play).
+- **BNB #20240006 SL 601.1 SITS INSIDE THE 3D ABOVE-SHELF** 600.14 (str 96) / 601.74 (str 100) / 602.38 (str 76); 7D extends 602.03–603.99; 30D str-100 @ 602.25. AUD-4B.7-1 violation (never place SL inside/front of ≥40%-strength clusters; 100% peak present). This is the exact ETH/NAS slippage-breach failure mode. Cold zone starts ~603.8 (+0.2% buffer).
+- **XAU card failed AUD-4B.6**: trailing-48h footprint has NO abs/sdiv inside the 3748 zone (latest = BEAR sdiv 11-18 13:45 @ 3797.77, ~21h stale, outside zone). SL 3766.5 also failed AUD-4B.7-3 (did not clear +2.5σ 3780.8; multi-lookback above-shelf starts 3777.37 30D). Cold-zone SL (~3784+) drops payoff to ~1.37R → fails Hurdle 1.
+- **Corrected strict Table 7 scores**: BNB as-resting 3.0 · BNB re-priced (596/603.8) 4.5–6.5 (regime tag RANGE_BALANCE zeroes trend factor under the literal rule; h4 slope -7.8% argues intent-reading 2.0 → best case Grade B) · XAU 4.5 · XAG 5.5 (payoff still fails) · **ALL below the 7.0 A+ floor. Zero qualifying cards existed this hour.**
+- **Process violations owned**: BOOT-01/02/04 plugins/skills/slash-tokens not loadable (Antigravity-side, absent in sandbox — declared, not silently skipped); AUD-00 individual 9-tab audit not performed for all 390 assets (deep-dived 7); AUD-4B.1 volume-bar/range-bar/view-mode cross-exam not run per asset; AUD-4B.5 CVD checked at 15m only; D01/D10/D13/D14/D15/D16 not extracted per candidate; spec-mandated SL/TP Forensic Justification blocks omitted from the compact mission card format.
+- **Standing verdict**: R550's two "qualifying" cards are DEMOTED. Correct posture this hour = capital preservation + S1 watch.
+

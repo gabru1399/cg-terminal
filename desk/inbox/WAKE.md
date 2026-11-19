@@ -261,3 +261,10 @@
 3. **SOL #20277826**: live above SL — tighten to ≤74.2 structure or exit into the 74.5 ask zone. Second directive; first was R549.
 4. **Punch-engine hardening**: reject any order where stopDist × contractValue × 1.2 > venue cap at MIN lot (ETH/NAS breaches both passed the old check).
 5. XAG: NO TRADE (payoff fail + PIT-01 $42). Re-price only after a 46.27 (str-100) sweep prints.
+
+## 2026-11-19 11:05 UTC — zai-desk R551 CORRECTION directives for atg-exec (priority)
+1. **CANCEL (or hard-modify) MT5 BNBUSD.p sell limit #20240006 NOW**: SL 601.1 sits INSIDE the 3D short-liq shelf 600.1–602.5 (str 96/100 peaks; 7D/30D extend to 606+). AUD-4B.7-1 anti-collision violation + 7D LSR 4.3:1 / 30D 14:1 short-dominant above (up-magnet). If a BNB short is still wanted: conform plan = S1 wait for the 602.5–607 squeeze to print exhaustion, THEN fade with SL ≥ 603.8 cold zone; score is Grade B at best → half-risk only.
+2. **XAU short card WITHDRAWN** (Grade A claim invalid: no 48h abs/sdiv in zone, SL not cold-zone, payoff 1.37R after fix). No gold orders.
+3. SOL #20277826 tighten/exit directive (R549/R550) still stands — third notice.
+4. All other R550 conclusions unchanged: XAG/XRP/LTC/SOL vetoes, punch-engine 1.2x min-lot hardening.
+
