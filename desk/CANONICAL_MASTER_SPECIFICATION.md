@@ -139,30 +139,32 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 
 ## SECTION 2. THE MANDATORY PRE-FLIGHT VERIFICATION CHECKLIST & 10 PRE-FLIGHT GATES
 
-[PRE-01] [MANDATORY] [HEADER_PROTOCOL]: On EVERY wake-up, autonomous recursion round, or trading response, the execution MUST OPEN with the completed Pre-Flight Verification Checklist header confirming fresh, uncompressed analysis backed by empirical execution of `python scripts/round_preflight_bootstrap.py`:
+[PRE-01] [MANDATORY] [HEADER_PROTOCOL]: On EVERY wake-up, autonomous recursion round, or trading response, the execution MUST OPEN with the completed Pre-Flight Verification Checklist header confirming fresh, uncompressed analysis backed by empirical execution of `python c:/Users/SIGMA/Documents/cg-terminal/scripts/agent_wake_verification.py --round <N>` (which internally runs `round_preflight_bootstrap.py` AND reads spec lines 1-165):
 
 ```text
 ### ✅ PRE-FLIGHT VERIFICATION CHECKLIST (ROUND R<n>)
-[x] Pre-Flight Verification Checklist COMPLETED in full (Backed by physical run of scripts/round_preflight_bootstrap.py).
-[x] Canonical Master Specification (@[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]) READ (Empirical read_file verified), ANALYZED & STRICTLY FOLLOWED (SOP v2.1.0 mandatory invariant).
+[x] Pre-Flight Verification Checklist COMPLETED in full (Backed by agent_wake_verification.py exit code 0 — physical run, not verbal claim).
+[x] Canonical Master Specification (@[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]) READ (Lines 1-165 printed by agent_wake_verification.py), ANALYZED & STRICTLY FOLLOWED (SOP v2.1.0 mandatory invariant).
 [x] Meta-Cognitive Review of Previous Thinking Chain executed: audited what was missed, latency, blind spots, and applied continuous self-improvement lessons.
-[x] Fresh physical loading of Plugins, Skills & MCP Server Architecture verified LOADED & OPERATIONAL via bootstrap runner (zero cosmetic checkboxes):
+[x] Fresh physical loading of Plugins, Skills & MCP Server Architecture verified LOADED & OPERATIONAL via agent_wake_verification.py JSON manifest (zero cosmetic checkboxes):
     - Plugins (verified on disk): coderabbit, superpowers, trading-skills, chrome-devtools-plugin, gravitas-native.
-    - Skills (verified on disk): gravitas, karpathy-guidelines, ponytail, quant-analyst, backtesting-frameworks.
+    - Skills (verified on disk): gravitas, karpathy-guidelines, ponytail, quant-analyst, backtesting-frameworks, verification-before-completion.
     - MCP Servers: delta-exchange-mcp, agent-memory, chrome-devtools, godkiller-verification, code-review-graph, link-extension, sqlite.
+    - Slash Skills: /plan, /brainstorming, /executing-plans, /karpathy-guidelines, /thinking-model-router, /gravitas, /verification-before-completion.
 [x] 10-Model Cognitive Thinking Chain Lattice verified (/thinking-model-router):
     - First Principles, Pre-Mortem Analysis, Probabilistic Reasoning (EV hurdle >= 2.0R), Second-Order Effects, Red Team / Steel-Manning, Margin of Safety, Via Negativa, Map vs Territory, Theory of Constraints, Lindy Effect.
 [x] 4-Voice Quantitative Desk Debate executed (Alpha Strategist Hunter, Adversarial Risk Officer Red Team, Microstructure Quant Empiricist, Committee Arbiter Synthesizer).
 [x] Karpathy Guidelines & Ponytail Minimal Code Protocol strictly upheld (Think Before Acting, Simplicity First, Surgical Execution, Goal-Driven Empirical Verification).
+[x] /verification-before-completion enforced — no completion claim without fresh empirical evidence.
 [x] Fresh individual analysis of each of the 234 Expanded Universe Assets (Delta Exchange India) & 156 MT5 Blueberry Assets executed from scratch across all 10 modules (Zero cached echoes; endpoint-by-endpoint audit).
 [x] Mandatory Operator Inquest executed: "What are potential high confluence A+ setups for delta and MT5 that can be punched right away?"
 [x] Payoff & Confluence Hurdle enforced (Table 7 Score >= 5.0 pts, Expected Payoff >= 2.00R hard floor).
 [x] Live Delta Exchange India CLOB & Margin Solvency audited (Account #26902927; Net Liquid Equity, Position Margin, Order Margin, Free Cash Buffer).
-[x] Blueberry Funded MT5 Terminal & Shared Account Isolation audited (Login #5126976; Equity $2,603.43, Balance $2,607.18, Risk Cap $10-$15 for A+ High-Confluence min-lot setups / $5-$6 standard, comment='cg_terminal' invariant).
+[x] Blueberry Funded MT5 Terminal & Shared Account Isolation audited (Login #5126976; Equity from manifest, Balance, Risk Cap $10-$15 for A+ High-Confluence min-lot setups / $5-$6 standard, comment='cg_terminal' invariant).
 [x] Gate 7 High-Potential Conviction Protocol & Gate 9 Dynamic Multi-Slot Expansion armed (High isolated leverage permitted on high-potential setups with verified structural stops; slight risk expansion authorized to capture high-confluence setups).
 [x] Operational Invariants armed (Gate 10 BTC Macro Filter, +1.0R Breakeven Invariant, 8-Bar Time Stop, Post-Only Maker Execution, Mark-Price Brackets, Shared Account Isolation).
-[x] Running Trades Liquidation Heatmap & Cold Zone SL Audit completed (Directive 2026-11-18: audit all running trades including co-located algos; ensure SLs are in structural cold zones away from sweep clusters even if risk increases slightly).
-[x] Section 19 Pitfalls Ledger enforced (PIT-01 L2 Deep-Edge Filter, PIT-03 Beta Buffer, PIT-04 Mechanical SOL Ban, PIT-09 Auto-Breakeven, PIT-14 MT5 Comment Isolation, PIT-15 Tab Omission, PIT-16 Cold Zone SL, PIT-17 Macro EMA Spine & S9 Rejection).
+[x] Running Trades Liquidation Heatmap & Cold Zone SL Audit completed (Directive 2026-11-18: audit all running trades including co-located algos; ensure SLs are in structural cold zones away from sweep clusters even if risk increases slightly — PIT-21).
+[x] Section 19 Pitfalls Ledger enforced (PIT-01 through PIT-22 — all 22 empirical invariants including PIT-21 Cold Zone SL, PIT-22 CFD Spread Gate).
 [x] Single Dynamic 1200s Timer verified (Zero duplicate timers, zero cron overlap).
 ```
 
