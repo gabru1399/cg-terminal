@@ -69,11 +69,12 @@ run_command("python c:/Users/SIGMA/Documents/cg-terminal/scripts/agent_wake_veri
 ```
 
 This single atomic call:
-  (a) Reads and prints lines 1-165 of `c:/Users/SIGMA/Documents/cg-terminal/desk/CANONICAL_MASTER_SPECIFICATION.md`
-  (b) Runs `round_preflight_bootstrap.py` and verifies all plugins/skills/MCP/MT5
-  (c) Verifies all 12 critical physical file paths on disk
-  (d) Outputs a structured JSON manifest with live BTC, POC, VWAP, MT5 equity/positions
-  (e) Exits code 0 (proceed) or code 1 (blocked — fix before proceeding)
+  (a) Automatically purges workspace cache and trims RAM working sets (`scripts/clear_cache_memory.py`)
+  (b) Reads and prints lines 1-165 of `c:/Users/SIGMA/Documents/cg-terminal/desk/CANONICAL_MASTER_SPECIFICATION.md`
+  (c) Runs `round_preflight_bootstrap.py` and verifies all plugins/skills/MCP/MT5
+  (d) Verifies all 12 critical physical file paths on disk
+  (e) Outputs a structured JSON manifest with live BTC, POC, VWAP, MT5 equity/positions
+  (f) Exits code 0 (proceed) or code 1 (blocked — fix before proceeding)
 
 If `agent_wake_verification.py` exits non-zero, the agent is BLOCKED from analyzing markets or placing orders. Active runtime tools (`read_file`, MCP queries, terminal commands) MUST be executed empirically on every turn. Zero cached echoes permitted.
 

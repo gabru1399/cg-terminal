@@ -433,6 +433,14 @@ def main():
     print(f"  MANDATORY FIRST TOOL CALL: {datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}")
     print("█" * 80 + "\n")
     
+    # STEP 0: Clear Cache & Memory (Mandatory Directive 2026-11-20)
+    print("[0/5] Clearing Workspace Cache & Memory (Mandatory Pre-Wake)...")
+    try:
+        from clear_cache_memory import main as run_clear_cache
+        run_clear_cache()
+    except Exception as _ce:
+        print(f"[NOTE] Cache purge: {_ce}")
+
     errors = []
     
     # STEP 1: Read & print spec
