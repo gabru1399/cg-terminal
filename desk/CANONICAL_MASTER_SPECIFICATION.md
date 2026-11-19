@@ -407,6 +407,7 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 | **S7** | **High-Volume Absorption Continuation** | Strong Trend (M1) | Retest of absorbed high-volume node in trend direction | Other side of absorption bar | Same-direction liquidation pool |
 | **S8** | **Liquidation Breakout Continuation** | Negative Gamma Expansion | Clean 15m close beyond major liquidation shelf with rising volume | Inside edge of broken shelf | Next liquidity pocket |
 | **S9** | **Dynamic Trend Rejection Candle** | Macro Trend Pullback (Stage 2/4) | 15m/1H spike into EMA 89 or EMA 233 with rejection wick $\ge 2:1$ & volume surge | Beyond tip of rejection wick + 0.1% buffer | Value Area boundary & 100% liquidation pool |
+| **S10** | **In-Trend Consolidation Shelf / Fast EMA Pullback** | Strong Runaway Trend (Stage 2/4) | Retest of tight consolidation shelf high (short) / low (long) or Fast EMA 13/21 with volume decay ($\ge 40\%$) & footprint trap/absorption | Tight structural stop beyond consolidation shelf boundary (+ 0.15% buffer) | T1: Retest prior impulse swing extreme; T2: Measured move ($1.618\times$ impulse); T3: Downstream liquidation pool |
 
 [ARCH-S1] [INVARIANT] [S1_DETAIL]: When LSR >= 2.5:1, wait for cluster to be wiped, wait for exhaustion print (`exh`), wait for taker delta flip, enter on 15m confirmation close back inside value. Grade A+ eligible.
 [ARCH-S2] [INVARIANT] [S2_DETAIL]: Fade value boundaries back to POC; Grade cap: Grade B unless absorption cluster >= $5M; banned when LSR >= 2.5:1.
@@ -417,6 +418,11 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
 [ARCH-S7] [INVARIANT] [S7_DETAIL]: M1 trend pullback; 3-tier limit ladder: 40% at POC, 40% at trend-side +-1σ VWAP, 20% at absorption high/low; stop beyond absorption bar.
 [ARCH-S8] [INVARIANT] [S8_DETAIL]: Continuation through broken liquidation shelf; stop at inside edge of shelf.
 [ARCH-S9] [INVARIANT] [S9_DETAIL]: Spikes into declining EMA 89 or 233 with rejection wick >= 2.0x body on heavy volume (>= 1.5x 20-MA) with footprint exhaustion/trap; enter on 50% wick retest or candle close; stop tightly beyond rejection wick in cold zone. Grade A+ eligible.
+[ARCH-S10] [INVARIANT] [S10_DETAIL]: In-trend shelf / micro-pullback setup. When market is in a strong runaway trend ($|z| \ge 1.0\sigma$, Fib EMA 13 < 89 < 233 on 15m/1h/4h), deep pullbacks to Day/Month POC rarely occur. Price instead pauses in a 4-to-12 bar consolidation shelf (bear flag / bull flag). Invalidation is strictly defined by the shelf boundary:
+  - Entry: Limit order at the top of the shelf (50%-75% retest) or Fast EMA 13/21 touch upon footprint absorption/trap (`abs`, `trap`, `exh`), or on verified breakdown retest.
+  - Stop: Placed tightly beyond the opposite edge of the shelf (+ 0.15% or $0.20\times\text{ATR}$ buffer). Stop distance must be $< 0.40\times$ standard POC stop, producing massive asymmetry ($R \ge 3.0\text{R}$ to $6.0\text{R}$).
+  - Volume Signature: Taker volume during the shelf must decay $> 40\%$ vs impulse leg; CVD flat or forming lower highs (bearish) / higher lows (bullish).
+  - Breakeven Invariant: Move SL to entry immediately upon reaching prior impulse extreme (+1.0R excursion). Grade A eligible if absorption/trap verified.
 
 ---
 
@@ -1040,6 +1046,13 @@ flowchart LR
 [EA-06] [ARCHETYPE] [ITSM_BAYESIAN_PRIOR] [ALL_SLEEVES]:
   - First-30m Return: If first 30 minutes following UTC daily anchor moves > 0.40σ of developing VWAP band, restrict candidate selection for that asset to the SAME direction until day rolls over (Bayesian prior update for Table 7).
 
+[EA-07] [ARCHETYPE] [IN_TREND_SHELF_BREAKDOWN] [SLEEVE_T_SHELF]:
+  - Setup Definition: Following an aggressive impulse drive ($|z| \ge 1.0\sigma$ or breakdown of session VAL/VAH), price forms a 4-to-12 bar horizontal consolidation shelf (bear flag / bull flag) where taker volume decays by $\ge 40\%$ vs impulse leg.
+  - Microstructure Trigger: Price retests shelf resistance / declining Fast EMA 13/21 on 5m/15m with footprint absorption (`abs`) or trapped counter-trend orders (`trap`). Enter via maker limit order at top of shelf or on 15m candle close breaking down from shelf.
+  - Quarter-Shelf Stop Geometry: Stop Loss placed beyond the shelf high (short) / shelf low (long) by $0.25\times$ shelf height:
+    $$\text{Stop Distance} = \text{Shelf Height} \times 1.25 + 0.10\times\text{ATR}_{15}$$
+  - Liquidity Magnet Target: T1 = prior impulse low (40% scale-out + BE lock); T2 = $1.618\times$ impulse extension (40%); T3 = downstream liquidation cluster (20% runner).
+
 ### 22.3 Telemetry Dimension Wiring & Calibration Governance
 
 [EA-WIRE] [MANDATORY] [TELEMETRY_PIPELINE]:
@@ -1052,6 +1065,7 @@ flowchart LR
 | **EA-4 (RVOL ORB)** | Sleeve T-ORB (TradFi) | D05 (VWAP), Day Volume Base (RVOL), Delta L2 Book | 30m Opening Range tracker, RVOL $\ge 1.50$ gate, $0.10\times\text{ATR}_{15}$ stop engine |
 | **EA-5 (Cascade Recovery)** | Sleeve S (Post-Cascade) | D12 (Liq Pace), D15 (Perp CVD), Livebook Spread | Spread-median tracker ($\le 1.30\times$), 6-bar visible TWAP cadence detector |
 | **EA-6 (ITSM Overlay)** | All Sleeves (Prior) | D05–D08 (VWAP Bands & Multi-Timeframe EMA Stack) | First-30m $\pm 0.40\sigma$ VWAP move classifier at 00:00 UTC day anchor |
+| **EA-7 (In-Trend Shelf)** | Sleeve T (Trend Shelf) | D05 (VWAP), D08 (Fast EMA13), D14 (Footprint Delta), D15 (CVD) | 4-12 bar shelf volume decay tracker ($\ge 40\%$), 0.25 shelf-height stop geometry |
 
 [EA-GOV] [MANDATORY] [LIKELIHOOD_RATIO_GOVERNANCE]:
   - Every EA enters desk state as an empirical hypothesis; parameters calibrated against actual exchange fills via Bayesian Likelihood Ratio overlay.
