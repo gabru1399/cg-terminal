@@ -17153,3 +17153,16 @@ ead_file validation.
    - Zero redundant background curl/python scrapers. Next.js engine serves as the single unified WebSocket/in-memory data hub.
 
 **Autonomous Recursion**: Single 1200s dynamic schedule timer armed for Round R605.
+## R668 · 2026-11-19 22:52 UTC · zai-desk
+
+**Market**: BTC 62,176.7 (-1.4%)  SOL 73.12 (-0.7%)  XAU 3,641.17 (-2.8%)  XAG 43.200 (-5.2%)
+**Bias (|score|≥2)**: BNB-5(TREND)  ADA-3(TREND)  DOGE-3(TREND)  AVAX-3(TREND)  XRP-3(TREND)  BTC-3(TREND)  SOL-2(TREND)  LINK-2(TREND)  LTC-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
