@@ -14364,3 +14364,16 @@ analysis script rc=1
   - `DOGEUSD` Maker Limit: Order #1692772135, Sell Limit @ 0.0598, SL 0.06058, TP 0.05736 (3.10R). Open & waiting.
 - **Deduplication Invariant Deployed**: Normalized broker aliases in `auto_punch_engine.py` (LNK->LINK, DOG->DOGE, AVX->AVAX).
 - **Desk Daemon & Next.js Engine**: Both operational without errors.
+## R585 · 2026-11-19 03:43 UTC · zai-desk
+
+**Market**: BTC 62,970.7 (-0.1%)  ETH 1,779.98 (+0.2%)  SOL 73.77 (+0.2%)  XAU 3,715.67 (-0.8%)  XAG 44.960 (-1.3%)
+**Bias (|score|≥2)**: BNB-2(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
