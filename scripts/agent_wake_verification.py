@@ -159,7 +159,7 @@ def verify_critical_paths():
     return results, missing
 
 # ─── STEP 4: FRESH AUDIT OF CURATED 61 ASSETS ────────────────────────────────
-def fetch_json(url, timeout=2.0):
+def fetch_json(url, timeout=4.0):
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=timeout) as response:
@@ -261,7 +261,7 @@ def audit_symbol(sym):
 def audit_full_market():
     t0 = time.time()
     results = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=16) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
         futs = {executor.submit(audit_symbol, sym): sym for sym in CURATED_61}
         for f in concurrent.futures.as_completed(futs):
             try:
