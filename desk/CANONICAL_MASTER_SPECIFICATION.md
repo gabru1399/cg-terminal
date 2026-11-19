@@ -58,7 +58,7 @@ AUTONOMOUS DUAL-VENUE TRADE EXECUTION & RECURSIVE SELF-IMPROVING ENGINE
   - `/gravitas`: Strict ground-before-mutating and evidence-gated completion verification.
   - `/executing-plans`: Execution fidelity to pre-declared implementation blueprints.
 
-[BOOT-05] [INVARIANT] [TOOL_FIRST_EXECUTION]: Verbal recitation of dependency names without active tool invocation is STRICTLY FORBIDDEN. Active runtime tools (`read_file`, MCP queries, terminal commands) MUST be executed empirically on every turn.
+[BOOT-05] [INVARIANT] [DETERMINISTIC_PREFLIGHT_BOOTSTRAP]: Verbal recitation of dependency names without physical runtime tool execution is STRICTLY FORBIDDEN. On EVERY activation, round, or timer expiration, the agent MUST execute `python scripts/round_preflight_bootstrap.py` as the mandatory first tool call to physically verify on-disk plugins, skills, MT5 status, and spec timestamps before emitting analysis. Active runtime tools (`read_file`, MCP queries, terminal commands) MUST be executed empirically on every turn.
 
 ---
 
