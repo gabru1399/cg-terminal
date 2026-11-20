@@ -24,7 +24,9 @@
       "XPT": "XPTUSD",
       "USO": "USOUSD",
       "UKO": "UKOUSD"
-    }
+    },
+    "execution_mode": "LIVE",
+    "operator_authorized_at": "2026-11-20T17:00:26.403093+00:00"
   },
   "analysis": {
     "last_round": "R768",
@@ -11268,7 +11270,7 @@
       "withdrawReason": "debate lost (FOR 3/AGAINST 3) on fresh data"
     }
   ],
-  "updatedAt": 1795170546339,
+  "updatedAt": "2026-11-20T17:00:26.403108+00:00",
   "closedPositions": [
     {
       "ticket": 210050569,
