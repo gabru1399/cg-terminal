@@ -18584,3 +18584,24 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+
+## R639 — 2026-11-20 10:45 UTC — Dual-Venue Order-Flow Canonical Audit & Verification Cycle (AUDIT Mode)
+- **Pre-Flight Bootstrap**: `agent_wake_verification.py --round 639` passed with Exit Code 0 (WAKE_RECEIPT SHA-256: `6b2ed989fed24494a8051e74eac187dedd2afb88de97c5e33f5a1bd7bf24d5cf`, spec size 171,544 bytes). Pinned SOP hash used for all section reads. All 12 critical paths, plugins, skills, and MT5 IPC verified.
+- **Mode Enforced**: `AUDIT` mode active (read-only for venues; zero unratified live mutations sent to CLOBs).
+- **Active Orders Reconciled**:
+  * Delta TRXUSD (#1698638980): SELL_LIMIT 20 @ 0.31000 (Post-Only Maker), SL 0.31140 (Cold Zone beyond Day High), TP 0.30614 ($4.53M Long Liq Magnet, 2.76R net payoff). Confluence 10.5 pts (Grade A+). Status: OPEN / RATIFIED KEEP.
+  * Delta DOTUSD (#1698114560): SELL_LIMIT 2 @ 0.712, SL 0.724, TP 0.672. Status: OPEN / RATIFIED KEEP.
+  * Delta XAUTUSD (#1697287270): SELL_LIMIT 5 @ 3692.00, SL 3698.50, TP 3650.00 (DMR-01 Dormant Gold Hedge). Status: OPEN / RATIFIED KEEP.
+  * MT5 BNBUSD.p (#20286769): SELL_LIMIT 0.79 @ 602.50, SL 609.50, TP 566.00 (S1 sweep setup, 5.21R payoff). Status: OPEN / RATIFIED KEEP.
+  * MT5 ETHUSD.pi (#20293581): SELL_LIMIT 0.27 @ 1838.50, SL 1858.80, TP 1785.00 (S1 sweep setup, 3.34R payoff). Status: OPEN / RATIFIED KEEP.
+  * MT5 XAUUSD.pi (#20297864): SELL_LIMIT 0.01 @ 3741.50, SL 3747.00, TP 3725.00 (S3 wall defense, 3.08R payoff). Status: OPEN / RATIFIED KEEP.
+- **Running Positions Audit**:
+  * MT5 EURUSD.pi (#20297836): Short 0.02 @ 1.10026, Current 1.09668, SL 1.10026 (BE Locked In), TP 1.09550. Floating Profit: +$7.16 USD (+1.99R excursion; 11.8 pips to TP). Gate 6 / P5-04 satisfied. Downside risk $0.00 USD.
+  * MT5 BTCUSD.pi (#20335916): Short 0.01 @ 61,800.0, Current 62,221.0, SL 62,380.0, TP 60,200.0. Floating PnL: -$4.21 USD (-0.72R). Defended by $49.5M Binance ask wall @ 62,300.00. Cold Zone SL intact.
+  * Delta SEIUSD (#17329): Short -5 @ 0.03780, Mark 0.03763959, SL 0.03890 (#1697389187), TP 0.03560 (#1697389188). Floating Profit: +$0.0070 USD (+7.4% ROE).
+  * Co-located EAs: 13 positions verified isolated via magic != 42001 and comment != 'cg_terminal' (MT5-05 invariant strictly enforced).
+- **Margin & Solvency**:
+  * Delta Exchange India: Balance $3.198 USD, Available $2.567 USD, Net Equity $3.324 USD. Margin utilization 18.55% <= 80% ceiling (Gate 8 PASS).
+  * Blueberry MT5: Balance $2,631.26 USD, Equity $2,637.43 USD, Free Margin $2,077.12 USD. Margin level 470.71%. Drawdown 0.00% (MT5-02 PASS). Distance to $2,250 floor: $387.43 USD. Distance to Phase 1 Target ($2,700): $62.57 USD (81.3% complete).
+- **Swarm & Cognitive Consensus**: 8-Voice Council, 10 Mental Models, 11 Socratic Gates, 10 INQ Inquests, and 22 PIT rules evaluated and serialized under `data/round-evidence/R639/`.
