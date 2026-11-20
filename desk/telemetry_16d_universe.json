@@ -1,7 +1,7 @@
 {
   "version": "SOP_v2.1.0_16D_TELEMETRY",
-  "generated_at_utc": "2026-11-20T06:44:58Z",
-  "generation_duration_seconds": 5.45,
+  "generated_at_utc": "2026-11-20T06:48:24Z",
+  "generation_duration_seconds": 5.47,
   "total_assets_dumped": 5,
   "summary": {
     "qualified_a_plus_count": 0,
@@ -13,1007 +13,10 @@
     "veto_count": 4
   },
   "assets": {
-    "BTC": {
-      "sym": "BTC",
-      "price": 61790.5,
-      "timestamp_utc": "2026-11-20T06:44:56Z",
-      "dimensions": {
-        "D01": {
-          "dimension": "D01",
-          "name": "Spot/Broker Basis Offset",
-          "last_price": 61790.5,
-          "bid": null,
-          "ask": null,
-          "basis_pct": 0.0,
-          "pass": true
-        },
-        "D02": {
-          "dimension": "D02",
-          "name": "Auction Market Profile (VAL/POC/VAH)",
-          "session_8h": {
-            "val": 61538.89166666666,
-            "poc": 61946.831666666665,
-            "vah": 62173.465000000004,
-            "volume_usd": 5493897639.997798
-          },
-          "day_utc": {
-            "val": 61470.901666666665,
-            "poc": 62105.475,
-            "vah": 62128.138333333336,
-            "volume_usd": 4721108748.817396
-          },
-          "month_utc": {
-            "val": 65159.028333333335,
-            "poc": 75789.64166666666,
-            "vah": 81104.94833333333
-          },
-          "va_status": "INSIDE_VA",
-          "pass": true
-        },
-        "D03": {
-          "dimension": "D03",
-          "name": "Day VWAP & Z-Score Bands",
-          "vwap": 61840.53104175645,
-          "bands": {
-            "plus_1sd": 62109.78,
-            "plus_2sd": 62379.04,
-            "plus_3sd": 62648.29,
-            "minus_1sd": 61571.28,
-            "minus_2sd": 61302.03,
-            "minus_3sd": 61032.78
-          },
-          "z_score": -0.19,
-          "regime": "DISCOUNT",
-          "pass": true
-        },
-        "D04": {
-          "dimension": "D04",
-          "name": "Trend Momentum & Multi-TF EMA Stacks",
-          "stacks": {
-            "15m": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
-            },
-            "1h": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
-            },
-            "4h": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
-            },
-            "1d": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
-            }
-          },
-          "h4_trend": "CHOP_COMPRESSION",
-          "d1_trend": "CHOP_COMPRESSION",
-          "pass": false
-        },
-        "D05": {
-          "dimension": "D05",
-          "name": "Multi-TF RSI(14) Momentum",
-          "rsi_mtf": {
-            "15m": {
-              "rsi14": null,
-              "state": "NEUTRAL"
-            },
-            "1h": {
-              "rsi14": null,
-              "state": "NEUTRAL"
-            },
-            "4h": {
-              "rsi14": null,
-              "state": "NEUTRAL"
-            },
-            "1d": {
-              "rsi14": null,
-              "state": "NEUTRAL"
-            }
-          },
-          "pass": false
-        },
-        "D06": {
-          "dimension": "D06",
-          "name": "Footprint Bar Delta & Intra-Bar POC",
-          "bars_sampled": 6,
-          "recent_bars": [
-            {
-              "ts": 1795152600,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            },
-            {
-              "ts": 1795153500,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            },
-            {
-              "ts": 1795154400,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            },
-            {
-              "ts": 1795155300,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            },
-            {
-              "ts": 1795156200,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            },
-            {
-              "ts": 1795157100,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            }
-          ],
-          "cumulative_delta_6bars": 0.0,
-          "tape_bias": "TAKER_SELLING"
-        },
-        "D07": {
-          "dimension": "D07",
-          "name": "Discrete Footprint Signals",
-          "signal_count": 43,
-          "signals": [
-            {
-              "bar_type": "unknown",
-              "type": "sdiv",
-              "side": "buy",
-              "price": 64146,
-              "ts": 1794906000,
-              "label": "SDIV (BUY)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "abs",
-              "side": "buy",
-              "price": 64161.3,
-              "ts": 1794906900,
-              "label": "ABS (BUY)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "div",
-              "side": "sell",
-              "price": 64464.9,
-              "ts": 1794914100,
-              "label": "DIV (SELL)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "exh",
-              "side": "sell",
-              "price": 64833.6,
-              "ts": 1794979800,
-              "label": "EXH (SELL)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "sdiv",
-              "side": "sell",
-              "price": 64833.6,
-              "ts": 1794979800,
-              "label": "SDIV (SELL)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "trap",
-              "side": "buy",
-              "price": 62030.8,
-              "ts": 1795041900,
-              "label": "TRAP (BUY)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "sdiv",
-              "side": "sell",
-              "price": 63266,
-              "ts": 1795045500,
-              "label": "SDIV (SELL)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "abs",
-              "side": "buy",
-              "price": 62621.7,
-              "ts": 1795047300,
-              "label": "ABS (BUY)"
-            }
-          ],
-          "top_signal": "SDIV (BUY)"
-        },
-        "D08": {
-          "dimension": "D08",
-          "name": "Cumulative Volume Delta (CVD)",
-          "quadrant": "spot-bid",
-          "taker_buy_share_pct": null,
-          "latest_divergence": {
-            "type": "bull",
-            "ts": 1795113000000,
-            "price": 62200
-          },
-          "perp_cvd": -4212,
-          "spot_cvd": 0,
-          "pass": true
-        },
-        "D09": {
-          "dimension": "D09",
-          "name": "Order Book Walls & Depth across Spreads",
-          "spread_depth_imbalance": {
-            "band_0_5pct": null,
-            "band_1_0pct": null,
-            "band_2_0pct": null,
-            "band_5_0pct": null
-          },
-          "confirmed_walls_count": 0,
-          "walls": [],
-          "pass": true
-        },
-        "D10": {
-          "dimension": "D10",
-          "name": "Large Resting Orders (LTO >= $50K)",
-          "orders_count": 0,
-          "largest_orders": [],
-          "net_wall_usd": 0
-        },
-        "D11": {
-          "dimension": "D11",
-          "name": "Liquidation Clusters (3D Lookback)",
-          "nearest_short_cluster_above": null,
-          "nearest_long_cluster_below": null,
-          "cold_zone_short_sl": null,
-          "cold_zone_long_sl": null
-        },
-        "D12": {
-          "dimension": "D12",
-          "name": "Liquidation Skew Ratio (LSR) & Magnet Gate",
-          "lsr": 1.0,
-          "magnet_gate_status": "PASSIVE_LIMIT_ALLOWED",
-          "pass": true
-        },
-        "D13": {
-          "dimension": "D13",
-          "name": "Options GEX & Gamma Flip",
-          "supported": true,
-          "gamma_regime": "NEUTRAL_GEX"
-        },
-        "D14": {
-          "dimension": "D14",
-          "name": "Open Interest & 24h Change",
-          "oi_usd": null,
-          "oi_change_24h_pct": 0.0,
-          "pass": true
-        },
-        "D15": {
-          "dimension": "D15",
-          "name": "Microstructure Spread & Friction",
-          "spread_usd": 0.0,
-          "spread_bps": 0.0,
-          "pass": true
-        },
-        "D16": {
-          "dimension": "D16",
-          "name": "Athena Oracle & Confluence Synthesis",
-          "oracle_score": 50,
-          "mythological_breakdown": {
-            "apollo_trend": null,
-            "poseidon_flow": null,
-            "hades_liquidity": null,
-            "zeus_whales": null,
-            "atlas_walls": null,
-            "nemesis_funding": null
-          },
-          "confluence_score_11_5": 6.0,
-          "best_archetype": "M1_TREND_PULLBACK",
-          "best_r_multiple": 0.9070605363322465,
-          "qualification_status": "NO TRADE (VETO)"
-        }
-      },
-      "qualification": "NO TRADE (VETO)",
-      "score": 6.0,
-      "best_r": 0.9070605363322465
-    },
-    "ETH": {
-      "sym": "ETH",
-      "price": 1742.91,
-      "timestamp_utc": "2026-11-20T06:44:56Z",
-      "dimensions": {
-        "D01": {
-          "dimension": "D01",
-          "name": "Spot/Broker Basis Offset",
-          "last_price": 1742.91,
-          "bid": null,
-          "ask": null,
-          "basis_pct": 0.0,
-          "pass": true
-        },
-        "D02": {
-          "dimension": "D02",
-          "name": "Auction Market Profile (VAL/POC/VAH)",
-          "session_8h": {
-            "val": 1721.9554166666665,
-            "poc": 1739.53875,
-            "vah": 1750.9679166666665,
-            "volume_usd": 3053952827.195262
-          },
-          "day_utc": {
-            "val": 1721.9554166666665,
-            "poc": 1739.53875,
-            "vah": 1747.4512499999998,
-            "volume_usd": 2768985186.35016
-          },
-          "month_utc": {
-            "val": 1713.0930833333334,
-            "poc": 1811.75175,
-            "vah": 2231.0510833333333
-          },
-          "va_status": "INSIDE_VA",
-          "pass": true
-        },
-        "D03": {
-          "dimension": "D03",
-          "name": "Day VWAP & Z-Score Bands",
-          "vwap": 1739.6362715038908,
-          "bands": {
-            "plus_1sd": 1750.06,
-            "plus_2sd": 1760.48,
-            "plus_3sd": 1770.9,
-            "minus_1sd": 1729.22,
-            "minus_2sd": 1718.79,
-            "minus_3sd": 1708.37
-          },
-          "z_score": 0.31,
-          "regime": "PREMIUM",
-          "pass": true
-        },
-        "D04": {
-          "dimension": "D04",
-          "name": "Trend Momentum & Multi-TF EMA Stacks",
-          "stacks": {
-            "15m": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
-            },
-            "1h": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
-            },
-            "4h": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
-            },
-            "1d": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
-            }
-          },
-          "h4_trend": "CHOP_COMPRESSION",
-          "d1_trend": "CHOP_COMPRESSION",
-          "pass": false
-        },
-        "D05": {
-          "dimension": "D05",
-          "name": "Multi-TF RSI(14) Momentum",
-          "rsi_mtf": {
-            "15m": {
-              "rsi14": null,
-              "state": "NEUTRAL"
-            },
-            "1h": {
-              "rsi14": null,
-              "state": "NEUTRAL"
-            },
-            "4h": {
-              "rsi14": null,
-              "state": "NEUTRAL"
-            },
-            "1d": {
-              "rsi14": null,
-              "state": "NEUTRAL"
-            }
-          },
-          "pass": false
-        },
-        "D06": {
-          "dimension": "D06",
-          "name": "Footprint Bar Delta & Intra-Bar POC",
-          "bars_sampled": 6,
-          "recent_bars": [
-            {
-              "ts": 1795152600,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            },
-            {
-              "ts": 1795153500,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            },
-            {
-              "ts": 1795154400,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            },
-            {
-              "ts": 1795155300,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            },
-            {
-              "ts": 1795156200,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            },
-            {
-              "ts": 1795157100,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            }
-          ],
-          "cumulative_delta_6bars": 0.0,
-          "tape_bias": "TAKER_SELLING"
-        },
-        "D07": {
-          "dimension": "D07",
-          "name": "Discrete Footprint Signals",
-          "signal_count": 62,
-          "signals": [
-            {
-              "bar_type": "unknown",
-              "type": "trap",
-              "side": "sell",
-              "price": 1843.16,
-              "ts": 1794892500,
-              "label": "TRAP (SELL)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "exh",
-              "side": "buy",
-              "price": 1815.14,
-              "ts": 1794897000,
-              "label": "EXH (BUY)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "div",
-              "side": "buy",
-              "price": 1790.19,
-              "ts": 1794911400,
-              "label": "DIV (BUY)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "abs",
-              "side": "buy",
-              "price": 1795.98,
-              "ts": 1794950100,
-              "label": "ABS (BUY)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "sdiv",
-              "side": "sell",
-              "price": 1817.4,
-              "ts": 1794951000,
-              "label": "SDIV (SELL)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "exh",
-              "side": "buy",
-              "price": 1795.66,
-              "ts": 1794967200,
-              "label": "EXH (BUY)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "abs",
-              "side": "buy",
-              "price": 1806.72,
-              "ts": 1794989700,
-              "label": "ABS (BUY)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "exh",
-              "side": "sell",
-              "price": 1808,
-              "ts": 1795069800,
-              "label": "EXH (SELL)"
-            }
-          ],
-          "top_signal": "TRAP (SELL)"
-        },
-        "D08": {
-          "dimension": "D08",
-          "name": "Cumulative Volume Delta (CVD)",
-          "quadrant": "neutral",
-          "taker_buy_share_pct": null,
-          "latest_divergence": null,
-          "perp_cvd": null,
-          "spot_cvd": null,
-          "pass": false
-        },
-        "D09": {
-          "dimension": "D09",
-          "name": "Order Book Walls & Depth across Spreads",
-          "spread_depth_imbalance": {
-            "band_0_5pct": null,
-            "band_1_0pct": null,
-            "band_2_0pct": null,
-            "band_5_0pct": null
-          },
-          "confirmed_walls_count": 0,
-          "walls": [],
-          "pass": true
-        },
-        "D10": {
-          "dimension": "D10",
-          "name": "Large Resting Orders (LTO >= $50K)",
-          "orders_count": 0,
-          "largest_orders": [],
-          "net_wall_usd": 0
-        },
-        "D11": {
-          "dimension": "D11",
-          "name": "Liquidation Clusters (3D Lookback)",
-          "nearest_short_cluster_above": null,
-          "nearest_long_cluster_below": null,
-          "cold_zone_short_sl": null,
-          "cold_zone_long_sl": null
-        },
-        "D12": {
-          "dimension": "D12",
-          "name": "Liquidation Skew Ratio (LSR) & Magnet Gate",
-          "lsr": 1.0,
-          "magnet_gate_status": "PASSIVE_LIMIT_ALLOWED",
-          "pass": true
-        },
-        "D13": {
-          "dimension": "D13",
-          "name": "Options GEX & Gamma Flip",
-          "supported": true,
-          "gamma_regime": "NEUTRAL_GEX"
-        },
-        "D14": {
-          "dimension": "D14",
-          "name": "Open Interest & 24h Change",
-          "oi_usd": null,
-          "oi_change_24h_pct": 0.0,
-          "pass": true
-        },
-        "D15": {
-          "dimension": "D15",
-          "name": "Microstructure Spread & Friction",
-          "spread_usd": 0.0,
-          "spread_bps": 0.0,
-          "pass": true
-        },
-        "D16": {
-          "dimension": "D16",
-          "name": "Athena Oracle & Confluence Synthesis",
-          "oracle_score": 49,
-          "mythological_breakdown": {
-            "apollo_trend": null,
-            "poseidon_flow": null,
-            "hades_liquidity": null,
-            "zeus_whales": null,
-            "atlas_walls": null,
-            "nemesis_funding": null
-          },
-          "confluence_score_11_5": 5.0,
-          "best_archetype": "NO_TRADE",
-          "best_r_multiple": 0.0,
-          "qualification_status": "NO TRADE (VETO)"
-        }
-      },
-      "qualification": "NO TRADE (VETO)",
-      "score": 5.0,
-      "best_r": 0.0
-    },
-    "BNB": {
-      "sym": "BNB",
-      "price": 571.49,
-      "timestamp_utc": "2026-11-20T06:44:56Z",
-      "dimensions": {
-        "D01": {
-          "dimension": "D01",
-          "name": "Spot/Broker Basis Offset",
-          "last_price": 571.49,
-          "bid": null,
-          "ask": null,
-          "basis_pct": 0.0,
-          "pass": true
-        },
-        "D02": {
-          "dimension": "D02",
-          "name": "Auction Market Profile (VAL/POC/VAH)",
-          "session_8h": {
-            "val": 567.01175,
-            "poc": 571.95275,
-            "vah": 577.1682500000001,
-            "volume_usd": 116693069.86630003
-          },
-          "day_utc": {
-            "val": 567.56075,
-            "poc": 571.95275,
-            "vah": 576.3447500000001,
-            "volume_usd": 106730859.92690003
-          },
-          "month_utc": {
-            "val": 566.66825,
-            "poc": 591.68175,
-            "vah": 694.36875
-          },
-          "va_status": "INSIDE_VA",
-          "pass": true
-        },
-        "D03": {
-          "dimension": "D03",
-          "name": "Day VWAP & Z-Score Bands",
-          "vwap": 573.6708259957014,
-          "bands": {
-            "plus_1sd": 577.58,
-            "plus_2sd": 581.49,
-            "plus_3sd": 585.41,
-            "minus_1sd": 569.76,
-            "minus_2sd": 565.85,
-            "minus_3sd": 561.94
-          },
-          "z_score": -0.56,
-          "regime": "DISCOUNT",
-          "pass": true
-        },
-        "D04": {
-          "dimension": "D04",
-          "name": "Trend Momentum & Multi-TF EMA Stacks",
-          "stacks": {
-            "15m": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
-            },
-            "1h": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
-            },
-            "4h": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
-            },
-            "1d": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
-            }
-          },
-          "h4_trend": "CHOP_COMPRESSION",
-          "d1_trend": "CHOP_COMPRESSION",
-          "pass": false
-        },
-        "D05": {
-          "dimension": "D05",
-          "name": "Multi-TF RSI(14) Momentum",
-          "rsi_mtf": {
-            "15m": {
-              "rsi14": null,
-              "state": "NEUTRAL"
-            },
-            "1h": {
-              "rsi14": null,
-              "state": "NEUTRAL"
-            },
-            "4h": {
-              "rsi14": null,
-              "state": "NEUTRAL"
-            },
-            "1d": {
-              "rsi14": null,
-              "state": "NEUTRAL"
-            }
-          },
-          "pass": false
-        },
-        "D06": {
-          "dimension": "D06",
-          "name": "Footprint Bar Delta & Intra-Bar POC",
-          "bars_sampled": 6,
-          "recent_bars": [
-            {
-              "ts": 1795152600,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            },
-            {
-              "ts": 1795153500,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            },
-            {
-              "ts": 1795154400,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            },
-            {
-              "ts": 1795155300,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            },
-            {
-              "ts": 1795156200,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            },
-            {
-              "ts": 1795157100,
-              "close": null,
-              "delta": null,
-              "delta_pct": null,
-              "buy_usd": null,
-              "sell_usd": null,
-              "bar_poc": null
-            }
-          ],
-          "cumulative_delta_6bars": 0.0,
-          "tape_bias": "TAKER_SELLING"
-        },
-        "D07": {
-          "dimension": "D07",
-          "name": "Discrete Footprint Signals",
-          "signal_count": 82,
-          "signals": [
-            {
-              "bar_type": "unknown",
-              "type": "div",
-              "side": "buy",
-              "price": 592.93,
-              "ts": 1794895200,
-              "label": "DIV (BUY)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "abs",
-              "side": "sell",
-              "price": 594.26,
-              "ts": 1794895200,
-              "label": "ABS (SELL)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "div",
-              "side": "buy",
-              "price": 591.63,
-              "ts": 1794896100,
-              "label": "DIV (BUY)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "sdiv",
-              "side": "buy",
-              "price": 589.88,
-              "ts": 1794897000,
-              "label": "SDIV (BUY)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "div",
-              "side": "sell",
-              "price": 594.52,
-              "ts": 1794898800,
-              "label": "DIV (SELL)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "exh",
-              "side": "buy",
-              "price": 589.35,
-              "ts": 1794906900,
-              "label": "EXH (BUY)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "div",
-              "side": "buy",
-              "price": 589.53,
-              "ts": 1794909600,
-              "label": "DIV (BUY)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "div",
-              "side": "buy",
-              "price": 588.05,
-              "ts": 1794911400,
-              "label": "DIV (BUY)"
-            }
-          ],
-          "top_signal": "DIV (BUY)"
-        },
-        "D08": {
-          "dimension": "D08",
-          "name": "Cumulative Volume Delta (CVD)",
-          "quadrant": "neutral",
-          "taker_buy_share_pct": null,
-          "latest_divergence": null,
-          "perp_cvd": null,
-          "spot_cvd": null,
-          "pass": false
-        },
-        "D09": {
-          "dimension": "D09",
-          "name": "Order Book Walls & Depth across Spreads",
-          "spread_depth_imbalance": {
-            "band_0_5pct": null,
-            "band_1_0pct": null,
-            "band_2_0pct": null,
-            "band_5_0pct": null
-          },
-          "confirmed_walls_count": 0,
-          "walls": [],
-          "pass": true
-        },
-        "D10": {
-          "dimension": "D10",
-          "name": "Large Resting Orders (LTO >= $50K)",
-          "orders_count": 0,
-          "largest_orders": [],
-          "net_wall_usd": 0
-        },
-        "D11": {
-          "dimension": "D11",
-          "name": "Liquidation Clusters (3D Lookback)",
-          "nearest_short_cluster_above": null,
-          "nearest_long_cluster_below": null,
-          "cold_zone_short_sl": null,
-          "cold_zone_long_sl": null
-        },
-        "D12": {
-          "dimension": "D12",
-          "name": "Liquidation Skew Ratio (LSR) & Magnet Gate",
-          "lsr": 1.0,
-          "magnet_gate_status": "PASSIVE_LIMIT_ALLOWED",
-          "pass": true
-        },
-        "D13": {
-          "dimension": "D13",
-          "name": "Options GEX & Gamma Flip",
-          "supported": false,
-          "gamma_regime": "N/A (Altcoin/TradFi)"
-        },
-        "D14": {
-          "dimension": "D14",
-          "name": "Open Interest & 24h Change",
-          "oi_usd": null,
-          "oi_change_24h_pct": 0.0,
-          "pass": true
-        },
-        "D15": {
-          "dimension": "D15",
-          "name": "Microstructure Spread & Friction",
-          "spread_usd": 0.0,
-          "spread_bps": 0.0,
-          "pass": true
-        },
-        "D16": {
-          "dimension": "D16",
-          "name": "Athena Oracle & Confluence Synthesis",
-          "oracle_score": 49,
-          "mythological_breakdown": {
-            "apollo_trend": null,
-            "poseidon_flow": null,
-            "hades_liquidity": null,
-            "zeus_whales": null,
-            "atlas_walls": null,
-            "nemesis_funding": null
-          },
-          "confluence_score_11_5": 5.0,
-          "best_archetype": "M1_TREND_PULLBACK",
-          "best_r_multiple": 1.5122274164583889,
-          "qualification_status": "GRADE B WATCH"
-        }
-      },
-      "qualification": "GRADE B WATCH",
-      "score": 5.0,
-      "best_r": 1.5122274164583889
-    },
     "SOL": {
       "sym": "SOL",
       "price": 72.49,
-      "timestamp_utc": "2026-11-20T06:44:57Z",
+      "timestamp_utc": "2026-11-20T06:48:21Z",
       "dimensions": {
         "D01": {
           "dimension": "D01",
@@ -1031,13 +34,18 @@
             "val": 71.86508333333333,
             "poc": 72.19675,
             "vah": 72.95958333333334,
-            "volume_usd": 498775852.52409977
+            "volume_usd": 489981611.6323001
           },
           "day_utc": {
             "val": 71.86508333333333,
             "poc": 72.19675,
             "vah": 72.86008333333334,
             "volume_usd": 435010385.06189984
+          },
+          "week_utc": {
+            "val": 71.14183333333334,
+            "poc": 72.70716666666667,
+            "vah": 74.14205555555556
           },
           "month_utc": {
             "val": 67.478375,
@@ -1068,56 +76,56 @@
           "name": "Trend Momentum & Multi-TF EMA Stacks",
           "stacks": {
             "15m": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
+              "ema13": 72.47,
+              "ema89": 73.2,
+              "ema233": 73.47,
+              "state": "BEARISH_STACK (13<89<233)"
             },
             "1h": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
+              "ema13": 72.9,
+              "ema89": 73.63,
+              "ema233": 76.74,
+              "state": "BEARISH_STACK (13<89<233)"
             },
             "4h": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
+              "ema13": 73.45,
+              "ema89": 79.89,
+              "ema233": 90.08,
+              "state": "BEARISH_STACK (13<89<233)"
             },
             "1d": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
+              "ema13": 77.78,
+              "ema89": 93.99,
+              "ema233": 98.5,
+              "state": "BEARISH_STACK (13<89<233)"
             }
           },
-          "h4_trend": "CHOP_COMPRESSION",
-          "d1_trend": "CHOP_COMPRESSION",
-          "pass": false
+          "h4_trend": "BEARISH_STACK (13<89<233)",
+          "d1_trend": "BEARISH_STACK (13<89<233)",
+          "pass": true
         },
         "D05": {
           "dimension": "D05",
           "name": "Multi-TF RSI(14) Momentum",
           "rsi_mtf": {
             "15m": {
-              "rsi14": null,
+              "rsi14": 47.97,
               "state": "NEUTRAL"
             },
             "1h": {
-              "rsi14": null,
+              "rsi14": 43.56,
               "state": "NEUTRAL"
             },
             "4h": {
-              "rsi14": null,
+              "rsi14": 41.74,
               "state": "NEUTRAL"
             },
             "1d": {
-              "rsi14": null,
-              "state": "NEUTRAL"
+              "rsi14": 26.64,
+              "state": "OVERSOLD (<30)"
             }
           },
-          "pass": false
+          "pass": true
         },
         "D06": {
           "dimension": "D06",
@@ -1188,67 +196,75 @@
           "signal_count": 78,
           "signals": [
             {
-              "bar_type": "unknown",
               "type": "abs",
               "side": "sell",
               "price": 73.97,
+              "bar_type": "time",
               "ts": 1794924900,
+              "delta_contracts": null,
               "label": "ABS (SELL)"
             },
             {
-              "bar_type": "unknown",
               "type": "abs",
               "side": "buy",
               "price": 71.7,
+              "bar_type": "time",
               "ts": 1794934800,
+              "delta_contracts": null,
               "label": "ABS (BUY)"
             },
             {
-              "bar_type": "unknown",
               "type": "abs",
               "side": "sell",
               "price": 74,
+              "bar_type": "time",
               "ts": 1794951000,
+              "delta_contracts": null,
               "label": "ABS (SELL)"
             },
             {
-              "bar_type": "unknown",
               "type": "trap",
               "side": "sell",
               "price": 74,
+              "bar_type": "time",
               "ts": 1794951000,
+              "delta_contracts": null,
               "label": "TRAP (SELL)"
             },
             {
-              "bar_type": "unknown",
               "type": "abs",
               "side": "buy",
               "price": 74.68,
+              "bar_type": "time",
               "ts": 1794978000,
+              "delta_contracts": null,
               "label": "ABS (BUY)"
             },
             {
-              "bar_type": "unknown",
               "type": "abs",
               "side": "buy",
               "price": 74.35,
+              "bar_type": "time",
               "ts": 1794997800,
+              "delta_contracts": null,
               "label": "ABS (BUY)"
             },
             {
-              "bar_type": "unknown",
               "type": "exh",
               "side": "buy",
               "price": 74.35,
+              "bar_type": "time",
               "ts": 1794997800,
+              "delta_contracts": null,
               "label": "EXH (BUY)"
             },
             {
-              "bar_type": "unknown",
               "type": "trap",
               "side": "buy",
               "price": 74.35,
+              "bar_type": "time",
               "ts": 1794997800,
+              "delta_contracts": null,
               "label": "TRAP (BUY)"
             }
           ],
@@ -1267,35 +283,98 @@
         "D09": {
           "dimension": "D09",
           "name": "Order Book Walls & Depth across Spreads",
-          "spread_depth_imbalance": {
-            "band_0_5pct": null,
-            "band_1_0pct": null,
-            "band_2_0pct": null,
-            "band_5_0pct": null
+          "spread_5pct_imbalance": 0.024,
+          "depth_usd": {
+            "bid_usd": 118188032.30499998,
+            "ask_usd": 112552784.87
           },
-          "confirmed_walls_count": 0,
-          "walls": [],
+          "confirmed_walls_count": 4,
+          "walls": [
+            {
+              "side": "a",
+              "price": 73,
+              "usd": 14673675.136999998,
+              "qty": 200734.27,
+              "distPct": 0.41,
+              "firstSeen": 1795154400000,
+              "ageMs": 2700000,
+              "touched": false
+            },
+            {
+              "side": "a",
+              "price": 73.2,
+              "usd": 7823628.5879999995,
+              "qty": 106734.36,
+              "distPct": 0.69,
+              "firstSeen": 1795135500000,
+              "ageMs": 21600000,
+              "touched": false
+            },
+            {
+              "side": "a",
+              "price": 73.4,
+              "usd": 11602646.790000001,
+              "qty": 157859.14,
+              "distPct": 0.96,
+              "firstSeen": 1795130100000,
+              "ageMs": 27000000,
+              "touched": false
+            },
+            {
+              "side": "a",
+              "price": 73.60000000000001,
+              "usd": 7480121.803,
+              "qty": 101494.19,
+              "distPct": 1.24,
+              "firstSeen": 1795131900000,
+              "ageMs": 25200000,
+              "touched": false
+            }
+          ],
           "pass": true
         },
         "D10": {
           "dimension": "D10",
           "name": "Large Resting Orders (LTO >= $50K)",
           "orders_count": 0,
-          "largest_orders": [],
           "net_wall_usd": 0
         },
         "D11": {
           "dimension": "D11",
           "name": "Liquidation Clusters (3D Lookback)",
-          "nearest_short_cluster_above": null,
-          "nearest_long_cluster_below": null,
-          "cold_zone_short_sl": null,
-          "cold_zone_long_sl": null
+          "nearest_short_cluster_above": {
+            "side": "short",
+            "price": 74.41,
+            "distPct": 2.56,
+            "lev": "Low",
+            "strength": 81.2,
+            "usd": 102900.68999999999,
+            "venues": [
+              "Bybit",
+              "Bitget"
+            ]
+          },
+          "nearest_long_cluster_below": {
+            "side": "long",
+            "price": 72.45,
+            "distPct": -0.14,
+            "lev": "High",
+            "strength": 67.9,
+            "usd": 85994.43000000002,
+            "venues": [
+              "Bybit",
+              "Bitget"
+            ]
+          },
+          "cold_zone_short_sl": 74.6,
+          "cold_zone_long_sl": 72.27,
+          "pass": true
         },
         "D12": {
           "dimension": "D12",
           "name": "Liquidation Skew Ratio (LSR) & Magnet Gate",
-          "lsr": 1.0,
+          "lsr": 1.77,
+          "dominant_side": "SHORTS",
           "magnet_gate_status": "PASSIVE_LIMIT_ALLOWED",
           "pass": true
         },
@@ -1324,27 +403,1106 @@
           "name": "Athena Oracle & Confluence Synthesis",
           "oracle_score": 44,
           "mythological_breakdown": {
-            "apollo_trend": null,
-            "poseidon_flow": null,
-            "hades_liquidity": null,
-            "zeus_whales": null,
-            "atlas_walls": null,
-            "nemesis_funding": null
+            "apollo_trend": 50,
+            "poseidon_flow": 50,
+            "hades_liquidity": 50,
+            "zeus_whales": 50,
+            "atlas_walls": 10,
+            "nemesis_funding": 49
           },
-          "confluence_score_11_5": 6.0,
+          "confluence_score_11_5": 9.5,
           "best_archetype": "NO_TRADE",
           "best_r_multiple": 0.0,
           "qualification_status": "NO TRADE (VETO)"
         }
       },
       "qualification": "NO TRADE (VETO)",
-      "score": 6.0,
+      "score": 9.5,
       "best_r": 0.0
+    },
+    "BTC": {
+      "sym": "BTC",
+      "price": 61790.5,
+      "timestamp_utc": "2026-11-20T06:48:23Z",
+      "dimensions": {
+        "D01": {
+          "dimension": "D01",
+          "name": "Spot/Broker Basis Offset",
+          "last_price": 61790.5,
+          "bid": null,
+          "ask": null,
+          "basis_pct": 0.0,
+          "pass": true
+        },
+        "D02": {
+          "dimension": "D02",
+          "name": "Auction Market Profile (VAL/POC/VAH)",
+          "session_8h": {
+            "val": 61516.22833333333,
+            "poc": 61946.831666666665,
+            "vah": 62150.801666666666,
+            "volume_usd": 5395118221.590399
+          },
+          "day_utc": {
+            "val": 61470.901666666665,
+            "poc": 62105.475,
+            "vah": 62128.138333333336,
+            "volume_usd": 4721108748.817396
+          },
+          "week_utc": {
+            "val": 62902.16222222222,
+            "poc": 64524.148888888885,
+            "vah": 65163.11333333333
+          },
+          "month_utc": {
+            "val": 65159.028333333335,
+            "poc": 75789.64166666666,
+            "vah": 81104.94833333333
+          },
+          "va_status": "INSIDE_VA",
+          "pass": true
+        },
+        "D03": {
+          "dimension": "D03",
+          "name": "Day VWAP & Z-Score Bands",
+          "vwap": 61840.53104175645,
+          "bands": {
+            "plus_1sd": 62109.78,
+            "plus_2sd": 62379.04,
+            "plus_3sd": 62648.29,
+            "minus_1sd": 61571.28,
+            "minus_2sd": 61302.03,
+            "minus_3sd": 61032.78
+          },
+          "z_score": -0.19,
+          "regime": "DISCOUNT",
+          "pass": true
+        },
+        "D04": {
+          "dimension": "D04",
+          "name": "Trend Momentum & Multi-TF EMA Stacks",
+          "stacks": {
+            "15m": {
+              "ema13": 61776.98,
+              "ema89": 62402.59,
+              "ema233": 63161.0,
+              "state": "BEARISH_STACK (13<89<233)"
+            },
+            "1h": {
+              "ema13": 62108.56,
+              "ema89": 63731.63,
+              "ema233": 66785.25,
+              "state": "BEARISH_STACK (13<89<233)"
+            },
+            "4h": {
+              "ema13": 62971.35,
+              "ema89": 68888.44,
+              "ema233": 74264.36,
+              "state": "BEARISH_STACK (13<89<233)"
+            },
+            "1d": {
+              "ema13": 67176.46,
+              "ema89": 75444.39,
+              "ema233": 76690.45,
+              "state": "BEARISH_STACK (13<89<233)"
+            }
+          },
+          "h4_trend": "BEARISH_STACK (13<89<233)",
+          "d1_trend": "BEARISH_STACK (13<89<233)",
+          "pass": true
+        },
+        "D05": {
+          "dimension": "D05",
+          "name": "Multi-TF RSI(14) Momentum",
+          "rsi_mtf": {
+            "15m": {
+              "rsi14": 47.69,
+              "state": "NEUTRAL"
+            },
+            "1h": {
+              "rsi14": 41.32,
+              "state": "NEUTRAL"
+            },
+            "4h": {
+              "rsi14": 32.05,
+              "state": "NEUTRAL"
+            },
+            "1d": {
+              "rsi14": 20.09,
+              "state": "OVERSOLD (<30)"
+            }
+          },
+          "pass": true
+        },
+        "D06": {
+          "dimension": "D06",
+          "name": "Footprint Bar Delta & Intra-Bar POC",
+          "bars_sampled": 6,
+          "recent_bars": [
+            {
+              "ts": 1795152600,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            },
+            {
+              "ts": 1795153500,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            },
+            {
+              "ts": 1795154400,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            },
+            {
+              "ts": 1795155300,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            },
+            {
+              "ts": 1795156200,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            },
+            {
+              "ts": 1795157100,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            }
+          ],
+          "cumulative_delta_6bars": 0.0,
+          "tape_bias": "TAKER_SELLING"
+        },
+        "D07": {
+          "dimension": "D07",
+          "name": "Discrete Footprint Signals",
+          "signal_count": 44,
+          "signals": [
+            {
+              "type": "sdiv",
+              "side": "buy",
+              "price": 64146,
+              "bar_type": "time",
+              "ts": 1794906000,
+              "delta_contracts": 1374.9860300000016,
+              "label": "SDIV (BUY)"
+            },
+            {
+              "type": "abs",
+              "side": "buy",
+              "price": 64161.3,
+              "bar_type": "time",
+              "ts": 1794906900,
+              "delta_contracts": null,
+              "label": "ABS (BUY)"
+            },
+            {
+              "type": "div",
+              "side": "sell",
+              "price": 64464.9,
+              "bar_type": "time",
+              "ts": 1794914100,
+              "delta_contracts": null,
+              "label": "DIV (SELL)"
+            },
+            {
+              "type": "exh",
+              "side": "sell",
+              "price": 64833.6,
+              "bar_type": "time",
+              "ts": 1794979800,
+              "delta_contracts": null,
+              "label": "EXH (SELL)"
+            },
+            {
+              "type": "sdiv",
+              "side": "sell",
+              "price": 64833.6,
+              "bar_type": "time",
+              "ts": 1794979800,
+              "delta_contracts": -1044.4079000000002,
+              "label": "SDIV (SELL)"
+            },
+            {
+              "type": "trap",
+              "side": "buy",
+              "price": 62030.8,
+              "bar_type": "time",
+              "ts": 1795041900,
+              "delta_contracts": null,
+              "label": "TRAP (BUY)"
+            },
+            {
+              "type": "sdiv",
+              "side": "sell",
+              "price": 63266,
+              "bar_type": "time",
+              "ts": 1795045500,
+              "delta_contracts": -5267.590170000009,
+              "label": "SDIV (SELL)"
+            },
+            {
+              "type": "abs",
+              "side": "buy",
+              "price": 62621.7,
+              "bar_type": "time",
+              "ts": 1795047300,
+              "delta_contracts": null,
+              "label": "ABS (BUY)"
+            }
+          ],
+          "top_signal": "SDIV (BUY)"
+        },
+        "D08": {
+          "dimension": "D08",
+          "name": "Cumulative Volume Delta (CVD)",
+          "quadrant": "spot-bid",
+          "taker_buy_share_pct": 49,
+          "latest_divergence": {
+            "type": "bull",
+            "ts": 1795113000000,
+            "price": 62200
+          },
+          "perp_cvd": -4087,
+          "spot_cvd": 0,
+          "pass": true
+        },
+        "D09": {
+          "dimension": "D09",
+          "name": "Order Book Walls & Depth across Spreads",
+          "spread_5pct_imbalance": 0.13,
+          "depth_usd": {
+            "bid_usd": 1276285091.3628001,
+            "ask_usd": 982785687.5402001
+          },
+          "confirmed_walls_count": 34,
+          "walls": [
+            {
+              "side": "a",
+              "price": 61870,
+              "usd": 16081810.59375,
+              "qty": 259.90805,
+              "distPct": 0.01,
+              "firstSeen": 1795148100000,
+              "ageMs": 9000000,
+              "touched": false
+            },
+            {
+              "side": "a",
+              "price": 61850,
+              "usd": 17044874.52045,
+              "qty": 275.56179,
+              "distPct": -0.02,
+              "firstSeen": 1795148100000,
+              "ageMs": 9000000,
+              "touched": true
+            },
+            {
+              "side": "a",
+              "price": 61840,
+              "usd": 17043224.072699998,
+              "qty": 275.57966,
+              "distPct": -0.04,
+              "firstSeen": 1795148100000,
+              "ageMs": 9000000,
+              "touched": true
+            },
+            {
+              "side": "b",
+              "price": 61790,
+              "usd": 18766010.651499998,
+              "qty": 303.6817,
+              "distPct": -0.12,
+              "firstSeen": 1795155300000,
+              "ageMs": 1800000,
+              "touched": false
+            }
+          ],
+          "pass": true
+        },
+        "D10": {
+          "dimension": "D10",
+          "name": "Large Resting Orders (LTO >= $50K)",
+          "orders_count": 0,
+          "net_wall_usd": 0
+        },
+        "D11": {
+          "dimension": "D11",
+          "name": "Liquidation Clusters (3D Lookback)",
+          "nearest_short_cluster_above": {
+            "side": "short",
+            "price": 63994.4,
+            "distPct": 3.59,
+            "lev": "High",
+            "strength": 82.7,
+            "usd": 2185.32,
+            "venues": [
+              "Bitget",
+              "Hyperliquid"
+            ]
+          },
+          "nearest_long_cluster_below": {
+            "side": "long",
+            "price": 61587.9,
+            "distPct": -0.31,
+            "lev": "High",
+            "strength": 54.4,
+            "usd": 1438.56,
+            "venues": [
+              "Bitget",
+              "Hyperliquid"
+            ]
+          },
+          "cold_zone_short_sl": 64154.39,
+          "cold_zone_long_sl": 61433.93,
+          "pass": true
+        },
+        "D12": {
+          "dimension": "D12",
+          "name": "Liquidation Skew Ratio (LSR) & Magnet Gate",
+          "lsr": 2.01,
+          "dominant_side": "SHORTS",
+          "magnet_gate_status": "ELEVATED_SKEW (Caution on Front-Running)",
+          "pass": true
+        },
+        "D13": {
+          "dimension": "D13",
+          "name": "Options GEX & Gamma Flip",
+          "supported": true,
+          "gamma_regime": "NEUTRAL_GEX"
+        },
+        "D14": {
+          "dimension": "D14",
+          "name": "Open Interest & 24h Change",
+          "oi_usd": null,
+          "oi_change_24h_pct": 0.0,
+          "pass": true
+        },
+        "D15": {
+          "dimension": "D15",
+          "name": "Microstructure Spread & Friction",
+          "spread_usd": 0.0,
+          "spread_bps": 0.0,
+          "pass": true
+        },
+        "D16": {
+          "dimension": "D16",
+          "name": "Athena Oracle & Confluence Synthesis",
+          "oracle_score": 48,
+          "mythological_breakdown": {
+            "apollo_trend": 50,
+            "poseidon_flow": 50,
+            "hades_liquidity": 50,
+            "zeus_whales": 50,
+            "atlas_walls": 39,
+            "nemesis_funding": 50
+          },
+          "confluence_score_11_5": 10.5,
+          "best_archetype": "M1_TREND_PULLBACK",
+          "best_r_multiple": 0.9070605363322465,
+          "qualification_status": "NO TRADE (VETO)"
+        }
+      },
+      "qualification": "NO TRADE (VETO)",
+      "score": 10.5,
+      "best_r": 0.9070605363322465
+    },
+    "ETH": {
+      "sym": "ETH",
+      "price": 1743.46,
+      "timestamp_utc": "2026-11-20T06:48:23Z",
+      "dimensions": {
+        "D01": {
+          "dimension": "D01",
+          "name": "Spot/Broker Basis Offset",
+          "last_price": 1743.46,
+          "bid": null,
+          "ask": null,
+          "basis_pct": 0.0,
+          "pass": true
+        },
+        "D02": {
+          "dimension": "D02",
+          "name": "Auction Market Profile (VAL/POC/VAH)",
+          "session_8h": {
+            "val": 1721.9554166666665,
+            "poc": 1739.53875,
+            "vah": 1750.08875,
+            "volume_usd": 3023046260.58393
+          },
+          "day_utc": {
+            "val": 1721.9554166666665,
+            "poc": 1739.53875,
+            "vah": 1747.4512499999998,
+            "volume_usd": 2783737225.2766304
+          },
+          "week_utc": {
+            "val": 1769.3015,
+            "poc": 1805.7457222222222,
+            "vah": 1830.5940555555555
+          },
+          "month_utc": {
+            "val": 1713.0930833333334,
+            "poc": 1811.75175,
+            "vah": 2231.0510833333333
+          },
+          "va_status": "INSIDE_VA",
+          "pass": true
+        },
+        "D03": {
+          "dimension": "D03",
+          "name": "Day VWAP & Z-Score Bands",
+          "vwap": 1739.6574530950288,
+          "bands": {
+            "plus_1sd": 1750.05,
+            "plus_2sd": 1760.45,
+            "plus_3sd": 1770.85,
+            "minus_1sd": 1729.26,
+            "minus_2sd": 1718.86,
+            "minus_3sd": 1708.47
+          },
+          "z_score": 0.37,
+          "regime": "PREMIUM",
+          "pass": true
+        },
+        "D04": {
+          "dimension": "D04",
+          "name": "Trend Momentum & Multi-TF EMA Stacks",
+          "stacks": {
+            "15m": {
+              "ema13": 1738.24,
+              "ema89": 1760.57,
+              "ema233": 1779.95,
+              "state": "BEARISH_STACK (13<89<233)"
+            },
+            "1h": {
+              "ema13": 1751.57,
+              "ema89": 1794.52,
+              "ema233": 1887.22,
+              "state": "BEARISH_STACK (13<89<233)"
+            },
+            "4h": {
+              "ema13": 1776.0,
+              "ema89": 1958.6,
+              "ema233": 2165.94,
+              "state": "BEARISH_STACK (13<89<233)"
+            },
+            "1d": {
+              "ema13": 1903.36,
+              "ema89": 2241.44,
+              "ema233": 2328.29,
+              "state": "BEARISH_STACK (13<89<233)"
+            }
+          },
+          "h4_trend": "BEARISH_STACK (13<89<233)",
+          "d1_trend": "BEARISH_STACK (13<89<233)",
+          "pass": true
+        },
+        "D05": {
+          "dimension": "D05",
+          "name": "Multi-TF RSI(14) Momentum",
+          "rsi_mtf": {
+            "15m": {
+              "rsi14": 51.5,
+              "state": "NEUTRAL"
+            },
+            "1h": {
+              "rsi14": 41.8,
+              "state": "NEUTRAL"
+            },
+            "4h": {
+              "rsi14": 34.97,
+              "state": "NEUTRAL"
+            },
+            "1d": {
+              "rsi14": 22.98,
+              "state": "OVERSOLD (<30)"
+            }
+          },
+          "pass": true
+        },
+        "D06": {
+          "dimension": "D06",
+          "name": "Footprint Bar Delta & Intra-Bar POC",
+          "bars_sampled": 6,
+          "recent_bars": [
+            {
+              "ts": 1795152600,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            },
+            {
+              "ts": 1795153500,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            },
+            {
+              "ts": 1795154400,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            },
+            {
+              "ts": 1795155300,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            },
+            {
+              "ts": 1795156200,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            },
+            {
+              "ts": 1795157100,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            }
+          ],
+          "cumulative_delta_6bars": 0.0,
+          "tape_bias": "TAKER_SELLING"
+        },
+        "D07": {
+          "dimension": "D07",
+          "name": "Discrete Footprint Signals",
+          "signal_count": 0,
+          "signals": [],
+          "top_signal": "NONE"
+        },
+        "D08": {
+          "dimension": "D08",
+          "name": "Cumulative Volume Delta (CVD)",
+          "quadrant": "neutral",
+          "taker_buy_share_pct": null,
+          "latest_divergence": null,
+          "perp_cvd": null,
+          "spot_cvd": null,
+          "pass": false
+        },
+        "D09": {
+          "dimension": "D09",
+          "name": "Order Book Walls & Depth across Spreads",
+          "spread_5pct_imbalance": -0.149,
+          "depth_usd": {
+            "bid_usd": 516248996.39720005,
+            "ask_usd": 697650681.1638502
+          },
+          "confirmed_walls_count": 32,
+          "walls": [
+            {
+              "side": "a",
+              "price": 1742,
+              "usd": 35054840.80725,
+              "qty": 20117.5557,
+              "distPct": 0.14,
+              "firstSeen": 1795155300000,
+              "ageMs": 1800000,
+              "touched": false
+            },
+            {
+              "side": "b",
+              "price": 1737,
+              "usd": 22507965.763749998,
+              "qty": 12954.2249,
+              "distPct": -0.14,
+              "firstSeen": 1795155300000,
+              "ageMs": 1800000,
+              "touched": false
+            },
+            {
+              "side": "a",
+              "price": 1743,
+              "usd": 20616927.77485,
+              "qty": 11825.0231,
+              "distPct": 0.2,
+              "firstSeen": 1795154400000,
+              "ageMs": 2700000,
+              "touched": false
+            },
+            {
+              "side": "a",
+              "price": 1744,
+              "usd": 27395676.148199998,
+              "qty": 15704.0276,
+              "distPct": 0.26,
+              "firstSeen": 1795155300000,
+              "ageMs": 1800000,
+              "touched": false
+            }
+          ],
+          "pass": true
+        },
+        "D10": {
+          "dimension": "D10",
+          "name": "Large Resting Orders (LTO >= $50K)",
+          "orders_count": 0,
+          "net_wall_usd": 0
+        },
+        "D11": {
+          "dimension": "D11",
+          "name": "Liquidation Clusters (3D Lookback)",
+          "nearest_short_cluster_above": {
+            "side": "short",
+            "price": 1840.98,
+            "distPct": 2.87,
+            "lev": "High",
+            "strength": 44.8,
+            "usd": 20166.210000000003,
+            "venues": [
+              "Bitget",
+              "Hyperliquid"
+            ]
+          },
+          "nearest_long_cluster_below": {
+            "side": "long",
+            "price": 1772.15,
+            "distPct": -0.97,
+            "lev": "Mid",
+            "strength": 79.6,
+            "usd": 35878.34000000001,
+            "venues": [
+              "Bybit",
+              "Bitget"
+            ]
+          },
+          "cold_zone_short_sl": 1845.58,
+          "cold_zone_long_sl": 1767.72,
+          "pass": true
+        },
+        "D12": {
+          "dimension": "D12",
+          "name": "Liquidation Skew Ratio (LSR) & Magnet Gate",
+          "lsr": 1.66,
+          "dominant_side": "LONGS",
+          "magnet_gate_status": "PASSIVE_LIMIT_ALLOWED",
+          "pass": true
+        },
+        "D13": {
+          "dimension": "D13",
+          "name": "Options GEX & Gamma Flip",
+          "supported": true,
+          "gamma_regime": "NEUTRAL_GEX"
+        },
+        "D14": {
+          "dimension": "D14",
+          "name": "Open Interest & 24h Change",
+          "oi_usd": null,
+          "oi_change_24h_pct": 0.0,
+          "pass": true
+        },
+        "D15": {
+          "dimension": "D15",
+          "name": "Microstructure Spread & Friction",
+          "spread_usd": 0.0,
+          "spread_bps": 0.0,
+          "pass": true
+        },
+        "D16": {
+          "dimension": "D16",
+          "name": "Athena Oracle & Confluence Synthesis",
+          "oracle_score": 49,
+          "mythological_breakdown": {
+            "apollo_trend": 50,
+            "poseidon_flow": 50,
+            "hades_liquidity": 50,
+            "zeus_whales": 50,
+            "atlas_walls": 46,
+            "nemesis_funding": 45
+          },
+          "confluence_score_11_5": 7.5,
+          "best_archetype": "NO_TRADE",
+          "best_r_multiple": 0.0,
+          "qualification_status": "NO TRADE (VETO)"
+        }
+      },
+      "qualification": "NO TRADE (VETO)",
+      "score": 7.5,
+      "best_r": 0.0
+    },
+    "BNB": {
+      "sym": "BNB",
+      "price": 571.49,
+      "timestamp_utc": "2026-11-20T06:48:24Z",
+      "dimensions": {
+        "D01": {
+          "dimension": "D01",
+          "name": "Spot/Broker Basis Offset",
+          "last_price": 571.49,
+          "bid": null,
+          "ask": null,
+          "basis_pct": 0.0,
+          "pass": true
+        },
+        "D02": {
+          "dimension": "D02",
+          "name": "Auction Market Profile (VAL/POC/VAH)",
+          "session_8h": {
+            "val": 567.01175,
+            "poc": 571.95275,
+            "vah": 576.8937500000001,
+            "volume_usd": 115342907.29060002
+          },
+          "day_utc": {
+            "val": 567.56075,
+            "poc": 571.95275,
+            "vah": 576.3447500000001,
+            "volume_usd": 106730859.92690003
+          },
+          "week_utc": {
+            "val": 583.4097222222223,
+            "poc": 591.9069444444444,
+            "vah": 595.2319444444445
+          },
+          "month_utc": {
+            "val": 566.66825,
+            "poc": 591.68175,
+            "vah": 694.36875
+          },
+          "va_status": "INSIDE_VA",
+          "pass": true
+        },
+        "D03": {
+          "dimension": "D03",
+          "name": "Day VWAP & Z-Score Bands",
+          "vwap": 573.6708259957014,
+          "bands": {
+            "plus_1sd": 577.58,
+            "plus_2sd": 581.49,
+            "plus_3sd": 585.41,
+            "minus_1sd": 569.76,
+            "minus_2sd": 565.85,
+            "minus_3sd": 561.94
+          },
+          "z_score": -0.56,
+          "regime": "DISCOUNT",
+          "pass": true
+        },
+        "D04": {
+          "dimension": "D04",
+          "name": "Trend Momentum & Multi-TF EMA Stacks",
+          "stacks": {
+            "15m": {
+              "ema13": 571.27,
+              "ema89": 579.73,
+              "ema233": 584.84,
+              "state": "BEARISH_STACK (13<89<233)"
+            },
+            "1h": {
+              "ema13": 576.71,
+              "ema89": 588.72,
+              "ema233": 614.15,
+              "state": "BEARISH_STACK (13<89<233)"
+            },
+            "4h": {
+              "ema13": 583.29,
+              "ema89": 632.22,
+              "ema233": 678.78,
+              "state": "BEARISH_STACK (13<89<233)"
+            },
+            "1d": {
+              "ema13": 617.99,
+              "ema89": 688.77,
+              "ema233": 692.83,
+              "state": "BEARISH_STACK (13<89<233)"
+            }
+          },
+          "h4_trend": "BEARISH_STACK (13<89<233)",
+          "d1_trend": "BEARISH_STACK (13<89<233)",
+          "pass": true
+        },
+        "D05": {
+          "dimension": "D05",
+          "name": "Multi-TF RSI(14) Momentum",
+          "rsi_mtf": {
+            "15m": {
+              "rsi14": 44.08,
+              "state": "NEUTRAL"
+            },
+            "1h": {
+              "rsi14": 36.83,
+              "state": "NEUTRAL"
+            },
+            "4h": {
+              "rsi14": 32.52,
+              "state": "NEUTRAL"
+            },
+            "1d": {
+              "rsi14": 24.28,
+              "state": "OVERSOLD (<30)"
+            }
+          },
+          "pass": true
+        },
+        "D06": {
+          "dimension": "D06",
+          "name": "Footprint Bar Delta & Intra-Bar POC",
+          "bars_sampled": 6,
+          "recent_bars": [
+            {
+              "ts": 1795152600,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            },
+            {
+              "ts": 1795153500,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            },
+            {
+              "ts": 1795154400,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            },
+            {
+              "ts": 1795155300,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            },
+            {
+              "ts": 1795156200,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            },
+            {
+              "ts": 1795157100,
+              "close": null,
+              "delta": null,
+              "delta_pct": null,
+              "buy_usd": null,
+              "sell_usd": null,
+              "bar_poc": null
+            }
+          ],
+          "cumulative_delta_6bars": 0.0,
+          "tape_bias": "TAKER_SELLING"
+        },
+        "D07": {
+          "dimension": "D07",
+          "name": "Discrete Footprint Signals",
+          "signal_count": 0,
+          "signals": [],
+          "top_signal": "NONE"
+        },
+        "D08": {
+          "dimension": "D08",
+          "name": "Cumulative Volume Delta (CVD)",
+          "quadrant": "neutral",
+          "taker_buy_share_pct": null,
+          "latest_divergence": null,
+          "perp_cvd": null,
+          "spot_cvd": null,
+          "pass": false
+        },
+        "D09": {
+          "dimension": "D09",
+          "name": "Order Book Walls & Depth across Spreads",
+          "spread_5pct_imbalance": -0.093,
+          "depth_usd": {
+            "bid_usd": 19325496.558000002,
+            "ask_usd": 23275206.731
+          },
+          "confirmed_walls_count": 9,
+          "walls": [
+            {
+              "side": "a",
+              "price": 572,
+              "usd": 5693541.728999999,
+              "qty": 9936.373,
+              "distPct": 0.18,
+              "firstSeen": 1795149000000,
+              "ageMs": 8100000,
+              "touched": false
+            },
+            {
+              "side": "a",
+              "price": 570,
+              "usd": 3979129.9839999997,
+              "qty": 6968.704,
+              "distPct": -0.18,
+              "firstSeen": 1795149900000,
+              "ageMs": 7200000,
+              "touched": true
+            },
+            {
+              "side": "a",
+              "price": 574,
+              "usd": 6082360.925,
+              "qty": 10578.019,
+              "distPct": 0.53,
+              "firstSeen": 1795148100000,
+              "ageMs": 9000000,
+              "touched": false
+            },
+            {
+              "side": "b",
+              "price": 568,
+              "usd": 5227626.0479999995,
+              "qty": 9187.392,
+              "distPct": -0.53,
+              "firstSeen": 1795155300000,
+              "ageMs": 1800000,
+              "touched": false
+            }
+          ],
+          "pass": true
+        },
+        "D10": {
+          "dimension": "D10",
+          "name": "Large Resting Orders (LTO >= $50K)",
+          "orders_count": 0,
+          "net_wall_usd": 0
+        },
+        "D11": {
+          "dimension": "D11",
+          "name": "Liquidation Clusters (3D Lookback)",
+          "nearest_short_cluster_above": {
+            "side": "short",
+            "price": 601.61,
+            "distPct": 3.74,
+            "lev": "Mid",
+            "strength": 90.4,
+            "usd": 1325.3500000000001,
+            "venues": [
+              "Bybit",
+              "Bitget"
+            ]
+          },
+          "nearest_long_cluster_below": {
+            "side": "long",
+            "price": 577.92,
+            "distPct": -0.35,
+            "lev": "Mid",
+            "strength": 57.4,
+            "usd": 842.2700000000003,
+            "venues": [
+              "Bybit",
+              "Bitget"
+            ]
+          },
+          "cold_zone_short_sl": 603.11,
+          "cold_zone_long_sl": 576.48,
+          "pass": true
+        },
+        "D12": {
+          "dimension": "D12",
+          "name": "Liquidation Skew Ratio (LSR) & Magnet Gate",
+          "lsr": 1.5,
+          "dominant_side": "SHORTS",
+          "magnet_gate_status": "PASSIVE_LIMIT_ALLOWED",
+          "pass": true
+        },
+        "D13": {
+          "dimension": "D13",
+          "name": "Options GEX & Gamma Flip",
+          "supported": false,
+          "gamma_regime": "N/A (Altcoin/TradFi)"
+        },
+        "D14": {
+          "dimension": "D14",
+          "name": "Open Interest & 24h Change",
+          "oi_usd": null,
+          "oi_change_24h_pct": 0.0,
+          "pass": true
+        },
+        "D15": {
+          "dimension": "D15",
+          "name": "Microstructure Spread & Friction",
+          "spread_usd": 0.0,
+          "spread_bps": 0.0,
+          "pass": true
+        },
+        "D16": {
+          "dimension": "D16",
+          "name": "Athena Oracle & Confluence Synthesis",
+          "oracle_score": 50,
+          "mythological_breakdown": {
+            "apollo_trend": 50,
+            "poseidon_flow": 50,
+            "hades_liquidity": 50,
+            "zeus_whales": 50,
+            "atlas_walls": 50,
+            "nemesis_funding": 50
+          },
+          "confluence_score_11_5": 7.5,
+          "best_archetype": "M1_TREND_PULLBACK",
+          "best_r_multiple": 1.5122274164583889,
+          "qualification_status": "GRADE B WATCH"
+        }
+      },
+      "qualification": "GRADE B WATCH",
+      "score": 7.5,
+      "best_r": 1.5122274164583889
     },
     "XAU": {
       "sym": "XAU",
       "price": 3560.15,
-      "timestamp_utc": "2026-11-20T06:44:58Z",
+      "timestamp_utc": "2026-11-20T06:48:24Z",
       "dimensions": {
         "D01": {
           "dimension": "D01",
@@ -1359,16 +1517,21 @@
           "dimension": "D02",
           "name": "Auction Market Profile (VAL/POC/VAH)",
           "session_8h": {
-            "val": 3522.0978333333333,
-            "poc": 3554.6684999999998,
-            "vah": 3591.3105,
-            "volume_usd": 2561416152.0025096
+            "val": 3522.0949166666664,
+            "poc": 3552.5424166666667,
+            "vah": 3591.10925,
+            "volume_usd": 2553338240.921312
           },
           "day_utc": {
             "val": 3522.0111666666667,
             "poc": 3553.670833333333,
             "vah": 3570.4318333333335,
             "volume_usd": 2251205160.219308
+          },
+          "week_utc": {
+            "val": 3714.672388888889,
+            "poc": 3867.844388888889,
+            "vah": 3893.3730555555558
           },
           "month_utc": {
             "val": 3836.0135,
@@ -1399,56 +1562,56 @@
           "name": "Trend Momentum & Multi-TF EMA Stacks",
           "stacks": {
             "15m": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
+              "ema13": 3552.34,
+              "ema89": 3632.82,
+              "ema233": 3709.41,
+              "state": "BEARISH_STACK (13<89<233)"
             },
             "1h": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
+              "ema13": 3597.47,
+              "ema89": 3745.52,
+              "ema233": 3843.46,
+              "state": "BEARISH_STACK (13<89<233)"
             },
             "4h": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
+              "ema13": 3684.6,
+              "ema89": 3883.76,
+              "ema233": 4001.2,
+              "state": "BEARISH_STACK (13<89<233)"
             },
             "1d": {
-              "ema13": null,
-              "ema89": null,
-              "ema233": null,
-              "state": "CHOP_COMPRESSION"
+              "ema13": 3823.67,
+              "ema89": 4103.84,
+              "ema233": 4337.96,
+              "state": "BEARISH_STACK (13<89<233)"
             }
           },
-          "h4_trend": "CHOP_COMPRESSION",
-          "d1_trend": "CHOP_COMPRESSION",
-          "pass": false
+          "h4_trend": "BEARISH_STACK (13<89<233)",
+          "d1_trend": "BEARISH_STACK (13<89<233)",
+          "pass": true
         },
         "D05": {
           "dimension": "D05",
           "name": "Multi-TF RSI(14) Momentum",
           "rsi_mtf": {
             "15m": {
-              "rsi14": null,
+              "rsi14": 46.97,
               "state": "NEUTRAL"
             },
             "1h": {
-              "rsi14": null,
-              "state": "NEUTRAL"
+              "rsi14": 23.86,
+              "state": "OVERSOLD (<30)"
             },
             "4h": {
-              "rsi14": null,
-              "state": "NEUTRAL"
+              "rsi14": 16.26,
+              "state": "OVERSOLD (<30)"
             },
             "1d": {
-              "rsi14": null,
-              "state": "NEUTRAL"
+              "rsi14": 24.54,
+              "state": "OVERSOLD (<30)"
             }
           },
-          "pass": false
+          "pass": true
         },
         "D06": {
           "dimension": "D06",
@@ -1461,74 +1624,82 @@
         "D07": {
           "dimension": "D07",
           "name": "Discrete Footprint Signals",
-          "signal_count": 19,
+          "signal_count": 10,
           "signals": [
             {
-              "bar_type": "unknown",
-              "type": "div",
-              "side": "sell",
-              "price": 3882.52,
-              "ts": 1794896100,
-              "label": "DIV (SELL)"
+              "type": "abs",
+              "side": "buy",
+              "price": 3588.4,
+              "bar_type": "vol",
+              "ts": 1795136520,
+              "delta_contracts": null,
+              "label": "ABS (BUY)"
             },
             {
-              "bar_type": "unknown",
+              "type": "abs",
+              "side": "buy",
+              "price": 3532.37,
+              "bar_type": "vol",
+              "ts": 1795141620,
+              "delta_contracts": null,
+              "label": "ABS (BUY)"
+            },
+            {
               "type": "sdiv",
               "side": "buy",
-              "price": 3868.25,
-              "ts": 1794903300,
+              "price": 3521.08,
+              "bar_type": "vol",
+              "ts": 1795151640,
+              "delta_contracts": 7641.242999999973,
               "label": "SDIV (BUY)"
             },
             {
-              "bar_type": "unknown",
-              "type": "sdiv",
-              "side": "buy",
-              "price": 3859,
-              "ts": 1794912300,
-              "label": "SDIV (BUY)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "sdiv",
-              "side": "buy",
-              "price": 3842.81,
-              "ts": 1794922200,
-              "label": "SDIV (BUY)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "exh",
-              "side": "sell",
-              "price": 3881.68,
-              "ts": 1794926700,
-              "label": "EXH (SELL)"
-            },
-            {
-              "bar_type": "unknown",
-              "type": "sdiv",
-              "side": "buy",
-              "price": 3848.95,
-              "ts": 1794945600,
-              "label": "SDIV (BUY)"
-            },
-            {
-              "bar_type": "unknown",
               "type": "sdiv",
               "side": "sell",
-              "price": 3797.77,
-              "ts": 1795009500,
+              "price": 3698.64,
+              "bar_type": "range",
+              "ts": 1795108800,
+              "delta_contracts": -4287.63700000001,
               "label": "SDIV (SELL)"
             },
             {
-              "bar_type": "unknown",
-              "type": "exh",
+              "type": "trap",
               "side": "buy",
-              "price": 3712.11,
-              "ts": 1795097700,
-              "label": "EXH (BUY)"
+              "price": 3588.4,
+              "bar_type": "range",
+              "ts": 1795136520,
+              "delta_contracts": null,
+              "label": "TRAP (BUY)"
+            },
+            {
+              "type": "div",
+              "side": "sell",
+              "price": 3579.84,
+              "bar_type": "range",
+              "ts": 1795138980,
+              "delta_contracts": null,
+              "label": "DIV (SELL)"
+            },
+            {
+              "type": "div",
+              "side": "buy",
+              "price": 3552.79,
+              "bar_type": "range",
+              "ts": 1795143060,
+              "delta_contracts": null,
+              "label": "DIV (BUY)"
+            },
+            {
+              "type": "abs",
+              "side": "buy",
+              "price": 3527.67,
+              "bar_type": "range",
+              "ts": 1795144320,
+              "delta_contracts": null,
+              "label": "ABS (BUY)"
             }
           ],
-          "top_signal": "DIV (SELL)"
+          "top_signal": "ABS (BUY)"
         },
         "D08": {
           "dimension": "D08",
@@ -1543,11 +1714,10 @@
         "D09": {
           "dimension": "D09",
           "name": "Order Book Walls & Depth across Spreads",
-          "spread_depth_imbalance": {
-            "band_0_5pct": null,
-            "band_1_0pct": null,
-            "band_2_0pct": null,
-            "band_5_0pct": null
+          "spread_5pct_imbalance": 0.0,
+          "depth_usd": {
+            "bid_usd": null,
+            "ask_usd": null
           },
           "confirmed_walls_count": 0,
           "walls": [],
@@ -1557,23 +1727,46 @@
           "dimension": "D10",
           "name": "Large Resting Orders (LTO >= $50K)",
           "orders_count": 0,
-          "largest_orders": [],
           "net_wall_usd": 0
         },
         "D11": {
           "dimension": "D11",
           "name": "Liquidation Clusters (3D Lookback)",
-          "nearest_short_cluster_above": null,
-          "nearest_long_cluster_below": null,
-          "cold_zone_short_sl": null,
-          "cold_zone_long_sl": null
+          "nearest_short_cluster_above": {
+            "side": "short",
+            "price": 3699.63,
+            "distPct": 3.85,
+            "lev": "High",
+            "strength": 91.9,
+            "usd": 2893.7599999999998,
+            "venues": [
+              "Bitget",
+              "Gate"
+            ]
+          },
+          "nearest_long_cluster_below": {
+            "side": "long",
+            "price": 3560.99,
+            "distPct": -0.04,
+            "lev": "High",
+            "strength": 47.5,
+            "usd": 1493.92,
+            "venues": [
+              "Bitget",
+              "Gate"
+            ]
+          },
+          "cold_zone_short_sl": 3708.88,
+          "cold_zone_long_sl": 3552.09,
+          "pass": true
         },
         "D12": {
           "dimension": "D12",
           "name": "Liquidation Skew Ratio (LSR) & Magnet Gate",
-          "lsr": 1.0,
-          "magnet_gate_status": "PASSIVE_LIMIT_ALLOWED",
-          "pass": true
+          "lsr": 13.13,
+          "dominant_side": "SHORTS",
+          "magnet_gate_status": "PASSIVE_LIMIT_BANNED (Mandates S1 Sweep-and-Reclaim)",
+          "pass": false
         },
         "D13": {
           "dimension": "D13",
@@ -1598,23 +1791,23 @@
         "D16": {
           "dimension": "D16",
           "name": "Athena Oracle & Confluence Synthesis",
-          "oracle_score": null,
+          "oracle_score": 50,
           "mythological_breakdown": {
-            "apollo_trend": null,
-            "poseidon_flow": null,
-            "hades_liquidity": null,
-            "zeus_whales": null,
-            "atlas_walls": null,
-            "nemesis_funding": null
+            "apollo_trend": 50,
+            "poseidon_flow": 50,
+            "hades_liquidity": 50,
+            "zeus_whales": 50,
+            "atlas_walls": 50,
+            "nemesis_funding": 50
           },
-          "confluence_score_11_5": 5.0,
+          "confluence_score_11_5": 6.5,
           "best_archetype": "M1_TREND_PULLBACK",
           "best_r_multiple": 1.3746010576674113,
           "qualification_status": "NO TRADE (VETO)"
         }
       },
       "qualification": "NO TRADE (VETO)",
-      "score": 5.0,
+      "score": 6.5,
       "best_r": 1.3746010576674113
     }
   }
