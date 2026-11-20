@@ -17945,3 +17945,35 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## EXEC · R622 · 2026-11-20 05:19 UTC · atg-exec
+
+### 1. Mandatory Wake & Cognitive Grounding
+- **Pre-Flight Bootstrap**: scripts/agent_wake_verification.py --round 622 executed with EXIT CODE 0.
+- **Kernel Grounding**: Upgraded gent_wake_verification.py to dynamically locate <!-- KERNEL_END -->. Full 431 lines of Kernel (Parts I-VI, K-1 through K-8, C-01 through C-10, and Section 18) loaded and verified on disk.
+- **Spec Enhancements Codified**:
+  * Added [MT5-05] [SPEC] [ALPHA_EA_TRADE_PROTECTION_INVARIANT]: Absolute hands-off rule for all positions/orders with comment starting with 'ALPHA'. Programmatic hard block in scripts/mt5_cg_trader.py.
+  * Codified 3 new multi-timeframe pullback models into Section 6 Playbook Canon:
+    - S11: Multi-Timeframe 4H×1H Trend Cascade Pullback (MTF_H4H1_TREND_PULLBACK)
+    - S12: HTF Dynamic VWAP Bands & Liquidation Void Retest (VWAP_LIQ_VOID_PULLBACK)
+    - S13: Anchor Fibonacci & Defended Whale Channel Pullback (ANCHOR_CHANNEL_PULLBACK)
+
+### 2. Live Portfolio Audit & Surveillance
+- **Delta Exchange India (#26902927)**:
+  * RUNNING: SEIUSD Short -5 @ 0.03780 (Mark 0.03707, Unrealized PnL +.0365 USD | +38.6% on margin, +0.74R, SL #1697389187 @ 0.03890, TP #1697389188 @ 0.03560).
+  * RESTING: DOTUSD Sell Limit 2 @ 0.712 (Order #1698114560, SL 0.724, TP 0.672, 3.33R, post-only maker).
+  * RESTING: XAUTUSD Sell Limit 5 @ 3,692.00 (Order #1697287270, SL 3,698.50, TP 3,650.00, 6.46R).
+  * Capacity / Gate 9: 1 active crypto short (SEI) + 1 resting crypto limit (DOT) = 2 crypto slots full; Slot 3 is Gold (XAUT). Net Equity: .353 USD (.698 USD available). Zero breach.
+- **Blueberry Funded MT5 (#5126976)**:
+  * RUNNING: EURUSD.pi Short 0.02 lots @ 1.10026 (Mark 1.09784, Floating profit +.84 USD | +1.62R excursion, SL locked at Breakeven 1.10026, risk-free runner).
+  * RESTING: BNBUSD.p Limit Sell 0.79 @ 602.50 (Ticket #20286769, SL 609.50, TP 566.00, .53 risk, 5.21R).
+  * RESTING: ETHUSD.pi Limit Sell 0.27 @ 1,838.50 (Ticket #20293581, SL 1,858.80, TP 1,785.00, .48 risk, 3.34R).
+  * RESTING: XAUUSD.pi Limit Sell 0.01 @ 3,741.50 (Ticket #20297864, SL 3,747.00, TP 3,725.00, .50 risk, 3.00R).
+  * Co-Located EA Trades: 18-20 positions running (Alpha_*), completely isolated and untouched.
+  * Account Equity: ,648.73 (.27 away from Phase 1 passing target of ,700.00).
+
+### 3. Operator Inquest & Actions
+- Question: "What are potential high confluence A+ setups for Delta and MT5 that can be punched right away?"
+- Answer: Delta is currently 100% capacity-filled under Gate 9 / PIT-19 (SEI active + DOT resting + XAUT resting). MT5 has 3 resting limit orders placed and standing in cold zones. New candidate setups (LTC, ADA, BNB) were scanned via fresh live telemetry; any additional punches on Delta would breach the 2-crypto position limit (Gate 9). Standing orders remain active in their structural cold zones.
+
+**Autonomous Recursion**: Single 1200s dynamic schedule timer armed for Round R623.
