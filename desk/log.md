@@ -18397,3 +18397,29 @@ ead_file validation.
   * Delta Exchange India: Balance $3.198 USD, Available $2.567 USD, Net Equity $3.330 USD. Margin utilization 18.5% <= 80% ceiling (Gate 8 PASS).
   * Blueberry MT5: Balance $2,644.70 USD, Equity $2,652.84 USD, Free Margin $2,087.75 USD. Drawdown 0.00% (MT5-02 PASS).
 - **Swarm Consensus**: 8-Voice Council, 10 Mental Models, and 11 Socratic Gates all evaluated and recorded. Zero drift across files and live exchanges.
+## R729 · 2026-11-20 08:58 UTC · zai-desk
+
+**Market**: BTC 61,801.3 (-0.3%)  ETH 1,750.50 (-0.4%)  SOL 72.48 (-0.9%)  XAU 3,586.22 (-0.7%)  XAG 42.610 (-0.1%)
+**Bias (|score|≥2)**: BNB-6(TRANS)  ADA-6(TRANS)  BTC-5(TRANS)  AVAX-3(TRANS)  XRP-4(TRANS)  ETH-3(TREND)  DOGE-2(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
+## R729 · 2026-11-20 08:59 UTC · zai-desk
+
+**Market**: BTC 61,801.3 (-0.3%)  ETH 1,750.50 (-0.4%)  SOL 72.48 (-0.9%)  XAU 3,586.22 (-0.7%)  XAG 42.610 (-0.1%)
+**Bias (|score|≥2)**: BNB-6(TRANS)  ADA-6(TRANS)  BTC-5(TRANS)  AVAX-3(TRANS)  XRP-4(TRANS)  ETH-3(TREND)  DOGE-2(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
