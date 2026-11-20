@@ -17787,3 +17787,29 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## R619 · 2026-11-20 04:01 UTC · atg-exec
+
+**Execution Venues**: Delta Exchange India (`india_prod`, #26902927) · Blueberry Funded MT5 (#5126976)
+**Market Overview**: BTC 62,115.0 | SEI 0.037216 | EURUSD 1.09756
+**Blueberry Funded MT5 Phase 1 Progress**: Equity **$2,651.35 / $2,700.00** (Distance: **$48.65 USD** | **98.20% completed**). Realized Balance: **$2,646.70 USD** (+$146.70 profit banked). Floating Profit: +$4.65 USD.
+- Invariant Active: `scripts/blueberry_phase1_guard.py` armed to automatically execute `TRADE_ACTION_DEAL` market closes on all positions, cancel all orders, and bag cash the instant equity hits >= $2,700.00.
+
+### Actions & Portfolio State
+1. **Delta Exchange India**:
+   - RUNNING: `SEIUSD` Short -5 @ 0.03780 (Mark 0.037216, Unrealized profit expanded to **+$0.0280 USD | +29.6% on margin**, Excursion: +0.53R, SL Order #1697389187 @ 0.03890, TP Order #1697389188 @ 0.03560).
+   - RESTING: `XAUTUSD` Limit Sell 5 @ 3,692.00 (Order #1697287270, SL 3,698.50, TP 3,650.00, 6.46R).
+   - Solvency: Net Equity reaches new all-time high **$3.3450 USD** ($2.7285 USD available). Slot Gate 9: 1/2 crypto slots active.
+2. **Blueberry Funded MT5**:
+   - RUNNING: `EURUSD.pi` Short 0.02 lots @ 1.10026 (Mark 1.09756, Floating profit +$5.40 USD, SL locked at BE 1.10026, TP 1.09550, risk-free runner).
+   - RESTING: `XAUUSD.pi` Limit Sell 0.01 @ 3,741.50 (Ticket #20297864, SL 3,747.00, TP 3,725.00).
+   - RESTING: `BNBUSD.p` Limit Sell 0.79 @ 602.50 (Ticket #20286769, SL 609.50, TP 566.00).
+   - RESTING: `ETHUSD.pi` Limit Sell 0.27 @ 1,838.50 (Ticket #20293581, SL 1,858.80, TP 1,785.00).
+3. **Scan Candidates Audit**:
+   - TRX: 7.5 pts, lacks full AMT structure on terminal feed, vetoed per Section 4 data completeness rules.
+   - LINK: 7.0 pts, best R 1.50R, vetoed by payoff floor (< 2.0R).
+   - Crypto CFDs on MT5 vetoed under PIT-18 / PIT-22 (broker spread > risk tolerance).
+4. **Phase 1 Target Exit Invariant**:
+   - Monitored continuously via `blueberry_phase1_guard.py`.
+
+**Autonomous Recursion**: Single 1200s dynamic schedule timer armed for Round R620.
