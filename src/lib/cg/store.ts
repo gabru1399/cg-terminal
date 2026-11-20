@@ -50,8 +50,10 @@ export function resolveDataRoot(): string {
 }
 
 function resolveRoot(): string {
-  if (process.env.CG_DATA_DIR) return process.env.CG_DATA_DIR;
+  if (process.env.CG_DATA_DIR && fs.existsSync(process.env.CG_DATA_DIR)) return process.env.CG_DATA_DIR;
   let dir = process.cwd();
+  if (fs.existsSync(path.join(dir, "data", "cg-series"))) return path.join(dir, "data", "cg-series");
+  if (fs.existsSync(path.join(dir, "CG-Terminal", "data", "cg-series"))) return path.join(dir, "CG-Terminal", "data", "cg-series");
   let fallbackWithPkg: string | null = null;
   for (let i = 0; i < 8; i++) {
     // <project>/.next/standalone -> <project> (standalone ships its own
@@ -60,6 +62,8 @@ function resolveRoot(): string {
       dir = path.dirname(path.dirname(dir));
       break;
     }
+    if (fs.existsSync(path.join(dir, "data", "cg-series"))) return path.join(dir, "data", "cg-series");
+    if (fs.existsSync(path.join(dir, "CG-Terminal", "data", "cg-series"))) return path.join(dir, "CG-Terminal", "data", "cg-series");
     // the real project root: package.json + data/ both live here
     if (fs.existsSync(path.join(/* turbopackIgnore: true */ dir, "package.json"))) {
       if (fs.existsSync(path.join(/* turbopackIgnore: true */ dir, "data"))) break;

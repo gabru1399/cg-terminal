@@ -188,16 +188,22 @@ export default function LiquidationLevelsTool({ sym = "BTC" }: { sym?: string })
       )}
 
       {liqQ.data?.sym === sym && liqQ.data.supported === false && !stats ? (
-        <div className="flex flex-col items-center justify-center gap-2 rounded-lg border border-neutral-800 bg-[#11151a] px-6 py-12 text-center">
+        <div className="flex flex-col items-center justify-center gap-3 rounded-lg border border-neutral-800 bg-[#11151a] px-6 py-12 text-center">
           <div className="text-sm font-semibold text-neutral-200">{sym} · No Exchange Liquidation Clusters</div>
           <p className="max-w-lg text-xs leading-relaxed text-neutral-400">
             {liqQ.data.reason ?? "This instrument does not publish aggregated Coinglass perpetual liquidation clusters."}
           </p>
           {liqQ.data.livePrice != null && (
-            <div className="mt-2 rounded border border-neutral-800 bg-[#0e1216] px-4 py-2 text-xs text-neutral-300">
+            <div className="rounded border border-neutral-800 bg-[#0e1216] px-4 py-2 text-xs text-neutral-300">
               Reference mark: <span className="font-mono font-semibold text-neutral-100">{fmtP(liqQ.data.livePrice)}</span>
             </div>
           )}
+          <button
+            onClick={() => setTab("stops")}
+            className="mt-2 rounded bg-neutral-800 px-3 py-1.5 text-xs font-medium text-neutral-200 hover:bg-neutral-700 hover:text-white"
+          >
+            View 24h Stops Heatmap instead
+          </button>
         </div>
       ) : !stats ? (
         <div className="flex h-64 items-center justify-center rounded-lg border border-neutral-800 bg-neutral-900/60 text-sm text-neutral-500">

@@ -50,6 +50,9 @@ async function loadSnapshotFromDisk(sym: string, range: string, limit: number): 
   try {
     const root = resolveDataRoot();
     const fileNames = sym === "BTC" ? [`liqlevels_${range}.jsonl`, `liqlevels_BTC_${range}.jsonl`] : [`liqlevels_${sym}_${range}.jsonl`];
+    if (range !== "3d") {
+      fileNames.push(...(sym === "BTC" ? ["liqlevels_3d.jsonl", "liqlevels_BTC_3d.jsonl"] : [`liqlevels_${sym}_3d.jsonl`]));
+    }
     type ArchivedLevel = { at: number; v: string; p: number; s: number; l2: string; side: number };
     const rows: ArchivedLevel[] = [];
     for (const name of fileNames) {
@@ -84,6 +87,7 @@ async function loadSnapshotFromDisk(sym: string, range: string, limit: number): 
     const archived = rowsOf(`kline:${leadInstr(sym)}:m15`, (b: { t: number }) => String(b.t)) as Awaited<ReturnType<typeof fetchBinCandles>>;
     let candles = archived.filter((b) => b.t <= at && b.t >= at - 25 * 3_600_000).sort((a, b) => a.t - b.t).slice(-100);
     if (candles.length < 10) candles = await fetchBinCandles(sym, "15m", 100, undefined, undefined, at).catch(() => []);
+    if (candles.length < 10 && archived.length >= 10) candles = archived.slice(-100);
     if (candles.length < 10) return null;
     const prices: RawLiqPayload["prices"] = candles.map((b) => [Math.floor(b.t / 1000), b.o, b.h, b.l, b.c, b.v]);
 
@@ -126,7 +130,7 @@ async function loadSnapshot(sym: string, range: string, limit: number): Promise<
   let model = buildLiqModel(available);
   if (!model) {
     // Upstream throttled or returned no data — fall back to local on-disk series
-    const diskSnapshot = await loadSnapshotFromDisk(sym, range, limit);
+    const diskSnapshot = (await loadSnapshotFromDisk(sym, range, limit)) ?? (range !== "3d" ? await loadSnapshotFromDisk(sym, "3d", limit) : null);
     if (diskSnapshot) return diskSnapshot;
 
     const throttled = results.some((r) => r.status === "rejected" && String(r.reason).includes("429"));
@@ -206,6 +210,9 @@ export async function GET(req: NextRequest) {
     // rather than throwing a hard 503 error. Only throw 503 if no snapshot exists at all.
     if (!snapshot) {
       snapshot = (await loadSnapshotFromDisk(sym, range, limit).catch(() => null)) ?? undefined;
+      if (!snapshot && range !== "3d") {
+        snapshot = (await loadSnapshotFromDisk(sym, "3d", limit).catch(() => null)) ?? undefined;
+      }
       if (!snapshot) {
         return NextResponse.json(
           { ok: false, sym, range, lvR, error: error instanceof Error ? error.message : "Liquidation data unavailable" },

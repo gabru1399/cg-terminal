@@ -14,15 +14,21 @@ import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 
-if (typeof process.loadEnvFile === "function" && existsSync(".env")) {
+const baseDir = existsSync(join(process.cwd(), ".next", "standalone", "server.js"))
+  ? process.cwd()
+  : existsSync(join(process.cwd(), "CG-Terminal", ".next", "standalone", "server.js"))
+    ? join(process.cwd(), "CG-Terminal")
+    : process.cwd();
+
+if (typeof process.loadEnvFile === "function" && existsSync(join(baseDir, ".env"))) {
   try {
-    process.loadEnvFile(".env");
+    process.loadEnvFile(join(baseDir, ".env"));
   } catch (err) {
     console.warn("⚠️ Could not load .env file:", err.message);
   }
 }
 
-const server = join(process.cwd(), ".next", "standalone", "server.js");
+const server = join(baseDir, ".next", "standalone", "server.js");
 if (!existsSync(server)) {
   console.error("✗ .next/standalone/server.js not found — run `npm run build` first");
   process.exit(1);
@@ -30,6 +36,9 @@ if (!existsSync(server)) {
 
 process.env.HOSTNAME ??= "127.0.0.1"; // loopback by default, override for LAN
 process.env.NODE_ENV ??= "production";
+process.env.CG_DATA_DIR ??= existsSync(join(baseDir, "data", "cg-series"))
+  ? join(baseDir, "data", "cg-series")
+  : undefined;
 // PUBLIC PATH GUARD: the platform edge proxy (Caddy on :81, FC_CUSTOM_LISTEN_PORT)
 // routes preview traffic to localhost:3000 by default. A server started on any
 // other port is unreachable from the public URL (502). Pin the default to 3000
@@ -37,6 +46,7 @@ process.env.NODE_ENV ??= "production";
 process.env.PORT ??= "3000";
 
 const child = spawn(process.execPath, [server], {
+  cwd: baseDir,
   stdio: "inherit",
   env: process.env,
 });
