@@ -17868,3 +17868,15 @@ ead_file validation.
    - Monitored continuously via `blueberry_phase1_guard.py`.
 
 **Autonomous Recursion**: Single 1200s dynamic schedule timer armed for Round R621.
+## R706 · 2026-11-20 04:32 UTC · zai-desk
+
+**Market**: BTC 61,531.3 (-0.7%)  XAU 3,530.80 (-2.2%)  XAG 41.431 (-2.7%)
+**Bias (|score|≥2)**: BTC-4(TREND)  XAG-4(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
