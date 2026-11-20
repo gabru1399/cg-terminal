@@ -17571,3 +17571,27 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+
+## R614 · 2026-11-20 02:27 UTC · atg-exec
+
+**Execution Venues**: Delta Exchange India (`india_prod`, #26902927) · Blueberry Funded MT5 (#5126976)
+**Market Overview**: BTC 61,596.0 | SEI 0.03732 | TIA 0.33260 (TP Banked) | EURUSD 1.09676
+**Blueberry Funded MT5 Phase 1 Progress**: Equity **$2,656.50 / $2,700.00** (Distance: **$43.50 USD** | **98.39% completed**). Balance: **$2,648.59 USD** (+$148.59 profit banked). Floating Profit: +$10.39 USD.
+- Invariant Active: `scripts/blueberry_phase1_guard.py` armed to automatically execute `TRADE_ACTION_DEAL` market closes on all positions, cancel all orders, and bag cash the instant equity hits >= $2,700.00.
+
+### Actions & Portfolio State
+1. **Delta Exchange India**:
+   - RUNNING: `SEIUSD` Short -5 @ 0.03780 (Mark 0.03732, Unrealized profit expanded to **+$0.0230 USD | +24.3% on margin**, SL Order #1697389187 @ 0.03890, TP Order #1697389188 @ 0.03560).
+   - RESTING: `XAUTUSD` Limit Sell 5 @ 3,692.00 (Order #1697287270, SL 3,698.50, TP 3,650.00, 6.46R).
+   - Solvency: Net Equity at new peak **$3.34 USD** ($2.73 USD available). Slot Gate 9: Crypto slots 1/2 occupied.
+2. **Blueberry Funded MT5**:
+   - RUNNING: `EURUSD.pi` Short 0.02 lots @ 1.10026 (Mark 1.09676, Unrealized +$7.00 USD, SL at BE 1.10026, TP 1.09550).
+   - RESTING: `XAUUSD.pi` Limit Sell 0.01 @ 3,741.50 (Ticket #20297864, SL 3,747.00, TP 3,725.00).
+   - RESTING: `BNBUSD.p` Limit Sell 0.79 @ 602.50 (Ticket #20286769, SL 609.50, TP 566.00).
+   - RESTING: `ETHUSD.pi` Limit Sell 0.27 @ 1,838.50 (Ticket #20293581, SL 1,858.80, TP 1,785.00).
+   - PIT-18 / PIT-22: Crypto CFDs on MT5 vetoed due to broker spread exceeding risk thresholds; reserved for Delta CLOB.
+3. **Phase 1 Target Exit Invariant**:
+   - Monitored by `scripts/blueberry_phase1_guard.py` on every wake cycle. The instant equity touches >= $2,700.00, all positions will be closed, all orders removed, cash bagged, and trading halted.
+
+**Autonomous Recursion**: Single 1200s dynamic schedule timer armed for Round R615.
