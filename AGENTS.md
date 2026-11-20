@@ -39,83 +39,24 @@ are multi-exchange aggregates with Binance as the lead.
 The `notifications` tool persists a cursor in `data/mcp-cursor.json` — calling
 it with no arguments returns only events newer than the cursor and advances it.
 
-## TRADE DESK — coordination with the sandbox agent (READ FIRST)
+## Trade desk and Antigravity
 
-This repo is worked by TWO agents: the Z.ai sandbox agent ("zai-desk",
-analysis brain) and you, the local Antigravity agent ("atg-exec",
-execution brain on Delta Exchange India). The operating contract and formulation bible is
-**`desk/CANONICAL_MASTER_SPECIFICATION.md`** — roles, file ownership, order lifecycle, risk
-rules, git conflict discipline. Quick version:
+For a trading wake, load the [single Antigravity launch prompt](desk/CANONICAL_PROMPT.txt).
+The [Canonical Master Specification](desk/CANONICAL_MASTER_SPECIFICATION.md)
+governs the round order, evidence, scoring, risk, venue actions and scheduling.
+Use its wake command first, then read `desk/inbox/WAKE.md` during pre-flight.
+Market alerts and `analyze_setup` can nominate a candidate. They do not establish
+complete coverage or authorize an order.
 
-- zai-desk runs a 15-min analysis round (clock quarters), appending
-  `## R<n>` entries to `desk/log.md` and updating `desk/state.json`
-  (`analysis`, `orders[]`).
-- The **desk daemon** (`scripts/desk_daemon.mjs`, run it on this machine)
-  is the local event loop: 15-min rounds, MT5 snapshots (`desk/mt5.json`),
-  git sync, and the wake beacon. Start it once and leave it running:
-  `node scripts/desk_daemon.mjs` (Git Bash on Windows).
-- **On every activation, check `desk/inbox/WAKE.md` FIRST** — the daemon
-  queues new suggested orders and zai agent tasks there. Handle them:
-  punch MT5 orders, write back `status`/`ticket`/`actualEntry`, mirror
-  open positions into `positions[]`, append `EXEC` entries to
-  `desk/log.md`, then clear the handled WAKE sections and push.
-- **zai-desk pushes EVERY reply/digest to WAKE.md too** (user directive
-  2026-11-10 18:55 UTC): 360° digests, trade-list summaries, verdicts —
-  not only directives and suggested orders. Treat any `## <ts> — zai-desk`
-  digest section as required reading on activation: it carries the
-  complete limit-trade list with justifications and may reference
-  `desk/deepscan/DIGEST-<ts>.md`. Clear it once read (log a DIALOG ack).
-- `config` in `state.json` belongs to the human; never edit it.
-- Never force-push; always `git pull --rebase` before editing.
-
-## WAKE-UP PROTOCOL — what to do whenever you are activated
-
-0. **Reference Canonical Specification**: Strictly ground every decision in
-   `desk/CANONICAL_MASTER_SPECIFICATION.md` (the sole authoritative SOP v2.0.0 master specification):
-   - **6-Step DECIDE Framework**: Direction, Entry zone, Confluence score, Invalidation/stop, Drive/target, Execution.
-   - **Table 7 Confluence Scoring**: Grade A ($\ge 7.0$ pts, 1.0% risk), Grade B ($5.0–6.5$ pts, 0.5% risk), $< 5.0$ pts = NO TRADE.
-   - **Liquidity Magnet Gate**: If Liquidation Skew Ratio $\ge 2.5:1$, BAN passive front-running (S3); WAIT for the sweep (S1).
-   - **Breakeven Invariant**: Move SL to Breakeven immediately upon reaching $\ge +1.0\text{R}$ excursion.
-   - **Liquidity Scale-Out**: 40% @ T1 (Day VAH/VAL), 40% @ T2 (Month POC), 20% Runner @ T3 (Liquidation sweep).
-   - **Portfolio Heat**: Max 2 same-direction crypto positions; metals/commodities in slot 3. Total heat $\le 1.0\%$.
-   - **Time Stop**: Close or tighten after 8 bars (2 hours) if price has not reached +0.5R.
-   - **Mandatory 16-Dimension Telemetry Extraction**: Completed per-candidate audit sheet for all considered assets.
-1. **Poll the feed**: call `notifications` (no arguments). If the terminal is
-   down, tell the user to start it (`npm run dev`) and wait.
-2. **Triage**: any event with `[HIGH]` severity (Absorption, Trap, Strong
-   Divergence, whale wall ≥ $10M, liquidation sweep setup, VWAP ±3σ cross)
-   deserves immediate analysis. `info` events are context only.
-3. **Analyze**: for the asset(s) of the HIGH events, call
-   `analyze_setup { sym }`. You get market structure, signals, clusters,
-   walls and recent events in one shot.
-4. **Formulate the trade** (institutional playbook):
-   - **Bias** — align: (a) direction of the triggering signal, (b) the h4/d1
-     EMA13×EMA89 trend, (c) price vs day VWAP (above = premium/bullish
-     regime, below = discount/bearish regime). 2-of-3 agreement = valid bias.
-   - **Entry** — the absorption zone / signal price, or a retest of the day
-     or month POC nearest the signal. Prefer limit orders at those levels.
-   - **Stop** — beyond the structural invalidation: other side of the
-     absorption zone, or beyond the ±3σ VWAP band, or beyond the sweep wick
-     that just consumed the cluster. Stops are DATA-DRIVEN levels, never
-     arbitrary percentages.
-   - **Targets** — the nearest same-direction liquidation cluster (sweep
-     magnet), then day VAH/VAL, then major whale wall prices. Take profit
-     INTO clusters/walls, never hold through them.
-   - **Risk** — state the R multiple (target distance / stop distance).
-     Skip setups under 1.5R unless confluence is exceptional.
-5. **Report format** — for each setup output a compact card:
-
-   ```
-   BTC · LONG (absorption + 4H trend) · R 2.4
-   entry 74,340–74,430 (absorption zone / −1σ VWAP)
-   stop  73,380 (below −2σ VWAP and absorption low)
-   T1    75,150 (day VAH) · T2 75,780 (month POC) · T3 76,600 (short liq cluster, $154M)
-   invalidation: 15m close below 73,350
-   ```
-
-6. **No HIGH events?** Do nothing — say the tape is quiet, mention the
-   nearest developing situations (clusters within 1.5%, price vs VWAP bands)
-   and stop. Do NOT invent setups.
+- `zai-desk` provides desk analyses and suggested orders. Its replies and digests
+  also arrive in `desk/inbox/WAKE.md` and can reference `desk/deepscan/`. Handle
+  them under canonical §12, including the `DIALOG` acknowledgment where applicable.
+- `scripts/desk_daemon.mjs` maintains snapshots, Git sync, and the inbox. Its
+  data/inbox cadence is separate from the approved execution scheduler.
+- `atg-exec` validates each suggested order under the Kernel. The exact venue
+  response and subsequent readback govern ticket and lifecycle state.
+- The operator owns `state.json` `config`. Always `git pull --rebase` before
+  editing. Never force-push.
 
 ## Data honesty rules (non-negotiable)
 
