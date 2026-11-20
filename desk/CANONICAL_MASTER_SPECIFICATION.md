@@ -53,7 +53,7 @@ Record `[STEP n: DONE | FAILED | N/A + reason]` at every step. Replace the statu
 | 3 · Reconcile account and scope | `sec-11`, `sec-12`, `sec-19`, `sec-20` | Freeze the venue-symbol and feed mapping manifest. Classify each live order/position's ownership. Record quotes, margin and open/pending risk, shared-account stress, applicable calendar/floors and concurrent fill capacity. Use the live broker as source of truth for tickets. |
 | 4 · Screen the entire round universe | `sec-4`, `sec-13`, `sec-17`, `sec-23` | Evaluate every applicable discovery funnel on every manifest row. Save the exact-key coverage matrix and promote every confirmed hit or show why it cannot be evaluated. |
 | 5 · Build candidate and lifecycle dossiers | `sec-3`, `sec-4b`, `sec-5`, `sec-6`, `sec-7`, `sec-8`, `sec-9`, `sec-14`, `sec-15`, `sec-21`, `sec-22` | Capture the nine-tab evidence map and D01–D16 per promoted venue asset and every managed symbol. Run applicable strategy rules, eight Table 7 factors, DECIDE and Oracle. Record each of the eight council positions, the Arbiter's ruling and the ten model checks. Name the strongest contrary observation and the statistic or price that would invalidate the thesis. |
-| 6 · Decide and gate | `sec-2`, `sec-10`, `sec-16`, `sec-19`, `sec-20` | Finish C-01…C-10, GATE-01…11, INQ-01…10 and PIT-01…22. Record rule, observed inputs, threshold, disposition and evidence for each applicable check. Produce separate gate rows for each intent and lifecycle rows for GATE-05/06. No missing gate can pass. |
+| 6 · Decide and gate | `sec-2`, `sec-10`, `sec-16`, `sec-19`, `sec-20` | Finish C-01…C-10, GATE-01…11, INQ-01…10 and PIT-01…22. C-09 checks the scheduler inventory here; Step 11 records any next wake. Record rule, observed inputs, threshold, disposition and evidence for each applicable check. Produce separate gate rows for each intent and lifecycle rows for GATE-05/06. Use PASS, FAIL, BLOCKED or justified N/A per rule. Any FAIL or BLOCKED on an applicable rule prevents that intent. |
 | 7 · Pending orders | `sec-11`, `sec-12`, `sec-19`, `sec-20` | Give every ticket a KEEP, PRUNE, READ_ONLY or BLOCKED disposition with live reason. Verify age, quote/mark drift, shelf and wall persistence, confluence, fills and reserves. PRUNE is a recommendation until Step 9 obtains venue acknowledgment. |
 | 8 · Running trades | `sec-4b`, `sec-11`, `sec-12`, `sec-16`, `sec-19`, `sec-20` | One row per ticket with ownership, original R, elapsed bars, excursion, SL/TP and proposed action. Apply cold-zone, breakeven, trail and time-stop checks. Foreign trades affect aggregate stress and remain read-only. |
 | 9 · Revalidate and submit eligible intents | `sec-10`, `sec-11`, `sec-12`, `sec-16`, `sec-20` | Verify expiry and reconcile fresh quotes, account, ownership, costs and reservations again. Verify the signed round and admitted action. In `AUDIT` report dry dispositions. In authorized `LIVE`, send only accepted intents through the gateway. Reserve risk before dispatch and reconcile uncertain responses before retrying. Record request ID, result code and fresh readback. |
@@ -64,7 +64,7 @@ Record `[STEP n: DONE | FAILED | N/A + reason]` at every step. Replace the statu
 
 - **Universe identity.** Capture exact execution instrument IDs from Delta products and MT5 symbol inventory with tradeability conditions. Capture terminal feed mappings separately. The key is `(venue, instrument_id)`. Record mapped provider symbol, source class (execution venue, market-data proxy, or unsupported), active/observe-only scope and eligible funnels. Count exact keys and compare against the manifest. Historical totals and hard-coded fallback lists carry no coverage authority.
 - **Discovery evidence.** For each key and each §17 funnel, save `HIT`, `NO_HIT`, `NOT_APPLICABLE` or `UNRESOLVED` with input evidence; applicability must be declared in the manifest before seeing results. `NO_HIT` needs the underlying observations and threshold comparison. Incomplete discovery can produce research observations but cannot conclude that the universe has zero setups. A single narrative/ranker call never completes the screen.
-- **Deep telemetry.** Use §4 (nine tabs), §4B, §5 and §14 together. A source-dependent row records `feed, source_event_utc, received_utc, cutoff_utc, freshness_limit, value/unit, evidence_ref, status, reason`. `status` is `VALID`, `NOT_APPLICABLE`, `MISSING`, `STALE`, `ERROR` or `UNSUPPORTED`. D13 outside BTC/ETH may be `NOT_APPLICABLE` by contract. Log backend degradation and partial venues as coverage gaps. Actual observed zero, predeclared inapplicability, and a failed request are three different outcomes. An unscored Table 7 factor can contribute zero points while its missing required evidence still vetoes admission.
+- **Deep telemetry.** Use §4 (nine tabs), §4B, §5 and §14 together. A source-dependent row records `feed, source_event_utc, received_utc, cutoff_utc, freshness_limit, value/unit, evidence_ref, status, reason`. `status` is `VALID`, `NOT_APPLICABLE`, `MISSING`, `STALE`, `ERROR` or `UNSUPPORTED`. D13 outside BTC/ETH and an unsupported 24h stopmap subfeed may be `NOT_APPLICABLE` only where the predeclared source contract allows it. Required liquidation windows remain required on those paths. Log backend degradation and partial venues as coverage gaps. Actual observed zero, predeclared inapplicability, and a failed request are three different outcomes. An unscored Table 7 factor can contribute zero points while its missing required evidence still vetoes admission.
 - **Data collection.** Prefer one governed read-only snapshot at cutoff with source timestamps and provenance. For direct queries, reuse same-round responses that meet freshness and scope, keep bounded concurrency, honor provider backoff and report unfinished rows. Fetch liquidation windows separately with `/api/cg/liqlevels?sym=...&range=3d`, `range=7d`, and `range=30d`. Validate direction, coverage and reference mid; use the 24h stopmap only on supported symbols. BTC/TradFi proxies cannot be treated as execution-venue spread/depth. On an interrupted audit, resume an immutable snapshot at the first unresolved key in the same round. Start a new round when evidence has expired or the cutoff cannot be preserved.
 - **Artifacts.** Store full coverage tables, evidence from §14, gate outcomes and lifecycle checks in the round artifact bundle. Put the round ID, UTC cutoff, policy revision, SOP digest, and evidence references on every dependent artifact. The summary may link those artifacts. A section receipt proves which bytes the tool returned. A signed verification report must separately bind the policy, scheduler request, snapshot and eligible intent IDs.
 - **Status.** Use `COMPLETE_WITH_ELIGIBLE`, `COMPLETE_NO_ELIGIBLE` or `INCOMPLETE`. Coverage completeness, eligible count and dispatch outcome are separate fields. A complete negative needs every required key and check accounted for. If blocked, list exact unresolved keys or attach the list, and preserve verified negative observations as such.
@@ -85,7 +85,7 @@ Record `[STEP n: DONE | FAILED | N/A + reason]` at every step. Replace the statu
 
 The wake probe only reads. The existing `scripts/asset_360_forensic_engine.py --sym <symbol> --json` and telemetry dump are supplemental helpers. Some windows and sources are missing or estimated in those helpers. Inspect the underlying records; never reuse their generated scores, spread estimates or stop proposals as authoritative.
 
-The signed compiler in `scripts/wal_engine/` is separate. Use its [Phase 2 runbook](../scripts/wal_engine/cg-terminal-phase2-runbook.md) with a running approved materializer, current manifest, scheduler request, pinned public key and gateway. Signing a round is insufficient for execution when gateway admission or a required data producer is missing. Use a valid signed report, the exact intended payload, and a fresh broker check. When the compiler is unavailable, produce an audit-only dossier with its reason.
+The signed compiler in `scripts/wal_engine/` is separate. Use its [Phase 2 runbook](../scripts/wal_engine/cg-terminal-phase2-runbook.md) with a running approved materializer, current manifest, scheduler request, pinned public key and gateway. Signing a round is insufficient for execution when gateway admission or a required data producer is missing. Use a valid signed report, the exact intended payload, and a fresh broker check. The reference policy must be checked for parity with K-4, including the A+ score and EV, before it may admit an action. When the compiler is unavailable, produce an audit-only dossier with its reason.
 
 Open the final report with the actual Step 1 pre-flight result, round ID, mode, cutoff and SOP digest. Give both venue answers and exact scope, completed/blocked counts, nearest verified misses, and any actual venue acknowledgments. End with a twelve-row ledger (0–11) showing status, reason and evidence references. Keep full candidate, order and trade tables with the ledger, even if the chat summary links out to them.
 
@@ -186,12 +186,12 @@ Open the final report with the actual Step 1 pre-flight result, round ID, mode, 
 [G-07] [MANDATORY] [ZERO_MOCKS]: All data must be live from the local Next.js terminal engine (`http://127.0.0.1:3000`), Delta Exchange India APIs, and live MT5 terminal. Zero placeholders.
 [G-08] [MANDATORY] [SINGLE_SOURCE_OF_TRUTH]: This document is the sole authoritative benchmark for scoring, sizing, dual-agent coordination, and execution invariants.
 [G-09] [MANDATORY] [CONTINUOUS_PLANNING]: Every execution turn must incorporate structured planning (`/plan`) and multi-scenario exploration (`/brainstorming`) to evaluate entry tightness, auction levels, and liquidation magnets before order placement.
-[G-10] [MANDATORY] [EMPIRICAL_SPEC_READING]: On EVERY wake-up, autonomous recursion round, or trading interaction, Antigravity MUST execute `read_file` on `desk/CANONICAL_MASTER_SPECIFICATION.md`. Never rely on cached echoes or prompt text.
+[G-10] [MANDATORY] [EMPIRICAL_SPEC_READING]: On EVERY wake-up, autonomous recursion round, or trading interaction, Antigravity MUST use the K-1 read command with the current digest and each assigned anchor. Context summaries are insufficient.
 [G-11] [MANDATORY] [UNCACHED_FRESH_LOADING]: On EVERY timer expiration, autonomous turn, or trading event, Antigravity MUST re-verify and load all skills, plugins, MCP tools, and live exchange data afresh from live system calls (zero cached echoes).
 
 ### 1.2 The Recursive Self-Improving AGI Axioms (Meta-Learning Engine)
 
-[AGI-01] [AXIOM] [ANTIFRAGILE_REFLECTION]: The engine measures the delta between expected outcome and live market realization; every filled, stopped, or cancelled order produces structured empirical data that updates internal risk weights.
+[AGI-01] [AXIOM] [ANTIFRAGILE_REFLECTION]: The engine measures the delta between expected outcome and live market realization; every filled, stopped, or cancelled order produces structured empirical data that informs proposed changes for operator review. It cannot modify sizing policy.
 [AGI-02] [AXIOM] [ERROR_TRANSMUTATION]: When a friction point or structural pitfall is encountered, the formulation engine MUST formulate an immutable mathematical invariant to permanently eliminate the risk.
 [AGI-03] [AXIOM] [ZERO_REPEATED_MISTAKES]: A mistake made once is an experimental data point; a mistake made twice is a catastrophic failure; all documented pitfalls are verified before any order reaches the exchange CLOB.
 [AGI-04] [AXIOM] [KNOWLEDGE_ASSIMILATION]: On every wakeup, verify trade log forensics (`desk/log.md`, `desk/state.json`) to incorporate past lessons into current execution chains. External persistent memory is bypassed for unpolluted execution.
@@ -202,7 +202,7 @@ Open the final report with the actual Step 1 pre-flight result, round ID, mode, 
 ## SECTION 2. THE MANDATORY PRE-FLIGHT VERIFICATION CHECKLIST & 10 PRE-FLIGHT GATES
 <a id="sec-2"></a>
 
-> **Section card** — **Purpose:** The Pre-Flight Verification header that must OPEN every response, and the ten verification gates C-01…C-10. · **Round step:** Steps 1, 2, 6 · **Must output:** Completed PRE-01 header; C-gate PASS/FAIL.
+> **Section card** — **Purpose:** Final report pre-flight header and the ten verification gates C-01…C-10. · **Round step:** Steps 1, 2, 6 · **Must output:** Completed PRE-01 header; C-gate PASS/FAIL.
 
 
 [PRE-01] [MANDATORY] [HEADER_PROTOCOL]: Put the actual Step 1 results in the final header. Report the round ID, mode, cutoff and SOP digest first.
@@ -267,7 +267,7 @@ Open the final report with the actual Step 1 pre-flight result, round ID, mode, 
   - Role: Mathematical Expectancy & Sizing Empiricist.
   - Action: Calculates exact mathematical expectancy:
     $$EV = P_{\text{win}} \times \text{Drive (Target)} - P_{\text{loss}} \times \text{Stop (Risk)} - \text{Friction}$$
-  - Threshold: Computes R-multiples to structural targets ($\ge 2.00\text{R}$ composite floor; setups with $EV < 1.0\text{R}$ are mathematically forbidden).
+  - Threshold: Reports side-correct net T2 payoff and separate calibrated EV under RISK-02 and K-4. An uncalibrated model leaves EV unresolved.
   - Verification: Verifies exact contract notional: $\text{Notional} = \text{Price} \times \text{Contract Value} \times \text{Lots}$ and slippage friction ($1.20\times$).
 
 [VOICE-04] [DEBATE] [LIQUIDATION_SWEEP_SPECIALIST]:
@@ -283,17 +283,36 @@ Open the final report with the actual Step 1 pre-flight result, round ID, mode, 
 [VOICE-06] [DEBATE] [MOMENTUM_SHELF_SPECIALIST]:
   - Role: S10 In-Trend Consolidation Shelf & Fast EMA Continuation Hunter.
   - Action: Detects runaway trend regimes ($|z| \ge 1.0\sigma$, Fib EMA 13 < 89 < 233) where price pauses in 4-to-12 bar horizontal consolidation shelves (bear flags / bull flags) testing Fast EMA 13/21 with volume decay ($\ge 40\%$).
-  - Mandate: Formulates high-asymmetry S10 shelf breakdown entries with tight structural stops ($R \ge 3.0\text{R}$ to $6.0\text{R}$); authorizes capital reallocation from dormant macro POC limits to active shelves.
+  - Mandate: Formulates S10 geometry, documents the confirmatory retest and may recommend reallocation under DMR-01 and Step 9.
 
 [VOICE-07] [DEBATE] [TRADIFI_MACRO_ARBITER]:
   - Role: Non-Correlated Multi-Asset Allocator.
   - Action: Scans Gold (`XAUUSD.pi`/`XAUTUSD`), Silver (`XAGUSD.pi`), US Indices (`NAS100.p`/`SPX500`), Oil (`UKOUSD.p`), and TradFi equity perps (`NVDA`, `TSLA`, `MSFT`, `CRCL`).
-  - Mandate: Unlocks Slot 2 allocation with zero crypto-beta drag; captures macro trends on commodities and indices.
+  - Mandate: Evaluates Slot 2 allocation after a measured account stress check; captures macro trends on commodities and indices.
 
 [VOICE-08] [DEBATE] [COMMITTEE_ARBITER]:
   - Role: Council Chair, Synthesizer & Execution Authorizer.
   - Action: Reconciles all specialist perspectives against Gates 1–11, Table 7 Confluence Score, and live CLOB margin solvency.
-  - Authorization: Authorizes execution ONLY when Confluence Score $\ge 5.0$ pts, $EV \ge 2.00\text{R}$, Dollar Risk $\le 2.5\%$ of equity, Gate 9 Sector Heat is satisfied, and Stop Loss is stationed in a verified Cold Zone.
+  - Ruling: Record eligible, rejected or blocked under K-4 with the controlling evidence. The gateway alone can admit a live intent.
+
+### 3.1 Required decision checks
+
+For each candidate, record one evidence reference and one implication for each check. Where applicable, name the measurement that would reverse the decision.
+
+| Model | Required observation |
+|---|---|
+| First principles | Identify the executable quote, liquidity mechanism, and structural invalidation. |
+| Pre-mortem | Name the failure path most likely to hit the stop or prevent a fill. |
+| Probabilistic | Give fill-conditional net outcome probabilities, calibration provenance and EV, or mark it unresolved. |
+| Second-order effects | Stress synchronized fills and correlated moves against available headroom. |
+| Red team and steelman | State the strongest contrary observation and how to discriminate the two hypotheses. |
+| Margin of safety | Show the stop/wall clearance, stressed loss, remaining headroom and friction. |
+| Via Negativa | Name the vetoed alternatives and the evidence that eliminated them. |
+| Map vs. territory | Separate model/proxy estimates from the execution venue's actual quote and ticket state. |
+| Theory of constraints | Identify the binding risk, liquidity, data or minimum-quantity constraint. |
+| Lindy effect | Name the established microstructure mechanism behind the trade and where it can fail. |
+
+Apply the Karpathy guidelines to the round: state testable assumptions first, use the simplest evidence path, keep any authorized action scoped to the exact ticket, and verify the result against raw tool output.
 
 ---
 
@@ -629,12 +648,12 @@ ATHENA ORACLE ARCHITECTURE: 6 MYTHOLOGICAL MICROSTRUCTURE GODS (0–100 SCALE)
 | **D08** | **Cumulative Volume Delta** | `/api/cg/cvd` | Perp vs Spot CVD. Spot buying while Perp selling = smart money absorption $\implies$ **HARD VETO on shorts**. |
 | **D09** | **Book Walls & Lifecycle** | `/api/cg/bookwalls` | Confirmed resting walls (Tier 1 $\ge \$5\text{M}$, Tier 2 $\ge \$1.0\text{M}$, Tier 3 $\ge \$250\text{k}-\$500\text{k}$, Tier 4 $\ge \$50\text{k}-\$100\text{k}$, or $\ge 20\%$ depth), age $> 1\text{h}$. Opposing wall within 1.5R = **HARD VETO**. |
 | **D10** | **Large Resting Orders (LTO)** | `/api/cg/lto` | Resting institutional blocks ($\ge \$500\text{k}$ BTC/ETH, $\ge \$100\text{k}$ large alts, $\ge \$25\text{k}$ micro alts). Queue priority placement 0.05% in front. |
-| **D11** | **Liquidation Clusters & Stopmap**| `/api/cg/liqlevels` & `/api/cg/stopmap` | Multi-venue clusters are sweep magnets. Take profit INTO clusters; never hold through them. |
-| **D12** | **Liquidation Magnet Gate (LSR)**| `/api/cg/liqlevels` | If $\text{LSR} \ge 2.5:1$, **BAN ALL PASSIVE ENTRIES INTO MAGNET PATH**. Switch strictly to S1 sweep reversal. |
+| **D11** | **Liquidation Clusters & Stopmap** | `/api/cg/liqlevels?range=3d/7d/30d` (three requests) and supported `/api/cg/stopmap` | Extract each window's shelves and verify venue, direction, strength, freshness and risk-path coverage. Distinguish native and modeled stopmaps. |
+| **D12** | **Liquidation Magnet Gate (LSR)** | `/api/cg/liqlevels` `stats.totals.longs/shorts` | On the same window, price band and venue set compute larger exposure ÷ smaller; log both amounts and dominant side. A confirmed zero smaller side with positive dominant side is one-sided. Both zero require verified coverage. Missing totals are unresolved. LSR ≥ 2.5 vetoes passive entries into the magnet path. |
 | **D13** | **Options GEX & Gamma Flip** | `/api/cg/options` | Positive Gamma favors mean reversion (S2/S5); Negative Gamma favors expansion (S1/S8) — BTC/ETH only. |
 | **D14** | **4H Open Interest Quadrants** | `/api/cg/oi` | Falling Price + Falling OI = Long Liquidation (do not short tail end); Rising Price + Falling OI = Short Covering. |
 | **D15** | **Annualized Funding APR** | `/api/cg/market` | Negative funding when shorting = Crowded Trade / Short Squeeze Hazard. |
-| **D16** | **5m Liquidation Pace (`Liq 5m`)** | Screener `Liq 5m` | If `Liq 5m > $500k`, active cascade raging $\implies$ **BAN PASSIVE LIMIT ENTRIES**. Wait for exhaustion wick. |
+| **D16** | **5m Liquidation Pace** | `/api/cg/liq-live` or a validated complete 5m event feed | Sum deduplicated event notional within the preceding five minutes, confirming venue heartbeat and complete window coverage. A capped tape cannot establish a complete sum. Over $500k vetoes passive entries into the cascade. |
 
 [LIQ-LIVE-01] [MANDATORY] [ASSET_LEVEL_LIVE_LIQUIDATION_TRACKING]:
   - Telemetry Endpoint: `GET /api/cg/liq-live?sym=<SYM>&limit=60`
@@ -679,7 +698,7 @@ D12 | Liquidation Magnet Gate     : LSR=<:1> (Rule: LSR < 2.5:1) -> [PASS/FAIL]
 D13 | Options GEX Context         : Gamma Regime=<>, Flip Point=$<> -> [PASS/NA]
 D14 | 4H Open Interest Dynamics   : OI 4H=<%> | Quadrant=<ACCUM/LIQ> -> [PASS/FAIL]
 D15 | Annualized Funding APR      : APR=<%> | Crowded Trade Check -> [PASS/FAIL]
-D16 | 5m Liquidation Pace         : Liq 5m=$<> (Rule: Liq 5m < $500k) -> [PASS/FAIL]
+D16 | 5m Liquidation Pace         : Liq 5m=$<> (Cascade veto: > $500k) -> [PASS/FAIL/BLOCKED]
 ----------------------------------------------------------------------------------------
 Socratic Gates: Gate 1 Buffer: <%> | Gate 2 Vector B Hazards: <0> | Gate 7 Max Risk: $<USD>
 Table 7 Score : <pts> / 11.5 | Grade: <A/B/NO_TRADE> | Action: <EXECUTE / REJECT>
@@ -1204,11 +1223,9 @@ flowchart LR
   - Submit with both comment cg_terminal and magic 42001 on the expected account. Match both fields against the exact live ticket before every mutation. Use foreign exposure for read-only risk accounting.
 
 [MT5-04] [SPEC] [EXECUTION_ENGINE]:
-  - Dispatched via `scripts/mt5_cg_trader.py`:
-    * Status: `python scripts/mt5_cg_trader.py --status`
-    * Risk Calc: `python scripts/mt5_cg_trader.py --calc-risk <SYMBOL> <ENTRY> <SL> [--max-risk <USD>]`
-    * Limit Place: `python scripts/mt5_cg_trader.py --place <SYMBOL> <TYPE> <ENTRY> <SL> <TP> [--max-risk <USD>]`
-    * Breakeven: `python scripts/mt5_cg_trader.py --be <TICKET>`
+  - Read-only status: `python scripts/mt5_cg_trader.py --status`. Inspect its detailed results along with the stricter bootstrap probe.
+  - Advisory valuation: `python scripts/mt5_cg_trader.py --calc-risk <SYMBOL> <ENTRY> <SL> --max-risk 6.00`. Verify any extra fees or contract constraints with the gateway.
+  - Submit, amend, cancel and breakeven are Step 9 gateway operations. Do not invoke direct bridge mutation commands from the model.
 
 [MT5-05] [SPEC] [ALPHA_EA_TRADE_PROTECTION_INVARIANT]:
   - Co-Located EA Hands-Off Mandate: The Blueberry MT5 account (#5126976) hosts independent algorithmic Expert Advisors (EAs) executing positions with comment fields starting with `ALPHA` (e.g. `Alpha_VWAP_M2_TWO_`, `Alpha_EMA20_TWO_BA`, `Alpha_VWAP_0_SHORT`, etc.).
@@ -1230,7 +1247,7 @@ flowchart LR
 [PIT-05] [INVARIANT] [LISTING_PARITY_GATE]: Prior to formulating any order, verify asset listing on Delta Exchange India via direct `get_product` or `get_ticker` MCP calls; never assume global exchange parity.
 [PIT-06] [INVARIANT] [STALE_SUB_2R_PRUNING]: Any resting limit order whose calculated R-multiple drops < 2.00R or where market moves > 1.5% away from entry zone for > 8 bars (2 hours) MUST be immediately cancelled.
 [PIT-07] [INVARIANT] [LIQUIDATION_MAGNET_GATE]: If LSR >= 2.5:1, passive front-running is STRICTLY BANNED; wait for cascade exhaustion and S1 sweep wick before entering.
-[PIT-08] [INVARIANT] [POST_ONLY_MAKER]: All limit entries MUST strictly specify `post_only: true`; zero taker fees on entries.
+[PIT-08] [INVARIANT] [POST_ONLY_MAKER]: Delta limit entries require `post_only: true`. MT5 uses broker passive limits. Validate fees and admission with P5-03.
 [PIT-09] [INVARIANT] [AUTO_BREAKEVEN_RATCHET]: Upon reaching >= +1.0R favorable excursion, on-exchange stop loss order MUST immediately be edited via `edit_order` to Entry Price + commission buffer.
 [PIT-10] [INVARIANT] [DEV_SERVER_CONCURRENCY]: All automated screening scripts (`scripts/individual_asset_evaluator.py`) MUST use bounded concurrency (`max_workers=4`) with gentle inter-call pacing.
 [PIT-11] [INVARIANT] [ACTIVE_CASCADE_CLIMAX]: If `Liq 5m > $500k`, limit orders into cascade are BANNED; wait for discrete exhaustion signal (Footprint Absorption or Exhaustion candle).
@@ -1341,7 +1358,7 @@ Historical desk rounds suffered from cognitive bottlenecks: 95% of assets were v
 
 [ROOT-04] [DEFECT] [STATIC_TP_SL_BLINDNESS]:
   - Root Cause: Open orders remained static while market liquidation heatmap clusters shifted, leaving SLs vulnerable to sweep hunts or TPs misaligned from newly formed clusters.
-  - Mandatory Remediation: Universal enforcement of `[P5-11]`. Every round pulls 360° telemetry (`liqlevels`, `stopmap`, `bookwalls`) for all running positions, verifying SLs in cold zones and adapting TPs directly into dominant opposite liquidation magnets.
+  - Mandatory Remediation: Reconcile every position in Step 8. For owned tickets apply P5-11 with source evidence and propose protection or targets. Use all foreign exposure for stress while leaving foreign tickets read-only.
 
 [ROOT-05] [DEFECT] [COGNITIVE_PERSONA_EXPANSION]:
   - Root Cause: The previous 4-voice debate was overly conservative, with Risk Officer vetoes blocking valid setups without specialized order-flow counter-arguments.
@@ -1391,8 +1408,11 @@ Historical reconciliation record from 2.1.0-s1. Kernel K-0 and K-4 govern active
 ## APPENDIX B. DANGLING REFERENCES, ENDPOINT INDEX & PHYSICAL PATH REGISTRY
 <a id="appendix-b"></a>
 
-### B.1 Terms used but never defined (see A-15)
-`Vector B` (inferred in K-6), `all 10 modules` (proposed reading: the 9 tabs of Section 4 + the Oracle of Section 15), `Tab 13` (proposed reading: Options GEX, D13), `M1_TREND_PULLBACK`, `M2_VWAP_MEAN_REVER`, `Slot 3`.
+### B.1 Runtime terms
+
+- **Vector B** is the closed entry-to-stop risk interval evaluated by GATE-02. Record coverage and every intersecting hazard.
+- **Ten modules** is the nine §4 terminal tabs plus the §15 Oracle. D01–D16 is a separate evidence contract. The legacy label **Tab 13** refers to options GEX under D13.
+- **M1/M2 labels** are advisory model outputs. Resolve the actual setup to a §6 archetype with its own qualifying evidence. Apply P5-02 for active slots.
 
 ### B.2 Endpoint index (local engine `http://127.0.0.1:3000`)
 | Endpoint | Used by |
@@ -1409,9 +1429,9 @@ Historical reconciliation record from 2.1.0-s1. Kernel K-0 and K-4 govern active
 | `/api/cg/options` | D13 (not in Section 4) |
 | `/api/cg/oi` | D14 (not in Section 4) |
 | `/api/cg/oracle` | ORA-00 (not in Section 4) |
-| `/api/cg/screener` | PURGED (C-04) but still cited by D16 |
+| `/api/cg/liq-live` | LIQ-LIVE-01, D16. Check stream health and coverage before summing. |
 
-### B.3 Physical path registry (candidates for BOOT-05's unlisted "12 critical paths")
+### B.3 Physical path registry
 Scripts: `scripts/agent_wake_verification.py`, `scripts/round_preflight_bootstrap.py`, `scripts/fetch_full_asset_telemetry.py`, `scripts/individual_asset_evaluator.py`, `scripts/desk_daemon.mjs`, `scripts/desk_round.sh`, `scripts/mt5_cg_trader.py`.
 Desk files: `desk/CANONICAL_MASTER_SPECIFICATION.md`, `desk/state.json`, `desk/log.md`, `desk/inbox/WAKE.md`, `desk/outbox/<basename>.reply.md`, `desk/deepscan/`, `data/mcp-cursor.json`.
 Config/data: `C:\Users\SIGMA\.gemini\config\rules\GEMINI.md`, `c:\Users\SIGMA\Documents\cg-terminal\GEMINI.md`, `src/lib/universe/curated.ts`, `docs/DATA_POINT_INVENTORY.md`.
