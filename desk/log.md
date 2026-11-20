@@ -18069,3 +18069,16 @@ ead_file validation.
 - Question: What are potential high confluence A+ setups for Delta and MT5 that can be punched right away?
 - Answer: Both venues are currently operating at structural capacity under Gate 9 / PIT-19 (Max 2 same-direction crypto positions: MT5 has BTC filled short; Delta has SEI active + DOT resting; Slot 3 TradFi is Gold on both venues). Standing limits remain active in verified cold zones. No new orders required.
 
+## R716 · 2026-11-20 06:24 UTC · zai-desk
+
+**Market**: BTC 61,863.1 (-0.2%)  ETH 1,741.53 (-0.9%)  SOL 72.68 (-0.6%)  XAU 3,564.91 (-1.3%)  XAG 42.290 (-0.8%)
+**Bias (|score|≥2)**: BNB-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
