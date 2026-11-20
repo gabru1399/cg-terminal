@@ -32,7 +32,7 @@ If the required feed or service is offline, report the pre-flight blocker.
    python scripts/agent_wake_verification.py --round <round-id> --step <n>
    Read the full returned section each time. Continue until remaining_anchors
    is empty. The Step 0–5 reads cover the entire SOP from line 1 through the
-   end marker, including Section 13 and Appendices A–F. Step 0 includes this
+   end marker, including Section 13 and Appendices A–G. Step 0 includes this
    prompt and Step 1 includes the evidence contract. Use --status to diagnose
    missing reads. If a prerequisite fails,
    report INCOMPLETE for the current round. Preserve the files and report the

@@ -1,6 +1,6 @@
 # Canonical Master Specification
 
-**Trading SOP v2.1.0 · Execution runbook revision 2.1.0-s4**
+**Trading SOP v2.2.0 · Execution runbook revision 2.2.0-s6**
 
 Delta Exchange India (`india_prod`, account `26902927`) · Blueberry Funded MT5 (login `5126976`)
 
@@ -8,10 +8,11 @@ Delta Exchange India (`india_prod`, account `26902927`) · Blueberry Funded MT5 
 
 The Kernel defines the operating sequence, evidence and admission rules. The numbered sections are the detailed formulation and lifecycle reference. `atg-exec` is the local desk agent, `zai-desk` supplies analysis, and the operator owns account permissions and configuration.
 
-> ### 🤖 AI MACHINE-READABLE EXECUTION MANIFEST (AI-SCHEMA v2.1.0-LIVE)
+> ### 🤖 AI MACHINE-READABLE EXECUTION MANIFEST (AI-SCHEMA v2.2.0-LIVE)
 > ```yaml
 > spec_schema: "antigravity.cg-terminal.canonical-spec.v2"
 > runtime_target: "Antigravity Quantitative Desk Council & Execution Kernel"
+> spec_revision: "2.2.0-s6 (2026-11-20: Section 24 decision accelerator; errata A-24/A-25; Appendix G)"
 > execution_modes:
 >   default: "AUDIT"
 >   operator_authorized: "LIVE"
@@ -25,7 +26,11 @@ The Kernel defines the operating sequence, evidence and admission rules. The num
 >     login: "5126976"
 >     environment: "BlueberryMarketsSVG-Live"
 >     order_type: "pending_limit_bracket"
->     max_risk_usd: 10.00  # Operator policy update 2026-11-20 (\$10.00 ceiling)
+>     # Operator policy directive of 2026-11-20 raised the intended ceiling to
+>     # $10.00. The deployed bridge (scripts/mt5_order_risk.py HARD_CAP_USD)
+>     # still enforces $6.00, so the ENFORCED cap is $6.00 until the bridge is
+>     # updated and re-verified (erratum A-24). Never size above the enforced cap.
+>     max_risk_usd: 6.00
 > portfolio_invariants:
 >   max_total_heat_pct: 1.0
 >   concurrency_limit_p5_02:
@@ -79,7 +84,7 @@ python scripts/agent_wake_verification.py --round R<number> --step <n>
 python scripts/agent_wake_verification.py --round R<number> --status
 ~~~
 
-Use `--step <n> --section <anchor>` to reread a section assigned to that step if tool output was clipped. Step 0 includes the launch prompt. Step 1 includes the evidence contract. The required reads through Step 5 cover the entire SOP from line 1 through the end marker, including Section 13, Sections 14–23, and Appendices A–F. Run `python scripts/agent_wake_verification.py --round R<number> --require-formulation-reads` before building or recommending a trade. The command fails if any source section is missing or any required Step 0–5 receipt is absent. It checks delivery, while the decision record must separately cite applicable rule IDs and the observed inputs. A failed prerequisite or pinned file change ends dependent work as `INCOMPLETE`. Preserve the original files and use a new round ID for a revised protocol. Report the actual round and error; never rewrite evidence, patch or restore the reader from an audit wake, or substitute an older round.
+Use `--step <n> --section <anchor>` to reread a section assigned to that step if tool output was clipped. Step 0 includes the launch prompt. Step 1 includes the evidence contract. The required reads through Step 5 cover the entire SOP from line 1 through the end marker, including Section 13, Sections 14–24, and Appendices A–G. Run `python scripts/agent_wake_verification.py --round R<number> --require-formulation-reads` before building or recommending a trade. The command fails if any source section is missing or any required Step 0–5 receipt is absent. It checks delivery, while the decision record must separately cite applicable rule IDs and the observed inputs. A failed prerequisite or pinned file change ends dependent work as `INCOMPLETE`. Preserve the original files and use a new round ID for a revised protocol. Report the actual round and error; never rewrite evidence, patch or restore the reader from an audit wake, or substitute an older round.
 
 ### K-2 · Ordered state machine
 
@@ -92,13 +97,13 @@ Record `[STEP n: DONE | FAILED | N/A + reason]` at every step. Replace the statu
 | 2 · Operator inquest | `sec-2` | Ask which high-confluence A+ setups could be actionable immediately on Delta and MT5. Give a provisional status and evidence gaps per venue. Reserve any proposed setup or order recommendation until the full SOP read check and formulation, and resolve the inquest in Step 10. |
 | 3 · Reconcile account and scope | `sec-11`, `sec-12`, `sec-19`, `sec-20` | Freeze the venue-symbol and feed mapping manifest. Classify each live order/position's ownership. Record quotes, margin and open/pending risk, shared-account stress, applicable calendar/floors and concurrent fill capacity. Use the live broker as source of truth for tickets. |
 | 4 · Screen the entire round universe | `sec-4`, `sec-13`, `sec-17`, `sec-23` | Evaluate every applicable discovery funnel on every manifest row. Save the exact-key coverage matrix and promote every confirmed hit or show why it cannot be evaluated. |
-| 5 · Build candidate and lifecycle dossiers | `sec-3`, `sec-4b`, `sec-5`, `sec-6`, `sec-7`, `sec-8`, `sec-9`, `sec-10`, `sec-14`, `sec-15`, `sec-16`, `sec-21`, `sec-22` | Pass the full SOP read check before formulation. Capture the nine-tab evidence map and D01–D16 per promoted venue asset and every managed symbol. Run applicable strategy rules, eight Table 7 factors, DECIDE and Oracle. Record each of the eight council positions, the Arbiter's ruling and the ten model checks. Name the strongest contrary observation and the statistic or price that would invalidate the thesis. |
+| 5 · Build candidate and lifecycle dossiers | `sec-3`, `sec-4b`, `sec-5`, `sec-6`, `sec-7`, `sec-8`, `sec-9`, `sec-10`, `sec-14`, `sec-15`, `sec-16`, `sec-21`, `sec-22`, `sec-24`, `appendix-g` | Pass the full SOP read check before formulation. Capture the nine-tab evidence map and D01–D16 per promoted venue asset and every managed symbol. Run applicable strategy rules, eight Table 7 factors, DECIDE and Oracle. Record each of the eight council positions, the Arbiter's ruling and the ten model checks. Apply §24 evidence bundling, canonical score-line and CHK-A…D before a candidate leaves Step 5. Name the strongest contrary observation and the statistic or price that would invalidate the thesis. |
 | 6 · Decide and gate | `sec-2`, `sec-10`, `sec-16`, `sec-19`, `sec-20` | Finish C-01…C-10, GATE-01…11, INQ-01…10 and PIT-01…22. C-09 checks the scheduler inventory here; Step 11 records any next wake. Record rule, observed inputs, threshold, disposition and evidence for each applicable check. Produce separate gate rows for each intent and lifecycle rows for GATE-05/06. Use PASS, FAIL, BLOCKED or justified N/A per rule. Any FAIL or BLOCKED on an applicable rule prevents that intent. |
 | 7 · Pending orders | `sec-11`, `sec-12`, `sec-19`, `sec-20` | Give every ticket a KEEP, PRUNE, READ_ONLY or BLOCKED disposition with live reason. Verify age, quote/mark drift, shelf and wall persistence, confluence, fills and reserves. PRUNE is a recommendation until Step 9 obtains venue acknowledgment. |
 | 8 · Running trades | `sec-4b`, `sec-11`, `sec-12`, `sec-16`, `sec-19`, `sec-20` | One row per ticket with ownership, original R, elapsed bars, excursion, SL/TP and proposed action. Apply cold-zone, breakeven, trail and time-stop checks. Foreign trades affect aggregate stress and remain read-only. |
 | 9 · Revalidate and submit eligible intents | `sec-10`, `sec-11`, `sec-12`, `sec-16`, `sec-20` | Verify expiry and reconcile fresh quotes, account, ownership, costs and reservations again. Verify the signed round and admitted action. In `AUDIT` report dry dispositions. In authorized `LIVE`, send only accepted intents through the gateway. Reserve risk before dispatch and reconcile uncertain responses before retrying. Record request ID, result code and fresh readback. |
 | 10 · Reconcile outcome | `sec-11`, `sec-12`, `sec-20` | Re-read both venues. Match accepted, rejected, partial and unknown outcomes with order/deal IDs. Recheck risk and margin. Return the final venue inquest answer, supported near misses, coverage gaps and trade cards for eligible setups. |
-| 11 · Journal and scheduler | `sec-11`, `sec-12`, `sec-23` | Link the final ledger, actions and lessons in the round journal. Use a verified single scheduler. Verify the next 1,200s timer by receipt if authorized and configured. Otherwise record `DEFERRED` or `N/A` with the reason. The daemon's data/inbox cadence is separate. |
+| 11 · Journal and scheduler | `sec-11`, `sec-12`, `sec-23`, `appendix-g` | Link the final ledger, actions and lessons in the round journal. Use a verified single scheduler. Verify the next 1,200s timer by receipt if authorized and configured. Otherwise record `DEFERRED` or `N/A` with the reason. The daemon's data/inbox cadence is separate. |
 
 ### K-3 · Evidence and coverage
 
@@ -114,7 +119,7 @@ Record `[STEP n: DONE | FAILED | N/A + reason]` at every step. Replace the statu
 | Topic | Binding rule |
 |---|---|
 | Score and payoff | Table 7 B starts at 5.0, A at 7.0 and A+ at 7.5. Standard rounds submit A+ (≥ 7.5); in verified `TRENDING_EXPANSION` regimes, Grade A (≥ 7.0) is authorized for S10 In-Trend Pullbacks where net planned T2 payoff ≥ 2.0R and separately supported EV ≥ 2.0R. Require net planned T2 payoff ≥ 2.0R and separately supported EV ≥ 2.0R for the A+ execution profile. EV is the fill-conditional weighted sum of net outcome multiples under a documented, calibrated model with sample and regime provenance. `BestR`, target distance or a heuristic probability cannot substitute. Delta high-potential also needs net T2 ≥ 2.5R and side-aligned Oracle tail (long ≥ 65, short ≤ 35). |
-| Grade and venue risk | B cap 0.5% and A/A+ cap 1.0% of live equity, intersected with all headroom, portfolio and venue limits. Current desk upper bounds are $10.00 stressed total per MT5 trade (operator authorized 2026-11-20) and $0.50 per Delta trade. A minimum executable quantity that violates any cap is a veto. The Delta high-potential margin ceiling of $1.50 and structural stop distance ceiling of 0.8% apply where eligible; leverage changes collateral and liquidation distance. Any cap, leverage or slot exception requires explicit operator policy and matching tested enforcement. |
+| Grade and venue risk | B cap 0.5% and A/A+ cap 1.0% of live equity, intersected with all headroom, portfolio and venue limits. Current desk upper bounds are $10.00 stressed total per MT5 trade (operator authorized 2026-11-20; the deployed bridge still enforces $6.00 — erratum A-24 — so $6.00 is the binding cap until the bridge is updated) and $0.50 per Delta trade. A minimum executable quantity that violates any cap is a veto. The Delta high-potential margin ceiling of $1.50 and structural stop distance ceiling of 0.8% apply where eligible; leverage changes collateral and liquidation distance. Any cap, leverage or slot exception requires explicit operator policy and matching tested enforcement. |
 | Sizing and risk | Measure loss in account currency from the executable entry to the 1.20× adverse stop scenario, rounded outward to tick size, with fees and conversion. Use venue contract specifications, quantity step and round down. Check the exact final quantity via a broker valuation and fresh pre-send capacity. Model all simultaneous fills, correlated positions, split entries, fees and uncertain acknowledgments. Gate 11 is a stress convention; realized loss can exceed a modeled loss. |
 | Portfolio | Keep the stricter P5-02 concurrency limit: up to two owned positions total and one crypto position across the desk. Count proposed and pending orders in fill/capacity scenarios. Open plus pending total terminal heat ≤ 1.0% of the relevant current equity. Reserve capacity before sending. Cancel further owned candidate orders after the first two fills when permitted; re-read all orders and fills first. |
 | MT5 friction and shared funds | PIT-18 requires spread / absolute entry-to-SL distance ≤ 0.20. Crypto CFDs also require the PIT-22 floor if enabled. Use live broker quotes and the stricter verified program/account parameters, including the applicable ±2m desk news freeze. Headroom is current equity less the highest applicable broker daily, internal daily or total floor, less incremental correlated loss on all open positions from the current executable mark, pending reservations, and a shock/latency buffer. Missing floor, exposure, news or risk inputs blocks entries. |
@@ -1408,6 +1413,78 @@ Historical desk rounds suffered from cognitive bottlenecks: 95% of assets were v
 
 ---
 
+## SECTION 24. THE ANTIGRAVITY DECISION ACCELERATOR (ONE-CALL EVIDENCE BUNDLES & CANONICAL SCORE-LINE)
+<a id="sec-24"></a>
+
+> **Section card** — **Purpose:** Make every Antigravity trading decision faster, better-grounded and mechanically self-checked: one-call MCP evidence bundles, the canonical score-line format, EV calibration provenance, the pre-submit CHK-A…D checks, and the funnel→dimension→gate decision path on one page. · **Round step:** Step 5 · **Must output:** Canonical score-line per candidate; CHK-A…D verdicts.
+
+> Added in revision 2.2.0-s6 from the 2026-11-20 deep-dive audit of all three engines (Delta-Fibonacci, HFT, CG-Terminal). This section is an accelerator and consistency layer: it NEVER loosens a Kernel K-4 veto, gate, or cap. Where §24 and any other section disagree, the stricter rule governs.
+
+### 24.1 One-call evidence bundles (reduce tool-call sprawl)
+
+[ACC-01] [MANDATORY] [ONE_CALL_EVIDENCE_BUNDLES]: The registered MCP server (`mcp/server.mjs`, run via `npm run mcp`) exposes the full terminal surface as tools. For candidate-building, prefer the bundle tools over many single-feed calls, then drill down only where the bundle output flags a gap:
+
+| Need | One call | Returns |
+| :--- | :--- | :--- |
+| Full formulation context for one asset | `analyze_setup { sym }` | market snapshot + footprint signals + liquidation clusters + whale walls + book walls + CVD + recent events + the formulation guide (bias/entry/stop/targets) |
+| Whole-universe triage on wake | `notifications {}` (cursor-based) then `alpha_screener { kind?, gradeMin? }` | live event feed for HIGH triage; then screener grades with funnel reasons |
+| Narrative + positioning for a candidate | `trade_narrative { sym }` and `quant_positioning { sym }` | 360° narrative and quant positioning digest |
+| EV calibration provenance | `backtest_summary { sym? }` | walk-forward fill/win rates, expectancy R, MC ruin profile, per-model/tier/regime buckets, probability calibration curves |
+| Portfolio-level admission context | `portfolio_risk {}` | live correlation matrix, net beta vs BTC/QQQ, cluster exposure, N_eff, portfolio heat, correlation-guard warnings |
+| MT5 leg context | `desk_status {}` | MT5 account, positions, pending orders, distance-to-fill, recent rounds |
+| Drill-downs when a bundle flags a gap | `market_snapshot`, `signals`, `liquidation_levels { sym, range }`, `liq_live { sym }`, `whale_orders`, `book_walls`, `cvd_state`, `stopmap { sym }` (BTC only), `footprint`, `large_orders`, `kline_series`, `options_surface { sym }` (BTC/ETH only), `live_price`, `list_assets` | individual feeds with their documented params |
+
+[ACC-02] [MANDATORY] [BUNDLE_IS_NOT_EVIDENCE]: A bundle output is a navigation aid. Each number that a gate or Table 7 factor consumes must still trace to a captured source payload (K-3 source contract) with `source_event_utc`, `received_utc`, and freshness status. If the bundle and the captured feed disagree, the captured feed governs and the discrepancy is a coverage gap to report.
+
+### 24.2 The canonical score-line (one-line decision record)
+
+[ACC-03] [MANDATORY] [CANONICAL_SCORE_LINE]: Every candidate that leaves Step 5 must emit exactly one score-line in the dossier and the final report, so the operator can compare setups at a glance:
+
+```text
+<SYM> · <LONG|SHORT> · <archetype S1–S10> · Grade <B|A|A+> <score>/11.5
+  Oracle <n>/100 (Apollo <n> · Poseidon <n> · Hades <n> · Zeus <n> · Atlas <n> · Nemesis <n>)
+  net T2 <x.x>R · EV <x.x>R (calibrated: <source>) · heat <x.x>%
+  entry <zone> · stop <level> (cold zone, <x.x>% from entry) · T1 <level> · T2 <level> · T3 <level>
+  strongest contrary: <one sentence> · invalidates if: <observable price/statistic>
+```
+
+Rules: every field must be backed by the D01–D16 sheet and the Step 5 council record; `n/a` fields are written `n/a`, never omitted; the two free-text tails are mandatory (they are the falsifiability contract of the trade).
+
+### 24.3 EV calibration provenance (closes the R640 defect class)
+
+[ACC-04] [MANDATORY] [EV_PROVENANCE]: A claimed EV is `UNRESOLVED` unless its record names, for the archetype and asset class in question: (a) the sample size and date range of the calibration, (b) the regime bucket(s) the sample came from, and (c) the tool or file that produced the probabilities (`backtest_summary { sym }` per-archetype/tier/regime buckets are the default source; a manual estimate must say so). `BestR`, target distance, or an uncalibrated heuristic probability can never be cited as EV (K-4).
+
+### 24.4 Pre-submit self-checks (closes the R641 defect class)
+
+[ACC-05] [MANDATORY] [PRE_SUBMIT_CHECKS]: Immediately before any Step 9 submission (and for every AUDIT-mode dry disposition), run and record these four mechanical checks. Any FAIL blocks the intent.
+
+| ID | Check | PASS requires |
+| :--- | :--- | :--- |
+| **CHK-A** | Identity hygiene | Every `(venue, instrument_id)` in the intent appears verbatim in the live venue inventory captured this round — no hand-picked watchlists, no cross-asset payload substitution (the R641 failure). |
+| **CHK-B** | Freshness hygiene | Every consumed telemetry row has `source_event_utc` and `received_utc` within the policy freshness window at cutoff; rows older or missing are re-fetched or the dependent gate is recorded unresolved. |
+| **CHK-C** | Slot & heat reconciliation | `portfolio_risk {}` (or the equivalent captured stress computation) re-read live: owned positions + pending orders + this intent still satisfy P5-02 (≤2 owned, ≤1 crypto) and total heat ≤ 1.0% at the concurrent-fill worst case. |
+| **CHK-D** | Disposition completeness | Every funnel hit, every managed ticket, and every gate row has exactly one disposition (`PASS`/`FAIL`/`BLOCKED`/justified `N/A`) with its evidence reference — no blank cells in the final tables (the R640 failure). |
+
+### 24.5 Funnel → dimension → gate map (the decision path on one page)
+
+[ACC-06] [REFERENCE] [DECISION_PATH_MAP]:
+
+```text
+wake → notifications (HIGH triage) → alpha_screener (grades)
+  → per promoted asset: analyze_setup { sym }            [§17 funnels already applied]
+  → D01–D16 sheet (capture per K-3)                      [§5/§14]
+  → Table 7 score + Oracle + council (8 voices)          [§9/§15/§3]
+  → DECIDE (D1→E1→C1→I1→D2→E2)                           [§8]
+  → gates: GATE-01…11, INQ-01…10, PIT-01…22, C-01…10     [§10/§2/§19]
+  → CHK-A…D                                              [§24.4]
+  → canonical score-line                                 [§24.2]
+  → Step 6 decision → Step 9 submission (AUDIT = dry disposition)
+```
+
+[ACC-07] [REFERENCE] [LIVE_DATA_PINS]: The verified route-to-dimension mapping for the terminal (`http://127.0.0.1:3000`): auction VAL/POC/VAH (session/day/month), Fib-prime EMA 13/89/233 and RSI(14) on m15/h1/h4/d1, and day-anchored VWAP ±1σ/2σ/3σ all come from `/api/cg/market` (`buildMarketSnapshot`); the narrative route wraps the same snapshot for its `market.*` fields. D11 requires the three explicit `/api/cg/liqlevels?sym=…&range=3d|7d|30d` windows; D16 requires `/api/cg/liq-live` with verified complete 5-minute coverage. When a route is down, the dimension is `MISSING`/`STALE` per K-3 — never substituted from a different instrument.
+
+---
+
 # APPENDICES (EDITOR-ADDED — REFERENCE & GOVERNANCE LAYER)
 
 > Everything in the Appendices is NEW in structure revision 2.1.0-s1. Appendix A records conflicts **found** in the specification; none was silently "fixed" in the body. The Human resolves each row by ticking the decision column and editing the cited ID.
@@ -1541,6 +1618,14 @@ Kernel (K-0…K-8); Part headings; one *Section card* under every Section; Appen
 ### E.4 Physical order of Sections
 Sections keep their original numbers (every cross-reference uses IDs, and "Section 19", "Table 7", etc. remain valid). They are now grouped in dependency order: Part I (Bootstrap, S0, S1, S2, S18) · Part II (S3, S8, S9, S10, S15) · Part III (S4, S4B, S5, S14, S17) · Part IV (S6, S7, S21, S22) · Part V (S16, S11, S20, S19) · Part VI (S12, S13) · Part VII (S23).
 
+### E.6 Revision 2.2.0-s6 (2026-11-20 — three-engine deep-dive audit)
+
+- Added **Section 24 (Antigravity Decision Accelerator)**: ACC-01 one-call MCP evidence bundles (verified `inputSchema`s), ACC-02 bundle-is-not-evidence, ACC-03 canonical score-line, ACC-04 EV calibration provenance, ACC-05 pre-submit CHK-A…D, ACC-06 decision-path map, ACC-07 live-data pins. Registered in the K-2 Step 5 anchor cell.
+- Added **Appendix G** (verified runtime reference: 27 MCP tools, route build status, engine test gates, errata A-24/A-25). Registered in the K-2 Step 5 and Step 11 anchor cells; A–F references in K-1 and the launch prompt updated to A–G.
+- Resolved the live MT5 ceiling conflict: enforced $6.00 governs until the bridge ships the operator's $10.00 directive with tested enforcement (A-24; YAML manifest + K-4 annotated).
+- Appendix F bridge warning annotated: the checked-in bridge now clamps via `HARD_CAP_USD`; gateway signed-admission wiring remains the LIVE blocker.
+- No thresholds, gates, vetoes, or caps were loosened. §24 explicitly defers to the stricter rule on any conflict.
+
 ### E.5 Differences carried from the previous upload to `_1`
 - ARCH-S10 detail: the "Furthermore … reallocate or cancel the dormant macro order" sentence and the Entry / Stop / Volume-Signature bullets were replaced by the 4-Phase Consolidation Shelf & Pullback Retest Protocol (see A-21).
 - New `[DMR-01]` (Dynamic Margin Recycling & Stale-Order Pruning) after ARCH-S10 (see A-22).
@@ -1568,6 +1653,39 @@ Sections keep their original numbers (every cross-reference uses IDs, and "Secti
 
 The checked-in MT5 bridge accepts a higher risk cap through an override. Its default alone does not enforce the $6 ceiling. Existing venue tools require additional gateway wiring for signed admission, shared-account stress and risk reservations. Keep LIVE blocked until the deployed path enforces these checks.
 
+> **A-24 correction (2026-11-20, verified by code read):** the MT5 bridge now enforces the ceiling structurally: `scripts/mt5_order_risk.py` defines `HARD_CAP_USD = 6.00` and `size_order()` takes `cap = min(requested, HARD_CAP_USD)` before any quantity is computed, and `scripts/mt5_cg_trader.py` routes every `--place`/`--calc-risk` through it. A `--max-risk` value above $6.00 is therefore clamped, not honored. Gateway wiring for signed admission and risk reservations remains outstanding; LIVE stays blocked behind it.
+
 ---
 
-*END OF CANONICAL MASTER SPECIFICATION (SOP v2.1.0 · STRICT ENFORCEABLE LINE-BY-LINE MASTER BIBLE)*
+## APPENDIX G. VERIFIED RUNTIME REFERENCE (2026-11-20 DEEP-DIVE AUDIT)
+<a id="appendix-g"></a>
+
+> **Section card** — **Purpose:** Machine-verified inventory of the MCP tool surface, live API routes, and engine health as of the 2026-11-20 three-engine audit — so the agent cites real capabilities instead of stale assumptions. Loaded at Steps 5 and 11.
+
+### G.1 Registered MCP tools (27, `mcp/server.mjs`, run `npm run mcp`)
+
+`list_assets` · `market_snapshot { sym }` · `live_price { sym }` · `signals` · `notifications` (cursor persisted in `data/mcp-cursor.json`) · `liquidation_levels { sym, range }` · `liq_live { sym }` · `whale_orders { sym, minUsd }` · `book_walls` · `cvd_state` · `stopmap { sym }` (BTC only) · `footprint` · `large_orders` · `kline_series` · `analyze_setup { sym }` · `trade_narrative { sym }` · `quant_positioning { sym }` · `options_surface { sym }` (BTC/ETH only) · `alpha_screener { kind?, gradeMin? }` · `desk_status` · `paper_book` · `backtest_summary { sym? }` · `portfolio_risk` · `narrative_ai_brief` — plus the feeds documented in §24.1. Parameter shapes above are the verified `inputSchema`s; do not invent optional params.
+
+### G.2 Terminal API routes (production build verified 2026-11-20)
+
+23 `/api/cg/*` + `/api/desk/*` + `/api/health` routes compile and serve under `next build` standalone (build clean, `/api/health` green, `/api/cg/ticker` served a fresh live Coinglass quote at audit time). `/api/cg/market` is the authoritative source for auction/EMA/RSI/VWAP fields (ACC-07). The dual-lockfile standalone-nesting bug that 404'd static chunks in production was fixed by pinning `turbopack.root` in `next.config.ts` (same audit).
+
+### G.3 Engine health (post-fix test gates)
+
+| Engine | Suite | Result at audit |
+| :--- | :--- | :--- |
+| CG-Terminal web | `npm run build` + standalone boot + smoke | clean · HTTP 200 · live data |
+| CG-Terminal Python | parse-check sweep, 280 files | 0 syntax errors |
+| HFT (Delta India) | `python -m pytest tests/` | 15 passed (A-S math + sniper-gate regressions included) |
+| Delta-Fibonacci (MT5) | `python -m pytest tests/` + E2E synthetic proof | 37 passed, 32 skipped (Windows-only guards) · E2E all 6 stages green |
+
+### G.4 Errata added by this revision
+
+| # | Where | Conflict found | Resolution |
+| :--- | :--- | :--- | :--- |
+| A-24 | YAML manifest + K-4 vs GATE-07/MT5-02 and `scripts/mt5_order_risk.py` | Operator directive of 2026-11-20 states a $10.00 MT5 ceiling; the deployed bridge structurally enforces $6.00 (`HARD_CAP_USD`). | **$6.00 is the binding cap** until the bridge is updated and re-verified; the manifest and K-4 now say so. Raising the cap requires operator policy plus matching tested enforcement (K-0 item 5). |
+| A-25 | §5 D02/D03/D04/D05 source column vs the code | Dimensions were pinned to `/api/cg/narrative` `market.*` fields; the narrative route is a wrapper — `buildMarketSnapshot` in `src/lib/cg/market.ts` computes auction/EMA/RSI/VWAP and is the shared source of truth. | ACC-07 records the verified mapping; D02–D05 continue to work through either route, but freshness and gap analysis must reference the underlying snapshot. No numeric thresholds changed. |
+
+---
+
+*END OF CANONICAL MASTER SPECIFICATION (SOP v2.2.0 · STRICT ENFORCEABLE LINE-BY-LINE MASTER BIBLE)*
