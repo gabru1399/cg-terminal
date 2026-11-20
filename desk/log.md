@@ -18705,3 +18705,16 @@ ead_file validation.
   - Order ID: #1699098643 · Reason: User-authorized Option A cancellation (removed naked order without bracket SL/TP; resolved portfolio correlation conflict with MT5 BTCUSD.pi short #20335916).
   - Exchange Response: State cancelled, cancellation_reason cancelled_by_user.
   - Verification: Confirmed 0 open BTC orders remaining on Delta Exchange India CLOB.
+## R748 · 2026-11-20 12:05 UTC · zai-desk
+
+**Market**: BTC 61,586.4 (-0.6%)  ETH 1,739.90 (-1.0%)  SOL 71.40 (-2.3%)  XAU 3,576.72 (-1.0%)  XAG 42.340 (-0.7%)
+**Bias (|score|≥2)**: BNB-8(TREND)  ETH-5(TRANS)  BTC-5(TREND)  LINK-4(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
