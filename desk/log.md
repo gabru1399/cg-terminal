@@ -18082,3 +18082,27 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+
+## R626 · 2026-11-20 06:38 UTC · atg-exec
+
+### 1. Dual-Venue Execution & Surveillance Summary
+- **Blueberry Funded MT5 (#5126976)**:
+  * RUNNING 1: `EURUSD.pi` Short 0.02 lots @ 1.10026 | Current 1.09873 | Floating +$2.98 USD | SL locked at Breakeven 1.10026 ($0.00 downside risk).
+  * RUNNING 2: `BTCUSD.pi` (Ticket #20335916) Short 0.01 lots @ 61,800.00 | Current 61,800.50 | Floating -$0.04 USD | SL 62,380.00 in Cold Zone | TP 60,200.00 (2.76R).
+  * RESTING: `BNBUSD.p` (#20286769) Sell Limit 0.79 @ 602.50.
+  * RESTING: `ETHUSD.pi` (#20293581) Sell Limit 0.27 @ 1,838.50.
+  * RESTING: `XAUUSD.pi` (#20297864) Sell Limit 0.01 @ 3,741.50.
+  * Invariant [MT5-05]: 22 co-located Alpha_* positions audited; 100% untouched and unadjusted.
+  * Account Equity: $2,644.50 USD | Target: $2,700.00 USD (Remaining: $55.50 USD).
+- **Delta Exchange India (#26902927)**:
+  * RUNNING: `SEIUSD` Short -5 contracts @ 0.03780 | Current 0.03751 | Floating profit +0.31R | SL 0.03890 | TP 0.03560.
+  * RESTING: `DOTUSD` (#1698114560) Sell Limit 2 @ 0.7120.
+  * RESTING: `XAUTUSD` (#1697287270) Sell Limit 5 @ 3,692.00.
+  * Capacity: 2 crypto + 1 gold slot active/pending (Gate 9 / PIT-19 compliant).
+
+### 2. Pre-Flight Verification & Universal Scan
+- Wake script `agent_wake_verification.py --round 626` exited code 0.
+- All 12 critical paths, plugins, skills, MCP schemas verified operational.
+- 236 live assets scanned: 0 A+ / 8 Grade B / 228 Vetoed.
+- Single dynamic 1200s recursion timer armed for Round R627 (`task-30325`).
