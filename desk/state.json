@@ -313,7 +313,7 @@
       "mt5RiskUsd": 5.8,
       "stressedRiskUsd": 6.96,
       "riskR": 2.76,
-      "status": "placed-mt5",
+      "status": "filled",
       "note": "S11 MTF Trend Cascade Pullback to Day VWAP midline 61,800, Grade A+ (8.5 pts), EV +2.58R, 0.01 lots risks .96 against .00 A+ cap"
     }
   ],
@@ -337,6 +337,18 @@
       "sl": 0.0389,
       "tp": 0.0356,
       "status": "active"
+    },
+    {
+      "ticket": 20335916,
+      "symbol": "BTCUSD.pi",
+      "venue": "mt5",
+      "side": "short",
+      "size": 0.01,
+      "entryPrice": 61800.0,
+      "sl": 62380.0,
+      "tp": 60200.0,
+      "status": "active",
+      "fill_ts": 1795155180000
     }
   ],
   "closed": [

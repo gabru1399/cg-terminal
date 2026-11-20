@@ -18042,3 +18042,30 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## R624 · 2026-11-20 06:15 UTC · atg-exec
+
+### 1. Pre-Flight Bootstrap & Fill Confirmation
+- **Bootstrap Integrity**: agent_wake_verification.py --round 624 exited 0; all 431 Kernel lines verified; 236 assets scanned live.
+- **FILL EVENT (Blueberry MT5)**: Order ticket #20335916 (BTCUSD.pi Sell Limit @ 61,800.00) FILLED into active short position.
+  * Active position: 0.01 lots @ 61,800.00 | SL 62,380.00 | TP 60,200.00 | Stressed Risk: 6.96 USD (0.26% equity) | Payoff: 2.76R.
+  * Invariant [MT5-05]: 20 co-located Alpha_* positions verified and 100% untouched.
+
+### 2. Dual-Venue In-Flight Surveillance
+- **Blueberry Funded MT5 (#5126976)**:
+  * RUNNING 1: EURUSD.pi Short 0.02 @ 1.10026, Current 1.09837, Floating profit +3.78 USD, SL locked at Breakeven 1.10026 (0.00 downside risk).
+  * RUNNING 2: BTCUSD.pi Short 0.01 @ 61,800.00, Current 61,895.50, Floating PnL -0.96 USD (-0.16R), SL 62,380.00, TP 60,200.00.
+  * RESTING: BNBUSD.p (#20286769) Sell Limit 0.79 @ 602.50.
+  * RESTING: ETHUSD.pi (#20293581) Sell Limit 0.27 @ 1,838.50.
+  * RESTING: XAUUSD.pi (#20297864) Sell Limit 0.01 @ 3,741.50.
+  * Account Equity: 2,645.80 USD | Distance to Phase 1 Target (2,700.00 USD): 54.20 USD.
+- **Delta Exchange India (#26902927)**:
+  * RUNNING: SEIUSD Short -5 @ 0.03780, Mark 0.03716, Floating profit +0.0320 USD (+0.58R), SL 0.03890, TP 0.03560.
+  * RESTING: DOTUSD Sell Limit 2 @ 0.7120 (#1698114560, 3.33R).
+  * RESTING: XAUTUSD Sell Limit 5 @ 3,692.00 (#1697287270, 6.46R).
+  * Capacity / Gate 9: 1 active crypto short (SEI) + 1 resting limit (DOT) = 2 crypto slots full; Slot 3 is Gold (XAUT). Net Equity: 3.353 USD.
+
+### 3. Operator Inquest
+- Question: What are potential high confluence A+ setups for Delta and MT5 that can be punched right away?
+- Answer: Both venues are currently operating at structural capacity under Gate 9 / PIT-19 (Max 2 same-direction crypto positions: MT5 has BTC filled short; Delta has SEI active + DOT resting; Slot 3 TradFi is Gold on both venues). Standing limits remain active in verified cold zones. No new orders required.
+
