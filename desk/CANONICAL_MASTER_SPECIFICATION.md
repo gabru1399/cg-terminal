@@ -372,11 +372,11 @@ Apply the Karpathy guidelines to the round: state testable assumptions first, us
 | :--- | :--- | :--- | :---: |
 | **1** | **Directional Trend** | H4 AND D1 EMA 13×89 aligned in trade direction AND compatible with active regime (Scores 0.0 in `RANGE_BALANCE` where slope is flat). | **+2.0** |
 | **2** | **Auction / VWAP Regime** | Long in Discount (below VWAP, $|z| \le 1.0$) / Short in Premium (above VWAP, $|z| \le 1.0$) or at exact POC/VWAP mean retest. | **+1.5** |
-| **3** | **Footprint Order-Flow** | Strong Divergence or Absorption at the entry zone ($\le 8\text{h}$ recency) = +2.0; Divergence/Exhaustion = +1.0. | **+2.0** |
+| **3** | **Footprint Order-Flow** | Counter-trend Absorption/Strong Divergence (+2.0) OR In-Trend Pullback Rejection with directional taker delta dominance (buy share ≥ 52% long / ≤ 48% short) (+2.0); Divergence/Exhaustion = +1.0. | **+2.0** |
 | **4** | **Whale Wall Backstop** | Entry defended by confirmed resting wall (Tier 1 $\ge \$5\text{M}$, Tier 2 $\ge \$1.0\text{M}$, Tier 3 $\ge \$250\text{k}-\$500\text{k}$, Tier 4 $\ge \$50\text{k}-\$100\text{k}$, or $\ge 20\%$ depth within $\pm 1\%$) AND age $> 1\text{h}$. | **+1.5** |
 | **5** | **CVD Alignment** | Spot and Perp CVD delta confirming price swing or showing absorption divergence. | **+1.0** |
 | **6** | **Liquidity Magnet Gate** | Liquidation skew favors trade direction; LSR $< 2.5:1$; Vector B risk zone clear of hazard pools. | **+1.5** |
-| **7** | **Options GEX Context** | Gamma regime confirms setup type (Positive for S2/S5, Negative for S1/S8 — BTC/ETH only). | **+1.0** |
+| **7** | **Options GEX / Alt Flow Skew** | BTC/ETH: Gamma regime confirms setup type (Positive for S2/S5, Negative for S1/S8) (+1.0). Altcoins: Dynamic Funding Rate or Liquidation Skew confirms trend (negative funding in bull / positive funding in bear, or LSR < 1.0 / > 1.0) (+1.0). | **+1.0** |
 | **8** | **Broker Spread & Friction** | Delta CLOB spread $< 0.05\%$, consumes $< 20\%$ of planned stop-loss distance, maker post-only. | **+1.0** |
 | **TOTAL**| **CANONICAL SCORE** | **MAXIMUM CONFLUENCE POINTS** | **11.5 pts** |
 
@@ -384,7 +384,7 @@ Apply the Karpathy guidelines to the round: state testable assumptions first, us
 
 | Score | Grade | Leverage Cap | Risk Allocation | Operational Action |
 | :--- | :---: | :---: | :---: | :--- |
-| **$\ge 7.0\text{ pts}$** | **Grade A (A+ from 7.5)** | **Up to 25X** | **1.0% equity cap** | Pristine Institutional Setup. Authorizes full standard position unit with up to 25X isolated leverage (Dollar Risk strictly $\le 1.0\%$ of Net Liquid Equity, e.g. $\le \$0.028\text{ USD}$ on $\approx \$2.77$ equity). |
+| **$\ge 7.0\text{ pts}$** | **Grade A (A+ from 7.5)** | **Up to 25X** | **1.0% equity cap** | Pristine Institutional Setup. Authorizes full standard position unit with up to 25X isolated leverage (Dollar Risk strictly $\le 1.0\%$ of Net Liquid Equity, e.g. $\le \$0.028\text{ USD}$ on $\approx \$2.77$ equity). In verified `TRENDING_EXPANSION` regimes, Grade A ($\ge 7.0$) is authorized for S10 In-Trend Pullbacks with $EV \ge 2.0\text{R}$. |
 | **$5.0 - 6.5\text{ pts}$** | **Grade B** | **Up to 20X** | **0.5% equity cap** | Standard Setup. Authorizes half-unit risk allocation ($\le 0.5\%$ of equity). |
 | **$< 5.0\text{ pts}$** | **NO TRADE** | **0X** | **0.0% equity** | **HARD VETO. Capital Preserved.** Never enter sub-threshold setups. |
 
@@ -738,8 +738,8 @@ Table 7 Score : <pts> / 11.5 | Grade: <A/B/NO_TRADE> | Action: <EXECUTE / REJECT
   - Candidate Trigger: Any asset with a confirmed resting whale wall ($\ge \$1.0\text{M}$ on alts, $\ge \$5.0\text{M}$ on BTC/ETH) defending support/resistance, or 5m depth imbalance delta $> \pm 15\%$, is automatically promoted for S3 Wall Defense or S4 Wall-Pull Breakout.
 
 [FUNNEL-04] [DISCOVERY] [TREND_SHELF_EXTREME_VWAP_FUNNEL]:
-  - Action: Scans `/api/cg/market` and `/api/cg/narrative` for statistical extensions and trend shelves.
-  - Candidate Trigger: Extreme extension $|z| \ge 2.0\sigma$ promotes S5 VWAP Mean Reversion; strong runaway trends ($|z| \ge 1.0\sigma$, Fib EMA 13 < 89 < 233) with a 4-to-12 bar consolidation shelf promote S10 In-Trend Shelf Breakdown.
+  - Action: Scans `/api/cg/market` and `/api/cg/narrative` for statistical extensions, dynamic pullback retests, and trend shelves.
+  - Candidate Trigger: Extreme extension $|z| \ge 2.0\sigma$ promotes S5 VWAP Mean Reversion; clean in-trend directional alignment (15m/1h Fib EMA 13/89/233 stacked in order, $|z| \in [0.4\sigma, 1.8\sigma]$) with a consolidation shelf or dynamic pullback retest of 15m EMA 13/21 or VWAP $\pm 1.0\sigma$ promotes S10 In-Trend Pullback Continuation.
 
 [FUNNEL-05] [DISCOVERY] [TRADIFI_METALS_INDICES_FUNNEL]:
   - Action: Dedicated multi-asset scan for Gold (`XAUUSD.pi`/`XAUTUSD`), Silver (`XAGUSD.pi`), US Tech 100 (`NAS100.p`/`SPX500`), Oil (`UKOUSD.p`), and TradFi equity perps (`NVDA`, `TSLA`, `MSFT`, `CRCL`).
@@ -1512,6 +1512,13 @@ Sections keep their original numbers (every cross-reference uses IDs, and "Secti
 - ARCH-S10 detail: the "Furthermore … reallocate or cancel the dormant macro order" sentence and the Entry / Stop / Volume-Signature bullets were replaced by the 4-Phase Consolidation Shelf & Pullback Retest Protocol (see A-21).
 - New `[DMR-01]` (Dynamic Margin Recycling & Stale-Order Pruning) after ARCH-S10 (see A-22).
 - New `[RET-R09]` and a new RET-MATRIX row "Bear/Bull Flag Shelf" (see A-23, A-04).
+
+### E.6 Institutional Quant Enhancements (Revision 2.1.0-s5)
+- Codified In-Trend Pullback Continuation in `[FUNNEL-04]`: captures dynamic 15m EMA 13/21 and VWAP $\pm 1.0\sigma$ retests with $|z| \in [0.4\sigma, 1.8\sigma]$.
+- Updated Table 7 Factor 3: awards +2.0 pts for Reversal Absorption OR In-Trend Taker Delta Dominance + Pullback Rejection.
+- Updated Table 7 Factor 7: eliminated altcoin Options GEX structural penalty by allowing Dynamic Funding Rate / Liquidation Skew (+1.0 pt).
+- Authorizes Grade A ($\ge 7.0$ pts) execution in verified `TRENDING_EXPANSION` regimes for high-expectancy S10 setups ($EV \ge 2.0\text{R}$).
+
 
 ---
 
