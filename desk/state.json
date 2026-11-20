@@ -314,6 +314,22 @@
       "riskR": 2.76,
       "status": "filled",
       "note": "S11 MTF Trend Cascade Pullback to Day VWAP midline 61,800, Grade A+ (8.5 pts), EV +2.58R, 0.01 lots risks .96 against .00 A+ cap"
+    },
+    {
+      "id": "DELTA-TRX-1698638980",
+      "sym": "TRX",
+      "venue": "Delta_India",
+      "productSymbol": "TRXUSD",
+      "orderId": 1698638980,
+      "side": "SELL_LIMIT",
+      "size": 20,
+      "actualEntry": 0.31,
+      "actualSL": 0.3114,
+      "actualTP": 0.30614,
+      "riskR": 2.76,
+      "expectedRiskUsd": 0.028,
+      "status": "placed",
+      "note": "M1 Trend Pullback / S10 Shelf Retest short limit, Grade A+ (9.5 pts), 0.875% equity risk, post-only maker, cold-zone SL 0.31140"
     }
   ],
   "positions": [
