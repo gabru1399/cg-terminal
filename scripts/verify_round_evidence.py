@@ -12,7 +12,7 @@ import re
 import sys
 
 from agent_wake_verification import ROOT, SPEC, load_round_spec, section_progress, validate_wake
-from round_source_checks import audit_source, check_inventory, direct_value, liquidation_pace, screen_observations
+from round_source_checks import audit_source, book_instrument, check_inventory, direct_value, liquidation_pace, screen_observations
 
 
 VENUES = {"delta", "mt5"}
@@ -183,7 +183,16 @@ def verify(directory, round_id, spec):
     if scope and "managed" not in scope:
         issues.append("scope: missing managed instrument rows")
     for key, row in managed.items():
-        source(row.get("source"), "managed " + "/".join(key))
+        label = "managed " + "/".join(key)
+        body = source(row.get("source"), label)
+        symbol = venue_symbols.get(key)
+        if symbol is None:
+            issues.append(f"{label}: instrument ID is absent from the reconciled venue inventory")
+        elif body is not None:
+            try:
+                book_instrument(body, *key, symbol)
+            except (ValueError, TypeError, KeyError, IndexError, AttributeError) as exc:
+                issues.append(f"{label}: {exc}")
     positions = rows(scope, "desk_positions", ("venue", "ticket"), "desk positions")
     if scope and "desk_positions" not in scope:
         issues.append("scope: missing desk position roster")

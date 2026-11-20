@@ -14,7 +14,7 @@ from unittest.mock import patch
 import agent_wake_verification as reader
 from capture_round_evidence import capture
 import blueberry_phase1_guard as phase1
-from round_source_checks import FUNNEL_FEEDS, audit_source, liquidation_pace
+from round_source_checks import FUNNEL_FEEDS, audit_source, book_instrument, liquidation_pace
 from verify_round_evidence import FUNNELS, verify
 
 
@@ -180,6 +180,9 @@ class RoundEvidenceTest(unittest.TestCase):
             audit_source(ref, receipt, payload, wake, now, {"liqlevels"}, "ETHUSD", "7d")
         with self.assertRaisesRegex(ValueError, "range"):
             audit_source(ref, receipt, payload, wake, now, {"liqlevels"}, "BTCUSD", "30d")
+        xau_receipt = {**receipt, "query": {"sym": "XAU", "range": "7d"}}
+        audit_source(ref, xau_receipt, {**payload, "sym": "XAU"}, wake, now,
+                     {"liqlevels"}, "XAUUSD.pi", "7d")
         event = {"t": ms, "asset": "BTC", "venue": "delta", "pair": "BTCUSD",
                  "side": "long", "price": 100, "qtyBase": 1, "usd": 100}
         body = {"asset": {"sym": "BTC", "events": [event, event]}, "venues": [
@@ -194,6 +197,22 @@ class RoundEvidenceTest(unittest.TestCase):
         result = phase1.check_and_enforce_phase1(True)
         self.assertFalse(result["ok"])
         self.assertIn("read-only", result["error"])
+
+    def test_managed_instrument_requires_live_book_id_and_symbol(self):
+        orders = {"result": [{"id": 123, "state": "open", "size": 2,
+                              "product_id": 15304, "product_symbol": "DOTUSD"}]}
+        book_instrument(orders, "delta", "15304", "DOTUSD")
+        with self.assertRaisesRegex(ValueError, "missing from the cited broker book"):
+            book_instrument(orders, "delta", "17208", "DOTUSD")
+        with self.assertRaisesRegex(ValueError, "missing from the cited broker book"):
+            book_instrument(orders, "delta", "15304", "XAUTUSD")
+        with self.assertRaisesRegex(ValueError, "expected broker orders or positions"):
+            book_instrument({"pages": [orders]}, "delta", "15304", "DOTUSD")
+        with self.assertRaisesRegex(ValueError, "missing from the cited broker book"):
+            book_instrument({"result": [{"product_id": 15304, "product_symbol": "DOTUSD"}]},
+                            "delta", "15304", "DOTUSD")
+        book_instrument({"positions": [{"ticket": 123, "symbol": "XAUUSD.pi"}]},
+                        "mt5", "XAUUSD.pi", "XAUUSD.pi")
 
 
 if __name__ == "__main__":

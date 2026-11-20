@@ -1,6 +1,7 @@
 """Deterministic checks for evidence captured by capture_round_evidence.py."""
 
 from datetime import datetime, timedelta, timezone
+import json
 import math
 import operator
 import re
@@ -93,6 +94,38 @@ def inventory_map(items):
     if not items or len(mapping) != len(items):
         raise ValueError("venue inventory is empty or has duplicate IDs")
     return mapping
+
+
+def book_instrument(payload, venue, key, symbol):
+    """Require a broker book record for this exact instrument."""
+    if isinstance(payload, dict) and "response" in payload:
+        response = payload["response"]
+        if response.get("isError") or payload.get("tool") not in {"get_margined_positions", "get_open_orders"}:
+            raise ValueError("expected a successful broker orders or positions response")
+        payload = json.loads(response["content"][0]["text"])
+
+    if isinstance(payload, list):
+        records = payload
+    elif isinstance(payload, dict) and isinstance(payload.get("result"), list):
+        records = payload["result"]
+    elif isinstance(payload, dict) and any(name in payload for name in ("positions", "orders")):
+        records = payload.get("positions", []) + payload.get("orders", [])
+    else:
+        raise ValueError("expected broker orders or positions, not an inventory or market payload")
+
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        if venue == "delta":
+            order = record.get("id") is not None and record.get("state") in {"open", "pending"}
+            position = record.get("entry_price") is not None
+            if (str(record.get("product_id")) == key and record.get("product_symbol") == symbol
+                    and record.get("size") is not None and (order or position)):
+                return
+        elif (venue == "mt5" and record.get("symbol") == key and key == symbol
+              and type(record.get("ticket")) is int and record["ticket"] > 0):
+            return
+    raise ValueError("instrument ID and venue symbol missing from the cited broker book")
 
 
 def direct_value(body, pointer):
