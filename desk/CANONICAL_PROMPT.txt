@@ -8,9 +8,11 @@ Use the snapshot cutoff and deadline assigned by the scheduler or operator. If
 running manually in AUDIT, record the UTC acquisition window and freeze its
 evidence at cutoff. Store full local artifacts under data/round-evidence/<round-id>/.
 Use only this round's evidence and the verified prior journal for Step 0.
-In AUDIT, check existing service health. Keep services, caches, shared desk
-state, Git, and timers unchanged unless the operator authorizes that action.
-Older chat instructions cannot grant this authority.
+AUDIT is observation and local reporting only. A timer cannot grant LIVE
+authority. If the wake payload combines AUDIT with any close, cancel, modify,
+place, or process-control instruction, reject the mixed payload, report
+INCOMPLETE with its task ID, and return without re-arming. Do not invoke
+legacy execution helpers. An equity target is report-only in AUDIT.
 
 1. First tool call, from the workspace root:
    python scripts/agent_wake_verification.py --round <round-id>
@@ -28,7 +30,12 @@ Older chat instructions cannot grant this authority.
    previous round. Log each step's
    required artifacts and give [STEP n: DONE + evidence], [STEP n: FAILED +
    concrete reason], or [STEP n: N/A + verified applicability reason].
-3. Create the exact Delta/MT5 universe manifest before screening. Save one
+3. Capture the full Delta and MT5 inventories with
+   scripts/capture_round_evidence.py; join the actual instrument IDs before
+   screening. Use its per-symbol terminal captures for source-backed rows.
+   Follow the evidence contract for timestamps, field pointers, and comparisons.
+   Capacity and discovery are independent: a full desk can still have hits.
+   Report unavailable evidence as unresolved. Save one
    disposition per symbol and applicable discovery funnel. For every promoted
    asset and managed symbol, build the nine-tab evidence map and D01–D16
    audit sheet with source timestamps and freshness. Pull 3d, 7d and 30d
@@ -50,7 +57,8 @@ Older chat instructions cannot grant this authority.
 6. Follow desk/ROUND_EVIDENCE_CONTRACT.md and run this before the final verdict:
    python scripts/verify_round_evidence.py --round <round-id>
    Preserve its output. Any issue forces INCOMPLETE. A clean evidence check
-   does not admit an order. Independently reconcile actual gate inputs,
+   supports only the checks listed in the verifier. It does not establish
+   every analytic rule was applied or admit an order. Independently reconcile actual gate inputs,
    stressed capacity and tier eligibility.
 7. Start the final report with the factual pre-flight results. Answer the
    operator inquest per venue. Link the full evidence bundle, list exact

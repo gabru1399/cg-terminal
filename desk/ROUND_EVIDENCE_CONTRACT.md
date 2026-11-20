@@ -12,7 +12,20 @@ Save the audit locally under `data/round-evidence/<round-id>/`. Use the exact R-
 
 The four manifest files include `round_id` and `spec_sha256`. In `scope.json`, also list `desk_positions` with `venue`, `ticket` (string), `instrument_id`, `asset_class` (`crypto` or `tradfi`) and `source` for each owned open position from either venue. Use an empty array only for a broker-confirmed empty desk book. In the gate rows name the input `observed` and the limit `threshold`.
 
-A source reference is an object with a relative `path` under `raw/` and the `sha256` of the original bytes. Keep the raw payload and cite the precise field used. If a tool failed, preserve its error and record the affected row as unresolved. The same raw payload may support several rows if its key, field and timestamp match.
+A source reference is an object with a relative `path` under `raw/` and the `sha256` of the original bytes. Use the read-only capture tool for venue inventories and terminal data. It binds receipts in `captures/` to this wake, feed, actual request and receipt time. Preserve tool errors as unresolved evidence.
+
+```powershell
+python scripts/capture_round_evidence.py --round <round-id> --feed delta-inventory
+python scripts/capture_round_evidence.py --round <round-id> --feed mt5-inventory
+python scripts/capture_round_evidence.py --round <round-id> --feed market --symbol BTC
+python scripts/capture_round_evidence.py --round <round-id> --feed liqlevels --symbol BTC --range 7d
+```
+
+Delta keys use exchange product IDs from the captured live perpetual inventory. MT5 keys use broker symbol names from the configured account's enabled inventory. Never substitute a hand-picked watchlist for the inventory.
+
+For each resolved funnel row record `checks` with `feed`, optional `range`, `source`, JSON `pointer`, `observed`, `op` (`gte`, `gt`, `lte`, `lt`, or `eq`) and `threshold`. Use the §17 trigger conditions with enough per-feed observations to justify each result. Slot or heat restrictions belong in the gate records and cannot populate the screen.
+
+For each direct telemetry value supply `value_pointer`; the verifier resolves it in the correct captured payload. Use the source's data timestamp as `source_event_utc` and its capture receipt time as `received_utc`. D11 checks the actual symbol and window in each response. D16 recomputes the five-minute sum using captured events, and rejects incomplete or capped coverage. Where a dimension needs a derivation not covered by the verifier, report it as unresolved until an executable derivation or trusted materializer is available. Never fill a missing value from a different instrument.
 
 Keep the full SOP step artifacts in addition to these verifier inputs. Each gate result should state the observed value, threshold, and consequence. Reconcile scope across both venues before classifying any orders. Separate gross target-to-stop geometry, stressed payoff after costs, and EV backed by a calibrated outcome model. Protect original-risk and age evidence for open positions. If the account audit shows a slot or risk limit breached, the gate cannot be PASS even when the order is already resting.
 
