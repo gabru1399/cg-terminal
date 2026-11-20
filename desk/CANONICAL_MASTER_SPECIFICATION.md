@@ -1,6 +1,6 @@
 # Canonical Master Specification
 
-**Trading SOP v2.1.0 · Execution runbook revision 2.1.0-s3**
+**Trading SOP v2.1.0 · Execution runbook revision 2.1.0-s4**
 
 Delta Exchange India (`india_prod`, account `26902927`) · Blueberry Funded MT5 (login `5126976`)
 
@@ -37,7 +37,7 @@ From the repository root, initialize the scheduler-supplied round:
 python scripts/agent_wake_verification.py --round R<number>
 ~~~
 
-The command returns the Kernel and saves the first wake receipt with the original read-only bootstrap probes and file hashes. Repeating it returns the same receipt. Inspect each probe result separately; disk presence and usable runtime feeds are different checks.
+The command returns the title, preamble and Kernel and saves the first wake receipt with the original read-only bootstrap probes and file hashes. Repeating it returns the same receipt. Inspect each probe result separately; disk presence and usable runtime feeds are different checks.
 
 Before evaluating each step, repeat the step command until its receipt reports an empty `remaining_anchors` array or `STEP_READY`. Each call returns one required document section in full and records it. The step command reads the hash from the saved receipt and refuses earlier gaps. Replace placeholders with actual identifiers.
 
@@ -46,7 +46,7 @@ python scripts/agent_wake_verification.py --round R<number> --step <n>
 python scripts/agent_wake_verification.py --round R<number> --status
 ~~~
 
-Use `--step <n> --section <anchor>` to reread a section assigned to that step if tool output was clipped. Step 0 includes the launch prompt. Step 1 includes the evidence contract. Record the observed inputs and applicable rule IDs separately. A receipt verifies tool delivery, while the decision record demonstrates application. A failed prerequisite or pinned file change ends dependent work as `INCOMPLETE`. Preserve the original files and use a new round ID for a revised protocol. Report the actual round and error; never rewrite evidence, patch or restore the reader from an audit wake, or substitute an older round.
+Use `--step <n> --section <anchor>` to reread a section assigned to that step if tool output was clipped. Step 0 includes the launch prompt. Step 1 includes the evidence contract. The required reads through Step 5 cover the entire SOP from line 1 through the end marker, including Section 13, Sections 14–23, and Appendices A–F. Run `python scripts/agent_wake_verification.py --round R<number> --require-formulation-reads` before building or recommending a trade. The command fails if any source section is missing or any required Step 0–5 receipt is absent. It checks delivery, while the decision record must separately cite applicable rule IDs and the observed inputs. A failed prerequisite or pinned file change ends dependent work as `INCOMPLETE`. Preserve the original files and use a new round ID for a revised protocol. Report the actual round and error; never rewrite evidence, patch or restore the reader from an audit wake, or substitute an older round.
 
 ### K-2 · Ordered state machine
 
@@ -54,12 +54,12 @@ Record `[STEP n: DONE | FAILED | N/A + reason]` at every step. Replace the statu
 
 | Step | Required section anchors | Required work and completion evidence |
 |---|---|---|
-| 0 · Wake and lessons | `kernel`, `launch-prompt`, `sec-0`, `sec-1` | Pin round, mode, start/cutoff, SOP hash and prior round receipt. Record the actual misses and one testable correction per miss, or `FIRST_ROUND`. |
-| 1 · Pre-flight | `evidence-contract`, `boot`, `sec-2`, `sec-18`, `sec-12` | Read the required local skills and record the successful probes. Read the inbox. Obtain live Delta account, positions and orders and a full MT5 status with account, positions and orders. Record endpoint/tool, status, identity and timestamp. Validate connectivity, clock and scope before action. |
+| 0 · Wake and lessons | `kernel`, `launch-prompt`, `sec-0`, `sec-1`, `appendix-d`, `appendix-e` | Pin round, mode, start/cutoff, SOP hash and prior round receipt. Record the actual misses and one testable correction per miss, or `FIRST_ROUND`. |
+| 1 · Pre-flight | `evidence-contract`, `boot`, `sec-2`, `sec-18`, `sec-12`, `appendix-a`, `appendix-b`, `appendix-c`, `appendix-f` | Read the required local skills and record the successful probes. Read the inbox. Obtain live Delta account, positions and orders and a full MT5 status with account, positions and orders. Record endpoint/tool, status, identity and timestamp. Validate connectivity, clock and scope before action. |
 | 2 · Operator inquest | `sec-2` | Ask which high-confluence A+ setups could be actionable immediately on Delta and MT5. Give a provisional answer per venue, with evidence gaps. Resolve it in Step 10. |
 | 3 · Reconcile account and scope | `sec-11`, `sec-12`, `sec-19`, `sec-20` | Freeze the venue-symbol and feed mapping manifest. Classify each live order/position's ownership. Record quotes, margin and open/pending risk, shared-account stress, applicable calendar/floors and concurrent fill capacity. Use the live broker as source of truth for tickets. |
 | 4 · Screen the entire round universe | `sec-4`, `sec-13`, `sec-17`, `sec-23` | Evaluate every applicable discovery funnel on every manifest row. Save the exact-key coverage matrix and promote every confirmed hit or show why it cannot be evaluated. |
-| 5 · Build candidate and lifecycle dossiers | `sec-3`, `sec-4b`, `sec-5`, `sec-6`, `sec-7`, `sec-8`, `sec-9`, `sec-14`, `sec-15`, `sec-21`, `sec-22` | Capture the nine-tab evidence map and D01–D16 per promoted venue asset and every managed symbol. Run applicable strategy rules, eight Table 7 factors, DECIDE and Oracle. Record each of the eight council positions, the Arbiter's ruling and the ten model checks. Name the strongest contrary observation and the statistic or price that would invalidate the thesis. |
+| 5 · Build candidate and lifecycle dossiers | `sec-3`, `sec-4b`, `sec-5`, `sec-6`, `sec-7`, `sec-8`, `sec-9`, `sec-10`, `sec-14`, `sec-15`, `sec-16`, `sec-21`, `sec-22` | Pass the full SOP read check before formulation. Capture the nine-tab evidence map and D01–D16 per promoted venue asset and every managed symbol. Run applicable strategy rules, eight Table 7 factors, DECIDE and Oracle. Record each of the eight council positions, the Arbiter's ruling and the ten model checks. Name the strongest contrary observation and the statistic or price that would invalidate the thesis. |
 | 6 · Decide and gate | `sec-2`, `sec-10`, `sec-16`, `sec-19`, `sec-20` | Finish C-01…C-10, GATE-01…11, INQ-01…10 and PIT-01…22. C-09 checks the scheduler inventory here; Step 11 records any next wake. Record rule, observed inputs, threshold, disposition and evidence for each applicable check. Produce separate gate rows for each intent and lifecycle rows for GATE-05/06. Use PASS, FAIL, BLOCKED or justified N/A per rule. Any FAIL or BLOCKED on an applicable rule prevents that intent. |
 | 7 · Pending orders | `sec-11`, `sec-12`, `sec-19`, `sec-20` | Give every ticket a KEEP, PRUNE, READ_ONLY or BLOCKED disposition with live reason. Verify age, quote/mark drift, shelf and wall persistence, confluence, fills and reserves. PRUNE is a recommendation until Step 9 obtains venue acknowledgment. |
 | 8 · Running trades | `sec-4b`, `sec-11`, `sec-12`, `sec-16`, `sec-19`, `sec-20` | One row per ticket with ownership, original R, elapsed bars, excursion, SL/TP and proposed action. Apply cold-zone, breakeven, trail and time-stop checks. Foreign trades affect aggregate stress and remain read-only. |
