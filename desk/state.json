@@ -299,6 +299,26 @@
       "expectedRiskUsd": 0.024,
       "status": "placed",
       "note": "Pullback shelf retest short limit, Grade A (7.5 pts), 0.71% equity risk, post-only maker"
+    },
+    {
+      "id": "MT5-BTC-20335916",
+      "sym": "BTC",
+      "venue": "Blueberry-MT5",
+      "mt5Symbol": "BTCUSD.pi",
+      "ticket": 20335916,
+      "side": "short",
+      "type": "limit",
+      "entry": 61800.0,
+      "stop": 62380.0,
+      "targets": [
+        60200.0
+      ],
+      "mt5Lots": 0.01,
+      "mt5RiskUsd": 5.8,
+      "stressedRiskUsd": 6.96,
+      "riskR": 2.76,
+      "status": "placed-mt5",
+      "note": "S11 MTF Trend Cascade Pullback to Day VWAP midline 61,800, Grade A+ (8.5 pts), EV +2.58R, 0.01 lots risks .96 against .00 A+ cap"
     }
   ],
   "positions": [
