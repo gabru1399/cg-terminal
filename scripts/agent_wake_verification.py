@@ -20,6 +20,7 @@ SPEC = ROOT / "desk" / "CANONICAL_MASTER_SPECIFICATION.md"
 BOOT = ROOT / "scripts" / "round_preflight_bootstrap.py"
 ANCHOR = re.compile(r'<a id="([a-z0-9-]+)"></a>')
 ROUND_ID = re.compile(r"R[0-9]+")
+FORMULATION_STEP = 5
 COMPANIONS = {
     "launch-prompt": "CANONICAL_PROMPT.txt",
     "evidence-contract": "ROUND_EVIDENCE_CONTRACT.md",
@@ -43,16 +44,15 @@ def load_spec(path):
     missing = REQUIRED - starts.keys()
     if missing:
         raise ValueError(f"Missing section anchors: {', '.join(sorted(missing))}")
+    if next(iter(starts)) != "kernel":
+        raise ValueError("The Kernel must be the first SOP section")
+    starts["kernel"] = 0
 
     sections = {}
     anchors = list(starts.items())
     for i, (key, start) in enumerate(anchors):
         end = anchors[i + 1][1] if i + 1 < len(anchors) else len(lines)
-        # Part headings belong to the navigation, rather than the prior section.
-        while end > start and (not lines[end - 1].strip()
-                               or lines[end - 1].strip() == "---"
-                               or lines[end - 1].startswith("# PART ")):
-            end -= 1
+        # These ranges partition the exact document, including navigation and EOF.
         body = "".join(lines[start:end])
         sections[key] = {
             "start_line": start + 1,
@@ -90,11 +90,19 @@ def load_round_spec(path):
     for step, cell in re.findall(r"(?m)^\| (\d+) · [^|]+\| ([^|]+)\|", spec["sections"]["kernel"]["body"]):
         number = int(step)
         anchors = re.findall(r"`([a-z0-9-]+)`", cell)
-        if number in stages or not anchors or set(anchors) - spec["sections"].keys():
+        if (number in stages or not anchors or len(anchors) != len(set(anchors))
+                or ("kernel" in anchors) != (number == 0)
+                or set(anchors) - spec["sections"].keys()):
             raise ValueError(f"Invalid canonical anchor table at Step {step}")
         stages[number] = [anchor for anchor in anchors if anchor != "kernel"]
     if set(stages) != set(range(12)) or not all(stages.values()):
         raise ValueError("Canonical anchor table must define Steps 0–11")
+    pre_formulation = {"kernel"}
+    for number in range(FORMULATION_STEP + 1):
+        pre_formulation.update(stages[number])
+    unassigned = spec["sections"].keys() - pre_formulation
+    if unassigned:
+        raise ValueError("Sections missing before formulation: " + ", ".join(sorted(unassigned)))
     spec["stages"] = stages
     return spec
 
@@ -161,6 +169,21 @@ def section_progress(directory, wake, spec, wake_time):
     return missing, problems
 
 
+def sop_progress(spec, missing):
+    read = {"kernel"}
+    for step, anchors in spec["stages"].items():
+        read.update(set(anchors) - set(missing[step]))
+    sop_sections = {key: section for key, section in spec["sections"].items() if key not in COMPANIONS}
+    unread = [key for key in sop_sections if key not in read]
+    total = sum(section["end_line"] - section["start_line"] + 1 for section in sop_sections.values())
+    return {
+        "lines_read": total - sum(sop_sections[key]["end_line"] - sop_sections[key]["start_line"] + 1 for key in unread),
+        "total_lines": total,
+        "unread_anchors": unread,
+        "formulation_reads_complete": not unread and not any(missing[n] for n in range(FORMULATION_STEP + 1)),
+    }
+
+
 def save_receipt(path, payload):
     """Publish a complete receipt without replacing prior evidence, even on retries."""
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -207,7 +230,8 @@ def emit_sections(spec, anchors):
         section = spec["sections"][anchor]
         print(f"--- SOP SECTION {anchor} ---")
         print(f"Source: {spec['section_sources'][anchor]}:{section['start_line']}-{section['end_line']}")
-        print(section["body"].rstrip("\r\n"))
+        body = section["body"]
+        print(body, end="" if body.endswith(("\n", "\r")) else "\n")
 
 
 def main(argv=None):
@@ -219,6 +243,8 @@ def main(argv=None):
     operation = parser.add_mutually_exclusive_group()
     operation.add_argument("--step", type=int, choices=range(12), help="Read the next missing anchor for this step")
     operation.add_argument("--status", action="store_true", help="List missing anchors without running probes")
+    operation.add_argument("--require-formulation-reads", action="store_true",
+                           help="Fail unless the full SOP and all Step 0–5 inputs were read")
     args = parser.parse_args(argv)
     if not ROUND_ID.fullmatch(args.round):
         parser.error("--round must be R followed by digits")
@@ -236,7 +262,7 @@ def main(argv=None):
             raise ValueError("SOP differs from the supplied hash. Use a new round ID if the SOP changed.")
         index = section_index(spec)
         now = datetime.now(timezone.utc).isoformat()
-        if args.step is None and not args.status:
+        if args.step is None and not (args.status or args.require_formulation_reads):
             if path.exists():
                 payload = read_receipt(path)
                 validate_wake(payload, args.round, spec)
@@ -264,10 +290,14 @@ def main(argv=None):
             missing, problems = section_progress(directory, wake, spec, wake_time)
             if problems:
                 raise ValueError("; ".join(problems))
-            if args.status:
+            if args.status or args.require_formulation_reads:
+                progress = sop_progress(spec, missing)
                 payload.update(kind="section_progress", status="OK", missing=missing,
                                wake_observed_utc=wake["observed_utc"],
-                               section_steps_complete=sum(not anchors for anchors in missing.values()))
+                               section_steps_complete=sum(not anchors for anchors in missing.values()),
+                               sop_coverage=progress)
+                if args.require_formulation_reads and not progress["formulation_reads_complete"]:
+                    raise ValueError("Full SOP and Step 0–5 reads are required before formulation")
             else:
                 step = args.step
                 preceding = next((n for n in range(step) if missing[n]), None)
@@ -289,6 +319,8 @@ def main(argv=None):
                 else:
                     payload.update(kind="section_progress", step=step, status="STEP_READY")
                 payload["remaining_anchors"] = [key for key in missing[step] if key not in anchors]
+                missing[step] = payload["remaining_anchors"]
+                payload["sop_coverage"] = sop_progress(spec, missing)
     except (OSError, ValueError, TypeError, KeyError) as exc:
         payload.update(status="ERROR", error=str(exc))
     emit(payload)

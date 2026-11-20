@@ -65,20 +65,41 @@ class RoundEvidenceTest(unittest.TestCase):
         self.assertIn("--- SOP SECTION launch-prompt ---", text)
         self.assertIn("Source: desk/CANONICAL_PROMPT.txt:", text)
         self.assertEqual(payload["source_files"], {"launch-prompt": "desk/CANONICAL_PROMPT.txt"})
-        self.assertEqual(payload["remaining_anchors"], ["sec-0", "sec-1"])
+        self.assertEqual(payload["remaining_anchors"], ["sec-0", "sec-1", "appendix-d", "appendix-e"])
         (self.spec_path.parent / reader.COMPANIONS["evidence-contract"]).write_text("changed", encoding="utf-8")
         code, payload, _ = self.invoke("--step", "0")
         self.assertEqual(code, 1)
         self.assertIn("use a new round ID", payload["error"])
 
+    def test_every_sop_line_is_partitioned_and_new_section_requires_assignment(self):
+        original = self.spec_path.read_bytes().decode("utf-8-sig")
+        anchored = reader.load_spec(self.spec_path)["sections"]
+        self.assertEqual("".join(item["body"] for item in anchored.values()), original)
+        self.assertIn("END OF CANONICAL MASTER SPECIFICATION", anchored["appendix-f"]["body"])
+        self.spec_path.write_text(original + '\n## SECTION 24. New policy\n<a id="sec-24"></a>\n',
+                                  encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Sections missing before formulation: sec-24"):
+            reader.load_round_spec(self.spec_path)
+
     def test_complete_chain_and_reject_copied_receipt(self):
         self.invoke()
+        code, gated, _ = self.invoke("--require-formulation-reads")
+        self.assertEqual(code, 1)
+        self.assertIn("sec-13", gated["sop_coverage"]["unread_anchors"])
+        self.assertIn("appendix-f", gated["sop_coverage"]["unread_anchors"])
         for step, anchors in self.spec["stages"].items():
             for anchor in anchors:
                 code, receipt, text = self.invoke("--step", str(step))
                 self.assertEqual(code, 0, receipt)
                 self.assertIn(f"--- SOP SECTION {anchor} ---", text)
             self.assertEqual(receipt["remaining_anchors"], [])
+            if step == 5:
+                code, ready, _ = self.invoke("--require-formulation-reads")
+                self.assertEqual(code, 0)
+                self.assertTrue(ready["sop_coverage"]["formulation_reads_complete"])
+                self.assertEqual(ready["sop_coverage"]["unread_anchors"], [])
+                self.assertEqual(ready["sop_coverage"]["lines_read"],
+                                 len(self.spec_path.read_bytes().splitlines()))
         _, status, _ = self.invoke("--status")
         self.assertFalse(any(status["missing"].values()))
         self.assertEqual(status["section_steps_complete"], 12)
