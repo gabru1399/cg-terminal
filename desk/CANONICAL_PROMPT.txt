@@ -5,7 +5,8 @@ Workspace: C:/Users/SIGMA/Documents/cg-terminal
 
 Run a full canonical round according to desk/CANONICAL_MASTER_SPECIFICATION.md.
 Use the snapshot cutoff and deadline assigned by the scheduler or operator. If
-running manually in AUDIT, record the UTC start, cutoff and evidence deadlines.
+running manually in AUDIT, record the UTC acquisition window and freeze its
+evidence at cutoff. Store full local artifacts under data/round-evidence/<round-id>/.
 Use only this round's evidence and the verified prior journal for Step 0.
 
 1. First tool call, from the workspace root:
