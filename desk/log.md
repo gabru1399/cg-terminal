@@ -18106,3 +18106,16 @@ ead_file validation.
 - All 12 critical paths, plugins, skills, MCP schemas verified operational.
 - 236 live assets scanned: 0 A+ / 8 Grade B / 228 Vetoed.
 - Single dynamic 1200s recursion timer armed for Round R627 (`task-30325`).
+## R718 · 2026-11-20 06:40 UTC · zai-desk
+
+**Market**: XAU 3,556.78 (-1.6%)  XAG 41.990 (-1.5%)
+**Bias (|score|≥2)**: none significant
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
