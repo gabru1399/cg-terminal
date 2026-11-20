@@ -222,6 +222,22 @@
       "note": "VPVR High Volume Node (HVN) POC retest short limit, 1.05% equity risk, TP into 3650 liquidation magnet"
     },
     {
+      "id": "DELTA-DOT-1698114560",
+      "sym": "DOT",
+      "venue": "Delta_India",
+      "productSymbol": "DOTUSD",
+      "orderId": 1698114560,
+      "side": "SELL_LIMIT",
+      "size": 2,
+      "actualEntry": 0.712,
+      "actualSL": 0.724,
+      "actualTP": 0.672,
+      "riskR": 3.33,
+      "expectedRiskUsd": 0.024,
+      "status": "placed",
+      "note": "Pullback shelf retest short limit, Grade A (7.5 pts), 0.71% equity risk, post-only maker"
+    },
+    {
       "id": "R693-ETH-1",
       "createdTs": 1795142634863,
       "round": "R693",
