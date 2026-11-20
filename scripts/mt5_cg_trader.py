@@ -141,7 +141,7 @@ def calculate_lot_size(symbol: str, entry_price: float, sl_price: float, target_
     if info is None:
         raise ValueError(f"Symbol {symbol} info not found")
     entry_price, sl_price = (round(p, info.digits) for p in (entry_price, sl_price))
-    cap = min(max_risk_cap_usd, MAX_RISK_USD)
+    cap = min(max_risk_cap_usd, 15.00)  # Capped at $15.00 for A+ setups per Section 20 MT5-02
     lots, risk = size_order(
         mt5, info, entry_price, sl_price, sl_price < entry_price, target_risk_usd, cap
     )

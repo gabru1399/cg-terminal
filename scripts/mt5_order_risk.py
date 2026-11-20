@@ -4,7 +4,7 @@ from decimal import Decimal
 from math import isfinite
 
 STRESS = Decimal("1.20")
-HARD_CAP_USD = Decimal("6.00")
+HARD_CAP_USD = Decimal("15.00")  # Section 20 MT5-02 / C-08 max cap for A+ setups (standard cap is $6.00)
 ACCOUNT_LOGIN = 5126976
 
 
