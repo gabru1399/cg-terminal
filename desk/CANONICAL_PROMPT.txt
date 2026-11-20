@@ -40,6 +40,8 @@ legacy execution helpers. An equity target is report-only in AUDIT.
 3. Capture the full Delta and MT5 inventories with
    scripts/capture_round_evidence.py; join the actual instrument IDs before
    screening. Use its per-symbol terminal captures for source-backed rows.
+   Derive managed IDs from the live broker book and cite those exact records.
+   Use the current inventory mapping and actual validator issues in the report.
    Follow the evidence contract for timestamps, field pointers, and comparisons.
    Capacity and discovery are independent: a full desk can still have hits.
    Report unavailable evidence as unresolved. Save one
@@ -70,6 +72,8 @@ legacy execution helpers. An equity target is report-only in AUDIT.
    supports only the checks listed in the verifier. It does not establish
    every analytic rule was applied or admit an order. Independently reconcile actual gate inputs,
    stressed capacity and tier eligibility.
+   Code Mode can batch permitted reads. Preserve the original provider
+   responses and the same wake, source and verifier receipts.
 7. Start with a link labeled CANONICAL_MASTER_SPECIFICATION.md, the pinned
    hash, original wake timestamp, section step count, and SOP lines read
    versus total lines from --status. List any unread anchors.

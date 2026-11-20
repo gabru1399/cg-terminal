@@ -22,6 +22,7 @@ python scripts/capture_round_evidence.py --round <round-id> --feed liqlevels --s
 ```
 
 Delta keys use exchange product IDs from the captured live perpetual inventory. MT5 keys use broker symbol names from the configured account's enabled inventory. Never substitute a hand-picked watchlist for the inventory.
+Each managed instrument must join to that inventory and cite the live orders or positions payload containing the exact venue instrument ID and symbol. A catalog, ticker, or prior round cannot stand in for the broker book.
 
 For each resolved funnel row record `checks` with `feed`, optional `range`, `source`, JSON `pointer`, `observed`, `op` (`gte`, `gt`, `lte`, `lt`, or `eq`) and `threshold`. Use the §17 trigger conditions with enough per-feed observations to justify each result. Slot or heat restrictions belong in the gate records and cannot populate the screen.
 
