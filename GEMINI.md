@@ -12,6 +12,8 @@ defines the precedence, twelve-step workflow, evidence and authorization rules.
 Start with its wake command. Before each step, repeat the pinned `--step`
 reader until it reports no remaining anchors. On a reader or evidence error,
 report the current round as `INCOMPLETE` and preserve its files.
+Reject a timer payload that mixes `AUDIT` and venue mutations or process
+control. Report the conflict and task ID without creating a replacement timer.
 
 For repository engineering work, follow the user's request and the repository
 instructions. Keep trading bootstrap, order operations and timer scheduling

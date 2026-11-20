@@ -12,11 +12,19 @@ import re
 import sys
 
 from agent_wake_verification import ROOT, SPEC, load_round_spec, section_progress, validate_wake
+from round_source_checks import audit_source, check_inventory, direct_value, liquidation_pace, screen_observations
 
 
 VENUES = {"delta", "mt5"}
 FUNNELS = {f"FUNNEL-{n:02d}" for n in range(1, 6)}
 DIMENSIONS = {f"D{n:02d}" for n in range(1, 17)}
+DIMENSION_FEEDS = {
+    "D01": {"market"}, "D02": {"market", "narrative"}, "D03": {"market", "narrative"},
+    "D04": {"market", "narrative"}, "D05": {"market", "narrative"}, "D06": {"fp"},
+    "D07": {"signals"}, "D08": {"cvd"}, "D09": {"bookwalls"}, "D10": {"lto"},
+    "D11": {"liqlevels"}, "D12": {"liqlevels"}, "D13": {"options"}, "D14": {"oi"},
+    "D15": {"market"}, "D16": {"liq-live"},
+}
 ENTRY_RULES = (
     {f"GATE-{n:02d}" for n in range(1, 12)}
     | {f"PIT-{n:02d}" for n in range(1, 23)}
@@ -35,6 +43,7 @@ def verify(directory, round_id, spec):
     issues = []
     checked = set()
     digests = {}
+    payloads = {}
 
     def read(path, label, required=True):
         try:
@@ -60,10 +69,24 @@ def verify(directory, round_id, spec):
                         digests[resolved] = hashlib.sha256(resolved.read_bytes()).hexdigest()
                     if digests[resolved] == record.get("sha256"):
                         checked.add(path.relative_to(directory).as_posix())
-                        return
-            except OSError:
+                        if resolved not in payloads:
+                            payloads[resolved] = json.loads(resolved.read_bytes())
+                        return payloads[resolved]
+            except (OSError, ValueError):
                 pass
         issues.append(f"{label}: missing or mismatched raw evidence reference")
+        return None
+
+    def observed_source(record, label, allowed, instrument=None, window=None):
+        body = source(record, label)
+        if body is None:
+            return None
+        try:
+            capture = read(directory / "captures" / Path(record["path"]).name, f"{label} capture")
+            return audit_source(record, capture, body, wake, cutoff, allowed, instrument, window)
+        except (ValueError, TypeError, KeyError, AttributeError, OverflowError) as exc:
+            issues.append(f"{label}: {exc}")
+            return None
 
     def rows(doc, field, columns, label):
         result = {}
@@ -101,7 +124,7 @@ def verify(directory, round_id, spec):
 
     def artifact(name):
         obj = read(directory / name, name)
-        if obj and (obj.get("round_id") != round_id or obj.get("spec_sha256") != spec["sha256"]):
+        if obj.get("round_id") != round_id or obj.get("spec_sha256") != spec["sha256"]:
             issues.append(f"{name}: wrong round or spec digest")
         return obj
 
@@ -110,6 +133,7 @@ def verify(directory, round_id, spec):
     telemetry = artifact("telemetry_rows.json")
     gates = artifact("gate_rows.json")
     instruments = rows(scope, "instruments", ("venue", "instrument_id"), "scope")
+    venue_symbols = {}
     cutoff = None
     if scope:
         try:
@@ -121,12 +145,20 @@ def verify(directory, round_id, spec):
             record = inventories.get(venue, {}) if isinstance(inventories, dict) else {}
             if not isinstance(record, dict):
                 record = {}
-            source(record.get("source"), f"{venue} inventory")
+            captured = observed_source(record.get("source"), f"{venue} inventory", {f"{venue}-inventory"})
             keys = record.get("instrument_ids")
             actual = {instrument for v, instrument in instruments if v == venue}
             if (not isinstance(keys, list) or not all(isinstance(key, str) and key for key in keys)
                     or len(keys) != len(actual) or set(keys) != actual):
                 issues.append(f"{venue} inventory: exact instrument IDs did not reconcile")
+            if captured:
+                try:
+                    mapping = check_inventory(venue, captured[0])
+                    if set(mapping) != actual:
+                        raise ValueError("scope IDs do not match the captured venue inventory")
+                    venue_symbols.update({(venue, item): symbol for item, symbol in mapping.items()})
+                except (ValueError, TypeError, KeyError) as exc:
+                    issues.append(f"{venue} inventory: {exc}")
         if {venue for venue, _ in instruments} != VENUES:
             issues.append("scope: both venue inventories must be represented")
     cases = rows(screen, "rows", ("venue", "instrument_id", "funnel"), "screen")
@@ -134,7 +166,14 @@ def verify(directory, round_id, spec):
     promoted = set()
     for key, row in cases.items():
         label = "screen " + "/".join(key)
-        source(row.get("source"), label)
+        if row.get("status") == "NOT_APPLICABLE":
+            source(row.get("source"), label)
+            if key[-1] != "FUNNEL-05" or instruments.get(key[:2], {}).get("asset_class") != "crypto":
+                issues.append(f"{label}: unverified funnel inapplicability")
+        else:
+            if re.search(r"concurrency|slot.{0,12}occup|gate\s*[- ]?9", str(row.get("reason", "")), re.I):
+                issues.append(f"{label}: portfolio capacity cannot decide a discovery funnel")
+            screen_observations(row, key[-1], venue_symbols.get(key[:2], key[1]), label, observed_source, issues)
         if row.get("status") == "HIT":
             promoted.add(key[:2])
         if row.get("status") not in {"HIT", "NO_HIT", "NOT_APPLICABLE"} or not row.get("reason"):
@@ -161,9 +200,13 @@ def verify(directory, round_id, spec):
     compare(metrics.keys(), {(*key, dim) for key in promoted | managed.keys() for dim in DIMENSIONS}, "telemetry")
     for key, row in metrics.items():
         label = "telemetry " + "/".join(key)
-        source(row.get("source"), label)
-        if row.get("status") == "NOT_APPLICABLE" and key[-1] == "D13" and row.get("reason"):
+        dimension = key[-1]
+        instrument = venue_symbols.get(key[:2], key[1])
+        if (row.get("status") == "NOT_APPLICABLE" and dimension == "D13" and row.get("reason")
+                and not re.match(r"^(BTC|ETH)(?:USD|USDT)?(?:\.|$)", instrument, re.I)):
+            source(row.get("source"), label)
             continue
+        receipt = observed_source(row.get("source"), label, DIMENSION_FEEDS.get(dimension, set()), instrument)
         if row.get("status") != "VALID" or row.get("value") is None or not row.get("unit"):
             issues.append(f"{label}: unresolved value")
         try:
@@ -188,12 +231,27 @@ def verify(directory, round_id, spec):
                 or not math.isfinite(row["value"]) or row["value"] < 0
                 or row.get("unit") != "USD" or row.get("window_seconds") != 300):
             issues.append(f"{label}: requires five-minute liquidation USD")
+        if receipt:
+            body, _, captured_at, provider_at = receipt
+            try:
+                if utc(row["received_utc"]) != captured_at or utc(row["source_event_utc"]) != provider_at:
+                    raise ValueError("row timestamps do not match the capture and provider")
+                if dimension == "D16":
+                    if not math.isclose(row["value"], liquidation_pace(body, captured_at),
+                                        rel_tol=1e-9, abs_tol=0.01):
+                        raise ValueError("five-minute liquidation USD differs from the captured event sum")
+                elif direct_value(body, row.get("value_pointer")) != row.get("value"):
+                    raise ValueError("row value differs from its captured JSON field")
+            except (ValueError, TypeError, KeyError, AttributeError, OverflowError) as exc:
+                issues.append(f"{label}: {exc}")
+        if dimension == "D11" and isinstance(row.get("windows"), dict):
+            for window, reference in row["windows"].items():
+                observed_source(reference, f"{label}/{window}", {"liqlevels"}, instrument, window)
 
     decisions = rows(gates, "rows", ("venue", "instrument_id", "rule"), "gates")
     expected_gates = {(*key, rule) for key in promoted for rule in ENTRY_RULES}
     expected_gates |= {("round", "round", f"C-{n:02d}") for n in range(1, 11)}
-    if gates:
-        compare(decisions.keys(), expected_gates, "gates")
+    compare(decisions.keys(), expected_gates, "gates")
     for key, row in decisions.items():
         label = "gates " + "/".join(key)
         source(row.get("source"), label)
@@ -262,6 +320,7 @@ def main():
     print(json.dumps({
         "round_id": args.round, "spec_sha256": spec.get("sha256"),
         "status": "INCOMPLETE" if issues else "EVIDENCE_CHECKS_PASSED",
+        "round_outcome": "INCOMPLETE" if issues else "UNATTESTED",
         "issues": issues, "checked_files": checked,
     }, indent=2))
     return int(bool(issues))
