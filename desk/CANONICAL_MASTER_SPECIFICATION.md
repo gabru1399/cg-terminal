@@ -1476,7 +1476,7 @@ Historical reconciliation record from 2.1.0-s1. Kernel K-0 and K-4 govern active
 ### B.3 Physical path registry
 Scripts: `scripts/agent_wake_verification.py`, `scripts/round_preflight_bootstrap.py`, `scripts/fetch_full_asset_telemetry.py`, `scripts/individual_asset_evaluator.py`, `scripts/desk_daemon.mjs`, `scripts/desk_round.sh`, `scripts/mt5_cg_trader.py`.
 Desk files: `desk/CANONICAL_MASTER_SPECIFICATION.md`, `desk/state.json`, `desk/log.md`, `desk/inbox/WAKE.md`, `desk/outbox/<basename>.reply.md`, `desk/deepscan/`, `data/mcp-cursor.json`.
-Config/data: `C:\Users\SIGMA\.gemini\config\rules\GEMINI.md`, `c:\Users\SIGMA\Documents\cg-terminal\GEMINI.md`, `src/lib/universe/curated.ts`, `docs/DATA_POINT_INVENTORY.md`.
+Config/data: `C:\Users\SIGMA\.gemini\config\rules\GEMINI.md`, `GEMINI.md` (relative to the CG-Terminal workspace), `src/lib/universe/curated.ts`, `docs/DATA_POINT_INVENTORY.md`.
 Delta MCP calls named in the spec: `get_wallet_balances`, `get_margined_positions`, `get_open_orders`, `get_ticker`, `get_product`, `edit_order`, `cancel_order` (DMR-01).
 
 ---

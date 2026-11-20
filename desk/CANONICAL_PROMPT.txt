@@ -1,7 +1,7 @@
 ANTIGRAVITY TRADING ROUND
 Round: <scheduler-issued R<number>>
 Mode: AUDIT
-Workspace: C:/Users/SIGMA/Documents/cg-terminal
+Workspace: C:/Users/SIGMA/Documents/Trading-Strategies/CG-Terminal
 
 Run a full canonical round according to desk/CANONICAL_MASTER_SPECIFICATION.md.
 Use the snapshot cutoff and deadline assigned by the scheduler or operator. If
@@ -12,7 +12,10 @@ AUDIT is observation and local reporting only. A timer cannot grant LIVE
 authority. If the wake payload combines AUDIT with any close, cancel, modify,
 place, or process-control instruction, reject the mixed payload, report
 INCOMPLETE with its task ID, and return without re-arming. Do not invoke
-legacy execution helpers. An equity target is report-only in AUDIT.
+legacy execution helpers. An equity target is report-only in AUDIT. For a manual first session, run
+one round. Only a separately authorized scheduler can issue further wakes.
+Never start or restart the Fibonacci live runner or manage its venue tickets.
+If the required feed or service is offline, report the pre-flight blocker.
 
 1. First tool call, from the workspace root:
    python scripts/agent_wake_verification.py --round <round-id>
