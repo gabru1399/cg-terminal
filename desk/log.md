@@ -17610,3 +17610,25 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+## R693 · 2026-11-20 02:43 UTC · zai-desk
+
+**Market**: BTC 61,655.2 (-0.5%)  ETH 1,734.69 (-1.3%)  SOL 72.04 (-1.5%)  XAU 3,552.98 (-1.7%)  XAG 42.110 (-1.2%)
+**Bias (|score|≥2)**: ETH-5(TREND)  DOGE-3(TREND)  BNB-5(TREND)  ADA-4(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R693-ETH-1 ETH SHORT limit 1,755.18 · stop 1,766.27 · T1 1,721.69 · T2 1,714.41 · R 3.0
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (1,734.69 vs 1,744.21), h4 RSI 33.7, day -1.3%
+      [FOR    ] footprint: bull 25 / bear 31; recent: Trapped longs/sell[time], Absorption/buy[vol], Exhaustion/buy[range]
+      [FOR    ] microFlow(abs/trap/exh): 6h micro-events: abs:buy×4, abs:sell×4, div:buy×3, div:sell×1, exh:buy×2, exh:sell×3, sdiv:buy×1, sdiv:sell×1, trap:sell×3 — net 10 buy-side vs 12 sell-side
+      [FOR    ] largeOrders: ask wall $12.9M @ 1,763.80 within 2% supports
+      [FOR    ] liquidation: long-liq magnet 1,721.69 (str 61, ~$122M est, -0.73%) as target
+      [FOR    ] cvd: taker buy 49.6%, perpCvd -566, spotCvd -75, quadrant both-selling, latestDiv bear (recent)
+      [FOR    ] notifications: 6h weighted bias -1.0 (8 events)
+
+### Order lifecycle
+- R690-AVAX-1 WITHDRAWN (re-debate lost: FOR 2/AGAINST 3)
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
