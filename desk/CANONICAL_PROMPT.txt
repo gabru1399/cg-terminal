@@ -18,6 +18,11 @@ legacy execution helpers. An equity target is report-only in AUDIT.
    python scripts/agent_wake_verification.py --round <round-id>
    Replace placeholders with real values. The first successful wake creates
    the immutable receipt, and retries reuse it. Read the returned Kernel.
+   Also open desk/CANONICAL_MASTER_SPECIFICATION.md by name with the file
+   reader, using the Kernel's start_line and end_line from the receipt. Do
+   this in the current conversation turn so the tool trace names the file.
+   A resume must keep the original wake timestamp and report which receipts
+   came from earlier in the round.
    Distinguish installed dependencies,
    instruction files actually read, and runtime tools actually called.
 2. Execute Kernel Steps 0–11 in order. Before each step, repeat:
@@ -60,7 +65,10 @@ legacy execution helpers. An equity target is report-only in AUDIT.
    supports only the checks listed in the verifier. It does not establish
    every analytic rule was applied or admit an order. Independently reconcile actual gate inputs,
    stressed capacity and tier eligibility.
-7. Start the final report with the factual pre-flight results. Answer the
+7. Start with a link labeled CANONICAL_MASTER_SPECIFICATION.md, the pinned
+   hash, original wake timestamp, and section step count from --status.
+   Say whether this turn opened the Kernel and whether it started or resumed
+   the round. Then report the factual pre-flight results. Answer the
    operator inquest per venue. Link the full evidence bundle, list exact
    unresolved scope, and end with all twelve Step 0–11 statuses. Use the
    Kernel's round outcome labels. Record scheduler status separately.
