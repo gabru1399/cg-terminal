@@ -44,8 +44,10 @@ class RoundEvidenceTest(unittest.TestCase):
         return exit_code, receipt, contents
 
     def test_wake_retry_preserves_original_bytes(self):
-        code, original, _ = self.invoke("--save")
+        code, original, text = self.invoke("--save")
         self.assertEqual(code, 0)
+        self.assertEqual(original["canonical_spec"], "desk/CANONICAL_MASTER_SPECIFICATION.md")
+        self.assertIn("Source: desk/CANONICAL_MASTER_SPECIFICATION.md:", text)
         raw = (self.directory / "wake_receipt.json").read_bytes()
         code, retry, _ = self.invoke()
         self.assertEqual(code, 0)
@@ -61,6 +63,8 @@ class RoundEvidenceTest(unittest.TestCase):
         code, payload, text = self.invoke("--step", "0")
         self.assertEqual(code, 0)
         self.assertIn("--- SOP SECTION launch-prompt ---", text)
+        self.assertIn("Source: desk/CANONICAL_PROMPT.txt:", text)
+        self.assertEqual(payload["source_files"], {"launch-prompt": "desk/CANONICAL_PROMPT.txt"})
         self.assertEqual(payload["remaining_anchors"], ["sec-0", "sec-1"])
         (self.spec_path.parent / reader.COMPANIONS["evidence-contract"]).write_text("changed", encoding="utf-8")
         code, payload, _ = self.invoke("--step", "0")
@@ -77,6 +81,8 @@ class RoundEvidenceTest(unittest.TestCase):
             self.assertEqual(receipt["remaining_anchors"], [])
         _, status, _ = self.invoke("--status")
         self.assertFalse(any(status["missing"].values()))
+        self.assertEqual(status["section_steps_complete"], 12)
+        self.assertEqual(status["canonical_spec"], "desk/CANONICAL_MASTER_SPECIFICATION.md")
         self.write_empty_round()
         self.assertEqual(verify(self.directory, "R1", self.spec)[0], [])
         path = self.directory / "screen_rows.json"

@@ -74,12 +74,14 @@ def section_index(spec):
 
 def load_round_spec(path):
     spec = load_spec(path)
+    spec["section_sources"] = dict.fromkeys(spec["sections"], f"desk/{path.name}")
     spec["document_hashes"] = {}
     for anchor, filename in COMPANIONS.items():
         raw = (path.parent / filename).read_bytes()
         digest = hashlib.sha256(raw).hexdigest()
         body = raw.decode("utf-8-sig")
         spec["document_hashes"][filename] = digest
+        spec["section_sources"][anchor] = f"desk/{filename}"
         spec["sections"][anchor] = {
             "start_line": 1, "end_line": len(body.splitlines()),
             "section_sha256": digest, "body": body,
@@ -117,6 +119,7 @@ def validate_wake(wake, round_id, spec):
     wake_id = wake.get("wake_id")
     if (wake.get("round_id") != round_id or wake.get("kind") != "wake"
             or wake.get("status") != "REPORTED" or wake.get("spec_sha256") != spec["sha256"]
+            or wake.get("canonical_spec", spec["section_sources"]["kernel"]) != spec["section_sources"]["kernel"]
             or wake.get("document_hashes") != spec["document_hashes"]
             or wake.get("sections_read") != {"kernel": section_index(spec)["kernel"]}
             or not isinstance(wake_id, str) or not re.fullmatch(r"[0-9a-f]{32}", wake_id)
@@ -142,6 +145,9 @@ def section_progress(directory, wake, spec, wake_time):
                     or at < wake_time
                     or any(key not in spec["stages"][step] or index[key] != item for key, item in anchors.items())):
                 raise ValueError("receipt does not match the wake, time, step or anchors")
+            if "source_files" in receipt and receipt["source_files"] != {
+                    key: spec["section_sources"][key] for key in anchors}:
+                raise ValueError("section source paths do not match the pinned documents")
             for key in anchors:
                 reads[step][key] = min(at, reads[step].get(key, at))
         except (OSError, ValueError, TypeError, KeyError) as exc:
@@ -198,8 +204,10 @@ def emit(payload):
 
 def emit_sections(spec, anchors):
     for anchor in anchors:
+        section = spec["sections"][anchor]
         print(f"--- SOP SECTION {anchor} ---")
-        print(spec["sections"][anchor]["body"].rstrip("\r\n"))
+        print(f"Source: {spec['section_sources'][anchor]}:{section['start_line']}-{section['end_line']}")
+        print(section["body"].rstrip("\r\n"))
 
 
 def main(argv=None):
@@ -223,6 +231,7 @@ def main(argv=None):
     try:
         spec = load_round_spec(SPEC)
         payload["spec_sha256"] = spec["sha256"]
+        payload["canonical_spec"] = spec["section_sources"]["kernel"]
         if args.expect_sha256 and args.expect_sha256 != spec["sha256"]:
             raise ValueError("SOP differs from the supplied hash. Use a new round ID if the SOP changed.")
         index = section_index(spec)
@@ -256,7 +265,9 @@ def main(argv=None):
             if problems:
                 raise ValueError("; ".join(problems))
             if args.status:
-                payload.update(kind="section_progress", status="OK", missing=missing)
+                payload.update(kind="section_progress", status="OK", missing=missing,
+                               wake_observed_utc=wake["observed_utc"],
+                               section_steps_complete=sum(not anchors for anchors in missing.values()))
             else:
                 step = args.step
                 preceding = next((n for n in range(step) if missing[n]), None)
@@ -270,7 +281,8 @@ def main(argv=None):
                     payload.update(kind="section_read", wake_id=wake["wake_id"], step=step,
                                    document_hashes=spec["document_hashes"],
                                    observed_utc=datetime.now(timezone.utc).isoformat(),
-                                   sections_read={key: index[key] for key in anchors}, status="OK")
+                                   sections_read={key: index[key] for key in anchors},
+                                   source_files={key: spec["section_sources"][key] for key in anchors}, status="OK")
                     name = f"{step:02d}-{'-'.join(sorted(anchors))}.json"
                     payload = save_receipt(directory / "section_receipts" / name, payload)
                     emit_sections(spec, anchors)

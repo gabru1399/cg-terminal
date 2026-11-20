@@ -12,6 +12,9 @@ defines the precedence, twelve-step workflow, evidence and authorization rules.
 Start with its wake command. Before each step, repeat the pinned `--step`
 reader until it reports no remaining anchors. On a reader or evidence error,
 report the current round as `INCOMPLETE` and preserve its files.
+Open the Kernel of `desk/CANONICAL_MASTER_SPECIFICATION.md` by that filename
+in the current turn, using the wake receipt's line bounds. Name and link the
+specification at the top of the report, and distinguish a resumed round.
 Reject a timer payload that mixes `AUDIT` and venue mutations or process
 control. Report the conflict and task ID without creating a replacement timer.
 
