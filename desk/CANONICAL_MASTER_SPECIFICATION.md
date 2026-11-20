@@ -172,6 +172,8 @@ The canonical timer prompt (S11, `[P5-09]`) defines Steps 0–11 and is preserve
 | Delta high-potential | margin ≤ $1.50, stop ≤ 0.8%, risk $0.35–$0.65 ⚠ (see Appendix A-05) | GATE-07, RISK-01 |
 | MT5 account | Blueberry #5126976, capital $2,500, `comment="cg_terminal"`, magic 42001 | MT5-01, MT5-03 |
 | MT5 limits | daily DD $100 (halt at $80) · max DD $250 (floor $2,250) · heat ≤ $50 · std risk $5–6 · A/A+ $10–15 · news freeze ±2 min | MT5-01, MT5-02 |
+| MT5 Alpha Protection | comment starts with 'ALPHA' → NEVER alter/adjust TP/SL; hands-off EA trades | MT5-05 |
+| Pullback Models | S7 (M1), S9 (Rejection), S10 (Shelf), S11 (4H×1H Cascade), S12 (VWAP Void), S13 (Fib Whale) | ARCH-S7…S13 |
 
 ### K-6 Glossary & ID Conventions
 
@@ -961,6 +963,39 @@ Table 7 Score : <pts> / 11.5 | Grade: <A/B/NO_TRADE> | Action: <EXECUTE / REJECT
   - Volume Signature: Volume must dry up on the pullback retest; CVD must confirm dominant trend direction (lower highs on bearish retests; higher lows on bullish retests).
   - Breakeven Invariant: Move SL to entry immediately upon reaching prior impulse extreme (+1.0R excursion). Grade A eligible if absorption/trap verified.
 
+[ARCH-S11] [INVARIANT] [S11_DETAIL] [MTF_H4H1_TREND_PULLBACK]:
+  - Trend Grounding (4H × 1H Multi-Timeframe Alignment):
+    * 4H Macro Trend: Fib EMA 13 vs EMA 89 orientation (Bearish: EMA 13 < EMA 89; Bullish: EMA 13 > EMA 89) and price on correct side of 4H EMA 89 spine.
+    * 1H Intermediate Trend: 1H EMA 13 < EMA 55 (shorts) or EMA 13 > EMA 55 (longs) + 1H RSI in directional regime (Shorts: 35–55; Longs: 45–65).
+  - Pullback Mechanics & Value Reload Zone:
+    * Price retraces counter-trend into the 1H EMA 13–EMA 34 value band (or 15m VWAP $\pm1.0\sigma$ to $\pm2.0\sigma$ envelope).
+    * Pullback Volume Decay: Aggressive counter-trend taker volume must contract $\ge 35\%$ vs the preceding impulse leg.
+    * Footprint Confirmation: On the 15m chart, the candle wicking into the 1H EMA reload zone must print an exhaustion (`exh`) or trapped counter-trend traders (`trap`/`abs`) with an opposing rejection wick $\ge 1.5\times$ candle body.
+  - Entry Execution: Post-only maker limit order positioned at the 1H EMA 21 / 15m VWAP $\pm1.0\sigma$ confluence line.
+  - Structural Invalidation (Cold Zone Stop): Stop-loss placed strictly beyond the 1H EMA 55 or beyond the 15m rejection wick tip (+ 0.15% or $0.20\times\text{ATR}$ cold-zone buffer).
+  - Target Ladder: T1 = Retest of prior 1H impulse swing low/high; T2 = Dominant 24h/7d liquidation magnet pool; T3 = $1.618\times$ Fibonacci impulse extension. Asymmetry $R \ge 2.50\text{R}$. Grade A eligible with verified footprint delta flip.
+
+[ARCH-S12] [INVARIANT] [S12_DETAIL] [VWAP_LIQ_VOID_PULLBACK]:
+  - Trend Grounding & Extension:
+    * Macro extension ($|z| \ge 1.0\sigma$ from Day VWAP), 1H market structure showing clean sequence of Lower Lows/Highs (downtrend) or Higher Highs/Lows (uptrend).
+  - Liquidation Void / Low Volume Node Retest:
+    * The preceding impulse breakdown sliced through resting liquidity, leaving a Low Volume Node (LVN) cavity / Liquidation Void.
+    * Price retraces back through the low-friction LVN vacuum channel to retest the broken Day or Session VWAP $\pm1.0\sigma$ band or broken Session POC from the exterior.
+    * CVD Absorption Proof: Spot and Perp CVD make lower highs during the bounce while price edges higher (Bearish CVD Divergence for shorts; Bullish CVD Divergence for longs).
+  - Entry Execution: Post-only maker limit stationed at the underside of the broken LVN shelf / Day VWAP $\pm1.0\sigma$.
+  - Structural Invalidation: Placed strictly beyond the Session POC or broken HVN shelf boundary (+ 0.15% buffer). Stop distance must be $\le 0.45\%$.
+  - Target Ladder: T1 = 50% retest of impulse low; T2 = Dominant opposite-side liquidation cluster; T3 = Runner to Day VWAP $\pm3.0\sigma$. Asymmetry $R \ge 3.0\text{R}$.
+
+[ARCH-S13] [INVARIANT] [S13_DETAIL] [ANCHOR_CHANNEL_PULLBACK]:
+  - Trend Momentum: 4H EMA 89 slope $\ge 25^\circ$, 1H EMA 13/89 bearish spread expanding (runaway momentum).
+  - Pullback Mechanics:
+    * Counter-trend bounce reaches the 38.2% to 50.0% Fibonacci retracement of the dominant 4H impulse swing leg.
+    * Dynamic Whale Defense: A confirmed resting whale order wall ($\ge \$1\text{M}$ TradFi / $\ge \$250\text{k}$ alts) steps into the order book within $0.10\%$ of the 38.2%/50.0% Fibonacci level, acting as an institutional ceiling.
+    * Order Flow Taker Exhaustion: Cumulative taker buy share during the bounce remains strictly $< 51\%$, proving absence of institutional buying.
+  - Entry Execution: Maker limit front-running the defending whale wall by $+0.05\%$.
+  - Structural Invalidation: Stationed $0.15\%$ behind the whale wall (invalidated if whale wall is pulled or broken).
+  - Target Ladder: T1 = Prior swing low; T2 = Deepest downstream liquidation pocket; T3 = Full $3.0\text{R}-5.0\text{R}$ expansion.
+
 [DMR-01] [INVARIANT] [DYNAMIC_MARGIN_RECYCLING_AND_STALE_ORDER_PRUNING]:
   - Capital Lockup Pathology: In low-equity accounts or margin-constrained environments (e.g., Delta India with isolated margin or Blueberry MT5 near margin limits), resting limit orders placed far away from current market price (e.g. at distant Month POC or Day VAH $> 1.5\%$ away) lock up vital initial margin ($ order\_margin $), reducing Available Margin below the threshold needed to execute active setups ($\ge 1$ contract minimum lot).
   - Mandatory Stale Pruning Rule: On every round or autonomous wake-up, if an asset's market price is $> 1.5\%$ away from a resting limit order AND Available Margin is insufficient to open a new high-confluence setup ($\le 1.5\times$ min margin), the resting order is classified as DORMANT.
@@ -1470,6 +1505,11 @@ Table 2 - the Section Coverage Ledger of Kernel K-7 (all Sections, each with evi
     * Risk Calc: `python scripts/mt5_cg_trader.py --calc-risk <SYMBOL> <ENTRY> <SL> [--max-risk <USD>]`
     * Limit Place: `python scripts/mt5_cg_trader.py --place <SYMBOL> <TYPE> <ENTRY> <SL> <TP> [--max-risk <USD>]`
     * Breakeven: `python scripts/mt5_cg_trader.py --be <TICKET>`
+
+[MT5-05] [SPEC] [ALPHA_EA_TRADE_PROTECTION_INVARIANT]:
+  - Co-Located EA Hands-Off Mandate: The Blueberry MT5 account (#5126976) hosts independent algorithmic Expert Advisors (EAs) executing positions with comment fields starting with `ALPHA` (e.g. `Alpha_VWAP_M2_TWO_`, `Alpha_EMA20_TWO_BA`, `Alpha_VWAP_0_SHORT`, etc.).
+  - Non-Interference Invariant: Neither `atg-exec` nor any automated desk script shall EVER modify, alter, trail, or adjust the Take-Profit (TP) or Stop-Loss (SL) of any position or order whose comment starts with `ALPHA` (case-insensitive).
+  - Strict Programmatic Guard: All position queries and modification routines in `scripts/mt5_cg_trader.py` MUST verify dual-key ownership (`comment == "cg_terminal"` AND `magic == 42001`). Any attempt to alter an `Alpha_*` ticket raises an immediate `PermissionError` block. During in-flight surveillance (Step 7/8), `Alpha_*` positions are audited for account margin impact only, and left completely untouched.
 
 ---
 
