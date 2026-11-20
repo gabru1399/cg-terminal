@@ -26,7 +26,9 @@
       "UKO": "UKOUSD"
     },
     "execution_mode": "LIVE",
-    "operator_authorized_at": "2026-11-20T17:00:26.403093+00:00"
+    "operator_authorized_at": "2026-11-20T17:00:26.403093+00:00",
+    "max_risk_mt5_usd": 10.0,
+    "operator_policy_updated_at": "2026-11-20T17:05:47.546850+00:00"
   },
   "analysis": {
     "last_round": "R769",
@@ -11266,7 +11268,7 @@
       "withdrawReason": "debate lost (FOR 3/AGAINST 3) on fresh data"
     }
   ],
-  "updatedAt": "2026-11-20T17:00:26.403108+00:00",
+  "updatedAt": "2026-11-20T17:05:47.546862+00:00",
   "closedPositions": [
     {
       "ticket": 210050569,
