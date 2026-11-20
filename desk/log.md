@@ -17387,3 +17387,16 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+## R681 · 2026-11-20 00:55 UTC · zai-desk
+
+**Market**: BTC 61,985.3 (+0.0%)  ETH 1,752.29 (-0.3%)  SOL 72.79 (-0.4%)  XAU 3,592.63 (-0.6%)  XAG 42.440 (-0.5%)
+**Bias (|score|≥2)**: BNB-4(TREND)  AVAX-3(TREND)  ADA-2(TREND)  XAU-3(TREND)  LINK-2(TREND)  ETH-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
