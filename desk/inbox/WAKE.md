@@ -866,3 +866,15 @@
 8. Review open positions vs §6 invariants (+1.0R breakeven rule, 8-bar time
    stop, 40/40/20 scale-outs)
 9. Commit + push; append the round entry to desk/log.md
+
+## 2026-11-20 02:44 UTC — new suggested order — place in MT5 (debate FOR 7/AGAINST 0)
+- R693-ETH-1 ETH SHORT limit entry 1755.18 · stop 1766.27 · targets 1721.69 / 1714.41 · R 3 · expires 2026-11-20 06:43 UTC
+- BASIS: levels are PERP prices (perpRef 1734.69). Before placing in MT5 read spreads.ETHUSD.basisPct in desk/mt5.json and set every level = perpLevel × (1 + basisPct/100). Remember the broker spread — a SHORT fills at bid.
+- [FOR] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (1,734.69 vs 1,744.21), h4 RSI 33.7, day -1.3%
+- [FOR] footprint: bull 25 / bear 31; recent: Trapped longs/sell[time], Absorption/buy[vol], Exhaustion/buy[range]
+- [FOR] microFlow(abs/trap/exh): 6h micro-events: abs:buy×4, abs:sell×4, div:buy×3, div:sell×1, exh:buy×2, exh:sell×3, sdiv:buy×1, sdiv:sell×1, trap:sell×3 — net 10 buy-side vs 12 sell-side
+- [FOR] largeOrders: ask wall $12.9M @ 1,763.80 within 2% supports
+- [FOR] liquidation: long-liq magnet 1,721.69 (str 61, ~$122M est, -0.73%) as target
+- [FOR] cvd: taker buy 49.6%, perpCvd -566, spotCvd -75, quadrant both-selling, latestDiv bear (recent)
+- [FOR] notifications: 6h weighted bias -1.0 (8 events)
+- → place on ETHUSD in MT5, then set status "placed" + ticket + ACTUAL MT5 levels in desk/state.json and append an EXEC entry to desk/log.md
