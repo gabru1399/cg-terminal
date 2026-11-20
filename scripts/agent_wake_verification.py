@@ -93,18 +93,26 @@ def read_and_print_spec():
         lines = f.readlines()
     
     total = len(lines)
-    excerpt = lines[:SPEC_LINES_TO_READ]
+    # Dynamically locate the KERNEL_END boundary (Section 18 end) to guarantee the entire Kernel is read
+    kernel_end_idx = total
+    for idx, line in enumerate(lines):
+        if "<!-- KERNEL_END -->" in line:
+            kernel_end_idx = idx + 1
+            break
+            
+    excerpt = lines[:kernel_end_idx]
+    lines_read_count = len(excerpt)
     size = SPEC_PATH.stat().st_size
     mtime = datetime.fromtimestamp(SPEC_PATH.stat().st_mtime, tz=timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     
     print("=" * 80)
-    print(f"CANONICAL MASTER SPECIFICATION (SOP v2.1.0) — Lines 1-{SPEC_LINES_TO_READ} of {total}")
+    print(f"CANONICAL MASTER SPECIFICATION (SOP v2.1.0) — Lines 1-{lines_read_count} of {total} [FULL KERNEL LOADED]")
     print(f"Path: {SPEC_PATH}")
     print(f"Size: {size:,} bytes | Last Modified: {mtime}")
     print("=" * 80)
     print("".join(excerpt))
     print("=" * 80)
-    print(f"[SPEC READ: Lines 1-{SPEC_LINES_TO_READ}/{total} | {size:,} bytes | {mtime}]")
+    print(f"[SPEC READ: Lines 1-{lines_read_count}/{total} | {size:,} bytes | {mtime}]")
     print("=" * 80)
     
     return {
@@ -112,7 +120,8 @@ def read_and_print_spec():
         "path": str(SPEC_PATH),
         "size_bytes": size,
         "total_lines": total,
-        "lines_read": SPEC_LINES_TO_READ,
+        "lines_read": lines_read_count,
+        "kernel_boundary_found": kernel_end_idx < total,
         "last_modified": mtime,
     }, None
 

@@ -50,6 +50,11 @@ def is_cg_terminal(item) -> bool:
     """Enforces dual-key ownership: BOTH comment=='cg_terminal' and magic==42001 required."""
     return getattr(item, 'comment', '') == CG_COMMENT and getattr(item, 'magic', 0) == MAGIC_NUMBER
 
+def is_alpha_trade(item) -> bool:
+    """Detects co-located autonomous EA trades whose comment starts with ALPHA (case-insensitive)."""
+    comment = str(getattr(item, 'comment', '') or '').strip().upper()
+    return comment.startswith('ALPHA')
+
 def get_account_audit():
     acc = init_mt5()
     equity = acc.equity
@@ -241,12 +246,15 @@ def move_sl_to_breakeven(ticket: int):
     """
     Ratchet stop loss of a cg_terminal position to breakeven (entry price).
     Strict isolation: Only operates on positions with comment == 'cg_terminal'.
+    NEVER touches positions with comment starting with 'ALPHA'.
     """
     init_mt5()
     positions = mt5.positions_get(ticket=ticket)
     if not positions:
         raise ValueError(f"Position ticket {ticket} not found")
     pos = positions[0]
+    if is_alpha_trade(pos):
+        raise PermissionError(f"HARD BAN: Position #{ticket} has comment '{pos.comment}'. ALPHA trades are autonomous EA trades and cannot have TP/SL modified.")
     if not is_cg_terminal(pos):
         raise PermissionError(f"DENIED: Position {ticket} does not belong to cg_terminal (comment='{pos.comment}', magic={pos.magic}).")
         
@@ -280,12 +288,15 @@ def move_sl_to_breakeven(ticket: int):
 def modify_position_sltp(ticket: int, sl: float, tp: float = None):
     """
     Modifies the SL and/or TP of an open position with strict cg_terminal isolation.
+    NEVER touches positions with comment starting with 'ALPHA'.
     """
     init_mt5()
     positions = mt5.positions_get(ticket=ticket)
     if not positions:
         raise ValueError(f"Position ticket {ticket} not found")
     pos = positions[0]
+    if is_alpha_trade(pos):
+        raise PermissionError(f"HARD BAN: Position #{ticket} has comment '{pos.comment}'. ALPHA trades are autonomous EA trades and cannot have TP/SL modified.")
     if not is_cg_terminal(pos):
         raise PermissionError(f"DENIED: Position {ticket} does not belong to cg_terminal (comment='{pos.comment}', magic={pos.magic}).")
         
