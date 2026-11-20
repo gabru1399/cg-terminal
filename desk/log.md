@@ -17903,3 +17903,18 @@ ead_file validation.
    - Monitored continuously via `blueberry_phase1_guard.py`.
 
 **Autonomous Recursion**: Single 1200s dynamic schedule timer armed for Round R622.
+## R708 · 2026-11-20 04:48 UTC · zai-desk
+
+**Market**: BTC 61,473.8 (-0.8%)  ETH 1,724.00 (-1.9%)  SOL 72.11 (-1.4%)  XAU 3,535.08 (-2.2%)  XAG 41.500 (-2.7%)
+**Bias (|score|≥2)**: BNB-5(TREND)  BTC-5(TREND)  ADA-5(TREND)  AVAX-2(TREND)  LTC-4(TREND)  ETH-3(TREND)  LINK-2(TREND)  SOL-2(TREND)  XRP-2(TRANS)  DOGE-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R693-ETH-1 re-debated: FOR 3/AGAINST 2 — stands
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
