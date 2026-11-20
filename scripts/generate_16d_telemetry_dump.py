@@ -496,6 +496,19 @@ def generate_telemetry_dump(universe=None):
     """Generates the complete 16-Dimension telemetry dump across the trading universe."""
     if universe is None:
         universe = CURATED_61
+
+    # Check if a fresh dump (< 5 minutes old) already exists with valid data
+    if TARGET_FILE.exists():
+        try:
+            mtime = TARGET_FILE.stat().st_mtime
+            if time.time() - mtime < 300:
+                with open(TARGET_FILE, "r", encoding="utf-8") as f:
+                    existing = json.load(f)
+                    if existing.get("total_assets_dumped", 0) >= 20:
+                        print(f"[OK] Reusing fresh 16D Telemetry dump ({existing.get('total_assets_dumped')} assets, age: {int(time.time() - mtime)}s)")
+                        return existing
+        except Exception:
+            pass
         
     t0 = time.time()
     print("=" * 80)
@@ -507,7 +520,8 @@ def generate_telemetry_dump(universe=None):
     qualified_a_plus = []
     grade_b_watch = []
     
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+    # Bound concurrency per PIT-10 to prevent overloading local Next.js dev server
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
         futs = {executor.submit(extract_16d_telemetry_for_asset, sym): sym for sym in universe}
         for f in concurrent.futures.as_completed(futs):
             sym = futs[f]

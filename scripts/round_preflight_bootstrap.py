@@ -1,16 +1,11 @@
 #!/usr/bin/env python3
-"""
-round_preflight_bootstrap.py — Deterministic Physical Pre-Flight Runner
-Codifies SOP v2.1.0 & Gravitas Invariants into a zero-token-waste,
-unforgeable pre-flight audit executed at the start of every autonomous round.
-"""
+"""Read-only dependency, terminal, and MT5 probes for the round wake receipt."""
 
 import os
-import sys
 import re
 import json
 import time
-import hashlib
+import math
 import urllib.request
 from pathlib import Path
 
@@ -19,15 +14,17 @@ PLUGINS_DIR = Path(os.path.expanduser("~/.gemini/config/plugins"))
 SKILLS_DIR = Path(os.path.expanduser("~/.gemini/config/skills"))
 MCP_DIR = Path(os.path.expanduser("~/.gemini/antigravity/mcp"))
 SPEC_PATH = WORKSPACE / "desk" / "CANONICAL_MASTER_SPECIFICATION.md"
+EXPECTED_MT5_LOGIN = 5126976
 
 def audit_plugins():
-    required_plugins = ["trading-skills", "superpowers", "coderabbit", "gravitas-native", "chrome-devtools-plugin"]
+    required_plugins = ["trading-skills", "superpowers", "coderabbit", "gravitas-native",
+                        "chrome-devtools-plugin", "harness-antigravity"]
     status = {}
     for p in required_plugins:
         p_path = PLUGINS_DIR / p
         status[p] = {
-            "installed": p_path.exists(),
-            "path": str(p_path) if p_path.exists() else None
+            "installed": p_path.is_dir(),
+            "path": str(p_path),
         }
     return status
 
@@ -43,8 +40,9 @@ def audit_skills():
     for s in required_skills:
         s_path = SKILLS_DIR / s / "SKILL.md"
         status[s] = {
-            "installed": s_path.exists(),
-            "size_bytes": s_path.stat().st_size if s_path.exists() else 0
+            "installed": s_path.is_file(),
+            "size_bytes": s_path.stat().st_size if s_path.is_file() else 0,
+            "path": str(s_path),
         }
     return status
 
@@ -61,12 +59,13 @@ def audit_mcp_servers():
     status = {}
     for m in required_mcp:
         m_path = MCP_DIR / m
-        exists = m_path.exists()
+        exists = m_path.is_dir()
         schemas = list(m_path.glob("*.json")) if exists else []
         status[m] = {
             "installed": exists,
             "tool_schemas_count": len(schemas),
-            "path": str(m_path) if exists else None
+            "path": str(m_path),
+            "runtime_checked": False,
         }
     return status
 
@@ -83,9 +82,9 @@ def audit_slash_command_skills():
     status = {}
     for cmd, p in slash_skills.items():
         status[cmd] = {
-            "installed": p.exists(),
-            "size_bytes": p.stat().st_size if p.exists() else 0,
-            "path": str(p) if p.exists() else None
+            "installed": p.is_file(),
+            "size_bytes": p.stat().st_size if p.is_file() else 0,
+            "path": str(p),
         }
     return status
 
@@ -114,7 +113,7 @@ def audit_all_spec_links():
         "valid_links": len(links) - len(broken),
         "broken_count": len(broken),
         "broken_links": broken,
-        "total_kb_read": round(total_bytes / 1024.0, 2),
+        "total_kb_on_disk": round(total_bytes / 1024.0, 2),
         "load_time_ms": elapsed_ms
     }
 
@@ -129,96 +128,94 @@ def audit_spec():
         "last_modified": time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime(stat.st_mtime))
     }
 
+def positive_number(value):
+    return type(value) in (int, float) and math.isfinite(value) and value > 0
+
+
 def audit_terminal():
-    for base in ["http://localhost:3000", "http://127.0.0.1:3000"]:
+    base = "http://127.0.0.1:3000/api/cg"
+    attempts = []
+    for endpoint, timeout in (("market", 35), ("live", 10)):
+        url = f"{base}/{endpoint}?sym=BTC"
         try:
-            url = f"{base}/api/cg/market?sym=BTC"
-            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=35) as resp:
-                data = json.loads(resp.read().decode("utf-8"))
-                return {
-                    "ok": True,
-                    "btc_price": data.get("price", {}).get("last"),
-                    "poc_day": data.get("auction", {}).get("day", {}).get("poc"),
-                    "vwap_day": data.get("vwap", {}).get("vwap")
-                }
-        except Exception:
-            try:
-                url_live = f"{base}/api/cg/live?sym=BTC"
-                req_live = urllib.request.Request(url_live, headers={"User-Agent": "Mozilla/5.0"})
-                with urllib.request.urlopen(req_live, timeout=10) as resp:
-                    data = json.loads(resp.read().decode("utf-8"))
-                    return {
-                        "ok": True,
-                        "btc_price": data.get("price"),
-                        "poc_day": None,
-                        "vwap_day": None
-                    }
-            except Exception:
-                continue
-    return {"ok": False, "error": "terminal unreachable"}
+            with urllib.request.urlopen(url, timeout=timeout) as response:
+                data = json.load(response)
+            if data.get("ok") is not True or data.get("stale") is True:
+                raise ValueError(data.get("error") or "Unusable terminal payload")
+            if endpoint == "market":
+                price = (data.get("price") or {}).get("last")
+                poc = ((data.get("auction") or {}).get("day") or {}).get("poc")
+                vwap = (data.get("vwap") or {}).get("vwap")
+            else:
+                price, poc, vwap = data.get("price"), None, None
+            if not positive_number(price):
+                raise ValueError("BTC price missing or invalid")
+            poc = poc if positive_number(poc) else None
+            vwap = vwap if positive_number(vwap) else None
+            return {
+                "ok": True,
+                "state": "FIELDS_PRESENT" if poc is not None and vwap is not None else "PARTIAL",
+                "endpoint": url,
+                "btc_price": price,
+                "poc_day": poc,
+                "vwap_day": vwap,
+                "response_timestamp_ms": data.get("updatedAt", data.get("fetchedAt")),
+                "source": data.get("source"),
+                "earlier_failures": attempts,
+            }
+        except (OSError, ValueError, AttributeError) as exc:
+            attempts.append({"endpoint": url, "error": str(exc)})
+    return {"ok": False, "state": "UNAVAILABLE", "failures": attempts}
+
 
 def audit_mt5():
     try:
         import MetaTrader5 as mt5
+    except ImportError as exc:
+        return {"ok": False, "error": str(exc)}
+
+    try:
         if not mt5.initialize():
             return {"ok": False, "error": f"mt5.initialize() failed: {mt5.last_error()}"}
-        
-        acc = mt5.account_info()
-        if not acc:
+        try:
+            account = mt5.account_info()
+            if account is None:
+                return {"ok": False, "error": f"MT5 account lookup failed: {mt5.last_error()}"}
+            if account.login != EXPECTED_MT5_LOGIN:
+                return {"ok": False, "error": "Unexpected MT5 account login"}
+            positions = mt5.positions_get()
+            if positions is None:
+                return {"ok": False, "error": f"MT5 positions lookup failed: {mt5.last_error()}"}
+            orders = mt5.orders_get()
+            if orders is None:
+                return {"ok": False, "error": f"MT5 pending orders lookup failed: {mt5.last_error()}"}
+
+            def owned(item):
+                return item.comment == "cg_terminal" and item.magic == 42001
+
+            cg_positions = [p for p in positions if owned(p)]
+            cg_orders = [o for o in orders if owned(o)]
+            return {
+                "ok": True,
+                "login": account.login,
+                "server": account.server,
+                "account_currency": account.currency,
+                "balance": account.balance,
+                "equity": account.equity,
+                "margin": account.margin,
+                "free_margin": account.margin_free,
+                "positions_count": len(positions),
+                "orders_count": len(orders),
+                "cg_position_tickets": [p.ticket for p in cg_positions],
+                "cg_order_tickets": [o.ticket for o in cg_orders],
+                "other_algos_count": len(positions) - len(cg_positions),
+                "other_orders_count": len(orders) - len(cg_orders),
+            }
+        finally:
             mt5.shutdown()
-            return {"ok": False, "error": "account_info() failed"}
-            
-        all_positions = mt5.positions_get() or ()
-        all_orders = mt5.orders_get() or ()
-        
-        def is_cg(item):
-            return getattr(item, "comment", "") == "cg_terminal" and getattr(item, "magic", 0) == 42001
-            
-        cg_pos = [p for p in all_positions if is_cg(p)]
-        cg_ord = [o for o in all_orders if is_cg(o)]
-        other_pos = [p for p in all_positions if not is_cg(p)]
-        
-        # Auto-BE check
-        be_results = []
-        for p in cg_pos:
-            is_sell = (p.type == mt5.ORDER_TYPE_SELL)
-            current_move = (p.price_open - p.price_current) if is_sell else (p.price_current - p.price_open)
-            risk_pts = abs(p.price_open - p.sl)
-            r_mult = round(current_move / risk_pts, 2) if risk_pts > 0 else "BE_LOCKED"
-            be_results.append({
-                "ticket": p.ticket,
-                "symbol": p.symbol,
-                "type": "SELL" if is_sell else "BUY",
-                "open": p.price_open,
-                "current": p.price_current,
-                "sl": p.sl,
-                "r_multiple": r_mult,
-                "profit_usd": round(p.profit, 2)
-            })
-        
-        res = {
-            "ok": True,
-            "login": acc.login,
-            "balance": acc.balance,
-            "equity": acc.equity,
-            "free_margin": acc.margin_free,
-            "cg_positions": be_results,
-            "cg_orders_count": len(cg_ord),
-            "cg_orders": [{
-                "ticket": o.ticket,
-                "symbol": o.symbol,
-                "price": o.price_open,
-                "sl": o.sl,
-                "tp": o.tp,
-                "volume": getattr(o, "volume_current", getattr(o, "volume_initial", 0.0))
-            } for o in cg_ord],
-            "other_algos_count": len(other_pos)
-        }
-        mt5.shutdown()
-        return res
-    except Exception as e:
-        return {"ok": False, "error": str(e)}
+    except Exception as exc:
+        return {"ok": False, "error": str(exc)}
+
 
 def main():
     report = {
