@@ -8,6 +8,39 @@ Delta Exchange India (`india_prod`, account `26902927`) · Blueberry Funded MT5 
 
 The Kernel defines the operating sequence, evidence and admission rules. The numbered sections are the detailed formulation and lifecycle reference. `atg-exec` is the local desk agent, `zai-desk` supplies analysis, and the operator owns account permissions and configuration.
 
+> ### 🤖 AI MACHINE-READABLE EXECUTION MANIFEST (AI-SCHEMA v2.1.0-LIVE)
+> ```yaml
+> spec_schema: "antigravity.cg-terminal.canonical-spec.v2"
+> runtime_target: "Antigravity Quantitative Desk Council & Execution Kernel"
+> execution_modes:
+>   default: "AUDIT"
+>   operator_authorized: "LIVE"
+> active_venues:
+>   delta_exchange_india:
+>     account: "26902927"
+>     environment: "india_prod"
+>     order_type: "post_only_limit"
+>     max_risk_usd: 0.50
+>   blueberry_mt5:
+>     login: "5126976"
+>     environment: "BlueberryMarketsSVG-Live"
+>     order_type: "pending_limit_bracket"
+>     max_risk_usd: 6.00
+> portfolio_invariants:
+>   max_total_heat_pct: 1.0
+>   concurrency_limit_p5_02:
+>     max_total_owned_positions: 2
+>     max_crypto_positions: 1
+> confluence_hurdles:
+>   min_table_7_score: 7.5  # S10 in trending expansion permitted at >= 7.0
+>   min_net_t2_payoff_r: 2.0
+>   min_calibrated_ev_r: 2.0
+> cognitive_stack:
+>   default_personas: ["quant-analyst", "kaizen-agent"]
+>   the_8_voices: ["Alpha Strategist", "Risk Officer", "Microstructure Quant", "Liquidation Sweep", "Footprint Tape Reader", "Momentum Shelf", "TradiFi Macro", "Committee Arbiter"]
+>   mental_models_lattice: 10
+> ```
+
 ---
 
 ## KERNEL — ROUND RUNBOOK
