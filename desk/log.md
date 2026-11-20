@@ -18018,3 +18018,15 @@ ead_file validation.
 - Question: What are potential high confluence A+ setups for Delta and MT5 that can be punched right away?
 - Answer: Blueberry MT5: Punched S11 Trend Cascade Pullback on BTCUSD.pi (Ticket #20335916, Sell Limit @ 61,800.00, SL 62,380.00, TP 60,200.00, 6.96 USD risk, 2.76R, Grade A+ 8.5 pts). Delta Exchange India: 100% capacity-filled under Gate 9 (SEI running + DOT resting + XAUT resting); standing maker limits remain active in cold zones.
 
+## R713 · 2026-11-20 05:50 UTC · zai-desk
+
+**Market**: BTC 61,852.6 (-0.2%)  ETH 1,737.30 (-1.1%)  SOL 72.73 (-0.5%)  XAU 3,551.87 (-1.7%)  XAG 41.920 (-1.7%)
+**Bias (|score|≥2)**: BNB-3(TREND)  ETH-3(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
