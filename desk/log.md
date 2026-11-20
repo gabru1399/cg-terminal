@@ -18605,3 +18605,16 @@ ead_file validation.
   * Delta Exchange India: Balance $3.198 USD, Available $2.567 USD, Net Equity $3.324 USD. Margin utilization 18.55% <= 80% ceiling (Gate 8 PASS).
   * Blueberry MT5: Balance $2,631.26 USD, Equity $2,637.43 USD, Free Margin $2,077.12 USD. Margin level 470.71%. Drawdown 0.00% (MT5-02 PASS). Distance to $2,250 floor: $387.43 USD. Distance to Phase 1 Target ($2,700): $62.57 USD (81.3% complete).
 - **Swarm & Cognitive Consensus**: 8-Voice Council, 10 Mental Models, 11 Socratic Gates, 10 INQ Inquests, and 22 PIT rules evaluated and serialized under `data/round-evidence/R639/`.
+## R742 · 2026-11-20 11:00 UTC · zai-desk
+
+**Market**: BTC 62,029.5 (+0.1%)  ETH 1,757.20 (+0.0%)  SOL 72.42 (-0.9%)  XAU 3,595.11 (-0.5%)  XAG 42.740 (+0.2%)
+**Bias (|score|≥2)**: ADA-5(TRANS)  BTC-4(TREND)  ETH-3(TREND)  BNB-4(TRANS)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
