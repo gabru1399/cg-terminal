@@ -307,16 +307,6 @@
       "status": "be_locked"
     },
     {
-      "symbol": "TIAUSD",
-      "venue": "delta",
-      "side": "short",
-      "size": -10,
-      "entryPrice": 0.358,
-      "sl": 0.358,
-      "tp": 0.3327,
-      "status": "be_locked"
-    },
-    {
       "symbol": "SEIUSD",
       "venue": "delta",
       "side": "short",
@@ -328,6 +318,18 @@
     }
   ],
   "closed": [
+    {
+      "id": "DELTA-TIA-1",
+      "sym": "TIA",
+      "venue": "delta",
+      "side": "short",
+      "entry": 0.3580,
+      "exit": 0.3326,
+      "pnlUsd": 0.2540,
+      "roePct": 151.2,
+      "exitReason": "Take Profit hit (Order #1689224150 @ 0.3326)",
+      "status": "closed_profit"
+    },
     {
       "id": "R1-BTC-1",
       "createdTs": 1794320226989,
