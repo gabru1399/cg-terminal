@@ -17554,3 +17554,20 @@ ead_file validation.
    - Monitored by `scripts/blueberry_phase1_guard.py` on every wake cycle. The instant equity touches >= $2,700.00, all positions will be closed, all orders removed, cash bagged, and trading halted.
 
 **Autonomous Recursion**: Single 1200s dynamic schedule timer armed for Round R614.
+## R690 · 2026-11-20 02:12 UTC · zai-desk
+
+**Market**: BTC 61,371.2 (-0.9%)  ETH 1,731.75 (-1.4%)  SOL 71.79 (-1.8%)  XAU 3,547.26 (-1.8%)  XAG 41.970 (-1.6%)
+**Bias (|score|≥2)**: AVAX-4(TREND)  BNB-4(TREND)  ETH-4(TREND)  ADA-2(TREND)  DOGE-2(TREND)  LINK-2(TREND)  XRP-3(TREND)  SOL-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- NEW R690-AVAX-1 AVAX SHORT limit 6.987 · stop 7.031 · T1 6.870 · T2 6.790 · T3 6.760 · R 2.6
+      [FOR    ] overview: h4 ↓/d1 ↓ EMA, price below day VWAP (6.876 vs 6.952), h4 RSI 35.2, day -1.6%
+      [FOR    ] footprint: bull 50 / bear 54; recent: Divergence/buy[time], Trapped shorts/buy[vol], Absorption/sell[range]
+      [AGAINST] microFlow(abs/trap/exh): 6h micro-events: abs:buy×8, abs:sell×5, div:buy×9, div:sell×2, exh:buy×3, exh:sell×2, sdiv:sell×3, trap:buy×3, trap:sell×3 — net 23 buy-side vs 15 sell-side
+      [FOR    ] liquidation: long-liq magnet 6.990 (str 82, ~$1M est, -0.69%) as target
+      [FOR    ] notifications: 6h weighted bias -4.0 (2 events)
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
