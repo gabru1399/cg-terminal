@@ -26,12 +26,17 @@ export interface OHLCVCandle {
 
 const CG_TO_BIN_ITV: Record<string, string> = {
   m1: "1m",
+  m3: "3m",
   m5: "5m",
   m15: "15m",
   m30: "30m",
   h1: "1h",
+  h2: "2h",
   h4: "4h",
+  h6: "6h",
+  h12: "12h",
   d1: "1d",
+  w1: "1w",
   "1m": "1m",
   "5m": "5m",
   "15m": "15m",
@@ -87,13 +92,33 @@ export async function fetchBinCandles(
   const pair = resolveBinPair(sym);
   const safeLimit = Math.min(Math.max(limit, 10), 1500);
   const endTimeQ = beforeTs ? `&endTime=${Math.floor(beforeTs)}` : "";
-  const rows = (await fapiFetch(
+  const rows = await fapiFetch(
     `/fapi/v1/klines?symbol=${encodeURIComponent(pair)}&interval=${binItv}&limit=${safeLimit}${endTimeQ}`,
     6_000
-  )) as (string | number)[][];
+  );
+  return binCandles(rows);
+}
+
+export async function fetchBinSpotCandles(sym: string, cgItv: string, limit: number): Promise<OHLCVCandle[]> {
+  const query = new URLSearchParams({ symbol: resolveBinPair(sym), interval: CG_TO_BIN_ITV[cgItv] ?? "15m" });
+  const page = async (size: number, before?: number) => {
+    query.set("limit", String(size));
+    if (before != null) query.set("endTime", String(before));
+    const res = await fetch(`https://data-api.binance.vision/api/v3/klines?${query}`, { signal: AbortSignal.timeout(4_000) });
+    if (!res.ok) throw new Error(`Binance spot HTTP ${res.status}`);
+    return binCandles(await res.json());
+  };
+  const latest = await page(Math.min(1000, limit));
+  if (limit <= 1000 || latest.length < 1000) return latest;
+  const prior = await page(limit - latest.length, latest[0].t - 1).catch(() => []);
+  return [...prior, ...latest];
+}
+
+function binCandles(rows: unknown): OHLCVCandle[] {
   if (!Array.isArray(rows)) return [];
   const out: OHLCVCandle[] = [];
   for (const r of rows) {
+    if (!Array.isArray(r)) continue;
     const t = Number(r[0]);
     const o = Number(r[1]);
     const h = Number(r[2]);

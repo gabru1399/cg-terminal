@@ -31,8 +31,8 @@ export default function EngineStatus() {
   const d = q.data;
   if (!d) {
     return (
-      <span className="rounded bg-neutral-800 px-2 py-1 text-[10px] text-neutral-500" title="Continuity engine">
-        engine …
+      <span className="rounded bg-neutral-800 px-2 py-1 text-[10px] text-neutral-500" title={q.error ?? "Continuity engine"}>
+        {q.error ? "engine status unavailable" : "engine …"}
       </span>
     );
   }
@@ -43,7 +43,7 @@ export default function EngineStatus() {
     : backfilling
       ? { label: "backfilling…", cls: "bg-blue-950 text-blue-300" }
       : withErrors
-        ? { label: `engine live · ${withErrors} err`, cls: "bg-amber-950 text-amber-300" }
+        ? { label: `engine degraded · ${withErrors} feeds`, cls: "bg-amber-950 text-amber-300" }
         : { label: "engine live", cls: "bg-emerald-950 text-emerald-300" };
 
   return (
@@ -77,7 +77,7 @@ export default function EngineStatus() {
                   <td className="py-1 text-right font-mono text-neutral-500">
                     {s.lastTs ? new Date(s.lastTs).toLocaleString([], { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" }) : "—"}
                   </td>
-                  <td className={`py-1 text-right font-mono ${s.lastError ? "text-red-400" : "text-neutral-500"}`}>
+                  <td title={s.lastError ?? undefined} className={`py-1 text-right font-mono ${s.lastError ? "text-red-400" : "text-neutral-500"}`}>
                     {s.lastPoll ? ago(s.lastPoll) : "—"} {s.backfilling ? "· filling" : ""}
                   </td>
                 </tr>

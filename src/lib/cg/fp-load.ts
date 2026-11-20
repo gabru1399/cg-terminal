@@ -13,6 +13,7 @@ import { BoundedMap } from "./bounded";
 import { fpFromBuckets, mergeFp, type Fp, type FpBar } from "./cg-signals";
 import { fpVenues } from "./assets";
 import { knownSym } from "./sym-gate";
+import { archivedCandles } from "./store";
 import { hlCoinOf } from "../binance/aliases";
 import { fetchBinCandles, fetchHlCandles, fetchYahooCandles, resolveClassicYahooTicker } from "./fallbacks";
 
@@ -28,7 +29,7 @@ function toMap<T>(data: unknown, val: (row: unknown[]) => T): Map<number, T> {
   const m = new Map<number, T>();
   if (!Array.isArray(data)) return m;
   for (const row of data as unknown[][]) {
-    if (row && null != row[0]) m.set(+row[0], val(row));
+    if (Array.isArray(row) && row[0] != null && Number.isFinite(+row[0])) m.set(+row[0], val(row));
   }
   return m;
 }
@@ -45,6 +46,7 @@ export interface FpLoadResult {
   supported?: boolean;
   bucketsAvailable?: boolean;
   source?: string;
+  stale?: boolean;
   reason?: string;
   sym: string;
   itv: string;
@@ -168,43 +170,29 @@ export async function loadFpBars(
 
   const [flows, klines, ois] = await Promise.all([Promise.all(flowP), Promise.all(klineP), Promise.all(oiP)]);
 
-  const leadK = klines.find((k) => k.v === lead);
-  if (!leadK || !leadK.rows) {
-    // Fallback cleanly to Binance USDT-M klines + taker buy/sell bar totals
-    const binCandles = await fetchBinCandles(sym, itv, limit).catch(() => []);
-    if (!binCandles.length) throw new Error("lead kline unavailable");
-    const res: FpLoadResult = {
-      ok: true,
-      supported: true,
-      bucketsAvailable: false,
-      source: "binance-fapi",
-      reason: "Upstream price-ladder buckets unavailable — showing live Binance OHLC + bar taker volume/delta",
-      sym,
-      itv,
-      limit,
-      venues: ["binance-perp (kline fallback)"],
-      missing: keys.map((k) => k.id),
-      bars: binCandles.map((c) => ({ ts: c.t, o: c.o, h: c.h, l: c.l, c: c.c, fp: null, oio: null, oic: null })),
-      candleFlow: binCandles.map((c) => ({
-        ts: c.t,
-        v: c.v,
-        buyVol: c.tbb,
-        sellVol: c.tbb != null ? Math.max(0, c.v - c.tbb) : undefined,
-      })),
-      updatedAt: Date.now(),
-    };
-    snapCache.set(ck, { at: Date.now(), res });
-    return res;
-  }
+  const binancePair = /^Binance_([A-Z0-9]+)USDT$/.exec(lead.key);
+  const loadBinanceCandles = async () => binancePair
+    ? (await fetchBinCandles(binancePair[1], itv, limit).catch(() => [])).slice(-limit)
+    : [];
+  const leadK = klines.find((k) => k.v === lead)?.rows;
   const leadOhlc = toMap(
-    leadK.rows,
+    leadK,
     (row) => [num(row[1]), num(row[2]), num(row[3]), num(row[4])] as [number | null, number | null, number | null, number | null]
   );
-
+  for (const [ts, row] of leadOhlc) {
+    if (row.some((value) => value == null)) leadOhlc.delete(ts);
+  }
+  const fallbackPrice = leadOhlc.size === 0;
+  const binanceCandles = fallbackPrice ? await loadBinanceCandles() : [];
+  const useArchive = fallbackPrice && !binanceCandles.length && itv === "m15";
+  const priceCandles = useArchive ? archivedCandles(lead.key, limit) : binanceCandles;
+  for (const bar of priceCandles) {
+    leadOhlc.set(Math.floor(bar.t / 1000), [bar.o, bar.h, bar.l, bar.c]);
+  }
+  if (!leadOhlc.size) throw new Error("Lead venue price history is temporarily unavailable");
   const flowMaps = flows.map((f) => ({
     v: f.v,
-    map: f.rows ? toMap(f.rows, (row) => fpFromBuckets(row[1]) as Fp | null) : new Map<number, Fp | null>(),
-    ok: !!f.rows,
+    map: toMap(f.rows, (row) => fpFromBuckets(row[1]) as Fp | null),
   }));
 
   const klineCloses = new Map<string, Map<number, number | null>>();
@@ -219,26 +207,20 @@ export async function loadFpBars(
   }));
 
   for (const fm of flowMaps) {
-    if (fm.v === lead) continue;
+    if (!needKline(fm.v) || fm.v === lead) continue;
     const closes = klineCloses.get(fm.v.id);
-    if (!closes) continue;
     const shifted = new Map<number, Fp | null>();
     for (const [ts, fp] of fm.map) {
-      if (!fp) {
-        shifted.set(ts, null);
-        continue;
-      }
-      const vc = closes.get(ts);
+      if (!fp) continue;
+      const vc = closes?.get(ts);
       const leadC = leadOhlc.get(ts)?.[3];
-      const off = null != vc && null != leadC ? leadC - vc : 0;
-      shifted.set(ts, off ? { ...fp, lo: fp.lo + off } : fp);
+      if (vc != null && leadC != null) shifted.set(ts, { ...fp, lo: fp.lo + leadC - vc });
     }
     fm.map = shifted;
   }
 
   const bars: FpBar[] = [];
-  const missing: string[] = [];
-  for (const fm of flowMaps) if (!fm.ok) missing.push(fm.v.id);
+  const active = new Set<string>();
 
   const tsList = [...leadOhlc.keys()].sort((a, b) => a - b);
   for (const ts of tsList) {
@@ -247,7 +229,10 @@ export async function loadFpBars(
     const fs: Fp[] = [];
     for (const fm of flowMaps) {
       const fp = fm.map.get(ts);
-      if (fp) fs.push(fp);
+      if (fp) {
+        fs.push(fp);
+        active.add(fm.v.id);
+      }
     }
     const fp = fs.length > 1 ? mergeFp(fs) : fs[0] ?? null;
     let oio: number | null = null;
@@ -277,7 +262,7 @@ export async function loadFpBars(
   const bucketsAvailable = bars.some((b) => !!b.fp);
   let candleFlow: FpLoadResult["candleFlow"];
   if (!bucketsAvailable) {
-    const binCandles = await fetchBinCandles(sym, itv, limit).catch(() => []);
+    const binCandles = fallbackPrice ? binanceCandles : await loadBinanceCandles();
     if (binCandles.length) {
       candleFlow = binCandles.map((c) => ({
         ts: c.t,
@@ -291,15 +276,18 @@ export async function loadFpBars(
     ok: true,
     supported: true,
     bucketsAvailable,
-    source: bucketsAvailable ? "coinglass" : "binance-fapi",
+    source: useArchive ? (bucketsAvailable ? "coinglass + candle archive" : "candle archive")
+      : bucketsAvailable ? (fallbackPrice ? "coinglass + binance-fapi" : "coinglass")
+      : candleFlow ? "binance-fapi" : "coinglass",
+    stale: useArchive,
     ...(bucketsAvailable
       ? {}
-      : { reason: "Upstream price-ladder buckets unavailable — showing live Binance OHLC + bar taker volume/delta" }),
+      : { reason: candleFlow ? "Price-level data unavailable. Showing Binance candles and bar-level taker volume." : "Price-level data unavailable. Showing price candles." }),
     sym,
     itv,
     limit,
-    venues: keys.map((v) => v.id),
-    missing,
+    venues: bucketsAvailable ? [...active] : candleFlow ? [lead.id] : [],
+    missing: keys.filter((v) => !active.has(v.id)).map((v) => v.id),
     bars,
     ...(candleFlow ? { candleFlow } : {}),
     updatedAt: Date.now(),

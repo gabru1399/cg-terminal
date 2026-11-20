@@ -10,6 +10,7 @@ import type {
   OrderFlowBar,
   LargeOrderGroup,
   LiquidationLevel,
+  LtoArchiveRow,
   LtoGroup,
   LtoSupport,
 } from "@/lib/cg/types";
@@ -250,8 +251,10 @@ export interface LtoPayload {
   symbol: string;
   minVolUsd: number;
   support: LtoSupport;
-  perExchange: Record<string, { market: string; instruments: number; openOrders: number; hasData: boolean }>;
+  perExchange: Record<string, { market: string; instruments: number; openOrders: number; hasData: boolean; status: "live" | "stale" | "unavailable" }>;
   groups: LtoGroup[];
+  status: "live" | "partial" | "stale" | "unavailable" | "unsupported";
+  archive?: { at: number; minVolUsd: number; rows: LtoArchiveRow[] } | null;
   hlFallback?: {
     coin: string;
     bids: { price: number; usd: number; sz: number }[];

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import LargeOrdersCanvas from "./charts/large-orders-canvas";
 import { usePolling, useTicker, rowsToCandles, type KlinePayload, type LtoPayload } from "./use-cg-data";
 import type { LtoOrder } from "@/lib/cg/types";
@@ -50,6 +50,7 @@ export default function LargeOrdersTool({ sym = "BTC" }: { sym?: string }) {
   if (sym !== prevSym) {
     setPrevSym(sym);
     setSelected(null);
+    setExSelected(null);
     setMinVolUsd(defaultThresholdFor(sym));
   }
 
@@ -147,7 +148,6 @@ export default function LargeOrdersTool({ sym = "BTC" }: { sym?: string }) {
     const support = ltoQ.data?.support;
     const perEx = ltoQ.data?.perExchange ?? {};
     const rows: { exchange: string; perp: boolean; spot: boolean; openOrders: number; hasData: boolean }[] = [];
-    const seen = new Set<string>();
     for (const section of ["futures", "spot"] as const) {
       for (const s of support?.[section] ?? []) {
         let r = rows.find((x) => x.exchange === s.exchange);
@@ -162,7 +162,6 @@ export default function LargeOrdersTool({ sym = "BTC" }: { sym?: string }) {
           r.openOrders = Math.max(r.openOrders, meta.openOrders);
           r.hasData = r.hasData || meta.hasData;
         }
-        seen.add(s.exchange);
       }
     }
     rows.sort((a, b) => Number(b.hasData) - Number(a.hasData) || a.exchange.localeCompare(b.exchange));
@@ -188,6 +187,15 @@ export default function LargeOrdersTool({ sym = "BTC" }: { sym?: string }) {
   );
 
   const err = klineQ.error ?? ltoQ.error;
+  const archive = ltoQ.data?.archive;
+  const status = ltoQ.loading ? "loading" : ltoQ.error ? (groups.length ? "stale" : "unavailable") : ltoQ.data?.status ?? "unavailable";
+  const coverage = Object.values(ltoQ.data?.perExchange ?? {});
+  const liveVenues = coverage.filter((v) => v.status === "live").length;
+  const hasOrdersSnapshot = coverage.some((v) => v.hasData);
+  const archiveRows = (archive?.rows ?? []).filter((row) =>
+    (!exSelected || exSelected.has(row.i.split("_", 1)[0])) &&
+    (sideFilter === "all" || row.side === (sideFilter === "bid" ? 2 : 1))
+  );
 
   return (
     <div className="flex flex-col gap-3">
@@ -374,9 +382,9 @@ export default function LargeOrdersTool({ sym = "BTC" }: { sym?: string }) {
         </label>
 
         <div className="ml-auto flex items-center gap-2">
-          <span className={`flex items-center gap-1.5 text-xs ${ltoQ.error ? "text-red-400" : "text-emerald-400"}`}>
-            <span className={`inline-block h-1.5 w-1.5 rounded-full ${ltoQ.error ? "bg-red-400" : "animate-pulse bg-emerald-400"}`} />
-            {ltoQ.error ? "offline" : "live"}
+          <span role="status" className={`flex items-center gap-1.5 text-xs ${status === "live" ? "text-emerald-400" : "text-amber-400"}`}>
+            <span className={`inline-block h-1.5 w-1.5 rounded-full ${status === "live" ? "bg-emerald-400" : "bg-amber-400"}`} />
+            {status === "partial" ? "partial coverage" : status}
           </span>
           <Button variant="outline" size="sm" className="h-7 border-neutral-700 text-xs" onClick={() => { klineQ.refresh(); ltoQ.refresh(); }}>
             Refresh
@@ -393,18 +401,18 @@ export default function LargeOrdersTool({ sym = "BTC" }: { sym?: string }) {
               ? `${Math.round((summary.bid / (summary.bid + summary.ask)) * 100)}:${Math.round(
                   (summary.ask / (summary.bid + summary.ask)) * 100
                 )}`
-              : "50:50"
+              : "—"
           }
           tone={summary.net >= 0 ? "up" : "down"}
-          sub={`${fmtUsd(summary.bid)} bid : ${fmtUsd(summary.ask)} ask`}
+          sub={hasOrdersSnapshot ? `${fmtUsd(summary.bid)} bid : ${fmtUsd(summary.ask)} ask` : undefined}
         />
         <Metric
           label="Net wall"
-          value={fmtSignedUsd(summary.net)}
+          value={hasOrdersSnapshot ? fmtSignedUsd(summary.net) : "—"}
           tone={summary.net >= 0 ? "up" : "down"}
           sub={`${exSelected ? `${exSelected.size} exchanges` : "all venues"}${marketMode !== "all" ? ` · ${marketMode} only` : ""}`}
         />
-        <Metric label="Open orders" value={String(summary.count)} sub={`${exchangeChips.length} exchanges with data`} />
+        <Metric label="Open orders" value={hasOrdersSnapshot ? String(summary.count) : "—"} sub={coverage.length ? `${liveVenues}/${coverage.length} exchanges live` : undefined} />
         <Metric label="Last price" value={lastPrice ? fmtP(lastPrice) : "—"} sub="Binance perp · 15m" />
         <Metric label="Threshold" value={`≥ ${fmtUsd(minVolUsd)}`} sub="resting order size filter" />
       </div>
@@ -445,6 +453,36 @@ export default function LargeOrdersTool({ sym = "BTC" }: { sym?: string }) {
           Data error: {err} — retrying automatically.
         </div>
       )}
+      {(status === "partial" || (status === "stale" && !archive)) && (
+        <div className="rounded border border-amber-900/60 bg-amber-950/30 px-3 py-2 text-xs text-amber-300">
+          {liveVenues} of {coverage.length} exchanges returned current data. Previously received orders may be shown for unavailable exchanges.
+        </div>
+      )}
+      {archive && (
+        <details open className="rounded-lg border border-amber-900/60 bg-neutral-900/60 px-3 py-2 text-xs">
+          <summary className="cursor-pointer text-amber-300">
+            Last recorded BTC orders · {new Date(archive.at).toLocaleString()} · archived at {fmtUsd(archive.minVolUsd)} and above
+          </summary>
+          <div className="mt-2 max-h-64 overflow-auto">
+            <table className="w-full text-left">
+              <thead className="sticky top-0 bg-neutral-900 text-neutral-400">
+                <tr><th>Instrument</th><th>Side</th><th className="text-right">Price</th><th className="text-right">Recorded size</th></tr>
+              </thead>
+              <tbody>
+                {archiveRows.map((row) => (
+                  <tr key={`${row.i}|${row.id}`} className="border-t border-neutral-800 text-neutral-300">
+                    <td className="py-1">{row.i.replace("_", " ")}</td>
+                    <td>{row.side === 2 ? "Bid" : "Ask"}</td>
+                    <td className="text-right font-mono">{fmtP(row.p)}</td>
+                    <td className="text-right font-mono">{fmtUsd(row.usd)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            {!archiveRows.length && <p className="py-2 text-neutral-400">No archived orders match the current threshold and side.</p>}
+          </div>
+        </details>
+      )}
 
       {/* optional chart */}
       {showChart && (
@@ -468,7 +506,7 @@ export default function LargeOrdersTool({ sym = "BTC" }: { sym?: string }) {
       )}
 
       {/* open orders table */}
-      <div className="rounded-lg border border-neutral-800 bg-neutral-900/60">
+      {hasOrdersSnapshot ? <div className="rounded-lg border border-neutral-800 bg-neutral-900/60">
         <div className="flex items-center justify-between border-b border-neutral-800 px-3 py-2">
           <div className="text-xs font-semibold text-neutral-300">
             Open large orders · {tableRows.length}
@@ -531,7 +569,9 @@ export default function LargeOrdersTool({ sym = "BTC" }: { sym?: string }) {
                     <td className="px-3 py-1.5 text-right font-mono text-neutral-500">{o.count}</td>
                     <td className="px-3 py-1.5 text-right text-neutral-400">{fmtAge(Date.now() - o.startTime)}</td>
                     <td className="px-3 py-1.5 text-right">
-                      <span className="rounded bg-emerald-900/40 px-1.5 py-0.5 text-[10px] text-emerald-400">Open</span>
+                      <span className="rounded bg-neutral-800 px-1.5 py-0.5 text-[10px] text-neutral-200">
+                        {ltoQ.error || ltoQ.data?.perExchange[exName]?.status === "stale" ? "Last seen open" : "Open"}
+                      </span>
                     </td>
                   </tr>
                 );
@@ -539,18 +579,22 @@ export default function LargeOrdersTool({ sym = "BTC" }: { sym?: string }) {
               {tableRows.length === 0 && (
                 <tr>
                   <td colSpan={9} className="px-3 py-8 text-center text-neutral-500">
-                    No open orders in the current filter.
+                    No orders match the current filter on the exchanges that returned data.
                   </td>
                 </tr>
               )}
             </tbody>
           </table>
         </div>
-      </div>
+      </div> : (
+        <div className="rounded-lg border border-neutral-800 bg-neutral-900/60 px-3 py-8 text-center text-xs text-neutral-400">
+          {status === "loading" ? "Loading large resting orders…" : status === "unsupported" ? "Large resting-order coverage is unavailable for this instrument." : "Live large resting orders are temporarily unavailable. Retrying automatically."}
+        </div>
+      )}
 
       {/* whale-order walls — the order-book wall view derived purely from
           open whale orders (subset of the full book: only ≥ threshold) */}
-      <WhaleWalls scoped={scoped} lastPrice={lastPrice} fmtP={fmtP} />
+      {hasOrdersSnapshot && <WhaleWalls scoped={scoped} lastPrice={lastPrice} fmtP={fmtP} />}
 
       {/* Hyperliquid xyz L2 book + live executed prints fallback when CEX whale feed is unavailable */}
       {!groups.length && hlFb && (
@@ -609,14 +653,8 @@ export default function LargeOrdersTool({ sym = "BTC" }: { sym?: string }) {
         </div>
       )}
 
-      {!groups.length && !hlFb && ltoQ.data?.symbol === sym && ltoQ.data.supported === false && (
-        <div className="rounded-lg border border-neutral-800 bg-[#11151a] px-4 py-3 text-center text-xs text-neutral-400">
-          {sym} is not listed on Coinglass institutional whale-order venues or Hyperliquid xyz — inspect Footprint / Overview for structure.
-        </div>
-      )}
-
       {/* order detail */}
-      {selected && (
+      {selected && tableRows.some(({ order }) => order.id === selected.id && order.name === selected.name) && (
         <div className="rounded-lg border border-neutral-800 bg-neutral-900/60 p-3">
           <div className="mb-2 flex items-center justify-between">
             <div className="text-xs font-semibold text-neutral-300">Order detail</div>
@@ -628,7 +666,6 @@ export default function LargeOrdersTool({ sym = "BTC" }: { sym?: string }) {
             <Detail label="Venue" value={`${selected.name}`} />
             <Detail label="Side" value={selected.side === 2 ? "Bid (buy wall)" : "Ask (sell wall)"} tone={selected.side === 2 ? "up" : "down"} />
             <Detail label="Price" value={fmtP(selected.price)} />
-            <Detail label="Status" value="Open" tone="up" />
             <Detail label="Initial size" value={`${fmtNum(selected.startAmount, 3)} ${sym} · ${fmtUsd(selected.startUsd)}`} />
             <Detail label="Remaining" value={`${fmtNum(selected.currentAmount, 3)} ${sym} · ${fmtUsd(selected.currentUsd)}`} />
             <Detail label="Filled" value={`${fmtNum(selected.vol, 3)} ${sym} · ${fmtUsd(selected.volUsd)}`} />

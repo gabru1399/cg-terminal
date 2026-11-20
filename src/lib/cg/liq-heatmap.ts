@@ -273,7 +273,7 @@ export async function buildRollingStopModel(symRaw: string, windowMs = 24 * 3_60
   const now = Date.now();
 
   // 2) archived snapshots (+ live one-shot when the archive is thin)
-  const archName = `liqlevels:${sym}:3d`;
+  const archName = sym === "BTC" ? "liqlevels:3d" : `liqlevels:${sym}:3d`;
   const arch = (rowsOf(archName, archKey) as unknown as ArchRow[]).filter((r) => now - r.at <= 3 * 86_400_000);
   let rows: ArchRow[] = arch.filter((r) => now - r.at <= windowMs);
   let source: RollingStopModel["source"] = "archive";
@@ -281,22 +281,22 @@ export async function buildRollingStopModel(symRaw: string, windowMs = 24 * 3_60
   if (rows.length < 200) {
     // cold archive — take ONE fresh multi-venue aggregate (the exact same
     // upstream the Liq Levels tab reads; nothing synthetic).
-    try {
-      const at = now;
-      for (const v of liqVenues(sym)) {
+    const at = now;
+    const venues = await Promise.allSettled(liqVenues(sym).map(async (v) => {
         // shape-proof parse (2026-11-12 fix): bare OR wrapped decrypted
         // payload — the old `for (const lv of r.data ?? [])` threw "not
         // iterable" on the wrapped shape, silently killing the live fallback.
-        const val = await cgGet(`/api/liquidationLevels/v2?symbol=${encodeURIComponent(v.key)}&limit=4000&range=3d`, 0);
+        const query = new URLSearchParams({ symbol: v.key, limit: "4000", range: "3d" });
+        const val = await cgGet(`/api/liquidationLevels/v2?${query}`, 30_000);
+        const snapshot: ArchRow[] = [];
         for (const lv of parseLiqLevelsPayload(val) as RawLiqLevel[]) {
           const size = Number(lv.size);
           if (!(size > 0)) continue;
-          liveRows.push({ at, v: v.key, side: Number(lv.side), p: Number(lv.price), s: size, l2: lv.level2 ?? "" });
+          snapshot.push({ at, v: v.key, side: Number(lv.side), p: Number(lv.price), s: size, l2: lv.level2 ?? "" });
         }
-      }
-    } catch {
-      /* keep archive-only */
-    }
+        return snapshot;
+    }));
+    liveRows = venues.flatMap((result) => result.status === "fulfilled" ? result.value : []);
     if (liveRows.length) {
       rows = [...rows, ...liveRows];
       source = arch.length ? "archive+live" : "live-aggregate";
@@ -311,6 +311,10 @@ export async function buildRollingStopModel(symRaw: string, windowMs = 24 * 3_60
   const lo = lastPrice * 0.88;
   const hi = lastPrice * 1.12;
   const inRange = rows.filter((r) => r.p >= lo && r.p <= hi);
+  if (!inRange.length) {
+    lastRollingNullReason = "No recorded liquidation levels fall within the chart's price range";
+    return null;
+  }
   // y grid: ~140 INTEGER-INDEXED levels spanning the price range (integer
   // indices avoid the FP-key mismatch of rounded-value keys; levels from
   // different venues that land in one bucket SUM their USD).
@@ -334,7 +338,7 @@ export async function buildRollingStopModel(symRaw: string, windowMs = 24 * 3_60
   // collapse rows per snapshot timestamp -> level price -> max USD (per venue
   // snapshots repeat levels; the aggregate takes each venue's own size)
   const snaps = new Map<number, ArchRow[]>();
-  for (const r of rows) {
+  for (const r of inRange) {
     if (!snaps.has(r.at)) snaps.set(r.at, []);
     snaps.get(r.at)!.push(r);
   }
@@ -442,7 +446,7 @@ export async function buildRollingStopModel(symRaw: string, windowMs = 24 * 3_60
     tail,
     lastPrice,
     lastTs,
-    updateTime: now,
+    updateTime: snapTimes[snapTimes.length - 1],
     clusters: { below, above },
     bands,
     totals,

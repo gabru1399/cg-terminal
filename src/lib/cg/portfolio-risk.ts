@@ -25,7 +25,9 @@
  */
 
 import fs from "fs";
+import path from "node:path";
 import { buildDeskLiveSnapshot } from "../desk/live";
+import { resolveDeskRoot } from "../desk/root";
 import { accountSnapshot } from "../binance/signed";
 import { paperBookTickets, paperBookStats, type PaperBookTicketView } from "./paperbook";
 import { fetchBinCandles } from "./fallbacks";
@@ -208,7 +210,7 @@ function betaOf(a: number[] | undefined, b: number[] | undefined, windowBars: nu
 
 function readJsonSafe<T>(p: string): T | null {
   try {
-    return JSON.parse(fs.readFileSync(p, "utf8")) as T;
+    return JSON.parse(fs.readFileSync(path.join(/* turbopackIgnore: true */ resolveDeskRoot(), p), "utf8")) as T;
   } catch {
     return null;
   }

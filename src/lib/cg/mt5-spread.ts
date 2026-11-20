@@ -21,6 +21,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { resolveDeskRoot } from "../desk/root";
 
 export interface Mt5SpreadInfo {
   sym: string;
@@ -48,8 +49,7 @@ interface CacheRow {
 }
 
 const g = globalThis as unknown as { __cgMt5SpreadCache?: CacheRow };
-const READ_ROOT = process.env.CG_DATA_ROOT ?? path.join(process.cwd(), "data", "cg-series");
-const MT5_FILE = path.join(path.dirname(READ_ROOT), "desk", "mt5.json");
+const MT5_FILE = path.join(/* turbopackIgnore: true */ resolveDeskRoot(), "desk", "mt5.json");
 
 interface Mt5FileSpread {
   ok?: boolean;

@@ -116,19 +116,21 @@ export async function GET(req: NextRequest) {
 
     // interval -> ts -> per-venue bucket lists
     const byIv = new Map<string, Map<number, { buckets: OrderFlowBucket[]; weight: number }[]>>();
-    let venuesOk = 0;
+    const coverage = new Map<string, number>();
     results.forEach((res) => {
       if (res.status !== "fulfilled") return;
       const { iv, r } = res.value;
       const rows = parseRows(r);
-      if (!rows.length) return;
-      venuesOk++;
+      if (!rows.some((row) => Array.isArray(row?.[1]) && row[1].length)) return;
+      coverage.set(iv, (coverage.get(iv) ?? 0) + 1);
       let byTs = byIv.get(iv);
       if (!byTs) {
         byTs = new Map();
         byIv.set(iv, byTs);
       }
-      for (const [ts, buckets] of rows) {
+      for (const row of rows) {
+        if (!Array.isArray(row)) continue;
+        const [ts, buckets] = row;
         if (!Array.isArray(buckets) || !buckets.length) continue;
         let arr = byTs.get(ts);
         if (!arr) {
@@ -145,13 +147,18 @@ export async function GET(req: NextRequest) {
         .filter((b) => b.buckets.length > 0)
         .sort((a, b) => a.ts - b.ts);
 
+    if (!coverage.size) {
+      return NextResponse.json({ ok: false, error: "No price-level order flow returned by Coinglass" }, { status: 503 });
+    }
+
     if (all) {
       const byInterval: Record<string, OrderFlowBar[]> = {};
       for (const iv of intervalList) byInterval[iv] = barsOf(iv);
       return NextResponse.json({
         ok: true,
         venues: VENUES.length,
-        venuesOk,
+        venuesOk: Math.min(...intervalList.map((iv) => coverage.get(iv) ?? 0)),
+        venuesOkByInterval: Object.fromEntries(intervalList.map((iv) => [iv, coverage.get(iv) ?? 0])),
         byInterval,
       });
     }
@@ -160,7 +167,7 @@ export async function GET(req: NextRequest) {
       ok: true,
       interval,
       venues: VENUES.length,
-      venuesOk,
+      venuesOk: coverage.get(interval) ?? 0,
       bars: barsOf(interval),
     });
   } catch (e) {

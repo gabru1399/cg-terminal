@@ -18,6 +18,7 @@ interface CvdResponse {
   ok: boolean;
   supported?: boolean;
   source?: string;
+  stale?: boolean;
   reason?: string;
   hlTape?: {
     coin: string;
@@ -136,7 +137,13 @@ export default function CvdTool({ sym = "BTC" }: { sym?: string }) {
           divergences: d.divergences,
         }
       : null;
-  const hasSpot = (d?.instruments ?? []).some((i) => i.kind === "spot");
+  const loadedInstruments = (d?.instruments ?? []).filter((i) => d?.flowsLoaded?.some((flow) => flow.key === i.key && flow.ok));
+  const hasSpot = loadedInstruments.some((i) => i.kind === "spot");
+  const hasPerp = loadedInstruments.some((i) => i.kind === "perp");
+  const hasMode = mode === "spot" ? hasSpot : mode === "perp" ? hasPerp : hasSpot || hasPerp;
+  const sourceStatus = err ? (d ? "stale" : "offline") : q.loading ? "loading" : d?.stale ? "stale"
+    : !d?.supported ? "unavailable" : !hasSpot || !hasPerp || loadedInstruments.length < (d.instruments?.length ?? 0)
+      ? "partial coverage" : "live";
   const lastClose = d?.candles?.length ? Number(d.candles[d.candles.length - 1][4]) : null;
   const hlPrice = d?.hlTape?.lastPrice ?? null;
   const decs = symDecs(sym, lastClose ?? hlPrice);
@@ -159,7 +166,7 @@ export default function CvdTool({ sym = "BTC" }: { sym?: string }) {
         <div className="flex items-center gap-1.5 pr-2">
           <span className="text-sm font-semibold text-neutral-100">{sym}</span>
           <span className="rounded bg-neutral-800 px-1.5 py-0.5 text-[10px] text-neutral-400">
-            CVD · {d?.instruments?.length ? `${d.instruments.length} venues` : d?.source ?? "…"} · taker flows
+            CVD · {loadedInstruments.length ? `${loadedInstruments.length} feeds` : d?.source ?? "…"} · taker flows
           </span>
         </div>
         <div className="flex overflow-hidden rounded border border-neutral-700">
@@ -210,9 +217,8 @@ export default function CvdTool({ sym = "BTC" }: { sym?: string }) {
           </button>
         </div>
         <div className="ml-auto flex items-center gap-2">
-          <span className={`flex items-center gap-1.5 text-xs ${err ? "text-red-400" : "text-emerald-400"}`}>
-            <span className={`inline-block h-1.5 w-1.5 rounded-full ${err ? "bg-red-400" : "animate-pulse bg-emerald-400"}`} />
-            {err ? "offline" : "live"}
+          <span role="status" className={`flex items-center gap-1.5 text-xs ${sourceStatus === "live" ? "text-emerald-400" : "text-amber-400"}`}>
+            {sourceStatus}
           </span>
           <Button variant="outline" size="sm" className="h-7 border-neutral-700 text-xs" onClick={() => q.refresh()}>
             Refresh
@@ -230,7 +236,7 @@ export default function CvdTool({ sym = "BTC" }: { sym?: string }) {
         <div className="flex h-64 items-center justify-center rounded-lg border border-neutral-800 bg-neutral-900/60 text-sm text-neutral-500">
           {q.loading ? "Loading taker flows across venues…" : "No data"}
         </div>
-      ) : d.supported === false || !k || !chartModel ? (
+      ) : d.supported === false || !k || !chartModel || !hasMode ? (
         <div className="space-y-3 rounded-lg border border-neutral-800 bg-[#11151a] p-5">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div>
@@ -238,7 +244,7 @@ export default function CvdTool({ sym = "BTC" }: { sym?: string }) {
                 {d.hlTape ? `${sym} · Hyperliquid xyz Live Taker Tape` : `${sym} · Historical CVD Series Unavailable`}
               </div>
               <p className="mt-1 text-xs text-neutral-400">
-                {d.reason ?? "This benchmark does not publish multi-venue taker buy/sell bar history."}
+                {d.reason ?? (!hasMode ? `No ${mode === "spot" ? "spot" : "futures"} taker-flow series is available for this interval.` : "Historical taker-flow data is unavailable.")}
               </p>
             </div>
             <span className="rounded border border-neutral-800 bg-[#0e1216] px-2 py-0.5 text-[10px] uppercase tracking-wider text-neutral-400">
@@ -337,7 +343,7 @@ export default function CvdTool({ sym = "BTC" }: { sym?: string }) {
             <div className="rounded-lg border border-neutral-800 bg-neutral-900/60 p-2 xl:col-span-3">
               <CvdCanvas model={chartModel} mode={mode} showDelta={showDelta} showRatio={showRatio} height={480} priceDecs={decs} />
               <div className="px-1 pb-1 pt-2 text-[10px] text-neutral-500">
-                {chartModel.n} bars · {d.itv} · price from {d.priceKey ?? d.source ?? "feed"} · CVD over {(d.instruments ?? []).filter((i) => (mode === "spot" ? i.kind === "spot" : mode === "perp" ? i.kind === "perp" : true)).length} venues{d.source === "binance-fapi" ? " (Binance USD-M taker flow)" : ""}.
+                {chartModel.n} bars · {d.itv} · price from {d.priceKey ?? d.source ?? "feed"} · CVD over {loadedInstruments.filter((i) => mode === "total" || i.kind === mode).length} feeds{d.source === "binance-fapi" ? " (Binance taker flow)" : ""}.
                 Blue = CVD (own scale), dashed = zero. Markers: Bull div (green) / Bear div (red) connect the two swings.
               </div>
             </div>

@@ -26,7 +26,7 @@ def utc_now():
 
 
 def fetch(url):
-    with urlopen(url, timeout=20) as response:
+    with urlopen(url, timeout=5) as response:
         if response.geturl() != url:
             raise ValueError("Source redirected away from the requested endpoint")
         return response.read()

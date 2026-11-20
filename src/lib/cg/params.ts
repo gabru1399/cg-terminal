@@ -26,5 +26,5 @@ export function clampLimit(v: string | null, fallback: number, max: number): num
 
 /** Instrument keys are `Exchange_SYMBOLQUOTE` — shape-gate before upstream use. */
 export function instrumentKeyOK(s: string): boolean {
-  return /^[A-Za-z0-9_-]{3,48}$/.test(s);
+  return /^[A-Za-z0-9_:/.-]{3,48}$/.test(s);
 }

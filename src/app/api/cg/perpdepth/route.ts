@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { cgGet, FAPI, CAPI } from "@/lib/cg/client";
 import { perpMapOf } from "@/lib/cg/perpmap";
+import { fetchBinCandles, fetchHlCandles } from "@/lib/cg/fallbacks";
 
 export const dynamic = "force-dynamic";
 
@@ -98,11 +99,21 @@ export async function GET(req: NextRequest) {
 
   const lead = entry.venues.find((v) => v.lead) ?? entry.venues[0];
   const jobs: Promise<unknown>[] = [];
-  const leadKline = cgGet(
-    `/api/v2/kline?symbol=${encodeURIComponent(`${lead.key}#kline`)}&interval=15m&minLimit=false&limit=97`,
-    60_000,
-    FAPI
-  ).catch(() => null);
+  let source = "coinglass";
+  const leadKline = (async () => {
+    const data = await cgGet(
+      `/api/v2/kline?symbol=${encodeURIComponent(`${lead.key}#kline`)}&interval=15m&minLimit=false&limit=97`,
+      60_000, FAPI
+    ).catch(() => null);
+    if (toBars(data).length) return data;
+    const instrument = /^(Binance_([A-Z0-9]+)USDT|tradeXYZ_([A-Z0-9]+)-USD)$/.exec(lead.key);
+    if (!instrument) return data;
+    const candles = await (instrument[2]
+      ? fetchBinCandles(instrument[2], "m15", 97)
+      : fetchHlCandles(`xyz:${instrument[3]}`, "m15", 97)).catch(() => []);
+    if (candles.length) source = instrument[2] ? "binance-fapi" : "tradeXYZ";
+    return candles.map((b) => [Math.floor(b.t / 1000), b.o, b.h, b.l, b.c, b.v]);
+  })();
   const leadOi = cgGet(
     `/api/v2/kline?symbol=${encodeURIComponent(`${lead.key}#oi_kline`)}&interval=15m&minLimit=false&limit=97`,
     60_000,
@@ -129,6 +140,7 @@ export async function GET(req: NextRequest) {
   const leadBars = toBars(settled[0]);
   const oiBars = toBars(settled[1]);
   if (!leadBars.length && !oiBars.length) {
+    if (hit) return NextResponse.json({ ...(hit.body as object), stale: true });
     // review RV-ARCH M3: an all-null body with ok:true would render a dead
     // panel with no explanation — be honest instead
     return NextResponse.json(
@@ -172,6 +184,8 @@ export async function GET(req: NextRequest) {
   const body = {
     ok: true,
     sym,
+    source,
+    stale: false,
     liquidity: entry.liquidity,
     note: entry.note ?? null,
     lead: { venue: lead.id, key: lead.key, close: leadLast, vol24h: leadBars.length ? +sumVol(leadBars.slice(-96)).toFixed(2) : null },

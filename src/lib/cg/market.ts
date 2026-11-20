@@ -32,6 +32,7 @@ import { hlCoinOf, resolveCgSym } from "../binance/aliases";
 import { classicOf } from "./classic";
 import { getUniverse, isBinanceSym } from "../binance/universe";
 import { fetchBinCandles, fetchHlCandles, fetchYahooCandles, resolveClassicYahooTicker, type OHLCVCandle } from "./fallbacks";
+import { archivedCandles } from "./store";
 
 export interface MarketSnapshot {
   ok: boolean;
@@ -268,6 +269,18 @@ export async function buildMarketSnapshot(symRaw: string): Promise<MarketSnapsho
     }
   }
 
+  if (!m15.length && hasBin) {
+    if (hit?.snap && Date.now() - hit.snap.candleAt < 86_400_000) {
+      return { ...hit.snap, ageMs: Date.now() - hit.snap.candleAt, stale: true };
+    }
+    m15 = archivedCandles(leadInstr(sym), 5000);
+    if (m15.length) {
+      h1 = rollupCandles(m15, 3_600_000);
+      h4 = rollupCandles(m15, 4 * 3_600_000);
+      d1 = rollupCandles(m15, 86_400_000);
+      source = "candle archive";
+    }
+  }
   if (!m15.length) throw new Error(`no klines for ${sym}`);
   const now = Date.now();
   const dayStart = utcDayStart(now);
@@ -316,7 +329,7 @@ export async function buildMarketSnapshot(symRaw: string): Promise<MarketSnapsho
 
   const candleAt = last.t;
   const ageMs = now - candleAt;
-  const stale = ageMs > 3 * 15 * 60_000;
+  const stale = source === "candle archive" || ageMs > 3 * 15 * 60_000;
 
   const snap: MarketSnapshot = {
     ok: true,

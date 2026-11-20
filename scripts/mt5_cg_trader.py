@@ -6,7 +6,7 @@ Operating Account: Blueberry Funded Prime 2-Step Challenge ($2,500)
 Rules Enforced:
 1. Risk Budget: Strictly max $5.00 – $6.00 USD risk per trade (~0.20% - 0.24% of equity).
 2. Mandatory Comment: Every single order/position MUST have comment="cg_terminal".
-3. Shared Account Isolation: Filter strictly by comment == "cg_terminal" or magic == 42001.
+3. Shared Account Isolation: Filter strictly by comment == "cg_terminal" and magic == 42001.
    NEVER modify, close, or interfere with other algorithms' orders running on the same account.
 4. Daily Drawdown Guard: 4.0% ($100.00 USD) hard floor from daily starting balance.
 5. Max Drawdown Guard: 10.0% ($250.00 USD) static limit (equity must never touch $2,250.00 USD).
@@ -18,7 +18,7 @@ import os
 import argparse
 import json
 from datetime import datetime, timezone
-from mt5_order_risk import size_order, validate_bracket
+from mt5_order_risk import HARD_CAP_USD, size_order, validate_bracket
 try:
     import MetaTrader5 as mt5
 except ImportError:
@@ -26,7 +26,7 @@ except ImportError:
 
 MAGIC_NUMBER = 42001
 CG_COMMENT = "cg_terminal"
-MAX_RISK_USD = 6.00
+MAX_RISK_USD = float(HARD_CAP_USD)
 MIN_RISK_USD = 4.00
 TARGET_RISK_USD = 5.50
 INITIAL_ACCOUNT_BALANCE = 2500.00
@@ -141,7 +141,7 @@ def calculate_lot_size(symbol: str, entry_price: float, sl_price: float, target_
     if info is None:
         raise ValueError(f"Symbol {symbol} info not found")
     entry_price, sl_price = (round(p, info.digits) for p in (entry_price, sl_price))
-    cap = min(max_risk_cap_usd, 15.00)  # Capped at $15.00 for A+ setups per Section 20 MT5-02
+    cap = min(max_risk_cap_usd, MAX_RISK_USD)
     lots, risk = size_order(
         mt5, info, entry_price, sl_price, sl_price < entry_price, target_risk_usd, cap
     )
@@ -446,7 +446,7 @@ if __name__ == "__main__":
     parser.add_argument("--place", nargs=5, metavar=("SYMBOL", "TYPE", "ENTRY", "SL", "TP"), help="Place order with bracket SL/TP")
     parser.add_argument("--cancel", type=int, metavar="TICKET", help="Cancel a pending cg_terminal order")
     parser.add_argument("--modify", nargs=4, metavar=("TICKET", "PRICE", "SL", "TP"), help="Modify pending order price, SL, and TP")
-    parser.add_argument("--max-risk", type=float, default=MAX_RISK_USD, help="Max dollar risk cap (default $6.00, or user-authorized e.g. 25.00 for min lot)")
+    parser.add_argument("--max-risk", type=float, default=MAX_RISK_USD, help="Max stressed stop risk in USD, up to the canonical $6.00 ceiling")
     parser.add_argument("--be", type=int, metavar="TICKET", help="Move SL of cg_terminal position to Breakeven")
     parser.add_argument("--trail", nargs="+", metavar="VAL", help="Trail/modify SL and optional TP of an open cg_terminal position: --trail TICKET SL [TP]")
     parser.add_argument("--auto-be", action="store_true", help="Auto-ratchet any cg_terminal position with >= +1.0R to Breakeven")

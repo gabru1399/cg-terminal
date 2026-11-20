@@ -18,7 +18,7 @@
  * Enable/disable: CG_ENGINE=off disables. CG_ENGINE_BACKFILL_DAYS (default 3)
  * bounds how far boot backfill reaches on a fresh store.
  */
-import { cgGet, FAPI } from "./client";
+import { cgGet, FAPI, withCgBackground } from "./client";
 import { makeObeToken } from "./crypto";
 import { decodeRow, fetchAggregateStream, rebin, type BookSnapshot } from "./book-walls";
 import { append, lastTs, markPoll, markBackfilling, stat, gapCount } from "./store";
@@ -76,7 +76,7 @@ async function fetchKlines(symbol: string, itv: string, limit: number, endTime?:
   } catch (e) {
     if (symbol.startsWith("Binance_")) {
       const rawBase = symbol.replace(/^Binance_/, "").replace(/USDT$/, "");
-      const bin = await fetchBinCandles(rawBase, itv, limit).catch(() => []);
+      const bin = await fetchBinCandles(rawBase, itv, limit, undefined, undefined, endTime && endTime * 1000).catch(() => []);
       if (bin.length) {
         return bin.map((b) => [Math.floor(b.t / 1000), b.o, b.h, b.l, b.c, b.v] as unknown as KlineRow);
       }
@@ -86,7 +86,7 @@ async function fetchKlines(symbol: string, itv: string, limit: number, endTime?:
   const rows = Array.isArray(r) ? r : ((r as { data?: KlineRow[] })?.data ?? []);
   if (!rows.length && symbol.startsWith("Binance_")) {
     const rawBase = symbol.replace(/^Binance_/, "").replace(/USDT$/, "");
-    const bin = await fetchBinCandles(rawBase, itv, limit).catch(() => []);
+    const bin = await fetchBinCandles(rawBase, itv, limit, undefined, undefined, endTime && endTime * 1000).catch(() => []);
     if (bin.length) {
       return bin.map((b) => [Math.floor(b.t / 1000), b.o, b.h, b.l, b.c, b.v] as unknown as KlineRow);
     }
@@ -96,10 +96,24 @@ async function fetchKlines(symbol: string, itv: string, limit: number, endTime?:
 
 async function fetchFlows(symbol: string, itv: string, limit: number, endTime?: number): Promise<[number, number, number][]> {
   const q = `/api/v2/kline?symbol=${encodeURIComponent(symbol + "#bs_usd")}&interval=${itv}&limit=${limit}&minLimit=false${endTime ? `&endTime=${endTime}` : ""}`;
-  const r = (await cgGet(q, 0)) as { data?: [number, string | number, string | number][] } | [number, string | number, string | number][];
-  const rows = Array.isArray(r) ? r : (r.data ?? []);
-  // normalize timestamps to milliseconds (upstream returns unix seconds)
-  return rows.map((x) => [1000 * Number(x[0]), Number(x[1]) || 0, Number(x[2]) || 0]);
+  try {
+    const r = (await cgGet(q, 0)) as { data?: [number, string | number, string | number][] } | [number, string | number, string | number][];
+    const rows = Array.isArray(r) ? r : (r?.data ?? []);
+    if (rows.length) return rows.map((x) => [1000 * Number(x[0]), Number(x[1]) || 0, Number(x[2]) || 0]);
+    throw new Error("No upstream taker-flow bars");
+  } catch (error) {
+    const pair = /^Binance_([A-Z0-9]+)USDT$/.exec(symbol);
+    if (!pair) throw error;
+    const candles = await fetchBinCandles(pair[1], itv, limit, undefined, undefined, endTime && endTime * 1000);
+    const rows: [number, number, number][] = [];
+    for (const c of candles) {
+      if (c.q != null && c.tbq != null && Number.isFinite(c.q) && Number.isFinite(c.tbq)) {
+        rows.push([c.t, c.tbq, Math.max(0, c.q - c.tbq)]);
+      }
+    }
+    if (!rows.length) throw error;
+    return rows;
+  }
 }
 
 type TickerRaw = { instrument?: { exName?: string; instrumentId?: string; baseAsset?: string; type?: number }; volUsd?: number };
@@ -322,8 +336,11 @@ async function pollLto() {
         }
       }
     });
+    const loaded = settled.filter((r) => r.status === "fulfilled" && Array.isArray(r.value)).length;
     append("lto:open", rows, keyLto);
-    markPoll("lto:open", keyLto);
+    markPoll("lto:open", keyLto, loaded < exchanges.length || !loaded
+      ? `Coinglass whale orders available for ${loaded}/${exchanges.length} exchanges`
+      : undefined);
   } catch (e) {
     markPoll("lto:open", keyLto, e instanceof Error ? e.message : "error");
   }
@@ -333,79 +350,44 @@ async function pollLto() {
  *  hot-reload keeps the rotation position) */
 const gLiqRot = globalThis as unknown as { __cgLiqRotIdx?: number };
 
-const gLiqDeadVenues = globalThis as unknown as { __cgDeadLiqVenues?: Set<string> };
-const deadLiqVenues = (gLiqDeadVenues.__cgDeadLiqVenues ??= new Set<string>());
+async function archiveLiqLevels(sym: string, name: string) {
+  const venues = liqVenues(sym);
+  const at = Date.now();
+  const rows = [];
+  let loaded = 0;
+  for (const { key } of venues) {
+    try {
+      const query = new URLSearchParams({ symbol: key, limit: "4000", range: "3d" });
+      const levels = parseLiqLevelsPayload(await cgGet(`/api/liquidationLevels/v2?${query}`, 60_000)) as RawLiqLevel[];
+      const valid = levels.filter((level) => Number(level.size) > 0 && Number(level.price) > 0);
+      if (!valid.length) continue;
+      loaded++;
+      for (const level of valid) {
+        rows.push({ at, v: key, side: Number(level.side), p: Number(level.price), s: Number(level.size), l2: level.level2 ?? "" });
+      }
+    } catch (error) {
+      if (error instanceof Error && error.message.includes("429")) break;
+    }
+  }
+  if (rows.length) append(name, rows, keyLiq);
+  markPoll(name, keyLiq, loaded < venues.length || !loaded
+    ? `Coinglass liquidation data available for ${loaded}/${venues.length} venues`
+    : undefined);
+}
 
-/** archive liqlevels for the next `n` curated assets into their own series
- *  (liqlevels:<SYM>:3d) — the stopmap rolling heatmap reads these back, so
- *  the whole universe keeps true time x price liquidation history. */
 async function pollLiqLevelsAssets(n: number) {
   const syms = continuitySyms().filter((s) => s !== "BTC");
   if (!syms.length) return;
   const idx = (gLiqRot.__cgLiqRotIdx ??= 0) % syms.length;
   for (let k = 0; k < Math.min(n, syms.length); k++) {
     const sym = syms[(idx + k) % syms.length];
-    const name = `liqlevels:${sym}:3d`;
-    const venues = liqVenues(sym).map((v) => v.key).filter((k) => !deadLiqVenues.has(k));
-    if (!venues.length) continue;
-    try {
-      const at = Date.now();
-      const rows: { at: number; v: string; side: number; p: number; s: number; l2: string }[] = [];
-      for (const v of venues) {
-        // shape-proof parse (2026-11-12 fix): the decrypted payload arrives
-        // bare OR wrapped — the old `for (const lv of r.data ?? [])` threw
-        // "not iterable" on the wrapped shape and silently archived nothing.
-        // Use 60s cache TTL to respect upstream rate limits.
-        try {
-          const val = await cgGet(`/api/liquidationLevels/v2?symbol=${encodeURIComponent(v)}&limit=4000&range=3d`, 60_000);
-          for (const lv of parseLiqLevelsPayload(val) as RawLiqLevel[]) {
-            const size = Number(lv.size);
-            if (!(size > 0)) continue;
-            rows.push({ at, v, side: Number(lv.side), p: Number(lv.price), s: size, l2: lv.level2 ?? "" });
-          }
-        } catch (ve) {
-          const msg = ve instanceof Error ? ve.message : String(ve);
-          if (msg.includes("40001") || msg.includes("unavailable")) {
-            deadLiqVenues.add(v);
-          }
-          if (msg.includes("429")) {
-            markPoll(name, keyLiq, "upstream rate limited (HTTP 429)");
-            return;
-          }
-        }
-        // Brief pacing delay between venues to prevent concurrent rate limits
-        await new Promise((r) => setTimeout(r, 100));
-      }
-      if (rows.length) append(name, rows, keyLiq);
-      markPoll(name, keyLiq);
-    } catch (e) {
-      markPoll(name, keyLiq, e instanceof Error ? e.message : "error");
-    }
+    await archiveLiqLevels(sym, `liqlevels:${sym}:3d`);
   }
   gLiqRot.__cgLiqRotIdx = (idx + n) % syms.length;
 }
 
-async function pollLiqLevels() {
-  // BTC keeps its legacy series (engineStatus + routes read liqlevels:3d)...
-  const venues = liqVenues("BTC").map((v) => v.key);
-  try {
-    const at = Date.now();
-    const rows: { at: number; v: string; side: number; p: number; s: number; l2: string }[] = [];
-    for (const v of venues) {
-      // shape-proof parse (2026-11-12 fix) — see pollLiqLevelsAssets
-      // Use 60s cache TTL to respect upstream rate limits.
-      const val = await cgGet(`/api/liquidationLevels/v2?symbol=${encodeURIComponent(v)}&limit=4000&range=3d`, 60_000);
-      for (const lv of parseLiqLevelsPayload(val) as RawLiqLevel[]) {
-        const size = Number(lv.size);
-        if (!(size > 0)) continue;
-        rows.push({ at, v, side: Number(lv.side), p: Number(lv.price), s: size, l2: lv.level2 ?? "" });
-      }
-    }
-    append("liqlevels:3d", rows, keyLiq);
-    markPoll("liqlevels:3d", keyLiq);
-  } catch (e) {
-    markPoll("liqlevels:3d", keyLiq, e instanceof Error ? e.message : "error");
-  }
+function pollLiqLevels() {
+  return archiveLiqLevels("BTC", "liqlevels:3d");
 }
 
 // ---------------------------------------------------------------------------
@@ -429,11 +411,12 @@ async function pollLiqLevels() {
 const m15PagesFor = (days: number, floor: number) => Math.max(floor, Math.ceil((days * 96) / 100) + 2);
 
 async function backfillKlineAndFlows(days: number) {
-  const keys = ["Binance_BTCUSDT", ...(await cvdInstrumentKeys())];
-  const uniqueKeys = [...new Set(keys)];
+  const jobs = [
+    { symbol: "Binance_BTCUSDT", isPrice: true },
+    ...(await cvdInstrumentKeys()).map((symbol) => ({ symbol, isPrice: false })),
+  ];
   const backMs = days * 86_400_000;
-  for (const k of uniqueKeys) {
-    const isPrice = k === "Binance_BTCUSDT";
+  for (const { symbol: k, isPrice } of jobs) {
     const name = isPrice ? `kline:${k}:m15` : `bs_usd:${k}:m15`;
     const stored = lastTs(name, isPrice ? keyKline : keyFlow) ?? 0;
     const targetFrom = Math.max(Date.now() - backMs, stored);
@@ -441,6 +424,7 @@ async function backfillKlineAndFlows(days: number) {
     markBackfilling(name, isPrice ? keyKline : keyFlow, true);
     let end = Math.floor(Date.now() / 1000) + 60;
     let guard = 0;
+    let error: string | undefined;
     const pages = m15PagesFor(days, 12);
     while (end * 1000 > targetFrom && guard++ < pages) {
       try {
@@ -454,12 +438,13 @@ async function backfillKlineAndFlows(days: number) {
         if (minTs >= end * 1000 - STEP_MS) break;
         end = Math.floor(minTs / 1000) - 1;
         await new Promise((r) => setTimeout(r, 600));
-      } catch {
+      } catch (e) {
+        error = e instanceof Error ? e.message : "Backfill failed";
         break;
       }
     }
-    markBackfilling(name, isPrice ? keyKline : keyFlow, false, Date.now());
-    markPoll(name, isPrice ? keyKline : keyFlow);
+    markBackfilling(name, isPrice ? keyKline : keyFlow, false, error ? undefined : Date.now());
+    markPoll(name, isPrice ? keyKline : keyFlow, error);
   }
 }
 
@@ -601,7 +586,7 @@ export function ensureEngine(): { started: boolean; startedAt: number; bootDone:
   const bootDelay = Number(process.env.CG_ENGINE_BOOT_DELAY_MS ?? 15_000) || 15_000;
   engine.bootDone = new Promise<void>((resolve) => {
     const t = setTimeout(() => {
-      boot(days)
+      withCgBackground(() => boot(days))
         .catch(() => undefined)
         .finally(() => resolve());
     }, bootDelay);
@@ -616,7 +601,7 @@ export function ensureEngine(): { started: boolean; startedAt: number; bootDone:
     const run = () => {
       if (busy) return; // previous pass still in flight — skip this tick
       busy = true;
-      fn()
+      withCgBackground(fn)
         .catch(() => undefined)
         .finally(() => {
           busy = false;
@@ -640,7 +625,7 @@ export function ensureEngine(): { started: boolean; startedAt: number; bootDone:
   // per-asset liqlevels archive: 2 curated assets per 10-min tick (preserves rate limit budget)
   t(10 * 60_000, 180_000, () => pollLiqLevelsAssets(2));
   // live notification scanner (all assets, all tabs)
-  startScanner();
+  withCgBackground(startScanner);
   // virtual book — paper-trade outcome tracker for the agent setups
   // (60 s track pass + 90 s arm sweep over the full 61-asset universe)
   ensurePaperBook();

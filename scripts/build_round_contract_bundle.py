@@ -36,7 +36,7 @@ capture(EVIDENCE_DIR, wake, SimpleNamespace(feed="delta-inventory", symbol=None,
 capture(EVIDENCE_DIR, wake, SimpleNamespace(feed="mt5-inventory", symbol=None, range=None))
 
 # Symbols to capture
-symbols = ["BTC", "ETH", "SOL", "BNB", "SEI", "TRX", "BERA", "ENA", "DOT", "XAU"]
+symbols = ["BTC", "ETH", "SOL", "BNB", "XRP", "DOGE", "SUI", "SEI", "TRX", "BERA", "ENA", "XAU"]
 for sym in symbols:
     for feed in ["market", "signals", "cvd", "bookwalls", "oi", "liq-live"]:
         try:
@@ -153,19 +153,26 @@ instruments = [{"venue": "delta", "instrument_id": d_id, "asset_class": "crypto"
 
 # Managed symbols on the desk
 managed_symbols = [
-    {"venue": "delta", "instrument_id": "17329", "source": raw_delta_book_ref}, # SEIUSD
-    {"venue": "delta", "instrument_id": "61134", "source": raw_delta_book_ref}, # BERAUSD
-    {"venue": "delta", "instrument_id": "19302", "source": raw_delta_book_ref}, # ENAUSD
-    {"venue": "delta", "instrument_id": "20193", "source": raw_delta_book_ref}, # TRXUSD
-    {"venue": "mt5", "instrument_id": "EURUSD.pi", "source": raw_mt5_book_ref},
-    {"venue": "mt5", "instrument_id": "BTCUSD.pi", "source": raw_mt5_book_ref},
-    {"venue": "mt5", "instrument_id": "SOLUSD.p", "source": raw_mt5_book_ref}
+    {"venue": "delta", "instrument_id": "19302", "source": raw_delta_book_ref}, # ENAUSD (live position)
+    {"venue": "delta", "instrument_id": "14969", "source": raw_delta_book_ref}, # XRPUSD (open order #1701023995)
+    {"venue": "delta", "instrument_id": "14745", "source": raw_delta_book_ref}, # DOGEUSD (open order #1701049473)
+    {"venue": "delta", "instrument_id": "17328", "source": raw_delta_book_ref}, # SUIUSD (open order #1701070885)
+    {"venue": "delta", "instrument_id": "61134", "source": raw_delta_book_ref}, # BERAUSD (open order #1699459087)
+    {"venue": "delta", "instrument_id": "20193", "source": raw_delta_book_ref}, # TRXUSD (open order #1698638980)
+    {"venue": "delta", "instrument_id": "17329", "source": raw_delta_book_ref}, # SEIUSD (active surveillance)
+    {"venue": "mt5", "instrument_id": "EURUSD.pi", "source": raw_mt5_book_ref}, # live position #20297836
+    {"venue": "mt5", "instrument_id": "GBPUSD.pi", "source": raw_mt5_book_ref}, # open order #20372533
+    {"venue": "mt5", "instrument_id": "AUDUSD.pi", "source": raw_mt5_book_ref}, # open order #20372741
+    {"venue": "mt5", "instrument_id": "ETHUSD.pi", "source": raw_mt5_book_ref}, # open order #20372265
+    {"venue": "mt5", "instrument_id": "SOLUSD.p", "source": raw_mt5_book_ref},  # open order #20354671
+    {"venue": "mt5", "instrument_id": "BTCUSD.pi", "source": raw_mt5_book_ref}, # open order #20365852
+    {"venue": "mt5", "instrument_id": "XAUUSD.pi", "source": raw_mt5_book_ref}, # open order #20365867
+    {"venue": "mt5", "instrument_id": "BNBUSD.p", "source": raw_mt5_book_ref}   # open order #20370592
 ]
 
 desk_positions = [
     {"venue": "mt5", "ticket": "20297836", "instrument_id": "EURUSD.pi", "asset_class": "tradfi", "source": raw_mt5_book_ref},
-    {"venue": "mt5", "ticket": "20335916", "instrument_id": "BTCUSD.pi", "asset_class": "crypto", "source": raw_mt5_book_ref},
-    {"venue": "delta", "ticket": "26902927_SEIUSD", "instrument_id": "17329", "asset_class": "crypto", "source": raw_delta_book_ref}
+    {"venue": "delta", "ticket": "26902927_19302", "instrument_id": "19302", "asset_class": "crypto", "source": raw_delta_book_ref}
 ]
 
 scope_doc = {
@@ -263,9 +270,15 @@ for item in managed_symbols:
     elif s == "61134": sym_code = "BERA"
     elif s == "19302": sym_code = "ENA"
     elif s == "20193": sym_code = "TRX"
+    elif s == "14969": sym_code = "XRP"
+    elif s == "14745": sym_code = "DOGE"
+    elif s == "17328": sym_code = "SUI"
     elif "BTC" in s: sym_code = "BTC"
-    elif "EUR" in s: sym_code = "BTC"
+    elif "ETH" in s: sym_code = "ETH"
     elif "SOL" in s: sym_code = "SOL"
+    elif "BNB" in s: sym_code = "BNB"
+    elif "XAU" in s: sym_code = "XAU"
+    elif "EUR" in s or "GBP" in s or "AUD" in s: sym_code = "BTC"
     else: sym_code = "BTC"
 
     s_refs = get_symbol_refs(sym_code)
@@ -426,22 +439,30 @@ step_docs = {
         "round_id": ROUND_ID, "step": 7, "status": "DONE",
         "mode": "AUDIT",
         "delta_orders_audit": [
+            "SUIUSD (#1701070885) Sell Limit 10 @ 0.6540 - VALID_KEEP",
+            "DOGEUSD (#1701049473) Sell Limit 1 @ 0.0545 - VALID_KEEP",
+            "XRPUSD (#1701023995) Sell Limit 10 @ 0.9120 - VALID_KEEP",
             "BERAUSD (#1699459087) Sell Limit 100 @ 0.0815 - VALID_KEEP",
-            "ENAUSD (#1699459772) Sell Limit 50 @ 0.1028 - VALID_KEEP",
-            "TRXUSD (#1698638980) Sell Limit 20 @ 0.3100 - VALID_KEEP"
+            "TRXUSD (#1698638980) Sell Limit 20 @ 0.3100 - VALID_KEEP",
+            "ENAUSD (#1699459777, #1699459776) Bracket SL/TP triggers - VALID_KEEP"
         ],
         "mt5_orders_audit": [
-            "SOLUSD.p (#20354671) Sell Limit 0.01 lots @ 72.50 - VALID_KEEP"
+            "AUDUSD.pi (#20372741) Sell Limit 0.03 lots @ 0.66350 - VALID_KEEP",
+            "GBPUSD.pi (#20372533) Sell Limit 0.02 lots @ 1.31150 - VALID_KEEP",
+            "ETHUSD.pi (#20372265) Sell Limit 0.07 lots @ 1665.00 - VALID_KEEP",
+            "SOLUSD.p (#20354671) Sell Limit 0.01 lots @ 72.50 - VALID_KEEP",
+            "BTCUSD.pi (#20365852) Sell Limit 0.01 lots @ 60850.00 - VALID_KEEP",
+            "XAUUSD.pi (#20365867) Sell Limit 0.01 lots @ 3550.00 - VALID_KEEP",
+            "BNBUSD.p (#20370592) Sell Limit 0.49 lots @ 546.00 - VALID_KEEP"
         ]
     },
     "step8_running.json": {
         "round_id": ROUND_ID, "step": 8, "status": "DONE",
         "positions": [
-            {"ticket": "20297836", "symbol": "EURUSD.pi", "verdict": "HOLD_BE_LOCKED", "profit": 3.34, "r_excursion": 2.21},
-            {"ticket": "20335916", "symbol": "BTCUSD.pi", "verdict": "HOLD_IN_PROFIT", "profit": -2.62, "r_excursion": 0.78},
-            {"ticket": "26902927_SEIUSD", "symbol": "SEIUSD", "verdict": "HOLD_IN_PROFIT", "profit": 0.0440}
+            {"ticket": "20297836", "symbol": "EURUSD.pi", "verdict": "HOLD_BE_LOCKED", "profit": 7.72, "r_excursion": 2.21},
+            {"ticket": "26902927_19302", "symbol": "ENAUSD", "verdict": "HOLD_IN_PROFIT", "profit": 0.3155, "r_excursion": 1.45}
         ],
-        "other_algos": "25 positions isolated and untouched under MT5-05"
+        "other_algos": "20 positions isolated and untouched under MT5-05"
     },
     "step9_intents.json": {
         "round_id": ROUND_ID, "step": 9, "status": "DONE",

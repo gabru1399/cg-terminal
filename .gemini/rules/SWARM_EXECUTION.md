@@ -46,11 +46,10 @@ On every activation and execution turn:
 - Track trades STRICTLY via internal exchange Order IDs / Ticket Numbers recorded in `desk/state.json`.
 - NEVER cancel, modify, or report external algo orders (`FIB4H_*`, `SOLVUSD`, `TACUSD`).
 
-## 5. RECURSIVE TIMER CONTINUITY & MANDATORY FORMAT
-- Autonomous propagation is single-turn dynamic 1200s timer (`schedule(DurationSeconds=1200)`).
-- Never terminate an execution turn without re-arming the 1200s dynamic wake timer.
-- **Mandatory Timer Instruction & Prompt Format:**
-  `Timer: 20m, Prompt: /goal /executing-plans /plan /brainstorming /karpathy-guidelines /thinking-model-router Autonomous Delta Exchange Trade Execution & Recursive Self-Improving Engine Round R<n>. MANDATORY: Response MUST open with Pre-Flight Verification Checklist confirming fresh 61-curated asset screening from scratch. Audit all 61 Curated Assets and find high potential high confluence trading setup strictly using @[c:\Users\SIGMA\Documents\cg-terminal\desk\CANONICAL_MASTER_SPECIFICATION.md]  , apply thinking mental models (first principles, pre-mortem, probabilistic, red-team, margin of safety) and Karpathy guidelines, monitor live standing maker limit orders on Delta Exchange India (APTUSD @ $0.45700, ADAUSD @ $0.15240, ARBUSD @ $0.13350, LINKUSD @ $9.120, TIAUSD @ $0.34750), enforce First-Two-Fills circuit, +1.0R breakeven invariant and 8-bar time stop, audit margin and liquidity, and re-arm dynamic 1200s recursion.`
+## 5. SCHEDULING AND ROUND LAUNCH
+- Start with `desk/CANONICAL_PROMPT.txt` from the current CG-Terminal workspace.
+- Use the Canonical Master Specification for scope, mode, step order, evidence and scheduling.
+- A manual AUDIT session runs once. A scheduler wake must be separately authorized and use the current workspace.
 
 ## 6. CONTINUOUS PLANNING, BRAINSTORMING & COGNITIVE MANDATES (/plan, /brainstorming, /karpathy-guidelines, /thinking-model-router)
 - Every autonomous prompt, task formulation, and dynamic wakeup must explicitly carry `/goal /executing-plans /plan /brainstorming /karpathy-guidelines /thinking-model-router`.

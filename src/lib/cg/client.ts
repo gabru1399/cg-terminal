@@ -1,4 +1,5 @@
 import { cgHeaders, decryptCgResponse } from "./crypto";
+import { AsyncLocalStorage } from "node:async_hooks";
 
 /**
  * Server-side client for the Coinglass web API (capi.coinglass.com),
@@ -38,49 +39,65 @@ const gC = globalThis as unknown as {
   __cgClientInflight?: Map<string, Promise<unknown>>;
   __cgClientCacheBytes?: { n: number };
   __cgHostCooldown?: Map<string, number>;
-  __cgHostSem?: { active: number; queue: (() => void)[] };
+  __cgRequestSlots?: { active: number; background: number; queue: CgWaiter[] };
+  __cgBackground?: AsyncLocalStorage<boolean>;
 };
 const cache = (gC.__cgClientCache ??= new Map());
 /** host-level 429 cooldown window so a single rate-limit backs off ALL concurrent callers */
 const hostCooldown = (gC.__cgHostCooldown ??= new Map<string, number>());
 /** global concurrency gate for uncached upstream Coinglass fetches (prevents burst 429s) */
-const hostSem = (gC.__cgHostSem ??= { active: 0, queue: [] });
+interface CgWaiter {
+  background: boolean;
+  resume: () => void;
+}
+const hostSem = (gC.__cgRequestSlots ??= { active: 0, background: 0, queue: [] });
 const MAX_CG_CONCURRENCY = 6;
+const MAX_BACKGROUND_CONCURRENCY = 3;
+const backgroundContext = (gC.__cgBackground ??= new AsyncLocalStorage<boolean>());
 /** running total of cached raw bytes — the OOM guard reads this (debug/mem route) */
 const cacheBytes = (gC.__cgClientCacheBytes ??= { n: 0 });
 
+/** Background polling can leave capacity free for requests from open tabs. */
+export function withCgBackground<T>(run: () => T): T {
+  return backgroundContext.run(true, run);
+}
+
+function drainCgQueue() {
+  while (hostSem.active < MAX_CG_CONCURRENCY) {
+    let index = hostSem.queue.findIndex((waiter) => !waiter.background);
+    if (index === -1 && hostSem.background < MAX_BACKGROUND_CONCURRENCY && hostSem.queue.length) index = 0;
+    if (index === -1) break;
+    const [waiter] = hostSem.queue.splice(index, 1);
+    hostSem.active++;
+    if (waiter.background) hostSem.background++;
+    waiter.resume();
+  }
+}
+
 async function withCgSlot<T>(fn: () => Promise<T>): Promise<T> {
-  if (hostSem.active >= MAX_CG_CONCURRENCY) {
-    await new Promise<void>((resolve, reject) => {
-      const resume = () => {
+  const background = backgroundContext.getStore() === true;
+  await new Promise<void>((resolve, reject) => {
+    const waiter: CgWaiter = {
+      background,
+      resume: () => {
         clearTimeout(timeout);
         resolve();
-      };
-      const timeout = setTimeout(() => {
-        const index = hostSem.queue.indexOf(resume);
-        if (index !== -1) hostSem.queue.splice(index, 1);
-        reject(new Error("Coinglass request queue timed out"));
-      }, 20_000);
-      hostSem.queue.push(resume);
-    });
-    // The slot was HANDED to us by the releaser — `active` already counts
-    // this continuation. Do NOT increment again.
-  } else {
-    hostSem.active++;
-  }
+      },
+    };
+    const timeout = setTimeout(() => {
+      const index = hostSem.queue.indexOf(waiter);
+      if (index !== -1) hostSem.queue.splice(index, 1);
+      reject(new Error("Coinglass request queue timed out"));
+    }, background ? 20_000 : 7_000);
+    hostSem.queue.push(waiter);
+    drainCgQueue();
+  });
   try {
     return await fn();
   } finally {
-    // BATON-PASS (review finding): decrementing here and THEN resuming a
-    // waiter lets a fresh caller slip into the gap (active dipped below
-    // MAX while the queue drains) — the gate overshoots its own cap and
-    // queued waiters starve. Hand the slot directly to the next waiter
-    // instead (no decrement); only release when nobody is queued. While
-    // the queue is non-empty, active stays pinned at MAX — new callers
-    // always queue at the back, never jump.
-    const next = hostSem.queue.shift();
-    if (next) next();
-    else hostSem.active--;
+    hostSem.active--;
+    if (background) hostSem.background--;
+    drainCgQueue();
   }
 }
 

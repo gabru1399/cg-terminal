@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { cgGet } from "@/lib/cg/client";
 import { makeObeToken } from "@/lib/cg/crypto";
 import { buildStopModel, buildRollingStopModel, lastRollingNullReason, type LiqHeatmapPayload, type StopModel } from "@/lib/cg/liq-heatmap";
-import { isAsset } from "@/lib/cg/assets";
 import { isCuratedPerp } from "@/lib/cg/assets";
 import { anyTerminalSym } from "@/lib/cg/sym-gate";
 import { BoundedMap } from "@/lib/cg/bounded";
@@ -136,12 +135,12 @@ export async function GET(req: NextRequest) {
           : code === "50001"
             ? "upstream rate-limited, retry shortly"
             : "upstream returned no heatmap data";
-      return NextResponse.json({ ok: false, error: `liqHeatMap ${code ?? "empty"}: ${hint}` }, { status: 502 });
+      throw new Error(`liqHeatMap ${code ?? "empty"}: ${hint}`);
     }
 
     const model: StopModel | null = buildStopModel(payload);
     if (!model) {
-      return NextResponse.json({ ok: false, error: "no usable heatmap window" }, { status: 502 });
+      throw new Error("no usable heatmap window");
     }
 
     return NextResponse.json({
@@ -155,12 +154,31 @@ export async function GET(req: NextRequest) {
         : REF_SYMBOL,
       model,
       dataAt: model.updateTime,
-      ageMs: Date.now() - model.updateTime,
+      ageMs: Math.max(0, Date.now() - model.updateTime),
       stale: Date.now() - model.updateTime > 60_000,
       source: "coinglass:native-heatmap",
       updatedAt: Date.now(),
     });
   } catch (e) {
+    try {
+      const rolling = endTime === undefined ? await buildRollingStopModel(sym) : null;
+      if (rolling) {
+        return NextResponse.json({
+          ok: true,
+          sym,
+          symbol: sym,
+          reference: `multi-venue:${sym}`,
+          window: { interval: "15m", bars: rolling.candles.length, from: rolling.candles[0]?.ts, to: rolling.lastTs },
+          instrument: `rolling aggregate (${rolling.source})`,
+          model: rolling,
+          dataAt: rolling.updateTime,
+          ageMs: Date.now() - rolling.updateTime,
+          stale: true,
+          source: `liq-snapshot-rolling:${rolling.source}`,
+          updatedAt: rolling.updateTime,
+        });
+      }
+    } catch {}
     return NextResponse.json(
       { ok: false, error: e instanceof Error ? e.message : "fetch failed" },
       { status: 502 }

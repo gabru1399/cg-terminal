@@ -34,7 +34,7 @@ except ImportError:
     print(json.dumps({"ok": False, "error": "MetaTrader5 python package not installed (Windows only: pip install MetaTrader5)"}))
     sys.exit(1)
 
-MAX_RISK_USD = 6.00
+MAX_RISK_USD = 10.00
 MAGIC_NUMBER = 42001
 CG_COMMENT = "cg_terminal"
 MAX_DAILY_DRAWDOWN_USD = 100.00

@@ -3,6 +3,7 @@ import path from "node:path";
 import { getLivePrice } from "@/lib/live/server-price";
 import { isClassic } from "@/lib/cg/classic";
 import { microLiveQuote } from "@/lib/cg/micro";
+import { resolveDeskRoot } from "./root";
 
 /**
  * Read-only Desk & MT5 Bridge (V2 Cockpit).
@@ -111,16 +112,7 @@ export interface DeskLiveSnapshot {
   recentLog: DeskRoundEntry[];
 }
 
-const ROOT = (() => {
-  const cwd = process.cwd();
-  const candidates = [cwd, path.resolve(cwd, ".."), path.resolve(cwd, "..", "..")];
-  for (const dir of candidates) {
-    if (existsSync(path.join(/*turbopackIgnore: true*/ dir, "desk", "state.json"))) {
-      return dir;
-    }
-  }
-  return cwd;
-})();
+const ROOT = resolveDeskRoot();
 
 function readJsonSafe<T>(rel: string): T | null {
   try {

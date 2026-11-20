@@ -29,6 +29,8 @@ interface MarketResp {
   name: string;
   kind: string;
   source?: string;
+  stale?: boolean;
+  candleAt?: number;
   priceDecs?: number;
   price: { last: number | null; prevDayClose: number | null; chgDayPct: number | null; dayHigh: number | null; dayLow: number | null; dayVolBase: number | null };
   auction: { session: Profile; day: Profile; month: Profile };
@@ -169,7 +171,7 @@ export default function OverviewTool({ sym = "BTC" }: { sym?: string }) {
           <div className="text-[10px] uppercase tracking-wider text-neutral-500">
             {classic
               ? `${classic.name} · ${classic.broker ?? "Watchlist"}${d?.source ? ` · ${d.source}` : ""}`
-              : `${d?.name ?? sym} · ${sym}/USDT perp · ${d?.source === "hl-xyz" ? "Hyperliquid xyz" : d?.source === "binance-fapi" ? "Binance Futures" : d?.source === "yahoo" ? "Yahoo Finance" : "Binance lead"}`}
+              : `${d?.name ?? sym} · ${sym}/USDT perp · ${d?.source === "hl-xyz" ? "Hyperliquid xyz" : d?.source === "binance-fapi" ? "Binance Futures" : d?.source === "yahoo" ? "Yahoo Finance" : d?.source === "candle archive" ? "Candle archive" : "Binance lead"}`}
           </div>
           <div className="flex items-baseline gap-3">
             <div
@@ -191,6 +193,7 @@ export default function OverviewTool({ sym = "BTC" }: { sym?: string }) {
                 {tk.live ? (tk.source === "ws" ? "real-time · ws" : tk.source === "hl-ws" ? "real-time · hl" : tk.source === "rest" ? "live · 0.25s" : "live · 3s") : "reconnecting"}
               </span>
             </span>
+            {d?.stale && d.candleAt && <span className="text-[10px] text-amber-400">Snapshot from {new Date(d.candleAt).toLocaleString()}</span>}
           </div>
         </div>
         <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-xs sm:grid-cols-4">

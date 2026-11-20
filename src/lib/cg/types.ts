@@ -95,6 +95,16 @@ export interface LtoGroup {
   list: LtoOrder[];
 }
 
+export interface LtoArchiveRow {
+  at: number;
+  i: string;
+  id: number;
+  p: number;
+  side: number;
+  usd: number;
+  qty: number;
+}
+
 export interface LtoSupportSection {
   exchange: string;
   instruments: LtoInstrument[];

@@ -8,6 +8,7 @@ import SplitContextView from "@/components/cg/split-context-view";
 import DeskBlotter from "@/components/cg/desk-blotter";
 import OverviewTool from "@/components/cg/overview-tool";
 import ClassicOverview from "@/components/cg/classic-overview";
+import QuantTool from "@/components/cg/quant-tool";
 import FootprintTool from "@/components/cg/footprint-tool";
 import LargeOrdersTool from "@/components/cg/large-orders-tool";
 import LiquidationLevelsTool from "@/components/cg/liquidation-levels-tool";
@@ -144,6 +145,7 @@ const ALL_TOOL_TABS = new Set<ToolTab>([
   "backtest",
   "playbook",
 ]);
+const CLASSIC_TABS = new Set<ToolTab>(["overview", "quant", "backtest"]);
 
 function fmtMacroPx(v: number | null | undefined): string {
   if (v == null || !Number.isFinite(v)) return "–";
@@ -171,7 +173,7 @@ function bootFromSearchParams(sp: URLSearchParams): { sym: string; tab: ToolTab;
   const sym = resolveUniSym(rawSym) ?? "BTC";
   const classic = UNI_OF.get(sym)?.classic ?? false;
   const rawTab = (sp.get("tab")?.trim().toLowerCase() ?? "overview") as ToolTab;
-  const tab = ALL_TOOL_TABS.has(rawTab) && !(classic && rawTab !== "overview" && rawTab !== "quant" && rawTab !== "backtest") ? rawTab : "overview";
+  const tab = ALL_TOOL_TABS.has(rawTab) && (!classic || CLASSIC_TABS.has(rawTab)) ? rawTab : "overview";
   const rawView = (sp.get("view")?.trim().toLowerCase() ?? "terminal") as CockpitView;
   const view: CockpitView = ["terminal", "matrix", "desk", "markets"].includes(rawView) ? rawView : "terminal";
   return { sym, tab, view };
@@ -273,7 +275,7 @@ function TerminalCockpit() {
       let nextTab = tab;
       // classic instruments are quotes+bars only (Overview/Quant); the
       // perp order-flow tabs stay hidden for them.
-      if (isC && nextTab !== "overview" && nextTab !== "quant") nextTab = "overview";
+      if (isC && !CLASSIC_TABS.has(nextTab)) nextTab = "overview";
       setSym(next);
       setView("terminal");
       if (nextTab !== tab) setTab(nextTab);
@@ -607,8 +609,6 @@ function TerminalCockpit() {
 
             {/* Unified Modern Terminal Tool Bar + Active Panel */}
             {(() => {
-              // Unified complete module suite across ALL curated assets (Crypto, TradFi, and Classic).
-              // Every asset gets full, consistent access to all order-flow, depth, backtest, quant, and execution modules.
               const tabs: { id: ToolTab; label: string; badge?: string }[] = [
                 { id: "overview", label: "Overview" },
                 { id: "footprint", label: "Footprint" },
@@ -616,18 +616,19 @@ function TerminalCockpit() {
                 { id: "liqlevels", label: "Liq Levels" },
                 { id: "bookwalls", label: "Book Walls" },
                 { id: "cvd", label: "CVD" },
-                { id: "quant", label: "TradFi Quant", badge: "COT" },
+                uni?.kind === "crypto-perp" ? { id: "quant", label: "Quant" } : { id: "quant", label: "TradFi Quant", badge: "COT" },
                 { id: "backtest" as const, label: "Backtest" },
                 { id: "playbook" as const, label: "Playbook ▸ Punch", badge: "R548" },
                 { id: "alerts" as const, label: "Alerts" },
                 { id: "l2" as const, label: "Live L2 & Ticket", badge: "WS" },
               ];
+              const availableTabs = classic ? tabs.filter((t) => CLASSIC_TABS.has(t.id)) : tabs;
               const activeTab = tabs.some((t) => t.id === tab) ? tab : "overview";
               return (
                 <>
                   <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-neutral-800/90 bg-[#11151a]/90 p-1.5 backdrop-blur-sm">
                     <div className="flex flex-wrap items-center gap-1">
-                      {tabs.map((t) => (
+                      {availableTabs.map((t) => (
                         <button
                           key={t.id}
                           onClick={() => selectTab(t.id)}
@@ -653,7 +654,7 @@ function TerminalCockpit() {
                       ))}
                     </div>
                     <span className="hidden px-2 font-mono text-[10px] text-neutral-500 xl:inline">
-                      {tabs.length} attached modules · {sym}
+                      {availableTabs.length} attached modules · {sym}
                     </span>
                   </div>
 
@@ -710,7 +711,7 @@ function TerminalCockpit() {
                     )
                   )}
                   {activeTab === "quant" && (
-                    <ClassicOverview sym={sym} liveHint={binMeta ? "binance" : "hl"} />
+                    classic ? <ClassicOverview sym={sym} liveHint="hl" /> : <QuantTool sym={sym} tradfi={uni?.kind === "tradfi-perp"} />
                   )}
                 </>
               );

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { existsSync, mkdirSync, readFileSync, writeFileSync, appendFileSync } from "node:fs";
 import path from "node:path";
 import type { PlaybookCard } from "@/lib/strategy/playbook";
+import { resolveDeskRoot } from "@/lib/desk/root";
 
 export const dynamic = "force-dynamic";
 
@@ -24,14 +25,7 @@ interface PunchBody {
   riskPct?: number;  // risk per trade in percent, e.g. 0.25
 }
 
-const ROOT = (() => {
-  const cwd = process.cwd();
-  const candidates = [cwd, path.resolve(cwd, ".."), path.resolve(cwd, "..", "..")];
-  for (const dir of candidates) {
-    if (existsSync(path.join(dir, "desk", "state.json"))) return dir;
-  }
-  return cwd;
-})();
+const ROOT = resolveDeskRoot();
 
 export async function POST(req: NextRequest) {
   let body: PunchBody;

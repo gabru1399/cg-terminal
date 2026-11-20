@@ -73,6 +73,7 @@ interface FpResponse {
   supported?: boolean;
   bucketsAvailable?: boolean;
   source?: string;
+  stale?: boolean;
   reason?: string;
   error?: string;
   sym: string;
@@ -539,6 +540,11 @@ export default function FootprintTool({ sym = "BTC" }: { sym?: string }) {
         />
       </div>
 
+      {tfQ.data?.sym === sym && tfQ.data.stale && (
+        <p role="status" className="rounded border border-amber-900/60 bg-amber-950/30 px-3 py-2 text-xs text-amber-300">
+          Showing the last recorded price candles while the lead price feed reconnects.
+        </p>
+      )}
       {tfQ.data?.sym === sym && tfQ.data.bucketsAvailable === false && (
         <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-sky-800/40 bg-sky-950/20 px-3 py-2 text-[11px] text-sky-200/90">
           <span>

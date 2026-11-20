@@ -3,6 +3,7 @@ import { existsSync, readFileSync, appendFileSync, writeFileSync, mkdirSync } fr
 import { spawn } from "node:child_process";
 import path from "node:path";
 import type { PlaybookCard } from "@/lib/strategy/playbook";
+import { resolveDeskRoot } from "@/lib/desk/root";
 
 export const dynamic = "force-dynamic";
 
@@ -32,20 +33,7 @@ interface Mt5PunchBody {
   riskUsd?: number; // optional: only ever LOWERS the $6 prop cap
 }
 
-const ROOT = (() => {
-  // standalone production runs with cwd .next/standalone, where scripts/ is not
-  // copied — walk up from the cwd until BOTH desk/state.json and scripts/mt5_punch.py
-  // exist (the real repo root), falling back to cwd for dev mode.
-  const cwd = process.cwd();
-  const candidates = [cwd, path.resolve(cwd, ".."), path.resolve(cwd, "..", "..")];
-  for (const dir of candidates) {
-    if (existsSync(path.join(dir, "scripts", "mt5_punch.py")) && existsSync(path.join(dir, "desk", "state.json"))) return dir;
-  }
-  for (const dir of candidates) {
-    if (existsSync(path.join(dir, "desk", "state.json"))) return dir;
-  }
-  return cwd;
-})();
+const ROOT = resolveDeskRoot(true);
 
 function readJson(p: string): any | null {
   try {

@@ -14,6 +14,7 @@ from unittest.mock import patch
 import agent_wake_verification as reader
 from capture_round_evidence import capture
 import blueberry_phase1_guard as phase1
+from mt5_order_risk import size_order
 from round_source_checks import FUNNEL_FEEDS, audit_source, book_instrument, liquidation_pace
 from verify_round_evidence import FUNNELS, verify
 
@@ -213,6 +214,19 @@ class RoundEvidenceTest(unittest.TestCase):
                             "delta", "15304", "DOTUSD")
         book_instrument({"positions": [{"ticket": 123, "symbol": "XAUUSD.pi"}]},
                         "mt5", "XAUUSD.pi", "XAUUSD.pi")
+
+
+class MT5RiskTest(unittest.TestCase):
+    def test_explicit_budget_cannot_raise_canonical_cap(self):
+        broker = SimpleNamespace(
+            ORDER_TYPE_BUY=0,
+            account_info=lambda: SimpleNamespace(login=5126976, currency="USD"),
+            order_calc_profit=lambda side, name, volume, entry, stop: -100 * volume,
+        )
+        info = SimpleNamespace(name="BTCUSD.pi", volume_min=0.01, volume_max=1.0, volume_step=0.01)
+        self.assertEqual(size_order(broker, info, 100, 95, True, 15, 15), (0.06, 6.0))
+        with self.assertRaisesRegex(ValueError, "Gate 11 veto"):
+            size_order(broker, info, 100, 95, True, 15, 15, lots=0.07)
 
 
 if __name__ == "__main__":
