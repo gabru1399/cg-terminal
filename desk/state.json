@@ -31,17 +31,17 @@
     "operator_policy_updated_at": "2026-11-20T17:05:47.546850+00:00"
   },
   "analysis": {
-    "last_round": "R784",
-    "last_round_ts": 1795211334401,
+    "last_round": "R785",
+    "last_round_ts": 1795212336534,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
-        "price": 59119.2,
-        "chgDayPct": -4.58381550469422,
-        "score": 0.5,
+        "price": 59085.6,
+        "chgDayPct": -4.638044651892459,
+        "score": -0.5,
         "parts": {
           "notif": 2,
-          "signals": 1,
+          "signals": 0.0,
           "trend": -2.0,
           "vwap": -1,
           "rsi": 0.5
@@ -49,12 +49,12 @@
         "error": null
       },
       "ETH": {
-        "price": 1621.74,
-        "chgDayPct": -7.684163189562426,
-        "score": 0.43,
+        "price": 1617.97,
+        "chgDayPct": -7.898766458135285,
+        "score": -0.6,
         "parts": {
-          "notif": 1.94,
-          "signals": 0.99,
+          "notif": 1.9,
+          "signals": 0.0,
           "trend": -2.0,
           "vwap": -1,
           "rsi": 0.5
@@ -62,77 +62,162 @@
         "error": null
       },
       "SOL": {
-        "price": null,
-        "chgDayPct": null,
-        "score": null,
-        "parts": {},
-        "error": "market: HTTP Error 502: Bad Gateway"
+        "price": 69.07,
+        "chgDayPct": -5.525919846806191,
+        "score": -1.25,
+        "parts": {
+          "notif": 0.95,
+          "signals": 0.0,
+          "trend": -2.0,
+          "vwap": -1,
+          "rsi": 0,
+          "cvd": 0.8
+        },
+        "error": null
       },
       "BNB": {
-        "price": null,
-        "chgDayPct": null,
-        "score": null,
-        "parts": {},
-        "error": "market: HTTP Error 502: Bad Gateway"
+        "price": 539.99,
+        "chgDayPct": -6.994488460213574,
+        "score": -5.3,
+        "parts": {
+          "notif": -0.32,
+          "signals": -1,
+          "trend": -2.0,
+          "vwap": -1,
+          "rsi": 0.5,
+          "cvd": -1.47
+        },
+        "error": null
       },
       "XRP": {
-        "price": null,
-        "chgDayPct": null,
-        "score": null,
-        "parts": {},
-        "error": "market: HTTP Error 502: Bad Gateway"
+        "price": 0.91,
+        "chgDayPct": -5.19845817272632,
+        "score": -3.34,
+        "parts": {
+          "notif": -0.34,
+          "signals": 0.0,
+          "trend": -2.0,
+          "vwap": -1,
+          "rsi": 0
+        },
+        "error": null
       },
       "ADA": {
-        "price": null,
-        "chgDayPct": null,
-        "score": null,
-        "parts": {},
-        "error": "market: HTTP Error 502: Bad Gateway"
+        "price": 0.143,
+        "chgDayPct": -5.797101449275364,
+        "score": -1.08,
+        "parts": {
+          "notif": 1.92,
+          "signals": 0.0,
+          "trend": -2.0,
+          "vwap": -1,
+          "rsi": 0
+        },
+        "error": null
       },
       "AVAX": {
-        "price": null,
-        "chgDayPct": null,
-        "score": null,
-        "parts": {},
-        "error": "market: HTTP Error 502: Bad Gateway"
+        "price": 6.571,
+        "chgDayPct": -5.967372638809397,
+        "score": -3.08,
+        "parts": {
+          "notif": -0.3,
+          "signals": 0.0,
+          "trend": -2.0,
+          "vwap": -1,
+          "rsi": 0.5,
+          "cvd": -0.28
+        },
+        "error": null
       },
       "DOGE": {
-        "price": null,
-        "chgDayPct": null,
-        "score": null,
-        "parts": {},
-        "error": "market: HTTP Error 502: Bad Gateway"
+        "price": 0.05423,
+        "chgDayPct": -6.805293005671074,
+        "score": -0.5,
+        "parts": {
+          "notif": 2,
+          "signals": 0.0,
+          "trend": -2.0,
+          "vwap": -1,
+          "rsi": 0.5
+        },
+        "error": null
       },
       "LINK": {
-        "price": null,
-        "chgDayPct": null,
-        "score": null,
-        "parts": {},
-        "error": "market: HTTP Error 502: Bad Gateway"
+        "price": 8.529,
+        "chgDayPct": -5.222802533614853,
+        "score": -1.05,
+        "parts": {
+          "notif": 0.95,
+          "signals": 1,
+          "trend": -2.0,
+          "vwap": -1,
+          "rsi": 0
+        },
+        "error": null
       },
       "LTC": {
-        "price": null,
-        "chgDayPct": null,
-        "score": null,
-        "parts": {},
-        "error": "market: HTTP Error 502: Bad Gateway"
+        "price": 40.41,
+        "chgDayPct": -4.445495388980852,
+        "score": -0.88,
+        "parts": {
+          "notif": 0.63,
+          "signals": 0.99,
+          "trend": -2.0,
+          "vwap": -1,
+          "rsi": 0.5
+        },
+        "error": null
       },
       "XAU": {
-        "price": null,
-        "chgDayPct": null,
-        "score": null,
-        "parts": {},
-        "error": "market: HTTP Error 502: Bad Gateway"
+        "price": 3544.37,
+        "chgDayPct": -1.8951849514509431,
+        "score": -1.54,
+        "parts": {
+          "notif": 0.96,
+          "signals": 0.0,
+          "trend": -2.0,
+          "vwap": -1,
+          "rsi": 0.5
+        },
+        "error": null
       },
       "XAG": {
-        "price": null,
-        "chgDayPct": null,
-        "score": null,
-        "parts": {},
-        "error": "market: HTTP Error 502: Bad Gateway"
+        "price": 41.212,
+        "chgDayPct": -3.2332292375965515,
+        "score": -1.67,
+        "parts": {
+          "notif": 0.01,
+          "signals": 0.0,
+          "trend": -2.0,
+          "vwap": -1,
+          "rsi": 0.5,
+          "cvd": 0.82
+        },
+        "error": null
       }
     },
-    "watchlist": []
+    "watchlist": [
+      {
+        "sym": "BNB",
+        "score": -5.3
+      },
+      {
+        "sym": "XRP",
+        "score": -3.34
+      },
+      {
+        "sym": "AVAX",
+        "score": -3.08
+      },
+      {
+        "sym": "XAG",
+        "score": -1.67
+      },
+      {
+        "sym": "XAU",
+        "score": -1.54
+      }
+    ]
   },
   "orders": [
     {
