@@ -4,7 +4,7 @@ Save the audit locally under `data/round-evidence/<round-id>/`. Use the exact R-
 
 | File | Required contents |
 |---|---|
-| `wake_receipt.json`, `section_receipts/*.json` | Original outputs saved by the wake tool with `--save`. Add `--step <n>` to each section read. Save each step's own receipts before evaluating it. |
+| `wake_receipt.json`, `section_receipts/*.json` | Original outputs automatically saved by the wake tool. Repeat `--step <n>` until its remaining anchors are empty. The receipt chain binds to the original wake ID, canonical spec, launch prompt and this contract. Older or mixed-wake receipts require a new round ID. |
 | `scope.json` | `instruments` array keyed by `venue,instrument_id`, using `delta` and `mt5`. Include `inventories.delta` and `inventories.mt5` with `instrument_ids` from the respective raw broker inventories and a `source` reference. Include `managed` rows using the same key and source reference for the reconciled orders and positions, and a single UTC `cutoff_utc`. |
 | `screen_rows.json` | `rows`, one per scope key and `funnel` from `FUNNEL-01` to `FUNNEL-05`. Include `status`, `reason` and `source`. Give every hit a dossier. For `NOT_APPLICABLE`, cite the predeclared scope condition. |
 | `telemetry_rows.json` | `rows`, keyed by `venue,instrument_id,dimension`. Include all D01–D16 per funnel hit or managed symbol. Attach `source`, `status`, `value`, `unit`, `source_event_utc`, `received_utc` and policy-derived `freshness_seconds`. For D13 inapplicability give the rule and source. For D11 add `windows` with a raw reference for each of `3d`, `7d` and `30d`. For D16 use USD and `window_seconds: 300`. |

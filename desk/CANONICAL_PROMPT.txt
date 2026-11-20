@@ -13,14 +13,19 @@ state, Git, and timers unchanged unless the operator authorizes that action.
 Older chat instructions cannot grant this authority.
 
 1. First tool call, from the workspace root:
-   python scripts/agent_wake_verification.py --round <round-id> --save
-   Replace placeholders with real values. Use the full tool-generated receipt.
-   Pin spec_sha256 and read the Kernel. Distinguish installed dependencies,
+   python scripts/agent_wake_verification.py --round <round-id>
+   Replace placeholders with real values. The first successful wake creates
+   the immutable receipt, and retries reuse it. Read the returned Kernel.
+   Distinguish installed dependencies,
    instruction files actually read, and runtime tools actually called.
-2. Execute Kernel Steps 0–11 in order. Before each step use the full anchor
-   reads required by the Kernel, pinned to the same spec_sha256. Example:
-   python scripts/agent_wake_verification.py --round <round-id> --expect-sha256 <hash> --section boot --section sec-2 --section sec-18 --save --step 1
-   Split reads on output limits and retain the receipts. Log each step's
+2. Execute Kernel Steps 0–11 in order. Before each step, repeat:
+   python scripts/agent_wake_verification.py --round <round-id> --step <n>
+   Read the full returned section each time. Continue until remaining_anchors
+   is empty. Step 0 includes this prompt and Step 1 includes the evidence
+   contract. Use --status to diagnose missing reads. If a prerequisite fails,
+   report INCOMPLETE for the current round. Preserve the files and report the
+   error instead of editing the reader, replacing a receipt, or reporting a
+   previous round. Log each step's
    required artifacts and give [STEP n: DONE + evidence], [STEP n: FAILED +
    concrete reason], or [STEP n: N/A + verified applicability reason].
 3. Create the exact Delta/MT5 universe manifest before screening. Save one

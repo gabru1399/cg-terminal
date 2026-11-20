@@ -1,6 +1,6 @@
 # Canonical Master Specification
 
-**Trading SOP v2.1.0 · Execution runbook revision 2.1.0-s2**
+**Trading SOP v2.1.0 · Execution runbook revision 2.1.0-s3**
 
 Delta Exchange India (`india_prod`, account `26902927`) · Blueberry Funded MT5 (login `5126976`)
 
@@ -25,21 +25,22 @@ This specification governs Antigravity's **trading rounds** on Delta Exchange In
 
 ### K-1 · First tool call and section receipts
 
-From the repository root, run once per round:
+From the repository root, initialize the scheduler-supplied round:
 
 ~~~powershell
-python scripts/agent_wake_verification.py --round R<number> --save
+python scripts/agent_wake_verification.py --round R<number>
 ~~~
 
-Use the full tool-generated wake receipt saved by the command. It reports a SHA-256 of the exact SOP bytes, the section index, and raw read-only dependency/terminal/MT5 probes. `REPORTED` means the probes returned a report. Read each probe result. Files on disk do not establish runtime availability, BTC price-only is partial, and only actual live Delta reads can reconcile the CLOB. Use the inbox in §12 for context after bootstrap. Measure elapsed time from actual run timestamps. Review the previous round's published evidence, errors, and outcomes.
+The command returns the Kernel and saves the first wake receipt with the original read-only bootstrap probes and file hashes. Repeating it returns the same receipt. Inspect each probe result separately; disk presence and usable runtime feeds are different checks.
 
-Before evaluating a step, load its required anchors with the same round ID and hash:
+Before evaluating each step, repeat the step command until its receipt reports an empty `remaining_anchors` array or `STEP_READY`. Each call returns one required document section in full and records it. The step command reads the hash from the saved receipt and refuses earlier gaps. Replace placeholders with actual identifiers.
 
 ~~~powershell
-python scripts/agent_wake_verification.py --round R<number> --save --expect-sha256 <wake-spec-sha256> --section boot --section sec-2 --section sec-18 --step 1
+python scripts/agent_wake_verification.py --round R<number> --step <n>
+python scripts/agent_wake_verification.py --round R<number> --status
 ~~~
 
-Replace the placeholders. Save the receipt and the untruncated underlying output. Split sections across calls if needed. `kind=section_read` binds the returned text to the pinned SOP revision. Record its section hashes and concrete rule results in the evidence ledger. If the hash changes, end the run as `INCOMPLETE` and get a new round ID. Appendix chapters are reference material used when their issue arises. Read applicable material by anchor, including reference chapters listed below.
+Use `--step <n> --section <anchor>` to reread a section assigned to that step if tool output was clipped. Step 0 includes the launch prompt. Step 1 includes the evidence contract. Record the observed inputs and applicable rule IDs separately. A receipt verifies tool delivery, while the decision record demonstrates application. A failed prerequisite or pinned file change ends dependent work as `INCOMPLETE`. Preserve the original files and use a new round ID for a revised protocol. Report the actual round and error; never rewrite evidence, patch or restore the reader from an audit wake, or substitute an older round.
 
 ### K-2 · Ordered state machine
 
@@ -47,8 +48,8 @@ Record `[STEP n: DONE | FAILED | N/A + reason]` at every step. Replace the statu
 
 | Step | Required section anchors | Required work and completion evidence |
 |---|---|---|
-| 0 · Wake and lessons | `kernel`, `sec-0`, `sec-1` | Pin round, mode, start/cutoff, SOP hash and prior round receipt. Record the actual misses and one testable correction per miss, or `FIRST_ROUND`. |
-| 1 · Pre-flight | `boot`, `sec-2`, `sec-18`, `sec-12` | Read the required local skills and record the successful probes. Read the inbox. Obtain live Delta account, positions and orders and a full MT5 status with account, positions and orders. Record endpoint/tool, status, identity and timestamp. Validate connectivity, clock and scope before action. |
+| 0 · Wake and lessons | `kernel`, `launch-prompt`, `sec-0`, `sec-1` | Pin round, mode, start/cutoff, SOP hash and prior round receipt. Record the actual misses and one testable correction per miss, or `FIRST_ROUND`. |
+| 1 · Pre-flight | `evidence-contract`, `boot`, `sec-2`, `sec-18`, `sec-12` | Read the required local skills and record the successful probes. Read the inbox. Obtain live Delta account, positions and orders and a full MT5 status with account, positions and orders. Record endpoint/tool, status, identity and timestamp. Validate connectivity, clock and scope before action. |
 | 2 · Operator inquest | `sec-2` | Ask which high-confluence A+ setups could be actionable immediately on Delta and MT5. Give a provisional answer per venue, with evidence gaps. Resolve it in Step 10. |
 | 3 · Reconcile account and scope | `sec-11`, `sec-12`, `sec-19`, `sec-20` | Freeze the venue-symbol and feed mapping manifest. Classify each live order/position's ownership. Record quotes, margin and open/pending risk, shared-account stress, applicable calendar/floors and concurrent fill capacity. Use the live broker as source of truth for tickets. |
 | 4 · Screen the entire round universe | `sec-4`, `sec-13`, `sec-17`, `sec-23` | Evaluate every applicable discovery funnel on every manifest row. Save the exact-key coverage matrix and promote every confirmed hit or show why it cannot be evaluated. |
