@@ -18699,3 +18699,9 @@ ead_file validation.
   * Delta Exchange India: Balance .198 USD, Available .567 USD, Net Equity .344 USD. Margin utilization 18.5% <= 80% ceiling (Gate 8 PASS).
   * Blueberry MT5: Balance ,631.27 USD, Equity ,640.05 USD, Free Margin ,079.74 USD. Margin level 471.17%. Drawdown 0.00% (MT5-02 PASS). Distance to ,250 floor: .05 USD. Distance to Phase 1 Target (,700): .95 USD (85.6% complete).
 - **Gate 9 & Concurrency Evaluation**: Desk holds 3 active positions (2 crypto, 1 TradFi) against slot limits (max 2 total, max 1 crypto). Concurrency saturated; new entry promotion correctly blocked across all 5 funnels.
+
+### 2026-11-20 11:59 UTC — atg-exec EXEC Live Order Cancellation
+- **CANCELLED UNPROTECTED DELTA INDIA LIMIT ORDER**: BTCUSD (Product ID 27) Sell Limit 1 contract @ **62417.00**.
+  - Order ID: #1699098643 · Reason: User-authorized Option A cancellation (removed naked order without bracket SL/TP; resolved portfolio correlation conflict with MT5 BTCUSD.pi short #20335916).
+  - Exchange Response: State cancelled, cancellation_reason cancelled_by_user.
+  - Verification: Confirmed 0 open BTC orders remaining on Delta Exchange India CLOB.
