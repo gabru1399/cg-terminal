@@ -29,7 +29,11 @@ For each direct telemetry value supply `value_pointer`; the verifier resolves it
 
 Keep the full SOP step artifacts in addition to these verifier inputs. Each gate result should state the observed value, threshold, and consequence. Reconcile scope across both venues before classifying any orders. Separate gross target-to-stop geometry, stressed payoff after costs, and EV backed by a calibrated outcome model. Protect original-risk and age evidence for open positions. If the account audit shows a slot or risk limit breached, the gate cannot be PASS even when the order is already resting.
 
-`python scripts/verify_round_evidence.py --round <round-id>` returns `INCOMPLETE` with exit 1 on a failed check. This rejects prose-only evidence and checks file references, keys, timestamps, and selected contradictions. `EVIDENCE_CHECKS_PASSED` still requires independent verification of the actual rule calculations, data source authenticity, ownership, and official signed gateway admission before any live action.
+`python scripts/verify_round_evidence.py --round <round-id>` returns `INCOMPLETE` with exit 1 on a failed check. A successful evidence check returns `EVIDENCE_CHECKS_PASSED` with `round_outcome: UNATTESTED`. The check verifies the receipt and source contract, observed values, and selected contradictions. Keep the round outcome unresolved until actual rule calculations and ownership are independently verified. Only signed admission through the gateway can enable live action.
+
+## R641 correction
+
+The section reader delivered the required anchors. The reported `DONE` verdict is superseded by `INCOMPLETE`. The builder used hard-coded venue inventories, slot capacity as the discovery result, and BTC payloads and fabricated timestamps for other instruments. Preserve the original files. Use a new round for a fresh capture. Record a timer as read-only only if its actual payload contains no venue mutation or system-control actions.
 
 ## R640 correction
 
