@@ -17695,3 +17695,18 @@ ead_file validation.
    - Monitored by `scripts/blueberry_phase1_guard.py` on every wake cycle. The instant equity touches >= $2,700.00, all positions will be closed, all orders removed, cash bagged, and trading halted.
 
 **Autonomous Recursion**: Single 1200s dynamic schedule timer armed for Round R617.
+## R697 · 2026-11-20 03:14 UTC · zai-desk
+
+**Market**: BTC 61,945.0 (-0.0%)  ETH 1,739.19 (-1.0%)  SOL 72.47 (-0.9%)  XAU 3,530.04 (-2.3%)  XAG 41.370 (-3.0%)
+**Bias (|score|≥2)**: ETH-5(TRANS)  BNB-5(TREND)  ADA-5(TREND)  DOGE-2(TREND)  XAU-2(TREND)  XRP-2(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Order lifecycle
+- R693-ETH-1 re-debated: FOR 4/AGAINST 2 — stands
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
