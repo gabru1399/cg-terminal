@@ -1,12 +1,34 @@
+import os
 import time
 import hmac
 import hashlib
 import json
 import urllib.request
 import email.utils
+from pathlib import Path
 
-API_KEY = "RrPSJVABou8UAT4BIl5ExCctYWV6dp"
-API_SECRET = "1a0HWlsQfoeyv7J0rPx5mXWP0rEoL85RCWxUQmsI06aMS65cuQOhcUwjAiks"
+# SECURITY: credentials are loaded from the environment (or a gitignored .env
+# next to CG-Terminal/). Never hardcoded — see SECURITY.md. Public market data
+# still works with empty credentials; authenticated calls will 401.
+
+
+def _load_creds():
+    key = os.getenv("DELTA_API_KEY")
+    sec = os.getenv("DELTA_API_SECRET")
+    if key and sec:
+        return key, sec
+    env_file = Path(__file__).resolve().parent.parent / ".env"
+    if env_file.exists():
+        for line in env_file.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if line.startswith("DELTA_API_KEY="):
+                key = line.split("=", 1)[1].strip().strip('"').strip("'")
+            elif line.startswith("DELTA_API_SECRET="):
+                sec = line.split("=", 1)[1].strip().strip('"').strip("'")
+    return key, sec
+
+
+API_KEY, API_SECRET = _load_creds()
 BASE_URL = "https://api.india.delta.exchange"
 
 _server_time_offset = 0.0

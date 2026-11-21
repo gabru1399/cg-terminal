@@ -1,8 +1,8 @@
 # CG Order-Flow Terminal
 
-An institution-style, **100% live-API** order-flow terminal for 12 assets
-(BTC · ETH · SOL · BNB · XRP · ADA · AVAX · DOGE · LINK · LTC · **XAU gold** ·
-**XAG silver**) with a local continuity engine, live notification feed, and a
+An institution-style, **100% live-API** order-flow terminal for the curated
+**61-asset universe** (30 crypto perps · 28 TradFi perps · 3 classic indices;
+canonical list in `src/lib/universe/curated.ts`) with a local continuity engine, live notification feed, and a
 bundled **MCP server that plugs straight into Antigravity** for automated
 signal analysis and trade formulation.
 

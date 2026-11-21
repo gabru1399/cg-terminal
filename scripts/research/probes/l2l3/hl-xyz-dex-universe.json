@@ -1,979 +1,987 @@
 [
  {
   "coin": "xyz:XYZ100",
-  "markPx": 28203.0,
-  "vol24h$": 567839381,
-  "OI_base": 7165.971,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 28204.0
- },
- {
-  "coin": "xyz:NVDA",
-  "markPx": 174.67,
-  "vol24h$": 527173617,
-  "OI_base": 2113039.542,
-  "funding_1h_pct": 0.00452,
-  "oraclePx": 174.55
- },
- {
-  "coin": "xyz:SP500",
-  "markPx": 7579.0,
-  "vol24h$": 467771820,
-  "OI_base": 55537.998,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 7579.1
- },
- {
-  "coin": "xyz:SKHX",
-  "markPx": 960.12,
-  "vol24h$": 412880870,
-  "OI_base": 328508.44,
-  "funding_1h_pct": -0.00496,
-  "oraclePx": 961.44
- },
- {
-  "coin": "xyz:SOXL",
-  "markPx": 63.49,
-  "vol24h$": 317735325,
-  "OI_base": 633390.56,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 63.49
- },
- {
-  "coin": "xyz:SNDK",
-  "markPx": 917.89,
-  "vol24h$": 233592787,
-  "OI_base": 122388.342,
-  "funding_1h_pct": 0.00131,
-  "oraclePx": 917.89
- },
- {
-  "coin": "xyz:BRENTOIL",
-  "markPx": 90.216,
-  "vol24h$": 174681855,
-  "OI_base": 3368623.52,
-  "funding_1h_pct": -0.0145,
-  "oraclePx": 90.45
- },
- {
-  "coin": "xyz:MU",
-  "markPx": 764.05,
-  "vol24h$": 138781261,
-  "OI_base": 216560.762,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 764.0
- },
- {
-  "coin": "xyz:CL",
-  "markPx": 85.135,
-  "vol24h$": 138459722,
-  "OI_base": 1632844.306,
-  "funding_1h_pct": -0.00888,
-  "oraclePx": 85.28
- },
- {
-  "coin": "xyz:SILVER",
-  "markPx": 52.978,
-  "vol24h$": 128451243,
-  "OI_base": 3873738.6,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 52.964
- },
- {
-  "coin": "xyz:SPCX",
-  "markPx": 146.55,
-  "vol24h$": 126065390,
-  "OI_base": 964499.96,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 146.54
- },
- {
-  "coin": "xyz:DRAM",
-  "markPx": 43.407,
-  "vol24h$": 118984482,
-  "OI_base": 2057535.8,
-  "funding_1h_pct": 0.00355,
-  "oraclePx": 43.405
- },
- {
-  "coin": "xyz:AMD",
-  "markPx": 542.96,
-  "vol24h$": 115840149,
-  "OI_base": 41213.844,
-  "funding_1h_pct": 0.00368,
-  "oraclePx": 542.96
+  "markPx": 25392.0,
+  "vol24h$": 1160626010,
+  "OI_base": 14271.149,
+  "funding_1h_pct": 0.01116,
+  "oraclePx": 25341.0
  },
  {
   "coin": "xyz:ANT",
-  "markPx": 103.85,
-  "vol24h$": 108965226,
-  "OI_base": 1015037.48,
-  "funding_1h_pct": 2e-05,
-  "oraclePx": 103.76
+  "markPx": 88.939,
+  "vol24h$": 1034104730,
+  "OI_base": 2765741.64,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 88.983
  },
  {
-  "coin": "xyz:SKHY",
-  "markPx": 139.14,
-  "vol24h$": 97970656,
-  "OI_base": 884511.82,
-  "funding_1h_pct": 0.00113,
-  "oraclePx": 139.14
+  "coin": "xyz:SP500",
+  "markPx": 6994.2,
+  "vol24h$": 756988207,
+  "OI_base": 66830.424,
+  "funding_1h_pct": 0.01055,
+  "oraclePx": 6980.5
+ },
+ {
+  "coin": "xyz:NVDA",
+  "markPx": 130.19,
+  "vol24h$": 747054247,
+  "OI_base": 3867239.974,
+  "funding_1h_pct": 0.00403,
+  "oraclePx": 130.08
+ },
+ {
+  "coin": "xyz:SOXL",
+  "markPx": 33.766,
+  "vol24h$": 479826180,
+  "OI_base": 2164497.12,
+  "funding_1h_pct": 0.00695,
+  "oraclePx": 33.709
+ },
+ {
+  "coin": "xyz:SKHX",
+  "markPx": 759.69,
+  "vol24h$": 387741075,
+  "OI_base": 332204.254,
+  "funding_1h_pct": 0.03061,
+  "oraclePx": 756.99
+ },
+ {
+  "coin": "xyz:SILVER",
+  "markPx": 41.303,
+  "vol24h$": 212028856,
+  "OI_base": 4170021.76,
+  "funding_1h_pct": 0.00348,
+  "oraclePx": 41.275
+ },
+ {
+  "coin": "xyz:MU",
+  "markPx": 611.76,
+  "vol24h$": 200629925,
+  "OI_base": 232500.088,
+  "funding_1h_pct": 0.00246,
+  "oraclePx": 611.11
  },
  {
   "coin": "xyz:GOLD",
-  "markPx": 4057.0,
-  "vol24h$": 97766635,
-  "OI_base": 73656.985,
+  "markPx": 3542.1,
+  "vol24h$": 151244413,
+  "OI_base": 72047.862,
+  "funding_1h_pct": 0.00293,
+  "oraclePx": 3540.2
+ },
+ {
+  "coin": "xyz:DRAM",
+  "markPx": 34.546,
+  "vol24h$": 129817865,
+  "OI_base": 1942347.2,
   "funding_1h_pct": 0.00063,
-  "oraclePx": 4055.6
+  "oraclePx": 34.55
  },
  {
-  "coin": "xyz:CRCL",
-  "markPx": 65.78,
-  "vol24h$": 70569898,
-  "OI_base": 1185761.896,
-  "funding_1h_pct": 0.00019,
-  "oraclePx": 65.78
+  "coin": "xyz:SNDK",
+  "markPx": 81.593,
+  "vol24h$": 129293376,
+  "OI_base": 331692.472,
+  "funding_1h_pct": 0.00178,
+  "oraclePx": 81.559
  },
  {
-  "coin": "xyz:CRWV",
-  "markPx": 56.27,
-  "vol24h$": 69719058,
-  "OI_base": 219007.72,
-  "funding_1h_pct": -0.00192,
-  "oraclePx": 56.28
+  "coin": "xyz:CL",
+  "markPx": 83.643,
+  "vol24h$": 115310573,
+  "OI_base": 1572585.062,
+  "funding_1h_pct": 0.00017,
+  "oraclePx": 83.673
  },
  {
   "coin": "xyz:GOOGL",
-  "markPx": 290.78,
-  "vol24h$": 61249654,
-  "OI_base": 601122.772,
-  "funding_1h_pct": 0.00124,
-  "oraclePx": 290.62
+  "markPx": 270.75,
+  "vol24h$": 114826202,
+  "OI_base": 456349.652,
+  "funding_1h_pct": 0.00164,
+  "oraclePx": 270.6
+ },
+ {
+  "coin": "xyz:SKHY",
+  "markPx": 106.76,
+  "vol24h$": 106229349,
+  "OI_base": 625336.82,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 106.76
+ },
+ {
+  "coin": "xyz:SPCX",
+  "markPx": 129.88,
+  "vol24h$": 105121807,
+  "OI_base": 919289.6,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 129.88
+ },
+ {
+  "coin": "xyz:BRENTOIL",
+  "markPx": 89.985,
+  "vol24h$": 88778126,
+  "OI_base": 3379878.52,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 90.0
  },
  {
   "coin": "xyz:KORU",
-  "markPx": 8.269,
-  "vol24h$": 57318298,
-  "OI_base": 1103677.0,
-  "funding_1h_pct": 0.00299,
-  "oraclePx": 8.265
- },
- {
-  "coin": "xyz:INTC",
-  "markPx": 60.872,
-  "vol24h$": 52507892,
-  "OI_base": 1680408.58,
-  "funding_1h_pct": 0.00175,
-  "oraclePx": 60.87
- },
- {
-  "coin": "xyz:NBIS",
-  "markPx": 150.15,
-  "vol24h$": 46805058,
-  "OI_base": 193256.06,
-  "funding_1h_pct": 0.00186,
-  "oraclePx": 150.05
+  "markPx": 5.0719,
+  "vol24h$": 79220565,
+  "OI_base": 1368064.6,
+  "funding_1h_pct": -0.00168,
+  "oraclePx": 5.0744
  },
  {
   "coin": "xyz:SMSN",
-  "markPx": 154.94,
-  "vol24h$": 44787727,
-  "OI_base": 320460.012,
-  "funding_1h_pct": 0.01189,
-  "oraclePx": 154.74
+  "markPx": 127.53,
+  "vol24h$": 73961379,
+  "OI_base": 323165.736,
+  "funding_1h_pct": 0.03518,
+  "oraclePx": 126.94
  },
  {
   "coin": "xyz:TSLA",
-  "markPx": 386.65,
-  "vol24h$": 40768888,
-  "OI_base": 115956.496,
+  "markPx": 351.51,
+  "vol24h$": 69495479,
+  "OI_base": 108166.298,
+  "funding_1h_pct": 0.00196,
+  "oraclePx": 351.25
+ },
+ {
+  "coin": "xyz:AMD",
+  "markPx": 438.91,
+  "vol24h$": 68469508,
+  "OI_base": 41946.07,
   "funding_1h_pct": 0.00063,
-  "oraclePx": 386.65
- },
- {
-  "coin": "xyz:NATGAS",
-  "markPx": 3.5683,
-  "vol24h$": 39943060,
-  "OI_base": 10317755.2,
-  "funding_1h_pct": 0.06559,
-  "oraclePx": 3.5303
- },
- {
-  "coin": "xyz:META",
-  "markPx": 648.55,
-  "vol24h$": 33115656,
-  "OI_base": 80485.248,
-  "funding_1h_pct": 0.00065,
-  "oraclePx": 648.55
- },
- {
-  "coin": "xyz:UNITREE",
-  "markPx": 111.21,
-  "vol24h$": 28194489,
-  "OI_base": 296323.16,
-  "funding_1h_pct": -0.00957,
-  "oraclePx": 111.3
+  "oraclePx": 438.96
  },
  {
   "coin": "xyz:AAPL",
-  "markPx": 346.47,
-  "vol24h$": 27275172,
-  "OI_base": 227131.232,
-  "funding_1h_pct": -0.00149,
-  "oraclePx": 346.57
+  "markPx": 345.5,
+  "vol24h$": 59797494,
+  "OI_base": 282143.072,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 345.56
+ },
+ {
+  "coin": "xyz:META",
+  "markPx": 568.63,
+  "vol24h$": 51306720,
+  "OI_base": 78531.492,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 568.45
+ },
+ {
+  "coin": "xyz:NBIS",
+  "markPx": 85.13,
+  "vol24h$": 48062489,
+  "OI_base": 469406.1,
+  "funding_1h_pct": 0.00532,
+  "oraclePx": 85.13
+ },
+ {
+  "coin": "xyz:INTC",
+  "markPx": 53.227,
+  "vol24h$": 34481990,
+  "OI_base": 1180812.56,
+  "funding_1h_pct": 0.00266,
+  "oraclePx": 53.186
+ },
+ {
+  "coin": "xyz:CRCL",
+  "markPx": 49.035,
+  "vol24h$": 31330590,
+  "OI_base": 1033347.184,
+  "funding_1h_pct": 0.00116,
+  "oraclePx": 49.035
  },
  {
   "coin": "xyz:EWY",
-  "markPx": 146.02,
-  "vol24h$": 26249475,
-  "OI_base": 70787.892,
-  "funding_1h_pct": 0.0016,
-  "oraclePx": 145.95
+  "markPx": 126.17,
+  "vol24h$": 30722858,
+  "OI_base": 75684.612,
+  "funding_1h_pct": 0.00122,
+  "oraclePx": 125.91
  },
  {
   "coin": "xyz:MSFT",
-  "markPx": 533.56,
-  "vol24h$": 25087449,
-  "OI_base": 55514.5,
-  "funding_1h_pct": 6e-05,
-  "oraclePx": 533.75
- },
- {
-  "coin": "xyz:MRVL",
-  "markPx": 164.51,
-  "vol24h$": 24665442,
-  "OI_base": 69836.76,
-  "funding_1h_pct": 0.00376,
-  "oraclePx": 164.51
- },
- {
-  "coin": "xyz:AMZN",
-  "markPx": 272.0,
-  "vol24h$": 19170534,
-  "OI_base": 75061.724,
+  "markPx": 487.37,
+  "vol24h$": 27381263,
+  "OI_base": 42153.412,
   "funding_1h_pct": 0.00063,
-  "oraclePx": 271.97
- },
- {
-  "coin": "xyz:CXMT",
-  "markPx": 6.2905,
-  "vol24h$": 19078762,
-  "OI_base": 5652541.4,
-  "funding_1h_pct": -0.00539,
-  "oraclePx": 6.2983
- },
- {
-  "coin": "xyz:MSTR",
-  "markPx": 122.66,
-  "vol24h$": 18487399,
-  "OI_base": 319715.358,
-  "funding_1h_pct": 0.00437,
-  "oraclePx": 122.6
- },
- {
-  "coin": "xyz:COIN",
-  "markPx": 134.09,
-  "vol24h$": 17118448,
-  "OI_base": 160355.386,
-  "funding_1h_pct": 0.00356,
-  "oraclePx": 134.09
- },
- {
-  "coin": "xyz:MRNA",
-  "markPx": 254.84,
-  "vol24h$": 14742371,
-  "OI_base": 95965.06,
-  "funding_1h_pct": 0.00161,
-  "oraclePx": 254.68
- },
- {
-  "coin": "xyz:RKLB",
-  "markPx": 62.826,
-  "vol24h$": 14093915,
-  "OI_base": 95738.8,
-  "funding_1h_pct": 0.00102,
-  "oraclePx": 62.796
- },
- {
-  "coin": "xyz:SNXX",
-  "markPx": 3.91,
-  "vol24h$": 12891779,
-  "OI_base": 1358167.8,
-  "funding_1h_pct": 0.00237,
-  "oraclePx": 3.91
- },
- {
-  "coin": "xyz:KIOXIA",
-  "markPx": 60.912,
-  "vol24h$": 12147879,
-  "OI_base": 105226.426,
-  "funding_1h_pct": -0.00142,
-  "oraclePx": 60.951
- },
- {
-  "coin": "xyz:CBRS",
-  "markPx": 97.738,
-  "vol24h$": 11906483,
-  "OI_base": 228491.46,
-  "funding_1h_pct": 0.00819,
-  "oraclePx": 97.675
+  "oraclePx": 487.37
  },
  {
   "coin": "xyz:IREN",
-  "markPx": 21.405,
-  "vol24h$": 11587856,
-  "OI_base": 216623.4,
-  "funding_1h_pct": 0.00997,
-  "oraclePx": 21.373
- },
- {
-  "coin": "xyz:LITE",
-  "markPx": 632.81,
-  "vol24h$": 11531849,
-  "OI_base": 21338.748,
-  "funding_1h_pct": 0.00227,
-  "oraclePx": 632.64
- },
- {
-  "coin": "xyz:TSM",
-  "markPx": 413.34,
-  "vol24h$": 9335772,
-  "OI_base": 23396.798,
-  "funding_1h_pct": 0.0029,
-  "oraclePx": 413.09
- },
- {
-  "coin": "xyz:ZHIPU",
-  "markPx": 63.78,
-  "vol24h$": 8959872,
-  "OI_base": 262152.716,
-  "funding_1h_pct": 0.00218,
-  "oraclePx": 63.752
- },
- {
-  "coin": "xyz:HIMS",
-  "markPx": 19.278,
-  "vol24h$": 8221625,
-  "OI_base": 81443.6,
+  "markPx": 12.32,
+  "vol24h$": 27269126,
+  "OI_base": 1151437.4,
   "funding_1h_pct": 0.00063,
-  "oraclePx": 19.275
+  "oraclePx": 12.32
  },
  {
-  "coin": "xyz:IBM",
-  "markPx": 244.77,
-  "vol24h$": 8079832,
-  "OI_base": 81897.66,
-  "funding_1h_pct": -0.00058,
-  "oraclePx": 244.83
+  "coin": "xyz:MSTR",
+  "markPx": 79.724,
+  "vol24h$": 26885231,
+  "OI_base": 245210.004,
+  "funding_1h_pct": 0.00069,
+  "oraclePx": 79.724
  },
  {
-  "coin": "xyz:ARM",
-  "markPx": 192.07,
-  "vol24h$": 7812576,
-  "OI_base": 22430.9,
-  "funding_1h_pct": 0.00542,
-  "oraclePx": 191.95
+  "coin": "xyz:AMZN",
+  "markPx": 250.07,
+  "vol24h$": 22121079,
+  "OI_base": 85356.104,
+  "funding_1h_pct": 0.00124,
+  "oraclePx": 249.92
  },
  {
-  "coin": "xyz:HOOD",
-  "markPx": 82.83,
-  "vol24h$": 7148710,
-  "OI_base": 140659.712,
-  "funding_1h_pct": 0.00681,
-  "oraclePx": 82.73
+  "coin": "xyz:CXMT",
+  "markPx": 4.9473,
+  "vol24h$": 20888533,
+  "OI_base": 3738079.6,
+  "funding_1h_pct": 0.03199,
+  "oraclePx": 4.9087
  },
  {
-  "coin": "xyz:BE",
-  "markPx": 198.19,
-  "vol24h$": 6944932,
-  "OI_base": 22388.04,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 198.19
+  "coin": "xyz:MRVL",
+  "markPx": 126.36,
+  "vol24h$": 18751782,
+  "OI_base": 60308.64,
+  "funding_1h_pct": -0.00053,
+  "oraclePx": 126.41
  },
  {
-  "coin": "xyz:AVGO",
-  "markPx": 343.96,
-  "vol24h$": 6875396,
-  "OI_base": 17739.12,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 343.96
+  "coin": "xyz:SNXX",
+  "markPx": 1.8435,
+  "vol24h$": 18160951,
+  "OI_base": 1259666.8,
+  "funding_1h_pct": -0.00359,
+  "oraclePx": 1.845
  },
  {
-  "coin": "xyz:ORCL",
-  "markPx": 124.09,
-  "vol24h$": 5833170,
-  "OI_base": 93356.33,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 124.09
+  "coin": "xyz:KIOXIA",
+  "markPx": 41.04,
+  "vol24h$": 17108592,
+  "OI_base": 100945.008,
+  "funding_1h_pct": 0.02614,
+  "oraclePx": 40.938
  },
  {
-  "coin": "xyz:PURRDAT",
-  "markPx": 8.76,
-  "vol24h$": 4865958,
-  "OI_base": 2418980.0,
-  "funding_1h_pct": -0.00049,
-  "oraclePx": 8.76
- },
- {
-  "coin": "xyz:EWZ",
-  "markPx": 32.276,
-  "vol24h$": 4766123,
-  "OI_base": 149024.38,
-  "funding_1h_pct": 0.01461,
-  "oraclePx": 32.265
- },
- {
-  "coin": "xyz:DELL",
-  "markPx": 360.59,
-  "vol24h$": 4426580,
-  "OI_base": 16546.08,
-  "funding_1h_pct": 0.00612,
-  "oraclePx": 360.59
- },
- {
-  "coin": "xyz:EUR",
-  "markPx": 1.1149,
-  "vol24h$": 4393740,
-  "OI_base": 24516339.0,
-  "funding_1h_pct": 0.00094,
-  "oraclePx": 1.1144
- },
- {
-  "coin": "xyz:MINIMAX",
-  "markPx": 22.797,
-  "vol24h$": 4141380,
-  "OI_base": 91062.8,
-  "funding_1h_pct": -0.00954,
-  "oraclePx": 22.835
- },
- {
-  "coin": "xyz:LLY",
-  "markPx": 1418.6,
-  "vol24h$": 3447868,
-  "OI_base": 4575.641,
-  "funding_1h_pct": 0.0034,
-  "oraclePx": 1417.3
- },
- {
-  "coin": "xyz:AAOI",
-  "markPx": 51.83,
-  "vol24h$": 2903488,
-  "OI_base": 43239.38,
-  "funding_1h_pct": 0.00632,
-  "oraclePx": 51.805
+  "coin": "xyz:UNITREE",
+  "markPx": 88.907,
+  "vol24h$": 14963350,
+  "OI_base": 257345.22,
+  "funding_1h_pct": -0.00288,
+  "oraclePx": 89.015
  },
  {
   "coin": "xyz:COPPER",
-  "markPx": 6.3845,
-  "vol24h$": 2653146,
-  "OI_base": 1579788.78,
-  "funding_1h_pct": 0.00556,
-  "oraclePx": 6.3772
- },
- {
-  "coin": "xyz:JPY",
-  "markPx": 158.81,
-  "vol24h$": 2553639,
-  "OI_base": 211751.18,
-  "funding_1h_pct": -0.00096,
-  "oraclePx": 158.87
- },
- {
-  "coin": "xyz:PLTR",
-  "markPx": 173.19,
-  "vol24h$": 2521603,
-  "OI_base": 37169.422,
+  "markPx": 5.5569,
+  "vol24h$": 14626069,
+  "OI_base": 1339759.52,
   "funding_1h_pct": 0.00063,
-  "oraclePx": 173.19
+  "oraclePx": 5.5564
  },
  {
-  "coin": "xyz:WDC",
-  "markPx": 304.52,
-  "vol24h$": 2483966,
-  "OI_base": 6015.26,
-  "funding_1h_pct": 0.0075,
-  "oraclePx": 304.52
- },
- {
-  "coin": "xyz:BB",
-  "markPx": 9.2778,
-  "vol24h$": 2281993,
-  "OI_base": 803249.8,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 9.28
- },
- {
-  "coin": "xyz:USAR",
-  "markPx": 8.24,
-  "vol24h$": 2255546,
-  "OI_base": 180913.26,
-  "funding_1h_pct": 0.00093,
-  "oraclePx": 8.24
- },
- {
-  "coin": "xyz:BABA",
-  "markPx": 103.08,
-  "vol24h$": 2132465,
-  "OI_base": 117046.354,
-  "funding_1h_pct": 0.00405,
-  "oraclePx": 103.0
- },
- {
-  "coin": "xyz:GME",
-  "markPx": 25.339,
-  "vol24h$": 2008347,
-  "OI_base": 104842.82,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 25.33
- },
- {
-  "coin": "xyz:SOFTBANK",
-  "markPx": 24.24,
-  "vol24h$": 1949406,
-  "OI_base": 50286.066,
-  "funding_1h_pct": -0.05594,
-  "oraclePx": 24.477
- },
- {
-  "coin": "xyz:BOT",
-  "markPx": 20.99,
-  "vol24h$": 1769603,
-  "OI_base": 81684.46,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 21.0
- },
- {
-  "coin": "xyz:AMAT",
-  "markPx": 392.84,
-  "vol24h$": 1742991,
-  "OI_base": 1291.132,
-  "funding_1h_pct": 0.00195,
-  "oraclePx": 392.84
- },
- {
-  "coin": "xyz:NET",
-  "markPx": 315.1,
-  "vol24h$": 1658034,
-  "OI_base": 7049.22,
-  "funding_1h_pct": -0.0073,
-  "oraclePx": 315.16
- },
- {
-  "coin": "xyz:TLT",
-  "markPx": 80.685,
-  "vol24h$": 1656587,
-  "OI_base": 86288.54,
-  "funding_1h_pct": -0.00208,
-  "oraclePx": 80.725
- },
- {
-  "coin": "xyz:GIGADEV",
-  "markPx": 38.682,
-  "vol24h$": 1316007,
-  "OI_base": 39352.0,
-  "funding_1h_pct": -0.02068,
-  "oraclePx": 38.785
- },
- {
-  "coin": "xyz:PLATINUM",
-  "markPx": 1561.7,
-  "vol24h$": 1157087,
-  "OI_base": 1777.936,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 1561.9
- },
- {
-  "coin": "xyz:JP225",
-  "markPx": 61452.0,
-  "vol24h$": 1145842,
-  "OI_base": 39.555,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 61439.0
- },
- {
-  "coin": "xyz:XLE",
-  "markPx": 62.23,
-  "vol24h$": 1107979,
-  "OI_base": 18124.18,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 62.23
- },
- {
-  "coin": "xyz:QCOM",
-  "markPx": 178.57,
-  "vol24h$": 960273,
-  "OI_base": 10571.16,
-  "funding_1h_pct": 0.00457,
-  "oraclePx": 178.57
- },
- {
-  "coin": "xyz:QNT",
-  "markPx": 43.74,
-  "vol24h$": 943335,
-  "OI_base": 30824.02,
-  "funding_1h_pct": -0.00342,
-  "oraclePx": 43.785
- },
- {
-  "coin": "xyz:STRC",
-  "markPx": 99.767,
-  "vol24h$": 904570,
-  "OI_base": 136418.4,
-  "funding_1h_pct": -0.0024,
-  "oraclePx": 99.84
- },
- {
-  "coin": "xyz:SMH",
-  "markPx": 503.79,
-  "vol24h$": 884464,
-  "OI_base": 6483.846,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 503.86
- },
- {
-  "coin": "xyz:SHAZ",
-  "markPx": 24.49,
-  "vol24h$": 870291,
-  "OI_base": 65055.38,
-  "funding_1h_pct": 0.00669,
-  "oraclePx": 24.446
- },
- {
-  "coin": "xyz:NFLX",
-  "markPx": 63.055,
-  "vol24h$": 868287,
-  "OI_base": 75745.71,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 63.055
- },
- {
-  "coin": "xyz:BX",
-  "markPx": 122.89,
-  "vol24h$": 766457,
-  "OI_base": 4366.9,
-  "funding_1h_pct": 0.00375,
-  "oraclePx": 122.75
- },
- {
-  "coin": "xyz:KR200",
-  "markPx": 840.34,
-  "vol24h$": 700031,
-  "OI_base": 1405.504,
-  "funding_1h_pct": 0.00957,
-  "oraclePx": 838.92
- },
- {
-  "coin": "xyz:ASML",
-  "markPx": 1566.6,
-  "vol24h$": 684872,
-  "OI_base": 970.584,
-  "funding_1h_pct": 0.00117,
-  "oraclePx": 1565.9
- },
- {
-  "coin": "xyz:BMNR",
-  "markPx": 18.278,
-  "vol24h$": 644118,
-  "OI_base": 158594.18,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 18.278
- },
- {
-  "coin": "xyz:CRWD",
-  "markPx": 232.14,
-  "vol24h$": 636134,
-  "OI_base": 2855.64,
-  "funding_1h_pct": -0.00302,
-  "oraclePx": 232.28
- },
- {
-  "coin": "xyz:PALLADIUM",
-  "markPx": 1068.3,
-  "vol24h$": 630467,
-  "OI_base": 1596.889,
-  "funding_1h_pct": 0.00034,
-  "oraclePx": 1068.5
- },
- {
-  "coin": "xyz:HYUNDAI",
-  "markPx": 204.67,
-  "vol24h$": 596002,
-  "OI_base": 6778.502,
-  "funding_1h_pct": 0.00065,
-  "oraclePx": 204.63
- },
- {
-  "coin": "xyz:MUU",
-  "markPx": 16.742,
-  "vol24h$": 568387,
-  "OI_base": 19699.0,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 16.738
- },
- {
-  "coin": "xyz:TTWO",
-  "markPx": 225.53,
-  "vol24h$": 471287,
-  "OI_base": 1573.02,
-  "funding_1h_pct": 0.00597,
-  "oraclePx": 225.3
- },
- {
-  "coin": "xyz:NOK",
-  "markPx": 8.5815,
-  "vol24h$": 470558,
-  "OI_base": 149703.62,
-  "funding_1h_pct": 0.00166,
-  "oraclePx": 8.58
- },
- {
-  "coin": "xyz:SHEIN",
-  "markPx": 5.1911,
-  "vol24h$": 388578,
-  "OI_base": 97127.6,
-  "funding_1h_pct": -0.01647,
-  "oraclePx": 5.2062
- },
- {
-  "coin": "xyz:EWJ",
-  "markPx": 92.051,
-  "vol24h$": 363949,
-  "OI_base": 14011.008,
-  "funding_1h_pct": 0.01712,
-  "oraclePx": 91.86
- },
- {
-  "coin": "xyz:URNM",
-  "markPx": 42.462,
-  "vol24h$": 345226,
-  "OI_base": 31772.18,
-  "funding_1h_pct": 0.01143,
-  "oraclePx": 42.403
- },
- {
-  "coin": "xyz:ZM",
-  "markPx": 91.742,
-  "vol24h$": 340405,
-  "OI_base": 3889.242,
-  "funding_1h_pct": 0.01278,
-  "oraclePx": 91.554
- },
- {
-  "coin": "xyz:GEV",
-  "markPx": 828.55,
-  "vol24h$": 322353,
-  "OI_base": 635.592,
-  "funding_1h_pct": 0.01414,
-  "oraclePx": 826.01
- },
- {
-  "coin": "xyz:NOW",
-  "markPx": 100.66,
-  "vol24h$": 292603,
-  "OI_base": 20907.58,
-  "funding_1h_pct": 0.00063,
-  "oraclePx": 100.6
- },
- {
-  "coin": "xyz:DKNG",
-  "markPx": 19.444,
-  "vol24h$": 273799,
-  "OI_base": 22459.22,
-  "funding_1h_pct": -0.00304,
-  "oraclePx": 19.45
+  "coin": "xyz:CBRS",
+  "markPx": 85.721,
+  "vol24h$": 12968105,
+  "OI_base": 201553.74,
+  "funding_1h_pct": -0.00082,
+  "oraclePx": 85.78
  },
  {
   "coin": "xyz:COST",
-  "markPx": 1063.7,
-  "vol24h$": 272990,
-  "OI_base": 824.536,
-  "funding_1h_pct": -0.00819,
-  "oraclePx": 1066.0
+  "markPx": 1098.0,
+  "vol24h$": 11839658,
+  "OI_base": 14538.3,
+  "funding_1h_pct": -0.02771,
+  "oraclePx": 1103.6
+ },
+ {
+  "coin": "xyz:ZHIPU",
+  "markPx": 37.282,
+  "vol24h$": 11029362,
+  "OI_base": 331687.21,
+  "funding_1h_pct": 0.00765,
+  "oraclePx": 37.172
+ },
+ {
+  "coin": "xyz:TSM",
+  "markPx": 329.0,
+  "vol24h$": 9621585,
+  "OI_base": 27987.442,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 329.0
+ },
+ {
+  "coin": "xyz:CRWV",
+  "markPx": 41.168,
+  "vol24h$": 9271916,
+  "OI_base": 143789.12,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 41.181
+ },
+ {
+  "coin": "xyz:LITE",
+  "markPx": 474.64,
+  "vol24h$": 9227394,
+  "OI_base": 12450.574,
+  "funding_1h_pct": 0.00467,
+  "oraclePx": 474.35
+ },
+ {
+  "coin": "xyz:COIN",
+  "markPx": 102.47,
+  "vol24h$": 8860297,
+  "OI_base": 81539.41,
+  "funding_1h_pct": 0.00282,
+  "oraclePx": 102.38
+ },
+ {
+  "coin": "xyz:ORCL",
+  "markPx": 103.4,
+  "vol24h$": 8132089,
+  "OI_base": 81912.534,
+  "funding_1h_pct": 0.00471,
+  "oraclePx": 103.27
+ },
+ {
+  "coin": "xyz:DELL",
+  "markPx": 286.46,
+  "vol24h$": 8045347,
+  "OI_base": 11318.12,
+  "funding_1h_pct": 0.00043,
+  "oraclePx": 286.16
+ },
+ {
+  "coin": "xyz:ARM",
+  "markPx": 157.46,
+  "vol24h$": 7982734,
+  "OI_base": 21244.88,
+  "funding_1h_pct": -0.00015,
+  "oraclePx": 157.5
+ },
+ {
+  "coin": "xyz:STRC",
+  "markPx": 93.7,
+  "vol24h$": 6957334,
+  "OI_base": 152084.0,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 93.725
+ },
+ {
+  "coin": "xyz:HOOD",
+  "markPx": 64.073,
+  "vol24h$": 6840478,
+  "OI_base": 123159.24,
+  "funding_1h_pct": 0.00109,
+  "oraclePx": 64.05
+ },
+ {
+  "coin": "xyz:RKLB",
+  "markPx": 47.854,
+  "vol24h$": 6836808,
+  "OI_base": 50162.1,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 47.854
+ },
+ {
+  "coin": "xyz:NATGAS",
+  "markPx": 3.7837,
+  "vol24h$": 6756536,
+  "OI_base": 4935553.0,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 3.7855
+ },
+ {
+  "coin": "xyz:MRNA",
+  "markPx": 199.22,
+  "vol24h$": 6659950,
+  "OI_base": 26696.48,
+  "funding_1h_pct": 0.00258,
+  "oraclePx": 199.22
+ },
+ {
+  "coin": "xyz:BE",
+  "markPx": 145.95,
+  "vol24h$": 5990473,
+  "OI_base": 24251.98,
+  "funding_1h_pct": 0.00115,
+  "oraclePx": 145.79
+ },
+ {
+  "coin": "xyz:TTWO",
+  "markPx": 211.68,
+  "vol24h$": 5464504,
+  "OI_base": 10126.64,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 211.65
+ },
+ {
+  "coin": "xyz:PURRDAT",
+  "markPx": 7.5685,
+  "vol24h$": 5245096,
+  "OI_base": 1113390.0,
+  "funding_1h_pct": -0.00439,
+  "oraclePx": 7.565
+ },
+ {
+  "coin": "xyz:MINIMAX",
+  "markPx": 10.964,
+  "vol24h$": 5144596,
+  "OI_base": 142956.04,
+  "funding_1h_pct": -0.01432,
+  "oraclePx": 10.962
+ },
+ {
+  "coin": "xyz:GME",
+  "markPx": 26.761,
+  "vol24h$": 4977193,
+  "OI_base": 204826.34,
+  "funding_1h_pct": 0.00302,
+  "oraclePx": 26.745
+ },
+ {
+  "coin": "xyz:AVGO",
+  "markPx": 311.41,
+  "vol24h$": 4857895,
+  "OI_base": 10823.3,
+  "funding_1h_pct": -0.00352,
+  "oraclePx": 311.68
+ },
+ {
+  "coin": "xyz:PLTR",
+  "markPx": 146.39,
+  "vol24h$": 4744785,
+  "OI_base": 37339.212,
+  "funding_1h_pct": -0.00147,
+  "oraclePx": 146.39
+ },
+ {
+  "coin": "xyz:BABA",
+  "markPx": 82.102,
+  "vol24h$": 4661517,
+  "OI_base": 132169.51,
+  "funding_1h_pct": 0.00228,
+  "oraclePx": 82.07
+ },
+ {
+  "coin": "xyz:JP225",
+  "markPx": 55212.0,
+  "vol24h$": 4300832,
+  "OI_base": 28.274,
+  "funding_1h_pct": 0.01498,
+  "oraclePx": 55003.0
+ },
+ {
+  "coin": "xyz:EUR",
+  "markPx": 1.0969,
+  "vol24h$": 4206617,
+  "OI_base": 29133136.8,
+  "funding_1h_pct": 0.0,
+  "oraclePx": 1.0968
+ },
+ {
+  "coin": "xyz:PLATINUM",
+  "markPx": 1305.6,
+  "vol24h$": 3325652,
+  "OI_base": 5953.05,
+  "funding_1h_pct": 0.00373,
+  "oraclePx": 1304.7
+ },
+ {
+  "coin": "xyz:USAR",
+  "markPx": 6.4643,
+  "vol24h$": 3053051,
+  "OI_base": 284529.38,
+  "funding_1h_pct": 0.00239,
+  "oraclePx": 6.46
+ },
+ {
+  "coin": "xyz:QCOM",
+  "markPx": 154.16,
+  "vol24h$": 3031158,
+  "OI_base": 18302.32,
+  "funding_1h_pct": 0.00803,
+  "oraclePx": 153.83
+ },
+ {
+  "coin": "xyz:WDC",
+  "markPx": 269.16,
+  "vol24h$": 2796156,
+  "OI_base": 4555.622,
+  "funding_1h_pct": 0.00217,
+  "oraclePx": 268.98
+ },
+ {
+  "coin": "xyz:BB",
+  "markPx": 7.9348,
+  "vol24h$": 2695648,
+  "OI_base": 652676.0,
+  "funding_1h_pct": -0.0068,
+  "oraclePx": 7.9399
+ },
+ {
+  "coin": "xyz:SMH",
+  "markPx": 412.6,
+  "vol24h$": 2637065,
+  "OI_base": 6502.528,
+  "funding_1h_pct": 0.00122,
+  "oraclePx": 412.6
+ },
+ {
+  "coin": "xyz:AAOI",
+  "markPx": 34.16,
+  "vol24h$": 2599066,
+  "OI_base": 39166.74,
+  "funding_1h_pct": 0.00274,
+  "oraclePx": 34.16
+ },
+ {
+  "coin": "xyz:HIMS",
+  "markPx": 15.152,
+  "vol24h$": 2442580,
+  "OI_base": 78245.0,
+  "funding_1h_pct": -0.00417,
+  "oraclePx": 15.165
+ },
+ {
+  "coin": "xyz:GIGADEV",
+  "markPx": 27.412,
+  "vol24h$": 2251640,
+  "OI_base": 54976.46,
+  "funding_1h_pct": 0.02496,
+  "oraclePx": 27.295
+ },
+ {
+  "coin": "xyz:PALLADIUM",
+  "markPx": 898.8,
+  "vol24h$": 2208075,
+  "OI_base": 2993.209,
+  "funding_1h_pct": 0.0073,
+  "oraclePx": 897.91
+ },
+ {
+  "coin": "xyz:EWZ",
+  "markPx": 28.819,
+  "vol24h$": 2095777,
+  "OI_base": 136219.36,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 28.815
+ },
+ {
+  "coin": "xyz:NFLX",
+  "markPx": 57.108,
+  "vol24h$": 2051420,
+  "OI_base": 77438.726,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 57.093
+ },
+ {
+  "coin": "xyz:CRWD",
+  "markPx": 219.3,
+  "vol24h$": 1997723,
+  "OI_base": 3205.32,
+  "funding_1h_pct": -0.00301,
+  "oraclePx": 219.3
+ },
+ {
+  "coin": "xyz:JPY",
+  "markPx": 158.18,
+  "vol24h$": 1822720,
+  "OI_base": 209943.12,
+  "funding_1h_pct": -0.00423,
+  "oraclePx": 158.32
+ },
+ {
+  "coin": "xyz:LLY",
+  "markPx": 1347.3,
+  "vol24h$": 1696625,
+  "OI_base": 3529.348,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 1347.0
  },
  {
   "coin": "xyz:EWT",
-  "markPx": 98.76,
-  "vol24h$": 270012,
-  "OI_base": 9844.46,
-  "funding_1h_pct": 0.00738,
-  "oraclePx": 98.562
+  "markPx": 75.801,
+  "vol24h$": 1658677,
+  "OI_base": 16597.94,
+  "funding_1h_pct": 0.03137,
+  "oraclePx": 75.688
  },
  {
-  "coin": "xyz:NCLD",
-  "markPx": 15.474,
-  "vol24h$": 210793,
-  "OI_base": 19067.48,
+  "coin": "xyz:SOFTBANK",
+  "markPx": 17.676,
+  "vol24h$": 1651175,
+  "OI_base": 55595.614,
+  "funding_1h_pct": 0.06298,
+  "oraclePx": 17.563
+ },
+ {
+  "coin": "xyz:SHAZ",
+  "markPx": 17.744,
+  "vol24h$": 1626600,
+  "OI_base": 44243.62,
   "funding_1h_pct": 0.00063,
-  "oraclePx": 15.47
+  "oraclePx": 17.749
  },
  {
-  "coin": "xyz:LYTE",
-  "markPx": 16.487,
-  "vol24h$": 184644,
-  "OI_base": 19463.7,
-  "funding_1h_pct": 0.00548,
-  "oraclePx": 16.476
+  "coin": "xyz:MUU",
+  "markPx": 10.209,
+  "vol24h$": 1604559,
+  "OI_base": 19361.0,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 10.209
  },
  {
-  "coin": "xyz:RDDT",
-  "markPx": 100.63,
-  "vol24h$": 181946,
-  "OI_base": 9687.6,
-  "funding_1h_pct": -0.0009,
-  "oraclePx": 100.72
+  "coin": "xyz:BMNR",
+  "markPx": 13.417,
+  "vol24h$": 1602762,
+  "OI_base": 230029.26,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 13.414
  },
  {
-  "coin": "xyz:GLW",
-  "markPx": 118.68,
-  "vol24h$": 158394,
-  "OI_base": 4422.7,
-  "funding_1h_pct": 0.01046,
-  "oraclePx": 118.68
+  "coin": "xyz:NET",
+  "markPx": 280.81,
+  "vol24h$": 1249339,
+  "OI_base": 5585.0,
+  "funding_1h_pct": -0.00338,
+  "oraclePx": 280.25
  },
  {
-  "coin": "xyz:LRCX",
-  "markPx": 234.59,
-  "vol24h$": 133967,
-  "OI_base": 1083.92,
-  "funding_1h_pct": 0.0137,
-  "oraclePx": 234.25
+  "coin": "xyz:TLT",
+  "markPx": 80.985,
+  "vol24h$": 1235649,
+  "OI_base": 91962.08,
+  "funding_1h_pct": -0.00018,
+  "oraclePx": 81.025
  },
  {
-  "coin": "xyz:RIVN",
-  "markPx": 13.816,
-  "vol24h$": 127869,
-  "OI_base": 110742.92,
-  "funding_1h_pct": 0.0063,
-  "oraclePx": 13.815
+  "coin": "xyz:AMAT",
+  "markPx": 313.34,
+  "vol24h$": 1197654,
+  "OI_base": 1752.746,
+  "funding_1h_pct": 0.00275,
+  "oraclePx": 313.34
  },
  {
-  "coin": "xyz:EBAY",
-  "markPx": 123.02,
-  "vol24h$": 101832,
-  "OI_base": 1908.46,
-  "funding_1h_pct": -0.01677,
-  "oraclePx": 123.31
+  "coin": "xyz:ASML",
+  "markPx": 1291.7,
+  "vol24h$": 1142628,
+  "OI_base": 650.944,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 1290.9
  },
  {
-  "coin": "xyz:BIRD",
-  "markPx": 1.4558,
-  "vol24h$": 97975,
-  "OI_base": 44114.0,
-  "funding_1h_pct": 0.06737,
-  "oraclePx": 1.45
+  "coin": "xyz:HYUNDAI",
+  "markPx": 183.0,
+  "vol24h$": 1134658,
+  "OI_base": 6463.744,
+  "funding_1h_pct": 0.0192,
+  "oraclePx": 182.58
  },
  {
-  "coin": "xyz:UMC",
-  "markPx": 15.516,
-  "vol24h$": 82116,
-  "OI_base": 12348.8,
-  "funding_1h_pct": 0.02808,
-  "oraclePx": 15.53
+  "coin": "xyz:KR200",
+  "markPx": 716.04,
+  "vol24h$": 1108837,
+  "OI_base": 1213.458,
+  "funding_1h_pct": 0.03095,
+  "oraclePx": 712.05
  },
  {
-  "coin": "xyz:HO",
-  "markPx": 4.101,
-  "vol24h$": 79645,
-  "OI_base": 27134.0,
-  "funding_1h_pct": -0.0171,
-  "oraclePx": 4.1081
+  "coin": "xyz:EWJ",
+  "markPx": 83.801,
+  "vol24h$": 943378,
+  "OI_base": 14956.802,
+  "funding_1h_pct": -0.00669,
+  "oraclePx": 83.991
  },
  {
   "coin": "xyz:KSTR",
-  "markPx": 18.776,
-  "vol24h$": 70230,
-  "OI_base": 70400.94,
-  "funding_1h_pct": 0.00789,
-  "oraclePx": 18.776
+  "markPx": 17.017,
+  "vol24h$": 790253,
+  "OI_base": 72089.64,
+  "funding_1h_pct": 0.02088,
+  "oraclePx": 16.957
  },
  {
-  "coin": "xyz:NIFTY",
-  "markPx": 25131.0,
-  "vol24h$": 68996,
-  "OI_base": 6.402,
-  "funding_1h_pct": -0.02182,
-  "oraclePx": 25237.0
- },
- {
-  "coin": "xyz:MAGS",
-  "markPx": 69.22,
-  "vol24h$": 40804,
-  "OI_base": 2457.58,
+  "coin": "xyz:NOK",
+  "markPx": 7.0236,
+  "vol24h$": 657286,
+  "OI_base": 119434.84,
   "funding_1h_pct": 0.00063,
-  "oraclePx": 69.22
+  "oraclePx": 7.0146
  },
  {
-  "coin": "xyz:TWST",
-  "markPx": 139.74,
-  "vol24h$": 38434,
-  "OI_base": 393.66,
-  "funding_1h_pct": 0.00427,
-  "oraclePx": 139.4
+  "coin": "xyz:IBM",
+  "markPx": 225.39,
+  "vol24h$": 652363,
+  "OI_base": 40276.44,
+  "funding_1h_pct": 0.00404,
+  "oraclePx": 225.15
  },
  {
-  "coin": "xyz:CVX",
-  "markPx": 211.19,
-  "vol24h$": 37156,
-  "OI_base": 462.68,
-  "funding_1h_pct": 0.0013,
-  "oraclePx": 211.26
+  "coin": "xyz:BOT",
+  "markPx": 18.767,
+  "vol24h$": 542022,
+  "OI_base": 81723.18,
+  "funding_1h_pct": 0.00229,
+  "oraclePx": 18.735
  },
  {
-  "coin": "xyz:GBP",
-  "markPx": 1.3317,
-  "vol24h$": 37110,
-  "OI_base": 252738.0,
-  "funding_1h_pct": 0.0,
-  "oraclePx": 1.3318
+  "coin": "xyz:QNT",
+  "markPx": 28.567,
+  "vol24h$": 530640,
+  "OI_base": 39708.48,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 28.55
  },
  {
-  "coin": "xyz:XBI",
-  "markPx": 155.78,
-  "vol24h$": 25951,
-  "OI_base": 808.76,
-  "funding_1h_pct": 0.00175,
-  "oraclePx": 155.78
+  "coin": "xyz:PANW",
+  "markPx": 337.01,
+  "vol24h$": 487155,
+  "OI_base": 475.76,
+  "funding_1h_pct": 0.00258,
+  "oraclePx": 336.72
  },
  {
-  "coin": "xyz:JIO",
-  "markPx": 15.022,
-  "vol24h$": 24360,
-  "OI_base": 72666.6,
-  "funding_1h_pct": -0.00852,
-  "oraclePx": 15.053
+  "coin": "xyz:GEV",
+  "markPx": 712.5,
+  "vol24h$": 447860,
+  "OI_base": 338.232,
+  "funding_1h_pct": -0.00218,
+  "oraclePx": 712.5
  },
  {
-  "coin": "xyz:OURA",
-  "markPx": 48.576,
-  "vol24h$": 21712,
-  "OI_base": 15594.8,
-  "funding_1h_pct": 4e-05,
-  "oraclePx": 48.575
+  "coin": "xyz:BX",
+  "markPx": 111.64,
+  "vol24h$": 437047,
+  "OI_base": 3786.88,
+  "funding_1h_pct": 0.00285,
+  "oraclePx": 111.51
+ },
+ {
+  "coin": "xyz:SHEIN",
+  "markPx": 5.0759,
+  "vol24h$": 412053,
+  "OI_base": 85845.2,
+  "funding_1h_pct": -0.01146,
+  "oraclePx": 5.0796
+ },
+ {
+  "coin": "xyz:RDDT",
+  "markPx": 87.188,
+  "vol24h$": 410944,
+  "OI_base": 7637.7,
+  "funding_1h_pct": 0.00347,
+  "oraclePx": 87.105
+ },
+ {
+  "coin": "xyz:NOW",
+  "markPx": 89.12,
+  "vol24h$": 365494,
+  "OI_base": 19612.96,
+  "funding_1h_pct": 0.00911,
+  "oraclePx": 89.079
+ },
+ {
+  "coin": "xyz:RIVN",
+  "markPx": 10.539,
+  "vol24h$": 288715,
+  "OI_base": 73187.58,
+  "funding_1h_pct": -0.00057,
+  "oraclePx": 10.553
+ },
+ {
+  "coin": "xyz:EBAY",
+  "markPx": 116.27,
+  "vol24h$": 278533,
+  "OI_base": 2508.44,
+  "funding_1h_pct": 0.00673,
+  "oraclePx": 116.09
+ },
+ {
+  "coin": "xyz:URNM",
+  "markPx": 34.151,
+  "vol24h$": 276382,
+  "OI_base": 24035.08,
+  "funding_1h_pct": 0.04012,
+  "oraclePx": 34.006
+ },
+ {
+  "coin": "xyz:DKNG",
+  "markPx": 15.975,
+  "vol24h$": 258138,
+  "OI_base": 12221.56,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 15.98
  },
  {
   "coin": "xyz:ICE",
-  "markPx": 175.73,
-  "vol24h$": 17356,
-  "OI_base": 760.7,
-  "funding_1h_pct": 0.01712,
-  "oraclePx": 175.73
+  "markPx": 170.42,
+  "vol24h$": 223008,
+  "OI_base": 258.14,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 170.42
+ },
+ {
+  "coin": "xyz:NCLD",
+  "markPx": 10.6,
+  "vol24h$": 191675,
+  "OI_base": 18812.78,
+  "funding_1h_pct": -0.02181,
+  "oraclePx": 10.6
+ },
+ {
+  "coin": "xyz:ZM",
+  "markPx": 81.828,
+  "vol24h$": 181482,
+  "OI_base": 3515.622,
+  "funding_1h_pct": -0.00736,
+  "oraclePx": 81.9
+ },
+ {
+  "coin": "xyz:LYTE",
+  "markPx": 12.564,
+  "vol24h$": 176153,
+  "OI_base": 16024.58,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 12.557
+ },
+ {
+  "coin": "xyz:GLW",
+  "markPx": 96.848,
+  "vol24h$": 164408,
+  "OI_base": 4101.86,
+  "funding_1h_pct": 0.00063,
+  "oraclePx": 96.895
+ },
+ {
+  "coin": "xyz:MAGS",
+  "markPx": 62.72,
+  "vol24h$": 136002,
+  "OI_base": 1969.14,
+  "funding_1h_pct": -0.00856,
+  "oraclePx": 62.72
+ },
+ {
+  "coin": "xyz:TWST",
+  "markPx": 106.45,
+  "vol24h$": 121490,
+  "OI_base": 748.58,
+  "funding_1h_pct": 0.01409,
+  "oraclePx": 105.1
+ },
+ {
+  "coin": "xyz:XLE",
+  "markPx": 60.717,
+  "vol24h$": 119279,
+  "OI_base": 17273.44,
+  "funding_1h_pct": 0.00446,
+  "oraclePx": 60.66
+ },
+ {
+  "coin": "xyz:UMC",
+  "markPx": 12.392,
+  "vol24h$": 115389,
+  "OI_base": 15752.2,
+  "funding_1h_pct": -0.00525,
+  "oraclePx": 12.42
+ },
+ {
+  "coin": "xyz:LRCX",
+  "markPx": 190.33,
+  "vol24h$": 86995,
+  "OI_base": 928.52,
+  "funding_1h_pct": 0.00218,
+  "oraclePx": 190.37
+ },
+ {
+  "coin": "xyz:JIO",
+  "markPx": 14.905,
+  "vol24h$": 64834,
+  "OI_base": 72718.0,
+  "funding_1h_pct": -0.01528,
+  "oraclePx": 14.923
+ },
+ {
+  "coin": "xyz:CVX",
+  "markPx": 208.58,
+  "vol24h$": 59447,
+  "OI_base": 480.32,
+  "funding_1h_pct": 0.00093,
+  "oraclePx": 208.44
+ },
+ {
+  "coin": "xyz:HO",
+  "markPx": 3.8671,
+  "vol24h$": 53459,
+  "OI_base": 30574.0,
+  "funding_1h_pct": 0.06259,
+  "oraclePx": 3.8668
+ },
+ {
+  "coin": "xyz:NIFTY",
+  "markPx": 25744.0,
+  "vol24h$": 48786,
+  "OI_base": 3.479,
+  "funding_1h_pct": 0.01989,
+  "oraclePx": 25793.0
+ },
+ {
+  "coin": "xyz:BIRD",
+  "markPx": 1.0703,
+  "vol24h$": 45471,
+  "OI_base": 64709.4,
+  "funding_1h_pct": 0.01086,
+  "oraclePx": 1.0529
+ },
+ {
+  "coin": "xyz:XBI",
+  "markPx": 140.92,
+  "vol24h$": 25419,
+  "OI_base": 605.9,
+  "funding_1h_pct": -0.00257,
+  "oraclePx": 141.01
+ },
+ {
+  "coin": "xyz:GBP",
+  "markPx": 1.3084,
+  "vol24h$": 20031,
+  "OI_base": 292912.0,
+  "funding_1h_pct": 0.0,
+  "oraclePx": 1.3084
  },
  {
   "coin": "xyz:CAMBRICON",
-  "markPx": 134.81,
-  "vol24h$": 15555,
-  "OI_base": 42.8,
-  "funding_1h_pct": 0.01306,
-  "oraclePx": 134.81
+  "markPx": 132.96,
+  "vol24h$": 14579,
+  "OI_base": 75.2,
+  "funding_1h_pct": -0.05996,
+  "oraclePx": 133.06
+ },
+ {
+  "coin": "xyz:OURA",
+  "markPx": 48.465,
+  "vol24h$": 6063,
+  "OI_base": 12068.0,
+  "funding_1h_pct": 1e-05,
+  "oraclePx": 48.465
  },
  {
   "coin": "xyz:RELIANCE",
-  "markPx": 14.193,
-  "vol24h$": 2912,
-  "OI_base": 1833.2,
-  "funding_1h_pct": 0.0041,
-  "oraclePx": 14.276
+  "markPx": 14.895,
+  "vol24h$": 4719,
+  "OI_base": 1983.8,
+  "funding_1h_pct": 0.04791,
+  "oraclePx": 14.872
  },
  {
   "coin": "xyz:URANIUM",
@@ -1041,11 +1049,11 @@
  },
  {
   "coin": "xyz:KRW",
-  "markPx": 1332.9,
+  "markPx": 1345.8,
   "vol24h$": 0,
   "OI_base": 0.0,
   "funding_1h_pct": 0.0,
-  "oraclePx": 1332.9
+  "oraclePx": 1345.8
  },
  {
   "coin": "xyz:H100",
@@ -1065,11 +1073,11 @@
  },
  {
   "coin": "xyz:IBIDEN",
-  "markPx": 44.249,
+  "markPx": 29.417,
   "vol24h$": 0,
   "OI_base": 0.0,
   "funding_1h_pct": 0.0,
-  "oraclePx": 44.249
+  "oraclePx": 29.417
  },
  {
   "coin": "xyz:YMTC",
@@ -1081,11 +1089,11 @@
  },
  {
   "coin": "xyz:ACN",
-  "markPx": 256.55,
+  "markPx": 222.12,
   "vol24h$": 0,
   "OI_base": 0.0,
   "funding_1h_pct": 0.0,
-  "oraclePx": 256.55
+  "oraclePx": 222.12
  },
  {
   "coin": "xyz:INNOLIGHT",
@@ -1113,19 +1121,19 @@
  },
  {
   "coin": "xyz:SNAP",
-  "markPx": 5.045,
+  "markPx": 4.655,
   "vol24h$": 0,
   "OI_base": 0.0,
   "funding_1h_pct": 0.0,
-  "oraclePx": 5.045
+  "oraclePx": 4.655
  },
  {
   "coin": "xyz:NU",
-  "markPx": 12.15,
+  "markPx": 11.46,
   "vol24h$": 0,
   "OI_base": 0.0,
   "funding_1h_pct": 0.0,
-  "oraclePx": 12.15
+  "oraclePx": 11.46
  },
  {
   "coin": "xyz:MELI",
@@ -1144,11 +1152,27 @@
   "oraclePx": 593.76
  },
  {
-  "coin": "xyz:PANW",
-  "markPx": 313.55,
+  "coin": "xyz:TENCENT",
+  "markPx": 49.74,
   "vol24h$": 0,
   "OI_base": 0.0,
   "funding_1h_pct": 0.0,
-  "oraclePx": 313.55
+  "oraclePx": 49.74
+ },
+ {
+  "coin": "xyz:SNOW",
+  "markPx": 280.54,
+  "vol24h$": 0,
+  "OI_base": 0.0,
+  "funding_1h_pct": 0.0,
+  "oraclePx": 280.54
+ },
+ {
+  "coin": "xyz:SMCI",
+  "markPx": 24.37,
+  "vol24h$": 0,
+  "OI_base": 0.0,
+  "funding_1h_pct": 0.0,
+  "oraclePx": 24.37
  }
 ]
