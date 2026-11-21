@@ -232,6 +232,9 @@ def main():
     
     # Print formatted JSON for machine consumption
     print(json.dumps(report, indent=2))
+    import sys
+    sys.stdout.flush()
+    os._exit(0)
 
 if __name__ == "__main__":
     main()
