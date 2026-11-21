@@ -48,6 +48,8 @@ interface LiqResponse {
   updatedAt: number;
   stale?: boolean;
   partial?: boolean;
+  /** venue → wider range served because the requested (sym, range) combo 40001'd upstream */
+  rangeFallback?: Record<string, string>;
 }
 
 function fmtM(n: number): string {
@@ -184,6 +186,12 @@ export default function LiquidationLevelsTool({ sym = "BTC" }: { sym?: string })
             ? `Showing the snapshot retrieved at ${new Date(liqQ.data.updatedAt).toLocaleTimeString()}. `
             : ""}
           {liqQ.data?.partial ? "Some configured venues did not return usable data." : ""}
+          {liqQ.data?.rangeFallback && Object.keys(liqQ.data.rangeFallback).length > 0 && (
+            <>
+              {" "}
+              {Object.entries(liqQ.data.rangeFallback).map(([venue, r]) => `${venue} served ${r.toUpperCase()} data (requested range unavailable upstream)`).join(" · ")}.
+            </>
+          )}
         </div>
       )}
 

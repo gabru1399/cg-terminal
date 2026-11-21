@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { NextRequest, NextResponse } from "next/server";
 import { cgGet } from "@/lib/cg/client";
-import { buildLiqModel, liqStats, type LiqModel, type RawLiqLevel, type RawLiqPayload } from "@/lib/cg/liq-model";
+import { buildLiqModel, fetchLiqVenuePayload, liqStats, type LiqModel, type RawLiqLevel, type RawLiqPayload } from "@/lib/cg/liq-model";
 import { leadInstr, liqVenues, symDecs } from "@/lib/cg/assets";
 import { anyTerminalSym, knownSym } from "@/lib/cg/sym-gate";
 import { getLivePrice } from "@/lib/live/server-price";
@@ -23,28 +23,14 @@ interface Snapshot {
   perVenue: Record<string, number>;
   venues: string[];
   partial: boolean;
+  /** venue → range actually served (differs from the requested range when the combo 40001'd upstream) */
+  rangeFallback?: Record<string, string>;
   fromDisk?: boolean;
 }
 
 const snapshots = new BoundedMap<Snapshot>(32);
 const failures = new BoundedMap<{ at: number; error: string }>(32);
 const pending = new Map<string, Promise<Snapshot>>();
-
-function unwrapPayload(value: unknown): RawLiqPayload | null {
-  for (let depth = 0; depth < 3; depth++) {
-    if (!value || typeof value !== "object") return null;
-    const payload = value as { prices?: unknown; data?: unknown };
-    if (Array.isArray(payload.prices) && Array.isArray(payload.data)) {
-      const valid = payload.prices.length >= 10 && payload.prices.every((row) =>
-        Array.isArray(row) && [0, 2, 3, 4].every((i) => Number.isFinite(Number(row[i])) && Number(row[i]) > 0)
-        && Number(row[2]) >= Number(row[3])
-      );
-      return valid ? (payload as RawLiqPayload) : null;
-    }
-    value = payload.data;
-  }
-  return null;
-}
 
 async function loadSnapshotFromDisk(sym: string, range: string, limit: number): Promise<Snapshot | null> {
   try {
@@ -117,14 +103,14 @@ async function loadSnapshot(sym: string, range: string, limit: number): Promise<
   const requested = liqVenues(sym);
   const results = await Promise.allSettled(requested.map(async (venue, i) => {
     if (i > 0) await new Promise((r) => setTimeout(r, i * 50));
-    const query = new URLSearchParams({ symbol: venue.key, limit: String(limit), range });
-    // Aggregate freshness with client-level caching: 30s TTL keeps the
-    // endpoint polite and allows staleDuringCooldown to serve recent payloads
-    // during transient upstream 429 rate-limit windows.
-    const data = await cgGet("/api/liquidationLevels/v2?" + query, 30_000);
-    const payload = unwrapPayload(data);
-    if (!payload) throw new Error("Unusable liquidation snapshot");
-    return { name: venue.name, payload };
+    // Per-venue range ladder: an upstream 40001 on an individual
+    // (symbol, range) combo (live-verified: Hyperliquid BTC 3d on
+    // 2026-11-21, while HL BTC 7d/ETH 3d/SOL 3d served fine) must not
+    // drop the venue from the aggregate. fetchLiqVenuePayload retries the
+    // wider ranges before giving up; real failures (429/network) rethrow
+    // and keep their original semantics.
+    const { payload, rangeUsed } = await fetchLiqVenuePayload(cgGet, venue.key, range, limit);
+    return { name: venue.name, payload, rangeUsed };
   }));
   const available = results.flatMap((result) => (result.status === "fulfilled" ? [result.value] : []));
   let model = buildLiqModel(available);
@@ -139,10 +125,15 @@ async function loadSnapshot(sym: string, range: string, limit: number): Promise<
       : "Coinglass did not return a usable liquidation snapshot. Try again shortly.");
   }
   const perVenue = Object.fromEntries(requested.map((v) => [v.name, 0]));
-  for (const venue of available) perVenue[venue.name] = venue.payload.data.length;
+  const rangeFallback: Record<string, string> = {};
+  for (const venue of available) {
+    perVenue[venue.name] = venue.payload.data.length;
+    if (venue.rangeUsed !== range) rangeFallback[venue.name] = venue.rangeUsed;
+  }
   return {
     at: Date.now(), model, perVenue, venues: available.map((v) => v.name),
     partial: available.length < requested.length,
+    ...(Object.keys(rangeFallback).length ? { rangeFallback } : {}),
   };
 }
 
@@ -230,6 +221,7 @@ export async function GET(req: NextRequest) {
   return NextResponse.json({
     ok: true, supported: true, sym, range, lvR,
     venues: snapshot.venues, perVenue: snapshot.perVenue, stats, livePrice,
+    ...(snapshot.rangeFallback ? { rangeFallback: snapshot.rangeFallback } : {}),
     stale: stale || snapshot.fromDisk === true || Date.now() - snapshot.at >= STALE_MS,
     partial: snapshot.partial, updatedAt: snapshot.at,
   });

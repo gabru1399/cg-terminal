@@ -30,7 +30,7 @@ import {
 } from "./cg-signals";
 import { loadFpBars } from "./fp-load";
 import { buildMarketSnapshot, type MarketSnapshot } from "./market";
-import { buildLiqModel, liqStats, type RawLiqPayload, type KeyLevel } from "./liq-model";
+import { buildLiqModel, fetchLiqVenuePayload, liqStats, type RawLiqPayload, type KeyLevel } from "./liq-model";
 import { ensureLiqCollector, liqWindows5m } from "./liq-live";
 import { fetchBinOi } from "./fallbacks";
 import { ASSETS, assetOf, curatedAssetOf, leadInstr, liqVenues } from "./assets";
@@ -453,8 +453,10 @@ function fmtUsd(v: number): string {
 async function scanLiq(sym: string) {
   const st = stateOf(sym);
   const venues = liqVenues(sym);
+  // per-venue range ladder: an upstream 40001 on one (symbol, range) combo
+  // (live-verified: Hyperliquid BTC 3d, 2026-11-21) must not drop the venue
   const results = await Promise.allSettled(
-    venues.map((v) => cgGet(`/api/liquidationLevels/v2?symbol=${encodeURIComponent(v.key)}&limit=4000&range=3d`, 5 * 60_000))
+    venues.map(async (v) => (await fetchLiqVenuePayload(cgGet, v.key, "3d", 4000)).payload)
   );
   const vs: { name: string; payload: RawLiqPayload | null }[] = [];
   results.forEach((r, i) => {

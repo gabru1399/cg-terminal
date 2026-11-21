@@ -203,7 +203,7 @@ import { rowsOf } from "./store";
 import { liqVenues, leadInstr } from "./assets";
 import { cgGet } from "./client";
 import { fetchBinCandles } from "./fallbacks";
-import { parseLiqLevelsPayload, type RawLiqLevel } from "./liq-model";
+import { fetchLiqVenuePayload } from "./liq-model";
 
 export interface RollingStopModel extends StopModel {
   mode: "liq-snapshot-rolling";
@@ -283,13 +283,11 @@ export async function buildRollingStopModel(symRaw: string, windowMs = 24 * 3_60
     // upstream the Liq Levels tab reads; nothing synthetic).
     const at = now;
     const venues = await Promise.allSettled(liqVenues(sym).map(async (v) => {
-        // shape-proof parse (2026-11-12 fix): bare OR wrapped decrypted
-        // payload — the old `for (const lv of r.data ?? [])` threw "not
-        // iterable" on the wrapped shape, silently killing the live fallback.
-        const query = new URLSearchParams({ symbol: v.key, limit: "4000", range: "3d" });
-        const val = await cgGet(`/api/liquidationLevels/v2?${query}`, 30_000);
+        // per-venue range ladder (2026-11-21 fix): an upstream 40001 on one
+        // (symbol, range) combo must not drop the venue — retry wider ranges.
+        const { payload } = await fetchLiqVenuePayload(cgGet, v.key, "3d", 4000);
         const snapshot: ArchRow[] = [];
-        for (const lv of parseLiqLevelsPayload(val) as RawLiqLevel[]) {
+        for (const lv of payload.data) {
           const size = Number(lv.size);
           if (!(size > 0)) continue;
           snapshot.push({ at, v: v.key, side: Number(lv.side), p: Number(lv.price), s: size, l2: lv.level2 ?? "" });

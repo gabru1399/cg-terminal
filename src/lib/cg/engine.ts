@@ -30,7 +30,7 @@ import { startScanner } from "./scan";
 import { ensurePaperBook } from "./paperbook";
 import { ensureLiqCollector } from "./liq-live";
 import { ensureNarrativeRadar } from "./narrative";
-import { parseLiqLevelsPayload, type RawLiqLevel } from "./liq-model";
+import { fetchLiqVenuePayload } from "./liq-model";
 import { fetchBinCandles } from "./fallbacks";
 
 const STEP_MS = 900_000; // m15 master step
@@ -355,12 +355,16 @@ async function archiveLiqLevels(sym: string, name: string) {
   const at = Date.now();
   const rows = [];
   let loaded = 0;
+  let fellBack = 0;
   for (const { key } of venues) {
     try {
-      const query = new URLSearchParams({ symbol: key, limit: "4000", range: "3d" });
-      const levels = parseLiqLevelsPayload(await cgGet(`/api/liquidationLevels/v2?${query}`, 60_000)) as RawLiqLevel[];
-      const valid = levels.filter((level) => Number(level.size) > 0 && Number(level.price) > 0);
+      // per-venue range ladder: an upstream 40001 on one (symbol, range)
+      // combo (live-verified: Hyperliquid BTC 3d, 2026-11-21) must not drop
+      // the venue from the archive — retry the wider ranges first.
+      const { payload, rangeUsed } = await fetchLiqVenuePayload(cgGet, key, "3d", 4000);
+      const valid = payload.data.filter((level) => Number(level.size) > 0 && Number(level.price) > 0);
       if (!valid.length) continue;
+      if (rangeUsed !== "3d") fellBack++;
       loaded++;
       for (const level of valid) {
         rows.push({ at, v: key, side: Number(level.side), p: Number(level.price), s: Number(level.size), l2: level.level2 ?? "" });
@@ -370,7 +374,10 @@ async function archiveLiqLevels(sym: string, name: string) {
     }
   }
   if (rows.length) append(name, rows, keyLiq);
-  markPoll(name, keyLiq, loaded < venues.length || !loaded
+  // The ladder already recovered combo-specific gaps, so a 4/5-venue poll is
+  // no longer an error state worth flagging "degraded" — only a poll where a
+  // venue stayed dead even after the ladder (or nothing loaded at all) is.
+  markPoll(name, keyLiq, loaded < venues.length - fellBack || !loaded
     ? `Coinglass liquidation data available for ${loaded}/${venues.length} venues`
     : undefined);
 }

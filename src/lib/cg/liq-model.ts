@@ -68,6 +68,76 @@ export function parseLiqLevelsPayload(val: unknown): RawLiqLevel[] {
   return [];
 }
 
+/**
+ * Validate a decrypted payload as a usable RawLiqPayload (the route's
+ * unwrapPayload contract): ≥10 candles with finite positive OHLC and
+ * high ≥ low, plus a level array.
+ */
+export function isUsableLiqPayload(val: unknown): val is RawLiqPayload {
+  if (!val || typeof val !== "object") return false;
+  const p = val as { prices?: unknown; data?: unknown };
+  if (!Array.isArray(p.prices) || !Array.isArray(p.data)) return false;
+  return p.prices.length >= 10 && p.prices.every((row) =>
+    Array.isArray(row) && [0, 2, 3, 4].every((i) => Number.isFinite(Number(row[i])) && Number(row[i]) > 0)
+    && Number(row[2]) >= Number(row[3])
+  );
+}
+
+/** Unwrap { prices, data } at depth 0–3 (the route's legacy unwrapPayload). */
+export function unwrapLiqPayload(val: unknown): RawLiqPayload | null {
+  for (let depth = 0; depth < 3; depth++) {
+    if (isUsableLiqPayload(val)) return val as RawLiqPayload;
+    if (!val || typeof val !== "object") return null;
+    val = (val as { data?: unknown }).data;
+  }
+  return null;
+}
+
+/**
+ * One venue's liquidation-levels payload with a per-venue RANGE LADDER.
+ *
+ * Why: the upstream can 40001 ("price/OI row unavailable") on an individual
+ * (symbol, range) combo while the same venue serves the neighbouring range
+ * fine (live-verified 2026-11-21: Hyperliquid_BTC-USD 3d → 40001, 7d → 1813
+ * rows; ETH/SOL 3d fine). A combo-specific gap must not drop the whole venue
+ * from the aggregate — the model maps levels through `beginDate` epochs, so
+ * a wider-range payload is a strict superset on the same lead timeline.
+ *
+ * Ladder: the requested range first, then every wider range in RANGE_ORDER.
+ * Every error except "no data for this combo" (upstream codes 40001/405 or
+ * the unwrappable-payload case) is rethrown so real failures (429, network)
+ * keep their existing semantics for the caller.
+ */
+export const LIQ_RANGE_ORDER = ["3d", "7d", "30d"] as const;
+export type LiqRange = (typeof LIQ_RANGE_ORDER)[number];
+
+export async function fetchLiqVenuePayload(
+  cgGetFn: (path: string, ttlMs?: number) => Promise<unknown>,
+  venueKey: string,
+  range: string,
+  limit: number,
+): Promise<{ payload: RawLiqPayload; rangeUsed: string }> {
+  const ladder = [range, ...LIQ_RANGE_ORDER.filter((r) => r !== range)];
+  let lastNoData = false;
+  for (const r of ladder) {
+    const query = new URLSearchParams({ symbol: venueKey, limit: String(limit), range: r });
+    let val: unknown;
+    try {
+      val = await cgGetFn("/api/liquidationLevels/v2?" + query, 30_000);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      if (/\b(40001|405)\b/.test(msg)) { lastNoData = true; continue; } // no-data combo — try wider
+      throw err; // 429 / network / auth — real failure
+    }
+    const payload = unwrapLiqPayload(val);
+    if (payload) return { payload, rangeUsed: r };
+    lastNoData = true; // 200 with unusable shape — same treatment as no-data
+  }
+  throw new Error(lastNoData
+    ? `no usable liquidation snapshot for ${venueKey} in ranges ${ladder.join(",")}`
+    : `liquidation fetch failed for ${venueKey}`);
+}
+
 const TIER: Record<string, number> = { h1: 0, h2: 1, h3: 2 };
 const ROWS = 520;
 
