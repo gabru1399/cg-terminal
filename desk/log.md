@@ -19572,3 +19572,8 @@ ead_file validation.
 - None — data missing, HOLD (manual check)
 - None — data missing, HOLD (manual check)
 
+
+## ROUND FAILED · 2026-11-21 05:49 UTC · zai-desk
+
+analysis script rc=139
+
