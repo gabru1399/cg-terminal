@@ -19577,3 +19577,16 @@ ead_file validation.
 
 analysis script rc=139
 
+## R811 · 2026-11-21 06:08 UTC · zai-desk
+
+**Market**: BTC 55,772.4 (-5.3%)  ETH 1,559.05 (-3.9%)  SOL 65.56 (-4.7%)  XAU 3,523.88 (-0.7%)  XAG 40.960 (-1.1%)
+**Bias (|score|≥2)**: BNB-7(TREND)  ADA-6(TREND)  AVAX-5(TREND)  BTC-3(TREND)
+
+### Opportunities (engine v3.2 (regime-aware: trend-pullback + mean-revert) — debate-gated + microFlow vote, min R 2)
+- none meeting the gates this round
+
+### Positions
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+- None — data missing, HOLD (manual check)
+
