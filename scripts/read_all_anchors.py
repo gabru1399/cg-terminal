@@ -3,10 +3,10 @@ import sys
 import json
 import re
 
-round_id = 'R789'
+round_id = 'R790'
 cwd = 'CG-Terminal'
 
-for step in range(1, 12):
+for step in range(0, 12):
     while True:
         cmd = [sys.executable, 'scripts/agent_wake_verification.py', '--round', round_id, '--step', str(step)]
         p = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)

@@ -17,14 +17,20 @@ def _load_creds():
     sec = os.getenv("DELTA_API_SECRET")
     if key and sec:
         return key, sec
-    env_file = Path(__file__).resolve().parent.parent / ".env"
-    if env_file.exists():
-        for line in env_file.read_text(encoding="utf-8").splitlines():
-            line = line.strip()
-            if line.startswith("DELTA_API_KEY="):
-                key = line.split("=", 1)[1].strip().strip('"').strip("'")
-            elif line.startswith("DELTA_API_SECRET="):
-                sec = line.split("=", 1)[1].strip().strip('"').strip("'")
+    candidates = [
+        Path(__file__).resolve().parent.parent / ".env",
+        Path(__file__).resolve().parent.parent.parent / ".env"
+    ]
+    for env_file in candidates:
+        if env_file.exists():
+            for line in env_file.read_text(encoding="utf-8").splitlines():
+                line = line.strip()
+                if line.startswith("DELTA_API_KEY=") and not key:
+                    key = line.split("=", 1)[1].strip().strip('"').strip("'")
+                elif line.startswith("DELTA_API_SECRET=") and not sec:
+                    sec = line.split("=", 1)[1].strip().strip('"').strip("'")
+        if key and sec:
+            break
     return key, sec
 
 
