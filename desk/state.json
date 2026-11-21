@@ -31,8 +31,8 @@
     "operator_policy_updated_at": "2026-11-20T17:05:47.546850+00:00"
   },
   "analysis": {
-    "last_round": "R799",
-    "last_round_ts": 1795227786651,
+    "last_round": "R800",
+    "last_round_ts": 1795228819198,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
@@ -65,9 +65,9 @@
       "SOL": {
         "price": 68.7,
         "chgDayPct": -0.17436791630338616,
-        "score": -1.35,
+        "score": -1.37,
         "parts": {
-          "notif": 0.65,
+          "notif": 0.63,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
@@ -78,9 +78,9 @@
       "BNB": {
         "price": 538.95,
         "chgDayPct": -0.36971993714761064,
-        "score": -2.19,
+        "score": -2.23,
         "parts": {
-          "notif": 1.31,
+          "notif": 1.27,
           "signals": -1,
           "trend": -2.0,
           "vwap": -1,
@@ -91,9 +91,9 @@
       "XRP": {
         "price": 0.9094,
         "chgDayPct": -0.07691462476651291,
-        "score": 0.65,
+        "score": 0.63,
         "parts": {
-          "notif": 0.65,
+          "notif": 0.63,
           "signals": 1,
           "trend": -2.0,
           "vwap": 1,
@@ -118,9 +118,9 @@
       "AVAX": {
         "price": 6.484,
         "chgDayPct": -0.4910988336402705,
-        "score": -3.77,
+        "score": -3.76,
         "parts": {
-          "notif": -0.33,
+          "notif": -0.32,
           "signals": 0.33,
           "trend": -2.0,
           "vwap": -1,
@@ -145,9 +145,9 @@
       "LINK": {
         "price": 8.545,
         "chgDayPct": 0.05854800936769066,
-        "score": -4.34,
+        "score": -4.32,
         "parts": {
-          "notif": -0.97,
+          "notif": -0.95,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
@@ -173,9 +173,9 @@
       "XAU": {
         "price": 3542.2,
         "chgDayPct": -0.1899158622011146,
-        "score": -3.89,
+        "score": -3.88,
         "parts": {
-          "notif": -0.32,
+          "notif": -0.31,
           "signals": 0.33,
           "trend": -2.0,
           "vwap": -1,
@@ -213,15 +213,15 @@
       },
       {
         "sym": "LINK",
-        "score": -4.34
+        "score": -4.32
       },
       {
         "sym": "AVAX",
-        "score": -3.77
+        "score": -3.76
       },
       {
         "sym": "XAU",
-        "score": -3.89
+        "score": -3.88
       }
     ]
   },
