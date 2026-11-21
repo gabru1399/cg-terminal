@@ -31,8 +31,8 @@
     "operator_policy_updated_at": "2026-11-20T17:05:47.546850+00:00"
   },
   "analysis": {
-    "last_round": "R800",
-    "last_round_ts": 1795228819198,
+    "last_round": "R801",
+    "last_round_ts": 1795229809198,
     "engine": "v3.2 (regime-aware: trend-pullback + mean-revert templates | 9-source debate + microFlow vote | FOR>=3 & FOR>AGAINST | min R 2.0 | perpRefPrice basis stamp)",
     "assets": {
       "BTC": {
@@ -52,9 +52,9 @@
       "ETH": {
         "price": 1625.17,
         "chgDayPct": 0.1935845822827013,
-        "score": 0.18,
+        "score": 0.19,
         "parts": {
-          "notif": -0.32,
+          "notif": -0.31,
           "signals": 1,
           "trend": -2.0,
           "vwap": 1,
@@ -65,9 +65,9 @@
       "SOL": {
         "price": 68.7,
         "chgDayPct": -0.17436791630338616,
-        "score": -1.37,
+        "score": -1.38,
         "parts": {
-          "notif": 0.63,
+          "notif": 0.62,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
@@ -78,9 +78,9 @@
       "BNB": {
         "price": 538.95,
         "chgDayPct": -0.36971993714761064,
-        "score": -2.23,
+        "score": -2.26,
         "parts": {
-          "notif": 1.27,
+          "notif": 1.24,
           "signals": -1,
           "trend": -2.0,
           "vwap": -1,
@@ -91,9 +91,9 @@
       "XRP": {
         "price": 0.9094,
         "chgDayPct": -0.07691462476651291,
-        "score": 0.63,
+        "score": 0.62,
         "parts": {
-          "notif": 0.63,
+          "notif": 0.62,
           "signals": 1,
           "trend": -2.0,
           "vwap": 1,
@@ -120,7 +120,7 @@
         "chgDayPct": -0.4910988336402705,
         "score": -3.76,
         "parts": {
-          "notif": -0.32,
+          "notif": -0.31,
           "signals": 0.33,
           "trend": -2.0,
           "vwap": -1,
@@ -145,9 +145,9 @@
       "LINK": {
         "price": 8.545,
         "chgDayPct": 0.05854800936769066,
-        "score": -4.32,
+        "score": -4.3,
         "parts": {
-          "notif": -0.95,
+          "notif": -0.92,
           "signals": 1,
           "trend": -2.0,
           "vwap": -1,
@@ -159,9 +159,9 @@
       "LTC": {
         "price": 40.47,
         "chgDayPct": -0.36927621861151794,
-        "score": -2.83,
+        "score": -2.82,
         "parts": {
-          "notif": -0.32,
+          "notif": -0.31,
           "signals": -0.66,
           "trend": -2.0,
           "vwap": -1,
@@ -201,7 +201,7 @@
     "watchlist": [
       {
         "sym": "LTC",
-        "score": -2.83
+        "score": -2.82
       },
       {
         "sym": "BTC",
@@ -213,7 +213,7 @@
       },
       {
         "sym": "LINK",
-        "score": -4.32
+        "score": -4.3
       },
       {
         "sym": "AVAX",
